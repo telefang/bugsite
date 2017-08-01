@@ -1,0 +1,111 @@
+    JAL .sub_107_4 ;$4
+    RET
+
+.sub_107_4
+    UO $3
+    NPREF UO $86
+    POPALL
+    UO $3
+    DB STR_107_9
+
+    ENOP $2d
+    DB STR_107_E
+
+    NPREF UO $70
+    POPALL
+    UO $3
+    IMMED $0
+    ENOP $2d
+    IMMED $1
+    ENOP $2d
+    IMMED $2
+    ENOP $2d
+    IMMED $1
+    ENOP $2d
+    IMMED $1
+    NPREF UO $6d
+    POPALL
+    UO $3
+    NPREF UO $85
+    POPALL
+    IMMED $17f
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    IMMED $17d
+    INDIR
+    IMMED $17c
+    INDIR
+    STR
+    POPALL
+    IMMED $17c
+    INDIR
+    IMMED $17c
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+
+.sub_107_52
+    IMMED $17c
+    INDIR
+    IMMED $17d
+    INDIR
+    CMP_EQ
+    JMPT .sub_107_a4 ;$a4
+    IMMED $17b
+    INDIR
+    UO $3
+    NPREF UO $61
+    STR
+    POPALL
+    IMMED $17e
+    INDIR
+    UO $3
+    IMMED $17b
+    INDIR
+    NPREF UO $71
+    STR
+    POPALL
+    IMMED $17e
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_107_8c ;$8c
+    IMMED $17c
+    INDIR
+    IMMED $17d
+    INDIR
+    STR
+    POPALL
+    JMP .sub_107_a1 ;$a1
+
+.sub_107_8c
+    IMMED $17e
+    INDIR
+    IMMED $2
+    CMP_NEQ
+    JMPT .sub_107_a1 ;$a1
+    IMMED $17c
+    INDIR
+    IMMED $17d
+    INDIR
+    STR
+    POPALL
+
+.sub_107_a1
+    JMP .sub_107_52 ;$52
+
+.sub_107_a4
+    IMMED $17d
+    INDIR
+    IMMED $17d
+    INDIR
+    IMMED $1
+    SUB
+    STR
+    POPALL
+    RET
+    FGAME

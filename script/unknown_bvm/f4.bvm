@@ -1,0 +1,66 @@
+    JAL .sub_f4_4 ;$4
+    RET
+
+.sub_f4_4
+    IMMED $17e
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $31
+    CMP_GT
+    JMPT .sub_f4_66 ;$66
+    IMMED $173
+    INDIR
+    IMMED $530
+    IMMED $172
+    INDIR
+    ADD
+    INDIR
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $449
+    INDIR
+    CMP_LT
+    JMPT .sub_f4_4e ;$4e
+    IMMED $173
+    INDIR
+    IMMED $173
+    INDIR
+    IMMED $449
+    INDIR
+    SUB
+    STR
+    POPALL
+    IMMED $17e
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    JMP .sub_f4_57 ;$57
+
+.sub_f4_4e
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+
+.sub_f4_57
+    IMMED $530
+    IMMED $172
+    INDIR
+    ADD
+    INDIR
+    IMMED $173
+    INDIR
+    STR
+    POPALL
+
+.sub_f4_66
+    RET
+    FGAME

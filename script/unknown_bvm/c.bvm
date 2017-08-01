@@ -1,0 +1,164 @@
+    JAL .sub_c_4 ;$4
+    RET
+
+.sub_c_4
+    IMMED $422
+    INDIR
+    IMMED $4b0
+    CMP_NEQ
+    JMPT .sub_c_17 ;$17
+    JAL .sub_c_74 ;$74
+    NPREF POPALL
+    JMP .sub_c_73 ;$73
+
+.sub_c_17
+    IMMED $422
+    INDIR
+    IMMED $4ba
+    CMP_NEQ
+    JMPT .sub_c_2a ;$2a
+    JAL .sub_c_75 ;$75
+    NPREF POPALL
+    JMP .sub_c_73 ;$73
+
+.sub_c_2a
+    IMMED $422
+    INDIR
+    IMMED $4bb
+    CMP_NEQ
+    JMPT .sub_c_3d ;$3d
+    JAL .sub_c_b7 ;$b7
+    NPREF POPALL
+    JMP .sub_c_73 ;$73
+
+.sub_c_3d
+    IMMED $422
+    INDIR
+    IMMED $4d8
+    CMP_NEQ
+    JMPT .sub_c_50 ;$50
+    JAL .sub_c_b8 ;$b8
+    NPREF POPALL
+    JMP .sub_c_73 ;$73
+
+.sub_c_50
+    IMMED $422
+    INDIR
+    IMMED $4e2
+    CMP_NEQ
+    JMPT .sub_c_63 ;$63
+    JAL .sub_c_b9 ;$b9
+    NPREF POPALL
+    JMP .sub_c_73 ;$73
+
+.sub_c_63
+    IMMED $422
+    INDIR
+    IMMED $4ec
+    CMP_NEQ
+    JMPT .sub_c_73 ;$73
+    JAL .sub_c_ba ;$ba
+    NPREF POPALL
+
+.sub_c_73
+    RET
+
+.sub_c_74
+    RET
+
+.sub_c_75
+    IMMED $172
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_C_87
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_C_92
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_C_A1
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+
+.sub_c_b7
+    RET
+
+.sub_c_b8
+    RET
+
+.sub_c_b9
+    RET
+
+.sub_c_ba
+    IMMED $172
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_C_CC
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_C_D7
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_C_E7
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_C_FB
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_C_109
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+    FGAME

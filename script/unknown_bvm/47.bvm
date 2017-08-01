@@ -1,0 +1,18 @@
+    JAL .sub_47_4 ;$4
+    RET
+
+.sub_47_4
+    IMMED $422
+    INDIR
+    IMMED $1bbc
+    CMP_NEQ
+    JMPT .sub_47_14 ;$14
+    JAL .sub_47_15 ;$15
+    NPREF POPALL
+
+.sub_47_14
+    RET
+
+.sub_47_15
+    RET
+    FGAME

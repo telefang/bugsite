@@ -1,0 +1,41 @@
+    JAL .sub_eb_4 ;$4
+    RET
+
+.sub_eb_4
+    IMMED $172
+    INDIR
+    IMMED $426
+    INDIR
+    CMP_LEQ
+    JMPT .sub_eb_25 ;$25
+    IMMED $17e
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $426
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    JMP .sub_eb_3d ;$3d
+
+.sub_eb_25
+    IMMED $17e
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    IMMED $426
+    INDIR
+    IMMED $426
+    INDIR
+    IMMED $172
+    INDIR
+    SUB
+    STR
+    POPALL
+
+.sub_eb_3d
+    RET
+    FGAME

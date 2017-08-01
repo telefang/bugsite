@@ -1,0 +1,174 @@
+    JAL .sub_ec_4 ;$4
+    RET
+
+.sub_ec_4
+    IMMED $174
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+
+.sub_ec_d
+    IMMED $174
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_ec_29 ;$29
+    IMMED $174
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    JAL .sub_ec_3a ;$3a
+    NPREF POPALL
+    JMP .sub_ec_d ;$d
+
+.sub_ec_29
+    UO $3
+    IMMED $be
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $bf
+    NPREF UO $6a
+    POPALL
+    POPALL
+    RET
+
+.sub_ec_3a
+    IMMED $175
+    INDIR
+    IMMED $8
+    STR
+    POPALL
+
+.sub_ec_43
+    IMMED $175
+    INDIR
+    IMMED $49c
+    INDIR
+    CMP_GEQ
+    JMPT .sub_ec_8d ;$8d
+    IMMED $3a98
+    IMMED $175
+    INDIR
+    ADD
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_ec_7c ;$7c
+    IMMED $174
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $175
+    INDIR
+    STR
+    POPALL
+    IMMED $175
+    INDIR
+    IMMED $49c
+    INDIR
+    STR
+    POPALL
+
+.sub_ec_7c
+    IMMED $175
+    INDIR
+    IMMED $175
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    JMP .sub_ec_43 ;$43
+
+.sub_ec_8d
+    IMMED $174
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_ec_115 ;$115
+    IMMED $174
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $176
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+
+.sub_ec_af
+    IMMED $176
+    INDIR
+    IMMED $49c
+    INDIR
+    CMP_GEQ
+    JMPT .sub_ec_115 ;$115
+    IMMED $3a98
+    IMMED $176
+    INDIR
+    ADD
+    PRED
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_ec_104 ;$104
+    UO $3
+    IMMED $176
+    INDIR
+    NPREF UO $e8
+    POPALL
+    UO $3
+    NPREF UO $eb
+    POPALL
+    UO $3
+    IMMED $e8
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $176
+    INDIR
+    STR
+    POPALL
+    UO $3
+    IMMED $e9
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $176
+    INDIR
+    IMMED $49c
+    INDIR
+    STR
+    POPALL
+    IMMED $174
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+
+.sub_ec_104
+    IMMED $176
+    INDIR
+    IMMED $176
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    JMP .sub_ec_af ;$af
+
+.sub_ec_115
+    RET
+    FGAME

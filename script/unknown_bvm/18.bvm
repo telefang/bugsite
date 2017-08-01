@@ -1,0 +1,93 @@
+    JAL .sub_18_4 ;$4
+    RET
+
+.sub_18_4
+    IMMED $422
+    INDIR
+    IMMED $960
+    CMP_NEQ
+    JMPT .sub_18_17 ;$17
+    JAL .sub_18_74 ;$74
+    NPREF POPALL
+    JMP .sub_18_73 ;$73
+
+.sub_18_17
+    IMMED $422
+    INDIR
+    IMMED $96a
+    CMP_NEQ
+    JMPT .sub_18_2a ;$2a
+    JAL .sub_18_75 ;$75
+    NPREF POPALL
+    JMP .sub_18_73 ;$73
+
+.sub_18_2a
+    IMMED $422
+    INDIR
+    IMMED $974
+    CMP_NEQ
+    JMPT .sub_18_3d ;$3d
+    JAL .sub_18_76 ;$76
+    NPREF POPALL
+    JMP .sub_18_73 ;$73
+
+.sub_18_3d
+    IMMED $422
+    INDIR
+    IMMED $97e
+    CMP_NEQ
+    JMPT .sub_18_50 ;$50
+    JAL .sub_18_77 ;$77
+    NPREF POPALL
+    JMP .sub_18_73 ;$73
+
+.sub_18_50
+    IMMED $422
+    INDIR
+    IMMED $988
+    CMP_NEQ
+    JMPT .sub_18_63 ;$63
+    JAL .sub_18_78 ;$78
+    NPREF POPALL
+    JMP .sub_18_73 ;$73
+
+.sub_18_63
+    IMMED $422
+    INDIR
+    IMMED $992
+    CMP_NEQ
+    JMPT .sub_18_73 ;$73
+    JAL .sub_18_8a ;$8a
+    NPREF POPALL
+
+.sub_18_73
+    RET
+
+.sub_18_74
+    RET
+
+.sub_18_75
+    RET
+
+.sub_18_76
+    RET
+
+.sub_18_77
+    RET
+
+.sub_18_78
+    IMMED $422
+    INDIR
+    IMMED $398a
+    STR
+    POPALL
+    UO $3
+    IMMED $95
+    NPREF UO $6a
+    POPALL
+    POPALL
+    RET
+
+.sub_18_8a
+    RET
+    FGAME

@@ -1,0 +1,310 @@
+    JAL .sub_59_4 ;$4
+    RET
+
+.sub_59_4
+    IMMED $422
+    INDIR
+    IMMED $22c4
+    CMP_NEQ
+    JMPT .sub_59_17 ;$17
+    JAL .sub_59_61 ;$61
+    NPREF POPALL
+    JMP .sub_59_60 ;$60
+
+.sub_59_17
+    IMMED $422
+    INDIR
+    IMMED $22ce
+    CMP_NEQ
+    JMPT .sub_59_2a ;$2a
+    JAL .sub_59_62 ;$62
+    NPREF POPALL
+    JMP .sub_59_60 ;$60
+
+.sub_59_2a
+    IMMED $422
+    INDIR
+    IMMED $22f6
+    CMP_NEQ
+    JMPT .sub_59_3d ;$3d
+    JAL .sub_59_74 ;$74
+    NPREF POPALL
+    JMP .sub_59_60 ;$60
+
+.sub_59_3d
+    IMMED $422
+    INDIR
+    IMMED $2300
+    CMP_NEQ
+    JMPT .sub_59_50 ;$50
+    JAL .sub_59_75 ;$75
+    NPREF POPALL
+    JMP .sub_59_60 ;$60
+
+.sub_59_50
+    IMMED $422
+    INDIR
+    IMMED $230a
+    CMP_NEQ
+    JMPT .sub_59_60 ;$60
+    JAL .sub_59_14f ;$14f
+    NPREF POPALL
+
+.sub_59_60
+    RET
+
+.sub_59_61
+    RET
+
+.sub_59_62
+    IMMED $422
+    INDIR
+    IMMED $3930
+    STR
+    POPALL
+    UO $3
+    IMMED $95
+    NPREF UO $6a
+    POPALL
+    POPALL
+    RET
+
+.sub_59_74
+    RET
+
+.sub_59_75
+    IMMED $172
+    INDIR
+    IMMED $ffff
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_59_87
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_59_94
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_59_A2
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    IMMED $2300
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $42a
+    INDIR
+    IMMED $41
+    STR
+    POPALL
+    UO $3
+    IMMED $d2
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $10e
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $7e
+    INDIR
+    NPREF UO $6a
+    POPALL
+    UO $3
+    IMMED $d3
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $100
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $2300
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $ffff
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_59_12D
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_59_13A
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+
+.sub_59_14f
+    IMMED $172
+    INDIR
+    IMMED $ffff
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_59_161
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_59_16E
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_59_17C
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    IMMED $230a
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $42a
+    INDIR
+    IMMED $42
+    STR
+    POPALL
+    UO $3
+    IMMED $d2
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $10e
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $7e
+    INDIR
+    NPREF UO $6a
+    POPALL
+    UO $3
+    IMMED $d3
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $100
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $230a
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $ffff
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_59_207
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_59_214
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+    FGAME

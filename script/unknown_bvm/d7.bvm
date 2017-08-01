@@ -1,0 +1,141 @@
+    JAL .sub_d7_4 ;$4
+    RET
+
+.sub_d7_4
+    UO $3
+    NPREF UO $8e
+    POPALL
+    UO $3
+    NPREF UO $4a
+    POPALL
+    UO $3
+    NPREF UO $62
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $ffff
+    CMP_EQ
+    JMPT .sub_d7_3b ;$3b
+    IMMED $14e
+    INDIR
+    IMMED $14d
+    INDIR
+    STR
+    POPALL
+    IMMED $14d
+    INDIR
+    IMMED $172
+    INDIR
+    STR
+    POPALL
+    JMP .sub_d7_59 ;$59
+
+.sub_d7_3b
+    IMMED $172
+    INDIR
+    IMMED $14d
+    INDIR
+    STR
+    POPALL
+    IMMED $14d
+    INDIR
+    IMMED $14e
+    INDIR
+    STR
+    POPALL
+    IMMED $14e
+    INDIR
+    IMMED $172
+    INDIR
+    STR
+    POPALL
+
+.sub_d7_59
+    UO $3
+    NPREF UO $f7
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $cc
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $d1
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $cb
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $0
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $1
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $2
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $3
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $4
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $5
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $6
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $442
+    ENOP $2d
+    IMMED $7
+    NPREF UO $78
+    POPALL
+    UO $3
+    IMMED $fa
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $ef
+    NPREF UO $6a
+    POPALL
+    POPALL
+    RET
+    FGAME

@@ -1,0 +1,18 @@
+    JAL .sub_4e_4 ;$4
+    RET
+
+.sub_4e_4
+    IMMED $422
+    INDIR
+    IMMED $1e78
+    CMP_NEQ
+    JMPT .sub_4e_14 ;$14
+    JAL .sub_4e_15 ;$15
+    NPREF POPALL
+
+.sub_4e_14
+    RET
+
+.sub_4e_15
+    RET
+    FGAME

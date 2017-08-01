@@ -1,0 +1,31 @@
+    JAL .sub_1a_4 ;$4
+    RET
+
+.sub_1a_4
+    IMMED $422
+    INDIR
+    IMMED $a28
+    CMP_NEQ
+    JMPT .sub_1a_17 ;$17
+    JAL .sub_1a_28 ;$28
+    NPREF POPALL
+    JMP .sub_1a_27 ;$27
+
+.sub_1a_17
+    IMMED $422
+    INDIR
+    IMMED $a5a
+    CMP_NEQ
+    JMPT .sub_1a_27 ;$27
+    JAL .sub_1a_29 ;$29
+    NPREF POPALL
+
+.sub_1a_27
+    RET
+
+.sub_1a_28
+    RET
+
+.sub_1a_29
+    RET
+    FGAME

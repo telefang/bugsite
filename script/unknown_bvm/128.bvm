@@ -1,0 +1,648 @@
+    JAL .sub_128_4 ;$4
+    RET
+
+.sub_128_4
+    UO $3
+    IMMED $172
+    INDIR
+    NPREF UO $f1
+    POPALL
+    IMMED $174
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_128_35e ;$35e
+    IMMED $176
+    INDIR
+    IMMED $418
+    STR
+    POPALL
+    IMMED $177
+    INDIR
+    IMMED $598
+    STR
+    POPALL
+    IMMED $175
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+
+.sub_128_32
+    IMMED $175
+    INDIR
+    IMMED $8
+    CMP_GEQ
+    JMPT .sub_128_76 ;$76
+    IMMED $176
+    INDIR
+    INDIR
+    IMMED $177
+    INDIR
+    INDIR
+    STR
+    POPALL
+    IMMED $176
+    INDIR
+    IMMED $176
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    IMMED $177
+    INDIR
+    IMMED $177
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    IMMED $175
+    INDIR
+    IMMED $175
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    JMP .sub_128_32 ;$32
+
+.sub_128_76
+    IMMED $416
+    INDIR
+    IMMED $416
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $172
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $402
+    INDIR
+    IMMED $402
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $173
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $400
+    INDIR
+    IMMED $172
+    INDIR
+    STR
+    POPALL
+    POPALL
+    IMMED $401
+    INDIR
+    IMMED $172
+    INDIR
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $402
+    INDIR
+    IMMED $402
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $172
+    INDIR
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $403
+    INDIR
+    IMMED $403
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $172
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $403
+    INDIR
+    IMMED $403
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $172
+    INDIR
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $586
+    INDIR
+    IMMED $ff
+    AND
+    STR
+    POPALL
+    IMMED $404
+    INDIR
+    IMMED $404
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $172
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $404
+    INDIR
+    IMMED $404
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $172
+    INDIR
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $405
+    INDIR
+    IMMED $405
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $172
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $405
+    INDIR
+    IMMED $405
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $172
+    INDIR
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $587
+    INDIR
+    IMMED $ff
+    AND
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $173
+    INDIR
+    MUL
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $64
+    DIV
+    STR
+    POPALL
+    IMMED $406
+    INDIR
+    IMMED $406
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $172
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $406
+    INDIR
+    IMMED $406
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $172
+    INDIR
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $407
+    INDIR
+    IMMED $407
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $0
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $407
+    INDIR
+    IMMED $407
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $0
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $408
+    INDIR
+    IMMED $408
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $0
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $408
+    INDIR
+    IMMED $408
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $0
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $409
+    INDIR
+    IMMED $409
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $0
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $409
+    INDIR
+    IMMED $409
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $0
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $412
+    INDIR
+    IMMED $412
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $0
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $412
+    INDIR
+    IMMED $412
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $0
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $40e
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    POPALL
+    IMMED $40f
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    POPALL
+    IMMED $413
+    INDIR
+    IMMED $413
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $0
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $414
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    POPALL
+    IMMED $415
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    POPALL
+    IMMED $417
+    INDIR
+    IMMED $417
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $175
+    INDIR
+    IMMED $58a
+    INDIR
+    IMMED $ff
+    AND
+    STR
+    POPALL
+    IMMED $40a
+    INDIR
+    IMMED $40a
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $175
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $175
+    INDIR
+    IMMED $58b
+    INDIR
+    IMMED $ff
+    AND
+    STR
+    POPALL
+    IMMED $40b
+    INDIR
+    IMMED $40b
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $175
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $175
+    INDIR
+    IMMED $58c
+    INDIR
+    IMMED $ff
+    AND
+    STR
+    POPALL
+    IMMED $40c
+    INDIR
+    IMMED $40c
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $175
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $175
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $40d
+    INDIR
+    IMMED $40d
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $175
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    JMP .sub_128_446 ;$446
+
+.sub_128_35e
+    IMMED $416
+    INDIR
+    IMMED $416
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $172
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $400
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    POPALL
+    IMMED $401
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $402
+    INDIR
+    IMMED $ff
+    AND
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    IMMED $402
+    INDIR
+    IMMED $402
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $172
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $172
+    INDIR
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $587
+    INDIR
+    IMMED $ff
+    AND
+    STR
+    POPALL
+    IMMED $174
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $173
+    INDIR
+    MUL
+    STR
+    POPALL
+    IMMED $174
+    INDIR
+    IMMED $174
+    INDIR
+    IMMED $64
+    DIV
+    STR
+    POPALL
+    IMMED $175
+    INDIR
+    UO $3
+    IMMED $2
+    NPREF UO $67
+    STR
+    POPALL
+    IMMED $174
+    INDIR
+    IMMED $174
+    INDIR
+    IMMED $175
+    INDIR
+    ADD
+    STR
+    POPALL
+    IMMED $174
+    INDIR
+    IMMED $ff
+    CMP_LEQ
+    JMPT .sub_128_41a ;$41a
+    IMMED $174
+    INDIR
+    IMMED $ff
+    STR
+    POPALL
+
+.sub_128_41a
+    IMMED $406
+    INDIR
+    IMMED $406
+    INDIR
+    IMMED $ff00
+    AND
+    IMMED $174
+    INDIR
+    ADD
+    STR
+    POPALL
+    POPALL
+    IMMED $406
+    INDIR
+    IMMED $406
+    INDIR
+    IMMED $ff
+    AND
+    IMMED $174
+    INDIR
+    IMMED $100
+    MUL
+    ADD
+    STR
+    POPALL
+    POPALL
+
+.sub_128_446
+    RET
+    FGAME

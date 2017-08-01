@@ -1,0 +1,135 @@
+    JAL .sub_29_4 ;$4
+    RET
+
+.sub_29_4
+    IMMED $422
+    INDIR
+    IMMED $1004
+    CMP_NEQ
+    JMPT .sub_29_17 ;$17
+    JAL .sub_29_4e ;$4e
+    NPREF POPALL
+    JMP .sub_29_4d ;$4d
+
+.sub_29_17
+    IMMED $422
+    INDIR
+    IMMED $100e
+    CMP_NEQ
+    JMPT .sub_29_2a ;$2a
+    JAL .sub_29_4f ;$4f
+    NPREF POPALL
+    JMP .sub_29_4d ;$4d
+
+.sub_29_2a
+    IMMED $422
+    INDIR
+    IMMED $1018
+    CMP_NEQ
+    JMPT .sub_29_3d ;$3d
+    JAL .sub_29_61 ;$61
+    NPREF POPALL
+    JMP .sub_29_4d ;$4d
+
+.sub_29_3d
+    IMMED $422
+    INDIR
+    IMMED $1022
+    CMP_NEQ
+    JMPT .sub_29_4d ;$4d
+    JAL .sub_29_ae ;$ae
+    NPREF POPALL
+
+.sub_29_4d
+    RET
+
+.sub_29_4e
+    RET
+
+.sub_29_4f
+    IMMED $422
+    INDIR
+    IMMED $3994
+    STR
+    POPALL
+    UO $3
+    IMMED $95
+    NPREF UO $6a
+    POPALL
+    POPALL
+    RET
+
+.sub_29_61
+    IMMED $172
+    INDIR
+    IMMED $ffff
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_29_73
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_29_80
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_29_95
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+
+.sub_29_ae
+    IMMED $172
+    INDIR
+    IMMED $ffff
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_29_C0
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_29_CD
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_29_E1
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+    FGAME

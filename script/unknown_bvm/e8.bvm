@@ -1,0 +1,27 @@
+    JAL .sub_e8_4 ;$4
+    RET
+
+.sub_e8_4
+    IMMED $3a98
+    IMMED $172
+    INDIR
+    ADD
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $172
+    INDIR
+    NPREF UO $e7
+    POPALL
+    IMMED $3a98
+    IMMED $172
+    INDIR
+    ADD
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    RET
+    FGAME

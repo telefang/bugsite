@@ -1,0 +1,195 @@
+    JAL .sub_1e_4 ;$4
+    RET
+
+.sub_1e_4
+    IMMED $422
+    INDIR
+    IMMED $bb8
+    CMP_NEQ
+    JMPT .sub_1e_17 ;$17
+    JAL .sub_1e_74 ;$74
+    NPREF POPALL
+    JMP .sub_1e_73 ;$73
+
+.sub_1e_17
+    IMMED $422
+    INDIR
+    IMMED $bc2
+    CMP_NEQ
+    JMPT .sub_1e_2a ;$2a
+    JAL .sub_1e_75 ;$75
+    NPREF POPALL
+    JMP .sub_1e_73 ;$73
+
+.sub_1e_2a
+    IMMED $422
+    INDIR
+    IMMED $bc3
+    CMP_NEQ
+    JMPT .sub_1e_3d ;$3d
+    JAL .sub_1e_c1 ;$c1
+    NPREF POPALL
+    JMP .sub_1e_73 ;$73
+
+.sub_1e_3d
+    IMMED $422
+    INDIR
+    IMMED $be0
+    CMP_NEQ
+    JMPT .sub_1e_50 ;$50
+    JAL .sub_1e_c2 ;$c2
+    NPREF POPALL
+    JMP .sub_1e_73 ;$73
+
+.sub_1e_50
+    IMMED $422
+    INDIR
+    IMMED $bea
+    CMP_NEQ
+    JMPT .sub_1e_63 ;$63
+    JAL .sub_1e_c3 ;$c3
+    NPREF POPALL
+    JMP .sub_1e_73 ;$73
+
+.sub_1e_63
+    IMMED $422
+    INDIR
+    IMMED $bf4
+    CMP_NEQ
+    JMPT .sub_1e_73 ;$73
+    JAL .sub_1e_c4 ;$c4
+    NPREF POPALL
+
+.sub_1e_73
+    RET
+
+.sub_1e_74
+    RET
+
+.sub_1e_75
+    IMMED $172
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_1E_87
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_1E_92
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_1E_A1
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_1E_AB
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+
+.sub_1e_c1
+    RET
+
+.sub_1e_c2
+    RET
+
+.sub_1e_c3
+    RET
+
+.sub_1e_c4
+    IMMED $172
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_1E_D6
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_1E_E1
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_1E_EF
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_1E_FE
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_1E_113
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_1E_122
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_1E_132
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_1E_142
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_1E_153
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    RET
+    FGAME

@@ -1,0 +1,52 @@
+    JAL .sub_be_4 ;$4
+    RET
+
+.sub_be_4
+    IMMED $49f
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+
+.sub_be_16
+    IMMED $172
+    INDIR
+    IMMED $6
+    CMP_GT
+    JMPT .sub_be_50 ;$50
+    IMMED $3a98
+    IMMED $172
+    INDIR
+    ADD
+    PRED
+    IMMED $0
+    CMP_EQ
+    JMPT .sub_be_3f ;$3f
+    IMMED $49f
+    INDIR
+    IMMED $49f
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+
+.sub_be_3f
+    IMMED $172
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    JMP .sub_be_16 ;$16
+
+.sub_be_50
+    RET
+    FGAME

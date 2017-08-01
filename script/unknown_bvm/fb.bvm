@@ -1,0 +1,95 @@
+    JAL .sub_fb_4 ;$4
+    RET
+
+.sub_fb_4
+    IMMED $172
+    INDIR
+    UO $3
+    IMMED $64
+    NPREF UO $67
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $a
+    CMP_GEQ
+    JMPT .sub_fb_28 ;$28
+    IMMED $172
+    INDIR
+    IMMED $4b5
+    INDIR
+    STR
+    POPALL
+    JMP .sub_fb_91 ;$91
+
+.sub_fb_28
+    IMMED $172
+    INDIR
+    UO $3
+    IMMED $4
+    NPREF UO $67
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_fb_4c ;$4c
+    IMMED $172
+    INDIR
+    IMMED $4b1
+    INDIR
+    STR
+    POPALL
+    JMP .sub_fb_91 ;$91
+
+.sub_fb_4c
+    IMMED $172
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_fb_64 ;$64
+    IMMED $172
+    INDIR
+    IMMED $4b2
+    INDIR
+    STR
+    POPALL
+    JMP .sub_fb_91 ;$91
+
+.sub_fb_64
+    IMMED $172
+    INDIR
+    IMMED $2
+    CMP_NEQ
+    JMPT .sub_fb_7c ;$7c
+    IMMED $172
+    INDIR
+    IMMED $4b3
+    INDIR
+    STR
+    POPALL
+    JMP .sub_fb_91 ;$91
+
+.sub_fb_7c
+    IMMED $172
+    INDIR
+    IMMED $3
+    CMP_NEQ
+    JMPT .sub_fb_91 ;$91
+    IMMED $172
+    INDIR
+    IMMED $4b4
+    INDIR
+    STR
+    POPALL
+
+.sub_fb_91
+    IMMED $42a
+    INDIR
+    IMMED $172
+    INDIR
+    STR
+    POPALL
+    RET
+    FGAME

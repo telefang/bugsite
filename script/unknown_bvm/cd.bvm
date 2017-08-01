@@ -1,0 +1,59 @@
+    JAL .sub_cd_4 ;$4
+    RET
+
+.sub_cd_4
+    IMMED $172
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $2
+    MUL
+    STR
+    POPALL
+    UO $3
+    IMMED $202
+    IMMED $172
+    INDIR
+    ADD
+    ENOP $2d
+    IMMED $0
+    ENOP $2d
+    IMMED $100
+    ENOP $2d
+    IMMED $8800
+    ENOP $2d
+    IMMED $0
+    NPREF UO $5f
+    POPALL
+    UO $3
+    IMMED $202
+    IMMED $172
+    INDIR
+    ADD
+    IMMED $1
+    ADD
+    ENOP $2d
+    IMMED $0
+    ENOP $2d
+    IMMED $6
+    ENOP $2d
+    IMMED $6
+    NPREF UO $75
+    POPALL
+    UO $3
+    IMMED $202
+    IMMED $172
+    INDIR
+    ADD
+    IMMED $1
+    ADD
+    ENOP $2d
+    IMMED $0
+    ENOP $2d
+    IMMED $7
+    ENOP $2d
+    IMMED $7
+    NPREF UO $75
+    POPALL
+    RET
+    FGAME

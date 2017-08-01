@@ -1,0 +1,41 @@
+    JAL .sub_53_4 ;$4
+    RET
+
+.sub_53_4
+    IMMED $422
+    INDIR
+    IMMED $206c
+    CMP_NEQ
+    JMPT .sub_53_17 ;$17
+    JAL .sub_53_28 ;$28
+    NPREF POPALL
+    JMP .sub_53_27 ;$27
+
+.sub_53_17
+    IMMED $422
+    INDIR
+    IMMED $2076
+    CMP_NEQ
+    JMPT .sub_53_27 ;$27
+    JAL .sub_53_29 ;$29
+    NPREF POPALL
+
+.sub_53_27
+    RET
+
+.sub_53_28
+    RET
+
+.sub_53_29
+    IMMED $422
+    INDIR
+    IMMED $3214
+    STR
+    POPALL
+    UO $3
+    IMMED $95
+    NPREF UO $6a
+    POPALL
+    POPALL
+    RET
+    FGAME

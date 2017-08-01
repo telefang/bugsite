@@ -1,0 +1,842 @@
+    JAL .sub_8a_4 ;$4
+    RET
+
+.sub_8a_4
+    IMMED $422
+    INDIR
+    IMMED $35e8
+    CMP_NEQ
+    JMPT .sub_8a_17 ;$17
+    JAL .sub_8a_74 ;$74
+    NPREF POPALL
+    JMP .sub_8a_73 ;$73
+
+.sub_8a_17
+    IMMED $422
+    INDIR
+    IMMED $35f2
+    CMP_NEQ
+    JMPT .sub_8a_2a ;$2a
+    JAL .sub_8a_75 ;$75
+    NPREF POPALL
+    JMP .sub_8a_73 ;$73
+
+.sub_8a_2a
+    IMMED $422
+    INDIR
+    IMMED $35fc
+    CMP_NEQ
+    JMPT .sub_8a_3d ;$3d
+    JAL .sub_8a_1a2 ;$1a2
+    NPREF POPALL
+    JMP .sub_8a_73 ;$73
+
+.sub_8a_3d
+    IMMED $422
+    INDIR
+    IMMED $3606
+    CMP_NEQ
+    JMPT .sub_8a_50 ;$50
+    JAL .sub_8a_2cf ;$2cf
+    NPREF POPALL
+    JMP .sub_8a_73 ;$73
+
+.sub_8a_50
+    IMMED $422
+    INDIR
+    IMMED $3610
+    CMP_NEQ
+    JMPT .sub_8a_63 ;$63
+    JAL .sub_8a_3fc ;$3fc
+    NPREF POPALL
+    JMP .sub_8a_73 ;$73
+
+.sub_8a_63
+    IMMED $422
+    INDIR
+    IMMED $361a
+    CMP_NEQ
+    JMPT .sub_8a_73 ;$73
+    JAL .sub_8a_512 ;$512
+    NPREF POPALL
+
+.sub_8a_73
+    RET
+
+.sub_8a_74
+    RET
+
+.sub_8a_75
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_8A_87
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_99
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_AF
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_C1
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_D2
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    IMMED $35f2
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $bb8
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_107 ;$107
+    IMMED $42a
+    INDIR
+    IMMED $3a
+    STR
+    POPALL
+    JMP .sub_8a_155 ;$155
+
+.sub_8a_107
+    IMMED $1130
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_11e ;$11e
+    IMMED $42a
+    INDIR
+    IMMED $3b
+    STR
+    POPALL
+    JMP .sub_8a_155 ;$155
+
+.sub_8a_11e
+    IMMED $1900
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_135 ;$135
+    IMMED $42a
+    INDIR
+    IMMED $3c
+    STR
+    POPALL
+    JMP .sub_8a_155 ;$155
+
+.sub_8a_135
+    IMMED $2134
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_14c ;$14c
+    IMMED $42a
+    INDIR
+    IMMED $3d
+    STR
+    POPALL
+    JMP .sub_8a_155 ;$155
+
+.sub_8a_14c
+    IMMED $42a
+    INDIR
+    IMMED $3e
+    STR
+    POPALL
+
+.sub_8a_155
+    UO $3
+    IMMED $d2
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $10e
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $7e
+    INDIR
+    NPREF UO $6a
+    POPALL
+    UO $3
+    IMMED $d3
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $100
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $35f2
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    RET
+
+.sub_8a_1a2
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_8A_1B4
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_1C6
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_1DC
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_1EE
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_1FF
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    IMMED $35fc
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $bb8
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_234 ;$234
+    IMMED $42a
+    INDIR
+    IMMED $3a
+    STR
+    POPALL
+    JMP .sub_8a_282 ;$282
+
+.sub_8a_234
+    IMMED $1130
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_24b ;$24b
+    IMMED $42a
+    INDIR
+    IMMED $3b
+    STR
+    POPALL
+    JMP .sub_8a_282 ;$282
+
+.sub_8a_24b
+    IMMED $1900
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_262 ;$262
+    IMMED $42a
+    INDIR
+    IMMED $3c
+    STR
+    POPALL
+    JMP .sub_8a_282 ;$282
+
+.sub_8a_262
+    IMMED $2134
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_279 ;$279
+    IMMED $42a
+    INDIR
+    IMMED $3d
+    STR
+    POPALL
+    JMP .sub_8a_282 ;$282
+
+.sub_8a_279
+    IMMED $42a
+    INDIR
+    IMMED $3e
+    STR
+    POPALL
+
+.sub_8a_282
+    UO $3
+    IMMED $d2
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $10e
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $7e
+    INDIR
+    NPREF UO $6a
+    POPALL
+    UO $3
+    IMMED $d3
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $100
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $35fc
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    RET
+
+.sub_8a_2cf
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_8A_2E1
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_2F3
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_309
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_31B
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_32C
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    IMMED $3606
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $bb8
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_361 ;$361
+    IMMED $42a
+    INDIR
+    IMMED $3a
+    STR
+    POPALL
+    JMP .sub_8a_3af ;$3af
+
+.sub_8a_361
+    IMMED $1130
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_378 ;$378
+    IMMED $42a
+    INDIR
+    IMMED $3b
+    STR
+    POPALL
+    JMP .sub_8a_3af ;$3af
+
+.sub_8a_378
+    IMMED $1900
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_38f ;$38f
+    IMMED $42a
+    INDIR
+    IMMED $3c
+    STR
+    POPALL
+    JMP .sub_8a_3af ;$3af
+
+.sub_8a_38f
+    IMMED $2134
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_3a6 ;$3a6
+    IMMED $42a
+    INDIR
+    IMMED $3d
+    STR
+    POPALL
+    JMP .sub_8a_3af ;$3af
+
+.sub_8a_3a6
+    IMMED $42a
+    INDIR
+    IMMED $3e
+    STR
+    POPALL
+
+.sub_8a_3af
+    UO $3
+    IMMED $d2
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $10e
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $7e
+    INDIR
+    NPREF UO $6a
+    POPALL
+    UO $3
+    IMMED $d3
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $100
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $3606
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    RET
+
+.sub_8a_3fc
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_8A_40E
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_420
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_430
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_442
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    IMMED $3610
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $bb8
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_477 ;$477
+    IMMED $42a
+    INDIR
+    IMMED $35
+    STR
+    POPALL
+    JMP .sub_8a_4c5 ;$4c5
+
+.sub_8a_477
+    IMMED $1130
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_48e ;$48e
+    IMMED $42a
+    INDIR
+    IMMED $36
+    STR
+    POPALL
+    JMP .sub_8a_4c5 ;$4c5
+
+.sub_8a_48e
+    IMMED $1900
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_4a5 ;$4a5
+    IMMED $42a
+    INDIR
+    IMMED $37
+    STR
+    POPALL
+    JMP .sub_8a_4c5 ;$4c5
+
+.sub_8a_4a5
+    IMMED $2134
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_4bc ;$4bc
+    IMMED $42a
+    INDIR
+    IMMED $38
+    STR
+    POPALL
+    JMP .sub_8a_4c5 ;$4c5
+
+.sub_8a_4bc
+    IMMED $42a
+    INDIR
+    IMMED $39
+    STR
+    POPALL
+
+.sub_8a_4c5
+    UO $3
+    IMMED $d2
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $10e
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $7e
+    INDIR
+    NPREF UO $6a
+    POPALL
+    UO $3
+    IMMED $d3
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $100
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $3610
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    RET
+
+.sub_8a_512
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $d5
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    DB STR_8A_524
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    DB STR_8A_536
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $82
+    POPALL
+    UO $3
+    DB STR_8A_54C
+
+    NPREF UO $4c
+    POPALL
+    UO $3
+    NPREF UO $60
+    POPALL
+    UO $3
+    NPREF UO $b4
+    POPALL
+    IMMED $361a
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $bb8
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_585 ;$585
+    IMMED $42a
+    INDIR
+    IMMED $30
+    STR
+    POPALL
+    JMP .sub_8a_5d3 ;$5d3
+
+.sub_8a_585
+    IMMED $1130
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_59c ;$59c
+    IMMED $42a
+    INDIR
+    IMMED $31
+    STR
+    POPALL
+    JMP .sub_8a_5d3 ;$5d3
+
+.sub_8a_59c
+    IMMED $1900
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_5b3 ;$5b3
+    IMMED $42a
+    INDIR
+    IMMED $32
+    STR
+    POPALL
+    JMP .sub_8a_5d3 ;$5d3
+
+.sub_8a_5b3
+    IMMED $2134
+    PRED
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_8a_5ca ;$5ca
+    IMMED $42a
+    INDIR
+    IMMED $33
+    STR
+    POPALL
+    JMP .sub_8a_5d3 ;$5d3
+
+.sub_8a_5ca
+    IMMED $42a
+    INDIR
+    IMMED $34
+    STR
+    POPALL
+
+.sub_8a_5d3
+    UO $3
+    IMMED $d2
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $10e
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $20
+    PRED
+    IMMED $0
+    STR
+    POPALL
+    IMMED $3c
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    UO $3
+    IMMED $7e
+    INDIR
+    NPREF UO $6a
+    POPALL
+    UO $3
+    IMMED $d3
+    NPREF UO $6a
+    POPALL
+    POPALL
+    UO $3
+    IMMED $100
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $361a
+    PRED
+    IMMED $1
+    STR
+    POPALL
+    RET
+    FGAME

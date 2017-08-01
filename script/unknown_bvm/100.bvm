@@ -1,0 +1,24 @@
+    JAL .sub_100_4 ;$4
+    RET
+
+.sub_100_4
+    UO $3
+    NPREF UO $7f
+    POPALL
+    UO $3
+    NPREF UO $5d
+    POPALL
+    IMMED $150
+    INDIR
+    IMMED $0
+    CMP_EQ
+    JMPT .sub_100_1f ;$1f
+    UO $3
+    IMMED $150
+    INDIR
+    NPREF UO $be
+    POPALL
+
+.sub_100_1f
+    RET
+    FGAME

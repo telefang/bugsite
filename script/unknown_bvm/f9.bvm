@@ -1,0 +1,111 @@
+    JAL .sub_f9_4 ;$4
+    RET
+
+.sub_f9_4
+    IMMED $17e
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $31
+    CMP_GT
+    JMPT .sub_f9_59 ;$59
+    IMMED $173
+    INDIR
+    IMMED $530
+    IMMED $172
+    INDIR
+    ADD
+    INDIR
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $449
+    INDIR
+    ADD
+    IMMED $63
+    CMP_GT
+    JMPT .sub_f9_59 ;$59
+    IMMED $530
+    IMMED $172
+    INDIR
+    ADD
+    INDIR
+    IMMED $173
+    INDIR
+    IMMED $449
+    INDIR
+    ADD
+    STR
+    POPALL
+    IMMED $17e
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    JAL .sub_f9_5a ;$5a
+    NPREF POPALL
+
+.sub_f9_59
+    RET
+
+.sub_f9_5a
+    IMMED $172
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $57f
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+
+.sub_f9_6c
+    IMMED $172
+    INDIR
+    IMMED $31
+    CMP_GEQ
+    JMPT .sub_f9_b4 ;$b4
+    IMMED $173
+    INDIR
+    IMMED $530
+    IMMED $172
+    INDIR
+    ADD
+    IMMED $1
+    ADD
+    INDIR
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $0
+    CMP_EQ
+    JMPT .sub_f9_a3 ;$a3
+    IMMED $57f
+    INDIR
+    IMMED $57f
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+
+.sub_f9_a3
+    IMMED $172
+    INDIR
+    IMMED $172
+    INDIR
+    IMMED $1
+    ADD
+    STR
+    POPALL
+    JMP .sub_f9_6c ;$6c
+
+.sub_f9_b4
+    RET
+    FGAME

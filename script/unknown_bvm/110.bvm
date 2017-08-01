@@ -1,0 +1,615 @@
+    JAL .sub_110_4 ;$4
+    RET
+
+.sub_110_4
+    IMMED $172
+    INDIR
+    IMMED $0
+    CMP_NEQ
+    JMPT .sub_110_227 ;$227
+    UO $3
+    NPREF UO $8e
+    POPALL
+    UO $3
+    NPREF UO $4a
+    POPALL
+    UO $3
+    NPREF UO $62
+    POPALL
+    IMMED $14d
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $cc
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $7
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $125
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $416
+    INDIR
+    IMMED $100
+    DIV
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $173
+    INDIR
+    IMMED $f
+    AND
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_110_82 ;$82
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    JMP .sub_110_d0 ;$d0
+
+.sub_110_82
+    IMMED $173
+    INDIR
+    IMMED $2
+    CMP_NEQ
+    JMPT .sub_110_99 ;$99
+    IMMED $173
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    JMP .sub_110_d0 ;$d0
+
+.sub_110_99
+    IMMED $173
+    INDIR
+    IMMED $4
+    CMP_NEQ
+    JMPT .sub_110_b0 ;$b0
+    IMMED $173
+    INDIR
+    IMMED $2
+    STR
+    POPALL
+    JMP .sub_110_d0 ;$d0
+
+.sub_110_b0
+    IMMED $173
+    INDIR
+    IMMED $8
+    CMP_NEQ
+    JMPT .sub_110_c7 ;$c7
+    IMMED $173
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    JMP .sub_110_d0 ;$d0
+
+.sub_110_c7
+    IMMED $173
+    INDIR
+    IMMED $4
+    STR
+    POPALL
+
+.sub_110_d0
+    IMMED $172
+    INDIR
+    IMMED $a0
+    IMMED $10
+    IMMED $173
+    INDIR
+    MUL
+    ADD
+    STR
+    POPALL
+    UO $3
+    IMMED $d2a
+    ENOP $2d
+    IMMED $172
+    INDIR
+    ENOP $2d
+    IMMED $10
+    ENOP $2d
+    IMMED $9200
+    ENOP $2d
+    IMMED $1
+    NPREF UO $5f
+    POPALL
+    UO $3
+    IMMED $d2a
+    IMMED $4
+    ADD
+    ENOP $2d
+    IMMED $0
+    ENOP $2d
+    IMMED $173
+    INDIR
+    IMMED $1
+    ADD
+    ENOP $2d
+    IMMED $1
+    NPREF UO $75
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $125
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $416
+    INDIR
+    IMMED $100
+    DIV
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $173
+    INDIR
+    IMMED $f
+    AND
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_110_163 ;$163
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    JMP .sub_110_1b1 ;$1b1
+
+.sub_110_163
+    IMMED $173
+    INDIR
+    IMMED $2
+    CMP_NEQ
+    JMPT .sub_110_17a ;$17a
+    IMMED $173
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    JMP .sub_110_1b1 ;$1b1
+
+.sub_110_17a
+    IMMED $173
+    INDIR
+    IMMED $4
+    CMP_NEQ
+    JMPT .sub_110_191 ;$191
+    IMMED $173
+    INDIR
+    IMMED $2
+    STR
+    POPALL
+    JMP .sub_110_1b1 ;$1b1
+
+.sub_110_191
+    IMMED $173
+    INDIR
+    IMMED $8
+    CMP_NEQ
+    JMPT .sub_110_1a8 ;$1a8
+    IMMED $173
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    JMP .sub_110_1b1 ;$1b1
+
+.sub_110_1a8
+    IMMED $173
+    INDIR
+    IMMED $4
+    STR
+    POPALL
+
+.sub_110_1b1
+    IMMED $172
+    INDIR
+    IMMED $a0
+    IMMED $10
+    IMMED $173
+    INDIR
+    MUL
+    ADD
+    STR
+    POPALL
+    UO $3
+    IMMED $d2a
+    ENOP $2d
+    IMMED $172
+    INDIR
+    ENOP $2d
+    IMMED $10
+    ENOP $2d
+    IMMED $9300
+    ENOP $2d
+    IMMED $1
+    NPREF UO $5f
+    POPALL
+    UO $3
+    IMMED $d2a
+    IMMED $4
+    ADD
+    ENOP $2d
+    IMMED $0
+    ENOP $2d
+    IMMED $173
+    INDIR
+    IMMED $1
+    ADD
+    ENOP $2d
+    IMMED $2
+    NPREF UO $75
+    POPALL
+    UO $3
+    IMMED $0
+    ENOP $2d
+    IMMED $17
+    NPREF UO $4b
+    POPALL
+    UO $3
+    IMMED $9
+    IMMED $8
+    MUL
+    NPREF UO $dd
+    POPALL
+    UO $3
+    IMMED $0
+    ENOP $2d
+    IMMED $c
+    ENOP $2d
+    IMMED $13
+    ENOP $2d
+    IMMED $11
+    NPREF UO $7d
+    POPALL
+    UO $3
+    NPREF UO $b3
+    POPALL
+    JMP .sub_110_42f ;$42f
+
+.sub_110_227
+    IMMED $172
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_110_262 ;$262
+    UO $3
+    IMMED $0
+    ENOP $2d
+    IMMED $17
+    NPREF UO $4b
+    POPALL
+    UO $3
+    IMMED $9
+    IMMED $8
+    MUL
+    NPREF UO $dd
+    POPALL
+    UO $3
+    IMMED $0
+    ENOP $2d
+    IMMED $c
+    ENOP $2d
+    IMMED $13
+    ENOP $2d
+    IMMED $11
+    NPREF UO $7d
+    POPALL
+    UO $3
+    NPREF UO $b3
+    POPALL
+    JMP .sub_110_42f ;$42f
+
+.sub_110_262
+    IMMED $172
+    INDIR
+    IMMED $2
+    CMP_NEQ
+    JMPT .sub_110_42f ;$42f
+    IMMED $172
+    INDIR
+    IMMED $7
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $125
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $416
+    INDIR
+    IMMED $100
+    DIV
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $173
+    INDIR
+    IMMED $f
+    AND
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_110_2ba ;$2ba
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    JMP .sub_110_308 ;$308
+
+.sub_110_2ba
+    IMMED $173
+    INDIR
+    IMMED $2
+    CMP_NEQ
+    JMPT .sub_110_2d1 ;$2d1
+    IMMED $173
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    JMP .sub_110_308 ;$308
+
+.sub_110_2d1
+    IMMED $173
+    INDIR
+    IMMED $4
+    CMP_NEQ
+    JMPT .sub_110_2e8 ;$2e8
+    IMMED $173
+    INDIR
+    IMMED $2
+    STR
+    POPALL
+    JMP .sub_110_308 ;$308
+
+.sub_110_2e8
+    IMMED $173
+    INDIR
+    IMMED $8
+    CMP_NEQ
+    JMPT .sub_110_2ff ;$2ff
+    IMMED $173
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    JMP .sub_110_308 ;$308
+
+.sub_110_2ff
+    IMMED $173
+    INDIR
+    IMMED $4
+    STR
+    POPALL
+
+.sub_110_308
+    IMMED $172
+    INDIR
+    IMMED $a0
+    IMMED $10
+    IMMED $173
+    INDIR
+    MUL
+    ADD
+    STR
+    POPALL
+    UO $3
+    IMMED $d2a
+    ENOP $2d
+    IMMED $172
+    INDIR
+    ENOP $2d
+    IMMED $10
+    ENOP $2d
+    IMMED $9200
+    ENOP $2d
+    IMMED $1
+    NPREF UO $5f
+    POPALL
+    UO $3
+    IMMED $d2a
+    IMMED $4
+    ADD
+    ENOP $2d
+    IMMED $0
+    ENOP $2d
+    IMMED $173
+    INDIR
+    IMMED $1
+    ADD
+    ENOP $2d
+    IMMED $1
+    NPREF UO $75
+    POPALL
+    IMMED $172
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    UO $3
+    IMMED $125
+    NPREF UO $6a
+    POPALL
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $416
+    INDIR
+    IMMED $100
+    DIV
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $173
+    INDIR
+    IMMED $f
+    AND
+    STR
+    POPALL
+    IMMED $173
+    INDIR
+    IMMED $1
+    CMP_NEQ
+    JMPT .sub_110_39b ;$39b
+    IMMED $173
+    INDIR
+    IMMED $0
+    STR
+    POPALL
+    JMP .sub_110_3e9 ;$3e9
+
+.sub_110_39b
+    IMMED $173
+    INDIR
+    IMMED $2
+    CMP_NEQ
+    JMPT .sub_110_3b2 ;$3b2
+    IMMED $173
+    INDIR
+    IMMED $1
+    STR
+    POPALL
+    JMP .sub_110_3e9 ;$3e9
+
+.sub_110_3b2
+    IMMED $173
+    INDIR
+    IMMED $4
+    CMP_NEQ
+    JMPT .sub_110_3c9 ;$3c9
+    IMMED $173
+    INDIR
+    IMMED $2
+    STR
+    POPALL
+    JMP .sub_110_3e9 ;$3e9
+
+.sub_110_3c9
+    IMMED $173
+    INDIR
+    IMMED $8
+    CMP_NEQ
+    JMPT .sub_110_3e0 ;$3e0
+    IMMED $173
+    INDIR
+    IMMED $3
+    STR
+    POPALL
+    JMP .sub_110_3e9 ;$3e9
+
+.sub_110_3e0
+    IMMED $173
+    INDIR
+    IMMED $4
+    STR
+    POPALL
+
+.sub_110_3e9
+    IMMED $172
+    INDIR
+    IMMED $a0
+    IMMED $10
+    IMMED $173
+    INDIR
+    MUL
+    ADD
+    STR
+    POPALL
+    UO $3
+    IMMED $d2a
+    ENOP $2d
+    IMMED $172
+    INDIR
+    ENOP $2d
+    IMMED $10
+    ENOP $2d
+    IMMED $9300
+    ENOP $2d
+    IMMED $1
+    NPREF UO $5f
+    POPALL
+    UO $3
+    IMMED $d2a
+    IMMED $4
+    ADD
+    ENOP $2d
+    IMMED $0
+    ENOP $2d
+    IMMED $173
+    INDIR
+    IMMED $1
+    ADD
+    ENOP $2d
+    IMMED $2
+    NPREF UO $75
+    POPALL
+
+.sub_110_42f
+    RET
+    FGAME
