@@ -1,0 +1,1 @@
+INCLUDE "component/bugvm/vm_state.inc"
