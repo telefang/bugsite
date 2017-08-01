@@ -1,0 +1,29 @@
+;Prevent sharing ROMs accidentally.
+*.gb
+*.gbc
+*.sav
+*.rtc
+
+;Prevent committing compiled object code
+*.o
+*.2bpp
+*.1bpp
+*.pcm
+*.map
+*.sym
+*.tmap
+*.pyc
+
+;Prevent committing compiled script data.
+*.scripttbl
+*.stringtbl
+*.stringblk
+*.stringidx
+*.sprite.bin
+
+;Prevent committing filesystem floatsam
+.DS_Store
+
+;Don't commit base/build files
+baseroms
+build
