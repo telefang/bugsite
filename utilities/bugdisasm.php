@@ -1,6 +1,6 @@
 <?php
 
-function disassemble_linkage_section($indexid, $resource_segment, $rom_data_str) {
+function disassemble_linkage_section($indexid, $resource_segment, $charmap, $rom_data_str) {
     // The current opcode to instruction table.
     $instructions=array(
         'NOP','ENOP $1','ENOP $2','UO $3','ENOP $4','ENOP $5','STR','SUML','ANDL','OR','XOR','AND','CMP_EQ','CMP_NEQ','CMP_LT','CMP_LEQ',
@@ -108,7 +108,7 @@ function disassemble_linkage_section($indexid, $resource_segment, $rom_data_str)
                 // Read bytes until we get a null byte.
                 while ($operand=ord($sectionstr[$i])) {
                     // Build a unicode string using the character table.
-                    $csvstr.=$csvtable[$operand];
+                    $csvstr.=$charmap[$operand];
                     $i++;
                 }
                 if (!empty($storeprefix)) {
@@ -171,7 +171,7 @@ function disassemble_rom($filename) {
 
     //A modified single-column UTF-16 csv file that acts as a character table.
     //Splitting the file by linebreaks means that I now have a character code to character lookup table.
-    $csvtable= explode($utf16_break, file_get_contents('script/charmap.bin'));
+    $charmap= explode($utf16_break, file_get_contents('script/charmap.bin'));
 
     // Read the rom contents into a string.
     $romasstr = file_get_contents($filename);
@@ -182,7 +182,7 @@ function disassemble_rom($filename) {
     foreach ($index as $indexid => $indexsegment) {
         // 500 and higher are static resouces, so lets ignore them.
         if ($indexid < 500) {
-            $ret = disassemble_linkage_section($indexid, $indexsegment, $romasstr);
+            $ret = disassemble_linkage_section($indexid, $indexsegment, $charmap, $romasstr);
             $asmfile = $ret[0];
             $tabfile .= $ret[1];
 
