@@ -557,6 +557,8 @@
     UO $3
     DB STR_127_425
 
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_127_531 ;$531
@@ -580,10 +582,9 @@
     JMP .sub_127_48f ;$48f
 
 .sub_127_47f
-    UO $3
-    DB STR_127_480
+    DB STR_127_47F
 
-    NPREF UO $4c
+    UO $4c
     POPALL
 
 .sub_127_48f
@@ -626,6 +627,10 @@
     UO $3
     DB STR_127_4EE
 
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_127_531 ;$531
@@ -636,8 +641,7 @@
     IMMED $7
     CMP_NEQ
     JMPT .sub_127_531 ;$531
-    UO $3
-    DB STR_127_51E
+    DB STR_127_51D
 
     NPREF UO $4c
     POPALL
@@ -1975,16 +1979,14 @@
     UO $3
     DB STR_127_E19
 
-    ENOP $2d
-    DB STR_127_E21
+    DB STR_127_E20
 
-    ENOP $2d
-    DB STR_127_E28
+    NOP
+    DB STR_127_E27
 
-    ENOP $2d
     DB STR_127_E2E
 
-    NPREF UO $70
+    UO $70
     POPALL
     UO $3
     IMMED $0
@@ -6039,11 +6041,9 @@
     UO $3
     DB STR_127_28D6
 
-    ENOP $2d
     DB STR_127_28DD
 
-    ENOP $2d
-    DB STR_127_28E4
+    DB STR_127_28E3
 
     NPREF UO $70
     POPALL
@@ -7655,8 +7655,7 @@
     IMMED $0
     NPREF UO $7e
     POPALL
-    UO $3
-    DB STR_127_33C0
+    DB STR_127_33BF
 
     NPREF UO $4c
     POPALL
@@ -7691,8 +7690,7 @@
     IMMED $1
     NPREF UO $7e
     POPALL
-    UO $3
-    DB STR_127_3403
+    DB STR_127_3402
 
     NPREF UO $4c
     POPALL
@@ -8999,7 +8997,7 @@
     CMP_LEQ
     JMPT .sub_127_3d1a ;$3d1a
     UO $3
-    IMMED $c
+    IMMED $b
     ENOP $2d
     IMMED $8
     ENOP $2d
@@ -9017,20 +9015,18 @@
     IMMED $0
     NPREF UO $7e
     POPALL
-    UO $3
-    DB STR_127_3CD5
+    DB STR_127_3CD4
+
+    DB STR_127_3CDA
+
+    DB STR_127_3CDF
 
     ENOP $2d
-    DB STR_127_3CDC
+    DB STR_127_3CE8
 
+    NOP
     ENOP $2d
-    DB STR_127_3CE3
-
-    ENOP $2d
-    DB STR_127_3CEA
-
-    ENOP $2d
-    DB STR_127_3CF2
+    DB STR_127_3CF1
 
     NPREF UO $70
     POPALL
@@ -9547,6 +9543,8 @@
     ENOP $2d
     DB STR_127_406B
 
+    NOP
+    NOP
     ENOP $2d
     DB STR_127_4073
 
@@ -9788,9 +9786,14 @@
     IMMED $d
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_127_4203
+    DB STR_127_4202
 
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     UO $3

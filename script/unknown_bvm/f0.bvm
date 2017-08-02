@@ -623,10 +623,9 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_f0_46b ;$46b
-    UO $3
-    DB STR_F0_45A
+    DB STR_F0_459
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     JMP .sub_f0_503 ;$503
 
@@ -636,8 +635,7 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_f0_485 ;$485
-    UO $3
-    DB STR_F0_477
+    DB STR_F0_476
 
     NPREF UO $4c
     POPALL
@@ -649,10 +647,9 @@
     IMMED $2
     CMP_NEQ
     JMPT .sub_f0_49d ;$49d
-    UO $3
-    DB STR_F0_491
+    DB STR_F0_490
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     JMP .sub_f0_503 ;$503
 
@@ -667,18 +664,16 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_f0_4c1 ;$4c1
-    UO $3
-    DB STR_F0_4B4
+    DB STR_F0_4B3
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     JMP .sub_f0_4cd ;$4cd
 
 .sub_f0_4c1
-    UO $3
-    DB STR_F0_4C2
+    DB STR_F0_4C1
 
-    NPREF UO $4c
+    UO $4c
     POPALL
 
 .sub_f0_4cd
@@ -690,10 +685,9 @@
     IMMED $4
     CMP_NEQ
     JMPT .sub_f0_4ea ;$4ea
-    UO $3
-    DB STR_F0_4DC
+    DB STR_F0_4DB
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     JMP .sub_f0_503 ;$503
 
@@ -703,10 +697,9 @@
     IMMED $5
     CMP_NEQ
     JMPT .sub_f0_503 ;$503
-    UO $3
-    DB STR_F0_4F6
+    DB STR_F0_4F5
 
-    NPREF UO $4c
+    UO $4c
     POPALL
 
 .sub_f0_503
@@ -1141,7 +1134,7 @@
     UO $3
     DB STR_F0_7DA
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     UO $3
     IMMED $2
@@ -1149,8 +1142,7 @@
     IMMED $10
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_7F5
+    DB STR_F0_7F4
 
     NPREF UO $4c
     POPALL
@@ -1171,8 +1163,7 @@
     IMMED $f
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_822
+    DB STR_F0_821
 
     NPREF UO $4c
     POPALL
@@ -1182,8 +1173,7 @@
     IMMED $10
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_83E
+    DB STR_F0_83D
 
     NPREF UO $4c
     POPALL
@@ -1207,6 +1197,8 @@
     UO $3
     DB STR_F0_86B
 
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
 
@@ -1307,9 +1299,11 @@
     UO $3
     NPREF UO $5b
     POPALL
-    UO $3
-    DB STR_F0_923
+    DB STR_F0_922
 
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     UO $3
@@ -1475,8 +1469,7 @@
     IMMED $10
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_A4C
+    DB STR_F0_A4B
 
     NPREF UO $4c
     POPALL
@@ -2184,11 +2177,9 @@
     ENOP $2d
     IMMED $10
     NPREF UO $50
-    POPALL
-    UO $3
-    DB STR_F0_F18
+    DB STR_F0_F16
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     UO $3
     NPREF UO $60
@@ -2263,7 +2254,7 @@
     UO $3
     DB STR_F0_F9A
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     UO $3
     IMMED $0
@@ -2393,15 +2384,14 @@
     IMMED $a
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_1096
+    DB STR_F0_1095
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     UO $3
-    IMMED $a
+    IMMED $6
     ENOP $2d
-    IMMED $b
+    IMMED $9
     NPREF UO $50
     POPALL
     UO $3
@@ -2449,9 +2439,7 @@
     ENOP $2d
     IMMED $0
     NPREF UO $7e
-    POPALL
-    UO $3
-    DB STR_F0_1102
+    DB STR_F0_1100
 
     NPREF UO $4c
     POPALL
@@ -2957,9 +2945,7 @@
     ENOP $2d
     IMMED $f
     NPREF UO $50
-    POPALL
-    UO $3
-    DB STR_F0_1475
+    DB STR_F0_1473
 
     NPREF UO $4c
     POPALL
@@ -2969,8 +2955,7 @@
     IMMED $10
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_148E
+    DB STR_F0_148D
 
     NPREF UO $4c
     POPALL
@@ -3386,16 +3371,13 @@
     IMMED $f7
     NPREF UO $6a
     POPALL
-    POPALL
+    UO $3
 
 .sub_f0_176d
-    UO $3
     NPREF UO $5b
-    POPALL
-    UO $3
-    DB STR_F0_1772
+    DB STR_F0_176F
 
-    NPREF UO $4c
+    UO $4c
     POPALL
     UO $3
     NPREF UO $60
@@ -3688,12 +3670,9 @@
     ENOP $2d
     IMMED $10
     NPREF UO $50
-    POPALL
-    UO $3
-    DB STR_F0_1968
+    DB STR_F0_1966
 
-    NPREF UO $4c
-    POPALL
+    UO $4c
     UO $3
     NPREF UO $60
     POPALL
@@ -4116,8 +4095,7 @@
     UO $3
     NPREF UO $60
     POPALL
-    UO $3
-    DB STR_F0_1C49
+    DB STR_F0_1C48
 
     NPREF UO $4c
     POPALL
@@ -4580,10 +4558,10 @@
     IMMED $4f0
     INDIR
     NPREF UO $af
-    POPALL
-    UO $3
-    DB STR_F0_1F88
+    DB STR_F0_1F86
 
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     UO $3
@@ -5757,7 +5735,7 @@
     POPALL
     POPALL
     UO $3
-    IMMED $4
+    IMMED $3
     ENOP $2d
     IMMED $b
     NPREF UO $50
@@ -5768,7 +5746,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    IMMED $4
+    IMMED $3
     ENOP $2d
     IMMED $c
     NPREF UO $50
@@ -5779,46 +5757,42 @@
     NPREF UO $4c
     POPALL
     UO $3
-    IMMED $4
+    IMMED $3
     ENOP $2d
     IMMED $d
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_27A6
+    DB STR_F0_27A5
 
     NPREF UO $4c
     POPALL
     UO $3
-    IMMED $4
+    IMMED $3
     ENOP $2d
     IMMED $e
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_27BB
+    DB STR_F0_27BA
 
     NPREF UO $4c
     POPALL
     UO $3
-    IMMED $4
+    IMMED $3
     ENOP $2d
     IMMED $f
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_27CF
+    DB STR_F0_27D0
 
     NPREF UO $4c
     POPALL
     UO $3
-    IMMED $4
+    IMMED $3
     ENOP $2d
     IMMED $10
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_27E5
+    DB STR_F0_27E4
 
     NPREF UO $4c
     POPALL
@@ -5896,8 +5870,7 @@
     IMMED $8
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_2879
+    DB STR_F0_2878
 
     NPREF UO $4c
     POPALL
@@ -6126,16 +6099,19 @@
     UO $3
     DB STR_F0_2A32
 
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2A3C
-
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2A48
-
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_f0_2b77 ;$2b77
@@ -6149,16 +6125,21 @@
     UO $3
     DB STR_F0_2A61
 
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2A6E
-
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2A7A
-
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_f0_2b77 ;$2b77
@@ -6172,16 +6153,20 @@
     UO $3
     DB STR_F0_2A93
 
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2A9F
-
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2AAB
-
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_f0_2b77 ;$2b77
@@ -6195,16 +6180,18 @@
     UO $3
     DB STR_F0_2AC4
 
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2ACF
-
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2ADB
-
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_f0_2b77 ;$2b77
@@ -6246,16 +6233,16 @@
     UO $3
     DB STR_F0_2B31
 
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2B3E
-
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2B49
-
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_f0_2b77 ;$2b77
@@ -6269,11 +6256,10 @@
     UO $3
     DB STR_F0_2B63
 
-    NPREF UO $4c
-    POPALL
-    UO $3
-    DB STR_F0_2B6E
-
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
 
@@ -6332,17 +6318,17 @@
     IMMED $13
     ENOP $2d
     IMMED $11
-    NPREF UO $7d
-    POPALL
-    UO $3
-    NPREF UO $5b
-    POPALL
-    UO $3
-    DB STR_F0_2BDB
+    NOP
+    NOP
+    UO $5b
+    DB STR_F0_2BD6
 
-    ENOP $2d
-    DB STR_F0_2BE3
+    DB STR_F0_2BDE
 
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $70
     POPALL
     UO $3
@@ -6751,8 +6737,7 @@
     IMMED $4
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F0_2EA7
+    DB STR_F0_2EA6
 
     NPREF UO $4c
     POPALL
@@ -12393,9 +12378,9 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_f0_5499 ;$5499
-    UO $3
-    DB STR_F0_548F
+    DB STR_F0_548E
 
+    NOP
     NPREF UO $4c
     POPALL
     JMP .sub_f0_54ed ;$54ed
@@ -12419,11 +12404,9 @@
     IMMED $8
     CMP_NEQ
     JMPT .sub_f0_54ca ;$54ca
-    UO $3
-    DB STR_F0_54BF
+    DB STR_F0_54BE
 
-    NPREF UO $4c
-    POPALL
+    UO $4c
     JMP .sub_f0_54ed ;$54ed
 
 .sub_f0_54ca
@@ -12432,8 +12415,7 @@
     IMMED $4
     CMP_NEQ
     JMPT .sub_f0_54e2 ;$54e2
-    UO $3
-    DB STR_F0_54D6
+    DB STR_F0_54D5
 
     NPREF UO $4c
     POPALL

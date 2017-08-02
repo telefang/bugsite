@@ -457,36 +457,32 @@
     IMMED $18
     CMP_LT
     JMPT .sub_f3_359 ;$359
-    UO $3
-    DB STR_F3_339
+    DB STR_F3_338
 
     ENOP $2d
-    DB STR_F3_343
+    DB STR_F3_33E
 
     ENOP $2d
-    DB STR_F3_34E
+    DB STR_F3_34C
 
     NPREF UO $70
     POPALL
     JMP .sub_f3_36c ;$36c
+    UO $3
 
 .sub_f3_359
-    UO $3
-    DB STR_F3_35A
+    DB STR_F3_359
 
-    ENOP $2d
-    DB STR_F3_35F
+    DB STR_F3_35E
 
-    ENOP $2d
     DB STR_F3_364
 
     NPREF UO $70
-    POPALL
 
 .sub_f3_36c
+    POPALL
     UO $3
-    IMMED $0
-    ENOP $2d
+    IMMED $2d00
     IMMED $1
     ENOP $2d
     IMMED $3
@@ -758,8 +754,7 @@
     POPALL
 
 .sub_f3_53c
-    UO $3
-    DB STR_F3_53D
+    DB STR_F3_53C
 
     NPREF UO $4c
     POPALL
@@ -778,9 +773,12 @@
     IMMED $5
     NPREF UO $7d
     POPALL
-    UO $3
-    DB STR_F3_561
+    DB STR_F3_55F
 
+    NOP
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     IMMED $73
@@ -1539,9 +1537,10 @@
     UO $3
     NPREF UO $5b
     POPALL
-    UO $3
-    DB STR_F3_A6F
+    DB STR_F3_A6E
 
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     IMMED $449
@@ -2291,9 +2290,11 @@
     UO $3
     NPREF UO $5b
     POPALL
-    UO $3
-    DB STR_F3_F77
+    DB STR_F3_F76
 
+    NOP
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     UO $3
@@ -2850,8 +2851,7 @@
     IMMED $8
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F3_133B
+    DB STR_F3_133A
 
     NPREF UO $4c
     POPALL
@@ -2899,9 +2899,10 @@
     INDIR
     NPREF UO $4d
     POPALL
-    UO $3
-    DB STR_F3_1391
+    DB STR_F3_1390
 
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     UO $3
@@ -2910,8 +2911,7 @@
     IMMED $d
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F3_13A4
+    DB STR_F3_13A3
 
     NPREF UO $4c
     POPALL
@@ -2958,8 +2958,7 @@
     IMMED $10
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F3_1404
+    DB STR_F3_1403
 
     NPREF UO $4c
     POPALL
@@ -3153,8 +3152,7 @@
     UO $3
     NPREF UO $5b
     POPALL
-    UO $3
-    DB STR_F3_1569
+    DB STR_F3_1568
 
     NPREF UO $4c
     POPALL
@@ -3199,8 +3197,7 @@
     UO $3
     NPREF UO $5b
     POPALL
-    UO $3
-    DB STR_F3_15BC
+    DB STR_F3_15BB
 
     NPREF UO $4c
     POPALL
@@ -3337,6 +3334,8 @@
     UO $3
     DB STR_F3_16BE
 
+    NOP
+    NOP
     NPREF UO $4c
     POPALL
     IMMED $73
@@ -3364,7 +3363,7 @@
     NPREF UO $82
     POPALL
     UO $3
-    DB STR_F3_170B
+    DB STR_F3_1709
 
     NPREF UO $4c
     POPALL
@@ -3549,8 +3548,7 @@
     UO $3
     NPREF UO $5b
     POPALL
-    UO $3
-    DB STR_F3_185A
+    DB STR_F3_1859
 
     NPREF UO $4c
     POPALL
@@ -3886,8 +3884,7 @@
     IMMED $3
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F3_1AB3
+    DB STR_F3_1AB2
 
     NPREF UO $4c
     POPALL
@@ -6900,8 +6897,7 @@
     IMMED $a
     NPREF UO $50
     POPALL
-    UO $3
-    DB STR_F3_2F77
+    DB STR_F3_2F76
 
     NPREF UO $4c
     POPALL
