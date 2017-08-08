@@ -29,5 +29,6 @@ opcodes = {
     "DB": 0x3E,
     "JAL": 0x3F, #TODO: Shouldn't this be CALL?
     "FARCALL": 0x6A,
-    "FARJMP": 0x6B
+    "FARJMP": 0x6B,
+    "FGAME": 0xFF #will crash everything horribly all the time
 }
