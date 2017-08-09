@@ -1,6 +1,8 @@
 from parsimonious.grammar import Grammar
 from parsimonious.nodes import NodeVisitor, Node
 
+from BugTools.util import flatten
+
 bvm_grammar = Grammar(
     """
     lines = _ line*
@@ -33,13 +35,6 @@ bvm_grammar = Grammar(
     comment = ~";[^\\r\\n]*"
     whitespace = ~"[ \t]+"
     """);
-
-def flatten(S):
-    if S == []:
-        return S
-    if isinstance(S[0], list):
-        return flatten(S[0]) + flatten(S[1:])
-    return S[:1] + flatten(S[1:])
 
 class SymbolicRef(object):
     def __init__(self, name, is_local):
