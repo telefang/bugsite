@@ -7,7 +7,9 @@ def parse_stringtbl(infile):
         sym, decl = line.split("\t")
 
         decl = decl.strip()
+        separator = decl[0]
         decl = decl[1:-1]
+        decl.replace(separator + separator, separator)
 
         known_equates[sym] = decl
 
