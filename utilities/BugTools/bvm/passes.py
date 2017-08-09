@@ -160,7 +160,7 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                         raise InvalidOperandError(command)
             else:
                 try:
-                    encoded_stream.append(bytes[opcodes[command.opcode]])
+                    encoded_stream.append(bytes([opcodes[command.opcode]]))
                 except KeyError:
                     raise InvalidOpcodeError(command)
 
@@ -177,9 +177,9 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                     #This is the only command that accepts variable operands...
                     for operand in resolved_operands:
                         if type(operand) is int:
-                            encoded_stream.append(bytes[operand])
+                            encoded_stream.append(bytes(operand))
                         elif type(operand) is str:
-                            encoded_stream.append(string_end(operand))
+                            encoded_stream.append(string_enc(operand))
                         else:
                             raise InvalidOperandError(command)
                 else:
@@ -187,4 +187,4 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                     if len(resolved_operands) != 0:
                         raise InvalidOperandError(command)
 
-    return b"".join(encoded_stream)
+    return (parselist, known_equates, string_enc, b"".join(encoded_stream))
