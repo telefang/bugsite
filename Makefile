@@ -77,4 +77,4 @@ clean:
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
    
 %.bugvm.bin: %.bvm
-	@$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.bin $@
+	@$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
