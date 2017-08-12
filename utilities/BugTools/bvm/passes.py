@@ -39,7 +39,7 @@ def resolve_equates(parselist, known_equates = None):
 
     return parselist, known_equates
 
-def fix_labels(parselist, known_equates = None):
+def fix_labels(parselist, known_equates = None, string_enc = None):
     """Given a list of .bvm commands, find the final positions of all labels.
 
     Labels will be added to the known equates list as if they were defined by
@@ -96,7 +96,7 @@ def fix_labels(parselist, known_equates = None):
                     if type(operand) is int:
                         instr_len += 1 #TODO: tag ints so we know what size they are...
                     elif type(operand) is str:
-                        instr_len += len(operand) #we assume all characters take 1 byte to encode...
+                        instr_len += len(string_enc(operand))
                     else:
                         raise InvalidOperandError(command)
 
@@ -180,7 +180,7 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                     #This is the only command that accepts variable operands...
                     for operand in resolved_operands:
                         if type(operand) is int:
-                            encoded_stream.append(bytes(operand))
+                            encoded_stream.append(bytes([operand & 0xFF]))
                         elif type(operand) is str:
                             encoded_stream.append(string_enc(operand))
                         else:

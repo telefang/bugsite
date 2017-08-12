@@ -27,7 +27,7 @@ def bvmasm():
         mp = InstrListVisitor().visit(tree)
 
         mp, ke = resolve_equates(mp, ke)
-        mp, ke = fix_labels(mp, ke)
+        mp, ke = fix_labels(mp, ke, strenc)
         mp, ke, strenc, data = encode_instruction_stream(mp, ke, strenc)
 
         with open(args.output, 'wb') as outfile:
