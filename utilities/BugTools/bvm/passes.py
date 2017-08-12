@@ -148,7 +148,10 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                 last_global = command
         elif type(command) is Instruction:
             resolved_operands = resolve_instruction_operands(command, known_equates, last_global)
-
+            
+            if command.prefix == "NPREF":
+                encoded_stream.append(bytes([opcodes[command.prefix]]))
+            
             if command.opcode in ["ENOP", "PNOP", "UO", "EFGAME"]:
                 if len(resolved_operands) != 1:
                     raise InvalidOperandError(command)
