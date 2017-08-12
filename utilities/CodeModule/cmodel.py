@@ -792,7 +792,7 @@ def Enum(storageType, *valueslist, **kwargs):
             if val not in valuesDict.values():
                 raise CorruptedData
 
-            super(EnumInstance, self).core = val
+            storageType.core.fset(self, val)
 
         @property
         def bytes(self):

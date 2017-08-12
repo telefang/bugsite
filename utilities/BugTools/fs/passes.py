@@ -59,7 +59,11 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     start_offset = 0x0000
 
     for data in datum:
-        new_dir = Directory(basebank = start_bank, baseoffset = start_offset, filesize = len(data))
+        new_dir = Directory()
+        new_dir.basebank = start_bank
+        new_dir.baseoffset = start_offset
+        new_dir.filesize = len(data)
+
         directory.append(new_dir.bytes)
 
         start_offset += len(data)
@@ -73,7 +77,8 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     start_bank = dirbank
 
     while len(directory) > 0:
-        directory_section = Rgb2Section(sectype=Rgb2Section.ROMX) #ROMX section
+        directory_section = Rgb2Section()
+        directory_section.sectype = Rgb2Section.ROMX
         directory_section.org = 0x4000
         directory_section.bank = start_bank
         directory_section.datsec.data = directory[:0x4000]
@@ -86,7 +91,8 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     datum = b"".join(datum)
     start_bank = databank
     while len(datum) > 0:
-        datum_section = Rgb2Section(sectype=Rgb2Section.ROMX)
+        datum_section = Rgb2Section()
+        datum_section.sectype = Rgb2Section.ROMX
         datum_section.org = 0x4000
         datum_section.bank = start_bank
         datum_section.datsec.data = datum[:0x4000]
@@ -96,7 +102,9 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
         datum = datum[0x4000:]
         start_bank += 1
 
-    directory_symbol = Rgb2Symbol(name="BugFS_Directory", symtype=Rgb2Symbol.EXPORT)
+    directory_symbol = Rgb2Symbol()
+    directory_symbol.name = "BugFS_Directory"
+    directory_symbol.symtype = Rgb2Symbol.EXPORT
     directory_symbol.value.sectionid = 0 #Index of what section this symbol is in
     directory_symbol.value.value = 0 #Offset from the start of said section
 
