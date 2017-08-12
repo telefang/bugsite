@@ -53,13 +53,15 @@ beta: $(ROMS_BETA) compare_beta
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
 $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
+	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	rgbasm -h -o $@ $<
+	@rgbasm -h -o $@ $<
 
 # Assemble the BugFS directory...
 $(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
+	@echo "Building BugFS filesystem" $<
 	@mkdir -p $(dir $@)
-	$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
+	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
 
 $(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_ALPHA:.gbc=.sym) -m $(ROMS_ALPHA:.gbc=.map) -O $(BASEROM_ALPHA) -o $@ $^
@@ -100,5 +102,6 @@ $(BUILD_DIR)/%.1bpp: %.png
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
    
 $(BUILD_DIR)/%.bugvm.bin: %.bvm
+	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
+	@$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
