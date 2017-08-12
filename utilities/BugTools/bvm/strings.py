@@ -47,9 +47,9 @@ def parse_charmap(infile):
 
                     is_ligature = False
                     suspected_ligature = ""
-                elif len(suspected_ligature) > ligature_largest:
+                elif len(suspected_ligature) > ligature_largest or current_chara == len(instr) - 1:
                     #Not a valid ligature, abandon ligature search
-                    current_chara -= len(suspected_ligature)
+                    current_chara -= len(suspected_ligature) - 1
                     output.append(encoder_mapping[instr[current_chara]])
 
                     is_ligature = False
