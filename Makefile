@@ -83,6 +83,7 @@ clean:
 #.inc files as dependencies but I can't be arsed to fiddle with any more arcane
 #makefile bullshit to get it to not prefix .inc files.
 $(BUILD_DIR)/%.inc: %.inc
+	mkdir -p $(dir $@)
 	cp $< $@
 
 $(BUILD_DIR)/%.2bpp: %.png
