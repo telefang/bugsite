@@ -78,6 +78,13 @@ clean:
 	rm -f $(ROMS_ALPHA) $(OBJS) $(OBJS_ALPHA) $(ROMS_ALPHA:.gbc=.sym) $(ROMS_ALPHA:.gbc=.map) $(ROMS_BETA) $(OBJS_BETA) $(ROMS_BETA:.gbc=.sym) $(ROMS_BETA:.gbc=.map)
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pcm' -o -iname '*.scripttbl' \) -exec rm {} +
 
+#This rule is needed if we want make to not die. It expects to see .inc files in
+#the build directory now that we moved all resources there. We DO want to see
+#.inc files as dependencies but I can't be arsed to fiddle with any more arcane
+#makefile bullshit to get it to not prefix .inc files.
+$(BUILD_DIR)/%.inc: %.inc
+	cp $< $@
+
 $(BUILD_DIR)/%.2bpp: %.png
 	@rm -f $@
 	@$(PYTHON) $(PRET)/gfx.py 2bpp $<
