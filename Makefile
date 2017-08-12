@@ -13,10 +13,15 @@ ROMS_BETA := ${BUILD_DIR}/bugsite_beta.gbc
 BASEROM_BETA := ${BASE_DIR}/baserom_beta.gbc
 
 OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o
-OBJS_DIR := component/bugfs/directory.bugfs.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}
+
+#Directory objects have to be treated separately since this makefile would
+#otherwise attempt to run it through rgbasm and wonder why there's no .asm file
+OBJS_DIR_ALPHA := versions/alpha/component/bugfs/directory.bugfs.o
+OBJS_DIR_BETA := versions/beta/component/bugfs/directory.bugfs.o
+OBJS_DIR_ALL := ${OBJS_DIR_ALPHA} ${OBJS_DIR_BETA}
 
 #Only Python 3 is supported this time.
 PYTHON := utilities/find_python.sh
@@ -34,7 +39,7 @@ $(foreach obj, $(OBJS_BETA), \
 	$(eval $(obj:.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm)))) \
 )
 
-$(foreach obj, $(OBJS_DIR), \
+$(foreach obj, $(OBJS_DIR_ALL), \
 	$(eval $(obj:.bugfs.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/bfsdeps.py $(obj:.bugfs.o=.bfs)))) \
 )
 
@@ -52,15 +57,15 @@ $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
 	rgbasm -h -o $@ $<
 
 # Assemble the BugFS directory...
-$(OBJS_DIR:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
+$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
 	@mkdir -p $(dir $@)
 	$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
 
-$(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o)
+$(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_ALPHA:.gbc=.sym) -m $(ROMS_ALPHA:.gbc=.map) -O $(BASEROM_ALPHA) -o $@ $^
 	rgbfix -v -C -i BAUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE ALP" $@
 
-$(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
+$(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_BETA:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_BETA:.gbc=.sym) -m $(ROMS_BETA:.gbc=.map) -O $(BASEROM_BETA) -o $@ $^
 	rgbfix -v -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
 
