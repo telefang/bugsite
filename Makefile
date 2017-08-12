@@ -70,7 +70,7 @@ $(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OB
 
 $(ROMS_PATCH): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_PATCH:.gbc=.sym) -m $(ROMS_PATCH:.gbc=.map) -O $(BASEROM_PATCH) -o $@ $^
-	rgbfix -v -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
+	rgbfix -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
 
 # The compare target is a shortcut to check that the build doesn't change
 # anything in the patch and to see how much left of the patch we need to reverse
