@@ -14,7 +14,7 @@ def bvmasm():
 
     args = parser.parse_args()
 
-    with open(args.strings, encoding="utf-16") as strfile:
+    with open(args.strings, encoding="utf-8") as strfile:
         ke = parse_stringtbl(strfile)
 
     with open(args.charmap, encoding="utf-8") as mapfile:
@@ -27,7 +27,7 @@ def bvmasm():
         mp = InstrListVisitor().visit(tree)
 
         mp, ke = resolve_equates(mp, ke)
-        mp, ke = fix_labels(mp, ke)
+        mp, ke = fix_labels(mp, ke, strenc)
         mp, ke, strenc, data = encode_instruction_stream(mp, ke, strenc)
 
         with open(args.output, 'wb') as outfile:

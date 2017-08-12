@@ -3,7 +3,7 @@ from BugTools.bvm.passes import resolve_equates, fix_labels, encode_instruction_
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
 from parsimonious.exceptions import IncompleteParseError
 
-with open("../script/bugvm_strings.txt", encoding="utf-16") as strfile:
+with open("../script/bugvm_strings.txt", encoding="utf-8") as strfile:
     ke = parse_stringtbl(strfile)
 
 with open("../script/charmap.txt", encoding="utf-8") as mapfile:
