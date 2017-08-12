@@ -2,6 +2,8 @@ from BugTools.fs.parser import Label, Filename
 from CodeModule import cmodel
 from CodeModule.asm.rgbds import Rgb2, Rgb2Section, Rgb2Symbol
 
+import os.path
+
 class Directory(cmodel.Struct):
     basebank = cmodel.U8
     baseoffset = cmodel.LeU16
@@ -22,7 +24,7 @@ def depstring(parselist):
 
     return " ".join(deps)
 
-def fsimage(parselist, dirbank = 0xA, databank = 0xC):
+def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     """Construct a series of RGBDS sections corresponding to our filesystem.
 
     dirbank is the index of the directory structure bank. Directory data will be
@@ -48,7 +50,7 @@ def fsimage(parselist, dirbank = 0xA, databank = 0xC):
     datum = []
 
     for path in filepaths:
-        with open(path, 'rb') as file:
+        with open(os.path.join(basedir, path), 'rb') as file:
             datum.append(file.read())
 
     #Construct a directory listing for everything.

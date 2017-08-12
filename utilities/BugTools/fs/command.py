@@ -8,6 +8,7 @@ def bfsbuild():
 
     parser.add_argument('infile', metavar='file.bfs', type=str, help='The directory listing to use.')
     parser.add_argument('outfile', metavar='file.bugfs.o', type=str, help='Where to store the RGBDS object file for the BugFS image.')
+    parser.add_argument('--basedir', metavar='build', type=str, help='Where to pull included files from.')
 
     args = parser.parse_args()
 
@@ -17,7 +18,7 @@ def bfsbuild():
 
         mp = BFSVisitor().visit(tree)
 
-        datum = fsimage(mp).bytes
+        datum = fsimage(mp, args.basedir).bytes
 
         with open(args.outfile, 'wb') as dstfile:
             dstfile.write(datum)
