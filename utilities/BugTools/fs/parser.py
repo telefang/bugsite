@@ -55,7 +55,14 @@ class BFSVisitor(NodeVisitor):
     def visit_filename(self, node, children):
         filename, _ = children
 
-        return Filename(filename.text)
+        filename = filename.text
+        if filename[0] in ['"', "'"]:
+            filename = filename[1:]
+
+        if filename[-1] in ['"', "'"]:
+            filename = filename[:-1]
+
+        return Filename(filename)
 
     def visit_eol(self, node, children):
         return '' #nobody cares about the EOLs
