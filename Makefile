@@ -75,7 +75,7 @@ $(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_BETA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_BETA:.gbc=.sym) -m $(ROMS_BETA:.gbc=.map) -O $(BASEROM_BETA) -o $@ $^
 	rgbfix -v -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
 
-$(ROMS_PATCH): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
+$(ROMS_PATCH): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_BETA:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_PATCH:.gbc=.sym) -m $(ROMS_PATCH:.gbc=.map) -O $(BASEROM_PATCH) -o $@ $^
 	rgbfix -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
 
