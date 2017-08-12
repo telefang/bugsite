@@ -67,6 +67,42 @@ class Rgb2(cmodel.Struct):
 
     __order__ = ["magic", "numsyms", "numsects", "symbols", "sections"]
 
+class Rgb5SymValue(cmodel.Struct):
+    filename = cmodel.String("ascii")
+    fileline = cmodel.LeU32
+    sectionid = cmodel.LeU32
+    value = cmodel.LeU32
+
+    __order__ = ["filename", "fileline", "sectionid", "value"]
+
+class Rgb5Symbol(cmodel.Struct):
+    name = cmodel.String("ascii")
+    symtype = cmodel.Enum(cmodel.U8, "LOCAL", "IMPORT", "EXPORT")
+    value = cmodel.If("symtype", lambda x: x in [0, 2], Rgb5SymValue)
+
+    __order__ = ["name", "symtype", "value"]
+
+class Rgb5Section(cmodel.Struct):
+    name = cmodel.String("ascii") #utf-8 might be safe here...
+    datasize = cmodel.LeU32
+    sectype = cmodel.Enum(cmodel.U8, "WRAM0", "VRAM", "ROMX", "ROM0", "HRAM", "WRAMX", "SRAM", "OAM")
+    org = cmodel.LeS32
+    bank = cmodel.LeS32
+    align = cmodel.LeS32
+    datsec = cmodel.If("sectype", lambda x: x in [2, 3], Rgb2SectionData)
+
+    __order__ = ["name", "datasize", "sectype", "org", "bank", "align", "datsec"]
+
+class Rgb5(cmodel.Struct):
+    magic = cmodel.Magic(b"RGB5")
+    numsyms = cmodel.LeU32
+    numsects = cmodel.LeU32
+
+    symbols = cmodel.Array(Rgb5Symbol, "numsyms")
+    sections = cmodel.Array(Rgb5Section, "numsects")
+
+    __order__ = ["magic", "numsyms", "numsects", "symbols", "sections"]
+
 _gnummap = {0:"BSS", 1:"VRAM", 2:"CODE", 3:("HOME", 0), 4:"HRAM"}
 
 class RGBDSLinker(linker.Linker):
