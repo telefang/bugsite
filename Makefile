@@ -48,12 +48,12 @@ beta: $(ROMS_BETA) compare_beta
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
 $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	rgbasm -h -o $@ $<
 
 # Assemble the BugFS directory...
 $(OBJS_DIR:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
 
 $(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o)
@@ -83,8 +83,8 @@ clean:
 #.inc files as dependencies but I can't be arsed to fiddle with any more arcane
 #makefile bullshit to get it to not prefix .inc files.
 $(BUILD_DIR)/%.inc: %.inc
-	mkdir -p $(dir $@)
-	cp $< $@
+	@mkdir -p $(dir $@)
+	@cp $< $@
 
 $(BUILD_DIR)/%.2bpp: %.png
 	@rm -f $@
@@ -95,5 +95,5 @@ $(BUILD_DIR)/%.1bpp: %.png
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
    
 $(BUILD_DIR)/%.bugvm.bin: %.bvm
-	mkdir -p $(dir $@)
-	@$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
+	@mkdir -p $(dir $@)
+	$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
