@@ -185,6 +185,8 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                             encoded_stream.append(string_enc(operand))
                         else:
                             raise InvalidOperandError(command)
+
+                    encoded_stream.append(bytes([0]))
                 else:
                     #No other commands accept operands.
                     if len(resolved_operands) != 0:
