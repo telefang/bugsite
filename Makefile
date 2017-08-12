@@ -15,10 +15,15 @@ ROMS_PATCH := ${BUILD_DIR}/bugsite_patch_en.gbc
 BASEROM_PATCH := ${BASE_DIR}/baserom_patch.gbc
 
 OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o
-OBJS_DIR := component/bugfs/directory.bugfs.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}
+
+#Directory objects have to be treated separately since this makefile would
+#otherwise attempt to run it through rgbasm and wonder why there's no .asm file
+OBJS_DIR_ALPHA := versions/alpha/component/bugfs/directory.bugfs.o
+OBJS_DIR_BETA := versions/beta/component/bugfs/directory.bugfs.o
+OBJS_DIR_ALL := ${OBJS_DIR_ALPHA} ${OBJS_DIR_BETA}
 
 #Only Python 3 is supported this time.
 PYTHON := utilities/find_python.sh
@@ -36,7 +41,7 @@ $(foreach obj, $(OBJS_BETA), \
 	$(eval $(obj:.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm)))) \
 )
 
-$(foreach obj, $(OBJS_DIR), \
+$(foreach obj, $(OBJS_DIR_ALL), \
 	$(eval $(obj:.bugfs.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/bfsdeps.py $(obj:.bugfs.o=.bfs)))) \
 )
 
@@ -52,19 +57,21 @@ beta: $(ROMS_BETA)
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
 $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
-	mkdir -p $(dir $@)
-	rgbasm -h -o $@ $<
+	@echo "Assembling" $<
+	@mkdir -p $(dir $@)
+	@rgbasm -h -o $@ $<
 
 # Assemble the BugFS directory...
-$(OBJS_DIR:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
-	mkdir -p $(dir $@)
-	$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
+$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
+	@echo "Building BugFS filesystem" $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
 
-$(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o)
+$(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_ALPHA:.gbc=.sym) -m $(ROMS_ALPHA:.gbc=.map) -O $(BASEROM_ALPHA) -o $@ $^
 	rgbfix -v -C -i BAUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE ALP" $@
 
-$(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
+$(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_BETA:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_BETA:.gbc=.sym) -m $(ROMS_BETA:.gbc=.map) -O $(BASEROM_BETA) -o $@ $^
 	rgbfix -v -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
 
@@ -93,8 +100,8 @@ clean:
 #.inc files as dependencies but I can't be arsed to fiddle with any more arcane
 #makefile bullshit to get it to not prefix .inc files.
 $(BUILD_DIR)/%.inc: %.inc
-	mkdir -p $(dir $@)
-	cp $< $@
+	@mkdir -p $(dir $@)
+	@cp $< $@
 
 $(BUILD_DIR)/%.2bpp: %.png
 	@rm -f $@
@@ -105,5 +112,6 @@ $(BUILD_DIR)/%.1bpp: %.png
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
    
 $(BUILD_DIR)/%.bugvm.bin: %.bvm
-	mkdir -p $(dir $@)
+	@echo "Assembling" $<
+	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
