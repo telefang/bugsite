@@ -71,7 +71,7 @@ def fsimage(parselist, dirbank = 0xA, databank = 0xC):
     start_bank = dirbank
 
     while len(directory) > 0:
-        directory_section = Rgb2Section(sectype=Rgb2Section.ROMX) //ROMX section
+        directory_section = Rgb2Section(sectype=Rgb2Section.ROMX) #ROMX section
         directory_section.org = 0x4000
         directory_section.bank = start_bank
         directory_section.datsec.data = directory[:0x4000]
