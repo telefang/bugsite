@@ -22,15 +22,15 @@ PYTHON := python
 PRET := pokemon-reverse-engineering-tools/pokemontools
 
 $(foreach obj, $(OBJS), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm))) \
+	$(eval $(obj:.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm)))) \
 )
 
 $(foreach obj, $(OBJS_ALPHA), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm))) \
+	$(eval $(obj:.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm)))) \
 )
 
 $(foreach obj, $(OBJS_BETA), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm))) \
+	$(eval $(obj:.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/scan_includes.py $(obj:.o=.asm)))) \
 )
 
 # Link objects together to build a rom.
@@ -68,13 +68,14 @@ clean:
 	rm -f $(ROMS_ALPHA) $(OBJS) $(OBJS_ALPHA) $(ROMS_ALPHA:.gbc=.sym) $(ROMS_ALPHA:.gbc=.map) $(ROMS_BETA) $(OBJS_BETA) $(ROMS_BETA:.gbc=.sym) $(ROMS_BETA:.gbc=.map)
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pcm' -o -iname '*.scripttbl' \) -exec rm {} +
 
-%.2bpp: %.png
+$(BUILD_DIR)/%.2bpp: %.png
 	@rm -f $@
 	@$(PYTHON) $(PRET)/gfx.py 2bpp $<
 
-%.1bpp: %.png
+$(BUILD_DIR)/%.1bpp: %.png
 	@rm -f $@
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
    
-%.bugvm.bin: %.bvm
+$(BUILD_DIR)/%.bugvm.bin: %.bvm
+	mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
