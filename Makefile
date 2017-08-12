@@ -19,7 +19,7 @@ OBJS_BETA :=
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}
 
 #Only Python 3 is supported this time.
-PYTHON := python
+PYTHON := utilities/find_python.sh
 PRET := pokemon-reverse-engineering-tools/pokemontools
 
 $(foreach obj, $(OBJS), \
