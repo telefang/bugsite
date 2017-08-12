@@ -1,4 +1,4 @@
-.PHONY: all compare_alpha compare_beta clean alpha beta
+.PHONY: all compare_patch compare_beta clean patch alpha beta
 
 .SUFFIXES:
 .SUFFIXES: .asm .o .gbc .png .wav .wikitext
@@ -7,10 +7,12 @@
 BASE_DIR := baseroms
 BUILD_DIR := build
 
-ROMS_ALPHA := ${BUILD_DIR}/bugsite_alpha.gbc
+ROMS_ALPHA := ${BUILD_DIR}/bugsite_alpha_en.gbc
 BASEROM_ALPHA := ${BASE_DIR}/baserom_alpha.gbc
-ROMS_BETA := ${BUILD_DIR}/bugsite_beta.gbc
+ROMS_BETA := ${BUILD_DIR}/bugsite_beta_en.gbc
 BASEROM_BETA := ${BASE_DIR}/baserom_beta.gbc
+ROMS_PATCH := ${BUILD_DIR}/bugsite_patch_en.gbc
+BASEROM_PATCH := ${BASE_DIR}/baserom_patch.gbc
 
 OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o
 OBJS_DIR := component/bugfs/directory.bugfs.o
@@ -39,9 +41,11 @@ $(foreach obj, $(OBJS_DIR), \
 )
 
 # Link objects together to build a rom.
-all: alpha beta
+all: patch alpha beta
 
-alpha: $(ROMS_ALPHA) compare_alpha
+patch: $(ROMS_PATCH) compare_patch
+
+alpha: $(ROMS_ALPHA)
 
 beta: $(ROMS_BETA) compare_beta
 
@@ -64,10 +68,16 @@ $(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OB
 	rgblink -n $(ROMS_BETA:.gbc=.sym) -m $(ROMS_BETA:.gbc=.map) -O $(BASEROM_BETA) -o $@ $^
 	rgbfix -v -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
 
-# The compare target is a shortcut to check that the build matches the original roms exactly.
-# This is for contributors to make sure a change didn't affect the contents of the rom.
+$(ROMS_PATCH): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
+	rgblink -n $(ROMS_PATCH:.gbc=.sym) -m $(ROMS_PATCH:.gbc=.map) -O $(BASEROM_PATCH) -o $@ $^
+	rgbfix -v -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
+
+# The compare target is a shortcut to check that the build doesn't change
+# anything in the patch and to see how much left of the patch we need to reverse
+# engineer. The compare targets should be removed once the patch is fully
+# disassembled.
 # More thorough comparison can be made by diffing the output of hexdump -C against both roms.
-compare_alpha: $(ROMS_ALPHA) $(BASEROM_ALPHA)
+compare_patch: $(ROMS_PATCH) $(BASEROM_PATCH)
 	cmp $^
 
 compare_beta: $(ROMS_BETA) $(BASEROM_BETA)
