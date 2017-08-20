@@ -20,6 +20,7 @@ def parse_charmap(infile):
 
     Returns a function which can be used as a .bvm string encoder."""
 
+    decoder_mapping = {}
     encoder_mapping = {}
     ligature_starters = set()
     ligature_mapping = {}
@@ -61,9 +62,19 @@ def parse_charmap(infile):
 
         return b"".join(output)
 
+    def decoder(inbytes):
+        output = []
+
+        for byte in inbytes:
+            output.append(decoder_mapping[bytes([byte])])
+
+        return "".join(output)
+
     #Actual parsing starts here
     for encode_slot, line in enumerate(infile):
         decoded_char = line[:-1]
+
+        decoder_mapping[bytes([encode_slot])] = decoded_char
 
         if len(decoded_char) > 1:
             ligature_starters.add(decoded_char[0])
@@ -72,4 +83,4 @@ def parse_charmap(infile):
         else:
             encoder_mapping[decoded_char] = bytes([encode_slot])
 
-    return encoder
+    return encoder, decoder

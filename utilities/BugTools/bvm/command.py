@@ -18,7 +18,7 @@ def bvmasm():
         ke = parse_stringtbl(strfile)
 
     with open(args.charmap, encoding="utf-8") as mapfile:
-        strenc = parse_charmap(mapfile)
+        strenc, strdec = parse_charmap(mapfile)
 
     with open(args.infile) as srcfile:
         src = srcfile.read()
