@@ -7,7 +7,7 @@ with open("../script/bugvm_strings.txt", encoding="utf-8") as strfile:
     ke = parse_stringtbl(strfile)
 
 with open("../script/charmap.txt", encoding="utf-8") as mapfile:
-    strenc = parse_charmap(mapfile)
+    strenc, strdec = parse_charmap(mapfile)
 
 with open("../script/unknown_bvm/1.bvm") as file:
     y = file.read()
