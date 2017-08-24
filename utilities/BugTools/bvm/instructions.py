@@ -30,6 +30,16 @@ opcodes = {
     "JAL": 0x3F, #TODO: Shouldn't this be CALL?
     "FARCALL": 0x6A,
     "FARJMP": 0x6B,
+    "TILELD": 0x72,
+    "PRKEY": 0x9F,
+    "BLKKEY": 0xA0,
+    "PRMOVE": 0xA1,
+    "BLKMOVE": 0xA2,
+    "PRMON": 0xAF,
+    "BLKMON": 0xBB,
+    "BLKCHIP": 0xE2,
+    "PRCHIP": 0xE3,
+    "BLKENC": 0xF1,
     "RESET": 0xBD,
     "FGAME": 0xFF #will crash everything horribly all the time
 }
