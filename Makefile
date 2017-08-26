@@ -25,6 +25,10 @@ OBJS_DIR_ALPHA := versions/alpha/component/bugfs/directory.bugfs.o
 OBJS_DIR_BETA := versions/beta/component/bugfs/directory.bugfs.o
 OBJS_DIR_ALL := ${OBJS_DIR_ALPHA} ${OBJS_DIR_BETA}
 
+OBJS_EXTRA := versions/alpha/script/encounters.atbl.o versions/beta/script/encounters.atbl.o \
+	versions/alpha/script/monsters.atbl.o versions/beta/script/monsters.atbl.o \
+	script/chips.atbl.o script/keyitems.atbl.o script/moves.atbl.o
+
 #Only Python 3 is supported this time.
 PYTHON := utilities/find_python.sh
 PRET := pokemon-reverse-engineering-tools/pokemontools
@@ -67,11 +71,11 @@ $(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
 
-$(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o)
+$(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_EXTRA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_ALPHA:.gbc=.sym) -m $(ROMS_ALPHA:.gbc=.map) -O $(BASEROM_ALPHA) -o $@ $^
 	rgbfix -v -C -i BAUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE ALP" $@
 
-$(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_BETA:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o)
+$(ROMS_BETA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_BETA:%.o=${BUILD_DIR}/%.o) $(OBJS_BETA:%.o=${BUILD_DIR}/%.o) $(OBJS_EXTRA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_BETA:.gbc=.sym) -m $(ROMS_BETA:.gbc=.map) -O $(BASEROM_BETA) -o $@ $^
 	rgbfix -v -C -i BBUJ -k 2N -l 0x33 -m 0x1B -p 0 -r 3 -t "BUGSITE BET" $@
 
@@ -115,3 +119,8 @@ $(BUILD_DIR)/%.bugvm.bin: %.bvm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bvmasm.py $< script/bugvm_strings.txt script/charmap.txt $@
+
+$(BUILD_DIR)/%.atbl.o: %.csv
+	@echo "Building" $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/montable_compile.py $< script/charmap.txt $@
