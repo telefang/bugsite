@@ -123,4 +123,4 @@ $(BUILD_DIR)/%.bugvm.bin: %.bvm
 $(BUILD_DIR)/%.atbl.o: %.csv
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
-	@$(PYTHON) utilities/montable_compile.py $< script/charmap.txt $@
+	@$(PYTHON) utilities/montable_compile.py --language=English $< script/charmap.txt $@
