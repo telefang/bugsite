@@ -1,256 +1,676 @@
-[bvm_null]
-[bvm_01]
-[bvm_02]
-[bvm_03]
-[bvm_04]
-[bvm_05]
-[bvm_06]
-[bvm_07]
-[bvm_08]
-↑
-↓
-→
-←
-☆
-♪
-[bvm_0f]
-[bvm_10]
-[bvm_11]
-[bvm_12]
-[bvm_13]
-[bvm_14]
-[bvm_15]
-[bvm_16]
-[bvm_17]
-[bvm_18]
-[bvm_19]
-[bvm_1a]
-[bvm_1b]
-[bvm_1c]
-[bvm_1d]
-[bvm_1e]
-[bvm_1f]
- 
-!
-""
-#
-$
-%
-&
-'
-(
-)
-*
-+
-,
--
-.
-/
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-:
-;
-<
-=
->
-?
-@
-A
-B
-C
-D
-E
-F
-G
-H
-I
-J
-K
-L
-M
-N
-O
-P
-Q
-R
-S
-T
-U
-V
-W
-X
-Y
-Z
-[
-\
-]
-^
-_
-｀
-a
-b
-c
-d
-e
-f
-g
-h
-円
-α
-β
-l
-m
-n
-o
-p
-q
-r
-s
-t
-u
-v
-w
-x
-y
-z
-{
-|
-}
-~
-[bvm_7f]
-[bvm_80]
-[bvm_81]
-[bvm_82]
-[bvm_83]
-[bvm_ver1]
-[bvm_ver2]
-ヲ
-ァ
-ィ
-ゥ
-ェ
-ォ
-ャ
-ュ
-ョ
-ッ
-‐
-ア
-イ
-ウ
-エ
-オ
-カ
-キ
-ク
-ケ
-コ
-サ
-シ
-ス
-セ
-ソ
-[bvm_a0]
-。
-「
-」
-、
-・
-を
-ぁ
-ぃ
-ぅ
-ぇ
-ぉ
-ゃ
-ゅ
-ょ
-っ
-ー
-あ
-い
-う
-え
-お
-か
-き
-く
-け
-こ
-さ
-し
-す
-せ
-そ
-た
-ち
-つ
-て
-と
-な
-に
-ぬ
-ね
-の
-は
-ひ
-ふ
-へ
-ほ
-ま
-み
-む
-め
-も
-や
-ゆ
-よ
-ら
-り
-る
-れ
-ろ
-わ
-ん
-゛
-゜
-タ
-チ
-ツ
-テ
-ト
-ナ
-ニ
-ヌ
-ネ
-ノ
-ハ
-ヒ
-フ
-ヘ
-ホ
-マ
-ミ
-ム
-メ
-モ
-ヤ
-ユ
-ヨ
-ラ
-リ
-ル
-レ
-ロ
-ワ
-ン
-[bvm_pressa]
-⇒
+charmap "↑", $09
+charmap "↾", $09
+charmap "↿", $09
+charmap "⇡", $09
+charmap "↓", $0A
+charmap "⇂", $0A
+charmap "⇃", $0A
+charmap "⇣", $0A
+charmap "→", $0B
+charmap "⇀", $0B
+charmap "⇁", $0B
+charmap "⇢", $0B
+charmap "←", $0C
+charmap "↼", $0C
+charmap "↽", $0C
+charmap "⇠", $0C
+charmap "☆", $0D
+charmap "♪", $0E
+charmap "円", $69
+charmap "α", $6A
+charmap "β", $6B
+charmap "⇒", $FF
+charmap "⇨", $FF
+
+charmap " ", $20
+charmap "!", $21
+charmap """, $22
+charmap "#", $23
+charmap "$", $24
+charmap "%", $25
+charmap "&", $26
+charmap "'", $27
+charmap "(", $28
+charmap ")", $29
+charmap "*", $2A
+charmap "+", $2B
+charmap ",", $2C
+charmap "-", $2D
+charmap ".", $2E
+charmap "/", $2F
+charmap "0", $30
+charmap "1", $31
+charmap "2", $32
+charmap "3", $33
+charmap "4", $34
+charmap "5", $35
+charmap "6", $36
+charmap "7", $37
+charmap "8", $38
+charmap "9", $39
+charmap ":", $3A
+charmap ";", $3B
+charmap "<", $3C
+charmap "=", $3D
+charmap ">", $3E
+charmap "?", $3F
+charmap "@", $40
+charmap "A", $41
+charmap "B", $42
+charmap "C", $43
+charmap "D", $44
+charmap "E", $45
+charmap "F", $46
+charmap "G", $47
+charmap "H", $48
+charmap "I", $49
+charmap "J", $4A
+charmap "K", $4B
+charmap "L", $4C
+charmap "M", $4D
+charmap "N", $4E
+charmap "O", $4F
+charmap "P", $50
+charmap "Q", $51
+charmap "R", $52
+charmap "S", $53
+charmap "T", $54
+charmap "U", $55
+charmap "V", $56
+charmap "W", $57
+charmap "X", $58
+charmap "Y", $59
+charmap "Z", $5A
+charmap "[", $5B
+charmap "\", $5C
+charmap "\n", $5C
+charmap "]", $5D
+charmap "^", $5E
+charmap "_", $5F
+charmap "`", $60
+charmap "a", $61
+charmap "b", $62
+charmap "c", $63
+charmap "d", $64
+charmap "e", $65
+charmap "f", $66
+charmap "g", $67
+charmap "h", $68
+charmap "i", $A0
+charmap "j", $4A
+charmap "k", $4B
+charmap "l", $6C
+charmap "m", $6D
+charmap "n", $6E
+charmap "o", $6F
+charmap "p", $70
+charmap "q", $71
+charmap "r", $72
+charmap "s", $73
+charmap "t", $74
+charmap "u", $75
+charmap "v", $76
+charmap "w", $77
+charmap "x", $78
+charmap "y", $79
+charmap "z", $7A
+charmap "{", $7B
+charmap "|", $7C
+charmap "}", $7D
+charmap "~", $7E
+
+charmap "　", $20
+charmap "！", $21
+charmap "＂", $22
+charmap "“", $22
+charmap "”", $22
+charmap "＃", $23
+charmap "＄", $24
+charmap "％", $25
+charmap "＆", $26
+charmap "＇", $27
+charmap "′", $27
+charmap "’", $27
+charmap "（", $28
+charmap "₍", $28
+charmap "）", $29
+charmap "₎", $29
+charmap "＊", $2A
+charmap "＋", $2B
+charmap "⁺", $2B
+charmap "₊", $2B
+charmap "，", $2C
+charmap "━", $2D
+charmap "─", $2D
+charmap "－", $2D
+charmap "‐", $2D
+charmap "―", $2D
+charmap "₋", $2D
+charmap "．", $2E
+charmap "／", $2F
+charmap "⁄", $2F
+charmap "０", $30
+charmap "⁰", $30
+charmap "₀", $30
+charmap "１", $31
+charmap "¹", $31
+charmap "₁", $31
+charmap "２", $32
+charmap "²", $32
+charmap "₂", $32
+charmap "３", $33
+charmap "³", $33
+charmap "₃", $33
+charmap "４", $34
+charmap "⁴", $34
+charmap "₄", $34
+charmap "５", $35
+charmap "⁵", $35
+charmap "₅", $35
+charmap "６", $36
+charmap "⁶", $36
+charmap "₆", $36
+charmap "７", $37
+charmap "⁷", $37
+charmap "₇", $37
+charmap "８", $38
+charmap "⁸", $38
+charmap "₈", $38
+charmap "９", $39
+charmap "⁹", $39
+charmap "₉", $39
+charmap "︰", $3A
+charmap "：", $3A
+charmap "；", $3B
+charmap "‹", $3C
+charmap "〈", $3C
+charmap "＜", $3C
+charmap "＝", $3D
+charmap "₌", $3D
+charmap "›", $3E
+charmap "〉", $3E
+charmap "＞", $3E
+charmap "？", $3F
+charmap "＠", $40
+charmap "Ａ", $41
+charmap "Ｂ", $42
+charmap "Ⅽ", $43
+charmap "Ｃ", $43
+charmap "Ⅾ", $44
+charmap "Ｄ", $44
+charmap "Ｅ", $45
+charmap "Ｆ", $46
+charmap "Ｇ", $47
+charmap "Ｈ", $48
+charmap "Ⅰ", $49
+charmap "Ｉ", $49
+charmap "Ｊ", $4A
+charmap "K", $4B
+charmap "Ｋ", $4B
+charmap "Ⅼ", $4C
+charmap "Ｌ", $4C
+charmap "Ⅿ", $4D
+charmap "Ｍ", $4D
+charmap "Ｎ", $4E
+charmap "Ｏ", $4F
+charmap "Ｐ", $50
+charmap "Ｑ", $51
+charmap "Ｒ", $52
+charmap "Ｓ", $53
+charmap "Ｔ", $54
+charmap "Ｕ", $55
+charmap "Ⅴ", $56
+charmap "Ｖ", $56
+charmap "Ｗ", $57
+charmap "Ⅹ", $58
+charmap "Ｘ", $58
+charmap "×", $58
+charmap "Ｙ", $59
+charmap "Ｚ", $5A
+charmap "［", $5B
+charmap "〔", $5B
+charmap "∖", $5C
+charmap "＼", $5C
+charmap "￥", $5C
+charmap "］", $5D
+charmap "〕", $5D
+charmap "＾", $5E
+charmap "＿", $5F
+charmap "｀", $60
+charmap "ａ", $61
+charmap "ｂ", $62
+charmap "ｃ", $63
+charmap "ⅽ", $63
+charmap "ｄ", $64
+charmap "ⅾ", $64
+charmap "ｅ", $65
+charmap "ｆ", $66
+charmap "ｇ", $67
+charmap "ｈ", $68
+charmap "ⅰ", $A0
+charmap "ｉ", $A0
+charmap "ｊ", $4A
+charmap "ｋ", $4B
+charmap "ｌ", $6C
+charmap "ⅼ", $6C
+charmap "ｍ", $6D
+charmap "ⅿ", $6D
+charmap "ｎ", $6E
+charmap "ｏ", $6F
+charmap "ｐ", $70
+charmap "ｑ", $71
+charmap "ｒ", $72
+charmap "ｓ", $73
+charmap "ｔ", $74
+charmap "ｕ", $75
+charmap "ⅴ", $76
+charmap "ｖ", $76
+charmap "ｗ", $77
+charmap "ⅹ", $78
+charmap "ｘ", $78
+charmap "ｙ", $79
+charmap "ｚ", $7A
+charmap "｛", $7B
+charmap "｜", $7C
+charmap "￤", $7C
+charmap "︱", $7C
+charmap "︳", $7C
+charmap "｝", $7D
+charmap "～", $7E
+charmap "∼", $7E
+charmap "∾", $7E
+
+charmap "ヲ", $86
+charmap "ァ", $87
+charmap "ィ", $88
+charmap "ゥ", $89
+charmap "ェ", $8A
+charmap "ォ", $8B
+charmap "ャ", $8C
+charmap "ュ", $8D
+charmap "ョ", $8E
+charmap "ッ", $8F
+charmap "‐", $90
+charmap "ア", $91
+charmap "イ", $92
+charmap "ウ", $93
+charmap "エ", $94
+charmap "オ", $95
+charmap "カ", $96
+charmap "キ", $97
+charmap "ク", $98
+charmap "ケ", $99
+charmap "コ", $9A
+charmap "サ", $9B
+charmap "シ", $9C
+charmap "ス", $9D
+charmap "セ", $9E
+charmap "ソ", $9F
+charmap "。", $A1
+charmap "「", $A2
+charmap "『", $A2
+charmap "」", $A3
+charmap "』", $A3
+charmap "、", $A4
+charmap "・", $A5
+charmap "を", $A6
+charmap "ぁ", $A7
+charmap "ぃ", $A8
+charmap "ぅ", $A9
+charmap "ぇ", $AA
+charmap "ぉ", $AB
+charmap "ゃ", $AC
+charmap "ゅ", $AD
+charmap "ょ", $AE
+charmap "っ", $AF
+charmap "ー", $B0
+charmap "あ", $B1
+charmap "い", $B2
+charmap "う", $B3
+charmap "え", $B4
+charmap "お", $B5
+charmap "か", $B6
+charmap "き", $B7
+charmap "く", $B8
+charmap "け", $B9
+charmap "こ", $BA
+charmap "さ", $BB
+charmap "し", $BC
+charmap "す", $BD
+charmap "せ", $BE
+charmap "そ", $BF
+charmap "た", $C0
+charmap "ち", $C1
+charmap "つ", $C2
+charmap "て", $C3
+charmap "と", $C4
+charmap "な", $C5
+charmap "に", $C6
+charmap "ぬ", $C7
+charmap "ね", $C8
+charmap "の", $C9
+charmap "は", $CA
+charmap "ひ", $CB
+charmap "ふ", $CC
+charmap "へ", $CD
+charmap "ほ", $CE
+charmap "ま", $CF
+charmap "み", $D0
+charmap "む", $D1
+charmap "め", $D2
+charmap "も", $D3
+charmap "や", $D4
+charmap "ゆ", $D5
+charmap "よ", $D6
+charmap "ら", $D7
+charmap "り", $D8
+charmap "る", $D9
+charmap "れ", $DA
+charmap "ろ", $DB
+charmap "わ", $DC
+charmap "ん", $DD
+charmap "゛", $DE
+charmap "゜", $DF
+charmap "タ", $E0
+charmap "チ", $E1
+charmap "ツ", $E2
+charmap "テ", $E3
+charmap "ト", $E4
+charmap "ナ", $E5
+charmap "ニ", $E6
+charmap "ヌ", $E7
+charmap "ネ", $E8
+charmap "ノ", $E9
+charmap "ハ", $EA
+charmap "ヒ", $EB
+charmap "フ", $EC
+charmap "ヘ", $ED
+charmap "ホ", $EE
+charmap "マ", $EF
+charmap "ミ", $F0
+charmap "ム", $F1
+charmap "メ", $F2
+charmap "モ", $F3
+charmap "ヤ", $F4
+charmap "ユ", $F5
+charmap "ヨ", $F6
+charmap "ラ", $F7
+charmap "リ", $F8
+charmap "ル", $F9
+charmap "レ", $FA
+charmap "ロ", $FB
+charmap "ワ", $FC
+charmap "ン", $FD
+
+charmap "[bvm_null]", $00
+charmap "[bvm_up]", $09
+charmap "[bvm_down]", $0A
+charmap "[bvm_right]", $0B
+charmap "[bvm_left]", $0C
+charmap "[bvm_star]", $0D
+charmap "[bvm_note]", $0E
+charmap "[bvm_nl]", $5C
+charmap "[bvm_money]", $69
+charmap "[bvm_alpha]", $6A
+charmap "[bvm_beta]", $6B
+charmap "[bvm_ver1]", $84
+charmap "[bvm_ver2]", $85
+charmap "[bvm_pressa]", $FE
+charmap "[bvm_dright]", $FF
+
+charmap "[bvm_00]", $00
+charmap "[bvm_01]", $01
+charmap "[bvm_02]", $02
+charmap "[bvm_03]", $03
+charmap "[bvm_04]", $04
+charmap "[bvm_05]", $05
+charmap "[bvm_06]", $06
+charmap "[bvm_07]", $07
+charmap "[bvm_08]", $08
+charmap "[bvm_09]", $09
+charmap "[bvm_0a]", $0A
+charmap "[bvm_0b]", $0B
+charmap "[bvm_0c]", $0C
+charmap "[bvm_0d]", $0D
+charmap "[bvm_0e]", $0E
+charmap "[bvm_0f]", $0F
+charmap "[bvm_10]", $10
+charmap "[bvm_11]", $11
+charmap "[bvm_12]", $12
+charmap "[bvm_13]", $13
+charmap "[bvm_14]", $14
+charmap "[bvm_15]", $15
+charmap "[bvm_16]", $16
+charmap "[bvm_17]", $17
+charmap "[bvm_18]", $18
+charmap "[bvm_19]", $19
+charmap "[bvm_1a]", $1A
+charmap "[bvm_1b]", $1B
+charmap "[bvm_1c]", $1C
+charmap "[bvm_1d]", $1D
+charmap "[bvm_1e]", $1E
+charmap "[bvm_1f]", $1F
+charmap "[bvm_20]", $20
+charmap "[bvm_21]", $21
+charmap "[bvm_22]", $22
+charmap "[bvm_23]", $23
+charmap "[bvm_24]", $24
+charmap "[bvm_25]", $25
+charmap "[bvm_26]", $26
+charmap "[bvm_27]", $27
+charmap "[bvm_28]", $28
+charmap "[bvm_29]", $29
+charmap "[bvm_2a]", $2A
+charmap "[bvm_2b]", $2B
+charmap "[bvm_2c]", $2C
+charmap "[bvm_2d]", $2D
+charmap "[bvm_2e]", $2E
+charmap "[bvm_2f]", $2F
+charmap "[bvm_30]", $30
+charmap "[bvm_31]", $31
+charmap "[bvm_32]", $32
+charmap "[bvm_33]", $33
+charmap "[bvm_34]", $34
+charmap "[bvm_35]", $35
+charmap "[bvm_36]", $36
+charmap "[bvm_37]", $37
+charmap "[bvm_38]", $38
+charmap "[bvm_39]", $39
+charmap "[bvm_3a]", $3A
+charmap "[bvm_3b]", $3B
+charmap "[bvm_3c]", $3C
+charmap "[bvm_3d]", $3D
+charmap "[bvm_3e]", $3E
+charmap "[bvm_3f]", $3F
+charmap "[bvm_40]", $40
+charmap "[bvm_41]", $41
+charmap "[bvm_42]", $42
+charmap "[bvm_43]", $43
+charmap "[bvm_44]", $44
+charmap "[bvm_45]", $45
+charmap "[bvm_46]", $46
+charmap "[bvm_47]", $47
+charmap "[bvm_48]", $48
+charmap "[bvm_49]", $49
+charmap "[bvm_4a]", $4A
+charmap "[bvm_4b]", $4B
+charmap "[bvm_4c]", $4C
+charmap "[bvm_4d]", $4D
+charmap "[bvm_4e]", $4E
+charmap "[bvm_4f]", $4F
+charmap "[bvm_50]", $50
+charmap "[bvm_51]", $51
+charmap "[bvm_52]", $52
+charmap "[bvm_53]", $53
+charmap "[bvm_54]", $54
+charmap "[bvm_55]", $55
+charmap "[bvm_56]", $56
+charmap "[bvm_57]", $57
+charmap "[bvm_58]", $58
+charmap "[bvm_59]", $59
+charmap "[bvm_5a]", $5A
+charmap "[bvm_5b]", $5B
+charmap "[bvm_5c]", $5C
+charmap "[bvm_5d]", $5D
+charmap "[bvm_5e]", $5E
+charmap "[bvm_5f]", $5F
+charmap "[bvm_60]", $60
+charmap "[bvm_61]", $61
+charmap "[bvm_62]", $62
+charmap "[bvm_63]", $63
+charmap "[bvm_64]", $64
+charmap "[bvm_65]", $65
+charmap "[bvm_66]", $66
+charmap "[bvm_67]", $67
+charmap "[bvm_68]", $68
+charmap "[bvm_69]", $69
+charmap "[bvm_6a]", $6A
+charmap "[bvm_6b]", $6B
+charmap "[bvm_6c]", $6C
+charmap "[bvm_6d]", $6D
+charmap "[bvm_6e]", $6E
+charmap "[bvm_6f]", $6F
+charmap "[bvm_70]", $70
+charmap "[bvm_71]", $71
+charmap "[bvm_72]", $72
+charmap "[bvm_73]", $73
+charmap "[bvm_74]", $74
+charmap "[bvm_75]", $75
+charmap "[bvm_76]", $76
+charmap "[bvm_77]", $77
+charmap "[bvm_78]", $78
+charmap "[bvm_79]", $79
+charmap "[bvm_7a]", $7A
+charmap "[bvm_7b]", $7B
+charmap "[bvm_7c]", $7C
+charmap "[bvm_7d]", $7D
+charmap "[bvm_7e]", $7E
+charmap "[bvm_7f]", $7F
+charmap "[bvm_80]", $80
+charmap "[bvm_81]", $81
+charmap "[bvm_82]", $82
+charmap "[bvm_83]", $83
+charmap "[bvm_84]", $84
+charmap "[bvm_85]", $85
+charmap "[bvm_86]", $86
+charmap "[bvm_87]", $87
+charmap "[bvm_88]", $88
+charmap "[bvm_89]", $89
+charmap "[bvm_8a]", $8A
+charmap "[bvm_8b]", $8B
+charmap "[bvm_8c]", $8C
+charmap "[bvm_8d]", $8D
+charmap "[bvm_8e]", $8E
+charmap "[bvm_8f]", $8F
+charmap "[bvm_90]", $90
+charmap "[bvm_91]", $91
+charmap "[bvm_92]", $92
+charmap "[bvm_93]", $93
+charmap "[bvm_94]", $94
+charmap "[bvm_95]", $95
+charmap "[bvm_96]", $96
+charmap "[bvm_97]", $97
+charmap "[bvm_98]", $98
+charmap "[bvm_99]", $99
+charmap "[bvm_9a]", $9A
+charmap "[bvm_9b]", $9B
+charmap "[bvm_9c]", $9C
+charmap "[bvm_9d]", $9D
+charmap "[bvm_9e]", $9E
+charmap "[bvm_9f]", $9F
+charmap "[bvm_a0]", $A0
+charmap "[bvm_a1]", $A1
+charmap "[bvm_a2]", $A2
+charmap "[bvm_a3]", $A3
+charmap "[bvm_a4]", $A4
+charmap "[bvm_a5]", $A5
+charmap "[bvm_a6]", $A6
+charmap "[bvm_a7]", $A7
+charmap "[bvm_a8]", $A8
+charmap "[bvm_a9]", $A9
+charmap "[bvm_aa]", $AA
+charmap "[bvm_ab]", $AB
+charmap "[bvm_ac]", $AC
+charmap "[bvm_ad]", $AD
+charmap "[bvm_ae]", $AE
+charmap "[bvm_af]", $AF
+charmap "[bvm_b0]", $B0
+charmap "[bvm_b1]", $B1
+charmap "[bvm_b2]", $B2
+charmap "[bvm_b3]", $B3
+charmap "[bvm_b4]", $B4
+charmap "[bvm_b5]", $B5
+charmap "[bvm_b6]", $B6
+charmap "[bvm_b7]", $B7
+charmap "[bvm_b8]", $B8
+charmap "[bvm_b9]", $B9
+charmap "[bvm_ba]", $BA
+charmap "[bvm_bb]", $BB
+charmap "[bvm_bc]", $BC
+charmap "[bvm_bd]", $BD
+charmap "[bvm_be]", $BE
+charmap "[bvm_bf]", $BF
+charmap "[bvm_c0]", $C0
+charmap "[bvm_c1]", $C1
+charmap "[bvm_c2]", $C2
+charmap "[bvm_c3]", $C3
+charmap "[bvm_c4]", $C4
+charmap "[bvm_c5]", $C5
+charmap "[bvm_c6]", $C6
+charmap "[bvm_c7]", $C7
+charmap "[bvm_c8]", $C8
+charmap "[bvm_c9]", $C9
+charmap "[bvm_ca]", $CA
+charmap "[bvm_cb]", $CB
+charmap "[bvm_cc]", $CC
+charmap "[bvm_cd]", $CD
+charmap "[bvm_ce]", $CE
+charmap "[bvm_cf]", $CF
+charmap "[bvm_d0]", $D0
+charmap "[bvm_d1]", $D1
+charmap "[bvm_d2]", $D2
+charmap "[bvm_d3]", $D3
+charmap "[bvm_d4]", $D4
+charmap "[bvm_d5]", $D5
+charmap "[bvm_d6]", $D6
+charmap "[bvm_d7]", $D7
+charmap "[bvm_d8]", $D8
+charmap "[bvm_d9]", $D9
+charmap "[bvm_da]", $DA
+charmap "[bvm_db]", $DB
+charmap "[bvm_dc]", $DC
+charmap "[bvm_dd]", $DD
+charmap "[bvm_de]", $DE
+charmap "[bvm_df]", $DF
+charmap "[bvm_e0]", $E0
+charmap "[bvm_e1]", $E1
+charmap "[bvm_e2]", $E2
+charmap "[bvm_e3]", $E3
+charmap "[bvm_e4]", $E4
+charmap "[bvm_e5]", $E5
+charmap "[bvm_e6]", $E6
+charmap "[bvm_e7]", $E7
+charmap "[bvm_e8]", $E8
+charmap "[bvm_e9]", $E9
+charmap "[bvm_ea]", $EA
+charmap "[bvm_eb]", $EB
+charmap "[bvm_ec]", $EC
+charmap "[bvm_ed]", $ED
+charmap "[bvm_ee]", $EE
+charmap "[bvm_ef]", $EF
+charmap "[bvm_f0]", $F0
+charmap "[bvm_f1]", $F1
+charmap "[bvm_f2]", $F2
+charmap "[bvm_f3]", $F3
+charmap "[bvm_f4]", $F4
+charmap "[bvm_f5]", $F5
+charmap "[bvm_f6]", $F6
+charmap "[bvm_f7]", $F7
+charmap "[bvm_f8]", $F8
+charmap "[bvm_f9]", $F9
+charmap "[bvm_fa]", $FA
+charmap "[bvm_fb]", $FB
+charmap "[bvm_fc]", $FC
+charmap "[bvm_fd]", $FD
+charmap "[bvm_fe]", $FE
+charmap "[bvm_ff]", $FF
