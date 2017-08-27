@@ -23,12 +23,14 @@ def build_string_object(strlist, encoder):
         bank = int(splitname[1], 16)
         offset = int(splitname[2], 16)
 
+        encoded_string = encoder(strsym[1])
+
         sec = Rgb5Section()
         sec.name = "Attr Table Name %X_%X" % (bank, offset)
         sec.sectype = Rgb5Section.ROMX
         sec.org = 0x4000 + offset
         sec.bank = bank
-        sec.datsec.data = encoder(strsym[1]) + b"\x00"
+        sec.datsec.data = encoded_string + (b"\x00" * (0x10 - len(encoded_string)))
 
         obj.sections.append(sec)
 
