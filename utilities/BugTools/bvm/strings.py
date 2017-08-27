@@ -71,16 +71,42 @@ def parse_charmap(infile):
         return "".join(output)
 
     #Actual parsing starts here
-    for encode_slot, line in enumerate(infile):
-        decoded_char = line[:-1]
+    for line in infile:
+        if 'charmap "' not in line:
+            continue
 
-        decoder_mapping[bytes([encode_slot])] = decoded_char
+        if line[0] == "#":
+            continue
+
+        delim_split = line.split('"')
+        decoded_char = delim_split[1]
+        if decoded_char == u"":
+            #Special case: Quoted quotes.
+            #   e.g. charmap """, $22
+
+            #This parsing logic sucks arse.
+            if len(delim_split) > 3:
+                decoded_char = u"\""
+
+        if decoded_char == u"\\n":
+            decoded_char = u"\n"
+
+        unparsed_hex = delim_split[-1].split("$")[1].strip()
+        bytedata = []
+
+        #This code -technically- means you can have characters that encode to
+        #multiple bytes if you use more than 2 hexdigits at a time
+        for i in range(0, len(unparsed_hex), 2):
+            bytedata.append(int(unparsed_hex[i:i+2], 16) << i // 2)
+
+        if bytes(bytedata) not in decoder_mapping.keys():
+            decoder_mapping[bytes(bytedata)] = decoded_char
 
         if len(decoded_char) > 1:
             ligature_starters.add(decoded_char[0])
-            ligature_mapping[decoded_char] = bytes([encode_slot])
+            ligature_mapping[decoded_char] = bytes(bytedata)
             ligature_largest = max(ligature_largest, len(decoded_char))
         else:
-            encoder_mapping[decoded_char] = bytes([encode_slot])
+            encoder_mapping[decoded_char] = bytes(bytedata)
 
     return encoder, decoder
