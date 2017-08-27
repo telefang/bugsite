@@ -1,15 +1,15 @@
+import csv
+
 def parse_stringtbl(infile):
     """Parse a list of string equates for use by the .bvm assembler."""
 
+    tsvreader = csv.reader(infile, delimiter='\t')
+
     known_equates = {}
 
-    for line in infile:
-        sym, decl = line.split("\t")
-
-        decl = decl.strip()
-        separator = decl[0]
-        decl = decl[1:-1]
-        decl.replace(separator + separator, separator)
+    for line in tsvreader:
+        sym = line[0]
+        decl = line[1]
 
         known_equates[sym] = decl
 
