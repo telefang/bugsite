@@ -1,6 +1,6 @@
 from BugTools.fs.parser import Label, Filename
 from CodeModule import cmodel
-from CodeModule.asm.rgbds import Rgb5, Rgb5Section, Rgb5Symbol
+from CodeModule.asm.rgbds import Rgb4, Rgb4Section, Rgb4Symbol
 
 import os.path
 
@@ -36,7 +36,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     if needed. The databank index must be greater than the last directory bank
     in use.
 
-    The returned RGB5 object file will contain sections with the filesystem
+    The returned Rgb4 object file will contain sections with the filesystem
     data. One symbol will be exposed for the directory."""
 
     #Filter out the parselist. We only care about file references.
@@ -72,19 +72,19 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
             start_bank += 1
 
     #Build the RGBDS file
-    rgb5obj = Rgb5()
+    rgb4obj = Rgb4()
     directory = b"".join(directory)
     start_bank = dirbank
 
     while len(directory) > 0:
-        directory_section = Rgb5Section()
+        directory_section = Rgb4Section()
         directory_section.name = "BugFS Directory %s" % start_bank
-        directory_section.sectype = Rgb5Section.ROMX
+        directory_section.sectype = Rgb4Section.ROMX
         directory_section.org = 0x4000
         directory_section.bank = start_bank
         directory_section.datsec.data = directory[:0x4000]
 
-        rgb5obj.sections.append(directory_section)
+        rgb4obj.sections.append(directory_section)
 
         directory = directory[0x4000:]
         start_bank += 1
@@ -92,24 +92,24 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     datum = b"".join(datum)
     start_bank = databank
     while len(datum) > 0:
-        datum_section = Rgb5Section()
+        datum_section = Rgb4Section()
         datum_section.name = "BugFS Data %s" % start_bank
-        datum_section.sectype = Rgb5Section.ROMX
+        datum_section.sectype = Rgb4Section.ROMX
         datum_section.org = 0x4000
         datum_section.bank = start_bank
         datum_section.datsec.data = datum[:0x4000]
 
-        rgb5obj.sections.append(datum_section)
+        rgb4obj.sections.append(datum_section)
 
         datum = datum[0x4000:]
         start_bank += 1
 
-    directory_symbol = Rgb5Symbol()
+    directory_symbol = Rgb4Symbol()
     directory_symbol.name = "BugFS_Directory"
-    directory_symbol.symtype = Rgb5Symbol.EXPORT
+    directory_symbol.symtype = Rgb4Symbol.EXPORT
     directory_symbol.value.sectionid = 0 #Index of what section this symbol is in
     directory_symbol.value.value = 0 #Offset from the start of said section
 
-    rgb5obj.symbols.append(directory_symbol)
+    rgb4obj.symbols.append(directory_symbol)
 
-    return rgb5obj
+    return rgb4obj
