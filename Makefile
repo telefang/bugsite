@@ -99,12 +99,12 @@ $(BUILD_DIR)/%.inc: %.inc
 
 $(BUILD_DIR)/%.2bpp: %.png
 	@echo "Building" $<
-	@rm -f $@
-   @rgbgfx -d 2 -o $@ $<
+	@mkdir -p $(dir $@)
+	@rgbgfx -d 2 -o $@ $<
 
 $(BUILD_DIR)/%.1bpp: %.png
 	@echo "Building" $<
-	@rm -f $@
+	@mkdir -p $(dir $@)
 	@rgbgfx -d 1 -o $@ $<
 
 $(BUILD_DIR)/%.bugvm.bin: %.bvm
