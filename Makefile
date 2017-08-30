@@ -98,13 +98,15 @@ $(BUILD_DIR)/%.inc: %.inc
 	@cp $< $@
 
 $(BUILD_DIR)/%.2bpp: %.png
+	@echo "Building" $<
 	@rm -f $@
-	@$(PYTHON) $(PRET)/gfx.py 2bpp $<
+   @rgbgfx -d 2 -o $@ $<
 
 $(BUILD_DIR)/%.1bpp: %.png
+	@echo "Building" $<
 	@rm -f $@
-	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
-   
+	@rgbgfx -d 1 -o $@ $<
+
 $(BUILD_DIR)/%.bugvm.bin: %.bvm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
@@ -114,3 +116,8 @@ $(BUILD_DIR)/%.atbl.o: %.csv
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/montable_compile.py $< script/charmap.txt $@
+
+$(BUILD_DIR)/%.bin: %.bin
+	@echo "Copying" $<
+	@mkdir -p $(dir $@)
+	@cp $< $@
