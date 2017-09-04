@@ -1,15 +1,28 @@
 import csv
 
-def parse_stringtbl(infile):
-    """Parse a list of string equates for use by the .bvm assembler."""
+def parse_stringtbl(infile, language):
+    """Parse a list of string equates for use by the .bvm assembler.
 
-    tsvreader = csv.reader(infile, delimiter='\t')
+    The parsed equates dict will only contain the language specified in the
+    language parameter, which should match the heading row."""
 
     known_equates = {}
 
-    for line in tsvreader:
-        sym = line[0]
-        decl = line[1]
+    reader = csv.reader(infile)
+    lblrow = strrow = None
+    for row in reader:
+        lblrow = row.index("Label")
+        strrow = row.index(language)
+
+        if lblrow is not None and strrow is not None:
+            break
+    else:
+        #CSV was empty or had no header
+        return known_equates
+
+    for row in reader:
+        sym = row[lblrow]
+        decl = row[strrow]
 
         known_equates[sym] = decl
 

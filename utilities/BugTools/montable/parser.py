@@ -11,7 +11,7 @@ def parse_names_list(strfile, language):
     reader = csv.reader(strfile)
     lblrow = strrow = None
     for row in reader:
-        lblrow = row.index("Symbol")
+        lblrow = row.index("Label")
         strrow = row.index(language)
 
         if lblrow is not None and strrow is not None:

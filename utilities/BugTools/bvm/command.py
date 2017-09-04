@@ -8,14 +8,18 @@ def bvmasm():
     parser = argparse.ArgumentParser(description='An assembler and source format for the BugVM virtual machine, commonly seen in KAZe developed Game Boy games.')
 
     parser.add_argument('infile', metavar='file.bvm', type=str, help='The file to assemble.')
-    parser.add_argument('strings', metavar='strings.txt', type=str, help='String equates for the .bvm code to use. Must be UTF-16.')
+    parser.add_argument('--deffile', dest='deffile', metavar='strings.txt', type=str, action='append', help='Macro equates for the .bvm code to use. Must be UTF-8.')
+    parser.add_argument('--language', type=str, default=u"Japanese")
     parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping for the DB opcode.')
     parser.add_argument('output', metavar='file.bugvm.bin', type=str, help='Where to save the assembled code.')
 
     args = parser.parse_args()
 
-    with open(args.strings, encoding="utf-8") as strfile:
-        ke = parse_stringtbl(strfile)
+    ke = {}
+
+    for deffilename in args.deffile:
+        with open(deffilename, encoding="utf-8") as strfile:
+            ke.update(parse_stringtbl(strfile, args.language))
 
     with open(args.charmap, encoding="utf-8") as mapfile:
         strenc, strdec = parse_charmap(mapfile)
