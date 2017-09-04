@@ -107,6 +107,245 @@ def fix_labels(parselist, known_equates = None, string_enc = None):
 
     return parselist, known_equates
 
+def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172, strval = 0xFFFF):
+    """Prove if a BugVM program executes with memory set to a given value.
+
+    start and end are the parselist indicies of the region of code we care
+    about checking. indirslot is the BugVM immediate value pointing to the
+    memory slot we want to check. strval is the value that we are checking to
+    validate.
+
+    known_equates is the list of known equates; this function expects all
+    equates to have been resolved to a Python value and labels to be included
+    within the list.
+
+    This function will only return TRUE if it can be statically proven that the
+    given memory slot is equal to the given value for the entire length of the
+    given region. FALSE does not necessarily mean that the given assertion is
+    logically false, merely that we could not prove it. The following are
+    possible reasons why this process could fail:
+
+    1. The program actually fails the given assertion
+    2. No STR opcode writes to this memory slot
+    3. A STR opcode does write to this memory slot, but it writes another INDIR
+    or PRED value
+    4. A STR opcode does write the given value to the memory slot, but it's
+    obfuscated in some way that our static prover cannot handle
+    5. A STR opcode does write the given value to the memory slot, but it's
+    before a label or a jump instruction (cannot statically prove execution
+    flow reaches the STR)
+    6. A STR opcode does write the given value to the memory slot, but it does
+    so after the start of the code region. Be conservative with your start
+    and end indicies!
+    7. Your code contains a label
+
+    Basically we're only good for instruction streams like:
+
+    IMMED $172
+    INDIR
+    IMMED $FFFF
+    STR"""
+
+    #Traverse backwards through the parselist until we find an STR instruction
+    #matching our indirslot
+    static_datastack = []
+    proven_before_start = False
+    ptr = start - 1
+    while ptr < start and ptr < len(parselist):
+        if type(parselist[ptr]) == Label:
+            #Cannot guarantee execution flow across labels.
+            static_datastack = []
+            proven_before_start = False
+
+        if type(parselist[ptr]) == Instruction:
+            if parselist[ptr].opcode in ["JMPT", "JMP", "FARJMP"]:
+                #Cannot guarantee execution flow across jumps.
+                static_datastack = []
+                proven_before_start = False
+
+            if parselist[ptr].opcode in ["IMMED"]:
+                static_datastack.append(parselist[ptr].operand[1])
+
+            if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
+                static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
+
+            if parselist[ptr].opcode in ["STR"]:
+                if len(static_datastack) >= 2:
+                    if static_datastack[-2] == indirslot & 0x10000:
+                        proven_before_start = static_datastack[-1] == strval
+                else:
+                    proven_before_start = False
+
+        ptr += 1
+
+    if not proven_before_start:
+        return False
+
+    #At this point we have proven the region of code starts with a valid assertion
+    #We just have to verify that the code region does not contain an STR that
+    #would violate this invariant
+    static_datastack = []
+    ptr = start
+    while ptr < end and ptr < len(parselist):
+        if type(parselist[ptr]) == Label:
+            #Cannot guarantee execution flow across labels.
+            return False
+
+        if type(parselist[ptr]) == Instruction:
+            #Strictly speaking, a jump cannot break the invariant within the
+            #region, so we won't return False on it.
+
+            if parselist[ptr].opcode in ["IMMED"]:
+                static_datastack.append(parselist[ptr].operand[1])
+
+            if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
+                static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
+
+            if parselist[ptr].opcode in ["STR"]:
+                if len(static_datastack) >= 2:
+                    if static_datastack[-2] == indirslot & 0x10000:
+                        if static_datastack[-1] != strval:
+                            #Invariant violated within code block.
+                            return False
+                else:
+                    #Could not statically determine parameters to STR
+                    return False
+
+        ptr += 1
+
+    return True
+
+def autobalance_strings(parselist, known_equates, string_enc):
+    """Optional pass to automatically word-wrap string equates used in text.
+
+    This pass should run after equates have been resolved and labels fixed.
+    It returns the given parselist and a new equates dictionary that has had
+    autobalance applied to applicable strings.
+
+    A set of DB opcodes referencing string equates set to empty string will
+    cause those equates to be autobalanced. The whole run of empty string
+    equates, including the last non-empty string equate, will be treated as a
+    single 'autobalance set'. Strings within an autobalance set will be
+    reformatted such that no single DB instruction will cause a line exceeding
+    the window width's length to be printed.
+
+    This approach has some limitations: Namely, we cannot actually adjust the
+    number of lines emitted. If a formatted autobalance set fits into a lower
+    number of lines than are actually printed, we cannot remove DB/PRNT opcodes
+    from the instruction stream. Likewise, we cannot emit additional opcodes
+    to account for additional lines needed by a longer autobalance set.
+
+    Furthermore, we assume the window width is the lowest possible for Bugsite.
+    If we can statically determine from the parselist that these string equates
+    are only used while indirect slot $172 is $FFFF, then we will use the wider
+    portraitless window width for that autobalance set. Note that these are
+    Bugsite specific and this autobalance routine cannot be used for other
+    games that use BugVM, such as Zok Zok Heroes."""
+
+    #First, we identify our autobalance groups.
+    ab_groups = []
+    next_ab_group = None
+    last_global = Label(SymbolicRef('', False), False)
+
+    out_ke = copy.deepcopy(known_equates)
+
+    for index, instr in enumerate(parselist):
+        if type(instr) is Label:
+            if not instr.symbol.is_local:
+                last_global = instr
+
+        if type(instr) is not Instruction:
+            continue
+
+        if instr.opcode == "DB" and len(instr.operand) > 0:
+            if type(instr.operand[0]) is not SymbolicRef:
+                #Autobalance groups can only be constructed from symbolic refs
+                if next_ab_group is not None:
+                    ab_groups.append(next_ab_group)
+                    next_ab_group = None
+
+                continue
+
+            if instr.operand[0].is_local:
+                target_symbol = known_equates[last_global.symbol.name + instr.operand[0].name]
+            else:
+                target_symbol = known_equates[instr.operand[0].name]
+
+            if type(target_symbol) is not str:
+                #Autobalance groups can only be constructed from string refs
+                if next_ab_group is not None:
+                    ab_groups.append(next_ab_group)
+                    next_ab_group = None
+
+                continue
+            elif len(target_symbol) > 0:
+                #Nonempty strings trigger a new autobalance group
+                if next_ab_group is not None:
+                    ab_groups.append(next_ab_group)
+                    next_ab_group = None
+
+                next_ab_group = [index]
+            else:
+                #Empty strings coalesce into the existing autobalance group
+                next_ab_group.append(index)
+        else:
+            #Non-DB opcodes we don't care about
+            continue
+    else:
+        #Clean up the last autobalance group
+        if next_ab_group is not None:
+            ab_groups.append(next_ab_group)
+            next_ab_group = None
+
+    #We now have a list of autobalance groups to consider.
+    for ab_group in ab_groups:
+        assert ab_group is not None
+
+        if len(ab_group) < 2:
+            #String is already balanced
+            continue
+
+        #Assert autobalance group portrait state.
+        has_no_portrait = statically_prove_str(parselist, known_equates, ab_groups[0], ab_groups[-1], 0x172, 0xFFFF)
+
+        if has_no_portrait:
+            ab_max_width = 16
+        else:
+            ab_max_width = 12
+
+        #Collect our string data and break it into words
+        merged_string = []
+        for idx in ab_groups:
+            merged_string.append(known_equates[parselist[idx].operands[0].name])
+
+        merged_string = "".join(merged_string)
+        merged_bytes = string_enc(merged_string)
+
+        newline = string_end("\n")
+        space = string_end(" ")
+
+        balanced_strings = []
+        for line in merged_bytes.split(newline):
+            balanced_line = b""
+
+            for word in line.split(space):
+                if len(balanced_line) + len(space) + len(word) > ab_max_width:
+                    balanced_strings.push(balanced_line + newline)
+
+                    balanced_line = word
+                else:
+                    balanced_line += space
+                    balanced_line += word
+            else:
+                if len(balanced_line) > 0:
+                    balanced_strings.push(balanced_line)
+
+        #Distribute the now-balanced strings back into the autobalance group
+        for balance_idx, parse_idx in enumerate(ab_group):
+            out_ke[parselist[parse_idx].operands[0].name] = balanced_strings[balance_idx]
+
+    return (parselist, out_ke)
+
 def resolve_instruction_operands(instr, known_equates, last_global):
     resolved_operands = []
 
@@ -183,6 +422,8 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                             encoded_stream.append(bytes([operand & 0xFF]))
                         elif type(operand) is str:
                             encoded_stream.append(string_enc(operand))
+                        elif type(operand) is bytes:
+                            encoded_stream.append(operand)
                         else:
                             raise InvalidOperandError(command)
 
