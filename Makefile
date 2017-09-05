@@ -52,7 +52,7 @@ $(foreach obj, $(OBJS_DIR_ALL), \
 # Link objects together to build a rom.
 all: patch alpha beta
 
-patch: $(ROMS_PATCH) compare_correctness compare_completeness
+patch: $(ROMS_PATCH)
 
 alpha: $(ROMS_ALPHA)
 
