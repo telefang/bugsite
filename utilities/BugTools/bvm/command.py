@@ -24,19 +24,19 @@ def bvmasm():
 
     with open(args.charmap, encoding="utf-8") as mapfile:
         strenc, strdec = parse_charmap(mapfile)
-
+    
     with open(args.infile) as srcfile:
         src = srcfile.read()
         tree = bvm_grammar.parse(src + "\n") #Add a newline. Our grammar doesn't like files without ending newlines.
-
+        
         mp = InstrListVisitor().visit(tree)
-
+        
         mp, ke = resolve_equates(mp, ke)
-        mp, ke = fix_labels(mp, ke, strenc)
-
+        
         if args.autobalance:
             mp, ke = autobalance_strings(mp, ke, strenc)
-
+        
+        mp, ke = fix_labels(mp, ke, strenc)
         mp, ke, strenc, data = encode_instruction_stream(mp, ke, strenc)
 
         with open(args.output, 'wb') as outfile:
