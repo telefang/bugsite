@@ -10,7 +10,7 @@ def bvmasm():
     parser.add_argument('infile', metavar='file.bvm', type=str, help='The file to assemble.')
     parser.add_argument('--deffile', dest='deffile', metavar='strings.csv', type=str, action='append', help='Macro equates for the .bvm code to use. Must be UTF-8.')
     parser.add_argument('--language', type=str, default=u"Japanese", help='Which language\'s equates should be used when reading definitions files')
-    parser.add_argument('--autobalance', help='String equates larger than a single line will overflow into following empty equates.')
+    parser.add_argument('--autobalance', help='String equates larger than a single line will overflow into following empty equates.', action='store_true')
     parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping for the DB opcode.')
     parser.add_argument('output', metavar='file.bugvm.bin', type=str, help='Where to save the assembled code.')
 
