@@ -119,7 +119,7 @@ $(BUILD_DIR)/%.1bpp: %.png
 $(BUILD_DIR)/%.bugvm.bin: %.bvm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings.csv --language English script/charmap.txt $@
+	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings_npc.csv --deffile script/bugvm_strings_story.csv --deffile script/bugvm_strings_system.csv --autobalance --language English script/charmap.txt $@
 
 $(BUILD_DIR)/%.atbl.o: %.csv
 	@echo "Building" $<
