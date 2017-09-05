@@ -97,6 +97,8 @@ def fix_labels(parselist, known_equates = None, string_enc = None):
                         instr_len += 1 #TODO: tag ints so we know what size they are...
                     elif type(operand) is str:
                         instr_len += len(string_enc(operand))
+                    elif type(operand) is bytes:
+                        instr_len += len(operand)
                     else:
                         raise InvalidOperandError(command)
 
@@ -164,7 +166,7 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
                 proven_before_start = False
             
             if parselist[ptr].opcode in ["IMMED"]:
-                static_datastack.append(parselist[ptr].operand[1])
+                static_datastack.append(parselist[ptr].operands[1])
             
             if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
                 static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
@@ -196,7 +198,7 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
             #region, so we won't return False on it.
             
             if parselist[ptr].opcode in ["IMMED"]:
-                static_datastack.append(parselist[ptr].operand[1])
+                static_datastack.append(parselist[ptr].operands[1])
             
             if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
                 static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
@@ -257,8 +259,8 @@ def autobalance_strings(parselist, known_equates, string_enc):
         if type(instr) is not Instruction:
             continue
         
-        if instr.opcode == "DB" and len(instr.operand) > 0:
-            if type(instr.operand[0]) is not SymbolicRef:
+        if instr.opcode == "DB" and len(instr.operands) > 0:
+            if type(instr.operands[0]) is not SymbolicRef:
                 #Autobalance groups can only be constructed from symbolic refs
                 if next_ab_group is not None:
                     ab_groups.append(next_ab_group)
@@ -266,10 +268,10 @@ def autobalance_strings(parselist, known_equates, string_enc):
                 
                 continue
             
-            if instr.operand[0].is_local:
-                target_symbol = known_equates[last_global.symbol.name + instr.operand[0].name]
+            if instr.operands[0].is_local:
+                target_symbol = known_equates[last_global.symbol.name + instr.operands[0].name]
             else:
-                target_symbol = known_equates[instr.operand[0].name]
+                target_symbol = known_equates[instr.operands[0].name]
             
             if type(target_symbol) is not str:
                 #Autobalance groups can only be constructed from string refs
@@ -306,7 +308,7 @@ def autobalance_strings(parselist, known_equates, string_enc):
             continue
         
         #Assert autobalance group portrait state.
-        has_no_portrait = statically_prove_str(parselist, known_equates, ab_groups[0], ab_groups[-1], 0x172, 0xFFFF)
+        has_no_portrait = statically_prove_str(parselist, known_equates, ab_group[0], ab_group[-1], 0x172, 0xFFFF)
         
         if has_no_portrait:
             ab_max_width = 16
@@ -315,34 +317,47 @@ def autobalance_strings(parselist, known_equates, string_enc):
         
         #Collect our string data and break it into words
         merged_string = []
-        for idx in ab_groups:
+        for idx in ab_group:
             merged_string.append(known_equates[parselist[idx].operands[0].name])
             
         merged_string = "".join(merged_string)
         merged_bytes = string_enc(merged_string)
-        
-        newline = string_end("\n")
-        space = string_end(" ")
-        
+
+        newline = string_enc("\n")
+        space = string_enc(" ")
+
         balanced_strings = []
-        for line in merged_bytes.split(newline):
-            balanced_line = b""
-            
-            for word in line.split(space):
-                if len(balanced_line) + len(space) + len(word) > ab_max_width:
-                    balanced_strings.push(balanced_line + newline)
-                    
-                    balanced_line = word
-                else:
-                    balanced_line += space
-                    balanced_line += word
-            else:
-                if len(balanced_line) > 0:
-                    balanced_strings.push(balanced_line)
+        balanced_line = b""
+        is_odd_line = True
         
+        for word in merged_bytes.split(space):
+            if len(balanced_line) == 0:
+                balanced_line += word
+            elif len(balanced_line) + len(space) + len(word) > ab_max_width:
+                if is_odd_line:
+                    balanced_strings.append(balanced_line + newline)
+                else:
+                    balanced_strings[-1] += balanced_line
+
+                is_odd_line = not is_odd_line
+
+                balanced_line = word
+            else:
+                balanced_line += space
+                balanced_line += word
+        else:
+            if len(balanced_line) > 0:
+                if is_odd_line:
+                    balanced_strings.append(balanced_line + newline)
+                else:
+                    balanced_strings[-1] += balanced_line
+
         #Distribute the now-balanced strings back into the autobalance group
         for balance_idx, parse_idx in enumerate(ab_group):
-            out_ke[parselist[parse_idx].operands[0].name] = balanced_strings[balance_idx]
+            if len(balanced_strings) <= balance_idx:
+                out_ke[parselist[parse_idx].operands[0].name] = b""
+            else:
+                out_ke[parselist[parse_idx].operands[0].name] = balanced_strings[balance_idx]
     
     return (parselist, out_ke)
 
