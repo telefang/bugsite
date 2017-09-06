@@ -250,6 +250,7 @@ def autobalance_strings(parselist, known_equates, string_enc):
     last_global = Label(SymbolicRef('', False), False)
     
     out_ke = copy.deepcopy(known_equates)
+    balance_debug = {}
     
     for index, instr in enumerate(parselist):
         if type(instr) is Label:
@@ -333,14 +334,17 @@ def autobalance_strings(parselist, known_equates, string_enc):
         for word in merged_bytes.split(space):
             if len(balanced_line) == 0:
                 balanced_line += word
-            elif len(balanced_line) + len(space) + len(word) > ab_max_width:
+            elif len(balanced_line) + len(space) + len(word) > ab_max_width or newline in word:
                 if is_odd_line:
                     balanced_strings.append(balanced_line + newline)
                 else:
-                    balanced_strings[-1] += balanced_line
+                    balanced_strings[-1] += balanced_line + newline
 
                 is_odd_line = not is_odd_line
-
+                
+                if newline in word:
+                    word = word.replace(newline, b"")
+                
                 balanced_line = word
             else:
                 balanced_line += space
@@ -356,8 +360,13 @@ def autobalance_strings(parselist, known_equates, string_enc):
         for balance_idx, parse_idx in enumerate(ab_group):
             if len(balanced_strings) <= balance_idx:
                 out_ke[parselist[parse_idx].operands[0].name] = b""
+                balance_debug[parselist[parse_idx].operands[0].name] = b""
             else:
                 out_ke[parselist[parse_idx].operands[0].name] = balanced_strings[balance_idx]
+                balance_debug[parselist[parse_idx].operands[0].name] = balanced_strings[balance_idx]
+    
+    #TODO: Add an actual autobalance debug option.
+    #print (balance_debug)
     
     return (parselist, out_ke)
 
