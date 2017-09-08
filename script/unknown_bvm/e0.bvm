@@ -2,7 +2,7 @@
     RET
 
 .sub_e0_4
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
@@ -17,7 +17,7 @@
     IMMED $2
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $101
     NPREF UO $6a
     POPALL
@@ -32,7 +32,7 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $cd
     NPREF UO $6a
     POPALL
@@ -42,7 +42,7 @@
     IMMED $1
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $101
     NPREF UO $6a
     POPALL
@@ -52,7 +52,7 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_e0_c7 ;$c7
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
@@ -62,10 +62,10 @@
     IMMED $1f
     NPREF UO $6c
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $86
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
@@ -75,7 +75,7 @@
     IMMED $1f
     NPREF UO $6c
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $85
     POPALL
     IMMED $172
@@ -83,7 +83,7 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $cd
     NPREF UO $6a
     POPALL
@@ -98,13 +98,13 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $3
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $7e
     INDIR
     NPREF UO $6b
@@ -112,7 +112,7 @@
     JMP .sub_e0_cb ;$cb
 
 .sub_e0_c7
-    UO $3
+    ARFREE
     NPREF RESET
     POPALL
 
@@ -120,7 +120,7 @@
     JMP .sub_e0_d2 ;$d2
 
 .sub_e0_ce
-    UO $3
+    ARFREE
     NPREF RESET
     POPALL
 

@@ -17,7 +17,7 @@
     IMMED $1838
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $95
     NPREF UO $6a
     POPALL
@@ -69,7 +69,7 @@
     IMMED $71
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $d7
     NPREF UO $6a
     POPALL
@@ -79,7 +79,7 @@
     IMMED $192
     CMP_NEQ
     JMPT .sub_1a0_bd ;$bd
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $a
@@ -87,18 +87,18 @@
     IMMED $e
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $2
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $40
@@ -112,7 +112,7 @@
     IMMED $15f
     CMP_NEQ
     JMPT .sub_1a0_f8 ;$f8
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $8
@@ -120,18 +120,18 @@
     IMMED $2
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $3
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $80
@@ -140,7 +140,7 @@
     JMP .sub_1a0_100 ;$100
 
 .sub_1a0_f8
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
@@ -171,11 +171,11 @@
     JMPT .sub_1a0_1bf ;$1bf
     IMMED $17e
     INDIR
-    UO $3
+    ARFREE
     NPREF UO $68
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $ca
     NPREF UO $6a
     POPALL
@@ -215,7 +215,7 @@
     INDIR
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $95
     NPREF UO $6a
     POPALL
@@ -228,14 +228,14 @@
     IMMED $51
     CMP_NEQ
     JMPT .sub_1a0_19f ;$19f
-    UO $3
+    ARFREE
     IMMED $f
     NPREF UO $9d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
-    UO $3
+    ARFREE
     IMMED $192
     NPREF UO $6b
     POPALL
@@ -247,14 +247,14 @@
     IMMED $5c
     CMP_NEQ
     JMPT .sub_1a0_1bc ;$1bc
-    UO $3
+    ARFREE
     IMMED $f
     NPREF UO $9d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
-    UO $3
+    ARFREE
     IMMED $15f
     NPREF UO $6b
     POPALL

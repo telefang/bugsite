@@ -24,12 +24,12 @@
     JMP .sub_ec_d ;$d
 
 .sub_ec_29
-    UO $3
+    ARFREE
     IMMED $be
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     IMMED $bf
     NPREF UO $6a
     POPALL
@@ -122,15 +122,15 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_ec_104 ;$104
-    UO $3
+    ARFREE
     IMMED $176
     INDIR
     NPREF UO $e8
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $eb
     POPALL
-    UO $3
+    ARFREE
     IMMED $e8
     NPREF UO $6a
     POPALL
@@ -141,7 +141,7 @@
     INDIR
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $e9
     NPREF UO $6a
     POPALL

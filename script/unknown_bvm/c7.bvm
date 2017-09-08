@@ -2,7 +2,7 @@
     RET
 
 .sub_c7_4
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     IMMED $173
@@ -36,7 +36,7 @@
     NPREF POPALL
     IMMED $172
     INDIR
-    UO $3
+    ARFREE
     IMMED $492
     INDIR
     NPREF UO $ba
@@ -130,7 +130,7 @@
     RET
 
 .sub_c7_dd
-    UO $3
+    ARFREE
     IMMED $107
     NPREF UO $6a
     POPALL
@@ -145,10 +145,10 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_c7_10a ;$10a
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
-    UO $3
+    ARFREE
     IMMED $e0
     NPREF UO $6a
     POPALL
@@ -156,10 +156,10 @@
     JMP .sub_c7_130 ;$130
 
 .sub_c7_10a
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $2a
@@ -167,13 +167,13 @@
     IMMED $12
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $3
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $7e
     INDIR
     NPREF UO $6b
@@ -190,42 +190,42 @@
     POPALL
 
 .sub_c7_13c
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     RET
 
 .sub_c7_141
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
-    UO $3
+    ARFREE
     DB STR_C7_146
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
-    UO $3
+    ARFREE
     IMMED $a
     NPREF UO $5c
     POPALL
-    UO $3
+    ARFREE
     DB STR_C7_16C
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
-    UO $3
+    ARFREE
     IMMED $a
     NPREF UO $5c
     POPALL
@@ -250,13 +250,13 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_c7_1dc ;$1dc
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
     NPREF UO $7e
     POPALL
-    UO $3
+    ARFREE
     DB STR_C7_1C5
 
     NPREF PRINT
@@ -264,13 +264,13 @@
     JMP .sub_c7_1fc ;$1fc
 
 .sub_c7_1dc
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
     NPREF UO $7e
     POPALL
-    UO $3
+    ARFREE
     DB STR_C7_1E8
 
     NPREF PRINT

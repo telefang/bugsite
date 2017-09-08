@@ -28,12 +28,12 @@
     IMMED $0
     CMP_EQ
     JMPT .sub_e3_16c ;$16c
-    UO $3
+    ARFREE
     IMMED $388
     INDIR
     NPREF UO $e8
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $eb
     POPALL
     IMMED $3f3
@@ -43,7 +43,7 @@
     IMMED $0
     CMP_EQ
     JMPT .sub_e3_6f ;$6f
-    UO $3
+    ARFREE
     IMMED $3f3
     INDIR
     IMMED $ff
@@ -58,7 +58,7 @@
     AND
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $119
     NPREF UO $6a
     POPALL
@@ -71,12 +71,12 @@
     INDIR
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $388
     INDIR
     NPREF UO $e8
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $eb
     POPALL
     IMMED $400
@@ -93,7 +93,7 @@
     IMMED $0
     CMP_EQ
     JMPT .sub_e3_c3 ;$c3
-    UO $3
+    ARFREE
     IMMED $40a
     INDIR
     IMMED $ff
@@ -123,7 +123,7 @@
     IMMED $0
     CMP_EQ
     JMPT .sub_e3_fa ;$fa
-    UO $3
+    ARFREE
     IMMED $40b
     INDIR
     IMMED $ff
@@ -155,7 +155,7 @@
     IMMED $0
     CMP_EQ
     JMPT .sub_e3_12d ;$12d
-    UO $3
+    ARFREE
     IMMED $40c
     INDIR
     IMMED $ff
@@ -185,7 +185,7 @@
     IMMED $0
     CMP_EQ
     JMPT .sub_e3_164 ;$164
-    UO $3
+    ARFREE
     IMMED $40d
     INDIR
     IMMED $ff
@@ -210,7 +210,7 @@
     POPALL
 
 .sub_e3_164
-    UO $3
+    ARFREE
     IMMED $388
     INDIR
     NPREF UO $e7

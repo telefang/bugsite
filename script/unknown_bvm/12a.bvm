@@ -2,7 +2,7 @@
     RET
 
 .sub_12a_4
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     IMMED $172
@@ -15,7 +15,7 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $123
     NPREF UO $6a
     POPALL
@@ -36,7 +36,7 @@
     NPREF POPALL
     IMMED $172
     INDIR
-    UO $3
+    ARFREE
     IMMED $492
     INDIR
     NPREF UO $b8
@@ -52,7 +52,7 @@
     IMMED $8
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $122
     NPREF UO $6a
     POPALL
@@ -102,13 +102,13 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_12a_ce ;$ce
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
     NPREF UO $7e
     POPALL
-    UO $3
+    ARFREE
     DB STR_12A_B7
 
     NPREF PRINT
@@ -116,13 +116,13 @@
     JMP .sub_12a_ee ;$ee
 
 .sub_12a_ce
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
     NPREF UO $7e
     POPALL
-    UO $3
+    ARFREE
     DB STR_12A_DA
 
     NPREF PRINT
