@@ -325,13 +325,16 @@ def autobalance_strings(parselist, known_equates, string_enc):
         space = string_enc(" ")
 
         balanced_strings = []
+        balanced_line = b""
         is_odd_line = True
         
         for line in merged_bytes.split(newline):
             for word in line.split(space):
+                word = word.strip()
+                
                 if len(balanced_line) == 0:
                     balanced_line += word
-                elif len(balanced_line) + len(space) + len(word) >= ab_max_width:
+                elif len(balanced_line) + len(space) + len(word) > ab_max_width:
                     balanced_strings.append(balanced_line)
                     balanced_line = word
                 else:
@@ -340,21 +343,22 @@ def autobalance_strings(parselist, known_equates, string_enc):
             else:
                 if len(balanced_line) > 0:
                     balanced_strings.append(balanced_line)
+                    balanced_line = b""
 
         #Generate a new instruction stream for our now formatted string data.
         new_instruction_stream = []
         is_winbrk_line = False
         for line in balanced_strings:
             if is_winbrk_line:
-                new_instruction_stream.append(Instruction("DB", [line + newline], ""))
-            else:
                 new_instruction_stream.append(Instruction("DB", [line], ""))
+            else:
+                new_instruction_stream.append(Instruction("DB", [line + newline], ""))
 
             new_instruction_stream.append(Instruction("PRINT", [], ""))
             new_instruction_stream.append(Instruction("ARFREE", [], ""))
 
             if is_winbrk_line:
-                new_instruction_stream.append(Instruction("WINBRK", [line + newline], ""))
+                new_instruction_stream.append(Instruction("WINBRK", [], ""))
 
             is_winbrk_line = not is_winbrk_line
         else:
@@ -363,7 +367,8 @@ def autobalance_strings(parselist, known_equates, string_enc):
                 new_instruction_stream = new_instruction_stream[:-3]
             else:
                 new_instruction_stream = new_instruction_stream[:-2]
-
+        
+        print (new_instruction_stream)
         new_streams.append(new_instruction_stream)
 
     out_parselist = copy.deepcopy(parselist)
@@ -371,8 +376,8 @@ def autobalance_strings(parselist, known_equates, string_enc):
     #We have to consider instruction stream replacement backwards because the
     #autobalance groups are discovered forwards, and replacing in the same
     #order would invalidate existing ar_group indicies.
-    for ar_group, new_instruction_stream in reverse(zip(ar_groups, new_streams)):
-        out_parselist = out_parselist[:ar_group[0]] + new_instruction_stream + out_parselist[ar_group[-1] + 1:]
+    for ab_group, new_instruction_stream in zip(reversed(ab_groups), reversed(new_streams)):
+        out_parselist = out_parselist[:ab_group[0]] + new_instruction_stream + out_parselist[ab_group[-1] + 1:]
     
     return (out_parselist, known_equates)
 
