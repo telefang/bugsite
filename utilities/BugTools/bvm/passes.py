@@ -227,15 +227,13 @@ def autobalance_strings(parselist, known_equates, string_enc):
     A set of DB opcodes referencing string equates set to empty string will
     cause those equates to be autobalanced. The whole run of empty string
     equates, including the last non-empty string equate, will be treated as a
-    single 'autobalance set'. Strings within an autobalance set will be
-    reformatted such that no single DB instruction will cause a line exceeding
-    the window width's length to be printed.
+    single 'autobalance set'. The instruction content of the given set of
+    instructions will be modified to a series of DB, PRINT, and WINBRK
+    instructions.
     
-    This approach has some limitations: Namely, we cannot actually adjust the
-    number of lines emitted. If a formatted autobalance set fits into a lower
-    number of lines than are actually printed, we cannot remove DB/PRNT opcodes
-    from the instruction stream. Likewise, we cannot emit additional opcodes
-    to account for additional lines needed by a longer autobalance set.
+    Autobalance sets will not be processed if they contain instructions other
+    than those normally used for dialogue management, namely DB, PRINT, POPALL,
+    ARFREE, WINBRK, WINCLR, and WINWAIT opcodes.
     
     Furthermore, we assume the window width is the lowest possible for Bugsite.
     If we can statically determine from the parselist that these string equates
@@ -248,10 +246,7 @@ def autobalance_strings(parselist, known_equates, string_enc):
     ab_groups = []
     next_ab_group = None
     last_global = Label(SymbolicRef('', False), False)
-    
-    out_ke = copy.deepcopy(known_equates)
-    balance_debug = {}
-    
+
     for index, instr in enumerate(parselist):
         if type(instr) is Label:
             if not instr.symbol.is_local:
@@ -300,6 +295,8 @@ def autobalance_strings(parselist, known_equates, string_enc):
             ab_groups.append(next_ab_group)
             next_ab_group = None
     
+    new_streams = []
+
     #We now have a list of autobalance groups to consider.
     for ab_group in ab_groups:
         assert ab_group is not None
@@ -328,47 +325,56 @@ def autobalance_strings(parselist, known_equates, string_enc):
         space = string_enc(" ")
 
         balanced_strings = []
-        balanced_line = b""
         is_odd_line = True
         
-        for word in merged_bytes.split(space):
-            if len(balanced_line) == 0:
-                balanced_line += word
-            elif len(balanced_line) + len(space) + len(word) > ab_max_width or newline in word:
-                if is_odd_line:
-                    balanced_strings.append(balanced_line + newline)
+        for line in merged_bytes.split(newline):
+            for word in line.split(space):
+                if len(balanced_line) == 0:
+                    balanced_line += word
+                elif len(balanced_line) + len(space) + len(word) >= ab_max_width:
+                    balanced_strings.append(balanced_line)
+                    balanced_line = word
                 else:
-                    balanced_strings[-1] += balanced_line + newline
-
-                is_odd_line = not is_odd_line
-                
-                if newline in word:
-                    word = word.replace(newline, b"")
-                
-                balanced_line = word
+                    balanced_line += space
+                    balanced_line += word
             else:
-                balanced_line += space
-                balanced_line += word
+                if len(balanced_line) > 0:
+                    balanced_strings.append(balanced_line)
+
+        #Generate a new instruction stream for our now formatted string data.
+        new_instruction_stream = []
+        is_winbrk_line = False
+        for line in balanced_strings:
+            if is_winbrk_line:
+                new_instruction_stream.append(Instruction("DB", [line + newline], ""))
+            else:
+                new_instruction_stream.append(Instruction("DB", [line], ""))
+
+            new_instruction_stream.append(Instruction("PRINT", [], ""))
+            new_instruction_stream.append(Instruction("ARFREE", [], ""))
+
+            if is_winbrk_line:
+                new_instruction_stream.append(Instruction("WINBRK", [line + newline], ""))
+
+            is_winbrk_line = not is_winbrk_line
         else:
-            if len(balanced_line) > 0:
-                if is_odd_line:
-                    balanced_strings.append(balanced_line + newline)
-                else:
-                    balanced_strings[-1] += balanced_line
-
-        #Distribute the now-balanced strings back into the autobalance group
-        for balance_idx, parse_idx in enumerate(ab_group):
-            if len(balanced_strings) <= balance_idx:
-                out_ke[parselist[parse_idx].operands[0].name] = b""
-                balance_debug[parselist[parse_idx].operands[0].name] = b""
+            #Remove the final PRINT, ARFREE, and WINBRK instruction
+            if new_instruction_stream[-1].opcode == "WINBRK":
+                new_instruction_stream = new_instruction_stream[:-3]
             else:
-                out_ke[parselist[parse_idx].operands[0].name] = balanced_strings[balance_idx]
-                balance_debug[parselist[parse_idx].operands[0].name] = balanced_strings[balance_idx]
+                new_instruction_stream = new_instruction_stream[:-2]
+
+        new_streams.append(new_instruction_stream)
+
+    out_parselist = copy.deepcopy(parselist)
+
+    #We have to consider instruction stream replacement backwards because the
+    #autobalance groups are discovered forwards, and replacing in the same
+    #order would invalidate existing ar_group indicies.
+    for ar_group, new_instruction_stream in reverse(zip(ar_groups, new_streams)):
+        out_parselist = out_parselist[:ar_group[0]] + new_instruction_stream + out_parselist[ar_group[-1] + 1:]
     
-    #TODO: Add an actual autobalance debug option.
-    #print (balance_debug)
-    
-    return (parselist, out_ke)
+    return (out_parselist, known_equates)
 
 def resolve_instruction_operands(instr, known_equates, last_global):
     resolved_operands = []
