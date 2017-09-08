@@ -625,7 +625,7 @@
     JMPT .sub_f0_46b ;$46b
     DB STR_F0_45A
 
-    UO $4c
+    PRINT
     POPALL
     JMP .sub_f0_503 ;$503
 
@@ -637,7 +637,7 @@
     JMPT .sub_f0_485 ;$485
     DB STR_F0_477
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_503 ;$503
 
@@ -649,7 +649,7 @@
     JMPT .sub_f0_49d ;$49d
     DB STR_F0_491
 
-    UO $4c
+    PRINT
     POPALL
     JMP .sub_f0_503 ;$503
 
@@ -666,14 +666,14 @@
     JMPT .sub_f0_4c1 ;$4c1
     DB STR_F0_4B4
 
-    UO $4c
+    PRINT
     POPALL
     JMP .sub_f0_4cd ;$4cd
 
 .sub_f0_4c1
     DB STR_F0_4C2
 
-    UO $4c
+    PRINT
     POPALL
 
 .sub_f0_4cd
@@ -687,7 +687,7 @@
     JMPT .sub_f0_4ea ;$4ea
     DB STR_F0_4DC
 
-    UO $4c
+    PRINT
     POPALL
     JMP .sub_f0_503 ;$503
 
@@ -699,7 +699,7 @@
     JMPT .sub_f0_503 ;$503
     DB STR_F0_4F6
 
-    UO $4c
+    PRINT
     POPALL
 
 .sub_f0_503
@@ -1134,7 +1134,7 @@
     UO $3
     DB STR_F0_7DA
 
-    UO $4c
+    PRINT
     POPALL
     UO $3
     IMMED $2
@@ -1144,7 +1144,7 @@
     POPALL
     DB STR_F0_7F5
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_87d ;$87d
 
@@ -1165,7 +1165,7 @@
     POPALL
     DB STR_F0_822
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $2
@@ -1175,7 +1175,7 @@
     POPALL
     DB STR_F0_83E
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_87d ;$87d
 
@@ -1199,7 +1199,7 @@
 
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
 
 .sub_f0_87d
@@ -1304,7 +1304,7 @@
     NOP
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -1461,7 +1461,7 @@
     UO $3
     DB STR_F0_A31
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1
@@ -1471,7 +1471,7 @@
     POPALL
     DB STR_F0_A4C
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     IMMED $172
     INDIR
@@ -1516,7 +1516,7 @@
     UO $3
     DB STR_F0_A9F
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
 
 .sub_f0_aae
@@ -1661,7 +1661,7 @@
     UO $3
     DB STR_F0_B9E
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1f4
@@ -1860,7 +1860,7 @@
     UO $3
     DB STR_F0_CF6
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF UO $60
@@ -1956,7 +1956,7 @@
     UO $3
     DB STR_F0_D87
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -2170,7 +2170,7 @@
     UO $3
     DB STR_F0_F06
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1
@@ -2179,7 +2179,7 @@
     NPREF UO $50
     DB STR_F0_F18
 
-    UO $4c
+    PRINT
     POPALL
     UO $3
     NPREF UO $60
@@ -2254,7 +2254,7 @@
     UO $3
     DB STR_F0_F9A
 
-    UO $4c
+    PRINT
     POPALL
     UO $3
     IMMED $0
@@ -2339,7 +2339,7 @@
     UO $3
     DB STR_F0_1031
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1
@@ -2350,7 +2350,7 @@
     UO $3
     DB STR_F0_104E
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     IMMED $172
     INDIR
@@ -2386,7 +2386,7 @@
     POPALL
     DB STR_F0_1096
 
-    UO $4c
+    PRINT
     POPALL
     UO $3
     IMMED $6
@@ -2441,7 +2441,7 @@
     NPREF UO $7e
     DB STR_F0_1102
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF UO $60
@@ -2673,7 +2673,7 @@
     UO $3
     DB STR_F0_128E
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_12f7 ;$12f7
 
@@ -2695,7 +2695,7 @@
     UO $3
     DB STR_F0_12B9
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_12f7 ;$12f7
 
@@ -2717,7 +2717,7 @@
     UO $3
     DB STR_F0_12E8
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
 
 .sub_f0_12f7
@@ -2947,7 +2947,7 @@
     NPREF UO $50
     DB STR_F0_1475
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1
@@ -2957,7 +2957,7 @@
     POPALL
     DB STR_F0_148E
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     IMMED $172
     INDIR
@@ -3002,7 +3002,7 @@
     UO $3
     DB STR_F0_14E1
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
 
 .sub_f0_14f0
@@ -3147,7 +3147,7 @@
     UO $3
     DB STR_F0_15E0
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1f4
@@ -3377,7 +3377,7 @@
     NPREF WINCLR
     DB STR_F0_1772
 
-    UO $4c
+    PRINT
     POPALL
     UO $3
     NPREF UO $60
@@ -3448,7 +3448,7 @@
     UO $3
     DB STR_F0_17DA
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -3663,7 +3663,7 @@
     UO $3
     DB STR_F0_1956
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1
@@ -3672,7 +3672,7 @@
     NPREF UO $50
     DB STR_F0_1968
 
-    UO $4c
+    PRINT
     UO $3
     NPREF UO $60
     POPALL
@@ -3750,7 +3750,7 @@
     UO $3
     DB STR_F0_19ED
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $0
@@ -4090,14 +4090,14 @@
     UO $3
     DB STR_F0_1C3D
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF UO $60
     POPALL
     DB STR_F0_1C49
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -4177,7 +4177,7 @@
     UO $3
     DB STR_F0_1CCE
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1
@@ -4188,7 +4188,7 @@
     UO $3
     DB STR_F0_1CF0
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $0
@@ -4333,7 +4333,7 @@
     UO $3
     DB STR_F0_1DE1
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $2
@@ -4344,7 +4344,7 @@
     UO $3
     DB STR_F0_1E01
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     IMMED $6f
     INDIR
@@ -4543,7 +4543,7 @@
     UO $3
     DB STR_F0_1F63
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -4562,7 +4562,7 @@
 
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -4714,7 +4714,7 @@
     UO $3
     DB STR_F0_208C
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -4733,7 +4733,7 @@
     UO $3
     DB STR_F0_20B1
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -4885,7 +4885,7 @@
     UO $3
     DB STR_F0_21B5
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -4904,7 +4904,7 @@
     UO $3
     DB STR_F0_21DA
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5056,7 +5056,7 @@
     UO $3
     DB STR_F0_22DE
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5075,7 +5075,7 @@
     UO $3
     DB STR_F0_2303
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5247,7 +5247,7 @@
     UO $3
     DB STR_F0_242B
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5266,7 +5266,7 @@
     UO $3
     DB STR_F0_2450
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5352,7 +5352,7 @@
     UO $3
     DB STR_F0_24E3
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5371,7 +5371,7 @@
     UO $3
     DB STR_F0_2508
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5457,7 +5457,7 @@
     UO $3
     DB STR_F0_259B
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5476,7 +5476,7 @@
     UO $3
     DB STR_F0_25C0
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5562,7 +5562,7 @@
     UO $3
     DB STR_F0_2653
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5581,7 +5581,7 @@
     UO $3
     DB STR_F0_2678
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5743,7 +5743,7 @@
     UO $3
     DB STR_F0_277C
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3
@@ -5754,7 +5754,7 @@
     UO $3
     DB STR_F0_278F
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3
@@ -5764,7 +5764,7 @@
     POPALL
     DB STR_F0_27A6
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3
@@ -5774,7 +5774,7 @@
     POPALL
     DB STR_F0_27BB
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3
@@ -5784,7 +5784,7 @@
     POPALL
     DB STR_F0_27CF
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3
@@ -5794,7 +5794,7 @@
     POPALL
     DB STR_F0_27E5
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $1
@@ -5862,7 +5862,7 @@
     UO $3
     DB STR_F0_2860
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $2
@@ -5872,7 +5872,7 @@
     POPALL
     DB STR_F0_2879
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $8
@@ -5890,7 +5890,7 @@
     UO $3
     DB STR_F0_289E
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $2
@@ -5901,7 +5901,7 @@
     UO $3
     DB STR_F0_28BA
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -5915,7 +5915,7 @@
     UO $3
     DB STR_F0_28DA
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $2
@@ -5930,7 +5930,7 @@
     UO $3
     DB STR_F0_28FD
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3c
@@ -5939,7 +5939,7 @@
     UO $3
     DB STR_F0_290B
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3c
@@ -5948,7 +5948,7 @@
     UO $3
     DB STR_F0_2919
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3c
@@ -5957,7 +5957,7 @@
     UO $3
     DB STR_F0_2927
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $3c
@@ -5966,7 +5966,7 @@
     UO $3
     DB STR_F0_2935
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     NPREF WINBRK
@@ -6014,7 +6014,7 @@
     UO $3
     DB STR_F0_2988
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $0
@@ -6070,7 +6070,7 @@
     UO $3
     DB STR_F0_29F5
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $0
@@ -6112,7 +6112,7 @@
     NOP
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_2b77 ;$2b77
 
@@ -6140,7 +6140,7 @@
     NOP
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_2b77 ;$2b77
 
@@ -6167,7 +6167,7 @@
     NOP
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_2b77 ;$2b77
 
@@ -6192,7 +6192,7 @@
     NOP
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_2b77 ;$2b77
 
@@ -6205,17 +6205,17 @@
     UO $3
     DB STR_F0_2AF4
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     DB STR_F0_2B01
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     DB STR_F0_2B0D
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_2b77 ;$2b77
 
@@ -6243,7 +6243,7 @@
     NOP
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_2b77 ;$2b77
 
@@ -6251,7 +6251,7 @@
     UO $3
     DB STR_F0_2B56
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     DB STR_F0_2B63
@@ -6260,7 +6260,7 @@
     NOP
     NOP
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
 
 .sub_f0_2b77
@@ -6729,7 +6729,7 @@
     UO $3
     DB STR_F0_2E8D
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $9
@@ -6739,7 +6739,7 @@
     POPALL
     DB STR_F0_2EA7
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $9
@@ -6750,7 +6750,7 @@
     UO $3
     DB STR_F0_2EBF
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $0
@@ -11747,7 +11747,7 @@
     UO $3
     DB STR_F0_5044
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $db
@@ -12184,7 +12184,7 @@
     UO $3
     DB STR_F0_5339
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $da
@@ -12381,7 +12381,7 @@
     DB STR_F0_548F
 
     NOP
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_54ed ;$54ed
 
@@ -12394,7 +12394,7 @@
     UO $3
     DB STR_F0_54A5
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_54ed ;$54ed
 
@@ -12406,7 +12406,7 @@
     JMPT .sub_f0_54ca ;$54ca
     DB STR_F0_54BF
 
-    UO $4c
+    PRINT
     JMP .sub_f0_54ed ;$54ed
 
 .sub_f0_54ca
@@ -12417,7 +12417,7 @@
     JMPT .sub_f0_54e2 ;$54e2
     DB STR_F0_54D6
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_f0_54ed ;$54ed
 
@@ -12425,7 +12425,7 @@
     UO $3
     DB STR_F0_54E3
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
 
 .sub_f0_54ed
