@@ -34,7 +34,7 @@
     IMMED $0
     CMP_LEQ
     JMPT .sub_115_a2 ;$a2
-    UO $3
+    ARFREE
     NPREF UO $86
     POPALL
     IMMED $172
@@ -43,15 +43,15 @@
     INDIR
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $11a
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
-    UO $3
+    ARFREE
     IMMED $b
     ENOP $2d
     IMMED $e
@@ -61,7 +61,7 @@
     IMMED $11
     NPREF UO $7d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $b3
     POPALL
     DB STR_115_6E
@@ -70,7 +70,7 @@
 
     NPREF UO $70
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $1
@@ -82,7 +82,7 @@
     IMMED $1
     NPREF UO $6d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $85
     POPALL
     IMMED $17f
@@ -94,13 +94,13 @@
 .sub_115_a2
     IMMED $17b
     INDIR
-    UO $3
+    ARFREE
     NPREF UO $61
     STR
     POPALL
     IMMED $17e
     INDIR
-    UO $3
+    ARFREE
     IMMED $17b
     INDIR
     NPREF UO $71
@@ -156,10 +156,10 @@
     SUB
     STR
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $86
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -169,10 +169,10 @@
     IMMED $11
     NPREF UO $7d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $b3
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $85
     POPALL
     RET

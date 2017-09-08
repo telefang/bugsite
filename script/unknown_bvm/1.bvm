@@ -34,7 +34,7 @@
     RET
 
 .sub_1_3b
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
@@ -69,12 +69,12 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $104
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $5d
     POPALL
     IMMED $422
@@ -96,7 +96,7 @@
     DIV
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $172
     INDIR
     NPREF UO $6a
@@ -110,7 +110,7 @@
     IMMED $23
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $d5
     NPREF UO $6a
     DB STR_1_C4
@@ -242,10 +242,10 @@
     NOP
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
     IMMED $422
@@ -267,7 +267,7 @@
     DIV
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $172
     INDIR
     NPREF UO $6a

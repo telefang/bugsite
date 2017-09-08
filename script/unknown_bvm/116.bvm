@@ -2,7 +2,7 @@
     RET
 
 .sub_116_4
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -12,7 +12,7 @@
     IMMED $11
     NPREF UO $7d
     POPALL
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     IMMED $15d
@@ -52,10 +52,10 @@
     IMMED $0
     CMP_LEQ
     JMPT .sub_116_ee ;$ee
-    UO $3
+    ARFREE
     NPREF UO $86
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -70,7 +70,7 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_116_a5 ;$a5
-    UO $3
+    ARFREE
     DB STR_116_7F
 
     DB STR_116_87
@@ -86,7 +86,7 @@
     JMP .sub_116_c9 ;$c9
 
 .sub_116_a5
-    UO $3
+    ARFREE
     DB STR_116_A6
 
     DB STR_116_AE
@@ -101,7 +101,7 @@
     POPALL
 
 .sub_116_c9
-    UO $3
+    ARFREE
     IMMED $15d
     INDIR
     ENOP $2d
@@ -114,7 +114,7 @@
     IMMED $1
     NPREF UO $6d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $85
     POPALL
     IMMED $17f
@@ -126,13 +126,13 @@
 .sub_116_ee
     IMMED $17b
     INDIR
-    UO $3
+    ARFREE
     NPREF UO $61
     STR
     POPALL
     IMMED $17e
     INDIR
-    UO $3
+    ARFREE
     IMMED $17b
     INDIR
     NPREF UO $71
@@ -160,7 +160,7 @@
     IMMED $1
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -170,7 +170,7 @@
     IMMED $11
     NPREF UO $7d
     POPALL
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     JMP .sub_116_15f ;$15f
@@ -243,7 +243,7 @@
     JMP .sub_116_1c1 ;$1c1
 
 .sub_116_1ba
-    UO $3
+    ARFREE
     IMMED $2
     NPREF UO $9d
     POPALL
@@ -328,10 +328,10 @@
     IMMED $0
     CMP_LEQ
     JMPT .sub_116_29d ;$29d
-    UO $3
+    ARFREE
     NPREF UO $86
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -340,7 +340,7 @@
     ENOP $2d
     IMMED $11
     NPREF UO $7d
-    UO $3
+    ARFREE
     NPREF WINCLR
     DB STR_116_25E
 
@@ -348,7 +348,7 @@
 
     NPREF UO $70
     POPALL
-    UO $3
+    ARFREE
     IMMED $15d
     INDIR
     ENOP $2d
@@ -361,7 +361,7 @@
     IMMED $1
     NPREF UO $6d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $85
     POPALL
     IMMED $17f
@@ -373,13 +373,13 @@
 .sub_116_29d
     IMMED $17b
     INDIR
-    UO $3
+    ARFREE
     NPREF UO $61
     STR
     POPALL
     IMMED $17e
     INDIR
-    UO $3
+    ARFREE
     IMMED $17b
     INDIR
     NPREF UO $71
@@ -400,15 +400,15 @@
     CMP_NEQ
     SUML
     JMPT .sub_116_301 ;$301
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
-    UO $3
+    ARFREE
     DB STR_116_2D7
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINBRK
     POPALL
     IMMED $17f

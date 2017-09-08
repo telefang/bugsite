@@ -73,7 +73,7 @@
     IMMED $b
     CMP_GT
     JMPT .sub_6a_8c ;$8c
-    UO $3
+    ARFREE
     IMMED $6b
     NPREF UO $6b
     POPALL
@@ -93,7 +93,7 @@
     IMMED $e
     CMP_GT
     JMPT .sub_6a_ac ;$ac
-    UO $3
+    ARFREE
     IMMED $6b
     NPREF UO $6b
     POPALL
@@ -205,7 +205,7 @@
     INDIR
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $44e
     INDIR
     ENOP $2d
@@ -229,7 +229,7 @@
     SUB
     NPREF UO $7d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $b3
     POPALL
     IMMED $7a
@@ -314,7 +314,7 @@
     OR
     STR
     POPALL
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     IMMED $175
@@ -329,13 +329,13 @@
     POPALL
     JAL .sub_6a_328 ;$328
     NPREF POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
     NPREF UO $7e
     POPALL
-    UO $3
+    ARFREE
     IMMED $15d
     INDIR
     ENOP $2d
@@ -349,7 +349,7 @@
     IMMED $1
     NPREF UO $6d
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $85
     POPALL
     IMMED $6f
@@ -366,7 +366,7 @@
 .sub_6a_264
     IMMED $17b
     INDIR
-    UO $3
+    ARFREE
     NPREF UO $61
     STR
     POPALL
@@ -417,7 +417,7 @@
 .sub_6a_2bc
     IMMED $17e
     INDIR
-    UO $3
+    ARFREE
     IMMED $17b
     INDIR
     NPREF UO $71
@@ -527,7 +527,7 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_6a_37d ;$37d
-    UO $3
+    ARFREE
     IMMED $0
     NPREF UO $f4
     POPALL
@@ -545,7 +545,7 @@
     SUB
     CMP_GT
     JMPT .sub_6a_39d ;$39d
-    UO $3
+    ARFREE
     IMMED $79
     INDIR
     NPREF UO $f4
@@ -553,7 +553,7 @@
     JMP .sub_6a_3a4 ;$3a4
 
 .sub_6a_39d
-    UO $3
+    ARFREE
     IMMED $1
     NPREF UO $f4
     POPALL
@@ -610,7 +610,7 @@
     RET
 
 .sub_6a_3f6
-    UO $3
+    ARFREE
     IMMED $175
     INDIR
     ENOP $2d
@@ -680,7 +680,7 @@
     IMMED $4
     CMP_NEQ
     JMPT .sub_6a_49d ;$49d
-    UO $3
+    ARFREE
     DB STR_6A_48B
 
     NPREF PRINT
@@ -777,7 +777,7 @@
     IMMED $c
     CMP_NEQ
     JMPT .sub_6a_587 ;$587
-    UO $3
+    ARFREE
     DB STR_6A_572
 
     NPREF PRINT
