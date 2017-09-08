@@ -3,7 +3,7 @@
 
 .sub_c6_4
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $173
     INDIR
@@ -191,24 +191,24 @@
 
 .sub_c6_13c
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     RET
 
 .sub_c6_141
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_C6_146
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $60
+    NPREF WINWAIT
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     IMMED $a
@@ -217,13 +217,13 @@
     UO $3
     DB STR_C6_16C
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $60
+    NPREF WINWAIT
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     IMMED $a
@@ -259,7 +259,7 @@
     UO $3
     DB STR_C6_1C5
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_c6_1fc ;$1fc
 
@@ -273,7 +273,7 @@
     UO $3
     DB STR_C6_1E8
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
 
 .sub_c6_1fc

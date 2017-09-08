@@ -240,7 +240,7 @@
     UO $3
     DB STR_112_1A3
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $388
@@ -250,10 +250,10 @@
     UO $3
     DB STR_112_1B2
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $60
+    NPREF WINWAIT
     POPALL
 
 .sub_112_1bc
@@ -350,7 +350,7 @@
     UO $3
     DB STR_112_24D
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
     IMMED $388
@@ -360,10 +360,10 @@
     UO $3
     DB STR_112_25C
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $60
+    NPREF WINWAIT
     POPALL
 
 .sub_112_266
@@ -441,7 +441,7 @@
     CMP_EQ
     JMPT .sub_112_2fd ;$2fd
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     NPREF UO $e5
@@ -449,10 +449,10 @@
     UO $3
     DB STR_112_2EB
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_112_2fd
@@ -464,7 +464,7 @@
     CMP_EQ
     JMPT .sub_112_327 ;$327
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     NPREF UO $e5
@@ -472,10 +472,10 @@
     UO $3
     DB STR_112_315
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_112_327
@@ -952,7 +952,7 @@
 
 .sub_112_658
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     RET
 
@@ -1425,15 +1425,15 @@
 
 .sub_112_972
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_112_977
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_112_993
@@ -1641,15 +1641,15 @@
 
 .sub_112_ae5
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_112_AEA
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_112_b03
@@ -1737,15 +1737,15 @@
 
 .sub_112_b8b
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_112_B90
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_112_ba8
@@ -4211,7 +4211,7 @@
     UO $3
     DB STR_112_1BAE
 
-    NPREF UO $4c
+    NPREF PRINT
     POPALL
     JMP .sub_112_1ba1 ;$1ba1
 
