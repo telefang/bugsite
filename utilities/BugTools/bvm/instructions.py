@@ -31,6 +31,7 @@ opcodes = {
     "PRINT": 0x4C,
     "WINCLR": 0x5B,
     "RESLD": 0x5F,
+    "WINWAIT": 0x60,
     "FARCALL": 0x6A,
     "FARJMP": 0x6B,
     "TILELD": 0x72,
