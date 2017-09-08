@@ -36,7 +36,7 @@
     IMMED $17d4
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $95
     NPREF UO $6a
     POPALL
@@ -58,7 +58,7 @@
     IMMED $2008
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $95
     NPREF UO $6a
     POPALL
@@ -148,7 +148,7 @@
     IMMED $22
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $1
     ENOP $2d
     IMMED $c
@@ -156,7 +156,7 @@
     IMMED $14
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $7
     ENOP $2d
     IMMED $c
@@ -164,13 +164,13 @@
     IMMED $4
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $1
     ENOP $2d
     IMMED $3
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $7
     ENOP $2d
     IMMED $3
@@ -254,7 +254,7 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_15f_1de ;$1de
-    UO $3
+    ARFREE
     IMMED $2
     ENOP $2d
     IMMED $a
@@ -262,7 +262,7 @@
     IMMED $6
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $2
     ENOP $2d
     IMMED $0
@@ -271,7 +271,7 @@
     JMP .sub_15f_1f8 ;$1f8
 
 .sub_15f_1de
-    UO $3
+    ARFREE
     IMMED $2
     ENOP $2d
     IMMED $a
@@ -279,7 +279,7 @@
     IMMED $6
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $2
     ENOP $2d
     IMMED $3
@@ -287,7 +287,7 @@
     POPALL
 
 .sub_15f_1f8
-    UO $3
+    ARFREE
     IMMED $7
     ENOP $2d
     IMMED $c
@@ -295,7 +295,7 @@
     IMMED $4
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $7
     ENOP $2d
     IMMED $3
@@ -361,7 +361,7 @@
     IMMED $41
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $d7
     NPREF UO $6a
     POPALL
@@ -379,7 +379,7 @@
     CMP_NEQ
     ANDL
     JMPT .sub_15f_2d6 ;$2d6
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -387,13 +387,13 @@
     IMMED $6
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $1
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
@@ -403,15 +403,15 @@
     IMMED $17f2
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $95
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
-    UO $3
+    ARFREE
     IMMED $185
     NPREF UO $6b
     POPALL
@@ -423,7 +423,7 @@
     IMMED $165
     CMP_NEQ
     JMPT .sub_15f_311 ;$311
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -431,18 +431,18 @@
     IMMED $28
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $2
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $40
@@ -456,7 +456,7 @@
     IMMED $15e
     CMP_NEQ
     JMPT .sub_15f_34c ;$34c
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $c
@@ -464,18 +464,18 @@
     IMMED $0
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $3
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $80
@@ -489,7 +489,7 @@
     IMMED $1a0
     CMP_NEQ
     JMPT .sub_15f_37c ;$37c
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $a
@@ -497,13 +497,13 @@
     IMMED $6
     NPREF UO $63
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $3
     NPREF UO $8c
     POPALL
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
@@ -511,7 +511,7 @@
     JMP .sub_15f_384 ;$384
 
 .sub_15f_37c
-    UO $3
+    ARFREE
     IMMED $100
     NPREF UO $6a
     POPALL
@@ -542,11 +542,11 @@
     JMPT .sub_15f_4af ;$4af
     IMMED $17e
     INDIR
-    UO $3
+    ARFREE
     NPREF UO $68
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $ca
     NPREF UO $6a
     POPALL
@@ -564,7 +564,7 @@
     IMMED $8
     CMP_NEQ
     JMPT .sub_15f_40d ;$40d
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
     IMMED $23
@@ -577,7 +577,7 @@
     IMMED $18
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $f0
     NPREF UO $6a
     POPALL
@@ -587,13 +587,13 @@
     IMMED $4
     CMP_NEQ
     JMPT .sub_15f_402 ;$402
-    UO $3
+    ARFREE
     IMMED $1a0
     NPREF UO $6b
     POPALL
 
 .sub_15f_402
-    UO $3
+    ARFREE
     IMMED $7f
     INDIR
     NPREF UO $6b
@@ -628,7 +628,7 @@
     INDIR
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $95
     NPREF UO $6a
     POPALL
@@ -641,10 +641,10 @@
     IMMED $51
     CMP_NEQ
     JMPT .sub_15f_462 ;$462
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
-    UO $3
+    ARFREE
     IMMED $165
     NPREF UO $6b
     POPALL
@@ -656,7 +656,7 @@
     IMMED $c
     CMP_NEQ
     JMPT .sub_15f_496 ;$496
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
     IMMED $23
@@ -669,12 +669,12 @@
     IMMED $18
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $f0
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     IMMED $7f
     INDIR
     NPREF UO $6b
@@ -687,10 +687,10 @@
     IMMED $53
     CMP_NEQ
     JMPT .sub_15f_4ac ;$4ac
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
-    UO $3
+    ARFREE
     IMMED $15e
     NPREF UO $6b
     POPALL

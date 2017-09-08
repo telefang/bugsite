@@ -1,5 +1,6 @@
 opcodes = {
     "NOP": 0x00,
+    "ARFREE": 0x03,
     "STR": 0x06,
     "SUML": 0x07,
     "ANDL": 0x08,

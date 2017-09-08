@@ -7,72 +7,72 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_11b_7f ;$7f
-    UO $3
+    ARFREE
     IMMED $388
     INDIR
     NPREF UO $4d
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_18
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     IMMED $389
     INDIR
     NPREF UO $4d
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_27
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     IMMED $38a
     INDIR
     NPREF UO $4d
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_41
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_48
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     IMMED $38c
     INDIR
     NPREF UO $4d
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_5B
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_62
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     IMMED $38b
     INDIR
     NPREF UO $4d
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_75
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
 
@@ -82,7 +82,7 @@
     IMMED $ffff
     CMP_EQ
     JMPT .sub_11b_118 ;$118
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     IMMED $172
@@ -96,15 +96,15 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $125
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_AE
 
     NPREF PRINT
@@ -120,28 +120,28 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $125
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_D5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINBRK
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_E1
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINBRK
     POPALL
     IMMED $172
@@ -155,7 +155,7 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $125
     NPREF UO $6a
     POPALL
@@ -167,7 +167,7 @@
     POPALL
 
 .sub_11b_118
-    UO $3
+    ARFREE
     NPREF WINCLR
     POPALL
     IMMED $38a
@@ -634,10 +634,10 @@
     IMMED $0
     CMP_NEQ
     JMPT .sub_11b_476 ;$476
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_465
 
     NPREF PRINT
@@ -650,18 +650,18 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_11b_4a8 ;$4a8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_486
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_497
 
     NPREF PRINT
@@ -674,18 +674,18 @@
     IMMED $2
     CMP_NEQ
     JMPT .sub_11b_4dd ;$4dd
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_4B8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_4CC
 
     NPREF PRINT
@@ -698,18 +698,18 @@
     IMMED $3
     CMP_NEQ
     JMPT .sub_11b_513 ;$513
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_4ED
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_502
 
     NPREF PRINT
@@ -722,18 +722,18 @@
     IMMED $4
     CMP_NEQ
     JMPT .sub_11b_548 ;$548
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_523
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_537
 
     NPREF PRINT
@@ -746,18 +746,18 @@
     IMMED $5
     CMP_NEQ
     JMPT .sub_11b_580 ;$580
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_558
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_56F
 
     NPREF PRINT
@@ -770,18 +770,18 @@
     IMMED $6
     CMP_NEQ
     JMPT .sub_11b_5b2 ;$5b2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_590
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_5A1
 
     NPREF PRINT
@@ -794,18 +794,18 @@
     IMMED $7
     CMP_NEQ
     JMPT .sub_11b_5e8 ;$5e8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_5C2
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_5D7
 
     NPREF PRINT
@@ -818,18 +818,18 @@
     IMMED $8
     CMP_NEQ
     JMPT .sub_11b_61f ;$61f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_5F8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_60E
 
     NPREF PRINT
@@ -842,18 +842,18 @@
     IMMED $9
     CMP_NEQ
     JMPT .sub_11b_64f ;$64f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_62F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_641
 
     NPREF PRINT
@@ -868,18 +868,18 @@
     IMMED $a
     CMP_NEQ
     JMPT .sub_11b_684 ;$684
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_660
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_673
 
     NPREF PRINT
@@ -892,18 +892,18 @@
     IMMED $b
     CMP_NEQ
     JMPT .sub_11b_6bb ;$6bb
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_694
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_6AA
 
     NPREF PRINT
@@ -916,18 +916,18 @@
     IMMED $c
     CMP_NEQ
     JMPT .sub_11b_6f1 ;$6f1
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_6CB
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_6E0
 
     NPREF PRINT
@@ -940,18 +940,18 @@
     IMMED $d
     CMP_NEQ
     JMPT .sub_11b_726 ;$726
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_701
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_715
 
     NPREF PRINT
@@ -964,18 +964,18 @@
     IMMED $e
     CMP_NEQ
     JMPT .sub_11b_75f ;$75f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_736
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_749
 
     NPREF PRINT
@@ -988,18 +988,18 @@
     IMMED $f
     CMP_NEQ
     JMPT .sub_11b_798 ;$798
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_76F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_787
 
     NPREF PRINT
@@ -1012,18 +1012,18 @@
     IMMED $10
     CMP_NEQ
     JMPT .sub_11b_7cd ;$7cd
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_7A8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_7BC
 
     NPREF PRINT
@@ -1036,18 +1036,18 @@
     IMMED $11
     CMP_NEQ
     JMPT .sub_11b_805 ;$805
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_7DD
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_7F4
 
     NPREF PRINT
@@ -1060,10 +1060,10 @@
     IMMED $12
     CMP_NEQ
     JMPT .sub_11b_837 ;$837
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_815
 
     NPREF PRINT
@@ -1076,18 +1076,18 @@
     IMMED $13
     CMP_NEQ
     JMPT .sub_11b_868 ;$868
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_847
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_85A
 
     NPREF PRINT
@@ -1102,18 +1102,18 @@
     IMMED $14
     CMP_NEQ
     JMPT .sub_11b_8a1 ;$8a1
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_879
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_890
 
     NPREF PRINT
@@ -1126,10 +1126,10 @@
     IMMED $15
     CMP_NEQ
     JMPT .sub_11b_8cc ;$8cc
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_8B1
 
     NPREF PRINT
@@ -1142,18 +1142,18 @@
     IMMED $16
     CMP_NEQ
     JMPT .sub_11b_906 ;$906
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_8DC
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_8F0
 
     NPREF PRINT
@@ -1166,18 +1166,18 @@
     IMMED $17
     CMP_NEQ
     JMPT .sub_11b_93b ;$93b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_916
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_92A
 
     NPREF PRINT
@@ -1190,18 +1190,18 @@
     IMMED $18
     CMP_NEQ
     JMPT .sub_11b_96e ;$96e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_94B
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_95D
 
     NPREF PRINT
@@ -1214,18 +1214,18 @@
     IMMED $19
     CMP_NEQ
     JMPT .sub_11b_9a3 ;$9a3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_97E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_992
 
     NPREF PRINT
@@ -1238,18 +1238,18 @@
     IMMED $1a
     CMP_NEQ
     JMPT .sub_11b_9d9 ;$9d9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_9B3
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_9C8
 
     NPREF PRINT
@@ -1262,18 +1262,18 @@
     IMMED $1b
     CMP_NEQ
     JMPT .sub_11b_a13 ;$a13
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_9E9
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_A02
 
     NPREF PRINT
@@ -1286,18 +1286,18 @@
     IMMED $1c
     CMP_NEQ
     JMPT .sub_11b_a48 ;$a48
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_A23
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_A37
 
     NPREF PRINT
@@ -1310,18 +1310,18 @@
     IMMED $1d
     CMP_NEQ
     JMPT .sub_11b_a79 ;$a79
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_A58
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_A6B
 
     NPREF PRINT
@@ -1336,18 +1336,18 @@
     IMMED $1e
     CMP_NEQ
     JMPT .sub_11b_ab5 ;$ab5
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_A8A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_A9F
 
     NPREF PRINT
@@ -1360,18 +1360,18 @@
     IMMED $1f
     CMP_NEQ
     JMPT .sub_11b_af0 ;$af0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_AC5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_ADA
 
     NPREF PRINT
@@ -1384,18 +1384,18 @@
     IMMED $20
     CMP_NEQ
     JMPT .sub_11b_b21 ;$b21
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_B00
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_B10
 
     NPREF PRINT
@@ -1408,10 +1408,10 @@
     IMMED $21
     CMP_NEQ
     JMPT .sub_11b_b4e ;$b4e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_B31
 
     NPREF PRINT
@@ -1424,18 +1424,18 @@
     IMMED $22
     CMP_NEQ
     JMPT .sub_11b_b86 ;$b86
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_B5E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_B75
 
     NPREF PRINT
@@ -1448,10 +1448,10 @@
     IMMED $23
     CMP_NEQ
     JMPT .sub_11b_bb9 ;$bb9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_B96
 
     NPREF PRINT
@@ -1464,18 +1464,18 @@
     IMMED $24
     CMP_NEQ
     JMPT .sub_11b_bef ;$bef
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_BC9
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_BDE
 
     NPREF PRINT
@@ -1488,10 +1488,10 @@
     IMMED $25
     CMP_NEQ
     JMPT .sub_11b_c23 ;$c23
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_BFF
 
     NPREF PRINT
@@ -1504,18 +1504,18 @@
     IMMED $26
     CMP_NEQ
     JMPT .sub_11b_c5b ;$c5b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_C33
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_C4A
 
     NPREF PRINT
@@ -1528,18 +1528,18 @@
     IMMED $27
     CMP_NEQ
     JMPT .sub_11b_c8e ;$c8e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_C6B
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_C80
 
     NPREF PRINT
@@ -1554,10 +1554,10 @@
     IMMED $28
     CMP_NEQ
     JMPT .sub_11b_cb4 ;$cb4
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_C9F
 
     NPREF PRINT
@@ -1570,10 +1570,10 @@
     IMMED $29
     CMP_NEQ
     JMPT .sub_11b_ce5 ;$ce5
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_CC4
 
     NPREF PRINT
@@ -1586,10 +1586,10 @@
     IMMED $2a
     CMP_NEQ
     JMPT .sub_11b_d16 ;$d16
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_CF5
 
     NPREF PRINT
@@ -1602,10 +1602,10 @@
     IMMED $2b
     CMP_NEQ
     JMPT .sub_11b_d45 ;$d45
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_D26
 
     NPREF PRINT
@@ -1618,10 +1618,10 @@
     IMMED $2c
     CMP_NEQ
     JMPT .sub_11b_d77 ;$d77
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_D55
 
     NPREF PRINT
@@ -1634,10 +1634,10 @@
     IMMED $2d
     CMP_NEQ
     JMPT .sub_11b_da8 ;$da8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_D87
 
     NPREF PRINT
@@ -1650,10 +1650,10 @@
     IMMED $2e
     CMP_NEQ
     JMPT .sub_11b_ddb ;$ddb
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_DB8
 
     NPREF PRINT
@@ -1666,10 +1666,10 @@
     IMMED $2f
     CMP_NEQ
     JMPT .sub_11b_e0e ;$e0e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_DEB
 
     NPREF PRINT
@@ -1682,10 +1682,10 @@
     IMMED $30
     CMP_NEQ
     JMPT .sub_11b_e41 ;$e41
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_E1E
 
     NPREF PRINT
@@ -1698,10 +1698,10 @@
     IMMED $31
     CMP_NEQ
     JMPT .sub_11b_e71 ;$e71
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_E51
 
     NPREF PRINT
@@ -1716,10 +1716,10 @@
     IMMED $32
     CMP_NEQ
     JMPT .sub_11b_ea4 ;$ea4
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_E82
 
     NPREF PRINT
@@ -1732,18 +1732,18 @@
     IMMED $33
     CMP_NEQ
     JMPT .sub_11b_ed8 ;$ed8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_EB4
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_EC7
 
     NPREF PRINT
@@ -1756,10 +1756,10 @@
     IMMED $34
     CMP_NEQ
     JMPT .sub_11b_f00 ;$f00
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_EE8
 
     NPREF PRINT
@@ -1772,18 +1772,18 @@
     IMMED $35
     CMP_NEQ
     JMPT .sub_11b_f35 ;$f35
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_F10
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_F24
 
     NPREF PRINT
@@ -1796,18 +1796,18 @@
     IMMED $36
     CMP_NEQ
     JMPT .sub_11b_f6a ;$f6a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_F45
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_F59
 
     NPREF PRINT
@@ -1820,18 +1820,18 @@
     IMMED $37
     CMP_NEQ
     JMPT .sub_11b_fa0 ;$fa0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_F7A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_F8F
 
     NPREF PRINT
@@ -1844,18 +1844,18 @@
     IMMED $38
     CMP_NEQ
     JMPT .sub_11b_fd8 ;$fd8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_FB0
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_FC7
 
     NPREF PRINT
@@ -1868,18 +1868,18 @@
     IMMED $39
     CMP_NEQ
     JMPT .sub_11b_100f ;$100f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_FE8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_FFE
 
     NPREF PRINT
@@ -1892,10 +1892,10 @@
     IMMED $3a
     CMP_NEQ
     JMPT .sub_11b_103e ;$103e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_101F
 
     NPREF PRINT
@@ -1908,18 +1908,18 @@
     IMMED $3b
     CMP_NEQ
     JMPT .sub_11b_1070 ;$1070
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_104E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1062
 
     NPREF PRINT
@@ -1934,10 +1934,10 @@
     IMMED $3c
     CMP_NEQ
     JMPT .sub_11b_10a2 ;$10a2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1081
 
     NPREF PRINT
@@ -1950,18 +1950,18 @@
     IMMED $3d
     CMP_NEQ
     JMPT .sub_11b_10d8 ;$10d8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_10B2
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_10C7
 
     NPREF PRINT
@@ -1974,10 +1974,10 @@
     IMMED $3e
     CMP_NEQ
     JMPT .sub_11b_1105 ;$1105
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_10E8
 
     NPREF PRINT
@@ -1990,18 +1990,18 @@
     IMMED $3f
     CMP_NEQ
     JMPT .sub_11b_113a ;$113a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1115
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1129
 
     NPREF PRINT
@@ -2014,10 +2014,10 @@
     IMMED $40
     CMP_NEQ
     JMPT .sub_11b_116c ;$116c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_114A
 
     NPREF PRINT
@@ -2030,18 +2030,18 @@
     IMMED $41
     CMP_NEQ
     JMPT .sub_11b_11b3 ;$11b3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_117C
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINBRK
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_119E
 
     NPREF PRINT
@@ -2054,18 +2054,18 @@
     IMMED $42
     CMP_NEQ
     JMPT .sub_11b_11ec ;$11ec
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_11C3
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_11DB
 
     NPREF PRINT
@@ -2078,18 +2078,18 @@
     IMMED $43
     CMP_NEQ
     JMPT .sub_11b_1220 ;$1220
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_11FC
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_120F
 
     NPREF PRINT
@@ -2102,18 +2102,18 @@
     IMMED $44
     CMP_NEQ
     JMPT .sub_11b_1257 ;$1257
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1230
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1246
 
     NPREF PRINT
@@ -2126,18 +2126,18 @@
     IMMED $45
     CMP_NEQ
     JMPT .sub_11b_128c ;$128c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1267
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_127E
 
     NPREF PRINT
@@ -2152,10 +2152,10 @@
     IMMED $46
     CMP_NEQ
     JMPT .sub_11b_12bd ;$12bd
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_129D
 
     NPREF PRINT
@@ -2168,10 +2168,10 @@
     IMMED $47
     CMP_NEQ
     JMPT .sub_11b_12ee ;$12ee
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_12CD
 
     NPREF PRINT
@@ -2184,10 +2184,10 @@
     IMMED $48
     CMP_NEQ
     JMPT .sub_11b_1311 ;$1311
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_12FE
 
     NPREF PRINT
@@ -2200,10 +2200,10 @@
     IMMED $49
     CMP_NEQ
     JMPT .sub_11b_133c ;$133c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1321
 
     NPREF PRINT
@@ -2216,10 +2216,10 @@
     IMMED $4a
     CMP_NEQ
     JMPT .sub_11b_135f ;$135f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_134C
 
     NPREF PRINT
@@ -2232,10 +2232,10 @@
     IMMED $4b
     CMP_NEQ
     JMPT .sub_11b_1390 ;$1390
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_136F
 
     NPREF PRINT
@@ -2248,10 +2248,10 @@
     IMMED $4c
     CMP_NEQ
     JMPT .sub_11b_13b8 ;$13b8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_13A0
 
     NPREF PRINT
@@ -2264,18 +2264,18 @@
     IMMED $4d
     CMP_NEQ
     JMPT .sub_11b_13f0 ;$13f0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_13C8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_13DF
 
     NPREF PRINT
@@ -2288,10 +2288,10 @@
     IMMED $4e
     CMP_NEQ
     JMPT .sub_11b_1426 ;$1426
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1400
 
     NPREF PRINT
@@ -2304,18 +2304,18 @@
     IMMED $4f
     CMP_NEQ
     JMPT .sub_11b_1455 ;$1455
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1436
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1447
 
     NPREF PRINT
@@ -2330,18 +2330,18 @@
     IMMED $50
     CMP_NEQ
     JMPT .sub_11b_148d ;$148d
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1466
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_147C
 
     NPREF PRINT
@@ -2354,18 +2354,18 @@
     IMMED $51
     CMP_NEQ
     JMPT .sub_11b_14c2 ;$14c2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_149D
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_14B1
 
     NPREF PRINT
@@ -2378,10 +2378,10 @@
     IMMED $52
     CMP_NEQ
     JMPT .sub_11b_14f5 ;$14f5
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_14D2
 
     NPREF PRINT
@@ -2394,18 +2394,18 @@
     IMMED $53
     CMP_NEQ
     JMPT .sub_11b_1528 ;$1528
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1505
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1517
 
     NPREF PRINT
@@ -2418,18 +2418,18 @@
     IMMED $54
     CMP_NEQ
     JMPT .sub_11b_155a ;$155a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1538
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1549
 
     NPREF PRINT
@@ -2442,18 +2442,18 @@
     IMMED $55
     CMP_NEQ
     JMPT .sub_11b_158c ;$158c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_156A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_157B
 
     NPREF PRINT
@@ -2466,18 +2466,18 @@
     IMMED $56
     CMP_NEQ
     JMPT .sub_11b_15c3 ;$15c3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_159C
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_15B2
 
     NPREF PRINT
@@ -2490,18 +2490,18 @@
     IMMED $57
     CMP_NEQ
     JMPT .sub_11b_15fc ;$15fc
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_15D3
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_15EB
 
     NPREF PRINT
@@ -2514,18 +2514,18 @@
     IMMED $58
     CMP_NEQ
     JMPT .sub_11b_1634 ;$1634
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_160C
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1623
 
     NPREF PRINT
@@ -2538,10 +2538,10 @@
     IMMED $59
     CMP_NEQ
     JMPT .sub_11b_1664 ;$1664
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1644
 
     NPREF PRINT
@@ -2556,10 +2556,10 @@
     IMMED $5a
     CMP_NEQ
     JMPT .sub_11b_1690 ;$1690
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1675
 
     NPREF PRINT
@@ -2572,18 +2572,18 @@
     IMMED $5b
     CMP_NEQ
     JMPT .sub_11b_16c5 ;$16c5
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_16A0
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_16B4
 
     NPREF PRINT
@@ -2596,10 +2596,10 @@
     IMMED $5c
     CMP_NEQ
     JMPT .sub_11b_16e8 ;$16e8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_16D5
 
     NPREF PRINT
@@ -2612,18 +2612,18 @@
     IMMED $5d
     CMP_NEQ
     JMPT .sub_11b_1721 ;$1721
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_16F8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1710
 
     NPREF PRINT
@@ -2636,10 +2636,10 @@
     IMMED $5e
     CMP_NEQ
     JMPT .sub_11b_174e ;$174e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1731
 
     NPREF PRINT
@@ -2652,10 +2652,10 @@
     IMMED $5f
     CMP_NEQ
     JMPT .sub_11b_1777 ;$1777
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_175E
 
     NPREF PRINT
@@ -2668,18 +2668,18 @@
     IMMED $60
     CMP_NEQ
     JMPT .sub_11b_17ad ;$17ad
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1787
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_179C
 
     NPREF PRINT
@@ -2692,18 +2692,18 @@
     IMMED $61
     CMP_NEQ
     JMPT .sub_11b_17e2 ;$17e2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_17BD
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_17D1
 
     NPREF PRINT
@@ -2716,18 +2716,18 @@
     IMMED $62
     CMP_NEQ
     JMPT .sub_11b_181a ;$181a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_17F2
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1809
 
     NPREF PRINT
@@ -2740,10 +2740,10 @@
     IMMED $63
     CMP_NEQ
     JMPT .sub_11b_184b ;$184b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_182A
 
     NPREF PRINT
@@ -2758,10 +2758,10 @@
     IMMED $64
     CMP_NEQ
     JMPT .sub_11b_187f ;$187f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_185C
 
     NPREF PRINT
@@ -2774,18 +2774,18 @@
     IMMED $65
     CMP_NEQ
     JMPT .sub_11b_18b3 ;$18b3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_188F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_18A2
 
     NPREF PRINT
@@ -2798,18 +2798,18 @@
     IMMED $66
     CMP_NEQ
     JMPT .sub_11b_18eb ;$18eb
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_18C3
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_18D8
 
     NPREF PRINT
@@ -2822,10 +2822,10 @@
     IMMED $67
     CMP_NEQ
     JMPT .sub_11b_1912 ;$1912
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_18FB
 
     NPREF PRINT
@@ -2838,18 +2838,18 @@
     IMMED $68
     CMP_NEQ
     JMPT .sub_11b_1948 ;$1948
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1922
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1937
 
     NPREF PRINT
@@ -2862,18 +2862,18 @@
     IMMED $69
     CMP_NEQ
     JMPT .sub_11b_197e ;$197e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1958
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_196D
 
     NPREF PRINT
@@ -2886,10 +2886,10 @@
     IMMED $6a
     CMP_NEQ
     JMPT .sub_11b_19a5 ;$19a5
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_198E
 
     NPREF PRINT
@@ -2902,18 +2902,18 @@
     IMMED $6b
     CMP_NEQ
     JMPT .sub_11b_19db ;$19db
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_19B5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_19CB
 
     NPREF PRINT
@@ -2926,18 +2926,18 @@
     IMMED $6c
     CMP_NEQ
     JMPT .sub_11b_1a10 ;$1a10
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_19EB
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_19FF
 
     NPREF PRINT
@@ -2950,18 +2950,18 @@
     IMMED $6d
     CMP_NEQ
     JMPT .sub_11b_1a44 ;$1a44
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1A20
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1A36
 
     NPREF PRINT
@@ -2976,10 +2976,10 @@
     IMMED $6e
     CMP_NEQ
     JMPT .sub_11b_1a6b ;$1a6b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1A55
 
     NPREF PRINT
@@ -2992,10 +2992,10 @@
     IMMED $6f
     CMP_NEQ
     JMPT .sub_11b_1a9b ;$1a9b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1A7B
 
     NPREF PRINT
@@ -3008,10 +3008,10 @@
     IMMED $70
     CMP_NEQ
     JMPT .sub_11b_1acf ;$1acf
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1AAB
 
     NPREF PRINT
@@ -3024,10 +3024,10 @@
     IMMED $71
     CMP_NEQ
     JMPT .sub_11b_1afe ;$1afe
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1ADF
 
     NPREF PRINT
@@ -3040,18 +3040,18 @@
     IMMED $72
     CMP_NEQ
     JMPT .sub_11b_1b35 ;$1b35
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1B0E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1B1A
 
     NPREF PRINT
@@ -3064,10 +3064,10 @@
     IMMED $73
     CMP_NEQ
     JMPT .sub_11b_1b56 ;$1b56
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1B45
 
     NPREF PRINT
@@ -3080,18 +3080,18 @@
     IMMED $74
     CMP_NEQ
     JMPT .sub_11b_1b89 ;$1b89
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1B66
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1B78
 
     NPREF PRINT
@@ -3104,18 +3104,18 @@
     IMMED $75
     CMP_NEQ
     JMPT .sub_11b_1bc1 ;$1bc1
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1B99
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1BB1
 
     NPREF PRINT
@@ -3128,10 +3128,10 @@
     IMMED $76
     CMP_NEQ
     JMPT .sub_11b_1bfb ;$1bfb
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1BD1
 
     NPREF PRINT
@@ -3144,10 +3144,10 @@
     IMMED $77
     CMP_NEQ
     JMPT .sub_11b_1c2c ;$1c2c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1C0B
 
     NPREF PRINT
@@ -3162,18 +3162,18 @@
     IMMED $78
     CMP_NEQ
     JMPT .sub_11b_1c63 ;$1c63
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1C3D
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1C52
 
     NPREF PRINT
@@ -3186,18 +3186,18 @@
     IMMED $79
     CMP_NEQ
     JMPT .sub_11b_1c95 ;$1c95
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1C73
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1C84
 
     NPREF PRINT
@@ -3210,18 +3210,18 @@
     IMMED $7a
     CMP_NEQ
     JMPT .sub_11b_1cd2 ;$1cd2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1CA5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1CBC
 
     NPREF PRINT
@@ -3234,10 +3234,10 @@
     IMMED $7b
     CMP_NEQ
     JMPT .sub_11b_1cfe ;$1cfe
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1CE2
 
     NPREF PRINT
@@ -3250,10 +3250,10 @@
     IMMED $7c
     CMP_NEQ
     JMPT .sub_11b_1d29 ;$1d29
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1D0E
 
     NPREF PRINT
@@ -3266,18 +3266,18 @@
     IMMED $7d
     CMP_NEQ
     JMPT .sub_11b_1d5e ;$1d5e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1D39
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1D4D
 
     NPREF PRINT
@@ -3290,10 +3290,10 @@
     IMMED $7e
     CMP_NEQ
     JMPT .sub_11b_1d87 ;$1d87
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1D6E
 
     NPREF PRINT
@@ -3306,18 +3306,18 @@
     IMMED $7f
     CMP_NEQ
     JMPT .sub_11b_1dbb ;$1dbb
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1D97
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1DAA
 
     NPREF PRINT
@@ -3330,10 +3330,10 @@
     IMMED $80
     CMP_NEQ
     JMPT .sub_11b_1de6 ;$1de6
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1DCB
 
     NPREF PRINT
@@ -3346,10 +3346,10 @@
     IMMED $81
     CMP_NEQ
     JMPT .sub_11b_1e16 ;$1e16
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1DF6
 
     NPREF PRINT
@@ -3364,20 +3364,20 @@
     IMMED $82
     CMP_NEQ
     JMPT .sub_11b_1efe ;$1efe
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1E27
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
     IMMED $172
     INDIR
-    UO $3
+    ARFREE
     IMMED $6
     NPREF UO $67
     STR
@@ -3469,7 +3469,7 @@
     IMMED $3
     CMP_GT
     JMPT .sub_11b_1ef3 ;$1ef3
-    UO $3
+    ARFREE
     IMMED $108
     NPREF UO $6a
     POPALL
@@ -3477,7 +3477,7 @@
     JMP .sub_11b_1efb ;$1efb
 
 .sub_11b_1ef3
-    UO $3
+    ARFREE
     IMMED $109
     NPREF UO $6a
     POPALL
@@ -3492,18 +3492,18 @@
     IMMED $83
     CMP_NEQ
     JMPT .sub_11b_1f3c ;$1f3c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1F0E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1F26
 
     NPREF PRINT
@@ -3516,10 +3516,10 @@
     IMMED $84
     CMP_NEQ
     JMPT .sub_11b_1f76 ;$1f76
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1F4C
 
     NPREF PRINT
@@ -3532,10 +3532,10 @@
     IMMED $85
     CMP_NEQ
     JMPT .sub_11b_1f9e ;$1f9e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1F86
 
     NPREF PRINT
@@ -3548,18 +3548,18 @@
     IMMED $86
     CMP_NEQ
     JMPT .sub_11b_1fd2 ;$1fd2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1FAE
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1FC1
 
     NPREF PRINT
@@ -3572,18 +3572,18 @@
     IMMED $87
     CMP_NEQ
     JMPT .sub_11b_2008 ;$2008
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1FE2
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_1FF7
 
     NPREF PRINT
@@ -3596,18 +3596,18 @@
     IMMED $88
     CMP_NEQ
     JMPT .sub_11b_203f ;$203f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2018
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_202E
 
     NPREF PRINT
@@ -3620,18 +3620,18 @@
     IMMED $89
     CMP_NEQ
     JMPT .sub_11b_2074 ;$2074
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_204F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2063
 
     NPREF PRINT
@@ -3644,18 +3644,18 @@
     IMMED $8a
     CMP_NEQ
     JMPT .sub_11b_20ab ;$20ab
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2084
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_209A
 
     NPREF PRINT
@@ -3668,18 +3668,18 @@
     IMMED $8b
     CMP_NEQ
     JMPT .sub_11b_20dc ;$20dc
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_20BB
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_20CE
 
     NPREF PRINT
@@ -3694,10 +3694,10 @@
     IMMED $8c
     CMP_NEQ
     JMPT .sub_11b_2115 ;$2115
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_20ED
 
     NPREF PRINT
@@ -3710,18 +3710,18 @@
     IMMED $8d
     CMP_NEQ
     JMPT .sub_11b_214c ;$214c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2125
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_213B
 
     NPREF PRINT
@@ -3734,18 +3734,18 @@
     IMMED $8e
     CMP_NEQ
     JMPT .sub_11b_2181 ;$2181
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_215C
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2171
 
     NPREF PRINT
@@ -3758,18 +3758,18 @@
     IMMED $8f
     CMP_NEQ
     JMPT .sub_11b_21ba ;$21ba
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2191
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_21A8
 
     NPREF PRINT
@@ -3782,10 +3782,10 @@
     IMMED $90
     CMP_NEQ
     JMPT .sub_11b_21f3 ;$21f3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_21CA
 
     NPREF PRINT
@@ -3798,10 +3798,10 @@
     IMMED $91
     CMP_NEQ
     JMPT .sub_11b_2222 ;$2222
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2203
 
     NPREF PRINT
@@ -3814,18 +3814,18 @@
     IMMED $92
     CMP_NEQ
     JMPT .sub_11b_225b ;$225b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2232
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_224A
 
     NPREF PRINT
@@ -3838,18 +3838,18 @@
     IMMED $93
     CMP_NEQ
     JMPT .sub_11b_2291 ;$2291
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_226B
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2280
 
     NPREF PRINT
@@ -3862,18 +3862,18 @@
     IMMED $94
     CMP_NEQ
     JMPT .sub_11b_22c9 ;$22c9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_22A1
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_22B8
 
     NPREF PRINT
@@ -3886,10 +3886,10 @@
     IMMED $95
     CMP_NEQ
     JMPT .sub_11b_22f6 ;$22f6
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_22D9
 
     NPREF PRINT
@@ -3904,10 +3904,10 @@
     IMMED $96
     CMP_NEQ
     JMPT .sub_11b_2320 ;$2320
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2307
 
     NPREF PRINT
@@ -3920,18 +3920,18 @@
     IMMED $97
     CMP_NEQ
     JMPT .sub_11b_235a ;$235a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2330
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2349
 
     NPREF PRINT
@@ -3944,10 +3944,10 @@
     IMMED $98
     CMP_NEQ
     JMPT .sub_11b_2390 ;$2390
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_236A
 
     NPREF PRINT
@@ -3960,10 +3960,10 @@
     IMMED $99
     CMP_NEQ
     JMPT .sub_11b_23c9 ;$23c9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_23A0
 
     NPREF PRINT
@@ -3976,18 +3976,18 @@
     IMMED $9a
     CMP_NEQ
     JMPT .sub_11b_2408 ;$2408
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_23D9
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_23EE
 
     NPREF PRINT
@@ -4000,10 +4000,10 @@
     IMMED $9b
     CMP_NEQ
     JMPT .sub_11b_2442 ;$2442
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2418
 
     NPREF PRINT
@@ -4016,18 +4016,18 @@
     IMMED $9c
     CMP_NEQ
     JMPT .sub_11b_2478 ;$2478
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2452
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2467
 
     NPREF PRINT
@@ -4040,10 +4040,10 @@
     IMMED $9d
     CMP_NEQ
     JMPT .sub_11b_24a8 ;$24a8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2488
 
     NPREF PRINT
@@ -4056,18 +4056,18 @@
     IMMED $9e
     CMP_NEQ
     JMPT .sub_11b_24e1 ;$24e1
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_24B8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_24D0
 
     NPREF PRINT
@@ -4080,10 +4080,10 @@
     IMMED $9f
     CMP_NEQ
     JMPT .sub_11b_2503 ;$2503
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_24F1
 
     NPREF PRINT
@@ -4098,10 +4098,10 @@
     IMMED $a0
     CMP_NEQ
     JMPT .sub_11b_2528 ;$2528
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2514
 
     NPREF PRINT
@@ -4114,10 +4114,10 @@
     IMMED $a1
     CMP_NEQ
     JMPT .sub_11b_254e ;$254e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2538
 
     NPREF PRINT
@@ -4130,10 +4130,10 @@
     IMMED $a2
     CMP_NEQ
     JMPT .sub_11b_2573 ;$2573
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_255E
 
     NPREF PRINT
@@ -4146,10 +4146,10 @@
     IMMED $a3
     CMP_NEQ
     JMPT .sub_11b_2597 ;$2597
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2583
 
     NPREF PRINT
@@ -4162,15 +4162,15 @@
     IMMED $a4
     CMP_NEQ
     JMPT .sub_11b_2635 ;$2635
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_25A7
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
     IMMED $388
@@ -4222,7 +4222,7 @@
     IMMED $3
     CMP_GT
     JMPT .sub_11b_2622 ;$2622
-    UO $3
+    ARFREE
     IMMED $108
     NPREF UO $6a
     POPALL
@@ -4230,14 +4230,14 @@
     JMP .sub_11b_262a ;$262a
 
 .sub_11b_2622
-    UO $3
+    ARFREE
     IMMED $109
     NPREF UO $6a
     POPALL
     POPALL
 
 .sub_11b_262a
-    UO $3
+    ARFREE
     IMMED $11b
     NPREF UO $6a
     POPALL
@@ -4250,18 +4250,18 @@
     IMMED $a5
     CMP_NEQ
     JMPT .sub_11b_266b ;$266b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2645
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_265C
 
     NPREF PRINT
@@ -4274,10 +4274,10 @@
     IMMED $a6
     CMP_NEQ
     JMPT .sub_11b_26a0 ;$26a0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_267B
 
     NPREF PRINT
@@ -4290,10 +4290,10 @@
     IMMED $a7
     CMP_NEQ
     JMPT .sub_11b_26c9 ;$26c9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_26B0
 
     NPREF PRINT
@@ -4306,10 +4306,10 @@
     IMMED $a8
     CMP_NEQ
     JMPT .sub_11b_26fc ;$26fc
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_26D9
 
     NPREF PRINT
@@ -4332,18 +4332,18 @@
     IMMED $aa
     CMP_NEQ
     JMPT .sub_11b_273b ;$273b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2718
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2724
 
     NPREF PRINT
@@ -4356,18 +4356,18 @@
     IMMED $ab
     CMP_NEQ
     JMPT .sub_11b_2771 ;$2771
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_274B
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2762
 
     NPREF PRINT
@@ -4388,20 +4388,20 @@
     IMMED $ad
     CMP_NEQ
     JMPT .sub_11b_2863 ;$2863
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_278F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
     IMMED $172
     INDIR
-    UO $3
+    ARFREE
     IMMED $6
     NPREF UO $67
     STR
@@ -4493,7 +4493,7 @@
     IMMED $3
     CMP_GT
     JMPT .sub_11b_2858 ;$2858
-    UO $3
+    ARFREE
     IMMED $108
     NPREF UO $6a
     POPALL
@@ -4501,7 +4501,7 @@
     JMP .sub_11b_2860 ;$2860
 
 .sub_11b_2858
-    UO $3
+    ARFREE
     IMMED $109
     NPREF UO $6a
     POPALL
@@ -4516,18 +4516,18 @@
     IMMED $ae
     CMP_NEQ
     JMPT .sub_11b_289b ;$289b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2873
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_288A
 
     NPREF PRINT
@@ -4540,18 +4540,18 @@
     IMMED $af
     CMP_NEQ
     JMPT .sub_11b_28d0 ;$28d0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_28AB
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_28BF
 
     NPREF PRINT
@@ -4564,18 +4564,18 @@
     IMMED $b0
     CMP_NEQ
     JMPT .sub_11b_290a ;$290a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_28E0
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_28F9
 
     NPREF PRINT
@@ -4588,10 +4588,10 @@
     IMMED $b1
     CMP_NEQ
     JMPT .sub_11b_2936 ;$2936
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_291A
 
     NPREF PRINT
@@ -4604,18 +4604,18 @@
     IMMED $b2
     CMP_NEQ
     JMPT .sub_11b_2963 ;$2963
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2946
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2952
 
     NPREF PRINT
@@ -4628,18 +4628,18 @@
     IMMED $b3
     CMP_NEQ
     JMPT .sub_11b_2999 ;$2999
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2973
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_298B
 
     NPREF PRINT
@@ -4654,10 +4654,10 @@
     IMMED $b4
     CMP_NEQ
     JMPT .sub_11b_29bd ;$29bd
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_29AA
 
     NPREF PRINT
@@ -4670,10 +4670,10 @@
     IMMED $b5
     CMP_NEQ
     JMPT .sub_11b_29e2 ;$29e2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_29CD
 
     NPREF PRINT
@@ -4686,10 +4686,10 @@
     IMMED $b6
     CMP_NEQ
     JMPT .sub_11b_2a09 ;$2a09
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_29F2
 
     NPREF PRINT
@@ -4702,10 +4702,10 @@
     IMMED $b7
     CMP_NEQ
     JMPT .sub_11b_2a2a ;$2a2a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2A19
 
     NPREF PRINT
@@ -4718,10 +4718,10 @@
     IMMED $b8
     CMP_NEQ
     JMPT .sub_11b_2a49 ;$2a49
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2A3A
 
     NPREF PRINT
@@ -4734,18 +4734,18 @@
     IMMED $b9
     CMP_NEQ
     JMPT .sub_11b_2a83 ;$2a83
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2A59
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2A65
 
     NPREF PRINT
@@ -4758,10 +4758,10 @@
     IMMED $ba
     CMP_NEQ
     JMPT .sub_11b_2ab3 ;$2ab3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2A93
 
     NPREF PRINT
@@ -4774,10 +4774,10 @@
     IMMED $bb
     CMP_NEQ
     JMPT .sub_11b_2adc ;$2adc
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2AC3
 
     NPREF PRINT
@@ -4790,10 +4790,10 @@
     IMMED $bc
     CMP_NEQ
     JMPT .sub_11b_2b01 ;$2b01
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2AEC
 
     NPREF PRINT
@@ -4806,10 +4806,10 @@
     IMMED $bd
     CMP_NEQ
     JMPT .sub_11b_2b26 ;$2b26
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2B11
 
     NPREF PRINT
@@ -4824,10 +4824,10 @@
     IMMED $be
     CMP_NEQ
     JMPT .sub_11b_2b4b ;$2b4b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2B37
 
     NPREF PRINT
@@ -4840,10 +4840,10 @@
     IMMED $bf
     CMP_NEQ
     JMPT .sub_11b_2b6f ;$2b6f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2B5B
 
     NPREF PRINT
@@ -4856,18 +4856,18 @@
     IMMED $c0
     CMP_NEQ
     JMPT .sub_11b_2ba2 ;$2ba2
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2B7F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2B91
 
     NPREF PRINT
@@ -4880,18 +4880,18 @@
     IMMED $c1
     CMP_NEQ
     JMPT .sub_11b_2bde ;$2bde
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2BB2
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2BC7
 
     NPREF PRINT
@@ -4904,18 +4904,18 @@
     IMMED $c2
     CMP_NEQ
     JMPT .sub_11b_2c16 ;$2c16
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2BEE
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2C05
 
     NPREF PRINT
@@ -4928,18 +4928,18 @@
     IMMED $c3
     CMP_NEQ
     JMPT .sub_11b_2c52 ;$2c52
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2C26
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2C3C
 
     NPREF PRINT
@@ -4952,18 +4952,18 @@
     IMMED $c4
     CMP_NEQ
     JMPT .sub_11b_2c8b ;$2c8b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2C62
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2C7A
 
     NPREF PRINT
@@ -4976,10 +4976,10 @@
     IMMED $c5
     CMP_NEQ
     JMPT .sub_11b_2cbf ;$2cbf
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2C9B
 
     NPREF PRINT
@@ -4992,18 +4992,18 @@
     IMMED $c6
     CMP_NEQ
     JMPT .sub_11b_2cf7 ;$2cf7
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2CCF
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2CE7
 
     NPREF PRINT
@@ -5016,18 +5016,18 @@
     IMMED $c7
     CMP_NEQ
     JMPT .sub_11b_2d2b ;$2d2b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2D07
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2D1D
 
     NPREF PRINT
@@ -5042,10 +5042,10 @@
     IMMED $c8
     CMP_NEQ
     JMPT .sub_11b_2d61 ;$2d61
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2D3C
 
     NPREF PRINT
@@ -5058,18 +5058,18 @@
     IMMED $c9
     CMP_NEQ
     JMPT .sub_11b_2d95 ;$2d95
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2D71
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2D84
 
     NPREF PRINT
@@ -5082,18 +5082,18 @@
     IMMED $ca
     CMP_NEQ
     JMPT .sub_11b_2dcb ;$2dcb
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2DA5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2DBA
 
     NPREF PRINT
@@ -5106,18 +5106,18 @@
     IMMED $cb
     CMP_NEQ
     JMPT .sub_11b_2e02 ;$2e02
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2DDB
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2DF1
 
     NPREF PRINT
@@ -5130,10 +5130,10 @@
     IMMED $cc
     CMP_NEQ
     JMPT .sub_11b_2e25 ;$2e25
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2E12
 
     NPREF PRINT
@@ -5146,18 +5146,18 @@
     IMMED $cd
     CMP_NEQ
     JMPT .sub_11b_2e60 ;$2e60
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2E35
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2E48
 
     NPREF PRINT
@@ -5170,10 +5170,10 @@
     IMMED $ce
     CMP_NEQ
     JMPT .sub_11b_2e8f ;$2e8f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2E70
 
     NPREF PRINT
@@ -5186,18 +5186,18 @@
     IMMED $cf
     CMP_NEQ
     JMPT .sub_11b_2ec8 ;$2ec8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2E9F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2EB7
 
     NPREF PRINT
@@ -5210,10 +5210,10 @@
     IMMED $d0
     CMP_NEQ
     JMPT .sub_11b_2eec ;$2eec
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2ED8
 
     NPREF PRINT
@@ -5226,18 +5226,18 @@
     IMMED $d1
     CMP_NEQ
     JMPT .sub_11b_2f20 ;$2f20
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2EFC
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2F12
 
     NPREF PRINT
@@ -5252,10 +5252,10 @@
     IMMED $d2
     CMP_NEQ
     JMPT .sub_11b_2f47 ;$2f47
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2F31
 
     NPREF PRINT
@@ -5268,10 +5268,10 @@
     IMMED $d3
     CMP_NEQ
     JMPT .sub_11b_2f7b ;$2f7b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2F57
 
     NPREF PRINT
@@ -5284,18 +5284,18 @@
     IMMED $d4
     CMP_NEQ
     JMPT .sub_11b_2fb5 ;$2fb5
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2F8B
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2FA4
 
     NPREF PRINT
@@ -5308,18 +5308,18 @@
     IMMED $d5
     CMP_NEQ
     JMPT .sub_11b_2fe9 ;$2fe9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2FC5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2FD8
 
     NPREF PRINT
@@ -5332,18 +5332,18 @@
     IMMED $d6
     CMP_NEQ
     JMPT .sub_11b_3022 ;$3022
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_2FF9
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3011
 
     NPREF PRINT
@@ -5356,10 +5356,10 @@
     IMMED $d7
     CMP_NEQ
     JMPT .sub_11b_3057 ;$3057
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3032
 
     NPREF PRINT
@@ -5372,10 +5372,10 @@
     IMMED $d8
     CMP_NEQ
     JMPT .sub_11b_3087 ;$3087
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3067
 
     NPREF PRINT
@@ -5388,18 +5388,18 @@
     IMMED $d9
     CMP_NEQ
     JMPT .sub_11b_30c0 ;$30c0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3097
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_30AF
 
     NPREF PRINT
@@ -5412,18 +5412,18 @@
     IMMED $da
     CMP_NEQ
     JMPT .sub_11b_30fd ;$30fd
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_30D0
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_30E7
 
     NPREF PRINT
@@ -5436,18 +5436,18 @@
     IMMED $db
     CMP_NEQ
     JMPT .sub_11b_3131 ;$3131
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_310D
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3123
 
     NPREF PRINT
@@ -5462,18 +5462,18 @@
     IMMED $dc
     CMP_NEQ
     JMPT .sub_11b_316a ;$316a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3142
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_315A
 
     NPREF PRINT
@@ -5486,18 +5486,18 @@
     IMMED $dd
     CMP_NEQ
     JMPT .sub_11b_31a0 ;$31a0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_317A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_318F
 
     NPREF PRINT
@@ -5510,10 +5510,10 @@
     IMMED $de
     CMP_NEQ
     JMPT .sub_11b_31d4 ;$31d4
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_31B0
 
     NPREF PRINT
@@ -5526,10 +5526,10 @@
     IMMED $df
     CMP_NEQ
     JMPT .sub_11b_3200 ;$3200
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_31E4
 
     NPREF PRINT
@@ -5542,18 +5542,18 @@
     IMMED $e0
     CMP_NEQ
     JMPT .sub_11b_3238 ;$3238
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3210
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3228
 
     NPREF PRINT
@@ -5566,10 +5566,10 @@
     IMMED $e1
     CMP_NEQ
     JMPT .sub_11b_3265 ;$3265
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3248
 
     NPREF PRINT
@@ -5582,10 +5582,10 @@
     IMMED $e2
     CMP_NEQ
     JMPT .sub_11b_3285 ;$3285
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3275
 
     NPREF PRINT
@@ -5598,10 +5598,10 @@
     IMMED $e3
     CMP_NEQ
     JMPT .sub_11b_32b1 ;$32b1
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3295
 
     NPREF PRINT
@@ -5614,10 +5614,10 @@
     IMMED $e4
     CMP_NEQ
     JMPT .sub_11b_32d7 ;$32d7
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_32C1
 
     NPREF PRINT
@@ -5630,10 +5630,10 @@
     IMMED $e5
     CMP_NEQ
     JMPT .sub_11b_32f9 ;$32f9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_32E7
 
     NPREF PRINT
@@ -5648,18 +5648,18 @@
     IMMED $e6
     CMP_NEQ
     JMPT .sub_11b_332b ;$332b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_330A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3316
 
     NPREF PRINT
@@ -5672,10 +5672,10 @@
     IMMED $e7
     CMP_NEQ
     JMPT .sub_11b_3357 ;$3357
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_333B
 
     NPREF PRINT
@@ -5688,10 +5688,10 @@
     IMMED $e8
     CMP_NEQ
     JMPT .sub_11b_337c ;$337c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3367
 
     NPREF PRINT
@@ -5894,10 +5894,10 @@
     IMMED $12c
     CMP_NEQ
     JMPT .sub_11b_34d9 ;$34d9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_34C8
 
     NPREF PRINT
@@ -5926,18 +5926,18 @@
     IMMED $12f
     CMP_NEQ
     JMPT .sub_11b_352a ;$352a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3505
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_351A
 
     NPREF PRINT
@@ -5950,18 +5950,18 @@
     IMMED $130
     CMP_NEQ
     JMPT .sub_11b_355f ;$355f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_353A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_354F
 
     NPREF PRINT
@@ -5974,18 +5974,18 @@
     IMMED $131
     CMP_NEQ
     JMPT .sub_11b_3594 ;$3594
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_356F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3584
 
     NPREF PRINT
@@ -5998,18 +5998,18 @@
     IMMED $132
     CMP_NEQ
     JMPT .sub_11b_35c9 ;$35c9
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_35A4
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_35B9
 
     NPREF PRINT
@@ -6022,18 +6022,18 @@
     IMMED $133
     CMP_NEQ
     JMPT .sub_11b_35fe ;$35fe
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_35D9
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_35EE
 
     NPREF PRINT
@@ -6046,18 +6046,18 @@
     IMMED $134
     CMP_NEQ
     JMPT .sub_11b_3632 ;$3632
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_360E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3622
 
     NPREF PRINT
@@ -6070,18 +6070,18 @@
     IMMED $135
     CMP_NEQ
     JMPT .sub_11b_3667 ;$3667
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3642
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_365A
 
     NPREF PRINT
@@ -6096,18 +6096,18 @@
     IMMED $136
     CMP_NEQ
     JMPT .sub_11b_369e ;$369e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3678
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_368E
 
     NPREF PRINT
@@ -6120,18 +6120,18 @@
     IMMED $137
     CMP_NEQ
     JMPT .sub_11b_36d3 ;$36d3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_36AE
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_36C3
 
     NPREF PRINT
@@ -6144,18 +6144,18 @@
     IMMED $138
     CMP_NEQ
     JMPT .sub_11b_370a ;$370a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_36E3
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_36FA
 
     NPREF PRINT
@@ -6168,18 +6168,18 @@
     IMMED $139
     CMP_NEQ
     JMPT .sub_11b_373e ;$373e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_371A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_372E
 
     NPREF PRINT
@@ -6192,18 +6192,18 @@
     IMMED $13a
     CMP_NEQ
     JMPT .sub_11b_3770 ;$3770
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_374E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3760
 
     NPREF PRINT
@@ -6216,18 +6216,18 @@
     IMMED $13b
     CMP_NEQ
     JMPT .sub_11b_37a4 ;$37a4
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3780
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3794
 
     NPREF PRINT
@@ -6240,18 +6240,18 @@
     IMMED $13c
     CMP_NEQ
     JMPT .sub_11b_37db ;$37db
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_37B4
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_37CB
 
     NPREF PRINT
@@ -6264,18 +6264,18 @@
     IMMED $13d
     CMP_NEQ
     JMPT .sub_11b_380f ;$380f
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_37EB
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_37FF
 
     NPREF PRINT
@@ -6288,10 +6288,10 @@
     IMMED $13e
     CMP_NEQ
     JMPT .sub_11b_3836 ;$3836
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_381F
 
     NPREF PRINT
@@ -6304,10 +6304,10 @@
     IMMED $13f
     CMP_NEQ
     JMPT .sub_11b_385e ;$385e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3846
 
     NPREF PRINT
@@ -6322,10 +6322,10 @@
     IMMED $140
     CMP_NEQ
     JMPT .sub_11b_3888 ;$3888
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_386F
 
     NPREF PRINT
@@ -6338,10 +6338,10 @@
     IMMED $141
     CMP_NEQ
     JMPT .sub_11b_38b0 ;$38b0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3898
 
     NPREF PRINT
@@ -6354,10 +6354,10 @@
     IMMED $142
     CMP_NEQ
     JMPT .sub_11b_38da ;$38da
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_38C0
 
     NPREF PRINT
@@ -6370,18 +6370,18 @@
     IMMED $143
     CMP_NEQ
     JMPT .sub_11b_390c ;$390c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_38EA
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_38FC
 
     NPREF PRINT
@@ -6394,18 +6394,18 @@
     IMMED $144
     CMP_NEQ
     JMPT .sub_11b_3943 ;$3943
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_391C
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3933
 
     NPREF PRINT
@@ -6418,18 +6418,18 @@
     IMMED $145
     CMP_NEQ
     JMPT .sub_11b_397a ;$397a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3953
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_396A
 
     NPREF PRINT
@@ -6442,18 +6442,18 @@
     IMMED $146
     CMP_NEQ
     JMPT .sub_11b_39af ;$39af
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_398A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_399F
 
     NPREF PRINT
@@ -6466,18 +6466,18 @@
     IMMED $147
     CMP_NEQ
     JMPT .sub_11b_39e5 ;$39e5
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_39BF
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_39D5
 
     NPREF PRINT
@@ -6490,18 +6490,18 @@
     IMMED $148
     CMP_NEQ
     JMPT .sub_11b_3a1b ;$3a1b
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_39F5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3A0B
 
     NPREF PRINT
@@ -6514,18 +6514,18 @@
     IMMED $149
     CMP_NEQ
     JMPT .sub_11b_3a4d ;$3a4d
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3A2B
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3A40
 
     NPREF PRINT
@@ -6540,18 +6540,18 @@
     IMMED $14a
     CMP_NEQ
     JMPT .sub_11b_3a85 ;$3a85
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3A5E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3A75
 
     NPREF PRINT
@@ -6564,18 +6564,18 @@
     IMMED $14b
     CMP_NEQ
     JMPT .sub_11b_3ab8 ;$3ab8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3A95
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3AA8
 
     NPREF PRINT
@@ -6588,18 +6588,18 @@
     IMMED $14c
     CMP_NEQ
     JMPT .sub_11b_3aee ;$3aee
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3AC8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3ADE
 
     NPREF PRINT
@@ -6612,18 +6612,18 @@
     IMMED $14d
     CMP_NEQ
     JMPT .sub_11b_3b21 ;$3b21
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3AFE
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3B11
 
     NPREF PRINT
@@ -6636,18 +6636,18 @@
     IMMED $14e
     CMP_NEQ
     JMPT .sub_11b_3b54 ;$3b54
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3B31
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3B44
 
     NPREF PRINT
@@ -6660,18 +6660,18 @@
     IMMED $14f
     CMP_NEQ
     JMPT .sub_11b_3b8a ;$3b8a
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3B64
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3B7A
 
     NPREF PRINT
@@ -6684,18 +6684,18 @@
     IMMED $150
     CMP_NEQ
     JMPT .sub_11b_3bc0 ;$3bc0
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3B9A
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3BB0
 
     NPREF PRINT
@@ -6708,18 +6708,18 @@
     IMMED $151
     CMP_NEQ
     JMPT .sub_11b_3bf4 ;$3bf4
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3BD0
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3BE4
 
     NPREF PRINT
@@ -6732,18 +6732,18 @@
     IMMED $152
     CMP_NEQ
     JMPT .sub_11b_3c27 ;$3c27
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3C04
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3C17
 
     NPREF PRINT
@@ -6756,18 +6756,18 @@
     IMMED $153
     CMP_NEQ
     JMPT .sub_11b_3c5c ;$3c5c
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3C37
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3C4F
 
     NPREF PRINT
@@ -6782,18 +6782,18 @@
     IMMED $154
     CMP_NEQ
     JMPT .sub_11b_3c95 ;$3c95
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3C6D
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3C85
 
     NPREF PRINT
@@ -6806,18 +6806,18 @@
     IMMED $155
     CMP_NEQ
     JMPT .sub_11b_3cc8 ;$3cc8
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3CA5
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3CB8
 
     NPREF PRINT
@@ -6830,18 +6830,18 @@
     IMMED $156
     CMP_NEQ
     JMPT .sub_11b_3cfe ;$3cfe
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3CD8
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3CEE
 
     NPREF PRINT
@@ -6854,18 +6854,18 @@
     IMMED $157
     CMP_NEQ
     JMPT .sub_11b_3d33 ;$3d33
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3D0E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3D23
 
     NPREF PRINT
@@ -6878,18 +6878,18 @@
     IMMED $158
     CMP_NEQ
     JMPT .sub_11b_3d67 ;$3d67
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3D43
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3D57
 
     NPREF PRINT
@@ -6902,18 +6902,18 @@
     IMMED $159
     CMP_NEQ
     JMPT .sub_11b_3d9d ;$3d9d
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3D77
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3D8D
 
     NPREF PRINT
@@ -6926,18 +6926,18 @@
     IMMED $15a
     CMP_NEQ
     JMPT .sub_11b_3dd3 ;$3dd3
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3DAD
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3DC3
 
     NPREF PRINT
@@ -6950,18 +6950,18 @@
     IMMED $15b
     CMP_NEQ
     JMPT .sub_11b_3e06 ;$3e06
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3DE3
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3DF6
 
     NPREF PRINT
@@ -6974,18 +6974,18 @@
     IMMED $15c
     CMP_NEQ
     JMPT .sub_11b_3e3e ;$3e3e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3E16
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3E2E
 
     NPREF PRINT
@@ -6998,18 +6998,18 @@
     IMMED $15d
     CMP_NEQ
     JMPT .sub_11b_3e6e ;$3e6e
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3E4E
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $e5
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3E61
 
     NPREF PRINT
@@ -7024,10 +7024,10 @@
     IMMED $172
     CMP_NEQ
     JMPT .sub_11b_3e94 ;$3e94
-    UO $3
+    ARFREE
     NPREF UO $e4
     POPALL
-    UO $3
+    ARFREE
     DB STR_11B_3E7F
 
     NPREF PRINT

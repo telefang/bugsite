@@ -2,7 +2,7 @@
     RET
 
 .sub_fc_4
-    UO $3
+    ARFREE
     IMMED $974
     ENOP $2d
     IMMED $0
@@ -31,7 +31,7 @@
     IMMED $7
     CMP_GEQ
     JMPT .sub_fc_76 ;$76
-    UO $3
+    ARFREE
     IMMED $173
     INDIR
     ENOP $2d
@@ -44,7 +44,7 @@
     IMMED $f
     NPREF UO $f8
     POPALL
-    UO $3
+    ARFREE
     IMMED $4
     NPREF UO $5c
     POPALL

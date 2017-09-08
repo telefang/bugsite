@@ -2,68 +2,68 @@
     RET
 
 .sub_e5_4
-    UO $3
+    ARFREE
     IMMED $2
     NPREF UO $4e
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     IMMED $1
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     IMMED $2
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     IMMED $3
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     IMMED $4
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     IMMED $5
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     IMMED $6
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     IMMED $7
     ENOP $2d
     IMMED $0
     NPREF UO $8f
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $8e
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $4a
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $62
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $0
@@ -78,12 +78,12 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $cd
     NPREF UO $6a
     POPALL
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $5d
     POPALL
     IMMED $6f
@@ -663,7 +663,7 @@
     NPREF POPALL
     JAL .sub_e5_58b ;$58b
     NPREF POPALL
-    UO $3
+    ARFREE
     IMMED $c8
     NPREF UO $5c
     POPALL
@@ -672,7 +672,7 @@
     IMMED $0
     STR
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $5e
     POPALL
     RET
@@ -690,13 +690,13 @@
     IMMED $f
     CMP_GEQ
     JMPT .sub_e5_5c2 ;$5c2
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $1
     NPREF UO $c7
     POPALL
-    UO $3
+    ARFREE
     IMMED $4
     NPREF UO $5c
     POPALL
@@ -711,17 +711,17 @@
     JMP .sub_e5_594 ;$594
 
 .sub_e5_5c2
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $1
     NPREF UO $c7
     POPALL
-    UO $3
+    ARFREE
     IMMED $1
     NPREF UO $5c
     POPALL
-    UO $3
+    ARFREE
     IMMED $0
     ENOP $2d
     IMMED $175
@@ -735,11 +735,11 @@
     ADD
     NPREF UO $88
     POPALL
-    UO $3
+    ARFREE
     IMMED $1
     NPREF UO $5c
     POPALL
-    UO $3
+    ARFREE
     IMMED $174
     INDIR
     ENOP $2d
@@ -747,7 +747,7 @@
     INDIR
     NPREF UO $50
     POPALL
-    UO $3
+    ARFREE
     IMMED $1
     NPREF UO $5c
     POPALL
@@ -1448,14 +1448,14 @@
     NPREF POPALL
 
 .sub_e5_b07
-    UO $3
+    ARFREE
     IMMED $1
     NPREF UO $5c
     POPALL
     RET
 
 .sub_e5_b0f
-    UO $3
+    ARFREE
     DB STR_E5_B10
 
     NPREF PRINT
@@ -1463,7 +1463,7 @@
     RET
 
 .sub_e5_b1a
-    UO $3
+    ARFREE
     DB STR_E5_B1B
 
     NPREF PRINT
@@ -1471,7 +1471,7 @@
     RET
 
 .sub_e5_b35
-    UO $3
+    ARFREE
     DB STR_E5_B36
 
     NPREF PRINT
@@ -1479,7 +1479,7 @@
     RET
 
 .sub_e5_b48
-    UO $3
+    ARFREE
     DB STR_E5_B49
 
     NPREF PRINT
@@ -1487,7 +1487,7 @@
     RET
 
 .sub_e5_b63
-    UO $3
+    ARFREE
     DB STR_E5_B64
 
     NPREF PRINT
@@ -1495,7 +1495,7 @@
     RET
 
 .sub_e5_b74
-    UO $3
+    ARFREE
     DB STR_E5_B75
 
     NPREF PRINT
@@ -1503,7 +1503,7 @@
     RET
 
 .sub_e5_b8f
-    UO $3
+    ARFREE
     DB STR_E5_B90
 
     NPREF PRINT
@@ -1511,7 +1511,7 @@
     RET
 
 .sub_e5_b9d
-    UO $3
+    ARFREE
     DB STR_E5_B9E
 
     NPREF PRINT
@@ -1519,7 +1519,7 @@
     RET
 
 .sub_e5_bb8
-    UO $3
+    ARFREE
     DB STR_E5_BB9
 
     NPREF PRINT
@@ -1527,7 +1527,7 @@
     RET
 
 .sub_e5_bc6
-    UO $3
+    ARFREE
     DB STR_E5_BC7
 
     NPREF PRINT
@@ -1535,7 +1535,7 @@
     RET
 
 .sub_e5_be1
-    UO $3
+    ARFREE
     DB STR_E5_BE2
 
     NPREF PRINT
@@ -1543,7 +1543,7 @@
     RET
 
 .sub_e5_bfc
-    UO $3
+    ARFREE
     DB STR_E5_BFD
 
     NPREF PRINT
@@ -1551,7 +1551,7 @@
     RET
 
 .sub_e5_c17
-    UO $3
+    ARFREE
     DB STR_E5_C18
 
     NPREF PRINT
@@ -1559,7 +1559,7 @@
     RET
 
 .sub_e5_c23
-    UO $3
+    ARFREE
     DB STR_E5_C24
 
     NPREF PRINT
@@ -1567,7 +1567,7 @@
     RET
 
 .sub_e5_c2e
-    UO $3
+    ARFREE
     DB STR_E5_C2F
 
     NPREF PRINT
@@ -1575,7 +1575,7 @@
     RET
 
 .sub_e5_c49
-    UO $3
+    ARFREE
     DB STR_E5_C4A
 
     NPREF PRINT
@@ -1583,7 +1583,7 @@
     RET
 
 .sub_e5_c64
-    UO $3
+    ARFREE
     DB STR_E5_C65
 
     NPREF PRINT
@@ -1591,7 +1591,7 @@
     RET
 
 .sub_e5_c7f
-    UO $3
+    ARFREE
     DB STR_E5_C80
 
     NPREF PRINT
@@ -1599,7 +1599,7 @@
     RET
 
 .sub_e5_c89
-    UO $3
+    ARFREE
     DB STR_E5_C8A
 
     NPREF PRINT
@@ -1607,7 +1607,7 @@
     RET
 
 .sub_e5_ca4
-    UO $3
+    ARFREE
     DB STR_E5_CA5
 
     NPREF PRINT
@@ -1615,7 +1615,7 @@
     RET
 
 .sub_e5_cbf
-    UO $3
+    ARFREE
     DB STR_E5_CC0
 
     NPREF PRINT
@@ -1623,7 +1623,7 @@
     RET
 
 .sub_e5_cda
-    UO $3
+    ARFREE
     DB STR_E5_CDB
 
     NPREF PRINT
@@ -1631,7 +1631,7 @@
     RET
 
 .sub_e5_ce8
-    UO $3
+    ARFREE
     DB STR_E5_CE9
 
     NPREF PRINT
@@ -1639,7 +1639,7 @@
     RET
 
 .sub_e5_d03
-    UO $3
+    ARFREE
     DB STR_E5_D04
 
     NPREF PRINT
@@ -1647,7 +1647,7 @@
     RET
 
 .sub_e5_d1e
-    UO $3
+    ARFREE
     DB STR_E5_D1F
 
     NPREF PRINT
@@ -1655,7 +1655,7 @@
     RET
 
 .sub_e5_d39
-    UO $3
+    ARFREE
     DB STR_E5_D3A
 
     NPREF PRINT
@@ -1663,7 +1663,7 @@
     RET
 
 .sub_e5_d54
-    UO $3
+    ARFREE
     DB STR_E5_D55
 
     NPREF PRINT
@@ -1671,7 +1671,7 @@
     RET
 
 .sub_e5_d6f
-    UO $3
+    ARFREE
     DB STR_E5_D70
 
     NPREF PRINT
@@ -1679,7 +1679,7 @@
     RET
 
 .sub_e5_d8a
-    UO $3
+    ARFREE
     DB STR_E5_D8B
 
     NPREF PRINT
@@ -1687,7 +1687,7 @@
     RET
 
 .sub_e5_da5
-    UO $3
+    ARFREE
     DB STR_E5_DA6
 
     NPREF PRINT
@@ -1695,7 +1695,7 @@
     RET
 
 .sub_e5_dc0
-    UO $3
+    ARFREE
     DB STR_E5_DC1
 
     NPREF PRINT
@@ -1703,7 +1703,7 @@
     RET
 
 .sub_e5_ddb
-    UO $3
+    ARFREE
     DB STR_E5_DDC
 
     NPREF PRINT
@@ -1711,7 +1711,7 @@
     RET
 
 .sub_e5_df6
-    UO $3
+    ARFREE
     DB STR_E5_DF7
 
     NPREF PRINT
@@ -1719,7 +1719,7 @@
     RET
 
 .sub_e5_e01
-    UO $3
+    ARFREE
     DB STR_E5_E02
 
     NPREF PRINT
@@ -1727,7 +1727,7 @@
     RET
 
 .sub_e5_e1c
-    UO $3
+    ARFREE
     DB STR_E5_E1D
 
     NPREF PRINT
@@ -1735,7 +1735,7 @@
     RET
 
 .sub_e5_e2a
-    UO $3
+    ARFREE
     DB STR_E5_E2B
 
     NPREF PRINT
@@ -1743,7 +1743,7 @@
     RET
 
 .sub_e5_e45
-    UO $3
+    ARFREE
     DB STR_E5_E46
 
     NPREF PRINT
@@ -1751,7 +1751,7 @@
     RET
 
 .sub_e5_e60
-    UO $3
+    ARFREE
     DB STR_E5_E61
 
     NPREF PRINT
@@ -1759,7 +1759,7 @@
     RET
 
 .sub_e5_e70
-    UO $3
+    ARFREE
     DB STR_E5_E71
 
     NPREF PRINT
@@ -1767,7 +1767,7 @@
     RET
 
 .sub_e5_e8b
-    UO $3
+    ARFREE
     DB STR_E5_E8C
 
     NPREF PRINT
@@ -1775,7 +1775,7 @@
     RET
 
 .sub_e5_ea6
-    UO $3
+    ARFREE
     DB STR_E5_EA7
 
     NPREF PRINT
@@ -1783,7 +1783,7 @@
     RET
 
 .sub_e5_eb7
-    UO $3
+    ARFREE
     DB STR_E5_EB8
 
     NPREF PRINT
@@ -1791,7 +1791,7 @@
     RET
 
 .sub_e5_ec6
-    UO $3
+    ARFREE
     DB STR_E5_EC7
 
     NPREF PRINT
@@ -1799,7 +1799,7 @@
     RET
 
 .sub_e5_edf
-    UO $3
+    ARFREE
     DB STR_E5_EE0
 
     NPREF PRINT
@@ -1807,7 +1807,7 @@
     RET
 
 .sub_e5_efa
-    UO $3
+    ARFREE
     DB STR_E5_EFB
 
     NPREF PRINT
@@ -1815,7 +1815,7 @@
     RET
 
 .sub_e5_f15
-    UO $3
+    ARFREE
     DB STR_E5_F16
 
     NPREF PRINT
@@ -1823,7 +1823,7 @@
     RET
 
 .sub_e5_f30
-    UO $3
+    ARFREE
     DB STR_E5_F31
 
     NPREF PRINT
@@ -1831,7 +1831,7 @@
     RET
 
 .sub_e5_f47
-    UO $3
+    ARFREE
     DB STR_E5_F48
 
     NPREF PRINT
@@ -1839,7 +1839,7 @@
     RET
 
 .sub_e5_f62
-    UO $3
+    ARFREE
     DB STR_E5_F63
 
     NPREF PRINT
@@ -1847,7 +1847,7 @@
     RET
 
 .sub_e5_f6d
-    UO $3
+    ARFREE
     DB STR_E5_F6E
 
     NPREF PRINT
@@ -1855,7 +1855,7 @@
     RET
 
 .sub_e5_f88
-    UO $3
+    ARFREE
     DB STR_E5_F89
 
     NPREF PRINT
@@ -1863,7 +1863,7 @@
     RET
 
 .sub_e5_f94
-    UO $3
+    ARFREE
     DB STR_E5_F95
 
     NPREF PRINT

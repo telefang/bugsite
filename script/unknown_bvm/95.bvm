@@ -12,18 +12,18 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_95_2e ;$2e
-    UO $3
+    ARFREE
     NPREF UO $5a
     POPALL
-    UO $3
+    ARFREE
     DB STR_95_1F
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $b4
     POPALL
 
@@ -36,18 +36,18 @@
     IMMED $3a34
     CMP_LT
     JMPT .sub_95_65 ;$65
-    UO $3
+    ARFREE
     NPREF UO $5a
     POPALL
-    UO $3
+    ARFREE
     DB STR_95_41
 
     NPREF PRINT
     POPALL
-    UO $3
+    ARFREE
     NPREF WINWAIT
     POPALL
-    UO $3
+    ARFREE
     NPREF UO $b4
     POPALL
     JMP .sub_95_9a ;$9a
@@ -80,7 +80,7 @@
     DIV
     STR
     POPALL
-    UO $3
+    ARFREE
     IMMED $172
     INDIR
     NPREF UO $6a
