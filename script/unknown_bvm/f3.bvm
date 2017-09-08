@@ -1535,7 +1535,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     DB STR_F3_A6F
 
@@ -1862,7 +1862,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     IMMED $0
@@ -2034,7 +2034,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     NPREF UO $a5
@@ -2129,7 +2129,7 @@
     STR
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     UO $3
     DB STR_F3_E66
@@ -2288,7 +2288,7 @@
 
 .sub_f3_f72
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     DB STR_F3_F77
 
@@ -2303,7 +2303,7 @@
 
 .sub_f3_f8b
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $17c
     INDIR
@@ -2467,7 +2467,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $17e
     INDIR
@@ -2507,7 +2507,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_10E0
@@ -2515,7 +2515,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_f3_10f3
@@ -2755,7 +2755,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $394
     INDIR
@@ -3150,14 +3150,14 @@
     CMP_GT
     JMPT .sub_f3_15b7 ;$15b7
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     DB STR_F3_1569
 
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     IMMED $463
     INDIR
@@ -3195,14 +3195,14 @@
 
 .sub_f3_15b7
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     DB STR_F3_15BC
 
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_f3_15cf
@@ -3210,7 +3210,7 @@
 
 .sub_f3_15d2
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_15D7
@@ -3218,7 +3218,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_f3_15f6
@@ -3258,7 +3258,7 @@
     CMP_NEQ
     JMPT .sub_f3_16dd ;$16dd
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_1637
@@ -3266,7 +3266,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     IMMED $447
     INDIR
@@ -3312,7 +3312,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     JAL .sub_f3_1a38 ;$1a38
     NPREF POPALL
@@ -3352,7 +3352,7 @@
     CMP_NEQ
     JMPT .sub_f3_1879 ;$1879
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_16ED
@@ -3360,7 +3360,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     UO $3
     DB STR_F3_170B
@@ -3368,7 +3368,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     IMMED $447
     INDIR
@@ -3414,7 +3414,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     UO $3
     DB STR_F3_176D
@@ -3546,14 +3546,14 @@
 
 .sub_f3_1855
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     DB STR_F3_185A
 
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_f3_1876
@@ -3566,7 +3566,7 @@
     CMP_NEQ
     JMPT .sub_f3_18a4 ;$18a4
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_1889
@@ -3574,7 +3574,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_f3_18a4
@@ -3715,7 +3715,7 @@
     JAL .sub_f3_1a1d ;$1a1d
     NPREF POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_1991
@@ -3723,7 +3723,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     IMMED $469
     INDIR
@@ -4561,7 +4561,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_1F49
@@ -4569,7 +4569,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     JMP .sub_f3_1f70 ;$1f70
 
@@ -4607,7 +4607,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_1FA1
@@ -4615,7 +4615,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     JMP .sub_f3_1fc7 ;$1fc7
 
@@ -4674,7 +4674,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2018
@@ -4682,7 +4682,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     JMP .sub_f3_2049 ;$2049
 
@@ -4726,7 +4726,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_207A
@@ -4734,7 +4734,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     JMP .sub_f3_20aa ;$20aa
 
@@ -4816,7 +4816,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $73
     INDIR
@@ -4883,7 +4883,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $73
     INDIR
@@ -4950,7 +4950,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $73
     INDIR
@@ -5399,7 +5399,7 @@
     CMP_EQ
     JMPT .sub_f3_266d ;$266d
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     NPREF UO $a5
@@ -5453,7 +5453,7 @@
 
 .sub_f3_2558
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     IMMED $73
     INDIR
@@ -5479,7 +5479,7 @@
     STR
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     UO $3
     DB STR_F3_258E
@@ -5584,7 +5584,7 @@
 
 .sub_f3_2640
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2645
@@ -5597,7 +5597,7 @@
 
 .sub_f3_265b
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     NPREF UO $5e
@@ -5753,7 +5753,7 @@
     CMP_NEQ
     JMPT .sub_f3_2774 ;$2774
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     IMMED $17e
     INDIR
@@ -5829,7 +5829,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_27DF
@@ -5882,7 +5882,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2846
@@ -5947,7 +5947,7 @@
     NPREF UO $7d
     POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_28C2
@@ -6499,7 +6499,7 @@
     JAL .sub_f3_3095 ;$3095
     NPREF POPALL
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2C97
@@ -6523,7 +6523,7 @@
     CMP_NEQ
     JMPT .sub_f3_2cf1 ;$2cf1
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2CD0
@@ -6531,7 +6531,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     IMMED $17c
     INDIR
@@ -6730,7 +6730,7 @@
     CMP_EQ
     JMPT .sub_f3_2e86 ;$2e86
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2E30
@@ -6757,7 +6757,7 @@
 
 .sub_f3_2e65
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2E6A
@@ -6765,7 +6765,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_f3_2e83
@@ -6773,7 +6773,7 @@
 
 .sub_f3_2e86
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2E8B
@@ -6781,7 +6781,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
     JAL .sub_f3_1c5a ;$1c5a
     NPREF POPALL
@@ -6796,7 +6796,7 @@
     CMP_NEQ
     JMPT .sub_f3_2f17 ;$2f17
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2EB9
@@ -6828,7 +6828,7 @@
 
 .sub_f3_2ef6
     UO $3
-    NPREF UO $5b
+    NPREF WINCLR
     POPALL
     UO $3
     DB STR_F3_2EFB
@@ -6836,7 +6836,7 @@
     NPREF UO $4c
     POPALL
     UO $3
-    NPREF UO $82
+    NPREF WINBRK
     POPALL
 
 .sub_f3_2f14
