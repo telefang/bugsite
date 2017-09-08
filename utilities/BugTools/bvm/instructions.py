@@ -35,6 +35,7 @@ opcodes = {
     "FARCALL": 0x6A,
     "FARJMP": 0x6B,
     "TILELD": 0x72,
+    "WINBRK": 0x82,
     "PRKEY": 0x9F,
     "BLKKEY": 0xA0,
     "PRMOVE": 0xA1,
