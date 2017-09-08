@@ -28,6 +28,7 @@ opcodes = {
     "IMMED": 0x3D,
     "DB": 0x3E,
     "JAL": 0x3F, #TODO: Shouldn't this be CALL?
+    "PRINT": 0x4C,
     "RESLD": 0x5F,
     "FARCALL": 0x6A,
     "FARJMP": 0x6B,
