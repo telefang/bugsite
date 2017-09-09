@@ -229,11 +229,11 @@ def effective_strlen(encoded_bytes, string_enc):
     px_width = 0
     
     for byte in encoded_bytes:
-        if byte == newline_symbol:
+        if byte == newline_symbol[0]:
             #Newlines are technically 0 width, even though they add a line and
             #really shouldn't even be present here...
             continue
-        elif byte == pname_symbol:
+        elif byte == pname_symbol[0]:
             #We have to assume the worst with the player name...
             px_width += 8 * 8
         else:
