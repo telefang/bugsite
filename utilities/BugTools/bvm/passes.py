@@ -215,6 +215,33 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
     
     return True
 
+def effective_strlen(encoded_bytes, string_enc):
+    """Given a Bugsite encoded string, determine it's effective length.
+    
+    Returns a length in pixels. We assume fixed-width formatting for now.
+    
+    This function takes into account the player's name as an 8-character wide
+    symbol, even if it may be shorter in practice. We ask for a string enocder
+    so that we can determine what the encoded form of it is."""
+    
+    pname_symbol = string_enc("[name]")
+    newline_symbol = string_enc("\n")
+    px_width = 0
+    
+    for byte in encoded_bytes:
+        if byte == newline_symbol:
+            #Newlines are technically 0 width, even though they add a line and
+            #really shouldn't even be present here...
+            continue
+        elif byte == pname_symbol:
+            #We have to assume the worst with the player name...
+            px_width += 8 * 8
+        else:
+            #Every other character is one tile for now.
+            px_width += 8 * 1
+    
+    return px_width
+
 def autobalance_strings(parselist, known_equates, string_enc):
     """Optional pass to automatically word-wrap string equates used in text.
     
@@ -256,8 +283,10 @@ def autobalance_strings(parselist, known_equates, string_enc):
         if instr.opcode == "DB" and len(instr.operands) > 0:
             if type(instr.operands[0]) is not SymbolicRef:
                 #Autobalance groups can only be constructed from symbolic refs
-                if next_ab_group is not None:
+                if next_ab_group is not None and len(next_ab_group) > 1:
                     ab_groups.append(next_ab_group)
+                    next_ab_group = None
+                else:
                     next_ab_group = None
                 
                 continue
@@ -269,15 +298,19 @@ def autobalance_strings(parselist, known_equates, string_enc):
             
             if type(target_symbol) is not str:
                 #Autobalance groups can only be constructed from string refs
-                if next_ab_group is not None:
+                if next_ab_group is not None and len(next_ab_group) > 1:
                     ab_groups.append(next_ab_group)
+                    next_ab_group = None
+                else:
                     next_ab_group = None
                 
                 continue
             elif len(target_symbol) > 0:
                 #Nonempty strings trigger a new autobalance group
-                if next_ab_group is not None:
+                if next_ab_group is not None and len(next_ab_group) > 1:
                     ab_groups.append(next_ab_group)
+                    next_ab_group = None
+                else:
                     next_ab_group = None
                 
                 next_ab_group = [index]
@@ -289,8 +322,10 @@ def autobalance_strings(parselist, known_equates, string_enc):
             continue
     else:
         #Clean up the last autobalance group
-        if next_ab_group is not None:
+        if next_ab_group is not None and len(next_ab_group) > 1:
             ab_groups.append(next_ab_group)
+            next_ab_group = None
+        else:
             next_ab_group = None
     
     new_streams = []
@@ -328,7 +363,8 @@ def autobalance_strings(parselist, known_equates, string_enc):
                 
                 if len(balanced_line) == 0:
                     balanced_line += word
-                elif len(balanced_line) + len(space) + len(word) > ab_max_width:
+                elif effective_strlen(balanced_line, string_enc) + effective_strlen(space, string_enc) + effective_strlen(word, string_enc) > ab_max_width:
+                    #That condition uses visual, not physical length
                     balanced_strings.append(balanced_line)
                     balanced_line = word
                 else:
