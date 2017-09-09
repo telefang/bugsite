@@ -295,10 +295,10 @@ def autobalance_strings(parselist, known_equates, string_enc):
             if instr.operands[0].is_local:
                 symbol_name = last_global.symbol.name + symbol_name
             
-            #Symbols starting with STR_nn where nn > 0x95 are system strings
+            #Symbols starting with STR_nn where nn >= 0x95 are system strings
             #and cannot be formatted with this routine.
             try:
-                if symbol_name[:4] == "STR_" and int(sys_str.split("_")[1], 16) > 0x95:
+                if symbol_name[:4] == "STR_" and int(symbol_name.split("_")[1], 16) >= 0x95:
                     continue
             except ValueError:
                 pass
@@ -327,11 +327,8 @@ def autobalance_strings(parselist, known_equates, string_enc):
             continue
     else:
         #Clean up the last autobalance group
-        if next_ab_group is not None and len(next_ab_group) > 1:
+        if len(next_ab_group) > 0:
             ab_groups.append(next_ab_group)
-            next_ab_group = None
-        else:
-            next_ab_group = None
     
     new_streams = []
 
