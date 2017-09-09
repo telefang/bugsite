@@ -338,9 +338,9 @@ def autobalance_strings(parselist, known_equates, string_enc):
         has_no_portrait = statically_prove_str(parselist, known_equates, ab_group[0], ab_group[-1], 0x172, 0xFFFF)
         
         if has_no_portrait:
-            ab_max_width = 16
+            ab_max_width = 16 * 8
         else:
-            ab_max_width = 12
+            ab_max_width = 12 * 8
         
         #Collect our string data and break it into words
         merged_string = []
