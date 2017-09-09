@@ -299,10 +299,6 @@ def autobalance_strings(parselist, known_equates, string_enc):
     for ab_group in ab_groups:
         assert ab_group is not None
         
-        if len(ab_group) < 2:
-            #String is already balanced
-            continue
-        
         #Assert autobalance group portrait state.
         has_no_portrait = statically_prove_str(parselist, known_equates, ab_group[0], ab_group[-1], 0x172, 0xFFFF)
         
@@ -361,12 +357,14 @@ def autobalance_strings(parselist, known_equates, string_enc):
             is_winbrk_line = not is_winbrk_line
         else:
             #Remove the final PRINT, ARFREE, and WINBRK instruction
-            if new_instruction_stream[-1].opcode == "WINBRK":
-                new_instruction_stream = new_instruction_stream[:-3]
+            if len(new_instruction_stream) > 0:
+                if new_instruction_stream[-1].opcode == "WINBRK":
+                    new_instruction_stream = new_instruction_stream[:-3]
+                else:
+                    new_instruction_stream = new_instruction_stream[:-2]
             else:
-                new_instruction_stream = new_instruction_stream[:-2]
+                new_instruction_stream = copy.deepcopy(parselist[ab_group[0]:ab_group[-1] + 1])
         
-        print (new_instruction_stream)
         new_streams.append(new_instruction_stream)
 
     out_parselist = copy.deepcopy(parselist)
