@@ -148,11 +148,9 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
     IMMED $FFFF
     STR"""
     
-    #Traverse backwards through the parselist until we find an STR instruction
-    #matching our indirslot
     static_datastack = []
     proven_before_start = False
-    ptr = start - 1
+    ptr = 0
     while ptr < start and ptr < len(parselist):
         if type(parselist[ptr]) == Label:
             #Cannot guarantee execution flow across labels.
@@ -166,14 +164,14 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
                 proven_before_start = False
             
             if parselist[ptr].opcode in ["IMMED"]:
-                static_datastack.append(parselist[ptr].operands[1])
+                static_datastack.append(parselist[ptr].operands[0])
             
             if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
                 static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
             
             if parselist[ptr].opcode in ["STR"]:
                 if len(static_datastack) >= 2:
-                    if static_datastack[-2] == indirslot & 0x10000:
+                    if static_datastack[-2] == indirslot | 0x10000:
                         proven_before_start = static_datastack[-1] == strval
                 else:
                     proven_before_start = False
@@ -198,7 +196,7 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
             #region, so we won't return False on it.
             
             if parselist[ptr].opcode in ["IMMED"]:
-                static_datastack.append(parselist[ptr].operands[1])
+                static_datastack.append(parselist[ptr].operands[0])
             
             if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
                 static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
