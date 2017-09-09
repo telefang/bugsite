@@ -215,6 +215,33 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
     
     return True
 
+def effective_strlen(encoded_bytes, string_enc):
+    """Given a Bugsite encoded string, determine it's effective length.
+    
+    Returns a length in pixels. We assume fixed-width formatting for now.
+    
+    This function takes into account the player's name as an 8-character wide
+    symbol, even if it may be shorter in practice. We ask for a string enocder
+    so that we can determine what the encoded form of it is."""
+    
+    pname_symbol = string_enc("[name]")
+    newline_symbol = string_enc("\n")
+    px_width = 0
+    
+    for byte in encoded_bytes:
+        if byte == newline_symbol:
+            #Newlines are technically 0 width, even though they add a line and
+            #really shouldn't even be present here...
+            continue
+        elif byte == pname_symbol:
+            #We have to assume the worst with the player name...
+            px_width += 8 * 8
+        else:
+            #Every other character is one tile for now.
+            px_width += 8 * 1
+    
+    return px_width
+
 def autobalance_strings(parselist, known_equates, string_enc):
     """Optional pass to automatically word-wrap string equates used in text.
     
@@ -336,7 +363,8 @@ def autobalance_strings(parselist, known_equates, string_enc):
                 
                 if len(balanced_line) == 0:
                     balanced_line += word
-                elif len(balanced_line) + len(space) + len(word) > ab_max_width:
+                elif effective_strlen(balanced_line, string_enc) + effective_strlen(space, string_enc) + effective_strlen(word, string_enc) > ab_max_width:
+                    #That condition uses visual, not physical length
                     balanced_strings.append(balanced_line)
                     balanced_line = word
                 else:
