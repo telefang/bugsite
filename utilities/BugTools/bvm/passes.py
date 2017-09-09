@@ -229,11 +229,11 @@ def effective_strlen(encoded_bytes, string_enc):
     px_width = 0
     
     for byte in encoded_bytes:
-        if byte == newline_symbol:
+        if byte == newline_symbol[0]:
             #Newlines are technically 0 width, even though they add a line and
             #really shouldn't even be present here...
             continue
-        elif byte == pname_symbol:
+        elif byte == pname_symbol[0]:
             #We have to assume the worst with the player name...
             px_width += 8 * 8
         else:
@@ -269,7 +269,7 @@ def autobalance_strings(parselist, known_equates, string_enc):
     
     #First, we identify our autobalance groups.
     ab_groups = []
-    next_ab_group = None
+    next_ab_group = []
     last_global = Label(SymbolicRef('', False), False)
 
     for index, instr in enumerate(parselist):
@@ -281,39 +281,44 @@ def autobalance_strings(parselist, known_equates, string_enc):
             continue
         
         if instr.opcode == "DB" and len(instr.operands) > 0:
+            ab_group_viable = len(next_ab_group) > 0
+            
             if type(instr.operands[0]) is not SymbolicRef:
                 #Autobalance groups can only be constructed from symbolic refs
-                if next_ab_group is not None and len(next_ab_group) > 1:
+                if ab_group_viable:
                     ab_groups.append(next_ab_group)
-                    next_ab_group = None
-                else:
-                    next_ab_group = None
                 
+                next_ab_group = []
                 continue
             
+            symbol_name = instr.operands[0].name
             if instr.operands[0].is_local:
-                target_symbol = known_equates[last_global.symbol.name + instr.operands[0].name]
-            else:
-                target_symbol = known_equates[instr.operands[0].name]
+                symbol_name = last_global.symbol.name + symbol_name
+            
+            #Symbols starting with STR_nn where nn > 0x95 are system strings
+            #and cannot be formatted with this routine.
+            try:
+                if symbol_name[:4] == "STR_" and int(sys_str.split("_")[1], 16) > 0x95:
+                    continue
+            except ValueError:
+                pass
+            
+            target_symbol = known_equates[symbol_name]
             
             if type(target_symbol) is not str:
                 #Autobalance groups can only be constructed from string refs
-                if next_ab_group is not None and len(next_ab_group) > 1:
+                if ab_group_viable:
                     ab_groups.append(next_ab_group)
-                    next_ab_group = None
-                else:
-                    next_ab_group = None
                 
+                next_ab_group = []
                 continue
             elif len(target_symbol) > 0:
                 #Nonempty strings trigger a new autobalance group
-                if next_ab_group is not None and len(next_ab_group) > 1:
+                if ab_group_viable:
                     ab_groups.append(next_ab_group)
-                    next_ab_group = None
-                else:
-                    next_ab_group = None
                 
                 next_ab_group = [index]
+                continue
             else:
                 #Empty strings coalesce into the existing autobalance group
                 next_ab_group.append(index)
