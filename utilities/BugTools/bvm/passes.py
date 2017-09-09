@@ -256,8 +256,10 @@ def autobalance_strings(parselist, known_equates, string_enc):
         if instr.opcode == "DB" and len(instr.operands) > 0:
             if type(instr.operands[0]) is not SymbolicRef:
                 #Autobalance groups can only be constructed from symbolic refs
-                if next_ab_group is not None:
+                if next_ab_group is not None and len(next_ab_group) > 1:
                     ab_groups.append(next_ab_group)
+                    next_ab_group = None
+                else:
                     next_ab_group = None
                 
                 continue
@@ -269,15 +271,19 @@ def autobalance_strings(parselist, known_equates, string_enc):
             
             if type(target_symbol) is not str:
                 #Autobalance groups can only be constructed from string refs
-                if next_ab_group is not None:
+                if next_ab_group is not None and len(next_ab_group) > 1:
                     ab_groups.append(next_ab_group)
+                    next_ab_group = None
+                else:
                     next_ab_group = None
                 
                 continue
             elif len(target_symbol) > 0:
                 #Nonempty strings trigger a new autobalance group
-                if next_ab_group is not None:
+                if next_ab_group is not None and len(next_ab_group) > 1:
                     ab_groups.append(next_ab_group)
+                    next_ab_group = None
+                else:
                     next_ab_group = None
                 
                 next_ab_group = [index]
@@ -289,8 +295,10 @@ def autobalance_strings(parselist, known_equates, string_enc):
             continue
     else:
         #Clean up the last autobalance group
-        if next_ab_group is not None:
+        if next_ab_group is not None and len(next_ab_group) > 1:
             ab_groups.append(next_ab_group)
+            next_ab_group = None
+        else:
             next_ab_group = None
     
     new_streams = []
