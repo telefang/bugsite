@@ -123,3 +123,30 @@ def parse_charmap(infile):
             encoder_mapping[decoded_char] = bytes(bytedata)
 
     return encoder, decoder
+
+def effective_strlen(encoded_bytes, string_enc):
+    """Given a Bugsite encoded string, determine it's effective length.
+    
+    Returns a length in pixels. We assume fixed-width formatting for now.
+    
+    This function takes into account the player's name as an 8-character wide
+    symbol, even if it may be shorter in practice. We ask for a string enocder
+    so that we can determine what the encoded form of it is."""
+    
+    pname_symbol = string_enc("[name]")
+    newline_symbol = string_enc("\n")
+    px_width = 0
+    
+    for byte in encoded_bytes:
+        if byte == newline_symbol[0]:
+            #Newlines are technically 0 width, even though they add a line and
+            #really shouldn't even be present here...
+            continue
+        elif byte == pname_symbol[0]:
+            #We have to assume the worst with the player name...
+            px_width += 8 * 8
+        else:
+            #Every other character is one tile for now.
+            px_width += 8 * 1
+    
+    return px_width
