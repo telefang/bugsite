@@ -438,14 +438,14 @@
     JMPT .sub_15c_2ff ;$2ff
     ARFREE
     IMMED $1a1
-    NPREF UO $6b
+    NPREF FARJMP
     POPALL
 
 .sub_15c_2ff
     ARFREE
     IMMED $7f
     INDIR
-    NPREF UO $6b
+    NPREF FARJMP
     POPALL
     JMP .sub_15c_329 ;$329
 
@@ -465,7 +465,7 @@
     POPALL
     ARFREE
     IMMED $197
-    NPREF UO $6b
+    NPREF FARJMP
     POPALL
 
 .sub_15c_329
