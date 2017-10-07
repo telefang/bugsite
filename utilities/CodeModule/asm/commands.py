@@ -3,11 +3,11 @@ from CodeModule.asm import asmotor, linker, writeout, rgbds
 from CodeModule.systems.helper import lookup_system_bases
 from CodeModule.exc import PEBKAC
 
-@argument('infiles', nargs = '+', type=str, metavar='foo.o')
-@argument('-f', type=str, metavar="asmotor", default = "rgbds", dest = "infmt")
-@argument('-o', type=str, action="append", metavar='fubarmon.gb', dest = "outfiles")
-@argument('--baserom', type=str, nargs=1, metavar='fubarmon-j.gb', dest = "baserom")
-@argument('-p', type=str, action="append", metavar='gb', dest = "platform")
+@argument('infiles', nargs = '+', type=str, metavar='foo.o', help = "Assembled input object files to link")
+@argument('-f', type=str, metavar="asmotor", default = "rgbds", dest = "infmt", help = "Name of input object format")
+@argument('-o', type=str, action="append", metavar='fubarmon.gb', dest = "outfiles", help = "ROM image output file")
+@argument('--baserom', type=str, nargs=1, metavar='fubarmon-j.gb', dest = "baserom", help = "Optional base ROM to apply patches over when linking.")
+@argument('-p', type=str, action="append", metavar='gb', dest = "platform", help = "Target hardware being linked to")
 @command
 @logged("linker")
 def link(logger, infiles, infmt, outfiles, baserom, platform, **kwargs):

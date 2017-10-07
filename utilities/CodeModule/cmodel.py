@@ -144,7 +144,7 @@ def Magic(magicbytes):
 
     return MagicInstance
 
-def String(encoding = "utf-8"):
+def String(encoding = "utf-8", terminator = "\u0000"):
     class StringInstance(CField):
         def __init__(self, *args, **kwargs):
             self.__corestr = ""
@@ -199,6 +199,80 @@ def String(encoding = "utf-8"):
         def __str__(self):
             return self.core
     return StringInstance
+
+def UnterminatedString(sizeParam, encoding = "utf-8", allow_decoding_failure = False):
+    """Create an instance of a known-length, non-terminated string field.
+
+    allow_decoding_failure: If decoding a bytestring fails, type will act as a Blob."""
+    #Assumes countType = ByteCount for now, add support for EntriesCount later
+    class UnterminatedStringInstance(CField):
+        def __init__(self, *args, **kwargs):
+            self.__corestr = ""
+            super(UnterminatedStringInstance, self).__init__(*args, **kwargs)
+
+        def load(self, fileobj):
+            count = sizeParam
+            if type(sizeParam) is not int:
+                count = self.get_dynamic_argument(sizeParam)
+
+            self.bytes = fileobj.read(count)
+
+        @property
+        def core(self):
+            return self.__corestr
+
+        @core.setter
+        def core(self, val):
+            if type(val) is bytes:
+                self.bytes = val
+            else:
+                self.bytes = val.encode(encoding)
+
+        @property
+        def bytes(self):
+            if type(self.__corestr) is not bytes:
+                return self.__corestr.encode(encoding)
+            else:
+                return self.__corestr
+
+        @bytes.setter
+        def bytes(self, inbytes):
+            try:
+                if self.bytelength != len(inbytes):
+                    self.set_dynamic_argument(sizeParam, len(inbytes))
+                    self.__corestr = inbytes.decode(encoding)
+                else:
+                    self.__corestr = inbytes.decode(encoding)
+            except UnicodeDecodeError:
+                if allow_decoding_failure:
+                    if self.bytelength != len(inbytes):
+                        self.set_dynamic_argument(sizeParam, len(inbytes))
+                        self.__corestr = inbytes
+                    else:
+                        self.__corestr = inbytes
+                else:
+                    raise
+
+        @property
+        def bytelength(self):
+            count = sizeParam
+            if type(sizeParam) is not int:
+                count = self.get_dynamic_argument(sizeParam)
+
+            return count
+
+        def parsebytes(self, obytes):
+            count = sizeParam
+            if type(sizeParam) is not int:
+                count = self.get_dynamic_argument(sizeParam)
+
+            self.bytes = obytes[:count]
+            return obytes[count:-1]
+
+        def __str__(self):
+            return self.core
+
+    return UnterminatedStringInstance
 
 LittleEndian = 0            # 0x12345678 = b'\x78\x56\x34\x12'
 BigEndian = 1               # 0x12345678 = b'\x12\x34\x56\x78'
@@ -392,6 +466,13 @@ def Array(containedType, sizeParam, countType = EntriesCount, *args, **kwargs):
             super(ArrayInstance, self).__init__(*args, **kwargs)
             self.__uniqid = 0
 
+            if countType is BytesCount:
+                if type(sizeParam) is str:
+                    self.find_argument_field(sizeParam).tie_to_length(self, "bytes")
+            elif countType is EntriesCount:
+                if type(sizeParam) is str:
+                    self.find_argument_field(sizeParam).tie_to_length(self)
+
         def load(self, fileobj):
             scount = sizeParam
             if type(sizeParam) is not int:
@@ -451,14 +532,17 @@ def Array(containedType, sizeParam, countType = EntriesCount, *args, **kwargs):
         #don't escape their parent structures, just the data.
         def __getitem__(self, key):
             #Uncoerce field into core data. Does not support slicing yet.
-            return super(ArrayInstance, self).__getitem__(key).core
+            if super(ArrayInstance, self).__getitem__(key).PRIMITIVE != False:
+                return super(ArrayInstance, self).__getitem__(key).core
+            else:
+                #If this is an array of structs, do not core them.
+                return super(ArrayInstance, self).__getitem__(key)
 
         def __setitem__(self, key, value):
             super(ArrayInstance, self).__getitem__(key).core = value
 
         def __delitem__(self, key):
             super(ArrayInstance, self).__delitem__(key)
-            self.alter_dynamic_argument(sizeParam, lambda x: len(self))
 
         def append(self, item):
             if type(item) != containedType:
@@ -473,7 +557,6 @@ def Array(containedType, sizeParam, countType = EntriesCount, *args, **kwargs):
             super(ArrayInstance, self).append(item)
 
             item.reparent(itemname, container = self)
-            self.alter_dynamic_argument(sizeParam, lambda x: len(self))
 
         def extend(self, otherlist):
             for item in otherList:
@@ -497,6 +580,10 @@ def Array(containedType, sizeParam, countType = EntriesCount, *args, **kwargs):
             for thing in self:
                 childbytes.append(thing.bytes)
             return b"".join(childbytes)
+
+        @property
+        def bytelength(self):
+            return len(self.bytes)
 
         def parsebytes(self, obytes):
             scount = sizeParam
@@ -574,10 +661,6 @@ def Array(containedType, sizeParam, countType = EntriesCount, *args, **kwargs):
             for item in normallist:
                 self.append(item)
 
-        @property
-        def bytelength(self):
-            raise PEBKAC #this could be supported, but we dont yet
-
         #Since this CField is a subtype of list, it doubles as a native Python
         #object and thus should be exposed to the user
         PRIMITIVE = False
@@ -588,10 +671,17 @@ def Blob(sizeParam):
     class BlobInstance(CField):
         def __init__(self, *args, **kwargs):
             self.__obytes = b""
+            if type(sizeParam) is int:
+                self.__obytes = bytes(sizeParam)
+
             super(BlobInstance, self).__init__(*args, **kwargs)
 
         def load(self, fileobj):
-            self.bytes = fileobj.read(self.get_dynamic_argument(sizeParam))
+            count = sizeParam
+            if type(sizeParam) is not int:
+                count = self.get_dynamic_argument(sizeParam)
+
+            self.bytes = fileobj.read(count)
 
         @property
         def bytes(self):
@@ -599,11 +689,19 @@ def Blob(sizeParam):
 
         @bytes.setter
         def bytes(self, obytes):
-            self.__obytes = obytes
-            self.set_dynamic_argument(sizeParam, len(obytes))
+            if len(obytes) != len(self.__obytes):
+                #WARNING: Assumes non-fixed-length field.
+                #If fixed-length, do not send irregularly sized data
+                self.set_dynamic_argument(sizeParam, len(obytes))
+                self.__obytes = obytes
+            else:
+                self.__obytes = obytes
 
         def parsebytes(self, obytes):
-            count = self.get_dynamic_argument(sizeParam)
+            count = sizeParam
+            if type(sizeParam) is not int:
+                count = self.get_dynamic_argument(sizeParam)
+
             self.bytes = obytes[0:count]
             return obytes[count:-1]
 
@@ -613,11 +711,21 @@ def Blob(sizeParam):
 
         @core.setter
         def core(self, nbytes):
-            self.bytes = nbytes
+            if type(sizeParam) is not int:
+                self.set_dynamic_argument(sizeParam, len(nbytes))
+                self.bytes = nbytes
+            else:
+                if count > len(nbytes):
+                    self.bytes = nbytes[:count] + bytes(count - len(nbytes))
+                else:
+                    self.bytes = nbytes[:count]
 
         @property
         def bytelength(self):
-            raise PEBKAC #this could be supported, but we dont yet
+            if type(sizeParam) is not int:
+                return self.get_dynamic_argument(sizeParam)
+            else:
+                return sizeParam
 
     return BlobInstance
 
@@ -677,7 +785,7 @@ def If(variableName, condition, basetype = None, *args, **kwargs):
             if condition(ctxtprov(self, variableName)):
                 return super(IfInstance, self).bytes
             else:
-                return None
+                return b""
 
         @bytes.setter
         def bytes(self, val):
@@ -706,6 +814,10 @@ class EmptyField(CField):
 
     def parsebytes(self, obytes):
         return obytes
+
+    @property
+    def core(self):
+        return None
 
 def BitRange(targetParam, fromBits, toBits):
     """Define a range of bits shadowed from another field.
@@ -966,13 +1078,17 @@ class Struct(CField, metaclass=_Struct):
 
     @core.setter
     def core(self, items):
-        """Setter method for structs that accepts any iterable with as many items as the struct has fields."""
-        if len(self.__order) != len(items):
-            #we need as many items as there are fields
-            raise CorruptedData
+        """Setter method for structs that accepts dictionaries or tuples."""
+        if type(items) is dict:
+            for key, value in items.items():
+                self.__storage[key].core = value
+        else:
+            if len(self.__order) != len(items):
+                #we need as many items as there are fields
+                raise CorruptedData
 
-        for item, field in zip(items, self.__order):
-            self.__storage[field].core = item
+            for item, field in zip(items, self.__order):
+                self.__storage[field].core = item
 
 ExternalTag = 0
 InternalTag = 1
@@ -1034,6 +1150,16 @@ class _Union(_CFieldDecl):
                 reverseValues[value].append(vname)
             except KeyError:
                 reverseValues[value] = [vname]
+
+            #We also need to import any Enum values into ourself
+            try:
+                exVals = cfields[vname].EXPORTEDVALUES
+                cdict.update(exVals)
+            except:
+                pass
+
+        #Import the exported values from any Enums in our Union.
+        cdict.update(values)
 
         cdict["_Union__mapping"] = mapping
         cdict["_Union__reverseValues"] = reverseValues
@@ -1181,10 +1307,11 @@ class Union(CField, metaclass = _Union):
                     self.__fieldstorage.core = val
             except AttributeError:
                 #Not a class, just do the direct storage method
-                self.__storage[name].core = val
-        elif name in self.__mapping.keys():
-            if name not in self.__reverseValues[self.__tag__]:
-                self.__tag__ = self.__mapping[name]
+                self.__fieldstorage.core = val
+        elif name in self.__tagstorage.EXPORTEDVALUES.keys():
+            tagvalue = self.__tagstorage.EXPORTEDVALUES[name]
+            if self.__tag__ != tagvalue:
+                self.__tag__ = tagvalue
             self.__contents__ = val
         else:
             super(Union, self).__setattr__(name, val)

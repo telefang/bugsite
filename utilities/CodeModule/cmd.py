@@ -27,7 +27,7 @@ class commandcls(object):
         global_options(**rkwargs)
         kwargs.update(rkwargs)
 
-        self.__func(*args, **kwargs)
+        return self.__func(*args, **kwargs)
 
 def command(func):
     return commandcls(func)
@@ -88,5 +88,17 @@ def main(argv = sys.argv):
     #for right now, just import everything we know has commands
     #in the future, add some import machinery magic to import everything named "commands"
     import CodeModule.asm.commands
-    resp = parser.parse_args(argv[1:])
-    resp.func(resp)
+    import CodeModule.fileops.cmp
+    import CodeModule.games.identify
+    import CodeModule.games.extract
+
+    try:
+        resp = parser.parse_args(argv[1:])
+        rcode = resp.func(resp)
+
+        if type(rcode) is not int:
+            rcode = 0
+
+        sys.exit(rcode)
+    except:
+        sys.exit(1)
