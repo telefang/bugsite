@@ -12,7 +12,10 @@ BASEROM_ALPHA := ${BASE_DIR}/baserom_alpha.gbc
 ROMS_BETA := ${BUILD_DIR}/bugsite_beta.gbc
 BASEROM_BETA := ${BASE_DIR}/baserom_beta.gbc
 
-OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o
+OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o \
+        component/windowmanager/contents_config.o component/windowmanager/drawframe.o \
+        component/windowmanager/menu_config.o \
+		  component/lcdc/poke.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}
