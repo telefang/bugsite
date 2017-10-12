@@ -2,6 +2,7 @@ from BugTools.bvm.instructions import opcodes
 from BugTools.bvm.parser import Equate, SymbolicRef, Label, Instruction
 from BugTools.bvm.analysis import statically_prove_str, resolve_instruction_operands
 from BugTools.bvm.strings import effective_strlen
+from BugTools.bvm.object import Bof1, Bof1Patch, Bof1Symbol, Bof1PatchExpr
 
 from BugTools.exceptions import LocalSymbolError, CircularEquateError, InvalidOperandError, InvalidOpcodeError
 
@@ -293,16 +294,21 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
     the source code specifies a DB with a string.
 
     This function will return the parse list, known equates list, and the
-    encoded instruction stream."""
+    resulting Bof1 object."""
 
     if known_equates is None:
         known_equates = {}
     else:
         known_equates = copy.deepcopy(known_equates)
-
+    
     encoded_stream = []
+    encoded_offset = 0
+    
+    bofdata = Bof1()
+    mentioned_symbols = {}
+    
     last_global = Label(SymbolicRef('', False), False)
-
+    
     for command in parselist:
         if type(command) is Label:
             if not command.symbol.is_local:
@@ -312,19 +318,24 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
             
             if command.prefix == "NPREF":
                 encoded_stream.append(bytes([opcodes[command.prefix]]))
+                encoded_offset += 1
             
             if command.opcode in ["ENOP", "PNOP", "UO", "EFGAME"]:
                 if len(resolved_operands) != 1:
                     raise InvalidOperandError(command)
-
+                
                 for operand in resolved_operands:
                     if type(operand) is int:
                         encoded_stream.append(bytes([operand]))
+                        encoded_offset += 1
+                    elif type(operand) is SymbolicRef:
+                        raise CircularEquateError(operand.name)
                     else:
                         raise InvalidOperandError(command)
             else:
                 try:
                     encoded_stream.append(bytes([opcodes[command.opcode]]))
+                    encoded_offset += 1
                 except KeyError:
                     raise InvalidOpcodeError(command)
 
@@ -335,6 +346,29 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                     for operand in resolved_operands:
                         if type(operand) is int:
                             encoded_stream.append(bytes([operand & 0xFF, operand >> 8]))
+                            encoded_offset += 2
+                        elif type(operand) is SymbolicRef:
+                            encoded_stream.append(bytes([0x00, 0x00]))
+                            if operand.name not in mentioned_symbols.keys():
+                                bvmsym = Bof1Symbol()
+                                bvmsym.name = operand.name
+                                bvmsym.symtype = Bof1Symbol.IMPORT
+                                
+                                mentioned_symbols[operand.name] = len(bofdata.symbols)
+                                bofdata.symbols.append(bvmsym)
+                            
+                            bvmpatch = Bof1Patch()
+                            bvmpatch.patchoffset = encoded_offset
+                            bvmpatch.patchtype = Bof1Patch.LE16
+                            
+                            bvmpexpr = Bof1PatchExpr()
+                            bvmpexpr.__tag__ = Bof1PatchExpr.INDIR
+                            bvmpexpr.INDIR = mentioned_symbols[operand.name]
+                            
+                            bvmpatch.patchexprs.append(bvmpexpr)
+                            bofdata.patches.append(bvmpatch)
+                            
+                            encoded_offset += 2
                         else:
                             raise InvalidOperandError(command)
                 elif command.opcode == "DB":
@@ -342,10 +376,14 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                     for operand in resolved_operands:
                         if type(operand) is int:
                             encoded_stream.append(bytes([operand & 0xFF]))
+                            encoded_offset += 1
                         elif type(operand) is str:
-                            encoded_stream.append(string_enc(operand))
+                            opstr = string_enc(operand)
+                            encoded_stream.append(opstr)
+                            encoded_offset += len(opstr)
                         elif type(operand) is bytes:
                             encoded_stream.append(operand)
+                            encoded_offset += len(operand)
                         else:
                             raise InvalidOperandError(command)
 
@@ -354,5 +392,7 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                     #No other commands accept operands.
                     if len(resolved_operands) != 0:
                         raise InvalidOperandError(command)
-
-    return (parselist, known_equates, string_enc, b"".join(encoded_stream))
+    
+    bofdata.data = b"".join(encoded_stream)
+    
+    return (parselist, known_equates, string_enc, bofdata)

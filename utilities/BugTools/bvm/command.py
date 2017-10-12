@@ -37,7 +37,7 @@ def bvmasm():
             mp, ke = autobalance_strings(mp, ke, strenc)
         
         mp, ke = fix_labels(mp, ke, strenc)
-        mp, ke, strenc, data = encode_instruction_stream(mp, ke, strenc)
+        mp, ke, strenc, bvmdata = encode_instruction_stream(mp, ke, strenc)
 
         with open(args.output, 'wb') as outfile:
-            outfile.write(data)
+            outfile.write(bvmdata.bytes)
