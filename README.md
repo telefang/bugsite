@@ -9,7 +9,4 @@ $ md5sum baseroms/baserom_alpha.gbc baseroms/baserom_beta.gbc
 3c6b37b6162d599e3554689500b23af1 *baseroms/baserom_beta.gbc
 ```
 
-This disassembly uses the `overlay` feature of RGBDS currently only
-present in Sanqui's fork: https://github.com/Sanqui/rgbds
-
-(kmeisthax/rgbds works too)
+A modern version of RGBDS (inc. rgbgfx) is required to compile this project.
