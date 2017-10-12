@@ -1,7 +1,7 @@
 from BugTools.fs.parser import Label, Filename
 from BugTools.bvm.object import Bof1, Bof1Patch, Bof1PatchExpr, Bof1Symbol
 from CodeModule import cmodel
-from CodeModule.asm.rgbds import Rgb4, Rgb4Section, Rgb4Symbol, Rgb4LimitExpr
+from CodeModule.asm.rgbds import Rgb4, Rgb4Patch, Rgb4Section, Rgb4Symbol, Rgb4PatchExpr, Rgb4LimitExpr
 
 import os.path
 
@@ -37,7 +37,7 @@ def translate_bof1_patchexprs_to_rgb4(bofpatchexprs, symbol_dict):
         if bofpatchexpr.__tag__ == Bof1PatchExpr.INDIR:
             #INDIR values become (SYM - 0xC400) / 2
             rgbpatchexpr.__tag__ = Rgb4PatchExpr.SYM
-            rgbpatchexpr.SYM = symbol_dict[bofpatchexpr.SYM]
+            rgbpatchexpr.SYM = symbol_dict[bofpatchexpr.INDIR]
             
             rgbpatchexprs.append(rgbpatchexpr)
             
@@ -99,11 +99,11 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff):
     for bofpatch in bofpatches:
         patchlen = PATCH_LENGTHS[bofpatch.patchtype]
         
-        if bof.patchoffset < startoff + patchlen - 1 or bof.patchoffset > endoff:
+        if bofpatch.patchoffset < startoff + patchlen - 1 or bofpatch.patchoffset > endoff:
             continue
             
-        patch_cut_start = startoff - bof.patchoffset
-        patch_cut_end = patchlen - endoff - bof.patchoffset
+        patch_cut_start = startoff - bofpatch.patchoffset
+        patch_cut_end = patchlen - endoff - bofpatch.patchoffset
         patch_is_le = PATCH_LITTLE_ENDIAN[bofpatch.patchtype]
         
         if patch_cut_start > 0 or patch_cut_end > 0:
@@ -126,7 +126,7 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff):
                 rgbpatch.srcline = bofpatch.srcline
                 rgbpatch.patchoffset = bofpatch.patchoffset - startoff + byte_i
                 rgbpatch.patchtype = Rgb4Patch.BYTE
-                rgbpatch.patchexprs = translate_bof1_patchexpr_to_rgb4(bofpatch.patchexprs, symbol_dict)
+                rgbpatch.patchexprs = translate_bof1_patchexprs_to_rgb4(bofpatch.patchexprs, symbol_dict)
                 
                 #Equivalent to (patchexpr) >> (shift_i * 8) & 0xFF
                 #Due to the way RPN works this should also work if the translate
@@ -161,7 +161,7 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff):
             rgbpatch.srcline = bofpatch.srcline
             rgbpatch.patchoffset = bofpatch.patchoffset - startoff
             rgbpatch.patchtype = bofpatch.patchtype
-            rgbpatch.patchexprs = translate_bof1_patchexpr_to_rgb4(bofpatch.patchexprs, symbol_dict)
+            rgbpatch.patchexprs = translate_bof1_patchexprs_to_rgb4(bofpatch.patchexprs, symbol_dict)
             
             rgbpatches.append(rgbpatch)
     
