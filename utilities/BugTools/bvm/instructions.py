@@ -38,11 +38,13 @@ opcodes = {
     "TILELD": 0x72,
     "WINCOORD": 0x7D,
     "WINBRK": 0x82,
+    "TMAPSAV": 0x86, #heeeeeeh
     "PRKEY": 0x9F,
     "BLKKEY": 0xA0,
     "PRMOVE": 0xA1,
     "BLKMOVE": 0xA2,
     "PRMON": 0xAF,
+    "WINOPEN": 0xB2,
     "WINFRAME": 0xB3,
     "BLKMON": 0xBB,
     "BLKCHIP": 0xE2,
