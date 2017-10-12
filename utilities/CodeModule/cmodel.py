@@ -559,7 +559,7 @@ def Array(containedType, sizeParam, countType = EntriesCount, *args, **kwargs):
             item.reparent(itemname, container = self)
 
         def extend(self, otherlist):
-            for item in otherList:
+            for item in otherlist:
                 self.append(self, item)
 
         def __add__(self, item):
