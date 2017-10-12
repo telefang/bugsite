@@ -109,7 +109,7 @@ $(BUILD_DIR)/%.1bpp: %.png
 	@mkdir -p $(dir $@)
 	@rgbgfx -d 1 -o $@ $<
 
-$(BUILD_DIR)/%.bugvm.bin: %.bvm
+$(BUILD_DIR)/%.bof: %.bvm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings.csv --language Japanese script/charmap.txt $@
