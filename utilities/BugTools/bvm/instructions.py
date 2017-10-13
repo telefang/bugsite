@@ -36,6 +36,7 @@ opcodes = {
     "FARCALL": 0x6A,
     "FARJMP": 0x6B,
     "TILELD": 0x72,
+    "PALLD": 0x75,
     "WINCOORD": 0x7D,
     "WINBRK": 0x82,
     "TMAPSAV": 0x86, #heeeeeeh
