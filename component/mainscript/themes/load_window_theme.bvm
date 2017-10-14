@@ -1,10 +1,10 @@
-    JAL .sub_cd_4 ;$4
+    JAL MainScript_LoadWindowTheme ;$4
     RET
 
-.sub_cd_4
-    IMMED $172
+MainScript_LoadWindowTheme:
+    IMMED W_MainScript_PortraitID
     INDIR
-    IMMED $172
+    IMMED W_MainScript_PortraitID
     INDIR
     IMMED $2
     MUL
@@ -12,7 +12,7 @@
     POPALL
     ARFREE
     IMMED $202
-    IMMED $172
+    IMMED W_MainScript_PortraitID
     INDIR
     ADD
     ENOP $2d
@@ -27,7 +27,7 @@
     POPALL
     ARFREE
     IMMED $202
-    IMMED $172
+    IMMED W_MainScript_PortraitID
     INDIR
     ADD
     IMMED $1
@@ -42,7 +42,7 @@
     POPALL
     ARFREE
     IMMED $202
-    IMMED $172
+    IMMED W_MainScript_PortraitID
     INDIR
     ADD
     IMMED $1
