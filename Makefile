@@ -115,6 +115,11 @@ $(BUILD_DIR)/%.bof: %.bvm
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings.csv --language Japanese script/charmap.txt $@
 
+$(BUILD_DIR)/%.palette.bin: %.bpal
+	@echo "Assembling" $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/bpalasm.py $< $@
+
 $(BUILD_DIR)/%.atbl.o: %.csv
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
