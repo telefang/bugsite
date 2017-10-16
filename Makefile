@@ -14,7 +14,11 @@ BASEROM_BETA := ${BASE_DIR}/baserom_beta.gbc
 ROMS_PATCH := ${BUILD_DIR}/bugsite_patch_en.gbc
 BASEROM_PATCH := ${BASE_DIR}/baserom_patch.gbc
 
-OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o
+OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o \
+        component/windowmanager/contents_config.o component/windowmanager/drawframe.o \
+        component/windowmanager/menu_config.o \
+        component/mainscript/window.o \
+		  component/lcdc/poke.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}
@@ -116,10 +120,15 @@ $(BUILD_DIR)/%.1bpp: %.png
 	@mkdir -p $(dir $@)
 	@rgbgfx -d 1 -o $@ $<
 
-$(BUILD_DIR)/%.bugvm.bin: %.bvm
+$(BUILD_DIR)/%.bof: %.bvm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings_npc.csv --deffile script/bugvm_strings_story.csv --deffile script/bugvm_strings_system.csv --autobalance --language English script/charmap.txt $@
+
+$(BUILD_DIR)/%.palette.bin: %.bpal
+	@echo "Assembling" $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/bpalasm.py $< $@
 
 $(BUILD_DIR)/%.atbl.o: %.csv
 	@echo "Building" $<

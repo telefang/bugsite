@@ -3,70 +3,6 @@ from CodeModule.asm import linker
 from CodeModule.cmd import logged
 from CodeModule.asm.asmotor import _argfunc  #TODO: make patch execution generic
 
-class Rgb2LimitExpr(cmodel.Struct):
-    lolimit = cmodel.LeS32
-    hilimit = cmodel.LeS32
-
-    __order__ = ["lolimit", "hilimit"]
-
-class Rgb2PatchExpr(cmodel.Union):
-    __tag__ = cmodel.Enum(cmodel.U8, "ADD", "SUB", "MUL", "DIV", "MOD", "NEGATE", "OR", "AND", "XOR", "NOT", "BOOLNOT", "CMPEQ", "CMPNE", "CMPGT", "CMPLT", "CMPGE", "CMPLE", "SHL", "SHR", "BANK", "FORCE_HRAM", "FORCE_TG16_ZP", "RANGECHECK", ("LONG", 0x80), ("SymID", 0x81))
-
-    RANGECHECK = Rgb2LimitExpr
-    LONG = cmodel.LeU32
-    SymID = cmodel.LeU32
-    BANK = cmodel.LeU32
-
-class Rgb2Patch(cmodel.Struct):
-    srcfile = cmodel.String("ascii")
-    srcline = cmodel.LeU32
-    patchoffset = cmodel.LeU32
-    patchtype = cmodel.Enum(cmodel.U8, "BYTE", "LE16", "LE32", "BE16", "BE32")
-
-    numpatchexprs = cmodel.LeU32
-    patchexprs = cmodel.Array(Rgb2PatchExpr, "numpatchexprs", countType = cmodel.BytesCount)
-
-    __order__ = ["srcfile", "srcline", "patchoffset", "patchtype", "numpatchexprs", "patchexprs"]
-
-class Rgb2SectionData(cmodel.Struct):
-    data = cmodel.Blob("datasize")
-    numpatches = cmodel.LeU32
-    patches = cmodel.Array(Rgb2Patch, "numpatches")
-
-    __order__ = ["data", "numpatches", "patches"]
-
-class Rgb2Section(cmodel.Struct):
-    datasize = cmodel.LeU32
-    sectype = cmodel.Enum(cmodel.U8, "WRAM0", "VRAM", "ROMX", "ROM0", "HRAM")
-    org = cmodel.LeS32
-    bank = cmodel.LeS32
-    datsec = cmodel.If("sectype", lambda x: x in [2, 3], Rgb2SectionData)
-
-    __order__ = ["datasize", "sectype", "org", "bank", "datsec"]
-
-class Rgb2SymValue(cmodel.Struct):
-    sectionid = cmodel.LeU32
-    value = cmodel.LeU32
-
-    __order__ = ["sectionid", "value"]
-
-class Rgb2Symbol(cmodel.Struct):
-    name = cmodel.String("ascii")
-    symtype = cmodel.Enum(cmodel.U8, "LOCAL", "IMPORT", "EXPORT")
-    value = cmodel.If("symtype", lambda x: x in [0, 2], Rgb2SymValue)
-
-    __order__ = ["name", "symtype", "value"]
-
-class Rgb2(cmodel.Struct):
-    magic = cmodel.Magic(b"RGB2")
-    numsyms = cmodel.LeU32
-    numsects = cmodel.LeU32
-
-    symbols = cmodel.Array(Rgb2Symbol, "numsyms")
-    sections = cmodel.Array(Rgb2Section, "numsects")
-
-    __order__ = ["magic", "numsyms", "numsects", "symbols", "sections"]
-
 class Rgb4SymValue(cmodel.Struct):
     sectionid = cmodel.LeU32
     value = cmodel.LeU32
@@ -80,6 +16,38 @@ class Rgb4Symbol(cmodel.Struct):
 
     __order__ = ["name", "symtype", "value"]
 
+class Rgb4LimitExpr(cmodel.Struct):
+    lolimit = cmodel.LeS32
+    hilimit = cmodel.LeS32
+
+    __order__ = ["lolimit", "hilimit"]
+
+class Rgb4PatchExpr(cmodel.Union):
+    __tag__ = cmodel.Enum(cmodel.U8, "ADD", "SUB", "MUL", "DIV", "MOD", "UNSUB", "OR", "AND", "XOR", "UNNOT", "LOGAND", "LOGOR", "LOGUNNOT", "LOGEQ", "LOGNE", "LOGGT", "LOGLT", "LOGGE", "LOGLE", "SHL", "SHR", "BANK", "HRAM", ("CONST", 0x80), ("SYM", 0x81))
+
+    RANGECHECK = Rgb4LimitExpr
+    CONST = cmodel.LeU32
+    SYM = cmodel.LeU32
+    BANK = cmodel.LeU32
+
+class Rgb4Patch(cmodel.Struct):
+    srcfile = cmodel.String("ascii")
+    srcline = cmodel.LeU32
+    patchoffset = cmodel.LeU32
+    patchtype = cmodel.Enum(cmodel.U8, "BYTE", "LE16", "LE32", "BE16", "BE32")
+
+    numpatchexprs = cmodel.LeU32
+    patchexprs = cmodel.Array(Rgb4PatchExpr, "numpatchexprs", countType = cmodel.BytesCount)
+
+    __order__ = ["srcfile", "srcline", "patchoffset", "patchtype", "numpatchexprs", "patchexprs"]
+
+class Rgb4SectionData(cmodel.Struct):
+    data = cmodel.Blob("datasize")
+    numpatches = cmodel.LeU32
+    patches = cmodel.Array(Rgb4Patch, "numpatches")
+
+    __order__ = ["data", "numpatches", "patches"]
+
 class Rgb4Section(cmodel.Struct):
     name = cmodel.String("ascii") #utf-8 might be safe here...
     datasize = cmodel.LeU32
@@ -87,7 +55,7 @@ class Rgb4Section(cmodel.Struct):
     org = cmodel.LeS32
     bank = cmodel.LeS32
     align = cmodel.LeS32
-    datsec = cmodel.If("sectype", lambda x: x in [2, 3], Rgb2SectionData)
+    datsec = cmodel.If("sectype", lambda x: x in [2, 3], Rgb4SectionData)
 
     __order__ = ["name", "datasize", "sectype", "org", "bank", "align", "datsec"]
 
@@ -128,12 +96,86 @@ class Rgb5(cmodel.Struct):
 
 _gnummap = {0:"BSS", 1:"VRAM", 2:"CODE", 3:("HOME", 0), 4:"HRAM"}
 
+#Used to communicate if you want a symbol's value or it's bank
+SymValue = 0
+SymBank = 1
+
+class FixInterpreter(object):
+    """Fix-up patch interpreter for RGBDS object format."""
+    def __init__(self, symLookup):
+        """Create a patch interpreter."""
+        self.__symLookup = symLookup
+        self.__stack = []
+
+    @property
+    def value(self):
+        return self.__stack[-1]
+
+    @property
+    def complete(self):
+        return len(self.__stack) == 1
+#"ADD", "SUB", "MUL", "DIV", "MOD", "NEGATE", "OR", "AND", "XOR", "NOT", "BOOLNOT", "CMPEQ", "CMPNE", "CMPGT", "CMPLT", "CMPGE", "CMPLE", "SHL", "SHR", "BANK", "FORCE_HRAM", "FORCE_TG16_ZP", "RANGECHECK", ("LONG", 0x80), ("SymID", 0x81))
+    SUB = _argfunc(2)(lambda x,y: x-y)
+    ADD = _argfunc(2)(lambda x,y: x+y)
+    XOR = _argfunc(2)(lambda x,y: x^y)
+    OR  = _argfunc(2)(lambda x,y: x|y)
+    AND = _argfunc(2)(lambda x,y: x&y)
+    SHL = _argfunc(2)(lambda x,y: x<<y)
+    SHR = _argfunc(2)(lambda x,y: x>>y)
+    MUL = _argfunc(2)(lambda x,y: x*y)
+    DIV = _argfunc(2)(lambda x,y: x//y) #the one thing python3 would do worse on :P
+    MOD = _argfunc(2)(lambda x,y: x%y)
+
+    @_argfunc(2)
+    def BOOLNOT(x, y):
+        if x == 0:
+            return 1
+        else:
+            return 0
+
+    CMPGE = _argfunc(2)(lambda x,y: int(x >= y))
+    CMPGT = _argfunc(2)(lambda x,y: int(x > y))
+    CMPLE = _argfunc(2)(lambda x,y: int(x <= y))
+    CMPLT = _argfunc(2)(lambda x,y: int(x < y))
+    CMPEQ = _argfunc(2)(lambda x,y: int(x == y))
+    CMPNE = _argfunc(2)(lambda x,y: int(x != y))
+
+    def RANGECHECK(self, instr):
+        tocheck = self.__stack.pop()
+        if tocheck < instr.__contents__.hilimit and tocheck > instr.__contents__.lolimit:
+            self.__stack.push(tocheck)
+        else:
+            raise InvalidPatch
+
+    def LONG(self, instr):
+        self.__stack.append(instr.__contents__)
+
+    def SymID(self, instr):
+        self.__stack.append(self.__symLookup(SymValue, instr.__contents__))
+
+    def BANK(self, instr):
+        self.__stack.append(self.__symLookup(SymBank, instr.__contents__))
+
+    @_argfunc(1)
+    def FORCE_HRAM(val):
+        if val > 0xFEFF and val < 0x10000:
+            return val & 0xFF
+        else:
+            raise InvalidPatch
+
+    @_argfunc(1)
+    def FORCE_TG16_ZP(val):
+        if val > 0x1FFF and val < 0x2100:
+            return val & 0xFF
+        else:
+            raise InvalidPatch
+
 class RGBDSLinker(linker.Linker):
     @logged("objparse")
     def loadTranslationUnit(logger, self, filename):
         """Load the translation music and attempt to add the data inside to the linker"""
         with open(filename, "rb") as fileobj:
-            objobj = Rgb2()
+            objobj = Rgb4()
             objobj.load(fileobj)
 
             logger.debug("Loading translation unit %(txl)r" % {"txl":objobj.core})
@@ -142,10 +184,15 @@ class RGBDSLinker(linker.Linker):
             secmap = []
 
             for section in objobj.sections:
-                groupdescript = self.platform.GROUPMAP[_gnummap[section.sectype]]
-
                 bankfix = section.bank
                 orgfix = section.org
+
+                stype = _gnummap[section.sectype]
+                if type(stype) == tuple:
+                    bankfix = stype[1]
+                    stype = stype[0]
+
+                groupdescript = self.platform.GROUPMAP[stype]
 
                 if bankfix == -1:
                     bankfix = None
@@ -186,8 +233,8 @@ class RGBDSLinker(linker.Linker):
 
         for fileobj in fileslist:
             for symbol in fileobj.symbols:
-                if symbol.symtype is Rgb2Symbol.IMPORT:
-                    for secidx, secdesc in files2sec[fileobj].index():
+                if symbol.symtype is Rgb4Symbol.IMPORT:
+                    for secidx, secdesc in files2sec[fileobj].items():
                         symList.append(linker.SymbolDescriptor(symbol.name, linker.Import, None, None, None, secdesc))
                 else:
                     secdesc = None
@@ -201,84 +248,12 @@ class RGBDSLinker(linker.Linker):
                         pass
 
                     ourLimit = None
-                    if symbol.symtype is Rgb2Symbol.LOCAL:
+                    if symbol.symtype is Rgb4Symbol.LOCAL:
                         ourLimit = secdesc.srcname
 
                     symList.append(linker.SymbolDescriptor(symbol.name, linker.Export, ourLimit, bfix, symbol.value.value, secdesc))
 
         return symList
-
-    class FixInterpreter(object):
-        def __init__(self, symLookup):
-            self.__symLookup = symLookup
-            self.__stack = []
-
-        @property
-        def value(self):
-            return self.__stack[-1]
-
-        @property
-        def complete(self):
-            return len(self.__stack) == 1
-#"ADD", "SUB", "MUL", "DIV", "MOD", "NEGATE", "OR", "AND", "XOR", "NOT", "BOOLNOT", "CMPEQ", "CMPNE", "CMPGT", "CMPLT", "CMPGE", "CMPLE", "SHL", "SHR", "BANK", "FORCE_HRAM", "FORCE_TG16_ZP", "RANGECHECK", ("LONG", 0x80), ("SymID", 0x81))
-        SUB = _argfunc(2)(lambda x,y: x-y)
-        ADD = _argfunc(2)(lambda x,y: x+y)
-        XOR = _argfunc(2)(lambda x,y: x^y)
-        OR  = _argfunc(2)(lambda x,y: x|y)
-        AND = _argfunc(2)(lambda x,y: x&y)
-        SHL = _argfunc(2)(lambda x,y: x<<y)
-        SHR = _argfunc(2)(lambda x,y: x>>y)
-        MUL = _argfunc(2)(lambda x,y: x*y)
-        DIV = _argfunc(2)(lambda x,y: x//y) #the one thing python3 would do worse on
-        MOD = _argfunc(2)(lambda x,y: x%y)
-
-        @_argfunc(2)
-        def BOOLNOT(x, y):
-            if x == 0:
-                return 1
-            else:
-                return 0
-
-        CMPGE = _argfunc(2)(lambda x,y: int(x >= y))
-        CMPGT = _argfunc(2)(lambda x,y: int(x > y))
-        CMPLE = _argfunc(2)(lambda x,y: int(x <= y))
-        CMPLT = _argfunc(2)(lambda x,y: int(x < y))
-        CMPEQ = _argfunc(2)(lambda x,y: int(x == y))
-        CMPNE = _argfunc(2)(lambda x,y: int(x != y))
-
-        def RANGECHECK(self, instr):
-            tocheck = self.__stack.pop()
-            if tocheck < instr.__contents__.hilimit and tocheck > instr.__contents__.lolimit:
-                self.__stack.push(tocheck)
-            else:
-                raise InvalidPatch
-
-        def LONG(self, instr):
-            self.__stack.append(instr.__contents__)
-
-        def SymID(self, instr):
-            self.__stack.append(self.__symLookup(RGBDSLinker.SymValue, instr.__contents__))
-
-        def BANK(self, instr):
-            self.__stack.append(self.__symLookup(RGBDSLinker.SymBank, instr.__contents__))
-
-        @_argfunc(1)
-        def FORCE_HRAM(val):
-            if val > 0xFEFF and val < 0x10000:
-                return val & 0xFF
-            else:
-                raise InvalidPatch
-
-        @_argfunc(1)
-        def FORCE_TG16_ZP(val):
-            if val > 0x1FFF and val < 0x2100:
-                return val & 0xFF
-            else:
-                raise InvalidPatch
-
-    #Special values used for the interpreter
-    SymValue = 0
-    SymBank = 1
 
     def evalPatches(self, secDesc):
         """Given a section, evaluate all of it's patches and apply them.
@@ -290,34 +265,34 @@ class RGBDSLinker(linker.Linker):
         def symLookupCbk(mode, arg):
             """Special callback for handling lookups from the symbol interpreter."""
             symbol = section.symbols[arg]
-            if mode is RGBDSLinker.SymValue:
+            if mode is SymValue:
                 return self.resolver.lookup(section.name, symbol.name).value
-            elif mode is RGBDSLinker.SymBank:
+            elif mode is SymBank:
                 return self.resolver.lookup(section.name, symbol.name).section.bankfix
 
         for patch in section.datsec.patches:
             curpatch = patch
-            interpreter = RGBDSLinker.FixInterpreter(symLookupCbk)
+            interpreter = FixInterpreter(symLookupCbk)
             for opcode in patch.expression:
                 getattr(interpret, opcode.__tag__)(opcode)
 
             if not interpreter.complete:
                 raise InvalidPatch
 
-            if patch.patchtype is Rgb2Patch.BYTE:
+            if patch.patchtype is Rgb4Patch.BYTE:
                 secDesc.data[offset] = interpreter.value & 255
-            elif patch.patchtype is Rgb2Patch.LE16:
+            elif patch.patchtype is Rgb4Patch.LE16:
                 secDesc.data[offset] = interpreter.value & 255
                 secDesc.data[offset + 1] = (interpreter.value >> 8) & 255
-            elif patch.patchtype is Rgb2Patch.BE16:
+            elif patch.patchtype is Rgb4Patch.BE16:
                 secDesc.data[offset + 1] = interpreter.value & 255
                 secDesc.data[offset] = (interpreter.value >> 8) & 255
-            elif patch.patchtype is Rgb2Patch.LE32:
+            elif patch.patchtype is Rgb4Patch.LE32:
                 secDesc.data[offset] = interpreter.value & 255
                 secDesc.data[offset + 1] = (interpreter.value >> 8) & 255
                 secDesc.data[offset + 2] = (interpreter.value >> 16) & 255
                 secDesc.data[offset + 3] = (interpreter.value >> 24) & 255
-            elif patch.patchtype is Rgb2Patch.BE32:
+            elif patch.patchtype is Rgb4Patch.BE32:
                 secDesc.data[offset + 3] = interpreter.value & 255
                 secDesc.data[offset + 2] = (interpreter.value >> 8) & 255
                 secDesc.data[offset + 1] = (interpreter.value >> 16) & 255

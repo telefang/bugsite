@@ -28,3 +28,12 @@ class OutOfSegmentSpace(Exception):
 
 class InvalidPatch(Exception):
     """Exception raised when an assembler fixup patch is malformed and does not make sense."""
+    pass
+
+class InvalidFileCombination(Exception):
+    """Exception raised when multiple files are specified that cannot be used together."""
+    pass
+
+class UnknownFileType(Exception):
+    """Exception raised to signal that a file could not be identified."""
+    pass

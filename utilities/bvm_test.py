@@ -17,6 +17,7 @@ with open("../script/unknown_bvm/1.bvm") as file:
 
     mp, ke = resolve_equates(mp, ke)
     mp, ke = fix_labels(mp, ke)
-    mp, ke, strenc, data = encode_instruction_stream(mp, ke, strenc) #TODO: actually encode strings...
+    mp, ke, strenc, bvmdata = encode_instruction_stream(mp, ke, strenc) #TODO: actually encode strings...
 
-    print (data)
+    #TODO: make some kind of repr for Bof1 instances
+    print (bvmdata.core)

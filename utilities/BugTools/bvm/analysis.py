@@ -108,6 +108,10 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
     return True
 
 def resolve_instruction_operands(instr, known_equates, last_global):
+    """Attempt to resolve SymbolicRefs in instructions.
+
+    Returns the instruction with any SymbolicRefs changed to concrete values.
+    If a SymbolicRef is unresolvable it will be left in the instruction."""
     resolved_operands = []
 
     for operand in instr.operands:
@@ -118,7 +122,7 @@ def resolve_instruction_operands(instr, known_equates, last_global):
                 else:
                     resolved_operands.append(known_equates[operand.name])
             except KeyError:
-                raise CircularEquateError(operand.name)
+                resolved_operands.append(operand)
         else:
             resolved_operands.append(operand)
 

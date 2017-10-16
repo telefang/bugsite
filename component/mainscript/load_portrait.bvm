@@ -1,14 +1,14 @@
-    JAL .sub_d6_4 ;$4
+    JAL MainScript_LoadPortrait ;$4
     RET
 
-.sub_d6_4
+MainScript_LoadPortrait:
     ARFREE
     IMMED $e4
     NPREF FARCALL
     POPALL
     POPALL
     ARFREE
-    IMMED $172
+    IMMED W_MainScript_PortraitID
     INDIR
     IMMED $974
     ADD
@@ -23,7 +23,7 @@
     NPREF RESLD
     POPALL
     ARFREE
-    IMMED $172
+    IMMED W_MainScript_PortraitID
     INDIR
     IMMED $9d8
     ADD
@@ -33,15 +33,15 @@
     IMMED $0
     ENOP $2d
     IMMED $5
-    NPREF UO $75
+    NPREF PALLD
     POPALL
     ARFREE
     IMMED $973
     ENOP $2d
-    IMMED $174
+    IMMED W_MainScript_WindowXPos
     INDIR
     ENOP $2d
-    IMMED $175
+    IMMED W_MainScript_WindowYPos
     INDIR
     ENOP $2d
     IMMED $70
