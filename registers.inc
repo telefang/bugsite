@@ -49,6 +49,9 @@ REG_OBPD EQU $FF6B
 REG_SVBK EQU $FF70
 REG_IE EQU $FFFF
 
+;MBC5 registers
+REG_MBC5_ROMBank0 EQU $2000
+
 ;Hardware-specified VRAM locations
 
 VRAM_TPT0 EQU $8000 ;Tile Pattern Table 0, can be used by sprites and BG.
