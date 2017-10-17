@@ -257,8 +257,17 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
         chunk_local_offset = start_offset
         
         while written_chunk_size < len(bvmdata.data):
-            cur_chunk_size = min((0x4000 - chunk_local_offset), len(bvmdata.data) - written_chunk_size)
-            cur_chunk = bvmdata.data[written_chunk_size:written_chunk_size + cur_chunk_size]
+            cur_chunk_size = min((0x4000 - start_offset), len(bvmdata.data) - written_chunk_size)
+            cur_chunk = bvmdata.data[written_chunk_size:(written_chunk_size + cur_chunk_size)]
+
+            if type(cur_chunk_size) is not int:
+                raise Exception("Assertion failed: Chunk size is invalid")
+
+            if cur_chunk_size > 0x4000:
+                raise Exception("Assertion failed: Chunk size is invalid")
+
+            if cur_chunk_size != len(cur_chunk):
+                raise Exception("Assertion failed: Chunk size is invalid")
             
             datum_data.append(cur_chunk)
             datum_section.datsec.patches = datum_section.datsec.patches + translate_bof1_fixups_to_rgb4(bvmdata.patches, bvm_to_rgb4, written_chunk_size, written_chunk_size + cur_chunk_size)
@@ -269,7 +278,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
                 start_offset -= 0x4000
                 start_bank += 1
                 
-                datum_section.data = b"".join(datum_data)
+                datum_section.datsec.data = b"".join(datum_data)
                 rgb4obj.sections.append(datum_section)
                 
                 datum_section = Rgb4Section()
