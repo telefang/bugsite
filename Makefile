@@ -17,7 +17,8 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
         component/windowmanager/menu_config.o \
         component/mainscript/window.o \
 		  component/lcdc/poke.o \
-        component/system/banking.o
+        component/system/banking.o \
+        component/bugfs/indexlinkage.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}
