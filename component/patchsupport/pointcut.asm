@@ -6,11 +6,11 @@ INCLUDE "bugsite.inc"
 ;So instead we kick everything over to a patch table on bank 4, which has $1E00
 ;of empty space to go around.
 
-SECTION "Patch Utils Pointcut Call", ROM0[$0061]
+SECTION "Patch Support Pointcut Call", ROM0[$0061]
 ;Execute patch advice by ID.
 ;The given ID in register A will be treated as an offset to the patch table.
 ;Current ROM bank will be preserved across the cut.
-PatchUtils_PointCutByID::
+PatchSupport_PointCutByID::
     push hl
     ld l, a
     
@@ -33,4 +33,4 @@ PatchUtils_PointCutByID::
 .advice ;Z80 doesn't offer a call [hl] so let's improvise
     jp [hl]
 
-PatchUtils_PointCutByID_END::
+PatchSupport_PointCutByID_END::
