@@ -16,7 +16,7 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
         component/windowmanager/contents_config.o component/windowmanager/drawframe.o \
         component/windowmanager/menu_config.o \
         component/mainscript/window.o \
-		  component/lcdc/poke.o \
+		  component/lcdc/poke.o component/lcdc/vmemcopy.o \
         component/system/banking.o \
         component/bugfs/indexlinkage.o
 OBJS_ALPHA := 
