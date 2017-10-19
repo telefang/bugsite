@@ -20,7 +20,9 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
         component/mainscript/window.o \
 		  component/lcdc/poke.o \
         component/system/banking.o \
-        component/patchsupport/patchtbl.o component/patchsupport/pointcut.o
+        component/bugfs/indexlinkage.o \
+        component/patchsupport/patchtbl.o component/patchsupport/pointcut.o \
+        component/patchsupport/readfile.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}

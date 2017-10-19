@@ -299,6 +299,15 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     start_bank = dirbank
 
     while len(directory) > 0:
+        if start_bank == dirbank:
+            directory_symbol = Rgb4Symbol()
+            directory_symbol.name = "BugFS_Directory"
+            directory_symbol.symtype = Rgb4Symbol.EXPORT
+            directory_symbol.value.sectionid = len(rgb4obj.sections)
+            directory_symbol.value.value = 0
+
+            rgb4obj.symbols.append(directory_symbol)
+
         directory_section = Rgb4Section()
         directory_section.name = "BugFS Directory %s" % start_bank
         directory_section.sectype = Rgb4Section.ROMX
@@ -310,13 +319,5 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
 
         directory = directory[0x4000:]
         start_bank += 1
-
-    directory_symbol = Rgb4Symbol()
-    directory_symbol.name = "BugFS_Directory"
-    directory_symbol.symtype = Rgb4Symbol.EXPORT
-    directory_symbol.value.sectionid = 0 #Index of what section this symbol is in
-    directory_symbol.value.value = 0 #Offset from the start of said section
-
-    rgb4obj.symbols.append(directory_symbol)
 
     return rgb4obj
