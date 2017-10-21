@@ -6,3 +6,4 @@ INCLUDE "component/lcdc/vblank_irq.inc"
 INCLUDE "component/system/banking.inc"
 
 INCLUDE "component/patchsupport/readfile.inc"
+INCLUDE "component/mainscript/vwf_advice.inc"
