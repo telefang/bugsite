@@ -24,7 +24,7 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
         component/mainscript/player_name.o \
         component/patchsupport/patchtbl.o component/patchsupport/pointcut.o \
         component/patchsupport/readfile.o \
-        component/mainscript/vwf_advice.o
+        component/windowmanager/vwf_advice.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}

@@ -8,4 +8,4 @@ INCLUDE "component/spritemanager/animatesprites.inc"
 INCLUDE "component/input/joypadstate.inc"
 
 INCLUDE "component/patchsupport/readfile.inc"
-INCLUDE "component/mainscript/vwf_advice.inc"
+INCLUDE "component/windowmanager/vwf_advice.inc"
