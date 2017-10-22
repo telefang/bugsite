@@ -1,5 +1,5 @@
 from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
-from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, encode_instruction_stream
+from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
 
 import argparse, sys
@@ -11,6 +11,7 @@ def bvmasm():
     parser.add_argument('--deffile', dest='deffile', metavar='strings.csv', type=str, action='append', help='Macro equates for the .bvm code to use. Must be UTF-8.')
     parser.add_argument('--language', type=str, default=u"Japanese", help='Which language\'s equates should be used when reading definitions files')
     parser.add_argument('--autobalance', help='String equates larger than a single line will overflow into following empty equates.', action='store_true')
+    parser.add_argument('--optimize', help='Remove extraneous instructions and prefixes.', action='store_true')
     parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping for the DB opcode.')
     parser.add_argument('output', metavar='file.bugvm.bin', type=str, help='Where to save the assembled code.')
 
@@ -35,6 +36,9 @@ def bvmasm():
         
         if args.autobalance:
             mp, ke = autobalance_strings(mp, ke, strenc)
+        
+        if args.optimize:
+            mp = optimize_stream(mp)
         
         mp, ke = fix_labels(mp, ke, strenc)
         mp, ke, strenc, bvmdata = encode_instruction_stream(mp, ke, strenc)
