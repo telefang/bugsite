@@ -119,6 +119,7 @@ WindowManager_ADVICE_FlushCompositionArea::
     
 ;Increment the ring buffer and composition area by a certain number of pixels.
 ;Also clears previous composition area tiles for further use.
+;Returns a = zero if tile was not incremented, nonzero if it was.
 ;NOTE: Do not call if there are dirty tiles in the composition area.
 ;They may be lost, flipped around, etc.
 ; ARGUMENTS: (A) The width of the last character drawn.
@@ -201,7 +202,13 @@ WindowManager_ADVICE_IncrementRingByPixels::
 .setRingHead
     ld [W_WindowManager_VWFRingWriteHead], a
     
+    ld a, 1
+    jr .ret
+    
 .noStateChangeNeeded
+    ld a, 0
+    
+.ret
     pop hl
     pop de
     ret
@@ -389,13 +396,47 @@ WindowManager_ADVICE_ComposeCharacter::
     
 ;ADVICE code for PrintText, called when printing a normal character.
 WindowManager_ADVICE_PrintChara::
-    ld a, [H_LCDC_SetTileVal] ;we had to clobber this so bring it back...
+    ;Determine if VWF is active
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ld a, [W_WindowManager_CompositionState]
+    and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
+    jp nz, .useVwf
+    
+.useTiletext
     call LCDC_PokeTilemap
     
     ld a, [W_LCDC_PokeTileX]
     inc a
     ld [W_LCDC_PokeTileX], a
     
+    ret
+    
+.useVwf
+    ld a, [W_WindowManager_VWFRingWriteHead]
+    ld [H_LCDC_SetTileVal], a
+    call LCDC_PokeTilemap
+    
+    ld a, [de] ;this better not be banked...
+    call WindowManager_ADVICE_ComposeCharacter
+    call WindowManager_ADVICE_FlushCompositionArea
+    
+    ld a, 8 ;TODO: Actually use a VWF table for this...
+    call WindowManager_ADVICE_IncrementRingByPixels
+    and a
+    jr z, .noNewVwfTile
+    
+.newVwfTile
+    ld a, [W_LCDC_PokeTileX]
+    inc a
+    ld [W_LCDC_PokeTileX], a
+    
+    ld a, [W_WindowManager_VWFRingWriteHead]
+    ld [H_LCDC_SetTileVal], a
+    call LCDC_PokeTilemap
+    
+.noNewVwfTile
     ret
     
 WindowManager_ADVICE_END::
