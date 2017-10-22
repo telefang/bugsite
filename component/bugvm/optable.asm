@@ -5,9 +5,9 @@ BugVM_OpcodeTable::
     dw $5E9,$5E9,$5E9,$671,$5E9,$5E9,$68C,$6C0; 0
     dw $6CA,$6D7,$6E2,$6ED,$6F8,$705,$712,$723; 8
     dw $752,$763,$772,$784,$796,$7A1,$7A9,$7C3; 16
-    dw $7ED,$80B,$80C,$80D,$80E,$80F,$820,$5E9; 24
-    dw $5E9,$5E9,$5E9,$5E9,$5E9,$5E9,$5E9,$5E9; 32
-    dw $5E9,$5E9,$5E9,$5E9,$831,$5E9,$5E9,$835; 40
+    dw $7ED,$80B,$80C,$80D,$80E,$80F,$820,PatchSupport_OpCustom; 24
+    dw PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom; 32
+    dw PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom,PatchSupport_OpCustom,$831,$5E9,$5E9,$835; 40
     dw $836,$837,$838,$839,$83A,$87B,$87C,$887; 48
     dw $8AC,$8BB,$8DB,$8DC,$8DD,$8DE,$941,$8F0; 56
     dw $919,$91A,$5E9,$5E9,$93C,$93D,$93E,$550; 64
