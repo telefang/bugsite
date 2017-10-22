@@ -16,11 +16,12 @@ BASEROM_PATCH := ${BASE_DIR}/baserom_patch.gbc
 
 OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o \
         component/windowmanager/contents_config.o component/windowmanager/drawframe.o \
-        component/windowmanager/menu_config.o \
+        component/windowmanager/menu_config.o component/windowmanager/print_tools.o \
         component/mainscript/window.o \
 		  component/lcdc/poke.o component/lcdc/vmemcopy.o \
         component/system/banking.o \
         component/bugfs/indexlinkage.o \
+        component/mainscript/player_name.o \
         component/patchsupport/patchtbl.o component/patchsupport/pointcut.o \
         component/patchsupport/readfile.o \
         component/mainscript/vwf_advice.o
