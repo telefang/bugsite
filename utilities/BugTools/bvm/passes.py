@@ -312,7 +312,7 @@ def optimize_stream(parselist):
     
     return new_parselist
 
-def encode_instruction_stream(parselist, known_equates = None, string_enc = None):
+def encode_instruction_stream(parselist, known_equates = None, string_enc = None, opcodes = opcodes):
     """Given a list of .bvm commands, encode the final instruction stream.
 
     Due to the existence of the DB opcode, a string encoder is required to
