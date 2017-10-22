@@ -286,6 +286,32 @@ def autobalance_strings(parselist, known_equates, string_enc):
     
     return (out_parselist, known_equates)
 
+def optimize_stream(parselist):
+    """Given a list of .bvm commands, remove extraneous instructions.
+    
+    Extraneous is defined as any opcode with no effect. Notably, this removes
+    PNOP and ENOP, allowing the insertion of new opcodes in patched BugVM
+    games.
+    
+    Returns a duplicate parselist with extraneous instructions and prefixes
+    removed."""
+    
+    new_parselist = []
+    
+    for instr in parselist:
+        if type(instr) is Instruction and instr.opcode in ["PNOP", "ENOP"]:
+            continue
+        
+        if type(instr) is Instruction and instr.prefix in ["NPREF"]:
+            new_instr = copy.deepcopy(instr)
+            instr.prefix = ""
+            
+            continue
+        
+        new_parselist.append(copy.deepcopy(instr))
+    
+    return new_parselist
+
 def encode_instruction_stream(parselist, known_equates = None, string_enc = None):
     """Given a list of .bvm commands, encode the final instruction stream.
 
