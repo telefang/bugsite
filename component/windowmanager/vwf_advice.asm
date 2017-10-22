@@ -387,4 +387,15 @@ WindowManager_ADVICE_ComposeCharacter::
     
     ret
     
+;ADVICE code for PrintText, called when printing a normal character.
+WindowManager_ADVICE_PrintChara::
+    ld a, [H_LCDC_SetTileVal] ;we had to clobber this so bring it back...
+    call LCDC_PokeTilemap
+    
+    ld a, [W_LCDC_PokeTileX]
+    inc a
+    ld [W_LCDC_PokeTileX], a
+    
+    ret
+    
 WindowManager_ADVICE_END::

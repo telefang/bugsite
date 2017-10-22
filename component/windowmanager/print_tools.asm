@@ -23,11 +23,14 @@ WindowManager_PrintText::
     jr z, .playerNameOp
     
 .normalCharacter
-    call LCDC_PokeTilemap
+    ld a, Banked_WindowManager_ADVICE_PrintChara & $FF
+    call PatchSupport_PointCutByID
     
-    ld a, [W_LCDC_PokeTileX]
-    inc a
-    ld [W_LCDC_PokeTileX], a
+    nop
+    nop
+    nop
+    nop
+    nop
     
     ld a, [W_WindowManager_ContentsAttributes]
     bit 2, a
