@@ -247,3 +247,121 @@ WindowManager_ClearRegion::
     ld [W_LCDC_PokeTileX], a
     
     ret
+    
+;Scroll up the contents of the current window.
+WindowManager_ScrollUpContents::
+    ld a, [W_WindowManager_ContentsTmapAddr]
+    ld e, a
+    ld a, [W_WindowManager_ContentsTmapAddr + 1]
+    ld d, a
+    
+    ld a, $20
+    add a, e
+    ld l, a
+    ld a, 0
+    adc a, d
+    and $9B
+    ld h, a
+    
+    ld a, [W_WindowManager_ContentsHeight]
+    dec a
+    ld c, a
+    
+.rowLoop
+    ld a, c
+    or a
+    jr z, .ret
+    
+    push hl
+    
+    ld a, [W_WindowManager_ContentsWidth]
+    ld b, a
+    
+.tileLoop
+    ld a, b
+    or a
+    jr z, .rowEndAddressCalculation
+    
+    push bc
+    
+    ld a, 0
+    ld [REG_VBK], a
+    
+    di
+    
+.tileWfb1
+    ld a, [REG_STAT]
+    and 2
+    jr z, .tileWfb1
+    
+.tileWfb2
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .tileWfb2
+    
+    ld a, [hl]
+    ld [de], a
+    ld a, $20
+    ld [hl], a
+    
+    ei
+    
+    ld a, 1
+    ld [REG_VBK], a
+    
+    di
+    
+.attrWfb1
+    ld a, [REG_STAT]
+    and 2
+    jr z, .attrWfb1
+    
+.attrWfb2
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .attrWfb2
+    
+    ld a, [hl]
+    ld [de], a
+    
+    ei
+    
+    ld a, e
+    inc a
+    and $1F
+    ld c, a
+    ld a, e
+    and $E0
+    or c
+    ld e, a
+    ld a, l
+    inc a
+    and $1F
+    ld c, a
+    ld a, l
+    and $E0
+    or c
+    ld l, a
+    
+    pop bc
+    
+    dec b
+    jr .tileLoop
+    
+.rowEndAddressCalculation
+    pop hl
+    
+    ld e, l
+    ld d, h
+    ld a, $20
+    add a, l
+    ld l, a
+    ld a, 0
+    adc a, h
+    and $9B
+    ld h, a
+    dec c
+    jr .rowLoop
+    
+.ret
+    ret

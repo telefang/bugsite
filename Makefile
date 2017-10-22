@@ -14,11 +14,12 @@ BASEROM_BETA := ${BASE_DIR}/baserom_beta.gbc
 
 OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o \
         component/windowmanager/contents_config.o component/windowmanager/drawframe.o \
-        component/windowmanager/menu_config.o \
+        component/windowmanager/menu_config.o component/windowmanager/print_tools.o \
         component/mainscript/window.o \
 		  component/lcdc/poke.o component/lcdc/vmemcopy.o \
         component/system/banking.o \
-        component/bugfs/indexlinkage.o
+        component/bugfs/indexlinkage.o \
+        component/mainscript/player_name.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}

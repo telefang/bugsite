@@ -8,6 +8,8 @@ W_WindowManager_ContentsYMax:: ds 2
 W_WindowManager_ContentsWidth:: ds 2
 W_WindowManager_ContentsHeight:: ds 2
 W_WindowManager_ContentsTmapAddr:: ds 2
+W_WindowManager_ContentsTextSpeed:: ds 2
+W_WindowManager_ContentsAttributes:: ds 2
 
 SECTION "Window Manager Contents Config", ROM0[$0FAF]
 ;Given a properly configured X/Y-Min/Max set, configure the other bits of window
