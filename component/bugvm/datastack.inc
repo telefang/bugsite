@@ -1,0 +1,3 @@
+M_BugVM_DataStackTagImmediate EQU $3D
+M_BugVM_DataStackTagIndirect EQU $1D
+M_BugVM_DataStackTagPredicate EQU $1E

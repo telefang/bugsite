@@ -15,6 +15,7 @@ ROMS_PATCH := ${BUILD_DIR}/bugsite_patch_en.gbc
 BASEROM_PATCH := ${BASE_DIR}/baserom_patch.gbc
 
 OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_state.o \
+        component/bugvm/datastack.o component/bugvm/predicate.o \
         component/windowmanager/contents_config.o component/windowmanager/drawframe.o \
         component/windowmanager/menu_config.o component/windowmanager/print_tools.o \
         component/mainscript/window.o \
