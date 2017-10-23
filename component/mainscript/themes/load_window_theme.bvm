@@ -55,5 +55,16 @@ MainScript_LoadWindowTheme:
     IMMED $7
     NPREF PALLD
     POPALL
+    
+    ;Configure VWF for this theme.
+    IMMED $202
+    IMMED W_MainScript_PortraitID
+    INDIR
+    ADD
+    IMMED $0000 ;todo: configure background colors
+    IMMED $6
+    IMMED $7D
+    VWFCONFIG
+    
     RET
     FGAME

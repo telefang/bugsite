@@ -7,8 +7,14 @@ SECTION "Native Code Patch Table", ROMX[$6100], BANK[$3]
 ;Each table entry consists of 4 bytes of executable code, usually a jump and a
 ;ret.
 PatchSupport_PatchTable::
+Banked_WindowManager_ADVICE_OpVWFCONFIG::
+    jp WindowManager_ADVICE_OpVWFCONFIG
+    nop
+    
+    ds $2C ;Remaining bytes for custom opcodes.
+    
 Banked_WindowManager_ADVICE_PrintChara::
     jp WindowManager_ADVICE_PrintChara
     nop
     
-    ds $FC
+    ds $CC

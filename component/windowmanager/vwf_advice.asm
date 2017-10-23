@@ -439,4 +439,53 @@ WindowManager_ADVICE_PrintChara::
 .noNewVwfTile
     ret
     
+;Configure the VWF.
+;Once configured, all existing VWF state (if any) will be reset.
+;
+;ARGUMENTS: (Via Datastack)
+; Composition Font (File ID)
+; Background Color (16 bits of graphics data, to be repeated across all lines)
+; VWF Ring Start   (Tile index from $8800)
+; VWF Ring End     (Tile index from $8800)
+; --- TOP OF STACK ---
+WindowManager_ADVICE_OpVWFCONFIG::
+    ;Configure the ring buffer from arguments.
+    call BugVM_PopFromDataStack
+    ld a, c
+    ld [W_WindowManager_VWFRingEnd], a
+    
+    call BugVM_PopFromDataStack
+    ld a, c
+    ld [W_WindowManager_VWFRingStart], a
+    ld [W_WindowManager_VWFRingWriteHead], a
+    
+    ;Configure the background. These 16 bits are repeated to clear tiles.
+    call BugVM_PopFromDataStack
+    ld a, c
+    ld [W_WindowManager_CompositionBackground], a
+    ld a, b
+    ld [W_WindowManager_CompositionBackground + 1], a
+    
+    ;Initialize the composition area with the new background.
+    ld hl, W_WindowManager_CompositionArea
+    REPT 16
+    ld a, c
+    ld [hli], a
+    ld a, b
+    ld [hli], a
+    ENDR
+    
+    ;Set the font from datastack args.
+    call BugVM_PopFromDataStack
+    ld a, c
+    ld [W_WindowManager_CompositionFont], a
+    
+    ;Mark the VWF as initialized and ready to use.
+    ld a, M_WindowManager_CompositionStateIntialized
+    ld [W_WindowManager_CompositionState], a
+    
+    xor a
+    ld [W_WindowManager_CompositionShift], a
+    
+    ret
 WindowManager_ADVICE_END::

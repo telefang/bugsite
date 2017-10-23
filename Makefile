@@ -130,7 +130,7 @@ $(BUILD_DIR)/%.1bpp: %.png
 $(BUILD_DIR)/%.bof: %.bvm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings_npc.csv --deffile script/bugvm_strings_story.csv --deffile script/bugvm_strings_system.csv --autobalance --optimize --language English script/charmap.txt $@
+	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings_npc.csv --deffile script/bugvm_strings_story.csv --deffile script/bugvm_strings_system.csv --autobalance --opcode_tbl utilities/opcodes_bugsite_patch.json --language English script/charmap.txt $@
 
 $(BUILD_DIR)/%.palette.bin: %.bpal
 	@echo "Assembling" $<
