@@ -503,8 +503,19 @@ WindowManager_ADVICE_PrintNewline::
     ;run, the next line gets a fresh tile with a shift of zero.
     ld a, [W_WindowManager_CompositionShift]
     and $07
+    jr z, .flatEdgeTile
+    
+.mixedTile
     add -8
     and $07
+    jr .doIncrement
+    
+.flatEdgeTile
+    ld a, 8 ;Add a tile, even though we technically don't need the space.
+            ;It's possible that we may have already drawn the next tile in
+            ;sequence anyway.
+            
+.doIncrement
     call WindowManager_ADVICE_IncrementRingByPixels
     
 .useTiletext
@@ -528,8 +539,19 @@ WindowManager_ADVICE_AutoNewline::
     ;run, the next line gets a fresh tile with a shift of zero.
     ld a, [W_WindowManager_CompositionShift]
     and $07
+    jr z, .flatEdgeTile
+    
+.mixedTile
     add -8
     and $07
+    jr .doIncrement
+    
+.flatEdgeTile
+    ld a, 8 ;Add a tile, even though we technically don't need the space.
+            ;It's possible that we may have already drawn the next tile in
+            ;sequence anyway.
+            
+.doIncrement
     call WindowManager_ADVICE_IncrementRingByPixels
     
 .useTiletext
