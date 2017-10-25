@@ -478,6 +478,7 @@ WindowManager_ADVICE_PrintChara::
     ld [W_LCDC_PokeTileX], a
     
     ld a, [W_WindowManager_VWFRingWriteHead]
+    add $80
     ld [H_LCDC_SetTileVal], a
     call LCDC_PokeTilemap
     
