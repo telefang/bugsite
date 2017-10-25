@@ -510,6 +510,57 @@ WindowManager_ADVICE_PrintNewline::
 .useTiletext
     ret
     
+;ADVICE code for WindowManager_AutoNewline, called when the text box overflows.
+WindowManager_ADVICE_AutoNewline::
+    ;Determine if VWF is active
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ld a, [W_WindowManager_CompositionState]
+    and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
+    jp z, .useTiletext
+    
+.useVwf
+    call WindowManager_ADVICE_FlushCompositionArea
+    
+    ;Reset the pixel shift.
+    ;Adding 8 - (shift & 7) means that the normal ring maintenance routines can
+    ;run, the next line gets a fresh tile with a shift of zero.
+    ld a, [W_WindowManager_CompositionShift]
+    and $07
+    add -8
+    and $07
+    call WindowManager_ADVICE_IncrementRingByPixels
+    
+.useTiletext
+    ld a, [W_WindowManager_ContentsXMin]
+    ld [W_LCDC_PokeTileX], a
+    ld a, [W_WindowManager_ContentsYMax]
+    ld d, a
+    
+    ld a, [W_LCDC_PokeTileY]
+    inc a
+    cp d
+    jr c, .noScrollupContents
+    
+.scrollupContents
+    push bc
+    
+    call WindowManager_ScrollUpContents
+    call WindowManager_ScrollUpContents
+    
+    pop bc
+    jr .ret
+    
+.noScrollupContents
+    ld a, [W_LCDC_PokeTileY]
+    inc a
+    inc a
+    ld [W_LCDC_PokeTileY], a
+    
+.ret
+    ret
+    
 ;Configure the VWF.
 ;Once configured, all existing VWF state (if any) will be reset.
 ;

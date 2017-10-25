@@ -107,9 +107,12 @@ WindowManager_AutoNewline::
     jr z, .ret
     
 .applyAutoNewline
-    ld a, [W_WindowManager_ContentsXMin]
-    ld [W_LCDC_PokeTileX], a
-    ld a, [W_WindowManager_ContentsYMax]
+    ld a, Banked_WindowManager_ADVICE_AutoNewline & $FF
+    call PatchSupport_PointCutByID
+    
+    jr .ret
+    nop
+    nop
     ld d, a
     
     ld a, [W_LCDC_PokeTileY]

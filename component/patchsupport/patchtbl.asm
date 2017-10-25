@@ -21,4 +21,8 @@ Banked_WindowManager_ADVICE_PrintNewline::
     jp WindowManager_ADVICE_PrintNewline
     nop
     
-    ds $C8
+Banked_WindowManager_ADVICE_AutoNewline::
+    jp WindowManager_ADVICE_AutoNewline
+    nop
+    
+    ds $C4
