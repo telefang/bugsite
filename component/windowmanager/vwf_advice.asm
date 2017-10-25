@@ -438,6 +438,7 @@ WindowManager_ADVICE_ComposeCharacter::
     
 WindowManager_ADVICE_NewlineSegment::
     push af
+    push bc
     call WindowManager_ADVICE_FlushCompositionArea
     
     ;Reset the pixel shift.
@@ -448,7 +449,9 @@ WindowManager_ADVICE_NewlineSegment::
     jr z, .flatEdgeTile
     
 .mixedTile
-    add -8
+    ld b, a
+    ld a, 8
+    sub b
     and $07
     jr .doIncrement
     
@@ -459,6 +462,7 @@ WindowManager_ADVICE_NewlineSegment::
             
 .doIncrement
     call WindowManager_ADVICE_IncrementRingByPixels
+    pop bc
     pop af
     ret
     
