@@ -24,14 +24,15 @@ PatchSupport_ReadBugFSFile::
     
     ;Read the file location.
     call BugFS_IndexDirectory
-    ld a, [hl]
+    ld a, [hli]
     push af
     
-    ld a, [hl]
+    ld a, [hli]
     ld h, [hl]
     ld l, a
     
     add hl, de
+    set 6, h ; or $4000
     
     pop af
     ld [REG_MBC5_ROMBank0], a

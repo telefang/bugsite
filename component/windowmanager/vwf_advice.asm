@@ -37,6 +37,7 @@ WindowManager_ADVICE_FlushCompositionArea::
     ld d, a
     pop af
     and $0F
+    swap a
     add e
     ld e, a
     
@@ -44,13 +45,13 @@ WindowManager_ADVICE_FlushCompositionArea::
 .dirtyLoop
     ld a, [W_WindowManager_CompositionState]
     bit 3, a
-    jr z, .inverseCheckOrder
+    jr nz, .inverseCheckOrder
     
 .properCheckOrder
     bit 1, a
-    jr z, .selectFirstCompoTile
+    jr nz, .selectFirstCompoTile
     bit 2, a
-    jr z, .selectSecondCompoTile
+    jr nz, .selectSecondCompoTile
     jr .emptyTile
     
     ;We invert the check order if TileOrderReverse is set so that the drawing
@@ -58,9 +59,9 @@ WindowManager_ADVICE_FlushCompositionArea::
     ;bits tell us what to copy and reverse bits tell us in what order.
 .inverseCheckOrder
     bit 2, a
-    jr z, .selectSecondCompoTile
+    jr nz, .selectSecondCompoTile
     bit 1, a
-    jr z, .selectFirstCompoTile
+    jr nz, .selectFirstCompoTile
     jr .emptyTile
     
 .selectFirstCompoTile
@@ -86,7 +87,7 @@ WindowManager_ADVICE_FlushCompositionArea::
     ld d, a
     ld a, [W_WindowManager_VWFRingEnd]
     cp d
-    jr nz, .headOverflow
+    jr z, .headOverflow
     
 .noHeadOverflow
     inc d
@@ -95,6 +96,7 @@ WindowManager_ADVICE_FlushCompositionArea::
     
 .headOverflow
     ld a, [W_WindowManager_VWFRingStart]
+    inc a
 
 .nextTilePtrCalc
     ld de, $8800
@@ -105,6 +107,7 @@ WindowManager_ADVICE_FlushCompositionArea::
     ld d, a
     pop af
     and $0F
+    swap a
     add e
     ld e, a
     
@@ -124,6 +127,7 @@ WindowManager_ADVICE_FlushCompositionArea::
 ;They may be lost, flipped around, etc.
 ; ARGUMENTS: (A) The width of the last character drawn.
 WindowManager_ADVICE_IncrementRingByPixels::
+    push bc
     push de
     push hl
     
@@ -133,21 +137,23 @@ WindowManager_ADVICE_IncrementRingByPixels::
     ld [W_WindowManager_CompositionShift], a
     
     ;Update the reverse bit.
-    bit 3, a
-    ld a, [W_WindowManager_CompositionState]
     ld b, a
-    jr nz, .notReverseMode
+    ld a, [W_WindowManager_CompositionState]
+    bit 3, b
+    jr z, .shouldNotBeReverseMode
     
-.reverseMode
+.shouldBeReverseMode
+    ld b, a
     set 3, a
     bit 3, b
-    jr z, .setStateAndIncrementRing
+    jr z, .setStateAndIncrementRing ;If it wasn't set before, and now it is...
     jr .setState
     
-.notReverseMode
+.shouldNotBeReverseMode
+    ld b, a
     res 3, a
     bit 3, b
-    jr nz, .setStateAndIncrementRing
+    jr nz, .setStateAndIncrementRing ;If it was set before, and now it isn't...
     
 .setState
     ld [W_WindowManager_CompositionState], a
@@ -189,7 +195,7 @@ WindowManager_ADVICE_IncrementRingByPixels::
     ld a, [W_WindowManager_VWFRingEnd]
     cp l
     
-    jr nz, .headOverflow
+    jr z, .headOverflow
     
 .noHeadOverflow
     inc l
@@ -211,6 +217,7 @@ WindowManager_ADVICE_IncrementRingByPixels::
 .ret
     pop hl
     pop de
+    pop bc
     ret
     
 ;Draw a letter into the current composition area.
@@ -226,16 +233,17 @@ WindowManager_ADVICE_ComposeCharacter::
     ld b, a
     
     pop af
+    add $80 ;tiles are stored 'backwards', for the sake of tile text mode
     ld d, 0
     ld e, a
-    sla d
-    rl e
-    sla d
-    rl e
-    sla d
-    rl e
-    sla d
-    rl e
+    sla e
+    rl d
+    sla e
+    rl d
+    sla e
+    rl d
+    sla e
+    rl d
     
     call PatchSupport_ReadBugFSFile
     
@@ -244,15 +252,25 @@ WindowManager_ADVICE_ComposeCharacter::
     ld a, [W_WindowManager_CompositionShift]
     and $07
     ld b, a
-    ld c, a
     
     ld a, $ff
-    
-.makeCharaMask
-    dec c
-    jr c, .charaMaskMade
+    bit 0, b
+    jr z, .secondBitMask
     srl a
-    jr .makeCharaMask
+    
+.secondBitMask
+    bit 1, b
+    jr z, .thirdBitMask
+    srl a
+    srl a
+    
+.thirdBitMask
+    bit 2, b
+    jr z, .charaMaskMade
+    srl a
+    srl a
+    srl a
+    srl a
     
 .charaMaskMade
     cpl
@@ -287,11 +305,23 @@ WindowManager_ADVICE_ComposeCharacter::
     ;Shift in the new composition data.
     ld a, [hli]
     
-.shiftLoopFirst
-    dec b
-    jr c, .composeLineFirst
+    bit 0, b
+    jr z, .secondBitFirst
     srl a
-    jr .shiftLoopFirst
+    
+.secondBitFirst
+    bit 1, b
+    jr z, .thirdBitFirst
+    srl a
+    srl a
+    
+.thirdBitFirst
+    bit 2, b
+    jr z, .composeLineFirst
+    srl a
+    srl a
+    srl a
+    srl a
     
     ;Mix both characters and store the composed data.
 .composeLineFirst
@@ -354,11 +384,23 @@ WindowManager_ADVICE_ComposeCharacter::
     ;Shift in the new composition data.
     ld a, [hli]
     
-.shiftLoopSecond
-    dec b
-    jr c, .composeLineSecond
+    bit 0, b
+    jr z, .secondBitSecond
     sla a
-    jr .shiftLoopSecond
+    
+.secondBitSecond
+    bit 1, b
+    jr z, .thirdBitSecond
+    sla a
+    sla a
+    
+.thirdBitSecond
+    bit 2, b
+    jr z, .composeLineSecond
+    sla a
+    sla a
+    sla a
+    sla a
     
     ;Mix both characters and store the composed data.
 .composeLineSecond
@@ -415,14 +457,17 @@ WindowManager_ADVICE_PrintChara::
     
 .useVwf
     ld a, [W_WindowManager_VWFRingWriteHead]
+    add $80
     ld [H_LCDC_SetTileVal], a
     call LCDC_PokeTilemap
     
-    ld a, [de] ;this better not be banked...
+    dec bc
+    ld a, [bc] ;this better not be banked...
+    inc bc
     call WindowManager_ADVICE_ComposeCharacter
     call WindowManager_ADVICE_FlushCompositionArea
     
-    ld a, 8 ;TODO: Actually use a VWF table for this...
+    ld a, 6 ;TODO: Actually use a VWF table for this...
     call WindowManager_ADVICE_IncrementRingByPixels
     and a
     jr z, .noNewVwfTile
@@ -449,18 +494,21 @@ WindowManager_ADVICE_PrintChara::
 ; VWF Ring End     (Tile index from $8800)
 ; --- TOP OF STACK ---
 WindowManager_ADVICE_OpVWFCONFIG::
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
     ;Configure the ring buffer from arguments.
-    call BugVM_PopFromDataStack
+    call BugVM_PopTypedData
     ld a, c
     ld [W_WindowManager_VWFRingEnd], a
     
-    call BugVM_PopFromDataStack
+    call BugVM_PopTypedData
     ld a, c
     ld [W_WindowManager_VWFRingStart], a
     ld [W_WindowManager_VWFRingWriteHead], a
     
     ;Configure the background. These 16 bits are repeated to clear tiles.
-    call BugVM_PopFromDataStack
+    call BugVM_PopTypedData
     ld a, c
     ld [W_WindowManager_CompositionBackground], a
     ld a, b
@@ -476,9 +524,11 @@ WindowManager_ADVICE_OpVWFCONFIG::
     ENDR
     
     ;Set the font from datastack args.
-    call BugVM_PopFromDataStack
+    call BugVM_PopTypedData
     ld a, c
     ld [W_WindowManager_CompositionFont], a
+    ld a, b
+    ld [W_WindowManager_CompositionFont + 1], a
     
     ;Mark the VWF as initialized and ready to use.
     ld a, M_WindowManager_CompositionStateIntialized

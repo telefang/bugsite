@@ -1,6 +1,6 @@
 INCLUDE "bugsite.inc"
 
-SECTION "Patch Support Custom BugVM Opcodes", ROM0[$0099]
+SECTION "Patch Support Custom BugVM Opcodes", ROM0[$009B]
 ;Implementation of all custom BugVM opcodes.
 ;We map the opcode table to the patch advice table, replacing ENOP $1F thru
 ;ENOP $2B with patches $0-$C. Note that this requires PNOP/ENOP to be removed
@@ -12,11 +12,8 @@ PatchSupport_OpCustom::
     ld a, c
     sub $1F
     
-    ld b, 0
-    sla b
-    rl c
-    sla b
-    rl c
+    sla a
+    sla a
     
     jp PatchSupport_PointCutByID
     
