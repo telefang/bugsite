@@ -436,6 +436,33 @@ WindowManager_ADVICE_ComposeCharacter::
     
     ret
     
+WindowManager_ADVICE_NewlineSegment::
+    push af
+    call WindowManager_ADVICE_FlushCompositionArea
+    
+    ;Reset the pixel shift.
+    ;Adding 8 - (shift & 7) means that the normal ring maintenance routines can
+    ;run, the next line gets a fresh tile with a shift of zero.
+    ld a, [W_WindowManager_CompositionShift]
+    and $07
+    jr z, .flatEdgeTile
+    
+.mixedTile
+    add -8
+    and $07
+    jr .doIncrement
+    
+.flatEdgeTile
+    ld a, 8 ;Add a tile, even though we technically don't need the space.
+            ;It's possible that we may have already drawn the next tile in
+            ;sequence anyway.
+            
+.doIncrement
+    call WindowManager_ADVICE_IncrementRingByPixels
+    pop af
+    ret
+    
+    
 ;ADVICE code for PrintText, called when printing a normal character.
 WindowManager_ADVICE_PrintChara::
     ;Determine if VWF is active
@@ -496,27 +523,7 @@ WindowManager_ADVICE_PrintNewline::
     jp z, .useTiletext
     
 .useVwf
-    call WindowManager_ADVICE_FlushCompositionArea
-    
-    ;Reset the pixel shift.
-    ;Adding 8 - (shift & 7) means that the normal ring maintenance routines can
-    ;run, the next line gets a fresh tile with a shift of zero.
-    ld a, [W_WindowManager_CompositionShift]
-    and $07
-    jr z, .flatEdgeTile
-    
-.mixedTile
-    add -8
-    and $07
-    jr .doIncrement
-    
-.flatEdgeTile
-    ld a, 8 ;Add a tile, even though we technically don't need the space.
-            ;It's possible that we may have already drawn the next tile in
-            ;sequence anyway.
-            
-.doIncrement
-    call WindowManager_ADVICE_IncrementRingByPixels
+    call WindowManager_ADVICE_NewlineSegment
     
 .useTiletext
     ret
@@ -532,27 +539,7 @@ WindowManager_ADVICE_AutoNewline::
     jp z, .useTiletext
     
 .useVwf
-    call WindowManager_ADVICE_FlushCompositionArea
-    
-    ;Reset the pixel shift.
-    ;Adding 8 - (shift & 7) means that the normal ring maintenance routines can
-    ;run, the next line gets a fresh tile with a shift of zero.
-    ld a, [W_WindowManager_CompositionShift]
-    and $07
-    jr z, .flatEdgeTile
-    
-.mixedTile
-    add -8
-    and $07
-    jr .doIncrement
-    
-.flatEdgeTile
-    ld a, 8 ;Add a tile, even though we technically don't need the space.
-            ;It's possible that we may have already drawn the next tile in
-            ;sequence anyway.
-            
-.doIncrement
-    call WindowManager_ADVICE_IncrementRingByPixels
+    call WindowManager_ADVICE_NewlineSegment
     
 .useTiletext
     ld a, [W_WindowManager_ContentsXMin]
@@ -581,6 +568,27 @@ WindowManager_ADVICE_AutoNewline::
     ld [W_LCDC_PokeTileY], a
     
 .ret
+    ret
+    
+;ADVICE code for PrintText, called when printing a newline.
+WindowManager_ADVICE_ClearRegion::
+    ;Determine if VWF is active
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ld a, [W_WindowManager_CompositionState]
+    and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
+    jp z, .useTiletext
+    
+.useVwf
+    call WindowManager_ADVICE_NewlineSegment
+    
+.useTiletext
+    ld a, [W_LCDC_PokeTileX]
+    ld b, a
+    ld a, [W_LCDC_PokeTileY]
+    ld c, a
+    
     ret
     
 ;Configure the VWF.

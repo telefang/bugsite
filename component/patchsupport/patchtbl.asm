@@ -25,4 +25,8 @@ Banked_WindowManager_ADVICE_AutoNewline::
     jp WindowManager_ADVICE_AutoNewline
     nop
     
-    ds $C4
+Banked_WindowManager_ADVICE_ClearRegion::
+    jp WindowManager_ADVICE_ClearRegion
+    nop
+    
+    ds $C0

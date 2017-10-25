@@ -187,10 +187,12 @@ WindowManager_DrawOverflowArrows::
     
 ;Set all tiles within the Contents region to spaces.
 WindowManager_ClearRegion::
-    ld a, [W_LCDC_PokeTileX]
-    ld b, a
-    ld a, [W_LCDC_PokeTileY]
-    ld c, a
+    ld a, Banked_WindowManager_ADVICE_ClearRegion & $FF
+    call PatchSupport_PointCutByID
+    
+    nop
+    nop
+    nop
     
     push bc
     
