@@ -30,6 +30,7 @@ opcodes = {
     "DB": 0x3E,
     "JAL": 0x3F, #TODO: Shouldn't this be CALL?
     "PRINT": 0x4C,
+    "SCRCURS": 0x50,
     "WINCLR": 0x5B,
     "RESLD": 0x5F,
     "WINWAIT": 0x60,
@@ -38,6 +39,7 @@ opcodes = {
     "TILELD": 0x72,
     "PALLD": 0x75,
     "WINCOORD": 0x7D,
+    "WINCURS": 0x7E,
     "WINBRK": 0x82,
     "TMAPSAV": 0x86, #heeeeeeh
     "PRKEY": 0x9F,
