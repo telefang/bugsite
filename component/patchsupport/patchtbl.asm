@@ -17,4 +17,8 @@ Banked_WindowManager_ADVICE_PrintChara::
     jp WindowManager_ADVICE_PrintChara
     nop
     
-    ds $CC
+Banked_WindowManager_ADVICE_PrintNewline::
+    jp WindowManager_ADVICE_PrintNewline
+    nop
+    
+    ds $C8

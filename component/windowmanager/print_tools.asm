@@ -26,12 +26,6 @@ WindowManager_PrintText::
     ld a, Banked_WindowManager_ADVICE_PrintChara & $FF
     call PatchSupport_PointCutByID
     
-    nop
-    nop
-    nop
-    nop
-    nop
-    
     ld a, [W_WindowManager_ContentsAttributes]
     bit 2, a
     jr nz, WindowManager_PrintText
@@ -53,6 +47,9 @@ WindowManager_PrintText::
     jr WindowManager_PrintText
     
 .newline
+    ld a, Banked_WindowManager_ADVICE_PrintNewline & $FF
+    call PatchSupport_PointCutByID
+    
     call WindowManager_NewlineMoveback
     jr WindowManager_PrintText
     

@@ -484,6 +484,28 @@ WindowManager_ADVICE_PrintChara::
 .noNewVwfTile
     ret
     
+;ADVICE code for PrintText, called when printing a newline.
+WindowManager_ADVICE_PrintNewline::
+    ;Determine if VWF is active
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ld a, [W_WindowManager_CompositionState]
+    and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
+    jp z, .useTiletext
+    
+.useVwf
+    ;Reset the pixel shift.
+    ;Adding 8 - (shift & 7) means that the normal ring maintenance routines can
+    ;run, the next line gets a fresh tile with a shift of zero.
+    ld a, [W_WindowManager_CompositionShift]
+    and $07
+    add -8
+    call WindowManager_ADVICE_IncrementRingByPixels
+    
+.useTiletext
+    ret
+    
 ;Configure the VWF.
 ;Once configured, all existing VWF state (if any) will be reset.
 ;
