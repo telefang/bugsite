@@ -532,6 +532,11 @@ WindowManager_ADVICE_PrintChara::
     inc a
     ld [W_LCDC_PokeTileX], a
     
+    ;Don't poke the next tile in sequence if we didn't shift onto it...
+    ld a, [W_WindowManager_CompositionShift]
+    and $07
+    jr z, .noNewVwfTile
+    
     ld a, [W_WindowManager_VWFRingWriteHead]
     add $80
     ld [H_LCDC_SetTileVal], a
