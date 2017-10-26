@@ -20,15 +20,15 @@ SECTION "WindowManager VWF Advice", ROMX[$6200], BANK[$3]
 WindowManager_ADVICE_NormalFontWidths::
     db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $0x
     db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $1x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $2x
+    db 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $2x
     db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $3x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $4x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $5x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $6x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $7x
+    db 8, 6, 6, 6, 6, 5, 5, 6, 5, 4, 4, 5, 4, 6, 5, 6 ; $4x
+    db 6, 7, 6, 5, 4, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8 ; $5x
+    db 8, 6, 5, 5, 6, 5, 4, 5, 5, 8, 8, 8, 3, 6, 5, 5 ; $6x
+    db 5, 5, 5, 5, 4, 6, 6, 6, 6, 5, 5, 8, 5, 8, 8, 8 ; $7x
     db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $8x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $9x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Ax
+    db 3, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $9x
+    db 2, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Ax
     db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Bx
     db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Cx
     db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Dx
@@ -513,15 +513,19 @@ WindowManager_ADVICE_PrintChara::
     
     dec bc
     ld a, [bc] ;this better not be banked...
-    inc bc
     call WindowManager_ADVICE_ComposeCharacter
     call WindowManager_ADVICE_FlushCompositionArea
     
     push bc
+    
+    ld a, [bc]
     ld b, WindowManager_ADVICE_NormalFontWidths >> 8
     ld c, a
     ld a, [bc]
+    
     pop bc
+    
+    inc bc
     
     call WindowManager_ADVICE_IncrementRingByPixels
     and a
