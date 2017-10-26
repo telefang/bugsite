@@ -17,6 +17,25 @@ W_WindowManager_CompositionBackground: ds 2
 W_WindowManager_CompositionArea: ds $20 ;two tiles, identical to VRAM
 
 SECTION "WindowManager VWF Advice", ROMX[$6200], BANK[$3]
+WindowManager_ADVICE_NormalFontWidths::
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $0x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $1x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $2x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $3x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $4x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $5x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $6x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $7x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $8x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $9x
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Ax
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Bx
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Cx
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Dx
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Ex
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Fx
+    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Fx
+    
 ;Flush composition area into the VWF ring.
 WindowManager_ADVICE_FlushCompositionArea::
     push hl
@@ -498,7 +517,12 @@ WindowManager_ADVICE_PrintChara::
     call WindowManager_ADVICE_ComposeCharacter
     call WindowManager_ADVICE_FlushCompositionArea
     
-    ld a, 6 ;TODO: Actually use a VWF table for this...
+    push bc
+    ld b, WindowManager_ADVICE_NormalFontWidths >> 8
+    ld c, a
+    ld a, [bc]
+    pop bc
+    
     call WindowManager_ADVICE_IncrementRingByPixels
     and a
     jr z, .noNewVwfTile
