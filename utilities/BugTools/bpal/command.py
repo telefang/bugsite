@@ -3,15 +3,6 @@ from BugTools.bpal.passes import palette_encode
 
 import argparse, sys
 
-y = """
-        #012345, #67890a, #bcdef0, #123456
-    P_MainScript_Theme000: #012345, #67890a, #bcdef0, #123456
-    P_MainScript_Theme001: #012345, #67890a, #bcdef0, #123456
-    """
-
-#print(bpal_grammar.parse(y))
-print(PaletteDataVisitor().visit(bpal_grammar.parse(y)))
-
 def bpalasm():
     parser = argparse.ArgumentParser(description="An assembler and source format for palette data in KAZe developed Game Boy games.")
 

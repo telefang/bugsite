@@ -113,7 +113,7 @@ def fix_labels(parselist, known_equates = None, string_enc = None):
 
     return parselist, known_equates
 
-def autobalance_strings(parselist, known_equates, string_enc):
+def autobalance_strings(parselist, known_equates, string_enc, string_wid):
     """Optional pass to automatically word-wrap string equates used in text.
     
     This pass should run after equates have been resolved and labels fixed.
@@ -236,7 +236,7 @@ def autobalance_strings(parselist, known_equates, string_enc):
                 
                 if len(balanced_line) == 0:
                     balanced_line += word
-                elif effective_strlen(balanced_line, string_enc) + effective_strlen(space, string_enc) + effective_strlen(word, string_enc) > ab_max_width:
+                elif effective_strlen(balanced_line, string_enc, string_wid) + effective_strlen(space, string_enc, string_wid) + effective_strlen(word, string_enc, string_wid) > ab_max_width:
                     #That condition uses visual, not physical length
                     balanced_strings.append(balanced_line)
                     balanced_line = word

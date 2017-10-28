@@ -291,7 +291,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
 
     #Flush the final data section's contents...
     if len(datum_data) > 0:
-        datum_section.data = b"".join(datum_data)
+        datum_section.datsec.data = b"".join(datum_data)
         rgb4obj.sections.append(datum_section)
 
     #Build the BFS directory structure
