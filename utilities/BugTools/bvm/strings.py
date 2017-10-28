@@ -124,14 +124,20 @@ def parse_charmap(infile):
 
     return encoder, decoder
 
-def effective_strlen(encoded_bytes, string_enc):
+def effective_strlen(encoded_bytes, string_enc, string_wid = None):
     """Given a Bugsite encoded string, determine it's effective length.
     
-    Returns a length in pixels. We assume fixed-width formatting for now.
+    Returns a length in pixels. We assume fixed-width formatting for now. If you
+    are compiling strings with a variable-width font, provide string_wid as a
+    len-like function (takes a string, returns an int). You can obtain such a
+    function from BugTools.bfont.passes.metrics_length if you have font metrics.
     
     This function takes into account the player's name as an 8-character wide
     symbol, even if it may be shorter in practice. We ask for a string enocder
     so that we can determine what the encoded form of it is."""
+    
+    if string_wid is None:
+        string_wid = lambda x: 8 * len(x)
     
     pname_symbol = string_enc("[name]")
     newline_symbol = string_enc("\n")
@@ -147,6 +153,6 @@ def effective_strlen(encoded_bytes, string_enc):
             px_width += 8 * 8
         else:
             #Every other character is one tile for now.
-            px_width += 8 * 1
+            px_width += string_wid(byte)
     
     return px_width

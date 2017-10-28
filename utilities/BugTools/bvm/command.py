@@ -3,6 +3,9 @@ from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
 from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
 
+from BugTools.bfont.parser import bfont_grammar, FontWidthVisitor
+from BugTools.bfont.passes import metrics_table, metrics_length
+
 import argparse, sys, json
 
 def bvmasm():
@@ -12,6 +15,7 @@ def bvmasm():
     parser.add_argument('--deffile', dest='deffile', metavar='strings.csv', type=str, action='append', help='Macro equates for the .bvm code to use. Must be UTF-8.')
     parser.add_argument('--language', type=str, default=u"Japanese", help='Which language\'s equates should be used when reading definitions files')
     parser.add_argument('--autobalance', help='String equates larger than a single line will overflow into following empty equates.', action='store_true')
+    parser.add_argument('--metrics', metavar='metrics.bfont', type=str, help='File detailing VWF metrics for this font.')
     parser.add_argument('--optimize', help='Remove extraneous instructions and prefixes.', action='store_true')
     parser.add_argument('--opcode_tbl', dest='opcode_tbl', metavar='opcodes.json', type=str, help='Mapping of instruction opcodes to their binary representations.')
     parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping for the DB opcode.')
@@ -32,6 +36,17 @@ def bvmasm():
     
     with open(args.charmap, encoding="utf-8") as mapfile:
         strenc, strdec = parse_charmap(mapfile)
+        
+    metrics = [8] * 0xFF #fallback in case we autobalance without a bfont file
+    if args.metrics is not None:
+        with open(args.metrics, encoding="utf-8") as metrfile:
+            msrc = metrfile.read()
+            mtree = bfont_grammar.parse(msrc + "\n")
+            mparse = FontWidthVisitor().visit(mtree)
+
+            metrics = metrics_table(mparse, strenc)
+    
+    string_wid = metrics_length(metrics, strenc)
     
     with open(args.infile) as srcfile:
         src = srcfile.read()
@@ -42,7 +57,7 @@ def bvmasm():
         mp, ke = resolve_equates(mp, ke)
         
         if args.autobalance:
-            mp, ke = autobalance_strings(mp, ke, strenc)
+            mp, ke = autobalance_strings(mp, ke, strenc, string_wid)
         
         if args.optimize:
             mp = optimize_stream(mp)
