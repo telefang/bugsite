@@ -57,17 +57,25 @@ MainScript_LoadWindowTheme:
     POPALL
     
     ;Configure VWF for this theme.
-    IMMED $202
+    IMMED $FFC
     IMMED W_MainScript_PortraitID
     INDIR
     ADD
-    IMMED $FFE
+    
+    IMMED $FFC
     IMMED W_MainScript_PortraitID
     INDIR
     ADD
-    IMMED $FFFF ;todo: configure background colors
+    IMMED 1
+    ADD
+    
+    IMMED $FFFF ;TODO: What is the Battle background?
+    
+    ;Default ring config.
+    ;Only really suitable for dialogue.
     IMMED $6
     IMMED $7D
+    
     VWFCONFIG
     
     RET
