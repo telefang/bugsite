@@ -9,7 +9,7 @@ bfont_grammar = Grammar(
     line = (width eol) / eol
     width = "width " string ", " decimal
     
-    string = ~"[\'\\"][^\'\\"]*[\'\\"]"i _
+    string = (~"[\\\"][^\\\"]*[\\\"]"i _) / (~"[\\'][^\\']*[\\']"i _)
     decimal = ~"[0-9]+" _
 
     #This production exists entirely to ensure other productions don't try to
@@ -33,9 +33,9 @@ class FontWidthVisitor(NodeVisitor):
         return visited_children or node
 
     def visit_string(self, node, children):
-        strdata, _ = children
-
-        return strdata.text[1:-1]
+        strdata, _ = children[0]
+        
+        return strdata.text[1:-1].replace('\\"', '"').replace("\\'", "'")
 
     def visit_decimal(self, node, children):
         decdata, _ = children
