@@ -1,15 +1,15 @@
 INCLUDE "bugsite.inc"
 
-SECTION "WindowManager VWF Advice Memory", WRAMX[$DFC5], BANK[$2]
+SECTION "WindowManager VWF Advice Memory", WRAMX[$DFC2], BANK[$2]
 ;VRAM for variable-width font tiles is stored into a ring buffer.
 ;Each print operation draws tiles into the buffer, overwriting previous tiles
 ;if ring space is exhausted. This is a good strategy for dialogue windows, but
 ;text heavy windows may instead want to switch between multiple rings for
 ;different purposes. All rings are specified as background tile indicies in
 ;VRAM bank zero.
-W_WindowManager_VWFRingStart: ds 1 ;tiles from $8800
-W_WindowManager_VWFRingEnd: ds 1
-W_WindowManager_VWFRingWriteHead: ds 1
+W_WindowManager_VWFRingStart: ds 2 ;tiles from $8800
+W_WindowManager_VWFRingEnd: ds 2
+W_WindowManager_VWFRingWriteHead: ds 2
 W_WindowManager_CompositionState: ds 1
 W_WindowManager_CompositionShift: ds 1
 W_WindowManager_CompositionFont: ds 2
@@ -78,7 +78,7 @@ WindowManager_ADVICE_FlushCompositionArea::
 .doVmemcpy
     ld [W_WindowManager_CompositionState], a
     
-    ld a, 0
+    ld a, [W_WindowManager_VWFRingWriteHead + 1]
     ld [REG_VBK], a
     
     ld bc, $10
@@ -509,6 +509,9 @@ WindowManager_ADVICE_PrintChara::
     jp nz, .useVwf
     
 .useTiletext
+    ld a, [W_LCDC_SetAttrVal]
+    and $F7
+    ld [W_LCDC_SetAttrVal], a
     call LCDC_PokeTilemap
     
     ld a, [W_LCDC_PokeTileX]
@@ -521,7 +524,20 @@ WindowManager_ADVICE_PrintChara::
     ld a, [W_WindowManager_VWFRingWriteHead]
     add $80
     ld [H_LCDC_SetTileVal], a
+    
+    push bc
+    
+    ld a, [W_WindowManager_VWFRingWriteHead + 1]
+    rra
+    rra
+    rra
+    ld b, a
+    ld a, [W_LCDC_SetAttrVal]
+    or b
+    ld [W_LCDC_SetAttrVal], a
     call LCDC_PokeTilemap
+    
+    pop bc
     
     dec bc
     ld a, [bc] ;this better not be banked...
@@ -549,7 +565,20 @@ WindowManager_ADVICE_PrintChara::
     ld a, [W_WindowManager_VWFRingWriteHead]
     add $80
     ld [H_LCDC_SetTileVal], a
+    
+    push bc
+    
+    ld a, [W_WindowManager_VWFRingWriteHead + 1]
+    rra
+    rra
+    rra
+    ld b, a
+    ld a, [W_LCDC_SetAttrVal]
+    or b
+    ld [W_LCDC_SetAttrVal], a
     call LCDC_PokeTilemap
+    
+    pop bc
     
 .noNewVwfTile
     ret
@@ -650,11 +679,16 @@ WindowManager_ADVICE_OpVWFCONFIG::
     call BugVM_PopTypedData
     ld a, c
     ld [W_WindowManager_VWFRingEnd], a
+    ld a, b
+    ld [W_WindowManager_VWFRingEnd + 1], a
     
     call BugVM_PopTypedData
     ld a, c
     ld [W_WindowManager_VWFRingStart], a
     ld [W_WindowManager_VWFRingWriteHead], a
+    ld a, b
+    ld [W_WindowManager_VWFRingStart + 1], a
+    ld [W_WindowManager_VWFRingWriteHead + 1], a
     
     ;Configure the background. These 16 bits are repeated to clear tiles.
     call BugVM_PopTypedData
