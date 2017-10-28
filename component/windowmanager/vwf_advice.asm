@@ -1,6 +1,6 @@
 INCLUDE "bugsite.inc"
 
-SECTION "WindowManager VWF Advice Memory", WRAMX[$DFC6], BANK[$2]
+SECTION "WindowManager VWF Advice Memory", WRAMX[$DFC5], BANK[$2]
 ;VRAM for variable-width font tiles is stored into a ring buffer.
 ;Each print operation draws tiles into the buffer, overwriting previous tiles
 ;if ring space is exhausted. This is a good strategy for dialogue windows, but
@@ -13,29 +13,12 @@ W_WindowManager_VWFRingWriteHead: ds 1
 W_WindowManager_CompositionState: ds 1
 W_WindowManager_CompositionShift: ds 1
 W_WindowManager_CompositionFont: ds 2
+W_WindowManager_CompositionMetrics: ds 2
 W_WindowManager_CompositionBackground: ds 2
 W_WindowManager_CompositionArea: ds $20 ;two tiles, identical to VRAM
 
 SECTION "WindowManager VWF Advice", ROMX[$6200], BANK[$3]
-WindowManager_ADVICE_NormalFontWidths::
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $0x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $1x
-    db 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $2x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $3x
-    db 8, 6, 6, 6, 6, 5, 5, 6, 5, 4, 4, 5, 4, 6, 5, 6 ; $4x
-    db 6, 7, 6, 5, 4, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8 ; $5x
-    db 8, 6, 5, 5, 6, 5, 4, 5, 5, 8, 8, 8, 3, 6, 5, 5 ; $6x
-    db 5, 5, 5, 5, 4, 6, 6, 6, 6, 5, 5, 8, 5, 8, 8, 8 ; $7x
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $8x
-    db 3, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $9x
-    db 2, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Ax
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Bx
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Cx
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Dx
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Ex
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Fx
-    db 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ; $Fx
-    
+
 ;Flush composition area into the VWF ring.
 WindowManager_ADVICE_FlushCompositionArea::
     push hl
@@ -484,7 +467,36 @@ WindowManager_ADVICE_NewlineSegment::
     pop bc
     pop af
     ret
+
+;Get the width of a particular character.
+;ARGUMENTS:
+; A = Encoded character to get the width of.
+;RETURNS:
+; A = Pixel width of character.
+WindowManager_ADVICE_GetMetricsWidth::
+    push de
+    push bc
+    push af
     
+    ld a, [W_WindowManager_CompositionMetrics]
+    ld c, a
+    ld a, [W_WindowManager_CompositionMetrics + 1]
+    ld b, a
+    
+    pop af
+    
+    ld d, 0
+    ld e, a
+    call PatchSupport_ReadBugFSFile
+    
+    ;TODO: We need only one byte of data but ReadBugFSFile returns 16.
+    ;Can we add a length limit?
+    ld a, [W_PatchUtils_FileBuffer]
+    
+    pop bc
+    pop de
+    
+    ret
     
 ;ADVICE code for PrintText, called when printing a normal character.
 WindowManager_ADVICE_PrintChara::
@@ -516,15 +528,8 @@ WindowManager_ADVICE_PrintChara::
     call WindowManager_ADVICE_ComposeCharacter
     call WindowManager_ADVICE_FlushCompositionArea
     
-    push bc
-    
     ld a, [bc]
-    ld b, WindowManager_ADVICE_NormalFontWidths >> 8
-    ld c, a
-    ld a, [bc]
-    
-    pop bc
-    
+    call WindowManager_ADVICE_GetMetricsWidth
     inc bc
     
     call WindowManager_ADVICE_IncrementRingByPixels
@@ -666,6 +671,13 @@ WindowManager_ADVICE_OpVWFCONFIG::
     ld a, b
     ld [hli], a
     ENDR
+    
+    ;Set the font metrics file ID
+    call BugVM_PopTypedData
+    ld a, c
+    ld [W_WindowManager_CompositionMetrics], a
+    ld a, b
+    ld [W_WindowManager_CompositionMetrics + 1], a
     
     ;Set the font from datastack args.
     call BugVM_PopTypedData

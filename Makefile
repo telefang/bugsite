@@ -131,7 +131,12 @@ $(BUILD_DIR)/%.1bpp: %.png
 $(BUILD_DIR)/%.bof: %.bvm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings_npc.csv --deffile script/bugvm_strings_story.csv --deffile script/bugvm_strings_system.csv --autobalance --opcode_tbl utilities/opcodes_bugsite_patch.json --language English script/charmap.txt $@
+	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings_npc.csv --deffile script/bugvm_strings_story.csv --deffile script/bugvm_strings_system.csv --autobalance --metrics component/mainscript/themes/normal/metrics.bfont --opcode_tbl utilities/opcodes_bugsite_patch.json --language English script/charmap.txt $@
+
+$(BUILD_DIR)/%.metrics: %.bfont
+	@echo "Compiling font metrics from " $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/bfontmetrics.py $< script/charmap.txt $@
 
 $(BUILD_DIR)/%.palette.bin: %.bpal
 	@echo "Assembling" $<
