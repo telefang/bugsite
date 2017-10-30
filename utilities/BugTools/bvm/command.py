@@ -1,6 +1,6 @@
 from BugTools.bvm.instructions import opcodes
 from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
-from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream
+from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream, inflate_psuedoinstructions
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
 
 from BugTools.bfont.parser import bfont_grammar, FontWidthVisitor
@@ -53,6 +53,8 @@ def bvmasm():
         tree = bvm_grammar.parse(src + "\n") #Add a newline. Our grammar doesn't like files without ending newlines.
         
         mp = InstrListVisitor().visit(tree)
+        
+        mp = inflate_psuedoinstructions(mp)
         
         mp, ke = resolve_equates(mp, ke)
         

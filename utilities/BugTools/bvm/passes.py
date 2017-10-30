@@ -286,6 +286,31 @@ def autobalance_strings(parselist, known_equates, string_enc, string_wid):
     
     return (out_parselist, known_equates)
 
+def inflate_psuedoinstructions(parselist):
+    """Turn psuedoinstructions into actual BugVM instructions.
+    
+    This allows the programmer to write an instruction like "INDIR $132" and
+    have the assembler expand it into an IMMED followed by an INDIR. The values
+    of supported psuedoinstructions are pushed to the datastack as IMMEDs before
+    the given instruction that consumes them."""
+    
+    new_parselist = []
+    
+    for instr in parselist:
+        if type(instr) is not Instruction:
+            new_parselist.append(instr)
+            continue
+        
+        if instr.opcode in ["INDIR", "PRED", "FARCALL", "FARJMP"]:
+            for operand in instr.operands:
+                new_parselist.append(Instruction("IMMED", [operand], ""))
+            
+            new_parselist.append(Instruction(instr.opcode, [], instr.prefix))
+        else:
+            new_parselist.append(copy.deepcopy(instr))
+    
+    return new_parselist
+
 def optimize_stream(parselist):
     """Given a list of .bvm commands, remove extraneous instructions.
     
