@@ -1,6 +1,7 @@
 from BugTools.bvm.instructions import opcodes
 from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
 from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream, inflate_psuedoinstructions
+from BugTools.bvm.formatting import unparse_bvm
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
 
 from BugTools.bfont.parser import bfont_grammar, FontWidthVisitor
@@ -69,3 +70,23 @@ def bvmasm():
 
         with open(args.output, 'wb') as outfile:
             outfile.write(bvmdata.bytes)
+
+def bvmfmt():
+    parser = argparse.ArgumentParser(description='Reformats BVM source code to current formatting standards.')
+    
+    parser.add_argument('infile', metavar='file.bvm', type=str, help='The file to reformat.')
+    parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping.')
+    
+    args = parser.parse_args()
+    
+    with open(args.charmap, encoding="utf-8") as mapfile:
+        strenc, strdec = parse_charmap(mapfile)
+    
+    with open(args.infile, encoding="utf-8") as srcfile:
+        src = srcfile.read()
+        tree = bvm_grammar.parse(src + "\n") #Add a newline. Our grammar doesn't like files without ending newlines.
+        
+        mp = InstrListVisitor().visit(tree)
+    
+    with open(args.infile, 'w', encoding="utf-8") as outfile:
+        outfile.write(unparse_bvm(mp, strdec))
