@@ -1,4 +1,4 @@
-from BugTools.bvm.parser import Equate, SymbolicRef, Label, Instruction
+from BugTools.bvm.parser import Equate, SymbolicRef, Label, Instruction, Comment
 from BugTools.exceptions import InvalidOperandError
 
 def unparse_bvm(parselist, strdec = None):
@@ -16,6 +16,8 @@ def unparse_bvm(parselist, strdec = None):
     
     source = []
     
+    last_line_tabbed = False
+
     for instr in parselist:
         if type(instr) is Equate:
             if instr.symbol.is_local:
@@ -37,7 +39,13 @@ def unparse_bvm(parselist, strdec = None):
             else:
                 raise SyntaxError()
             
+            if instr.comment is not None:
+                source.append(" ;")
+                source.append(instr.comment.comment_text)
+
             source.append("\n")
+
+            last_line_tabbed = False
         elif type(instr) is Label:
             source.append("\n")
             
@@ -48,7 +56,13 @@ def unparse_bvm(parselist, strdec = None):
             elif not instr.symbol.is_local:
                 source.append(":")
             
+            if instr.comment is not None:
+                source.append(" ;")
+                source.append(instr.comment.comment_text)
+
             source.append("\n")
+
+            last_line_tabbed = False
         elif type(instr) is Instruction:
             #We follow PEP303 in our assembly, treating each instruction as
             #"nested" inside a "block" formed by the assembler label.
@@ -75,6 +89,20 @@ def unparse_bvm(parselist, strdec = None):
                     raise SyntaxError()
             
             source.append(", ".join(operand_str))
+
+            if instr.comment is not None:
+                source.append(" ;")
+                source.append(instr.comment.comment_text)
+
             source.append("\n")
-    
+
+            last_line_tabbed = True
+        elif type(instr) is Comment:
+            #Bare comments are printed on the same level as their contents.
+            if last_line_tabbed:
+                source.append("    ")
+
+            source.append(";")
+            source.append(instr.comment_text)
+            source.append("\n")
     return "".join(source)
