@@ -439,6 +439,7 @@ def encode_instruction_stream(parselist, known_equates = None, string_enc = None
                             raise InvalidOperandError(command)
 
                     encoded_stream.append(bytes([0]))
+                    encoded_offset += 1
                 else:
                     #No other commands accept operands.
                     if len(resolved_operands) != 0:
