@@ -53,7 +53,7 @@ $(foreach obj, $(OBJS_BETA), \
 )
 
 $(foreach obj, $(OBJS_DIR_ALL), \
-	$(eval $(obj:.bugfs.o=)_dep := $(addprefix ${BUILD_DIR}/,$(shell $(PYTHON) utilities/bfsdeps.py $(obj:.bugfs.o=.bfs)))) \
+	$(eval $(obj:.bugfs.o=)_dep := $(shell $(PYTHON) utilities/bfsdeps.py $(obj:.bugfs.o=.bfs) --basedir=$(BUILD_DIR) --basedir=.)) \
 )
 
 # Link objects together to build a rom.
@@ -74,7 +74,7 @@ $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
 $(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
 	@echo "Building BugFS filesystem" $<
 	@mkdir -p $(dir $@)
-	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR)
+	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR) --basedir=.
 
 $(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_EXTRA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_ALPHA:.gbc=.sym) -m $(ROMS_ALPHA:.gbc=.map) -O $(BASEROM_ALPHA) -o $@ $^
@@ -129,8 +129,3 @@ $(BUILD_DIR)/%.atbl.o: %.csv
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/montable_compile.py $< script/charmap.txt $@
-
-$(BUILD_DIR)/%.bin: %.bin
-	@echo "Copying" $<
-	@mkdir -p $(dir $@)
-	@cp $< $@
