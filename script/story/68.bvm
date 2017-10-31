@@ -1,56 +1,48 @@
     JAL .sub_68_4 ;$4
-    RET
+    RET 
 
 .sub_68_4
-    IMMED $422
-    INDIR
-    IMMED $28a0
-    CMP_NEQ
+    INDIR $422
+    IMMED $28A0
+    CMP_NEQ 
     JMPT .sub_68_14 ;$14
     JAL .sub_68_15 ;$15
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_68_14
-    RET
+    RET 
 
 .sub_68_15
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $3
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $125
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $402
-    INDIR
-    IMMED $402
-    INDIR
-    IMMED $ff
-    AND
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $125
+    POPALL 
+    POPALL 
+    INDIR $402
+    INDIR $402
+    IMMED $FF
+    AND 
     IMMED $2
     IMMED $100
-    MUL
-    ADD
-    STR
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
+    MUL 
+    ADD 
+    STR 
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $3
-    STR
-    POPALL
-    ARFREE
-    IMMED $124
-    NPREF FARCALL
-    POPALL
-    POPALL
-    RET
-    FGAME
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $124
+    POPALL 
+    POPALL 
+    RET 
+    FGAME 

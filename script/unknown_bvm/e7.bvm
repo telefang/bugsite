@@ -1,57 +1,46 @@
     JAL .sub_e7_4 ;$4
-    RET
+    RET 
 
 .sub_e7_4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $8
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_e7_16
-    IMMED $173
-    INDIR
-    IMMED $49c
-    INDIR
-    CMP_GEQ
+    INDIR $173
+    INDIR $49C
+    CMP_GEQ 
     JMPT .sub_e7_57 ;$57
-    IMMED $3a98
-    IMMED $173
-    INDIR
-    ADD
-    PRED
+    IMMED $3A98
+    INDIR $173
+    ADD 
+    PRED 
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_e7_46 ;$46
-    IMMED $172
-    INDIR
-    IMMED $173
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
-    IMMED $49c
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $173
+    STR 
+    POPALL 
+    INDIR $173
+    INDIR $49C
+    STR 
+    POPALL 
 
 .sub_e7_46
-    IMMED $173
-    INDIR
-    IMMED $173
-    INDIR
+    INDIR $173
+    INDIR $173
     IMMED $1
-    ADD
-    STR
-    POPALL
+    ADD 
+    STR 
+    POPALL 
     JMP .sub_e7_16 ;$16
 
 .sub_e7_57
-    RET
-    FGAME
+    RET 
+    FGAME 

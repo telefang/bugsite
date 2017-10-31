@@ -1,273 +1,218 @@
     JAL .sub_120_4 ;$4
-    RET
+    RET 
 
 .sub_120_4
-    IMMED $38b
-    INDIR
-    IMMED $397
-    INDIR
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $388
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    INDIR $38B
+    INDIR $397
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $388
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $123
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $123
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $10
     IMMED $8000
-    OR
+    OR 
     IMMED $4000
-    OR
+    OR 
     IMMED $2000
-    OR
+    OR 
     IMMED $1000
-    OR
+    OR 
     IMMED $800
-    OR
+    OR 
     IMMED $400
-    OR
+    OR 
     IMMED $200
-    OR
+    OR 
     IMMED $100
-    OR
-    IMMED $ffff
-    XOR
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $3ee
-    INDIR
-    IMMED $172
-    INDIR
-    IMMED $3ee
-    INDIR
-    AND
-    STR
-    IMMED $172
-    INDIR
-    STR
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $388
-    INDIR
-    STR
-    POPALL
-    ARFREE
-    IMMED $122
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $389
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    OR 
+    IMMED $FFFF
+    XOR 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $3EE
+    INDIR W_MainScript_PortraitID
+    INDIR $3EE
+    AND 
+    STR 
+    INDIR W_MainScript_PortraitID
+    STR 
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $388
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $122
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $389
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $125
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $125
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $10
     IMMED $8000
-    OR
+    OR 
     IMMED $4000
-    OR
+    OR 
     IMMED $2000
-    OR
+    OR 
     IMMED $1000
-    OR
+    OR 
     IMMED $800
-    OR
+    OR 
     IMMED $400
-    OR
+    OR 
     IMMED $200
-    OR
+    OR 
     IMMED $100
-    OR
-    IMMED $ffff
-    XOR
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $40e
-    INDIR
-    IMMED $172
-    INDIR
-    IMMED $40e
-    INDIR
-    AND
-    STR
-    IMMED $172
-    INDIR
-    STR
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $389
-    INDIR
-    STR
-    POPALL
-    ARFREE
-    IMMED $124
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
-    NPREF UO $f2
-    POPALL
-    IMMED $390
-    INDIR
+    OR 
+    IMMED $FFFF
+    XOR 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $40E
+    INDIR W_MainScript_PortraitID
+    INDIR $40E
+    AND 
+    STR 
+    INDIR W_MainScript_PortraitID
+    STR 
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $389
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $124
+    POPALL 
+    POPALL 
+    ARFREE 
+    NPREF UO $F2
+    POPALL 
+    INDIR $390
     IMMED $1
-    STR
-    POPALL
-    IMMED $1e
-    PRED
+    STR 
+    POPALL 
+    PRED $1E
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_120_117 ;$117
-    ARFREE
-    IMMED $119
-    NPREF FARCALL
-    POPALL
-    POPALL
+    ARFREE 
+    NPREF FARCALL $119
+    POPALL 
+    POPALL 
     JMP .sub_120_1c7 ;$1c7
 
 .sub_120_117
-    IMMED $388
-    INDIR
+    INDIR $388
     IMMED $3
-    CMP_GT
+    CMP_GT 
     JMPT .sub_120_181 ;$181
-    ARFREE
-    IMMED $119
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
-    IMMED $108
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $492
-    INDIR
-    IMMED $492
-    INDIR
+    ARFREE 
+    NPREF FARCALL $119
+    POPALL 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $108
+    POPALL 
+    POPALL 
+    INDIR $492
+    INDIR $492
     IMMED $64
-    ADD
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $388
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    ADD 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $388
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $123
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $389
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $123
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $389
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $125
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
-    IMMED $c6
-    NPREF FARCALL
-    POPALL
-    POPALL
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $125
+    POPALL 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $C6
+    POPALL 
+    POPALL 
     JMP .sub_120_1c3 ;$1c3
 
 .sub_120_181
-    ARFREE
-    IMMED $109
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $492
-    INDIR
-    IMMED $492
-    INDIR
+    ARFREE 
+    NPREF FARCALL $109
+    POPALL 
+    POPALL 
+    INDIR $492
+    INDIR $492
     IMMED $64
-    ADD
-    STR
-    POPALL
-    ARFREE
-    IMMED $c7
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $388
-    INDIR
-    STR
-    POPALL
-    ARFREE
-    IMMED $122
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $389
-    INDIR
-    STR
-    POPALL
-    ARFREE
-    IMMED $124
-    NPREF FARCALL
-    POPALL
-    POPALL
+    ADD 
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $C7
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $388
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $122
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $389
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $124
+    POPALL 
+    POPALL 
 
 .sub_120_1c3
-    ARFREE
-    NPREF WINCLR
-    POPALL
+    ARFREE 
+    NPREF WINCLR 
+    POPALL 
 
 .sub_120_1c7
-    RET
-    FGAME
+    RET 
+    FGAME 

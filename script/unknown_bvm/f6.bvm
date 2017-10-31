@@ -1,90 +1,75 @@
     JAL .sub_f6_4 ;$4
-    RET
+    RET 
 
 .sub_f6_4
-    IMMED $172
-    INDIR
-    IMMED $416
-    INDIR
-    IMMED $ff
-    AND
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $a9
-    CMP_GT
+    INDIR W_MainScript_PortraitID
+    INDIR $416
+    IMMED $FF
+    AND 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    IMMED $A9
+    CMP_GT 
     JMPT .sub_f6_93 ;$93
-    ARFREE
-    IMMED $e6
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $17e
-    INDIR
+    ARFREE 
+    NPREF FARCALL $E6
+    POPALL 
+    POPALL 
+    INDIR $17E
     IMMED $1
-    STR
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_f6_4a ;$4a
-    ARFREE
-    IMMED $e7
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $17e
-    INDIR
+    ARFREE 
+    NPREF FARCALL $E7
+    POPALL 
+    POPALL 
+    INDIR $17E
     IMMED $2
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_f6_4a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_EQ
+    CMP_EQ 
     JMPT .sub_f6_8a ;$8a
-    ARFREE
-    IMMED $e8
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $416
-    INDIR
-    IMMED $ff
-    AND
-    STR
-    POPALL
-    IMMED $3cf0
-    IMMED $172
-    INDIR
-    ADD
-    PRED
+    ARFREE 
+    NPREF FARCALL $E8
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $416
+    IMMED $FF
+    AND 
+    STR 
+    POPALL 
+    IMMED $3CF0
+    INDIR W_MainScript_PortraitID
+    ADD 
+    PRED 
     IMMED $1
-    STR
-    POPALL
-    IMMED $3c28
-    IMMED $172
-    INDIR
-    ADD
-    PRED
+    STR 
+    POPALL 
+    IMMED $3C28
+    INDIR W_MainScript_PortraitID
+    ADD 
+    PRED 
     IMMED $1
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_f6_93 ;$93
 
 .sub_f6_8a
-    IMMED $17e
-    INDIR
+    INDIR $17E
     IMMED $0
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_f6_93
-    RET
-    FGAME
+    RET 
+    FGAME 

@@ -1,53 +1,48 @@
     JAL MainScript_LoadPortrait ;$4
-    RET
+    RET 
 
 MainScript_LoadPortrait:
-    ARFREE
-    IMMED $e4
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
-    IMMED W_MainScript_PortraitID
-    INDIR
+    ARFREE 
+    NPREF FARCALL $E4
+    POPALL 
+    POPALL 
+    ARFREE 
+    INDIR W_MainScript_PortraitID
     IMMED $974
-    ADD
-    ENOP $2d
+    ADD 
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $10
-    ENOP $2d
+    ENOP $2D
     IMMED $9700
-    ENOP $2d
+    ENOP $2D
     IMMED $1
-    NPREF RESLD
-    POPALL
-    ARFREE
-    IMMED W_MainScript_PortraitID
-    INDIR
-    IMMED $9d8
-    ADD
-    ENOP $2d
+    NPREF RESLD 
+    POPALL 
+    ARFREE 
+    INDIR W_MainScript_PortraitID
+    IMMED $9D8
+    ADD 
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $5
-    NPREF PALLD
-    POPALL
-    ARFREE
+    NPREF PALLD 
+    POPALL 
+    ARFREE 
     IMMED $973
-    ENOP $2d
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    ENOP $2d
-    IMMED W_MainScript_WindowYPos
-    INDIR
-    ENOP $2d
+    ENOP $2D
+    INDIR W_MainScript_WindowXPos
+    ENOP $2D
+    INDIR W_MainScript_WindowYPos
+    ENOP $2D
     IMMED $70
-    ENOP $2d
-    IMMED $8d
-    NPREF TILELD
-    POPALL
-    RET
-    FGAME
+    ENOP $2D
+    IMMED $8D
+    NPREF TILELD 
+    POPALL 
+    RET 
+    FGAME 

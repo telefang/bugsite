@@ -1,183 +1,149 @@
     JAL MainScript_OpenConvWindow ;$4
-    RET
+    RET 
 
 MainScript_OpenConvWindow:
-    IMMED $173
-    INDIR
-    IMMED $180
-    INDIR
-    IMMED $ff00
-    AND
+    INDIR $173
+    INDIR $180
+    IMMED $FF00
+    AND 
     IMMED $100
-    DIV
-    STR
-    POPALL
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    IMMED $181
-    INDIR
-    IMMED $ff
-    AND
+    DIV 
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowXPos
+    INDIR $181
+    IMMED $FF
+    AND 
     IMMED $100
-    MUL
-    STR
-    POPALL
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    IMMED $173
-    INDIR
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    ADD
-    STR
-    POPALL
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    IMMED W_MainScript_WindowXPos
-    INDIR
+    MUL 
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowXPos
+    INDIR $173
+    INDIR W_MainScript_WindowXPos
+    ADD 
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowXPos
+    INDIR W_MainScript_WindowXPos
     IMMED $8
-    DIV
-    STR
-    POPALL
-    IMMED $173
-    INDIR
-    ARFREE
-    NPREF UO $f3
-    STR
-    POPALL
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    IMMED $173
-    INDIR
-    SUB
-    STR
-    POPALL
-    IMMED W_MainScript_WindowXPos
-    INDIR
-    IMMED $a
-    CMP_LEQ
+    DIV 
+    STR 
+    POPALL 
+    INDIR $173
+    ARFREE 
+    NPREF UO $F3
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowXPos
+    INDIR W_MainScript_WindowXPos
+    INDIR $173
+    SUB 
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowXPos
+    IMMED $A
+    CMP_LEQ 
     JMPT .windowOnBottom ;$74
-    IMMED W_MainScript_WindowYPos
-    INDIR
+    INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .drawWindow ;$7d
 
 .windowOnBottom
-    IMMED W_MainScript_WindowYPos
-    INDIR
-    IMMED $c
-    STR
-    POPALL
+    INDIR W_MainScript_WindowYPos
+    IMMED $C
+    STR 
+    POPALL 
 
 .drawWindow
-    ARFREE
-    NPREF TMAPSAV
-    POPALL
-    IMMED W_LCDC_SetAttrVal
-    INDIR
-    IMMED W_LCDC_SetAttrVal
-    INDIR
+    ARFREE 
+    NPREF TMAPSAV 
+    POPALL 
+    INDIR W_LCDC_SetAttrVal
+    INDIR W_LCDC_SetAttrVal
     IMMED $80
-    OR
-    STR
-    POPALL
-    ARFREE
+    OR 
+    STR 
+    POPALL 
+    ARFREE 
     IMMED $0
-    ENOP $2d
-    IMMED W_MainScript_WindowYPos
-    INDIR
-    ENOP $2d
+    ENOP $2D
+    INDIR W_MainScript_WindowYPos
+    ENOP $2D
     IMMED $13
-    ENOP $2d
-    IMMED W_MainScript_WindowYPos
-    INDIR
+    ENOP $2D
+    INDIR W_MainScript_WindowYPos
     IMMED $5
-    ADD
-    NPREF WINCOORD
-    POPALL
-    ARFREE
-    NPREF WINFRAME
-    POPALL
-    IMMED W_MainScript_PortraitID
-    INDIR
+    ADD 
+    NPREF WINCOORD 
+    POPALL 
+    ARFREE 
+    NPREF WINFRAME 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .portraitAlreadySet ;$c1
-    IMMED W_MainScript_PortraitID
-    INDIR
-    IMMED $459
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $459
+    STR 
+    POPALL 
 
 .portraitAlreadySet
-    IMMED W_MainScript_PortraitID
-    INDIR
-    IMMED $ffff
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $FFFF
+    CMP_NEQ 
     JMPT .drawWindowPortrait ;$cf
     JMP .animateWindowOpen ;$129
 
 .drawWindowPortrait
-    IMMED W_MainScript_PortraitID
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_LEQ
-    IMMED W_MainScript_PortraitID
-    INDIR
+    CMP_LEQ 
+    INDIR W_MainScript_PortraitID
     IMMED $61
-    CMP_GT
-    ANDL
+    CMP_GT 
+    ANDL 
     JMPT .animateWindowOpen ;$129
-    IMMED $459
-    INDIR
-    IMMED W_MainScript_PortraitID
-    INDIR
-    STR
-    POPALL
-    ARFREE
+    INDIR $459
+    INDIR W_MainScript_PortraitID
+    STR 
+    POPALL 
+    ARFREE 
     IMMED $5
-    ENOP $2d
-    IMMED W_MainScript_WindowYPos
-    INDIR
-    ENOP $2d
+    ENOP $2D
+    INDIR W_MainScript_WindowYPos
+    ENOP $2D
     IMMED $13
-    ENOP $2d
-    IMMED W_MainScript_WindowYPos
-    INDIR
+    ENOP $2D
+    INDIR W_MainScript_WindowYPos
     IMMED $5
-    ADD
-    NPREF WINCOORD
-    POPALL
-    IMMED W_MainScript_WindowXPos
-    INDIR
+    ADD 
+    NPREF WINCOORD 
+    POPALL 
+    INDIR W_MainScript_WindowXPos
     IMMED $1
-    STR
-    POPALL
-    IMMED W_MainScript_WindowYPos
-    INDIR
-    IMMED W_MainScript_WindowYPos
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
+    INDIR W_MainScript_WindowYPos
     IMMED $1
-    ADD
-    STR
-    POPALL
-    ARFREE
-    IMMED $d6
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
-    NPREF UO $7b
-    POPALL
+    ADD 
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D6
+    POPALL 
+    POPALL 
+    ARFREE 
+    NPREF UO $7B
+    POPALL 
 
 .animateWindowOpen
-    ARFREE
-    NPREF WINOPEN
-    POPALL
-    RET
-    FGAME
+    ARFREE 
+    NPREF WINOPEN 
+    POPALL 
+    RET 
+    FGAME 

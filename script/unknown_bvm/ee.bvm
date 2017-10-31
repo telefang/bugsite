@@ -1,30 +1,27 @@
     JAL .sub_ee_4 ;$4
-    RET
+    RET 
 
 .sub_ee_4
-    ARFREE
+    ARFREE 
     IMMED $0
-    ENOP $2d
-    IMMED $470
-    INDIR
-    ENOP $2d
-    IMMED $471
-    INDIR
+    ENOP $2D
+    INDIR $470
+    ENOP $2D
+    INDIR $471
     NPREF UO $63
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $3
-    NPREF UO $8c
-    POPALL
-    ARFREE
-    NPREF UO $5e
-    POPALL
-    ARFREE
-    IMMED $46f
-    INDIR
-    NPREF FARJMP
-    POPALL
-    RET
-    FGAME
+    NPREF UO $8C
+    POPALL 
+    ARFREE 
+    NPREF UO $5E
+    POPALL 
+    ARFREE 
+    INDIR $46F
+    NPREF FARJMP 
+    POPALL 
+    RET 
+    FGAME 

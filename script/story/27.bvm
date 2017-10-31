@@ -1,115 +1,102 @@
     JAL .sub_27_4 ;$4
-    RET
+    RET 
 
 .sub_27_4
-    IMMED $422
-    INDIR
-    IMMED $f3c
-    CMP_NEQ
+    INDIR $422
+    IMMED $F3C
+    CMP_NEQ 
     JMPT .sub_27_17 ;$17
     JAL .sub_27_28 ;$28
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_27_27 ;$27
 
 .sub_27_17
-    IMMED $422
-    INDIR
-    IMMED $f46
-    CMP_NEQ
+    INDIR $422
+    IMMED $F46
+    CMP_NEQ 
     JMPT .sub_27_27 ;$27
     JAL .sub_27_29 ;$29
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_27_27
-    RET
+    RET 
 
 .sub_27_28
-    RET
+    RET 
 
 .sub_27_29
-    ARFREE
+    ARFREE 
     IMMED $5
-    ENOP $2d
+    ENOP $2D
     IMMED $20
     NPREF UO $69
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     IMMED $5
-    ENOP $2d
+    ENOP $2D
     IMMED $20
     NPREF UO $69
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $a
-    STR
-    POPALL
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    IMMED $A
+    STR 
+    POPALL 
 
 .sub_27_48
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_LEQ
+    CMP_LEQ 
     JMPT .sub_27_b4 ;$b4
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $14
-    IMMED $172
-    INDIR
-    DIV
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    DIV 
+    STR 
+    POPALL 
 
 .sub_27_61
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $0
-    CMP_EQ
+    CMP_EQ 
     JMPT .sub_27_a3 ;$a3
-    ARFREE
+    ARFREE 
     IMMED $5
-    ENOP $2d
+    ENOP $2D
     IMMED $1
-    NPREF UO $8f
-    POPALL
-    ARFREE
-    IMMED $172
-    INDIR
-    NPREF UO $5c
-    POPALL
-    ARFREE
+    NPREF UO $8F
+    POPALL 
+    ARFREE 
+    INDIR W_MainScript_PortraitID
+    NPREF UO $5C
+    POPALL 
+    ARFREE 
     IMMED $5
-    ENOP $2d
+    ENOP $2D
     IMMED $0
-    NPREF UO $8f
-    POPALL
-    ARFREE
-    IMMED $172
-    INDIR
-    NPREF UO $5c
-    POPALL
-    IMMED $173
-    INDIR
-    IMMED $173
-    INDIR
+    NPREF UO $8F
+    POPALL 
+    ARFREE 
+    INDIR W_MainScript_PortraitID
+    NPREF UO $5C
+    POPALL 
+    INDIR $173
+    INDIR $173
     IMMED $1
-    SUB
-    STR
-    POPALL
+    SUB 
+    STR 
+    POPALL 
     JMP .sub_27_61 ;$61
 
 .sub_27_a3
-    IMMED $172
-    INDIR
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
+    INDIR W_MainScript_PortraitID
     IMMED $2
-    SUB
-    STR
-    POPALL
+    SUB 
+    STR 
+    POPALL 
     JMP .sub_27_48 ;$48
 
 .sub_27_b4
-    POPALL
-    RET
-    FGAME
+    POPALL 
+    RET 
+    FGAME 

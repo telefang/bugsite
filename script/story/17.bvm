@@ -1,93 +1,85 @@
     JAL .sub_17_4 ;$4
-    RET
+    RET 
 
 .sub_17_4
-    IMMED $422
-    INDIR
-    IMMED $8fc
-    CMP_NEQ
+    INDIR $422
+    IMMED $8FC
+    CMP_NEQ 
     JMPT .sub_17_17 ;$17
     JAL .sub_17_74 ;$74
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_17_73 ;$73
 
 .sub_17_17
-    IMMED $422
-    INDIR
-    IMMED $92e
-    CMP_NEQ
+    INDIR $422
+    IMMED $92E
+    CMP_NEQ 
     JMPT .sub_17_2a ;$2a
     JAL .sub_17_75 ;$75
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_17_73 ;$73
 
 .sub_17_2a
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $938
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_17_3d ;$3d
     JAL .sub_17_76 ;$76
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_17_73 ;$73
 
 .sub_17_3d
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $942
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_17_50 ;$50
     JAL .sub_17_77 ;$77
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_17_73 ;$73
 
 .sub_17_50
-    IMMED $422
-    INDIR
-    IMMED $94c
-    CMP_NEQ
+    INDIR $422
+    IMMED $94C
+    CMP_NEQ 
     JMPT .sub_17_63 ;$63
     JAL .sub_17_78 ;$78
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_17_73 ;$73
 
 .sub_17_63
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $956
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_17_73 ;$73
     JAL .sub_17_79 ;$79
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_17_73
-    RET
+    RET 
 
 .sub_17_74
-    RET
+    RET 
 
 .sub_17_75
-    RET
+    RET 
 
 .sub_17_76
-    RET
+    RET 
 
 .sub_17_77
-    RET
+    RET 
 
 .sub_17_78
-    RET
+    RET 
 
 .sub_17_79
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $3976
-    STR
-    POPALL
-    ARFREE
-    IMMED $95
-    NPREF FARCALL
-    POPALL
-    POPALL
-    RET
-    FGAME
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $95
+    POPALL 
+    POPALL 
+    RET 
+    FGAME 
