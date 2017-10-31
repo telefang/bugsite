@@ -5,7 +5,7 @@
 .SECONDEXPANSION:
 
 BASE_DIR := baseroms
-BUILD_DIR := build
+BUILD_DIR := build_patch
 
 ROMS_ALPHA := ${BUILD_DIR}/bugsite_alpha_en.gbc
 BASEROM_ALPHA := ${BASE_DIR}/baserom_alpha.gbc
