@@ -1,99 +1,87 @@
     JAL .sub_1f_4 ;$4
-    RET
+    RET 
 
 .sub_1f_4
-    IMMED $422
-    INDIR
-    IMMED $c1c
-    CMP_NEQ
+    INDIR $422
+    IMMED $C1C
+    CMP_NEQ 
     JMPT .sub_1f_17 ;$17
     JAL .sub_1f_28 ;$28
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_1f_27 ;$27
 
 .sub_1f_17
-    IMMED $422
-    INDIR
-    IMMED $c26
-    CMP_NEQ
+    INDIR $422
+    IMMED $C26
+    CMP_NEQ 
     JMPT .sub_1f_27 ;$27
     JAL .sub_1f_29 ;$29
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_1f_27
-    RET
+    RET 
 
 .sub_1f_28
-    RET
+    RET 
 
 .sub_1f_29
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $6
-    STR
-    POPALL
-    ARFREE
-    IMMED $d5
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D5
+    POPALL 
+    POPALL 
+    ARFREE 
     DB STR_1F_3B
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_1F_44
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_1F_55
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_1F_67
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_1F_74
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_1F_84
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_1F_93
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_1F_A6
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
-    RET
-    FGAME
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
+    RET 
+    FGAME 

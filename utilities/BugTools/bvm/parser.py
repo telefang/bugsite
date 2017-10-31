@@ -6,9 +6,9 @@ from BugTools.util import flatten
 bvm_grammar = Grammar(
     """
     lines = _ line*
-    line = (equate eol) / (instruction eol) / (label? instruction? eol) / eol
-    equate = symbol _ "EQU" _ (literali / symbol)
-    instruction = (opcode operand*) / opcode
+    line = (equate eol) / (instruction eol) / (label? instruction? eol) / (comment eol) / eol
+    equate = symbol _ "EQU" _ (literali / symbol) comment?
+    instruction = (opcode operand* comment?) / (opcode comment?)
     operand = (literali / symbol) list_separator?
     literali = string / hex / decimal #can't be named literal or we can't visit it
 
@@ -19,20 +19,20 @@ bvm_grammar = Grammar(
     string = ~"[\'\\"][^\'\\"]*[\'\\"]"i _
     decimal = ~"[0-9]+" _
     hex = "$" ~"[A-F0-9]+"i _
-    label = symbol ":"? ":"? _
-    symbol = ~".?[a-zA-Z_][a-zA-Z_0-9]*"
+    label = symbol ":"? ":"? comment? _
+    symbol = ~"\.?[a-zA-Z_][a-zA-Z_0-9]*"
     opcode = ("NPREF" whitespace)? ~"[a-zA-Z_]+" whitespace*
     list_separator = "," _
+    comment = _? ~";[^\\r\\n]*"
 
     #This production exists entirely to ensure other productions don't try to
     #merge entire newlines together.
     eol = _? newline _?
     newline = ~"[\\r\\n]"
 
-    #These productions pull whitespace and comments out of the parsetree
+    #These productions pull whitespace out of the parsetree
     _ = meaninglessness*
-    meaninglessness = whitespace / comment
-    comment = ~";[^\\r\\n]*"
+    meaninglessness = whitespace
     whitespace = ~"[ \t]+"
     """);
 
@@ -45,29 +45,39 @@ class SymbolicRef(object):
         return "SymbolicRef(%s, %s)" % (repr(self.name), repr(self.is_local))
 
 class Label(object):
-    def __init__(self, symbol, is_exported):
+    def __init__(self, symbol, is_exported, comment = None):
         self.symbol = symbol
         self.is_exported = is_exported
+        self.comment = comment
 
     def __repr__(self):
-        return "Label(%s, %s)" % (repr(self.symbol), repr(self.is_exported))
+        return "Label(%s, %s, %s)" % (repr(self.symbol), repr(self.is_exported), repr(self.comment))
 
 class Instruction(object):
-    def __init__(self, opcode, operands, prefix):
+    def __init__(self, opcode, operands, prefix, comment = None):
         self.opcode = opcode.upper()
         self.operands = operands
         self.prefix = prefix
+        self.comment = comment
 
     def __repr__(self):
-        return "Instruction(%s, %s, %s)" % (repr(self.opcode), repr(self.operands), repr(self.prefix))
+        return "Instruction(%s, %s, %s, %s)" % (repr(self.opcode), repr(self.operands), repr(self.prefix), repr(self.comment))
 
 class Equate(object):
-    def __init__(self, symbol, value_expr):
+    def __init__(self, symbol, value_expr, comment = None):
         self.symbol = symbol
         self.value_expr = value_expr
+        self.comment = comment
 
     def __repr__(self):
-        return "Equate(%s, %s)" % (repr(self.symbol), repr(self.value_expr))
+        return "Equate(%s, %s, %s)" % (repr(self.symbol), repr(self.value_expr), repr(self.comment))
+
+class Comment(object):
+    def __init__(self, comment_text):
+        self.comment_text = comment_text
+
+    def __repr__(self):
+        return "Comment(%s)" % (repr(self.comment_text))
 
 class InstrListVisitor(NodeVisitor):
     """Converts a parsed .bvm tree into a list of labels and instructions.
@@ -100,7 +110,7 @@ class InstrListVisitor(NodeVisitor):
         return SymbolicRef(node.text, node.text[0] == ".")
 
     def visit_label(self, node, children):
-        symbol, useless_colon, is_exported, _ = children
+        symbol, useless_colon, is_exported, comment, _ = children
 
         try:
             is_exported = is_exported[0]
@@ -109,7 +119,10 @@ class InstrListVisitor(NodeVisitor):
 
         is_exported = is_exported.text == ":"
 
-        return Label(symbol, is_exported)
+        if type(comment) is Node:
+            return Label(symbol, is_exported)
+        else:
+            return Label(symbol, is_exported, comment[0])
 
     def visit_opcode(self, node, children):
         prefix, opcode, _ = children
@@ -129,7 +142,7 @@ class InstrListVisitor(NodeVisitor):
         return value
 
     def visit_instruction(self, node, children):
-        opcode, operands = children[0]
+        opcode, operands, comment = children[0]
 
         try:
             if operands.text == "":
@@ -139,12 +152,21 @@ class InstrListVisitor(NodeVisitor):
         except AttributeError:
             pass
 
-        return Instruction(opcode[1], operands, opcode[0])
+        if type(comment) is Node:
+            return Instruction(opcode[1], operands, opcode[0])
+        else:
+            return Instruction(opcode[1], operands, opcode[0], comment[0])
 
     def visit_equate(self, node, children):
-        symbol, _, equ, _, value_expr = children
+        symbol, _, equ, _, value_expr, comment = children
 
-        return Equate(symbol, value_expr[0])
+        if type(comment) is Node:
+            return Equate(symbol, value_expr[0])
+        else:
+            return Equate(symbol, value_expr[0], comment[0])
+
+    def visit_comment(self, node, children):
+        return Comment("".join(node.text.split(";")[1:]))
 
     def visit_eol(self, node, children):
         return '' #nobody cares about the EOLs

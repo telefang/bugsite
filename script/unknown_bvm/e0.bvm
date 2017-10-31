@@ -1,129 +1,116 @@
     JAL .sub_e0_4 ;$4
-    RET
+    RET 
 
 .sub_e0_4
-    ARFREE
+    ARFREE 
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $13
-    ENOP $2d
+    ENOP $2D
     IMMED $11
-    NPREF UO $6c
-    POPALL
-    IMMED $172
-    INDIR
+    NPREF UO $6C
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $2
-    STR
-    POPALL
-    ARFREE
-    IMMED $101
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $101
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_e0_ce ;$ce
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $cd
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $CD
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $1
-    STR
-    POPALL
-    ARFREE
-    IMMED $101
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $101
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_e0_c7 ;$c7
-    ARFREE
+    ARFREE 
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $0
-    ENOP $2d
-    IMMED $1f
-    ENOP $2d
-    IMMED $1f
-    NPREF UO $6c
-    POPALL
-    ARFREE
-    NPREF TMAPSAV
-    POPALL
-    ARFREE
+    ENOP $2D
+    IMMED $1F
+    ENOP $2D
+    IMMED $1F
+    NPREF UO $6C
+    POPALL 
+    ARFREE 
+    NPREF TMAPSAV 
+    POPALL 
+    ARFREE 
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $0
-    ENOP $2d
-    IMMED $1f
-    ENOP $2d
-    IMMED $1f
-    NPREF UO $6c
-    POPALL
-    ARFREE
+    ENOP $2D
+    IMMED $1F
+    ENOP $2D
+    IMMED $1F
+    NPREF UO $6C
+    POPALL 
+    ARFREE 
     NPREF UO $85
-    POPALL
-    IMMED $172
-    INDIR
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $cd
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $28
-    INDIR
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $CD
+    POPALL 
+    POPALL 
+    INDIR $28
     IMMED $0
-    STR
-    POPALL
-    IMMED $29
-    INDIR
+    STR 
+    POPALL 
+    INDIR $29
     IMMED $0
-    STR
-    POPALL
-    ARFREE
+    STR 
+    POPALL 
+    ARFREE 
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $3
-    NPREF UO $8c
-    POPALL
-    ARFREE
-    IMMED $7e
-    INDIR
-    NPREF FARJMP
-    POPALL
+    NPREF UO $8C
+    POPALL 
+    ARFREE 
+    INDIR $7E
+    NPREF FARJMP 
+    POPALL 
     JMP .sub_e0_cb ;$cb
 
 .sub_e0_c7
-    ARFREE
-    NPREF RESET
-    POPALL
+    ARFREE 
+    NPREF RESET 
+    POPALL 
 
 .sub_e0_cb
     JMP .sub_e0_d2 ;$d2
 
 .sub_e0_ce
-    ARFREE
-    NPREF RESET
-    POPALL
+    ARFREE 
+    NPREF RESET 
+    POPALL 
 
 .sub_e0_d2
-    RET
-    FGAME
+    RET 
+    FGAME 

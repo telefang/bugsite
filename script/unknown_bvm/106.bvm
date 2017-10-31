@@ -1,108 +1,96 @@
     JAL .sub_106_4 ;$4
-    RET
+    RET 
 
 .sub_106_4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $154
-    IMMED $17e
-    INDIR
-    ADD
+    INDIR $17E
+    ADD 
     IMMED $1
-    SUB
-    INDIR
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $184
-    INDIR
-    IMMED $ff
-    AND
-    STR
-    POPALL
-    IMMED $172
-    INDIR
+    SUB 
+    INDIR 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $184
+    IMMED $FF
+    AND 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $2
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_106_4a ;$4a
-    ARFREE
-    IMMED $17e
-    INDIR
+    ARFREE 
+    INDIR $17E
     IMMED $1
-    SUB
-    ENOP $2d
+    SUB 
+    ENOP $2D
     IMMED $3
-    NPREF UO $8c
-    POPALL
-    ARFREE
+    NPREF UO $8C
+    POPALL 
+    ARFREE 
     IMMED $3
-    NPREF UO $5c
-    POPALL
+    NPREF UO $5C
+    POPALL 
     JMP .sub_106_b6 ;$b6
 
 .sub_106_4a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $3
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_106_6f ;$6f
-    ARFREE
-    IMMED $17e
-    INDIR
+    ARFREE 
+    INDIR $17E
     IMMED $1
-    SUB
-    ENOP $2d
+    SUB 
+    ENOP $2D
     IMMED $2
-    NPREF UO $8c
-    POPALL
-    ARFREE
+    NPREF UO $8C
+    POPALL 
+    ARFREE 
     IMMED $3
-    NPREF UO $5c
-    POPALL
+    NPREF UO $5C
+    POPALL 
     JMP .sub_106_b6 ;$b6
 
 .sub_106_6f
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_106_94 ;$94
-    ARFREE
-    IMMED $17e
-    INDIR
+    ARFREE 
+    INDIR $17E
     IMMED $1
-    SUB
-    ENOP $2d
+    SUB 
+    ENOP $2D
     IMMED $1
-    NPREF UO $8c
-    POPALL
-    ARFREE
+    NPREF UO $8C
+    POPALL 
+    ARFREE 
     IMMED $3
-    NPREF UO $5c
-    POPALL
+    NPREF UO $5C
+    POPALL 
     JMP .sub_106_b6 ;$b6
 
 .sub_106_94
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $1
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_106_b6 ;$b6
-    ARFREE
-    IMMED $17e
-    INDIR
+    ARFREE 
+    INDIR $17E
     IMMED $1
-    SUB
-    ENOP $2d
+    SUB 
+    ENOP $2D
     IMMED $0
-    NPREF UO $8c
-    POPALL
-    ARFREE
+    NPREF UO $8C
+    POPALL 
+    ARFREE 
     IMMED $3
-    NPREF UO $5c
-    POPALL
+    NPREF UO $5C
+    POPALL 
 
 .sub_106_b6
-    RET
-    FGAME
+    RET 
+    FGAME 

@@ -1,70 +1,55 @@
     JAL .sub_e1_4 ;$4
-    RET
+    RET 
 
 .sub_e1_4
-    IMMED $400
-    INDIR
-    IMMED $3e8
-    CMP_LEQ
+    INDIR $400
+    IMMED $3E8
+    CMP_LEQ 
     JMPT .sub_e1_2e ;$2e
-    IMMED $172
-    INDIR
-    IMMED $400
-    INDIR
-    IMMED $a
-    DIV
-    STR
-    POPALL
-    IMMED $173
-    INDIR
-    IMMED $401
-    INDIR
-    IMMED $a
-    DIV
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $400
+    IMMED $A
+    DIV 
+    STR 
+    POPALL 
+    INDIR $173
+    INDIR $401
+    IMMED $A
+    DIV 
+    STR 
+    POPALL 
     JMP .sub_e1_42 ;$42
 
 .sub_e1_2e
-    IMMED $172
-    INDIR
-    IMMED $400
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
-    IMMED $401
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $400
+    STR 
+    POPALL 
+    INDIR $173
+    INDIR $401
+    STR 
+    POPALL 
 
 .sub_e1_42
-    IMMED $172
-    INDIR
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
+    INDIR W_MainScript_PortraitID
     IMMED $30
-    MUL
-    IMMED $173
-    INDIR
-    DIV
-    STR
-    POPALL
-    ARFREE
+    MUL 
+    INDIR $173
+    DIV 
+    STR 
+    POPALL 
+    ARFREE 
     IMMED $0
-    ENOP $2d
-    IMMED $172
-    INDIR
-    ENOP $2d
-    IMMED $174
-    INDIR
-    ENOP $2d
-    IMMED $175
-    INDIR
-    ENOP $2d
+    ENOP $2D
+    INDIR W_MainScript_PortraitID
+    ENOP $2D
+    INDIR W_MainScript_WindowXPos
+    ENOP $2D
+    INDIR W_MainScript_WindowYPos
+    ENOP $2D
     IMMED $6
     NPREF UO $80
-    POPALL
-    RET
-    FGAME
+    POPALL 
+    RET 
+    FGAME 

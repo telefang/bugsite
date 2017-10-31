@@ -1,95 +1,76 @@
     JAL .sub_fb_4 ;$4
-    RET
+    RET 
 
 .sub_fb_4
-    IMMED $172
-    INDIR
-    ARFREE
+    INDIR W_MainScript_PortraitID
+    ARFREE 
     IMMED $64
     NPREF UO $67
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $a
-    CMP_GEQ
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    IMMED $A
+    CMP_GEQ 
     JMPT .sub_fb_28 ;$28
-    IMMED $172
-    INDIR
-    IMMED $4b5
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $4B5
+    STR 
+    POPALL 
     JMP .sub_fb_91 ;$91
 
 .sub_fb_28
-    IMMED $172
-    INDIR
-    ARFREE
+    INDIR W_MainScript_PortraitID
+    ARFREE 
     IMMED $4
     NPREF UO $67
-    STR
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_fb_4c ;$4c
-    IMMED $172
-    INDIR
-    IMMED $4b1
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $4B1
+    STR 
+    POPALL 
     JMP .sub_fb_91 ;$91
 
 .sub_fb_4c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $1
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_fb_64 ;$64
-    IMMED $172
-    INDIR
-    IMMED $4b2
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $4B2
+    STR 
+    POPALL 
     JMP .sub_fb_91 ;$91
 
 .sub_fb_64
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $2
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_fb_7c ;$7c
-    IMMED $172
-    INDIR
-    IMMED $4b3
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $4B3
+    STR 
+    POPALL 
     JMP .sub_fb_91 ;$91
 
 .sub_fb_7c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $3
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_fb_91 ;$91
-    IMMED $172
-    INDIR
-    IMMED $4b4
-    INDIR
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    INDIR $4B4
+    STR 
+    POPALL 
 
 .sub_fb_91
-    IMMED $42a
-    INDIR
-    IMMED $172
-    INDIR
-    STR
-    POPALL
-    RET
-    FGAME
+    INDIR $42A
+    INDIR W_MainScript_PortraitID
+    STR 
+    POPALL 
+    RET 
+    FGAME 

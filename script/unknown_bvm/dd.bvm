@@ -1,1996 +1,1727 @@
     JAL .sub_dd_4 ;$4
-    RET
+    RET 
 
 .sub_dd_4
-    ARFREE
-    NPREF WINCLR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $a
-    CMP_GEQ
+    ARFREE 
+    NPREF WINCLR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    IMMED $A
+    CMP_GEQ 
     JMPT .sub_dd_1b ;$1b
     JAL .sub_dd_8b ;$8b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_8a ;$8a
 
 .sub_dd_1b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $14
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_dd_2e ;$2e
     JAL .sub_dd_134 ;$134
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_8a ;$8a
 
 .sub_dd_2e
-    IMMED $172
-    INDIR
-    IMMED $1e
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1E
+    CMP_GEQ 
     JMPT .sub_dd_41 ;$41
     JAL .sub_dd_1f0 ;$1f0
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_8a ;$8a
 
 .sub_dd_41
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $28
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_dd_54 ;$54
     JAL .sub_dd_2ac ;$2ac
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_8a ;$8a
 
 .sub_dd_54
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $32
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_dd_67 ;$67
     JAL .sub_dd_368 ;$368
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_8a ;$8a
 
 .sub_dd_67
-    IMMED $172
-    INDIR
-    IMMED $3c
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3C
+    CMP_GEQ 
     JMPT .sub_dd_7a ;$7a
     JAL .sub_dd_424 ;$424
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_8a ;$8a
 
 .sub_dd_7a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $46
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_dd_8a ;$8a
     JAL .sub_dd_4cd ;$4cd
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_8a
-    RET
+    RET 
 
 .sub_dd_8b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $1
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_9e ;$9e
     JAL .sub_dd_563 ;$563
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_9e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $2
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_b1 ;$b1
     JAL .sub_dd_599 ;$599
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_b1
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $3
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_c4 ;$c4
     JAL .sub_dd_5c8 ;$5c8
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_c4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $4
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_d7 ;$d7
     JAL .sub_dd_5fd ;$5fd
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_d7
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $5
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_ea ;$ea
     JAL .sub_dd_633 ;$633
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_ea
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $6
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_fd ;$fd
     JAL .sub_dd_669 ;$669
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_fd
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $7
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_110 ;$110
     JAL .sub_dd_69f ;$69f
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_110
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $8
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_123 ;$123
     JAL .sub_dd_6d5 ;$6d5
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_133 ;$133
 
 .sub_dd_123
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $9
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_133 ;$133
     JAL .sub_dd_705 ;$705
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_133
-    RET
+    RET 
 
 .sub_dd_134
-    IMMED $172
-    INDIR
-    IMMED $a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A
+    CMP_NEQ 
     JMPT .sub_dd_147 ;$147
     JAL .sub_dd_739 ;$739
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_147
-    IMMED $172
-    INDIR
-    IMMED $b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $B
+    CMP_NEQ 
     JMPT .sub_dd_15a ;$15a
     JAL .sub_dd_76b ;$76b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_15a
-    IMMED $172
-    INDIR
-    IMMED $c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $C
+    CMP_NEQ 
     JMPT .sub_dd_16d ;$16d
     JAL .sub_dd_79c ;$79c
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_16d
-    IMMED $172
-    INDIR
-    IMMED $d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $D
+    CMP_NEQ 
     JMPT .sub_dd_180 ;$180
     JAL .sub_dd_7cf ;$7cf
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_180
-    IMMED $172
-    INDIR
-    IMMED $e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $E
+    CMP_NEQ 
     JMPT .sub_dd_193 ;$193
     JAL .sub_dd_800 ;$800
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_193
-    IMMED $172
-    INDIR
-    IMMED $f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $F
+    CMP_NEQ 
     JMPT .sub_dd_1a6 ;$1a6
     JAL .sub_dd_828 ;$828
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_1a6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $10
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_1b9 ;$1b9
     JAL .sub_dd_850 ;$850
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_1b9
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $11
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_1cc ;$1cc
     JAL .sub_dd_87b ;$87b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_1cc
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $12
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_1df ;$1df
     JAL .sub_dd_8a6 ;$8a6
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_1ef ;$1ef
 
 .sub_dd_1df
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $13
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_1ef ;$1ef
     JAL .sub_dd_8cb ;$8cb
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_1ef
-    RET
+    RET 
 
 .sub_dd_1f0
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $14
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_203 ;$203
     JAL .sub_dd_8f4 ;$8f4
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_203
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $15
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_216 ;$216
     JAL .sub_dd_91c ;$91c
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_216
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $16
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_229 ;$229
     JAL .sub_dd_942 ;$942
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_229
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $17
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_23c ;$23c
     JAL .sub_dd_96b ;$96b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_23c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $18
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_24f ;$24f
     JAL .sub_dd_994 ;$994
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_24f
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $19
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_262 ;$262
     JAL .sub_dd_9c0 ;$9c0
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_262
-    IMMED $172
-    INDIR
-    IMMED $1a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1A
+    CMP_NEQ 
     JMPT .sub_dd_275 ;$275
     JAL .sub_dd_9ed ;$9ed
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_275
-    IMMED $172
-    INDIR
-    IMMED $1b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1B
+    CMP_NEQ 
     JMPT .sub_dd_288 ;$288
     JAL .sub_dd_a17 ;$a17
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_288
-    IMMED $172
-    INDIR
-    IMMED $1c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1C
+    CMP_NEQ 
     JMPT .sub_dd_29b ;$29b
     JAL .sub_dd_a45 ;$a45
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_2ab ;$2ab
 
 .sub_dd_29b
-    IMMED $172
-    INDIR
-    IMMED $1d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1D
+    CMP_NEQ 
     JMPT .sub_dd_2ab ;$2ab
     JAL .sub_dd_a70 ;$a70
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_2ab
-    RET
+    RET 
 
 .sub_dd_2ac
-    IMMED $172
-    INDIR
-    IMMED $1e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1E
+    CMP_NEQ 
     JMPT .sub_dd_2bf ;$2bf
     JAL .sub_dd_a9a ;$a9a
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_2bf
-    IMMED $172
-    INDIR
-    IMMED $1f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1F
+    CMP_NEQ 
     JMPT .sub_dd_2d2 ;$2d2
     JAL .sub_dd_ac5 ;$ac5
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_2d2
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $20
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_2e5 ;$2e5
     JAL .sub_dd_aea ;$aea
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_2e5
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $21
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_2f8 ;$2f8
     JAL .sub_dd_b11 ;$b11
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_2f8
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $22
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_30b ;$30b
     JAL .sub_dd_b3c ;$b3c
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_30b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $23
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_31e ;$31e
     JAL .sub_dd_b60 ;$b60
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_31e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $24
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_331 ;$331
     JAL .sub_dd_b8e ;$b8e
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_331
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $25
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_344 ;$344
     JAL .sub_dd_bbb ;$bbb
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_344
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $26
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_357 ;$357
     JAL .sub_dd_bea ;$bea
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_367 ;$367
 
 .sub_dd_357
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $27
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_367 ;$367
     JAL .sub_dd_c18 ;$c18
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_367
-    RET
+    RET 
 
 .sub_dd_368
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $28
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_37b ;$37b
     JAL .sub_dd_c43 ;$c43
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_37b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $29
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_38e ;$38e
     JAL .sub_dd_c6d ;$c6d
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_38e
-    IMMED $172
-    INDIR
-    IMMED $2a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2A
+    CMP_NEQ 
     JMPT .sub_dd_3a1 ;$3a1
     JAL .sub_dd_c9a ;$c9a
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_3a1
-    IMMED $172
-    INDIR
-    IMMED $2b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2B
+    CMP_NEQ 
     JMPT .sub_dd_3b4 ;$3b4
     JAL .sub_dd_cc6 ;$cc6
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_3b4
-    IMMED $172
-    INDIR
-    IMMED $2c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2C
+    CMP_NEQ 
     JMPT .sub_dd_3c7 ;$3c7
     JAL .sub_dd_cf1 ;$cf1
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_3c7
-    IMMED $172
-    INDIR
-    IMMED $2d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2D
+    CMP_NEQ 
     JMPT .sub_dd_3da ;$3da
     JAL .sub_dd_d1b ;$d1b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_3da
-    IMMED $172
-    INDIR
-    IMMED $2e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2E
+    CMP_NEQ 
     JMPT .sub_dd_3ed ;$3ed
     JAL .sub_dd_d46 ;$d46
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_3ed
-    IMMED $172
-    INDIR
-    IMMED $2f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2F
+    CMP_NEQ 
     JMPT .sub_dd_400 ;$400
     JAL .sub_dd_d70 ;$d70
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_400
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $30
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_413 ;$413
     JAL .sub_dd_d9e ;$d9e
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_423 ;$423
 
 .sub_dd_413
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $31
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_423 ;$423
     JAL .sub_dd_dcc ;$dcc
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_423
-    RET
+    RET 
 
 .sub_dd_424
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $33
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_437 ;$437
     JAL .sub_dd_dfc ;$dfc
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_437
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $34
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_44a ;$44a
     JAL .sub_dd_e28 ;$e28
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_44a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $35
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_45d ;$45d
     JAL .sub_dd_e5d ;$e5d
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_45d
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $36
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_470 ;$470
     JAL .sub_dd_e93 ;$e93
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_470
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $37
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_483 ;$483
     JAL .sub_dd_ec6 ;$ec6
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_483
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $38
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_496 ;$496
     JAL .sub_dd_ef9 ;$ef9
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_496
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $39
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_4a9 ;$4a9
     JAL .sub_dd_f0f ;$f0f
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_4a9
-    IMMED $172
-    INDIR
-    IMMED $3a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3A
+    CMP_NEQ 
     JMPT .sub_dd_4bc ;$4bc
     JAL .sub_dd_f44 ;$f44
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_4cc ;$4cc
 
 .sub_dd_4bc
-    IMMED $172
-    INDIR
-    IMMED $3b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3B
+    CMP_NEQ 
     JMPT .sub_dd_4cc ;$4cc
     JAL .sub_dd_f77 ;$f77
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_4cc
-    RET
+    RET 
 
 .sub_dd_4cd
-    IMMED $172
-    INDIR
-    IMMED $3c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3C
+    CMP_NEQ 
     JMPT .sub_dd_4e0 ;$4e0
     JAL .sub_dd_fac ;$fac
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_562 ;$562
 
 .sub_dd_4e0
-    IMMED $172
-    INDIR
-    IMMED $3d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3D
+    CMP_NEQ 
     JMPT .sub_dd_4f3 ;$4f3
     JAL .sub_dd_fe2 ;$fe2
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_562 ;$562
 
 .sub_dd_4f3
-    IMMED $172
-    INDIR
-    IMMED $3e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3E
+    CMP_NEQ 
     JMPT .sub_dd_506 ;$506
     JAL .sub_dd_1014 ;$1014
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_562 ;$562
 
 .sub_dd_506
-    IMMED $172
-    INDIR
-    IMMED $3f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3F
+    CMP_NEQ 
     JMPT .sub_dd_519 ;$519
     JAL .sub_dd_1047 ;$1047
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_562 ;$562
 
 .sub_dd_519
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $40
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_52c ;$52c
     JAL .sub_dd_107c ;$107c
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_562 ;$562
 
 .sub_dd_52c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $41
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_53f ;$53f
     JAL .sub_dd_10b2 ;$10b2
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_562 ;$562
 
 .sub_dd_53f
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $42
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_552 ;$552
     JAL .sub_dd_10e7 ;$10e7
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_dd_562 ;$562
 
 .sub_dd_552
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $43
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_dd_562 ;$562
     JAL .sub_dd_111c ;$111c
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_dd_562
-    RET
+    RET 
 
 .sub_dd_563
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_565
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_57B
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_582
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_599
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_59B
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_5AC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_5B3
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_5c8
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_5CA
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_5DF
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_5E6
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_5fd
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_5FF
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_616
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_61D
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_633
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_635
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_64C
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_653
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_669
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_66B
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_682
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_689
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_69f
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_6A1
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_6B8
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_6BF
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_6d5
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_6D7
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_6EE
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_6F5
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_705
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_707
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_71E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_725
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_739
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_73B
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_752
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_759
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_76b
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_76D
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_784
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_78B
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_79c
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_79E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_7B5
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_7BC
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_7cf
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_7D1
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_7E5
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_7EC
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_800
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_802
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_812
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_819
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_828
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_82A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_83A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_841
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_850
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_852
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_862
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_869
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_87b
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_87D
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_88A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_891
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_8a6
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_8A8
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_8B9
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_8C0
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_8cb
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_8CD
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_8DE
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_8E5
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_8f4
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_8F6
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_907
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_90E
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_91c
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_91E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_92F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_936
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_942
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_944
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_955
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_95C
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_96b
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_96D
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_97D
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_984
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_994
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_996
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_9A6
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_9AD
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_9c0
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_9C2
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_9D2
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_9D9
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_9ed
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_9EF
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_9FF
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_A06
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_a17
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_A19
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_A29
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_A30
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_a45
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_A47
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_A57
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_A5E
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_a70
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_A72
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_A82
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_A89
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_a9a
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_A9C
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_AAC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_AB3
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_ac5
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_AC7
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_AD8
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_ADF
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_aea
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_AEC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_AFD
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_B04
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_b11
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_B13
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_B24
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_B2B
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_b3c
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_B3E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_B4E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_B55
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_b60
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_B62
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_B74
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_B7B
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_b8e
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_B90
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_BA1
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_BA8
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_bbb
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_BBD
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_BCF
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_BD6
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_bea
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_BEC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_BFD
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_C04
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_c18
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_C1A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_C2C
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_C33
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_c43
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_C45
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_C56
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_C5D
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_c6d
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_C6F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_C81
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_C88
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_c9a
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_C9C
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_CAD
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_CB4
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_cc6
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_CC8
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_CDA
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_CE1
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_cf1
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_CF3
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D04
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D0B
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_d1b
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_D1D
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D2F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D36
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_d46
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_D48
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D59
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D60
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_d70
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_D72
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D84
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_D8B
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_d9e
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_DA0
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_DB5
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_DBC
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_dcc
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_DCE
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_DE0
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_DE7
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_dfc
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_DFE
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_E0E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_E15
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_e28
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_E2A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_E40
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_E47
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_e5d
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_E5F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_E76
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_E7D
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_e93
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_E95
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_EA9
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_EB0
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_ec6
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_EC8
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_EDE
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_EE5
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_ef9
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_EFB
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_f0f
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_F11
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_F27
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_F2E
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_f44
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_F46
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_F5A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_F61
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_f77
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_F79
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_F8F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_F96
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_fac
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_FAE
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_FC5
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_FCC
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_fe2
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_FE4
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_FF9
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_1000
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_1014
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_1016
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_102A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_1031
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_1047
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_1049
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_105F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_1066
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_107c
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_107E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_1095
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_109C
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_10b2
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_10B4
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_10CA
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_10D1
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_10e7
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_10E9
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_10FF
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_1106
-
-    NPREF PRINT
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    RET 
 
 .sub_dd_111c
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     DB STR_DD_111E
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_1134
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_DD_113B
-
-    NPREF PRINT
-    POPALL
-    RET
-    FGAME
+    NPREF PRINT 
+    POPALL 
+    RET 
+    FGAME 

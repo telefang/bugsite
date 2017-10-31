@@ -1,7 +1,9 @@
 from BugTools.bvm.instructions import opcodes
 from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
-from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream
+from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream, inflate_psuedoinstructions
+from BugTools.bvm.formatting import symbolize_indirs, coalesce_psuedoinstructions, unparse_bvm
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
+from BugTools.bvm.symbols import parse_rgbds_symbols
 
 from BugTools.bfont.parser import bfont_grammar, FontWidthVisitor
 from BugTools.bfont.passes import metrics_table, metrics_length
@@ -54,6 +56,8 @@ def bvmasm():
         
         mp = InstrListVisitor().visit(tree)
         
+        mp = inflate_psuedoinstructions(mp)
+        
         mp, ke = resolve_equates(mp, ke)
         
         if args.autobalance:
@@ -67,3 +71,35 @@ def bvmasm():
 
         with open(args.output, 'wb') as outfile:
             outfile.write(bvmdata.bytes)
+
+def bvmfmt():
+    parser = argparse.ArgumentParser(description='Reformats BVM source code to current formatting standards.')
+    
+    parser.add_argument('infile', metavar='file.bvm', type=str, help='The file to reformat.')
+    parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping.')
+    parser.add_argument('--symfile', dest='symfile', metavar='bugsite_gamma.sym', type=str, action='append', help='List of symbols from the assembler to use on INDIR instructions.')
+    
+    args = parser.parse_args()
+    
+    with open(args.charmap, encoding="utf-8") as mapfile:
+        strenc, strdec = parse_charmap(mapfile)
+    
+    with open(args.infile, encoding="utf-8") as srcfile:
+        src = srcfile.read()
+        tree = bvm_grammar.parse(src + "\n") #Add a newline. Our grammar doesn't like files without ending newlines.
+        
+        mp = InstrListVisitor().visit(tree)
+    
+    mp = coalesce_psuedoinstructions(mp)
+    
+    symbols = []
+    if args.symfile is not None:
+        for symfile in args.symfile:
+            with open(symfile, encoding="utf-8") as symfile:
+                symbols.extend(parse_rgbds_symbols(symfile.read()))
+    
+    if len(symbols) > 0:
+        mp = symbolize_indirs(mp, symbols)
+    
+    with open(args.infile, 'w', encoding="utf-8") as outfile:
+        outfile.write(unparse_bvm(mp, strdec))

@@ -1,82 +1,60 @@
     JAL .sub_108_4 ;$4
-    RET
+    RET 
 
 .sub_108_4
-    IMMED $380
-    INDIR
-    IMMED $295
-    INDIR
-    STR
-    POPALL
-    IMMED $381
-    INDIR
-    IMMED $2b5
-    INDIR
-    STR
-    POPALL
-    IMMED $382
-    INDIR
-    IMMED $2d5
-    INDIR
-    STR
-    POPALL
-    IMMED $383
-    INDIR
-    IMMED $2f5
-    INDIR
-    STR
-    POPALL
-    IMMED $384
-    INDIR
-    IMMED $315
-    INDIR
-    STR
-    POPALL
-    IMMED $385
-    INDIR
-    IMMED $335
-    INDIR
-    STR
-    POPALL
-    IMMED $386
-    INDIR
-    IMMED $355
-    INDIR
-    STR
-    POPALL
-    IMMED $387
-    INDIR
-    IMMED $375
-    INDIR
-    STR
-    POPALL
-    IMMED $172
-    INDIR
+    INDIR $380
+    INDIR $295
+    STR 
+    POPALL 
+    INDIR $381
+    INDIR $2B5
+    STR 
+    POPALL 
+    INDIR $382
+    INDIR $2D5
+    STR 
+    POPALL 
+    INDIR $383
+    INDIR $2F5
+    STR 
+    POPALL 
+    INDIR $384
+    INDIR $315
+    STR 
+    POPALL 
+    INDIR $385
+    INDIR $335
+    STR 
+    POPALL 
+    INDIR $386
+    INDIR $355
+    STR 
+    POPALL 
+    INDIR $387
+    INDIR $375
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $8
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $123
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
-    IMMED $c5
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $492
-    INDIR
-    IMMED $492
-    INDIR
-    IMMED $a
-    ADD
-    STR
-    POPALL
-    RET
-    FGAME
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $123
+    POPALL 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $C5
+    POPALL 
+    POPALL 
+    INDIR $492
+    INDIR $492
+    IMMED $A
+    ADD 
+    STR 
+    POPALL 
+    RET 
+    FGAME 

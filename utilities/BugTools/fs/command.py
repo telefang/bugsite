@@ -8,7 +8,7 @@ def bfsbuild():
 
     parser.add_argument('infile', metavar='file.bfs', type=str, help='The directory listing to use.')
     parser.add_argument('outfile', metavar='file.bugfs.o', type=str, help='Where to store the RGBDS object file for the BugFS image.')
-    parser.add_argument('--basedir', metavar='build', type=str, help='Where to pull included files from.')
+    parser.add_argument('--basedir', metavar='build', type=str, action="append", help='Where to pull included files from.')
 
     args = parser.parse_args()
 
@@ -27,6 +27,7 @@ def bfsdeps():
     parser = argparse.ArgumentParser(description='Tool for extracting a list of dependencies from a .bfs file (for Make).')
 
     parser.add_argument('infile', metavar='file.bfs', type=str, help='The directory listing to use.')
+    parser.add_argument('--basedir', metavar='build', type=str, action="append", help='Base directories to prefix each path. The first path will be used exclusively in the case of missing files and should form the "build directory".')
 
     args = parser.parse_args()
 
@@ -36,4 +37,4 @@ def bfsdeps():
 
         mp = BFSVisitor().visit(tree)
 
-        print(depstring(mp))
+        print(depstring(mp, args.basedir))

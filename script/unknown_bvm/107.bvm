@@ -1,111 +1,92 @@
     JAL .sub_107_4 ;$4
-    RET
+    RET 
 
 .sub_107_4
     ARFREE
     NPREF TMAPSAV
     POPALL
     DB STR_107_9
-
-    ENOP $2d
+    ENOP $2D
     DB STR_107_E
 
     NOP
     NPREF UO $70
-    POPALL
-    ARFREE
+    POPALL 
+    ARFREE 
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $1
-    ENOP $2d
+    ENOP $2D
     IMMED $2
-    ENOP $2d
+    ENOP $2D
     IMMED $1
-    ENOP $2d
+    ENOP $2D
     IMMED $1
-    NPREF UO $6d
-    POPALL
-    ARFREE
+    NPREF UO $6D
+    POPALL 
+    ARFREE 
     NPREF UO $85
-    POPALL
-    IMMED $17f
-    INDIR
+    POPALL 
+    INDIR $17F
     IMMED $1
-    STR
-    POPALL
-    IMMED $17d
-    INDIR
-    IMMED $17c
-    INDIR
-    STR
-    POPALL
-    IMMED $17c
-    INDIR
-    IMMED $17c
-    INDIR
+    STR 
+    POPALL 
+    INDIR $17D
+    INDIR $17C
+    STR 
+    POPALL 
+    INDIR $17C
+    INDIR $17C
     IMMED $1
-    ADD
-    STR
-    POPALL
+    ADD 
+    STR 
+    POPALL 
 
 .sub_107_52
-    IMMED $17c
-    INDIR
-    IMMED $17d
-    INDIR
-    CMP_EQ
+    INDIR $17C
+    INDIR $17D
+    CMP_EQ 
     JMPT .sub_107_a4 ;$a4
-    IMMED $17b
-    INDIR
-    ARFREE
+    INDIR $17B
+    ARFREE 
     NPREF UO $61
-    STR
-    POPALL
-    IMMED $17e
-    INDIR
-    ARFREE
-    IMMED $17b
-    INDIR
+    STR 
+    POPALL 
+    INDIR $17E
+    ARFREE 
+    INDIR $17B
     NPREF UO $71
-    STR
-    POPALL
-    IMMED $17e
-    INDIR
+    STR 
+    POPALL 
+    INDIR $17E
     IMMED $1
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_107_8c ;$8c
-    IMMED $17c
-    INDIR
-    IMMED $17d
-    INDIR
-    STR
-    POPALL
+    INDIR $17C
+    INDIR $17D
+    STR 
+    POPALL 
     JMP .sub_107_a1 ;$a1
 
 .sub_107_8c
-    IMMED $17e
-    INDIR
+    INDIR $17E
     IMMED $2
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_107_a1 ;$a1
-    IMMED $17c
-    INDIR
-    IMMED $17d
-    INDIR
-    STR
-    POPALL
+    INDIR $17C
+    INDIR $17D
+    STR 
+    POPALL 
 
 .sub_107_a1
     JMP .sub_107_52 ;$52
 
 .sub_107_a4
-    IMMED $17d
-    INDIR
-    IMMED $17d
-    INDIR
+    INDIR $17D
+    INDIR $17D
     IMMED $1
-    SUB
-    STR
-    POPALL
-    RET
-    FGAME
+    SUB 
+    STR 
+    POPALL 
+    RET 
+    FGAME 

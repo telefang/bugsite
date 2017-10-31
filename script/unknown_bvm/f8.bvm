@@ -1,111 +1,91 @@
     JAL .sub_f8_4 ;$4
-    RET
+    RET 
 
 .sub_f8_4
-    IMMED $17e
-    INDIR
+    INDIR $17E
     IMMED $0
-    STR
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $11
-    CMP_GT
+    CMP_GT 
     JMPT .sub_f8_59 ;$59
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $562
-    IMMED $172
-    INDIR
-    ADD
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
-    IMMED $449
-    INDIR
-    ADD
+    INDIR W_MainScript_PortraitID
+    ADD 
+    INDIR 
+    STR 
+    POPALL 
+    INDIR $173
+    INDIR $449
+    ADD 
     IMMED $63
-    CMP_GT
+    CMP_GT 
     JMPT .sub_f8_59 ;$59
     IMMED $562
-    IMMED $172
-    INDIR
-    ADD
-    INDIR
-    IMMED $173
-    INDIR
-    IMMED $449
-    INDIR
-    ADD
-    STR
-    POPALL
-    IMMED $17e
-    INDIR
+    INDIR W_MainScript_PortraitID
+    ADD 
+    INDIR 
+    INDIR $173
+    INDIR $449
+    ADD 
+    STR 
+    POPALL 
+    INDIR $17E
     IMMED $1
-    STR
-    POPALL
+    STR 
+    POPALL 
     JAL .sub_f8_5a ;$5a
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_f8_59
-    RET
+    RET 
 
 .sub_f8_5a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    IMMED $57e
-    INDIR
+    STR 
+    POPALL 
+    INDIR $57E
     IMMED $0
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_f8_6c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $11
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_f8_b4 ;$b4
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $562
-    IMMED $172
-    INDIR
-    ADD
+    INDIR W_MainScript_PortraitID
+    ADD 
     IMMED $1
-    ADD
-    INDIR
-    STR
-    POPALL
-    IMMED $173
-    INDIR
+    ADD 
+    INDIR 
+    STR 
+    POPALL 
+    INDIR $173
     IMMED $0
-    CMP_EQ
+    CMP_EQ 
     JMPT .sub_f8_a3 ;$a3
-    IMMED $57e
-    INDIR
-    IMMED $57e
-    INDIR
+    INDIR $57E
+    INDIR $57E
     IMMED $1
-    ADD
-    STR
-    POPALL
+    ADD 
+    STR 
+    POPALL 
 
 .sub_f8_a3
-    IMMED $172
-    INDIR
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
+    INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD
-    STR
-    POPALL
+    ADD 
+    STR 
+    POPALL 
     JMP .sub_f8_6c ;$6c
 
 .sub_f8_b4
-    RET
-    FGAME
+    RET 
+    FGAME 

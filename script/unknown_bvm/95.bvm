@@ -1,91 +1,79 @@
     JAL .sub_95_4 ;$4
-    RET
+    RET 
 
 .sub_95_4
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_95_31 ;$31
-    IMMED $a
-    PRED
+    PRED $A
     IMMED $1
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_95_2e ;$2e
-    ARFREE
-    NPREF UO $5a
-    POPALL
-    ARFREE
+    ARFREE 
+    NPREF UO $5A
+    POPALL 
+    ARFREE 
     DB STR_95_1F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
 
 .sub_95_2e
     JMP .sub_95_9a ;$9a
 
 .sub_95_31
-    IMMED $422
-    INDIR
-    IMMED $3a34
-    CMP_LT
+    INDIR $422
+    IMMED $3A34
+    CMP_LT 
     JMPT .sub_95_65 ;$65
-    ARFREE
-    NPREF UO $5a
-    POPALL
-    ARFREE
+    ARFREE 
+    NPREF UO $5A
+    POPALL 
+    ARFREE 
     DB STR_95_41
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
     JMP .sub_95_9a ;$9a
 
 .sub_95_65
-    IMMED $422
-    INDIR
-    IMMED $28a0
-    CMP_GT
+    INDIR $422
+    IMMED $28A0
+    CMP_GT 
     JMPT .sub_95_7a ;$7a
-    IMMED $43b
-    INDIR
-    IMMED $422
-    INDIR
-    STR
-    POPALL
+    INDIR $43B
+    INDIR $422
+    STR 
+    POPALL 
 
 .sub_95_7a
-    IMMED $422
-    INDIR
-    PRED
+    INDIR $422
+    PRED 
     IMMED $1
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $422
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR $422
     IMMED $64
-    DIV
-    STR
-    POPALL
-    ARFREE
-    IMMED $172
-    INDIR
-    NPREF FARCALL
-    POPALL
+    DIV 
+    STR 
+    POPALL 
+    ARFREE 
+    INDIR W_MainScript_PortraitID
+    NPREF FARCALL 
+    POPALL 
 
 .sub_95_9a
-    RET
-    FGAME
+    RET 
+    FGAME 

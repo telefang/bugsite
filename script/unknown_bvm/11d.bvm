@@ -1,1666 +1,1424 @@
     JAL .sub_11d_4 ;$4
-    RET
+    RET 
 
 .sub_11d_4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $64
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_17 ;$17
     JAL .sub_11d_182 ;$182
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_1c ;$1c
 
 .sub_11d_17
     JAL .sub_11d_23e ;$23e
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_11d_1c
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $0
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_45 ;$45
-    IMMED $174
-    INDIR
+    INDIR W_MainScript_WindowXPos
     IMMED $8000
-    STR
-    POPALL
-    IMMED $175
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR
-    POPALL
-    IMMED $176
-    INDIR
+    STR 
+    POPALL 
+    INDIR $176
     IMMED $0
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_13f ;$13f
 
 .sub_11d_45
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $1
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_6e ;$6e
-    IMMED $174
-    INDIR
+    INDIR W_MainScript_WindowXPos
     IMMED $8200
-    STR
-    POPALL
-    IMMED $175
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR
-    POPALL
-    IMMED $176
-    INDIR
+    STR 
+    POPALL 
+    INDIR $176
     IMMED $1
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_13f ;$13f
 
 .sub_11d_6e
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $2
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_97 ;$97
-    IMMED $174
-    INDIR
+    INDIR W_MainScript_WindowXPos
     IMMED $8400
-    STR
-    POPALL
-    IMMED $175
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR
-    POPALL
-    IMMED $176
-    INDIR
+    STR 
+    POPALL 
+    INDIR $176
     IMMED $2
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_13f ;$13f
 
 .sub_11d_97
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $4
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_c0 ;$c0
-    IMMED $174
-    INDIR
+    INDIR W_MainScript_WindowXPos
     IMMED $8600
-    STR
-    POPALL
-    IMMED $175
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR
-    POPALL
-    IMMED $176
-    INDIR
+    STR 
+    POPALL 
+    INDIR $176
     IMMED $3
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_13f ;$13f
 
 .sub_11d_c0
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $5
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_e9 ;$e9
-    IMMED $174
-    INDIR
+    INDIR W_MainScript_WindowXPos
     IMMED $8000
-    STR
-    POPALL
-    IMMED $175
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
     IMMED $1
-    STR
-    POPALL
-    IMMED $176
-    INDIR
+    STR 
+    POPALL 
+    INDIR $176
     IMMED $4
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_13f ;$13f
 
 .sub_11d_e9
-    IMMED $173
-    INDIR
+    INDIR $173
     IMMED $6
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_112 ;$112
-    IMMED $174
-    INDIR
+    INDIR W_MainScript_WindowXPos
     IMMED $8200
-    STR
-    POPALL
-    IMMED $175
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
     IMMED $1
-    STR
-    POPALL
-    IMMED $176
-    INDIR
+    STR 
+    POPALL 
+    INDIR $176
     IMMED $5
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_13f ;$13f
 
 .sub_11d_112
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    IMMED $173
-    INDIR
-    IMMED $ffff
-    STR
-    POPALL
-    IMMED $174
-    INDIR
+    STR 
+    POPALL 
+    INDIR $173
+    IMMED $FFFF
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowXPos
     IMMED $0
-    STR
-    POPALL
-    IMMED $175
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR
-    POPALL
-    IMMED $176
-    INDIR
+    STR 
+    POPALL 
+    INDIR $176
     IMMED $0
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_13f
-    IMMED $173
-    INDIR
-    IMMED $ffff
-    CMP_EQ
+    INDIR $173
+    IMMED $FFFF
+    CMP_EQ 
     JMPT .sub_11d_181 ;$181
-    ARFREE
-    IMMED $a64
-    IMMED $172
-    INDIR
-    ADD
-    ENOP $2d
+    ARFREE 
+    IMMED $A64
+    INDIR W_MainScript_PortraitID
+    ADD 
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $20
-    ENOP $2d
-    IMMED $174
-    INDIR
-    ENOP $2d
-    IMMED $175
-    INDIR
-    NPREF RESLD
-    POPALL
-    ARFREE
-    IMMED $b18
-    IMMED $172
-    INDIR
-    ADD
-    ENOP $2d
+    ENOP $2D
+    INDIR W_MainScript_WindowXPos
+    ENOP $2D
+    INDIR W_MainScript_WindowYPos
+    NPREF RESLD 
+    POPALL 
+    ARFREE 
+    IMMED $B18
+    INDIR W_MainScript_PortraitID
+    ADD 
+    ENOP $2D
     IMMED $1
-    ENOP $2d
+    ENOP $2D
     IMMED $0
-    ENOP $2d
-    IMMED $176
-    INDIR
-    NPREF PALLD
-    POPALL
+    ENOP $2D
+    INDIR $176
+    NPREF PALLD 
+    POPALL 
 
 .sub_11d_181
-    RET
+    RET 
 
 .sub_11d_182
-    IMMED $172
-    INDIR
-    IMMED $a
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A
+    CMP_GEQ 
     JMPT .sub_11d_195 ;$195
     JAL .sub_11d_2d4 ;$2d4
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_195
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $14
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_1a8 ;$1a8
     JAL .sub_11d_317 ;$317
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_1a8
-    IMMED $172
-    INDIR
-    IMMED $1e
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1E
+    CMP_GEQ 
     JMPT .sub_11d_1bb ;$1bb
     JAL .sub_11d_39f ;$39f
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_1bb
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $28
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_1ce ;$1ce
     JAL .sub_11d_427 ;$427
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_1ce
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $32
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_1e1 ;$1e1
     JAL .sub_11d_498 ;$498
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_1e1
-    IMMED $172
-    INDIR
-    IMMED $3c
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3C
+    CMP_GEQ 
     JMPT .sub_11d_1f4 ;$1f4
     JAL .sub_11d_509 ;$509
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_1f4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $46
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_207 ;$207
     JAL .sub_11d_5a8 ;$5a8
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_207
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $50
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_21a ;$21a
     JAL .sub_11d_619 ;$619
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_21a
-    IMMED $172
-    INDIR
-    IMMED $5a
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $5A
+    CMP_GEQ 
     JMPT .sub_11d_22d ;$22d
     JAL .sub_11d_68a ;$68a
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_23d ;$23d
 
 .sub_11d_22d
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $64
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_23d ;$23d
     JAL .sub_11d_712 ;$712
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_11d_23d
-    RET
+    RET 
 
 .sub_11d_23e
-    IMMED $172
-    INDIR
-    IMMED $6e
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $6E
+    CMP_GEQ 
     JMPT .sub_11d_251 ;$251
     JAL .sub_11d_7b1 ;$7b1
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_2d3 ;$2d3
 
 .sub_11d_251
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $78
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_264 ;$264
     JAL .sub_11d_80b ;$80b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_2d3 ;$2d3
 
 .sub_11d_264
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $82
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_277 ;$277
     JAL .sub_11d_893 ;$893
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_2d3 ;$2d3
 
 .sub_11d_277
-    IMMED $172
-    INDIR
-    IMMED $8c
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $8C
+    CMP_GEQ 
     JMPT .sub_11d_28a ;$28a
     JAL .sub_11d_91b ;$91b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_2d3 ;$2d3
 
 .sub_11d_28a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $96
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_11d_29d ;$29d
     JAL .sub_11d_98c ;$98c
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_2d3 ;$2d3
 
 .sub_11d_29d
-    IMMED $172
-    INDIR
-    IMMED $a0
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A0
+    CMP_GEQ 
     JMPT .sub_11d_2b0 ;$2b0
     JAL .sub_11d_a14 ;$a14
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_2d3 ;$2d3
 
 .sub_11d_2b0
-    IMMED $172
-    INDIR
-    IMMED $aa
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $AA
+    CMP_GEQ 
     JMPT .sub_11d_2c3 ;$2c3
     JAL .sub_11d_a9c ;$a9c
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_11d_2d3 ;$2d3
 
 .sub_11d_2c3
-    IMMED $172
-    INDIR
-    IMMED $b4
-    CMP_GEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $B4
+    CMP_GEQ 
     JMPT .sub_11d_2d3 ;$2d3
     JAL .sub_11d_b24 ;$b24
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_11d_2d3
-    RET
+    RET 
 
 .sub_11d_2d4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $4
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_2eb ;$2eb
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $3
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_316 ;$316
 
 .sub_11d_2eb
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $6
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_302 ;$302
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $5
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_316 ;$316
 
 .sub_11d_302
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $8
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_316 ;$316
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $7
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_316
-    RET
+    RET 
 
 .sub_11d_317
-    IMMED $172
-    INDIR
-    IMMED $a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A
+    CMP_NEQ 
     JMPT .sub_11d_32e ;$32e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $9
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_39e ;$39e
 
 .sub_11d_32e
-    IMMED $172
-    INDIR
-    IMMED $c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $C
+    CMP_NEQ 
     JMPT .sub_11d_345 ;$345
-    IMMED $172
-    INDIR
-    IMMED $b
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $B
+    STR 
+    POPALL 
     JMP .sub_11d_39e ;$39e
 
 .sub_11d_345
-    IMMED $172
-    INDIR
-    IMMED $e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $E
+    CMP_NEQ 
     JMPT .sub_11d_35c ;$35c
-    IMMED $172
-    INDIR
-    IMMED $d
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $D
+    STR 
+    POPALL 
     JMP .sub_11d_39e ;$39e
 
 .sub_11d_35c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $10
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_373 ;$373
-    IMMED $172
-    INDIR
-    IMMED $f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $F
+    STR 
+    POPALL 
     JMP .sub_11d_39e ;$39e
 
 .sub_11d_373
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $12
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_38a ;$38a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $11
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_39e ;$39e
 
 .sub_11d_38a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $13
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_39e ;$39e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $11
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_39e
-    RET
+    RET 
 
 .sub_11d_39f
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $15
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_3b6 ;$3b6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $14
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_426 ;$426
 
 .sub_11d_3b6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $16
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_3cd ;$3cd
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $14
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_426 ;$426
 
 .sub_11d_3cd
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $18
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_3e4 ;$3e4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $17
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_426 ;$426
 
 .sub_11d_3e4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $19
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_3fb ;$3fb
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $17
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_426 ;$426
 
 .sub_11d_3fb
-    IMMED $172
-    INDIR
-    IMMED $1b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1B
+    CMP_NEQ 
     JMPT .sub_11d_412 ;$412
-    IMMED $172
-    INDIR
-    IMMED $1a
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $1A
+    STR 
+    POPALL 
     JMP .sub_11d_426 ;$426
 
 .sub_11d_412
-    IMMED $172
-    INDIR
-    IMMED $1c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1C
+    CMP_NEQ 
     JMPT .sub_11d_426 ;$426
-    IMMED $172
-    INDIR
-    IMMED $1a
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $1A
+    STR 
+    POPALL 
 
 .sub_11d_426
-    RET
+    RET 
 
 .sub_11d_427
-    IMMED $172
-    INDIR
-    IMMED $1e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1E
+    CMP_NEQ 
     JMPT .sub_11d_43e ;$43e
-    IMMED $172
-    INDIR
-    IMMED $1d
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $1D
+    STR 
+    POPALL 
     JMP .sub_11d_497 ;$497
 
 .sub_11d_43e
-    IMMED $172
-    INDIR
-    IMMED $1f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $1F
+    CMP_NEQ 
     JMPT .sub_11d_455 ;$455
-    IMMED $172
-    INDIR
-    IMMED $1d
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $1D
+    STR 
+    POPALL 
     JMP .sub_11d_497 ;$497
 
 .sub_11d_455
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $20
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_46c ;$46c
-    IMMED $172
-    INDIR
-    IMMED $1d
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $1D
+    STR 
+    POPALL 
     JMP .sub_11d_497 ;$497
 
 .sub_11d_46c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $24
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_483 ;$483
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $23
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_497 ;$497
 
 .sub_11d_483
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $26
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_497 ;$497
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $25
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_497
-    RET
+    RET 
 
 .sub_11d_498
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $28
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_4af ;$4af
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $27
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_508 ;$508
 
 .sub_11d_4af
-    IMMED $172
-    INDIR
-    IMMED $2a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2A
+    CMP_NEQ 
     JMPT .sub_11d_4c6 ;$4c6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $29
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_508 ;$508
 
 .sub_11d_4c6
-    IMMED $172
-    INDIR
-    IMMED $2c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2C
+    CMP_NEQ 
     JMPT .sub_11d_4dd ;$4dd
-    IMMED $172
-    INDIR
-    IMMED $2b
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $2B
+    STR 
+    POPALL 
     JMP .sub_11d_508 ;$508
 
 .sub_11d_4dd
-    IMMED $172
-    INDIR
-    IMMED $2e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $2E
+    CMP_NEQ 
     JMPT .sub_11d_4f4 ;$4f4
-    IMMED $172
-    INDIR
-    IMMED $2d
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $2D
+    STR 
+    POPALL 
     JMP .sub_11d_508 ;$508
 
 .sub_11d_4f4
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $30
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_508 ;$508
-    IMMED $172
-    INDIR
-    IMMED $2f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $2F
+    STR 
+    POPALL 
 
 .sub_11d_508
-    RET
+    RET 
 
 .sub_11d_509
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $32
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_520 ;$520
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $31
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_5a7 ;$5a7
 
 .sub_11d_520
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $34
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_537 ;$537
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $33
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_5a7 ;$5a7
 
 .sub_11d_537
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $35
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_54e ;$54e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $33
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_5a7 ;$5a7
 
 .sub_11d_54e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $37
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_565 ;$565
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $36
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_5a7 ;$5a7
 
 .sub_11d_565
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $38
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_57c ;$57c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $36
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_5a7 ;$5a7
 
 .sub_11d_57c
-    IMMED $172
-    INDIR
-    IMMED $3a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3A
+    CMP_NEQ 
     JMPT .sub_11d_593 ;$593
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $39
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_5a7 ;$5a7
 
 .sub_11d_593
-    IMMED $172
-    INDIR
-    IMMED $3b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3B
+    CMP_NEQ 
     JMPT .sub_11d_5a7 ;$5a7
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $39
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_5a7
-    RET
+    RET 
 
 .sub_11d_5a8
-    IMMED $172
-    INDIR
-    IMMED $3d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3D
+    CMP_NEQ 
     JMPT .sub_11d_5bf ;$5bf
-    IMMED $172
-    INDIR
-    IMMED $3c
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $3C
+    STR 
+    POPALL 
     JMP .sub_11d_618 ;$618
 
 .sub_11d_5bf
-    IMMED $172
-    INDIR
-    IMMED $3e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $3E
+    CMP_NEQ 
     JMPT .sub_11d_5d6 ;$5d6
-    IMMED $172
-    INDIR
-    IMMED $3c
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $3C
+    STR 
+    POPALL 
     JMP .sub_11d_618 ;$618
 
 .sub_11d_5d6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $40
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_5ed ;$5ed
-    IMMED $172
-    INDIR
-    IMMED $3f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $3F
+    STR 
+    POPALL 
     JMP .sub_11d_618 ;$618
 
 .sub_11d_5ed
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $41
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_604 ;$604
-    IMMED $172
-    INDIR
-    IMMED $3f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $3F
+    STR 
+    POPALL 
     JMP .sub_11d_618 ;$618
 
 .sub_11d_604
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $42
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_618 ;$618
-    IMMED $172
-    INDIR
-    IMMED $3f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $3F
+    STR 
+    POPALL 
 
 .sub_11d_618
-    RET
+    RET 
 
 .sub_11d_619
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $46
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_630 ;$630
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $45
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_689 ;$689
 
 .sub_11d_630
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $48
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_647 ;$647
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $47
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_689 ;$689
 
 .sub_11d_647
-    IMMED $172
-    INDIR
-    IMMED $4a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $4A
+    CMP_NEQ 
     JMPT .sub_11d_65e ;$65e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $49
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_689 ;$689
 
 .sub_11d_65e
-    IMMED $172
-    INDIR
-    IMMED $4c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $4C
+    CMP_NEQ 
     JMPT .sub_11d_675 ;$675
-    IMMED $172
-    INDIR
-    IMMED $4b
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $4B
+    STR 
+    POPALL 
     JMP .sub_11d_689 ;$689
 
 .sub_11d_675
-    IMMED $172
-    INDIR
-    IMMED $4e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $4E
+    CMP_NEQ 
     JMPT .sub_11d_689 ;$689
-    IMMED $172
-    INDIR
-    IMMED $4d
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $4D
+    STR 
+    POPALL 
 
 .sub_11d_689
-    RET
+    RET 
 
 .sub_11d_68a
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $50
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_6a1 ;$6a1
-    IMMED $172
-    INDIR
-    IMMED $4f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $4F
+    STR 
+    POPALL 
     JMP .sub_11d_711 ;$711
 
 .sub_11d_6a1
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $52
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_6b8 ;$6b8
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $51
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_711 ;$711
 
 .sub_11d_6b8
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $54
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_6cf ;$6cf
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $53
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_711 ;$711
 
 .sub_11d_6cf
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $55
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_6e6 ;$6e6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $53
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_711 ;$711
 
 .sub_11d_6e6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $57
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_6fd ;$6fd
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $56
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_711 ;$711
 
 .sub_11d_6fd
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $58
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_711 ;$711
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $56
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_711
-    RET
+    RET 
 
 .sub_11d_712
-    IMMED $172
-    INDIR
-    IMMED $5a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $5A
+    CMP_NEQ 
     JMPT .sub_11d_729 ;$729
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $59
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_7b0 ;$7b0
 
 .sub_11d_729
-    IMMED $172
-    INDIR
-    IMMED $5b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $5B
+    CMP_NEQ 
     JMPT .sub_11d_740 ;$740
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $59
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_7b0 ;$7b0
 
 .sub_11d_740
-    IMMED $172
-    INDIR
-    IMMED $5d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $5D
+    CMP_NEQ 
     JMPT .sub_11d_757 ;$757
-    IMMED $172
-    INDIR
-    IMMED $5c
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $5C
+    STR 
+    POPALL 
     JMP .sub_11d_7b0 ;$7b0
 
 .sub_11d_757
-    IMMED $172
-    INDIR
-    IMMED $5e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $5E
+    CMP_NEQ 
     JMPT .sub_11d_76e ;$76e
-    IMMED $172
-    INDIR
-    IMMED $5c
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $5C
+    STR 
+    POPALL 
     JMP .sub_11d_7b0 ;$7b0
 
 .sub_11d_76e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $60
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_785 ;$785
-    IMMED $172
-    INDIR
-    IMMED $5f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $5F
+    STR 
+    POPALL 
     JMP .sub_11d_7b0 ;$7b0
 
 .sub_11d_785
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $61
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_79c ;$79c
-    IMMED $172
-    INDIR
-    IMMED $5f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $5F
+    STR 
+    POPALL 
     JMP .sub_11d_7b0 ;$7b0
 
 .sub_11d_79c
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $62
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_7b0 ;$7b0
-    IMMED $172
-    INDIR
-    IMMED $5f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $5F
+    STR 
+    POPALL 
 
 .sub_11d_7b0
-    RET
+    RET 
 
 .sub_11d_7b1
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $66
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_7c8 ;$7c8
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $65
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_80a ;$80a
 
 .sub_11d_7c8
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $68
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_7df ;$7df
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $67
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_80a ;$80a
 
 .sub_11d_7df
-    IMMED $172
-    INDIR
-    IMMED $6a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $6A
+    CMP_NEQ 
     JMPT .sub_11d_7f6 ;$7f6
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $69
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_80a ;$80a
 
 .sub_11d_7f6
-    IMMED $172
-    INDIR
-    IMMED $6c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $6C
+    CMP_NEQ 
     JMPT .sub_11d_80a ;$80a
-    IMMED $172
-    INDIR
-    IMMED $6b
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $6B
+    STR 
+    POPALL 
 
 .sub_11d_80a
-    RET
+    RET 
 
 .sub_11d_80b
-    IMMED $172
-    INDIR
-    IMMED $6e
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $6E
+    CMP_NEQ 
     JMPT .sub_11d_822 ;$822
-    IMMED $172
-    INDIR
-    IMMED $6d
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $6D
+    STR 
+    POPALL 
     JMP .sub_11d_892 ;$892
 
 .sub_11d_822
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $70
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_839 ;$839
-    IMMED $172
-    INDIR
-    IMMED $6f
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $6F
+    STR 
+    POPALL 
     JMP .sub_11d_892 ;$892
 
 .sub_11d_839
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $72
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_850 ;$850
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $71
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_892 ;$892
 
 .sub_11d_850
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $74
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_867 ;$867
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $73
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_892 ;$892
 
 .sub_11d_867
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $76
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_87e ;$87e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $75
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_892 ;$892
 
 .sub_11d_87e
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $77
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_892 ;$892
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $75
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_892
-    RET
+    RET 
 
 .sub_11d_893
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $79
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_8aa ;$8aa
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $78
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_91a ;$91a
 
 .sub_11d_8aa
-    IMMED $172
-    INDIR
-    IMMED $7a
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $7A
+    CMP_NEQ 
     JMPT .sub_11d_8c1 ;$8c1
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $78
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_91a ;$91a
 
 .sub_11d_8c1
-    IMMED $172
-    INDIR
-    IMMED $7c
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $7C
+    CMP_NEQ 
     JMPT .sub_11d_8d8 ;$8d8
-    IMMED $172
-    INDIR
-    IMMED $7b
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $7B
+    STR 
+    POPALL 
     JMP .sub_11d_91a ;$91a
 
 .sub_11d_8d8
-    IMMED $172
-    INDIR
-    IMMED $7d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $7D
+    CMP_NEQ 
     JMPT .sub_11d_8ef ;$8ef
-    IMMED $172
-    INDIR
-    IMMED $7b
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $7B
+    STR 
+    POPALL 
     JMP .sub_11d_91a ;$91a
 
 .sub_11d_8ef
-    IMMED $172
-    INDIR
-    IMMED $7f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $7F
+    CMP_NEQ 
     JMPT .sub_11d_906 ;$906
-    IMMED $172
-    INDIR
-    IMMED $7e
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $7E
+    STR 
+    POPALL 
     JMP .sub_11d_91a ;$91a
 
 .sub_11d_906
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $80
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_91a ;$91a
-    IMMED $172
-    INDIR
-    IMMED $7e
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $7E
+    STR 
+    POPALL 
 
 .sub_11d_91a
-    RET
+    RET 
 
 .sub_11d_91b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $82
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_932 ;$932
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $81
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_98b ;$98b
 
 .sub_11d_932
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $83
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_949 ;$949
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $81
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_98b ;$98b
 
 .sub_11d_949
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $84
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_960 ;$960
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $81
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_98b ;$98b
 
 .sub_11d_960
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $89
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_977 ;$977
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $88
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_98b ;$98b
 
 .sub_11d_977
-    IMMED $172
-    INDIR
-    IMMED $8b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $8B
+    CMP_NEQ 
     JMPT .sub_11d_98b ;$98b
-    IMMED $172
-    INDIR
-    IMMED $8a
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $8A
+    STR 
+    POPALL 
 
 .sub_11d_98b
-    RET
+    RET 
 
 .sub_11d_98c
-    IMMED $172
-    INDIR
-    IMMED $8d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $8D
+    CMP_NEQ 
     JMPT .sub_11d_9a3 ;$9a3
-    IMMED $172
-    INDIR
-    IMMED $8c
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $8C
+    STR 
+    POPALL 
     JMP .sub_11d_a13 ;$a13
 
 .sub_11d_9a3
-    IMMED $172
-    INDIR
-    IMMED $8f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $8F
+    CMP_NEQ 
     JMPT .sub_11d_9ba ;$9ba
-    IMMED $172
-    INDIR
-    IMMED $8e
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $8E
+    STR 
+    POPALL 
     JMP .sub_11d_a13 ;$a13
 
 .sub_11d_9ba
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $91
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_9d1 ;$9d1
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $90
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_a13 ;$a13
 
 .sub_11d_9d1
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $92
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_9e8 ;$9e8
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $90
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_a13 ;$a13
 
 .sub_11d_9e8
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $94
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_9ff ;$9ff
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $93
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_a13 ;$a13
 
 .sub_11d_9ff
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $95
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_a13 ;$a13
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $93
-    STR
-    POPALL
+    STR 
+    POPALL 
 
 .sub_11d_a13
-    RET
+    RET 
 
 .sub_11d_a14
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $97
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_a2b ;$a2b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $96
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_a9b ;$a9b
 
 .sub_11d_a2b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $98
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_a42 ;$a42
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $96
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_a9b ;$a9b
 
 .sub_11d_a42
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $99
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_11d_a59 ;$a59
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $96
-    STR
-    POPALL
+    STR 
+    POPALL 
     JMP .sub_11d_a9b ;$a9b
 
 .sub_11d_a59
-    IMMED $172
-    INDIR
-    IMMED $9b
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $9B
+    CMP_NEQ 
     JMPT .sub_11d_a70 ;$a70
-    IMMED $172
-    INDIR
-    IMMED $9a
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $9A
+    STR 
+    POPALL 
     JMP .sub_11d_a9b ;$a9b
 
 .sub_11d_a70
-    IMMED $172
-    INDIR
-    IMMED $9d
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $9D
+    CMP_NEQ 
     JMPT .sub_11d_a87 ;$a87
-    IMMED $172
-    INDIR
-    IMMED $9c
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $9C
+    STR 
+    POPALL 
     JMP .sub_11d_a9b ;$a9b
 
 .sub_11d_a87
-    IMMED $172
-    INDIR
-    IMMED $9f
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $9F
+    CMP_NEQ 
     JMPT .sub_11d_a9b ;$a9b
-    IMMED $172
-    INDIR
-    IMMED $9e
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $9E
+    STR 
+    POPALL 
 
 .sub_11d_a9b
-    RET
+    RET 
 
 .sub_11d_a9c
-    IMMED $172
-    INDIR
-    IMMED $a0
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A0
+    CMP_NEQ 
     JMPT .sub_11d_ab3 ;$ab3
-    IMMED $172
-    INDIR
-    IMMED $9e
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $9E
+    STR 
+    POPALL 
     JMP .sub_11d_b23 ;$b23
 
 .sub_11d_ab3
-    IMMED $172
-    INDIR
-    IMMED $a3
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A3
+    CMP_NEQ 
     JMPT .sub_11d_aca ;$aca
-    IMMED $172
-    INDIR
-    IMMED $a2
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $A2
+    STR 
+    POPALL 
     JMP .sub_11d_b23 ;$b23
 
 .sub_11d_aca
-    IMMED $172
-    INDIR
-    IMMED $a4
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A4
+    CMP_NEQ 
     JMPT .sub_11d_ae1 ;$ae1
-    IMMED $172
-    INDIR
-    IMMED $a2
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $A2
+    STR 
+    POPALL 
     JMP .sub_11d_b23 ;$b23
 
 .sub_11d_ae1
-    IMMED $172
-    INDIR
-    IMMED $a6
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A6
+    CMP_NEQ 
     JMPT .sub_11d_af8 ;$af8
-    IMMED $172
-    INDIR
-    IMMED $a5
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $A5
+    STR 
+    POPALL 
     JMP .sub_11d_b23 ;$b23
 
 .sub_11d_af8
-    IMMED $172
-    INDIR
-    IMMED $a8
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A8
+    CMP_NEQ 
     JMPT .sub_11d_b0f ;$b0f
-    IMMED $172
-    INDIR
-    IMMED $9e
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $9E
+    STR 
+    POPALL 
     JMP .sub_11d_b23 ;$b23
 
 .sub_11d_b0f
-    IMMED $172
-    INDIR
-    IMMED $a9
-    CMP_NEQ
+    INDIR W_MainScript_PortraitID
+    IMMED $A9
+    CMP_NEQ 
     JMPT .sub_11d_b23 ;$b23
-    IMMED $172
-    INDIR
-    IMMED $9e
-    STR
-    POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $9E
+    STR 
+    POPALL 
 
 .sub_11d_b23
-    RET
+    RET 
 
 .sub_11d_b24
-    RET
-    FGAME
+    RET 
+    FGAME 

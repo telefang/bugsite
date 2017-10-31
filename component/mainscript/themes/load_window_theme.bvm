@@ -1,70 +1,63 @@
     JAL MainScript_LoadWindowTheme ;$4
-    RET
+    RET 
 
 MainScript_LoadWindowTheme:
-    IMMED W_MainScript_PortraitID
-    INDIR
-    IMMED W_MainScript_PortraitID
-    INDIR
+    INDIR W_MainScript_PortraitID
+    INDIR W_MainScript_PortraitID
     IMMED $2
-    MUL
-    STR
-    POPALL
-    ARFREE
+    MUL 
+    STR 
+    POPALL 
+    ARFREE 
     IMMED $202
-    IMMED W_MainScript_PortraitID
-    INDIR
-    ADD
-    ENOP $2d
+    INDIR W_MainScript_PortraitID
+    ADD 
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $100
-    ENOP $2d
+    ENOP $2D
     IMMED $8800
-    ENOP $2d
+    ENOP $2D
     IMMED $0
-    NPREF RESLD
-    POPALL
-    ARFREE
+    NPREF RESLD 
+    POPALL 
+    ARFREE 
     IMMED $202
-    IMMED W_MainScript_PortraitID
-    INDIR
-    ADD
+    INDIR W_MainScript_PortraitID
+    ADD 
     IMMED $1
-    ADD
-    ENOP $2d
+    ADD 
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $6
-    ENOP $2d
+    ENOP $2D
     IMMED $6
-    NPREF PALLD
-    POPALL
-    ARFREE
+    NPREF PALLD 
+    POPALL 
+    ARFREE 
     IMMED $202
-    IMMED W_MainScript_PortraitID
-    INDIR
-    ADD
+    INDIR W_MainScript_PortraitID
+    ADD 
     IMMED $1
-    ADD
-    ENOP $2d
+    ADD 
+    ENOP $2D
     IMMED $0
-    ENOP $2d
+    ENOP $2D
     IMMED $7
-    ENOP $2d
+    ENOP $2D
     IMMED $7
     NPREF PALLD
     POPALL
     
     ;Configure VWF for this theme.
     IMMED $FFC
-    IMMED W_MainScript_PortraitID
-    INDIR
+    INDIR W_MainScript_PortraitID
     ADD
     
     IMMED $FFC
-    IMMED W_MainScript_PortraitID
-    INDIR
+    INDIR W_MainScript_PortraitID
     ADD
     IMMED 1
     ADD

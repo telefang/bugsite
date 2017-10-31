@@ -1,618 +1,526 @@
     JAL .sub_7e_4 ;$4
-    RET
+    RET 
 
 .sub_7e_4
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $3138
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_7e_17 ;$17
     JAL .sub_7e_9a ;$9a
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_7e_99 ;$99
 
 .sub_7e_17
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $3142
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_7e_2a ;$2a
     JAL .sub_7e_9b ;$9b
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_7e_99 ;$99
 
 .sub_7e_2a
-    IMMED $422
-    INDIR
-    IMMED $314c
-    CMP_NEQ
+    INDIR $422
+    IMMED $314C
+    CMP_NEQ 
     JMPT .sub_7e_3d ;$3d
     JAL .sub_7e_120 ;$120
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_7e_99 ;$99
 
 .sub_7e_3d
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $3156
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_7e_50 ;$50
     JAL .sub_7e_1ca ;$1ca
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_7e_99 ;$99
 
 .sub_7e_50
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $3160
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_7e_63 ;$63
     JAL .sub_7e_246 ;$246
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_7e_99 ;$99
 
 .sub_7e_63
-    IMMED $422
-    INDIR
-    IMMED $316a
-    CMP_NEQ
+    INDIR $422
+    IMMED $316A
+    CMP_NEQ 
     JMPT .sub_7e_76 ;$76
     JAL .sub_7e_2a4 ;$2a4
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_7e_99 ;$99
 
 .sub_7e_76
-    IMMED $422
-    INDIR
+    INDIR $422
     IMMED $3174
-    CMP_NEQ
+    CMP_NEQ 
     JMPT .sub_7e_89 ;$89
     JAL .sub_7e_2b6 ;$2b6
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_7e_99 ;$99
 
 .sub_7e_89
-    IMMED $422
-    INDIR
-    IMMED $317e
-    CMP_NEQ
+    INDIR $422
+    IMMED $317E
+    CMP_NEQ 
     JMPT .sub_7e_99 ;$99
     JAL .sub_7e_39c ;$39c
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_7e_99
-    RET
+    RET 
 
 .sub_7e_9a
-    RET
+    RET 
 
 .sub_7e_9b
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $d5
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D5
+    POPALL 
+    POPALL 
+    ARFREE 
     DB STR_7E_AD
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_B8
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_CC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_DC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_ED
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_FF
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    IMMED $422
-    INDIR
-    IMMED $314c
-    STR
-    POPALL
-    ARFREE
-    IMMED $95
-    NPREF FARCALL
-    POPALL
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    INDIR $422
+    IMMED $314C
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $95
+    POPALL 
+    POPALL 
+    RET 
 
 .sub_7e_120
-    ARFREE
+    ARFREE 
     DB STR_7E_121
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_133
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_148
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_156
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_16C
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_17D
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_193
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_1A1
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_1B3
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
+    RET 
 
 .sub_7e_1ca
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $d5
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D5
+    POPALL 
+    POPALL 
+    ARFREE 
     DB STR_7E_1DC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_1EE
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_1FD
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_20F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_222
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_22F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
+    RET 
 
 .sub_7e_246
-    IMMED $172
-    INDIR
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $d5
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D5
+    POPALL 
+    POPALL 
+    ARFREE 
     DB STR_7E_258
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_26A
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_27F
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_28C
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
+    RET 
 
 .sub_7e_2a4
-    IMMED $422
-    INDIR
-    IMMED $2cb0
-    STR
-    POPALL
-    ARFREE
-    IMMED $95
-    NPREF FARCALL
-    POPALL
-    POPALL
-    RET
+    INDIR $422
+    IMMED $2CB0
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $95
+    POPALL 
+    POPALL 
+    RET 
 
 .sub_7e_2b6
-    IMMED $172
-    INDIR
-    IMMED $447
-    INDIR
-    STR
-    POPALL
-    ARFREE
-    IMMED $d9
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    ARFREE
-    IMMED $446
-    INDIR
+    INDIR W_MainScript_PortraitID
+    INDIR $447
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D9
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    ARFREE 
+    INDIR $446
     NPREF UO $67
-    STR
-    POPALL
-    IMMED $394
-    INDIR
-    IMMED $4f0
-    IMMED $172
-    INDIR
-    ADD
-    INDIR
-    STR
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    INDIR $394
+    IMMED $4F0
+    INDIR W_MainScript_PortraitID
+    ADD 
+    INDIR 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $d5
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D5
+    POPALL 
+    POPALL 
+    ARFREE 
     DB STR_7E_2F6
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_307
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_31D
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_330
-
-    NPREF PRINT
-    POPALL
-    IMMED $447
-    INDIR
+    NPREF PRINT 
+    POPALL 
+    INDIR $447
     IMMED $8
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_7e_351 ;$351
-    ARFREE
-    IMMED $394
-    INDIR
-    NPREF PRKEY
-    POPALL
+    ARFREE 
+    INDIR $394
+    NPREF PRKEY 
+    POPALL 
     JMP .sub_7e_37a ;$37a
 
 .sub_7e_351
-    IMMED $447
-    INDIR
+    INDIR $447
     IMMED $10
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_7e_367 ;$367
-    ARFREE
-    IMMED $394
-    INDIR
-    NPREF PRCHIP
-    POPALL
+    ARFREE 
+    INDIR $394
+    NPREF PRCHIP 
+    POPALL 
     JMP .sub_7e_37a ;$37a
 
 .sub_7e_367
-    IMMED $447
-    INDIR
+    INDIR $447
     IMMED $18
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_7e_37a ;$37a
-    ARFREE
-    IMMED $394
-    INDIR
-    NPREF PRMON
-    POPALL
+    ARFREE 
+    INDIR $394
+    NPREF PRMON 
+    POPALL 
 
 .sub_7e_37a
-    ARFREE
+    ARFREE 
     DB STR_7E_37B
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_387
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
-    RET
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
+    RET 
 
 .sub_7e_39c
-    IMMED $172
-    INDIR
-    IMMED $447
-    INDIR
-    STR
-    POPALL
-    ARFREE
-    IMMED $d9
-    NPREF FARCALL
-    POPALL
-    POPALL
-    IMMED $172
-    INDIR
-    ARFREE
-    IMMED $446
-    INDIR
+    INDIR W_MainScript_PortraitID
+    INDIR $447
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D9
+    POPALL 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    ARFREE 
+    INDIR $446
     NPREF UO $67
-    STR
-    POPALL
-    IMMED $394
-    INDIR
-    IMMED $4f0
-    IMMED $172
-    INDIR
-    ADD
-    INDIR
-    STR
-    POPALL
-    IMMED $172
-    INDIR
+    STR 
+    POPALL 
+    INDIR $394
+    IMMED $4F0
+    INDIR W_MainScript_PortraitID
+    ADD 
+    INDIR 
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
     IMMED $0
-    STR
-    POPALL
-    ARFREE
-    IMMED $d5
-    NPREF FARCALL
-    POPALL
-    POPALL
-    ARFREE
+    STR 
+    POPALL 
+    ARFREE 
+    NPREF FARCALL $D5
+    POPALL 
+    POPALL 
+    ARFREE 
     DB STR_7E_3DC
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_3ED
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_400
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_412
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_426
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_436
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_448
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_458
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_469
-
-    NPREF PRINT
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
     DB STR_7E_479
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_484
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINBRK
-    POPALL
-    ARFREE
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINBRK 
+    POPALL 
+    ARFREE 
     DB STR_7E_492
-
-    NPREF PRINT
-    POPALL
-    IMMED $447
-    INDIR
+    NPREF PRINT 
+    POPALL 
+    INDIR $447
     IMMED $8
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_7e_4b8 ;$4b8
-    ARFREE
-    IMMED $394
-    INDIR
-    NPREF PRKEY
-    POPALL
+    ARFREE 
+    INDIR $394
+    NPREF PRKEY 
+    POPALL 
     JMP .sub_7e_4e1 ;$4e1
 
 .sub_7e_4b8
-    IMMED $447
-    INDIR
+    INDIR $447
     IMMED $10
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_7e_4ce ;$4ce
-    ARFREE
-    IMMED $394
-    INDIR
-    NPREF PRCHIP
-    POPALL
+    ARFREE 
+    INDIR $394
+    NPREF PRCHIP 
+    POPALL 
     JMP .sub_7e_4e1 ;$4e1
 
 .sub_7e_4ce
-    IMMED $447
-    INDIR
+    INDIR $447
     IMMED $18
-    CMP_GEQ
+    CMP_GEQ 
     JMPT .sub_7e_4e1 ;$4e1
-    ARFREE
-    IMMED $394
-    INDIR
-    NPREF PRMON
-    POPALL
+    ARFREE 
+    INDIR $394
+    NPREF PRMON 
+    POPALL 
 
 .sub_7e_4e1
-    ARFREE
+    ARFREE 
     DB STR_7E_4E2
-
-    NPREF PRINT
-    POPALL
-    ARFREE
-    NPREF WINWAIT
-    POPALL
-    ARFREE
-    NPREF UO $b4
-    POPALL
-    RET
-    FGAME
+    NPREF PRINT 
+    POPALL 
+    ARFREE 
+    NPREF WINWAIT 
+    POPALL 
+    ARFREE 
+    NPREF UO $B4
+    POPALL 
+    RET 
+    FGAME 

@@ -15,13 +15,32 @@ class Directory(cmodel.Struct):
 
     __order__ = ["basebank", "baseoffset", "filesize", "padding1", "padding2", "padding3"]
 
-def depstring(parselist):
-    """Convert a parsed .bfs listing into a depstring for the Makefile."""
+def depstring(parselist, basedir):
+    """Convert a parsed .bfs listing into a depstring for the Makefile.
+
+    basedir is the directory to look for files in. It may be a single string or
+    a list. Paths mentioned within parselist may reside in any of the listed
+    directories. If a file is not present in any of those directories, we will
+    append the first basedir in the list. Basedir may be a single string if only
+    one directory is to be used."""
     deps = set()
+
+    #If only one basedir is provided, list it up anyway
+    if type(basedir) is not list:
+        basedir = [basedir]
 
     for command in parselist:
         if type(command) is Filename:
-            deps.add(command.path)
+            for base in basedir:
+                try:
+                    with open(base + "/" + command.path, 'rb') as file:
+                        deps.add(base + "/" + command.path)
+                        break
+                except FileNotFoundError:
+                    continue
+            else:
+                #File missing, which means it needs to be built in the build dir
+                deps.add(basedir[0] + "/" + command.path)
 
     return " ".join(deps)
 
@@ -99,8 +118,8 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff, pat
     #Translate any fixups to rgbds format
     for bofpatch in bofpatches:
         patchlen = PATCH_LENGTHS[bofpatch.patchtype]
-
-        if bofpatch.patchoffset < startoff + patchlen - 1 or bofpatch.patchoffset > endoff:
+        
+        if bofpatch.patchoffset < startoff - patchlen + 1 or bofpatch.patchoffset > endoff:
             continue
 
         patch_cut_start = startoff - bofpatch.patchoffset
@@ -110,7 +129,7 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff, pat
         if patch_cut_start > 0 or patch_cut_end > 0 or True:
             #HARD PATH: make a patch for each byte of the original.
             for byte_i in range(0, patchlen):
-                if patch_cut_start >= byte_i:
+                if patch_cut_start > byte_i:
                     continue
 
                 if (patchlen - byte_i) < patch_cut_end:
@@ -171,6 +190,10 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff, pat
 def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     """Construct a series of RGBDS sections corresponding to our filesystem.
 
+    basedir is the directory to look for files in. It may be a single string or
+    a list. Paths mentioned within parselist may reside in any of the listed
+    directories.
+
     dirbank is the index of the directory structure bank. Directory data will be
     added to this bank according to the BugFS directory structure, for as many
     banks as needed.
@@ -213,25 +236,37 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     rgb4obj = Rgb4()
     rgb4_syms = {}
 
+    #If only one basedir is provided, list it up anyway
+    if type(basedir) is not list:
+        basedir = [basedir]
+
     for path in filepaths:
         new_dir = Directory()
         new_dir.basebank = start_bank
         new_dir.baseoffset = start_offset
 
         bvmdata = Bof1()
+        
+        for base in basedir:
+            try:
+                with open(os.path.join(base, path), 'rb') as file:
+                    if path.endswith(".bof"):
+                        #This is a BVM Object File, bridge it into the RGBDS section...
+                        bvmdata.load(file)
+                        new_dir.filesize = len(bvmdata.data)
+                    else:
+                        #This is raw data, repack it as a BOF for now
+                        bindata = file.read()
+                        new_dir.filesize = len(bindata)
 
-        with open(os.path.join(basedir, path), 'rb') as file:
-            if path.endswith(".bof"):
-                #This is a BVM Object File, bridge it into the RGBDS section...
-                bvmdata.load(file)
-                new_dir.filesize = len(bvmdata.data)
-            else:
-                #This is raw data, repack it as a BOF for now
-                bindata = file.read()
-                new_dir.filesize = len(bindata)
+                        bvmdata.data = bindata
 
-                bvmdata.data = bindata
-
+                    break
+            except FileNotFoundError:
+                continue
+        else:
+            raise FileNotFoundError(path)
+        
         directory.append(new_dir.bytes)
 
         #Map bvmdata symbols into rgb4obj

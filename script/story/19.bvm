@@ -1,31 +1,29 @@
     JAL .sub_19_4 ;$4
-    RET
+    RET 
 
 .sub_19_4
-    IMMED $422
-    INDIR
-    IMMED $9c4
-    CMP_NEQ
+    INDIR $422
+    IMMED $9C4
+    CMP_NEQ 
     JMPT .sub_19_17 ;$17
     JAL .sub_19_28 ;$28
-    NPREF POPALL
+    NPREF POPALL 
     JMP .sub_19_27 ;$27
 
 .sub_19_17
-    IMMED $422
-    INDIR
-    IMMED $9f6
-    CMP_NEQ
+    INDIR $422
+    IMMED $9F6
+    CMP_NEQ 
     JMPT .sub_19_27 ;$27
     JAL .sub_19_29 ;$29
-    NPREF POPALL
+    NPREF POPALL 
 
 .sub_19_27
-    RET
+    RET 
 
 .sub_19_28
-    RET
+    RET 
 
 .sub_19_29
-    RET
-    FGAME
+    RET 
+    FGAME 
