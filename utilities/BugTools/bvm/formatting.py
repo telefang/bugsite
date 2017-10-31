@@ -1,6 +1,38 @@
 from BugTools.bvm.parser import Equate, SymbolicRef, Label, Instruction, Comment
 from BugTools.exceptions import InvalidOperandError
 
+import copy
+
+def coalesce_psuedoinstructions(parselist):
+    """Given a parsed BVM, replace instructions with psuedo equivalents.
+
+    For example, an IMMED followed by an INDIR will instead be replaced with the
+    INDIR [operand] psuedoinstruction form. This format has the advantage of
+    imparting additional semantic content to the script.
+
+    This function, naturally, is the opposite of inflate_psuedoinstructions from
+    the passes module. It will not coalesce psuedoinstructions that would not
+    later inflate to the same real instruction listing."""
+
+    new_parselist = []
+
+    for instr in parselist:
+        if type(instr) is not Instruction:
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+
+        if instr.opcode in ["INDIR", "PRED", "FARCALL", "FARJMP"] and len(new_parselist) > 0:
+            last_instr = new_parselist[-1]
+            if last_instr.opcode == "IMMED" and last_instr.prefix in ["", None]:
+                new_parselist.remove(last_instr)
+                new_parselist.append(Instruction(instr.opcode, last_instr.operands, instr.prefix))
+            else:
+                new_parselist.append(copy.deepcopy(instr))
+        else:
+            new_parselist.append(copy.deepcopy(instr))
+
+    return new_parselist
+
 def unparse_bvm(parselist, strdec = None):
     """Given a parsed BVM, emit a source code representation of the data.
     

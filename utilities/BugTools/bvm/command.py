@@ -1,7 +1,7 @@
 from BugTools.bvm.instructions import opcodes
 from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
 from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream, inflate_psuedoinstructions
-from BugTools.bvm.formatting import unparse_bvm
+from BugTools.bvm.formatting import coalesce_psuedoinstructions, unparse_bvm
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
 
 from BugTools.bfont.parser import bfont_grammar, FontWidthVisitor
@@ -88,5 +88,7 @@ def bvmfmt():
         
         mp = InstrListVisitor().visit(tree)
     
+    mp = coalesce_psuedoinstructions(mp)
+
     with open(args.infile, 'w', encoding="utf-8") as outfile:
         outfile.write(unparse_bvm(mp, strdec))
