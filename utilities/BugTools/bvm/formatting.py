@@ -19,11 +19,11 @@ def symbolize_indirs(parselist, symbol_table):
         
         if addr >= 0xC000 and addr < 0xD000:
             #Definitely an indir
-            indiraddr = (0xC400 - addr) / 2
+            indiraddr = int((addr - 0xC400) / 2)
             indirmap[indiraddr] = symname
         elif bank == 0x03 and addr >= 0xD000 and addr < 0xE000:
             #Also definitely an indir
-            indiraddr = (0xC400 - addr) / 2
+            indiraddr = int((addr - 0xC400) / 2)
             indirmap[indiraddr] = symname
     
     #Now let's see what maps...
@@ -40,7 +40,7 @@ def symbolize_indirs(parselist, symbol_table):
             for operand in instr.operands:
                 if type(operand) is int:
                     try:
-                        new_operands.append(indirmap[operand])
+                        new_operands.append(SymbolicRef(indirmap[operand], False))
                     except KeyError:
                         new_operands.append(operand)
                 else:
