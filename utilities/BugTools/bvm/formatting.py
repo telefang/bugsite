@@ -3,6 +3,55 @@ from BugTools.exceptions import InvalidOperandError
 
 import copy
 
+def symbolize_indirs(parselist, symbol_table):
+    """Given a parsed BVM, replace INDIR numerical references with symbols.
+    
+    The symbol table is in the format of a list of tuples; whose contents
+    consist of (bank, addr, symname).
+    
+    This pass only operates on psuedoinstructions. Please coalesce them before
+    proceeding."""
+    
+    #Construct a mapping of INDIRs to symbol names...
+    indirmap = {}
+    for line in symbol_table:
+        bank, addr, symname = line
+        
+        if addr >= 0xC000 and addr < 0xD000:
+            #Definitely an indir
+            indiraddr = (0xC400 - addr) / 2
+            indirmap[indiraddr] = symname
+        elif bank == 0x03 and addr >= 0xD000 and addr < 0xE000:
+            #Also definitely an indir
+            indiraddr = (0xC400 - addr) / 2
+            indirmap[indiraddr] = symname
+    
+    #Now let's see what maps...
+    new_parselist = []
+    
+    for instr in parselist:
+        if type(instr) is not Instruction:
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+        
+        if instr.opcode in ["INDIR"] and len(instr.operands) > 0:
+            new_operands = []
+            
+            for operand in instr.operands:
+                if type(operand) is int:
+                    try:
+                        new_operands.append(indirmap[operand])
+                    except KeyError:
+                        new_operands.append(operand)
+                else:
+                    new_operands.append(operand)
+            
+            new_parselist.append(Instruction(instr.opcode, new_operands, instr.prefix, instr.comment))
+        else:
+            new_parselist.append(copy.deepcopy(instr))
+    
+    return new_parselist
+
 def coalesce_psuedoinstructions(parselist):
     """Given a parsed BVM, replace instructions with psuedo equivalents.
 
@@ -23,9 +72,13 @@ def coalesce_psuedoinstructions(parselist):
 
         if instr.opcode in ["INDIR", "PRED", "FARCALL", "FARJMP"] and len(new_parselist) > 0:
             last_instr = new_parselist[-1]
+            if type(last_instr) is not Instruction:
+                new_parselist.append(copy.deepcopy(instr))
+                continue
+            
             if last_instr.opcode == "IMMED" and last_instr.prefix in ["", None]:
                 new_parselist.remove(last_instr)
-                new_parselist.append(Instruction(instr.opcode, last_instr.operands, instr.prefix))
+                new_parselist.append(Instruction(instr.opcode, last_instr.operands, instr.prefix, instr.comment))
             else:
                 new_parselist.append(copy.deepcopy(instr))
         else:
