@@ -6,7 +6,7 @@ def parse_rgbds_symbols(symbol_str):
     
     symbols = []
     
-    for line in symbol_str:
+    for line in symbol_str.split("\n"):
         line = line.strip()
         
         #filter comments...
