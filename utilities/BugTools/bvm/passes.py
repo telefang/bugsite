@@ -208,7 +208,7 @@ def autobalance_strings(parselist, known_equates, string_enc, string_wid):
         assert ab_group is not None
         
         #Assert autobalance group portrait state.
-        has_no_portrait = statically_prove_str(parselist, known_equates, ab_group[0], ab_group[-1], 0x172, 0xFFFF)
+        has_no_portrait = statically_prove_str(parselist, known_equates, ab_group[0], ab_group[-1], 0x172, "W_MainScript_PortraitID", 0xFFFF)
         
         if has_no_portrait:
             ab_max_width = 17 * 8

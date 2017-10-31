@@ -1,7 +1,7 @@
 from BugTools.exceptions import CircularEquateError
 from BugTools.bvm.parser import SymbolicRef, Label, Instruction
 
-def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172, strval = 0xFFFF):
+def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172, indirslot_name = "W_MainScript_PortraitID", strval = 0xFFFF):
     """Prove if a BugVM program executes with memory set to a given value.
     
     start and end are the parselist indicies of the region of code we care
@@ -56,7 +56,13 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
                 proven_before_start = False
             
             if parselist[ptr].opcode in ["IMMED"]:
-                static_datastack.append(parselist[ptr].operands[0])
+                if type(parselist[ptr].operands[0]) is SymbolicRef:
+                    if parselist[ptr].operands[0].name == indirslot_name:
+                        static_datastack.append(indirslot)
+                    else:
+                        static_datastack.append(0)
+                else:
+                    static_datastack.append(parselist[ptr].operands[0])
             
             if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
                 static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
@@ -88,7 +94,13 @@ def statically_prove_str(parselist, known_equates, start, end, indirslot = 0x172
             #region, so we won't return False on it.
             
             if parselist[ptr].opcode in ["IMMED"]:
-                static_datastack.append(parselist[ptr].operands[0])
+                if type(parselist[ptr].operands[0]) is SymbolicRef:
+                    if parselist[ptr].operands[0].name == indirslot_name:
+                        static_datastack.append(indirslot)
+                    else:
+                        static_datastack.append(0)
+                else:
+                    static_datastack.append(parselist[ptr].operands[0])
             
             if parselist[ptr].opcode in ["INDIR"] and len(static_datastack) > 0:
                 static_datastack[-1] |= 0x10000 #Yes, this is how we tell immed and pred apart...
