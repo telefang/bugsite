@@ -119,7 +119,7 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff, pat
     for bofpatch in bofpatches:
         patchlen = PATCH_LENGTHS[bofpatch.patchtype]
         
-        if bofpatch.patchoffset < startoff + patchlen - 1 or bofpatch.patchoffset > endoff:
+        if bofpatch.patchoffset < startoff - patchlen + 1 or bofpatch.patchoffset > endoff:
             continue
             
         patch_cut_start = startoff - bofpatch.patchoffset
@@ -129,7 +129,7 @@ def translate_bof1_fixups_to_rgb4(bofpatches, symbol_dict, startoff, endoff, pat
         if patch_cut_start > 0 or patch_cut_end > 0 or True:
             #HARD PATH: make a patch for each byte of the original.
             for byte_i in range(0, patchlen):
-                if patch_cut_start >= byte_i:
+                if patch_cut_start > byte_i:
                     continue
                 
                 if (patchlen - byte_i) < patch_cut_end:
