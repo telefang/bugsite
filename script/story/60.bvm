@@ -2,7 +2,7 @@
     RET 
 
 .sub_60_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2580
     CMP_NEQ 
     JMPT .sub_60_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_60_27 ;$27
 
 .sub_60_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $258A
     CMP_NEQ 
     JMPT .sub_60_27 ;$27

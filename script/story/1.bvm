@@ -2,7 +2,7 @@
     RET 
 
 .sub_1_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $64
     CMP_NEQ 
     JMPT .sub_1_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_1_3a ;$3a
 
 .sub_1_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $6E
     CMP_NEQ 
     JMPT .sub_1_2a ;$2a
@@ -20,7 +20,7 @@
     JMP .sub_1_3a ;$3a
 
 .sub_1_2a
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $96
     CMP_NEQ 
     JMPT .sub_1_3a ;$3a
@@ -68,17 +68,17 @@
     ARFREE 
     NPREF UO $5D
     POPALL 
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $6E
     STR 
     POPALL 
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     PRED 
     IMMED $1
     STR 
     POPALL 
     INDIR W_MainScript_PortraitID
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $64
     DIV 
     STR 
@@ -197,17 +197,17 @@
     ARFREE 
     NPREF UO $5E
     POPALL 
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $C8
     STR 
     POPALL 
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     PRED 
     IMMED $1
     STR 
     POPALL 
     INDIR W_MainScript_PortraitID
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $64
     DIV 
     STR 

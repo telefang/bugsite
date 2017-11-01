@@ -2,7 +2,7 @@
     RET 
 
 .sub_5f_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $251C
     CMP_NEQ 
     JMPT .sub_5f_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_5f_3a ;$3a
 
 .sub_5f_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2526
     CMP_NEQ 
     JMPT .sub_5f_2a ;$2a
@@ -20,7 +20,7 @@
     JMP .sub_5f_3a ;$3a
 
 .sub_5f_2a
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2530
     CMP_NEQ 
     JMPT .sub_5f_3a ;$3a
@@ -132,7 +132,7 @@
     RET 
 
 .sub_5f_116
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $39C6
     STR 
     POPALL 

@@ -2,7 +2,7 @@
     RET 
 
 .sub_23_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $DAC
     CMP_NEQ 
     JMPT .sub_23_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_23_60 ;$60
 
 .sub_23_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $DB6
     CMP_NEQ 
     JMPT .sub_23_2a ;$2a
@@ -20,7 +20,7 @@
     JMP .sub_23_60 ;$60
 
 .sub_23_2a
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $DC0
     CMP_NEQ 
     JMPT .sub_23_3d ;$3d
@@ -29,7 +29,7 @@
     JMP .sub_23_60 ;$60
 
 .sub_23_3d
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $DCA
     CMP_NEQ 
     JMPT .sub_23_50 ;$50
@@ -38,7 +38,7 @@
     JMP .sub_23_60 ;$60
 
 .sub_23_50
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $DD4
     CMP_NEQ 
     JMPT .sub_23_60 ;$60

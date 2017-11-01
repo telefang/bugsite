@@ -2,7 +2,7 @@
     RET 
 
 .sub_1b_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $A8C
     CMP_NEQ 
     JMPT .sub_1b_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_1b_4d ;$4d
 
 .sub_1b_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $A96
     CMP_NEQ 
     JMPT .sub_1b_2a ;$2a
@@ -20,7 +20,7 @@
     JMP .sub_1b_4d ;$4d
 
 .sub_1b_2a
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $AA0
     CMP_NEQ 
     JMPT .sub_1b_3d ;$3d
@@ -29,7 +29,7 @@
     JMP .sub_1b_4d ;$4d
 
 .sub_1b_3d
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $AAA
     CMP_NEQ 
     JMPT .sub_1b_4d ;$4d

@@ -2,7 +2,7 @@
     RET 
 
 .sub_2b_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $10CC
     CMP_NEQ 
     JMPT .sub_2b_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_2b_3a ;$3a
 
 .sub_2b_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $10D6
     CMP_NEQ 
     JMPT .sub_2b_2a ;$2a
@@ -20,7 +20,7 @@
     JMP .sub_2b_3a ;$3a
 
 .sub_2b_2a
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $10E0
     CMP_NEQ 
     JMPT .sub_2b_3a ;$3a

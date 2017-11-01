@@ -2,7 +2,7 @@
     RET 
 
 .sub_20_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $C80
     CMP_NEQ 
     JMPT .sub_20_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_20_60 ;$60
 
 .sub_20_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $C8A
     CMP_NEQ 
     JMPT .sub_20_2a ;$2a
@@ -20,7 +20,7 @@
     JMP .sub_20_60 ;$60
 
 .sub_20_2a
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $C94
     CMP_NEQ 
     JMPT .sub_20_3d ;$3d
@@ -29,7 +29,7 @@
     JMP .sub_20_60 ;$60
 
 .sub_20_3d
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $C9E
     CMP_NEQ 
     JMPT .sub_20_50 ;$50
@@ -38,7 +38,7 @@
     JMP .sub_20_60 ;$60
 
 .sub_20_50
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $CA8
     CMP_NEQ 
     JMPT .sub_20_60 ;$60
@@ -312,7 +312,7 @@
     IMMED $1
     CMP_NEQ 
     JMPT .sub_20_32c ;$32c
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $C9E
     STR 
     POPALL 

@@ -2,7 +2,7 @@
     RET 
 
 MainScript_ExecuteScene::
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $0
     CMP_NEQ 
     JMPT .eventBoundsCheck ;$31
@@ -28,7 +28,7 @@ MainScript_ExecuteScene::
     JMP .finishEvent ;$9a
 
 .eventBoundsCheck
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $3A34
     CMP_LT 
     JMPT .storyEventCheck ;$65
@@ -48,23 +48,23 @@ MainScript_ExecuteScene::
     JMP .finishEvent ;$9a
 
 .storyEventCheck
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $28A0
     CMP_GT 
     JMPT .callEventScript ;$7a
     INDIR $43B
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     STR 
     POPALL 
 
 .callEventScript
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     PRED 
     IMMED $1
     STR 
     POPALL 
     INDIR W_MainScript_PortraitID
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $64
     DIV 
     STR 

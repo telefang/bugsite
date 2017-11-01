@@ -2,7 +2,7 @@
     RET 
 
 .sub_2d_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $1194
     CMP_NEQ 
     JMPT .sub_2d_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_2d_60 ;$60
 
 .sub_2d_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $119E
     CMP_NEQ 
     JMPT .sub_2d_2a ;$2a
@@ -20,7 +20,7 @@
     JMP .sub_2d_60 ;$60
 
 .sub_2d_2a
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $11A8
     CMP_NEQ 
     JMPT .sub_2d_3d ;$3d
@@ -29,7 +29,7 @@
     JMP .sub_2d_60 ;$60
 
 .sub_2d_3d
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $11A9
     CMP_NEQ 
     JMPT .sub_2d_50 ;$50
@@ -38,7 +38,7 @@
     JMP .sub_2d_60 ;$60
 
 .sub_2d_50
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $11B2
     CMP_NEQ 
     JMPT .sub_2d_60 ;$60
@@ -177,7 +177,7 @@
     IMMED $1
     CMP_NEQ 
     JMPT .sub_2d_1c1 ;$1c1
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $11A9
     STR 
     POPALL 
@@ -188,7 +188,7 @@
     JMP .sub_2d_1e3 ;$1e3
 
 .sub_2d_1c1
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $11B2
     STR 
     POPALL 
@@ -196,7 +196,7 @@
     NPREF FARCALL $95
     POPALL 
     POPALL 
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $11A9
     STR 
     POPALL 
