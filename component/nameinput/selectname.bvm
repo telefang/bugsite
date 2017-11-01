@@ -199,6 +199,11 @@ NameInput_SelectName::
     NPREF SCRCURS 
     POPALL 
     ARFREE 
+    
+    IMMED $120
+    IMMED $130
+    VWFENABLE
+    
     DB STR_103_178
     NPREF PRINT 
     POPALL 
@@ -213,6 +218,9 @@ NameInput_SelectName::
     NPREF PRINT 
     POPALL 
     ARFREE 
+    
+    VWFDISABLE
+    
     IMMED $0
     ENOP $2D
     IMMED $6
