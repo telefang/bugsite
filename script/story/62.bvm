@@ -2,7 +2,7 @@
     RET 
 
 .sub_62_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2648
     CMP_NEQ 
     JMPT .sub_62_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_62_27 ;$27
 
 .sub_62_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2652
     CMP_NEQ 
     JMPT .sub_62_27 ;$27
@@ -25,7 +25,7 @@
     RET 
 
 .sub_62_29
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $38C2
     STR 
     POPALL 

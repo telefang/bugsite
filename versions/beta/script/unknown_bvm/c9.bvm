@@ -2923,21 +2923,17 @@
     RET
 
 .sub_c9_13db
-    IMMED $422
-    INDIR
+    INDIR W_MainScript_ActiveScene
     IMMED $64
-    STR
-    POPALL
-    IMMED $422
-    INDIR
-    PRED
+    STR 
+    POPALL 
+    INDIR W_MainScript_ActiveScene
+    PRED 
     IMMED $1
-    STR
-    POPALL
-    IMMED $172
-    INDIR
-    IMMED $422
-    INDIR
+    STR 
+    POPALL 
+    INDIR W_MainScript_PortraitID
+    INDIR W_MainScript_ActiveScene
     IMMED $64
     DIV
     STR

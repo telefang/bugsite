@@ -1,15 +1,15 @@
-    JAL .sub_95_4 ;$4
+    JAL MainScript_ExecuteScene ;$4
     RET 
 
-.sub_95_4
-    INDIR $422
+MainScript_ExecuteScene::
+    INDIR W_MainScript_ActiveScene
     IMMED $0
     CMP_NEQ 
-    JMPT .sub_95_31 ;$31
+    JMPT .eventBoundsCheck ;$31
     PRED $A
     IMMED $1
     CMP_NEQ 
-    JMPT .sub_95_2e ;$2e
+    JMPT .eventsAreDisabled ;$2e
     ARFREE 
     NPREF UO $5A
     POPALL 
@@ -24,14 +24,14 @@
     NPREF UO $B4
     POPALL 
 
-.sub_95_2e
-    JMP .sub_95_9a ;$9a
+.eventsAreDisabled
+    JMP .finishEvent ;$9a
 
-.sub_95_31
-    INDIR $422
+.eventBoundsCheck
+    INDIR W_MainScript_ActiveScene
     IMMED $3A34
     CMP_LT 
-    JMPT .sub_95_65 ;$65
+    JMPT .storyEventCheck ;$65
     ARFREE 
     NPREF UO $5A
     POPALL 
@@ -45,26 +45,26 @@
     ARFREE 
     NPREF UO $B4
     POPALL 
-    JMP .sub_95_9a ;$9a
+    JMP .finishEvent ;$9a
 
-.sub_95_65
-    INDIR $422
+.storyEventCheck
+    INDIR W_MainScript_ActiveScene
     IMMED $28A0
     CMP_GT 
-    JMPT .sub_95_7a ;$7a
+    JMPT .callEventScript ;$7a
     INDIR $43B
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     STR 
     POPALL 
 
-.sub_95_7a
-    INDIR $422
+.callEventScript
+    INDIR W_MainScript_ActiveScene
     PRED 
     IMMED $1
     STR 
     POPALL 
     INDIR W_MainScript_PortraitID
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $64
     DIV 
     STR 
@@ -74,6 +74,6 @@
     NPREF FARCALL 
     POPALL 
 
-.sub_95_9a
+.finishEvent
     RET 
     FGAME 

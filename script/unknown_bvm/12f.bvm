@@ -32,7 +32,7 @@
     CMP_NEQ 
     ANDL 
     JMPT .sub_12f_50 ;$50
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $708
     STR 
     POPALL 
@@ -50,7 +50,7 @@
     CMP_NEQ 
     ANDL 
     JMPT .sub_12f_75 ;$75
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $1A90
     STR 
     POPALL 
@@ -469,7 +469,7 @@
     NPREF FARCALL $100
     POPALL 
     POPALL 
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $726
     STR 
     POPALL 
@@ -594,7 +594,7 @@
     CMP_NEQ 
     ANDL 
     JMPT .sub_12f_4b1 ;$4b1
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $712
     STR 
     POPALL 
@@ -612,7 +612,7 @@
     CMP_NEQ 
     ANDL 
     JMPT .sub_12f_4d6 ;$4d6
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $1A9A
     STR 
     POPALL 
@@ -658,7 +658,7 @@
     IMMED $8
     CMP_GT 
     JMPT .sub_12f_555 ;$555
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $43C
     INDIR $17E
     ADD 

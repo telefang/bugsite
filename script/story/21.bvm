@@ -2,7 +2,7 @@
     RET 
 
 .sub_21_4
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $CE4
     CMP_NEQ 
     JMPT .sub_21_17 ;$17
@@ -11,7 +11,7 @@
     JMP .sub_21_27 ;$27
 
 .sub_21_17
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $CEE
     CMP_NEQ 
     JMPT .sub_21_27 ;$27

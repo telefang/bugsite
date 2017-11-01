@@ -32,7 +32,7 @@
     CMP_NEQ 
     ANDL 
     JMPT .sub_150_50 ;$50
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $DAC
     STR 
     POPALL 
@@ -546,7 +546,7 @@
     IMMED $8
     CMP_GT 
     JMPT .sub_150_47c ;$47c
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $43C
     INDIR $17E
     ADD 
@@ -670,7 +670,7 @@
     JMP .sub_150_57f ;$57f
 
 .sub_150_543
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2FF8
     STR 
     POPALL 
@@ -733,7 +733,7 @@
     ARFREE 
     NPREF UO $7F
     POPALL 
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $DCA
     STR 
     POPALL 

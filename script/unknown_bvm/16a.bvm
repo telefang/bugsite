@@ -432,7 +432,7 @@
     IMMED $8
     CMP_GT 
     JMPT .sub_16a_380 ;$380
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $43C
     INDIR $17E
     ADD 
@@ -501,7 +501,7 @@
     IMMED $1
     CMP_NEQ 
     JMPT .sub_16a_400 ;$400
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $242C
     STR 
     POPALL 
@@ -518,7 +518,7 @@
     JMP .sub_16a_411 ;$411
 
 .sub_16a_400
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2422
     STR 
     POPALL 
@@ -531,7 +531,7 @@
     JMP .sub_16a_425 ;$425
 
 .sub_16a_414
-    INDIR $422
+    INDIR W_MainScript_ActiveScene
     IMMED $2436
     STR 
     POPALL 

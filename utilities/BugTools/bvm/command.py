@@ -76,7 +76,7 @@ def bvmfmt():
     parser = argparse.ArgumentParser(description='Reformats BVM source code to current formatting standards.')
     
     parser.add_argument('infile', metavar='file.bvm', type=str, help='The file to reformat.')
-    parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping.')
+    parser.add_argument('--charmap', metavar='charmap.bin', type=str, help='Character mapping.')
     parser.add_argument('--symfile', dest='symfile', metavar='bugsite_gamma.sym', type=str, action='append', help='List of symbols from the assembler to use on INDIR instructions.')
     
     args = parser.parse_args()

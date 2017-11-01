@@ -19,7 +19,7 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
         component/windowmanager/contents_config.o component/windowmanager/drawframe.o \
         component/windowmanager/menu_config.o component/windowmanager/print_tools.o \
         component/windowmanager/cursor.o component/windowmanager/winclr.o \
-        component/mainscript/window.o \
+        component/mainscript/window.o component/mainscript/scene.o \
 		  component/lcdc/poke.o component/lcdc/vmemcopy.o \
         component/system/banking.o \
         component/bugfs/indexlinkage.o \
