@@ -58,6 +58,11 @@ MainScript_ExecuteScene::
     POPALL 
 
 .callEventScript
+    ;Dialogue ring config
+    IMMED $6
+    IMMED $7D
+    VWFENABLE
+
     INDIR W_MainScript_ActiveScene
     PRED 
     IMMED $1
@@ -73,6 +78,8 @@ MainScript_ExecuteScene::
     INDIR W_MainScript_PortraitID
     NPREF FARCALL 
     POPALL 
+    
+    VWFDISABLE
 
 .finishEvent
     RET 

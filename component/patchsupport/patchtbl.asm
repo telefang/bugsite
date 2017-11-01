@@ -11,7 +11,15 @@ Banked_WindowManager_ADVICE_OpVWFCONFIG::
     jp WindowManager_ADVICE_OpVWFCONFIG
     nop
     
-    ds $2C ;Remaining bytes for custom opcodes.
+Banked_WindowManager_ADVICE_OpVWFENABLE::
+    jp WindowManager_ADVICE_OpVWFENABLE
+    nop
+    
+Banked_WindowManager_ADVICE_OpVWFDISABLE::
+    jp WindowManager_ADVICE_OpVWFDISABLE
+    nop
+    
+    ds $24 ;Remaining bytes for custom opcodes.
     
 Banked_WindowManager_ADVICE_PrintChara::
     jp WindowManager_ADVICE_PrintChara

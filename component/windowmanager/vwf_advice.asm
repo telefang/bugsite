@@ -662,33 +662,18 @@ WindowManager_ADVICE_ClearRegion::
     
     ret
     
-;Configure the VWF.
-;Once configured, all existing VWF state (if any) will be reset.
+;Configure the current VWF font.
+;This does not actually enable VWF usage. Use VWFENABLE to configure the
+;drawing ring.
 ;
 ;ARGUMENTS: (Via Datastack)
 ; Composition Font (File ID)
+; Font Metrics (File ID)
 ; Background Color (16 bits of graphics data, to be repeated across all lines)
-; VWF Ring Start   (Tile index from $8800)
-; VWF Ring End     (Tile index from $8800)
 ; --- TOP OF STACK ---
 WindowManager_ADVICE_OpVWFCONFIG::
     ld a, BANK(W_WindowManager_CompositionState)
     ld [REG_SVBK], a
-    
-    ;Configure the ring buffer from arguments.
-    call BugVM_PopTypedData
-    ld a, c
-    ld [W_WindowManager_VWFRingEnd], a
-    ld a, b
-    ld [W_WindowManager_VWFRingEnd + 1], a
-    
-    call BugVM_PopTypedData
-    ld a, c
-    ld [W_WindowManager_VWFRingStart], a
-    ld [W_WindowManager_VWFRingWriteHead], a
-    ld a, b
-    ld [W_WindowManager_VWFRingStart + 1], a
-    ld [W_WindowManager_VWFRingWriteHead + 1], a
     
     ;Configure the background. These 16 bits are repeated to clear tiles.
     call BugVM_PopTypedData
@@ -720,12 +705,74 @@ WindowManager_ADVICE_OpVWFCONFIG::
     ld a, b
     ld [W_WindowManager_CompositionFont + 1], a
     
+    ret
+    
+;Enable use of the VWF.
+;By default, VWFCONFIG sets specific variables relating to the current font,
+;but it does not turn on VWF rendering. Screens need to opt-in to VWF.
+;VWFENABLE should not be used if tile text already exists on screen.
+;
+;You must configure a VWF ring buffer for text. Usually, a screen will either
+;use VWF or tiletext exclusively. In that case, you may configure the ring
+;buffer to overlap the tile text area so long as you do not overlap the theme's
+;window tiles. If you plan to have long-lasting text, then you should manually
+;allocate areas of text and draw them once, using VWFENABLE to specify a
+;different ring for each string. If you plan to have both tile text and VWF
+;text, then you must have VRAM1 space available to store VWF tiles, otherwise
+;there is not enough space for both to coexist.
+;
+;This opcode implicitly resets internal VWF state (e.g. which tile has been
+;drawn.)
+;
+;ARGUMENTS: (Via Datastack)
+; VWF Ring Start   (Tile index from $8800)
+; VWF Ring End     (Tile index from $8800)
+WindowManager_ADVICE_OpVWFENABLE::
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ;Configure the ring buffer from arguments.
+    call BugVM_PopTypedData
+    ld a, c
+    ld [W_WindowManager_VWFRingEnd], a
+    ld a, b
+    ld [W_WindowManager_VWFRingEnd + 1], a
+    
+    call BugVM_PopTypedData
+    ld a, c
+    ld [W_WindowManager_VWFRingStart], a
+    ld [W_WindowManager_VWFRingWriteHead], a
+    ld a, b
+    ld [W_WindowManager_VWFRingStart + 1], a
+    ld [W_WindowManager_VWFRingWriteHead + 1], a
+    
     ;Mark the VWF as initialized and ready to use.
-    ld a, M_WindowManager_CompositionStateIntialized
+    ld a, M_WindowManager_CompositionStateInitialized
     ld [W_WindowManager_CompositionState], a
     
     xor a
     ld [W_WindowManager_CompositionShift], a
     
     ret
+    
+;Disable use of the VWF.
+;If the user of this opcode plans to use tiletext soon, and has used a VWF ring
+;buffer overlapping the tiletext tile range, then they must reload the FWF font
+;or tile output won't make sense.
+;
+;This opcode implicitly resets internal VWF state (e.g. which tile has been
+;drawn.)
+WindowManager_ADVICE_OpVWFDISABLE::
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ;Mark the VWF as initialized and ready to use.
+    ld a, M_WindowManager_CompositionStateUninitialized
+    ld [W_WindowManager_CompositionState], a
+    
+    xor a
+    ld [W_WindowManager_CompositionShift], a
+    
+    ret
+
 WindowManager_ADVICE_END::
