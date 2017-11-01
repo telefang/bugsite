@@ -528,9 +528,9 @@ WindowManager_ADVICE_PrintChara::
     push bc
     
     ld a, [W_WindowManager_VWFRingWriteHead + 1]
-    rra
-    rra
-    rra
+    rla
+    rla
+    rla
     ld b, a
     ld a, [W_LCDC_SetAttrVal]
     or b
@@ -569,9 +569,9 @@ WindowManager_ADVICE_PrintChara::
     push bc
     
     ld a, [W_WindowManager_VWFRingWriteHead + 1]
-    rra
-    rra
-    rra
+    rla
+    rla
+    rla
     ld b, a
     ld a, [W_LCDC_SetAttrVal]
     or b
