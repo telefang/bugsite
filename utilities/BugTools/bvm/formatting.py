@@ -70,7 +70,7 @@ def coalesce_psuedoinstructions(parselist):
             new_parselist.append(copy.deepcopy(instr))
             continue
 
-        if instr.opcode in ["INDIR", "PRED", "FARCALL", "FARJMP"] and len(new_parselist) > 0:
+        if instr.opcode in ["INDIR", "PRED", "FARCALL", "FARJMP"] and len(new_parselist) > 0 and len(instr.operands) == 0:
             last_instr = new_parselist[-1]
             if type(last_instr) is not Instruction:
                 new_parselist.append(copy.deepcopy(instr))
