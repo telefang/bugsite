@@ -47,6 +47,8 @@ opcodes = {
     "PRMOVE": 0xA1,
     "BLKMOVE": 0xA2,
     "PRMON": 0xAF,
+    "NTSTR": 0xB0,
+    "NTPRINT": 0xB1,
     "WINOPEN": 0xB2,
     "WINFRAME": 0xB3,
     "BLKMON": 0xBB,
