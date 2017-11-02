@@ -21,7 +21,8 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
 		  component/lcdc/poke.o component/lcdc/vmemcopy.o \
         component/system/banking.o \
         component/bugfs/indexlinkage.o \
-        component/mainscript/player_name.o
+        component/mainscript/player_name.o \
+        component/nameinput/string_temporary.o
 OBJS_ALPHA := 
 OBJS_BETA := 
 OBJS_ALL := ${OBJS} ${OBJS_ALPHA} ${OBJS_BETA}
