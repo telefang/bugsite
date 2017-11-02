@@ -32,10 +32,12 @@ PatchSupport_ReadBugFSFile::
     ld l, a
     
     add hl, de
-    set 6, h ; or $4000
+    ld a, $40
+    add a, h
+    ld h, a
     
     pop af
-    ld [REG_MBC5_ROMBank0], a
+    rst 0
     
     ld a, BANK(W_PatchUtils_FileBuffer)
     ld [REG_SVBK], a
@@ -45,13 +47,28 @@ PatchSupport_ReadBugFSFile::
     ld de, W_PatchUtils_FileBuffer
     
 .copyLoop
+    bit 7, h
+    jr nz, .overflowHandler
+    
     ld a, [hli]
     ld [de], a
     inc de
     dec c
     jr nz, .copyLoop
+    jr .finishedCopying
+    
+    ;We reached the end of one bank.
+    ;Move onto the next one.
+.overflowHandler
+    res 7, h
+    set 6, h
+    ld a, [H_System_CurrentROMBank]
+    inc a
+    rst 0
+    jr .copyLoop
     
     ;Restore ROM bank and unclobber non-argument registers.
+.finishedCopying
     pop af
     rst $0
     
