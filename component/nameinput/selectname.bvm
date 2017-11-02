@@ -2227,6 +2227,9 @@ NameInput_SelectName::
     IMMED $f
     NPREF SCRCURS
     POPALL
+    IMMED $130
+    IMMED $140
+    VWFENABLE
     DB STR_103_1092
     NPREF PRINT 
     POPALL 
@@ -2236,9 +2239,13 @@ NameInput_SelectName::
     IMMED $10
     NPREF SCRCURS
     POPALL
+    IMMED $140
+    IMMED $150
+    VWFENABLE
     DB STR_103_10AC
     NPREF PRINT 
     POPALL 
+    VWFDISABLE
     JMP .sub_103_11ec ;$11ec
 
 .sub_103_10c0
@@ -2318,6 +2325,9 @@ NameInput_SelectName::
     IMMED $f
     NPREF SCRCURS
     POPALL
+    IMMED $130
+    IMMED $140
+    VWFENABLE
     DB STR_103_11C1
     NPREF PRINT 
     POPALL 
@@ -2327,10 +2337,14 @@ NameInput_SelectName::
     IMMED $10
     NPREF SCRCURS
     POPALL
+    IMMED $140
+    IMMED $150
+    VWFENABLE
     DB STR_103_11DB
     NPREF PRINT 
     POPALL 
-
+    VWFDISABLE
+    
 .sub_103_11ec
     ARFREE 
     NPREF UO $85
