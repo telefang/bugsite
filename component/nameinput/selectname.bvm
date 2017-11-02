@@ -246,7 +246,7 @@ NameInput_SelectName::
     IMMED $0
     STR 
     POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     INDIR $178
     IMMED $0
@@ -254,7 +254,7 @@ NameInput_SelectName::
     POPALL 
     JAL NameInput_DrawKeyboard ;$f82
     NPREF POPALL 
-    JAL .sub_103_11f1 ;$11f1
+    JAL sub_103_11f1 ;$11f1
     NPREF POPALL 
     ARFREE 
     NPREF UO $5D
@@ -318,7 +318,7 @@ NameInput_SelectName::
     NPREF POPALL 
 
 .sub_103_28c
-    JAL .sub_103_11f1 ;$11f1
+    JAL sub_103_11f1 ;$11f1
     NPREF POPALL 
 
 .sub_103_291
@@ -360,9 +360,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_2D9
@@ -374,9 +374,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_2F8
@@ -388,9 +388,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_317
@@ -402,9 +402,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     RET 
 
@@ -419,9 +419,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_356
@@ -433,9 +433,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_375
@@ -447,9 +447,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_394
@@ -461,9 +461,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_3B3
@@ -475,9 +475,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_3D2
@@ -489,9 +489,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_125c ;$125c
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     RET 
 
@@ -691,9 +691,9 @@ NameInput_SelectName::
     IMMED $FFFF
     CMP_NEQ 
     JMPT .sub_103_59a ;$59a
-    JAL .sub_103_139f ;$139f
+    JAL sub_103_139f ;$139f
     NPREF POPALL 
-    JAL .sub_103_11f1 ;$11f1
+    JAL sub_103_11f1 ;$11f1
     NPREF POPALL 
     JMP .sub_103_f6b ;$f6b
 
@@ -2118,9 +2118,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL .sub_103_12fb ;$12fb
+    JAL sub_103_12fb ;$12fb
     NPREF POPALL 
-    JAL .sub_103_11f1 ;$11f1
+    JAL sub_103_11f1 ;$11f1
     NPREF POPALL 
 
 .sub_103_f6b
@@ -2337,8 +2337,8 @@ NameInput_DrawKeyboard::
     POPALL 
     RET 
 
-.sub_103_11f1
-    JAL .sub_103_125c ;$125c
+sub_103_11f1::
+    JAL sub_103_125c ;$125c
     NPREF POPALL 
     ARFREE 
     IMMED $B
@@ -2392,7 +2392,7 @@ NameInput_DrawKeyboard::
 .sub_103_125b
     RET 
 
-.sub_103_125c
+sub_103_125c::
     INDIR W_MainScript_WindowXPos
     IMMED $0
     STR 
@@ -2474,7 +2474,7 @@ NameInput_DrawKeyboard::
 .sub_103_12fa
     RET 
 
-.sub_103_12fb
+sub_103_12fb::
     INDIR $179
     IMMED $8
     CMP_GEQ 
@@ -2552,7 +2552,7 @@ NameInput_DrawKeyboard::
 .sub_103_139e
     RET 
 
-.sub_103_139f
+sub_103_139f::
     INDIR $179
     IMMED $0
     CMP_LEQ 
