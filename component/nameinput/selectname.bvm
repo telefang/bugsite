@@ -2237,15 +2237,26 @@ NameInput_DrawKeyboard::
     NPREF PRINT 
     POPALL 
     ARFREE 
-    IMMED $1
+    IMMED $2
     ENOP $2D
     IMMED $10
     NPREF SCRCURS
     POPALL
     IMMED $140
-    IMMED $150
+    IMMED $148
     VWFENABLE
     DB STR_103_10AC
+    NPREF PRINT 
+    POPALL 
+    IMMED $9
+    ENOP $2D
+    IMMED $10
+    NPREF SCRCURS
+    POPALL
+    IMMED $148
+    IMMED $150
+    VWFENABLE
+    DB STR_103_10AC_2
     NPREF PRINT 
     POPALL 
     VWFDISABLE
@@ -2335,15 +2346,26 @@ NameInput_DrawKeyboard::
     NPREF PRINT 
     POPALL 
     ARFREE 
-    IMMED $1
+    IMMED $2
     ENOP $2D
     IMMED $10
     NPREF SCRCURS
     POPALL
     IMMED $140
+    IMMED $148
+    VWFENABLE
+    DB STR_103_11DB ;To UPPER
+    NPREF PRINT 
+    POPALL 
+    IMMED $9
+    ENOP $2D
+    IMMED $10
+    NPREF SCRCURS
+    POPALL
+    IMMED $148
     IMMED $150
     VWFENABLE
-    DB STR_103_11DB
+    DB STR_103_11DB_2 ;Confirm
     NPREF PRINT 
     POPALL 
     VWFDISABLE
