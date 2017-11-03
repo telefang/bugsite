@@ -24,6 +24,7 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
         component/system/banking.o \
         component/bugfs/indexlinkage.o \
         component/mainscript/player_name.o \
+        component/nameinput/string_temporary.o component/nameinput/nickname_datablock.o \
         component/patchsupport/patchtbl.o component/patchsupport/pointcut.o \
         component/patchsupport/readfile.o component/patchsupport/custom_opcode.o \
         component/windowmanager/vwf_advice.o

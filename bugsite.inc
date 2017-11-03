@@ -7,6 +7,7 @@ INCLUDE "component/lcdc/vblank_irq.inc"
 INCLUDE "component/system/banking.inc"
 INCLUDE "component/spritemanager/animatesprites.inc"
 INCLUDE "component/input/joypadstate.inc"
+INCLUDE "component/nameinput/string_temporary.inc"
 
 INCLUDE "component/patchsupport/readfile.inc"
 INCLUDE "component/windowmanager/vwf_advice.inc"
