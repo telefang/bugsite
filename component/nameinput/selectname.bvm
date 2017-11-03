@@ -212,6 +212,11 @@ NameInput_DrawScreen::
     ENOP $2D
     IMMED $3
     NPREF SCRCURS 
+    
+    IMMED $130
+    IMMED $138
+    VWFENABLE
+    
     POPALL 
     ARFREE 
     DB STR_103_196
@@ -2230,9 +2235,11 @@ NameInput_DrawKeyboard::
     IMMED $f
     NPREF SCRCURS
     POPALL
-    IMMED $130
-    IMMED $140
+    
+    IMMED $138
+    IMMED $148
     VWFENABLE
+    
     DB STR_103_1092
     NPREF PRINT 
     POPALL 
@@ -2242,9 +2249,11 @@ NameInput_DrawKeyboard::
     IMMED $10
     NPREF SCRCURS
     POPALL
-    IMMED $140
+    
     IMMED $148
+    IMMED $150
     VWFENABLE
+    
     DB STR_103_10AC
     NPREF PRINT 
     POPALL 
@@ -2253,9 +2262,11 @@ NameInput_DrawKeyboard::
     IMMED $10
     NPREF SCRCURS
     POPALL
-    IMMED $148
+    
     IMMED $150
+    IMMED $158
     VWFENABLE
+    
     DB STR_103_10AC_2
     NPREF PRINT 
     POPALL 
@@ -2339,9 +2350,11 @@ NameInput_DrawKeyboard::
     IMMED $f
     NPREF SCRCURS
     POPALL
-    IMMED $130
-    IMMED $140
+    
+    IMMED $138
+    IMMED $148
     VWFENABLE
+    
     DB STR_103_11C1
     NPREF PRINT 
     POPALL 
@@ -2351,9 +2364,11 @@ NameInput_DrawKeyboard::
     IMMED $10
     NPREF SCRCURS
     POPALL
-    IMMED $140
+    
     IMMED $148
+    IMMED $150
     VWFENABLE
+    
     DB STR_103_11DB ;To UPPER
     NPREF PRINT 
     POPALL 
@@ -2362,9 +2377,11 @@ NameInput_DrawKeyboard::
     IMMED $10
     NPREF SCRCURS
     POPALL
-    IMMED $148
+    
     IMMED $150
+    IMMED $158
     VWFENABLE
+    
     DB STR_103_11DB_2 ;Confirm
     NPREF PRINT 
     POPALL 
@@ -2380,7 +2397,7 @@ NameInput_PrintCurrentName::
     JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
-    IMMED $B
+    IMMED $8
     ENOP $2D
     IMMED $4
     NPREF SCRCURS 
