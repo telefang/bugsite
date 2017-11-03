@@ -71,7 +71,7 @@ NameInput_SelectName::
     NPREF FARCALL $CD
     POPALL 
     POPALL 
-    JAL .sub_103_a6 ;$a6
+    JAL NameInput_DrawScreen ;$a6
     NPREF POPALL 
     INDIR W_MainScript_PortraitID
     IMMED $0
@@ -87,7 +87,7 @@ NameInput_SelectName::
     POPALL 
     RET 
 
-.sub_103_a6
+NameInput_DrawScreen::
     ARFREE 
     IMMED $21C
     ENOP $2D
@@ -246,7 +246,7 @@ NameInput_SelectName::
     IMMED $0
     STR 
     POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     INDIR $178
     IMMED $0
@@ -254,7 +254,7 @@ NameInput_SelectName::
     POPALL 
     JAL NameInput_DrawKeyboard ;$f82
     NPREF POPALL 
-    JAL sub_103_11f1 ;$11f1
+    JAL NameInput_PrintCurrentName ;$11f1
     NPREF POPALL 
     ARFREE 
     NPREF UO $5D
@@ -291,14 +291,14 @@ NameInput_SelectName::
     IMMED $1
     CMP_NEQ 
     JMPT .sub_103_29e ;$29e
-    JAL .sub_103_3f1 ;$3f1
+    JAL sub_103_3f1 ;$3f1
     NPREF POPALL 
     INDIR $17E
     IMMED $2
     CMP_NEQ 
     JMPT .sub_103_29b ;$29b
     INDIR W_MainScript_PortraitID
-    INDIR $418
+    INDIR W_NameInput_NicknameDataInputName
     STR 
     POPALL 
     INDIR W_MainScript_PortraitID
@@ -309,16 +309,16 @@ NameInput_SelectName::
     IMMED $23
     CMP_NEQ 
     JMPT .sub_103_287 ;$287
-    JAL .sub_103_336 ;$336
+    JAL NameInput_DefaultStarterName ;$336
     NPREF POPALL 
     JMP .sub_103_28c ;$28c
 
 .sub_103_287
-    JAL .sub_103_2b9 ;$2b9
+    JAL NameInput_DefaultProtagonistName ;$2b9
     NPREF POPALL 
 
 .sub_103_28c
-    JAL sub_103_11f1 ;$11f1
+    JAL NameInput_PrintCurrentName ;$11f1
     NPREF POPALL 
 
 .sub_103_291
@@ -331,7 +331,7 @@ NameInput_SelectName::
     JMP .sub_103_2a3 ;$2a3
 
 .sub_103_29e
-    JAL .sub_103_4ca ;$4ca
+    JAL sub_103_4ca ;$4ca
     NPREF POPALL 
 
 .sub_103_2a3
@@ -349,7 +349,7 @@ NameInput_SelectName::
     POPALL 
     RET 
 
-.sub_103_2b9
+NameInput_DefaultProtagonistName::
     ARFREE 
     DB STR_103_2BA
     NPREF NTSTR 
@@ -360,9 +360,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_2D9
@@ -374,9 +374,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_2F8
@@ -388,9 +388,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_317
@@ -402,13 +402,13 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     RET 
 
-.sub_103_336
+NameInput_DefaultStarterName::
     ARFREE 
     DB STR_103_337
     NPREF NTSTR 
@@ -419,9 +419,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_356
@@ -433,9 +433,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_375
@@ -447,9 +447,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_394
@@ -461,9 +461,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_3B3
@@ -475,9 +475,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     DB STR_103_3D2
@@ -489,13 +489,13 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_125c ;$125c
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     RET 
 
-.sub_103_3f1
+sub_103_3f1::
     ARFREE 
     IMMED $1
     ENOP $2D
@@ -600,7 +600,7 @@ NameInput_SelectName::
     NPREF POPALL 
     RET 
 
-.sub_103_4ca
+sub_103_4ca::
     ARFREE 
     IMMED $1
     ENOP $2D
@@ -691,9 +691,9 @@ NameInput_SelectName::
     IMMED $FFFF
     CMP_NEQ 
     JMPT .sub_103_59a ;$59a
-    JAL sub_103_139f ;$139f
+    JAL NameInput_ClearCurrentChara ;$139f
     NPREF POPALL 
-    JAL sub_103_11f1 ;$11f1
+    JAL NameInput_PrintCurrentName ;$11f1
     NPREF POPALL 
     JMP .sub_103_f6b ;$f6b
 
@@ -2118,9 +2118,9 @@ NameInput_SelectName::
     AND 
     STR 
     POPALL 
-    JAL sub_103_12fb ;$12fb
+    JAL NameInput_AppendChara ;$12fb
     NPREF POPALL 
-    JAL sub_103_11f1 ;$11f1
+    JAL NameInput_PrintCurrentName ;$11f1
     NPREF POPALL 
 
 .sub_103_f6b
@@ -2337,8 +2337,8 @@ NameInput_DrawKeyboard::
     POPALL 
     RET 
 
-sub_103_11f1::
-    JAL sub_103_125c ;$125c
+NameInput_PrintCurrentName::
+    JAL NameInput_CountNameLength ;$125c
     NPREF POPALL 
     ARFREE 
     IMMED $B
@@ -2347,12 +2347,12 @@ sub_103_11f1::
     NPREF SCRCURS 
     POPALL 
     ARFREE 
-    NPREF UO $E5
+    NPREF PRNICK
     POPALL 
     INDIR $179
     IMMED $8
     CMP_GEQ 
-    JMPT .sub_103_125b ;$125b
+    JMPT .return ;$125b
     ARFREE 
     DB STR_103_1211
     NPREF PRINT 
@@ -2362,7 +2362,7 @@ sub_103_11f1::
     IMMED $1
     SUB 
     CMP_GEQ 
-    JMPT .sub_103_125b ;$125b
+    JMPT .return ;$125b
     INDIR W_MainScript_PortraitID
     IMMED $8
     INDIR $179
@@ -2372,11 +2372,11 @@ sub_103_11f1::
     STR 
     POPALL 
 
-.sub_103_1238
+.emptySpaceLoop
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_LEQ 
-    JMPT .sub_103_125b ;$125b
+    JMPT .return ;$125b
     ARFREE 
     DB STR_103_1244
     NPREF PRINT 
@@ -2387,12 +2387,12 @@ sub_103_11f1::
     SUB 
     STR 
     POPALL 
-    JMP .sub_103_1238 ;$1238
+    JMP .emptySpaceLoop ;$1238
 
-.sub_103_125b
+.return
     RET 
 
-sub_103_125c::
+NameInput_CountNameLength::
     INDIR W_MainScript_WindowXPos
     IMMED $0
     STR 
@@ -2402,13 +2402,13 @@ sub_103_125c::
     STR 
     POPALL 
 
-.sub_103_126e
+.countLoop
     INDIR W_MainScript_WindowXPos
     IMMED $8
     CMP_GEQ 
-    JMPT .sub_103_12fa ;$12fa
+    JMPT .return ;$12fa
     INDIR W_MainScript_PortraitID
-    IMMED $418
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_WindowXPos
     ADD 
     INDIR 
@@ -2419,7 +2419,7 @@ sub_103_125c::
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_EQ 
-    JMPT .sub_103_12e0 ;$12e0
+    JMPT .lowTerminatorFound ;$12e0
     INDIR $179
     INDIR $179
     IMMED $1
@@ -2427,7 +2427,7 @@ sub_103_125c::
     STR 
     POPALL 
     INDIR W_MainScript_PortraitID
-    IMMED $418
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_WindowXPos
     ADD 
     INDIR 
@@ -2438,47 +2438,47 @@ sub_103_125c::
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_EQ 
-    JMPT .sub_103_12d4 ;$12d4
+    JMPT .hiTerminatorFound ;$12d4
     INDIR $179
     INDIR $179
     IMMED $1
     ADD 
     STR 
     POPALL 
-    JMP .sub_103_12dd ;$12dd
+    JMP .noTerminatorFound ;$12dd
 
-.sub_103_12d4
+.hiTerminatorFound
     INDIR W_MainScript_WindowXPos
     IMMED $8
     STR 
     POPALL 
 
-.sub_103_12dd
-    JMP .sub_103_12e9 ;$12e9
+.noTerminatorFound
+    JMP .loopIncrement ;$12e9
 
-.sub_103_12e0
+.lowTerminatorFound
     INDIR W_MainScript_WindowXPos
     IMMED $8
     STR 
     POPALL 
 
-.sub_103_12e9
+.loopIncrement
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
     ADD 
     STR 
     POPALL 
-    JMP .sub_103_126e ;$126e
+    JMP .countLoop ;$126e
 
-.sub_103_12fa
+.return
     RET 
 
-sub_103_12fb::
+NameInput_AppendChara::
     INDIR $179
     IMMED $8
     CMP_GEQ 
-    JMPT .sub_103_139e ;$139e
+    JMPT .return ;$139e
     INDIR W_MainScript_PortraitID
     INDIR $179
     IMMED $2
@@ -2494,8 +2494,8 @@ sub_103_12fb::
     INDIR $173
     IMMED $0
     CMP_NEQ 
-    JMPT .sub_103_1343 ;$1343
-    IMMED $418
+    JMPT .appendCharacterHigh ;$1343
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
     ADD 
     INDIR 
@@ -2504,11 +2504,11 @@ sub_103_12fb::
     AND 
     STR 
     POPALL 
-    JMP .sub_103_139e ;$139e
+    JMP .return ;$139e
 
-.sub_103_1343
+.appendCharacterHigh
     INDIR W_MainScript_WindowXPos
-    IMMED $418
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
     ADD 
     INDIR 
@@ -2532,14 +2532,14 @@ sub_103_12fb::
     OR 
     STR 
     POPALL 
-    IMMED $418
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
     ADD 
     INDIR 
     INDIR W_MainScript_WindowXPos
     STR 
     POPALL 
-    IMMED $418
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
     ADD 
     IMMED $1
@@ -2549,14 +2549,14 @@ sub_103_12fb::
     STR 
     POPALL 
 
-.sub_103_139e
+.return
     RET 
 
-sub_103_139f::
+NameInput_ClearCurrentChara::
     INDIR $179
     IMMED $0
     CMP_LEQ 
-    JMPT .sub_103_141c ;$141c
+    JMPT .return ;$141c
     INDIR $179
     INDIR $179
     IMMED $1
@@ -2578,19 +2578,19 @@ sub_103_139f::
     INDIR $173
     IMMED $0
     CMP_NEQ 
-    JMPT .sub_103_13f0 ;$13f0
-    IMMED $418
+    JMPT .clearCharaHigh ;$13f0
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
     ADD 
     INDIR 
     IMMED $0
     STR 
     POPALL 
-    JMP .sub_103_141c ;$141c
+    JMP .return ;$141c
 
-.sub_103_13f0
+.clearCharaHigh
     INDIR W_MainScript_WindowXPos
-    IMMED $418
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
     ADD 
     INDIR 
@@ -2602,7 +2602,7 @@ sub_103_139f::
     AND 
     STR 
     POPALL 
-    IMMED $418
+    IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
     ADD 
     INDIR 
@@ -2610,6 +2610,6 @@ sub_103_139f::
     STR 
     POPALL 
 
-.sub_103_141c
+.return
     RET 
     FGAME 
