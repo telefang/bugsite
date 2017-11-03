@@ -52,9 +52,10 @@ opcodes = {
     "WINOPEN": 0xB2,
     "WINFRAME": 0xB3,
     "BLKMON": 0xBB,
+    "RESET": 0xBD,
     "BLKCHIP": 0xE2,
     "PRCHIP": 0xE3,
+    "PRNICK": 0xE5,
     "BLKENC": 0xF1,
-    "RESET": 0xBD,
     "FGAME": 0xFF #will crash everything horribly all the time
 }
