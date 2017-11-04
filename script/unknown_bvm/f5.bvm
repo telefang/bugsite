@@ -1,53 +1,53 @@
     JAL .sub_f5_4 ;$4
-    RET 
+    RET
 
 .sub_f5_4
     INDIR $17E
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $28
-    CMP_GT 
+    CMP_GT
     JMPT .sub_f5_66 ;$66
     INDIR $173
     IMMED $500
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR $173
     INDIR $449
-    CMP_LT 
+    CMP_LT
     JMPT .sub_f5_4e ;$4e
     INDIR $173
     INDIR $173
     INDIR $449
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR $17E
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f5_57 ;$57
 
 .sub_f5_4e
     INDIR $173
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f5_57
     IMMED $500
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR $173
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f5_66
-    RET 
-    FGAME 
+    RET
+    FGAME

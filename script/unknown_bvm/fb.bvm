@@ -1,76 +1,76 @@
     JAL .sub_fb_4 ;$4
-    RET 
+    RET
 
 .sub_fb_4
     INDIR W_MainScript_PortraitID
-    ARFREE 
+    ARFREE
     IMMED $64
     NPREF UO $67
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $A
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_fb_28 ;$28
     INDIR W_MainScript_PortraitID
     INDIR $4B5
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_fb_91 ;$91
 
 .sub_fb_28
     INDIR W_MainScript_PortraitID
-    ARFREE 
+    ARFREE
     IMMED $4
     NPREF UO $67
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_fb_4c ;$4c
     INDIR W_MainScript_PortraitID
     INDIR $4B1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_fb_91 ;$91
 
 .sub_fb_4c
     INDIR W_MainScript_PortraitID
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_fb_64 ;$64
     INDIR W_MainScript_PortraitID
     INDIR $4B2
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_fb_91 ;$91
 
 .sub_fb_64
     INDIR W_MainScript_PortraitID
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_fb_7c ;$7c
     INDIR W_MainScript_PortraitID
     INDIR $4B3
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_fb_91 ;$91
 
 .sub_fb_7c
     INDIR W_MainScript_PortraitID
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_fb_91 ;$91
     INDIR W_MainScript_PortraitID
     INDIR $4B4
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_fb_91
     INDIR $42A
     INDIR W_MainScript_PortraitID
-    STR 
-    POPALL 
-    RET 
-    FGAME 
+    STR
+    POPALL
+    RET
+    FGAME

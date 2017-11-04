@@ -1,387 +1,387 @@
     JAL .sub_6e_4 ;$4
-    RET 
+    RET
 
 .sub_6e_4
     INDIR W_MainScript_ActiveScene
     IMMED $2AF8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_17 ;$17
     JAL .sub_6e_74 ;$74
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_6e_73 ;$73
 
 .sub_6e_17
     INDIR W_MainScript_ActiveScene
     IMMED $2B02
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_2a ;$2a
     JAL .sub_6e_75 ;$75
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_6e_73 ;$73
 
 .sub_6e_2a
     INDIR W_MainScript_ActiveScene
     IMMED $2B0C
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_3d ;$3d
     JAL .sub_6e_1e3 ;$1e3
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_6e_73 ;$73
 
 .sub_6e_3d
     INDIR W_MainScript_ActiveScene
     IMMED $2B16
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_50 ;$50
     JAL .sub_6e_26e ;$26e
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_6e_73 ;$73
 
 .sub_6e_50
     INDIR W_MainScript_ActiveScene
     IMMED $2B20
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_63 ;$63
     JAL .sub_6e_330 ;$330
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_6e_73 ;$73
 
 .sub_6e_63
     INDIR W_MainScript_ActiveScene
     IMMED $2B2A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_73 ;$73
     JAL .sub_6e_3c8 ;$3c8
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_6e_73
-    RET 
+    RET
 
 .sub_6e_74
-    RET 
+    RET
 
 .sub_6e_75
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D5
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     PRED $4B0
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_c5 ;$c5
-    ARFREE 
+    ARFREE
     DB STR_6E_92
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_A1
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_B2
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_1da ;$1da
 
 .sub_6e_c5
     PRED $BB8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_10e ;$10e
-    ARFREE 
+    ARFREE
     DB STR_6E_D1
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_DD
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_F3
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_FE
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_1da ;$1da
 
 .sub_6e_10e
     PRED $1130
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_159 ;$159
-    ARFREE 
+    ARFREE
     DB STR_6E_11A
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_125
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_137
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_149
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_1da ;$1da
 
 .sub_6e_159
     PRED $28A0
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_198 ;$198
-    ARFREE 
+    ARFREE
     DB STR_6E_165
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_174
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_185
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_1da ;$1da
 
 .sub_6e_198
-    ARFREE 
+    ARFREE
     DB STR_6E_199
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_1AA
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_1BC
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_1CF
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_6e_1da
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_6e_1e3
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D5
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     PRED $4B0
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_21e ;$21e
-    ARFREE 
+    ARFREE
     DB STR_6E_200
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_20F
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_265 ;$265
 
 .sub_6e_21e
     PRED $1130
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_249 ;$249
-    ARFREE 
+    ARFREE
     DB STR_6E_22A
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_237
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_265 ;$265
 
 .sub_6e_249
-    ARFREE 
+    ARFREE
     DB STR_6E_24A
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_259
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_6e_265
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_6e_26e
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D5
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     PRED $4B0
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_2c1 ;$2c1
-    ARFREE 
+    ARFREE
     DB STR_6E_28B
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_29D
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_2AF
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_327 ;$327
 
 .sub_6e_2c1
     PRED $1130
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_2f2 ;$2f2
-    ARFREE 
+    ARFREE
     DB STR_6E_2CD
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_2DE
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_327 ;$327
 
 .sub_6e_2f2
-    ARFREE 
+    ARFREE
     DB STR_6E_2F3
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_306
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_31B
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_6e_327
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_6e_330
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D5
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     PRED $BB8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_380 ;$380
-    ARFREE 
+    ARFREE
     DB STR_6E_34D
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_35F
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_36F
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_6e_3bf ;$3bf
 
 .sub_6e_380
     PRED $28A0
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_6e_3bf ;$3bf
-    ARFREE 
+    ARFREE
     DB STR_6E_38C
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_6E_39F
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_6E_3B2
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_6e_3bf
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_6e_3c8
-    RET 
-    FGAME 
+    RET
+    FGAME

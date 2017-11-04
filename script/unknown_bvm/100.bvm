@@ -1,22 +1,22 @@
     JAL .sub_100_4 ;$4
-    RET 
+    RET
 
 .sub_100_4
-    ARFREE 
+    ARFREE
     NPREF UO $7F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $5D
-    POPALL 
+    POPALL
     INDIR $150
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_100_1f ;$1f
-    ARFREE 
+    ARFREE
     INDIR $150
     NPREF UO $BE
-    POPALL 
+    POPALL
 
 .sub_100_1f
-    RET 
-    FGAME 
+    RET
+    FGAME

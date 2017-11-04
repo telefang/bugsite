@@ -1,62 +1,62 @@
     JAL .sub_38_4 ;$4
-    RET 
+    RET
 
 .sub_38_4
     INDIR W_MainScript_ActiveScene
     IMMED $15E0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_38_17 ;$17
     JAL .sub_38_28 ;$28
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_38_27 ;$27
 
 .sub_38_17
     INDIR W_MainScript_ActiveScene
     IMMED $15EA
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_38_27 ;$27
     JAL .sub_38_29 ;$29
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_38_27
-    RET 
+    RET
 
 .sub_38_28
-    RET 
+    RET
 
 .sub_38_29
     INDIR W_MainScript_PortraitID
     IMMED $FFFF
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D5
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     DB STR_38_3B
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_38_50
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_38_62
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_38_74
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
-    RET 
-    FGAME 
+    POPALL
+    RET
+    FGAME

@@ -1,8 +1,8 @@
     JAL .sub_fc_4 ;$4
-    RET 
+    RET
 
 .sub_fc_4
-    ARFREE 
+    ARFREE
     IMMED $974
     ENOP $2D
     IMMED $0
@@ -12,23 +12,23 @@
     IMMED $9700
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
+    NPREF RESLD
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $173
     IMMED $88E
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_fc_2d
     INDIR W_MainScript_PortraitID
     IMMED $7
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_fc_76 ;$76
-    ARFREE 
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -39,25 +39,25 @@
     ENOP $2D
     IMMED $F
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $173
     INDIR $173
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_fc_2d ;$2d
 
 .sub_fc_76
-    RET 
-    FGAME 
+    RET
+    FGAME

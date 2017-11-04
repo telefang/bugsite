@@ -1,313 +1,313 @@
     JAL .sub_18a_4 ;$4
-    RET 
+    RET
 
 .sub_18a_4
     PRED $AAA
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     PRED $AF0
     IMMED $0
-    CMP_NEQ 
-    ANDL 
+    CMP_NEQ
+    ANDL
     JMPT .sub_18a_29 ;$29
     INDIR W_MainScript_ActiveScene
     IMMED $AF0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $95
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
 
 .sub_18a_29
     INDIR $169
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $16A
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $16B
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $16C
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $16D
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $16E
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $16F
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $168
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $F
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D7
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $7C
     IMMED $18D
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_bd ;$bd
-    ARFREE 
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $2
     ENOP $2D
     IMMED $6
     NPREF UO $63
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $0
     NPREF UO $8C
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF FARCALL $100
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $10
     NPREF UO $69
-    POPALL 
+    POPALL
     JMP .sub_18a_125 ;$125
 
 .sub_18a_bd
     INDIR $7C
     IMMED $13F
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_ed ;$ed
-    ARFREE 
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $A
     ENOP $2D
     IMMED $6
     NPREF UO $63
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $3
     NPREF UO $8C
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF FARCALL $100
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     JMP .sub_18a_125 ;$125
 
 .sub_18a_ed
     INDIR $7C
     IMMED $19E
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_11d ;$11d
-    ARFREE 
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $A
     ENOP $2D
     IMMED $6
     NPREF UO $63
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $3
     NPREF UO $8C
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF FARCALL $100
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     JMP .sub_18a_125 ;$125
 
 .sub_18a_11d
-    ARFREE 
+    ARFREE
     NPREF FARCALL $100
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
 
 .sub_18a_125
     PRED $582
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     PRED $5DC
     IMMED $0
-    CMP_NEQ 
-    ANDL 
+    CMP_NEQ
+    ANDL
     JMPT .sub_18a_14a ;$14a
     INDIR W_MainScript_ActiveScene
     IMMED $5DC
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $95
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
 
 .sub_18a_14a
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_18a_162
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_18a_28d ;$28d
     INDIR $17E
-    ARFREE 
+    ARFREE
     NPREF UO $68
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $CA
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $17E
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_18d ;$18d
     JMP .sub_18a_28a ;$28a
 
 .sub_18a_18d
     INDIR $17E
     IMMED $8
-    CMP_GT 
+    CMP_GT
     JMPT .sub_18a_1c9 ;$1c9
     INDIR W_MainScript_ActiveScene
     IMMED $43C
     INDIR $17E
-    ADD 
+    ADD
     IMMED $2
-    SUB 
-    INDIR 
-    STR 
-    POPALL 
+    SUB
+    INDIR
+    STR
+    POPALL
     INDIR $459
     IMMED $168
     INDIR $17E
-    ADD 
+    ADD
     IMMED $1
-    SUB 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    SUB
+    INDIR
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $95
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     JMP .sub_18a_28a ;$28a
 
 .sub_18a_1c9
     INDIR $17E
     IMMED $A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_274 ;$274
     PRED $1900
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_21a ;$21a
-    ARFREE 
+    ARFREE
     NPREF UO $5E
-    POPALL 
+    POPALL
     PRED $23
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $420
     IMMED $18
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $F0
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $17E
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_20f ;$20f
-    ARFREE 
+    ARFREE
     NPREF FARJMP $19E
-    POPALL 
+    POPALL
 
 .sub_18a_20f
-    ARFREE 
+    ARFREE
     INDIR $7F
-    NPREF FARJMP 
-    POPALL 
+    NPREF FARJMP
+    POPALL
     JMP .sub_18a_271 ;$271
 
 .sub_18a_21a
     PRED $28A0
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_239 ;$239
     INDIR W_MainScript_ActiveScene
     IMMED $358E
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $95
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     JMP .sub_18a_271 ;$271
 
 .sub_18a_239
-    ARFREE 
+    ARFREE
     NPREF UO $5E
-    POPALL 
+    POPALL
     PRED $23
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $420
     IMMED $18
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $F0
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $17E
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_269 ;$269
-    ARFREE 
+    ARFREE
     NPREF FARJMP $19E
-    POPALL 
+    POPALL
 
 .sub_18a_269
-    ARFREE 
+    ARFREE
     INDIR $7F
-    NPREF FARJMP 
-    POPALL 
+    NPREF FARJMP
+    POPALL
 
 .sub_18a_271
     JMP .sub_18a_28a ;$28a
@@ -315,18 +315,18 @@
 .sub_18a_274
     INDIR $17E
     IMMED $64
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18a_28a ;$28a
-    ARFREE 
+    ARFREE
     NPREF UO $5E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF FARJMP $18D
-    POPALL 
+    POPALL
 
 .sub_18a_28a
     JMP .sub_18a_162 ;$162
 
 .sub_18a_28d
-    RET 
-    FGAME 
+    RET
+    FGAME

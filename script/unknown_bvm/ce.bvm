@@ -1,52 +1,52 @@
     JAL .sub_ce_4 ;$4
-    RET 
+    RET
 
 .sub_ce_4
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
-    OR 
+    OR
     IMMED $8
-    OR 
+    OR
     IMMED $10
-    OR 
-    STR 
-    POPALL 
+    OR
+    STR
+    POPALL
     INDIR $17E
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_22
     INDIR $17E
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_63 ;$63
     JAL .sub_ce_6a8 ;$6a8
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     NPREF UO $5E
-    POPALL 
+    POPALL
     JAL .sub_ce_1c9 ;$1c9
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $17E
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_49 ;$49
     JMP .sub_ce_60 ;$60
 
 .sub_ce_49
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_57 ;$57
     JMP .sub_ce_60 ;$60
 
 .sub_ce_57
     INDIR $17E
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_60
     JMP .sub_ce_22 ;$22
@@ -54,44 +54,44 @@
 .sub_ce_63
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF UO $8E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $4E
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_ce_78
     INDIR W_MainScript_PortraitID
     IMMED $47E
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $173
     IMMED $481
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $484
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_9c
     INDIR W_MainScript_WindowYPos
     IMMED $3
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_ce_1c8 ;$1c8
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
+    ARFREE
     INDIR W_MainScript_PortraitID
     ENOP $2D
     IMMED $0
@@ -101,9 +101,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -111,9 +111,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -121,9 +121,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -131,9 +131,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -141,9 +141,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -151,9 +151,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -161,9 +161,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -171,9 +171,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR $173
     ENOP $2D
     IMMED $0
@@ -181,9 +181,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     ENOP $2D
     IMMED $0
@@ -193,58 +193,58 @@
     IMMED $0
     ENOP $2D
     IMMED $8
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $173
     INDIR $173
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     INDIR W_MainScript_WindowYPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    STR
+    POPALL
+    ARFREE
     IMMED $28
     NPREF UO $5C
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $5E
-    POPALL 
+    POPALL
     JMP .sub_ce_9c ;$9c
 
 .sub_ce_1c8
-    RET 
+    RET
 
 .sub_ce_1c9
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $CD
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $208
     ENOP $2D
     IMMED $0
@@ -254,9 +254,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $20B
     ENOP $2D
     IMMED $0
@@ -266,9 +266,9 @@
     IMMED $8000
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -276,9 +276,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -286,9 +286,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -296,9 +296,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -306,9 +306,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -316,9 +316,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -326,9 +326,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -336,9 +336,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $0
@@ -346,9 +346,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $1
@@ -356,9 +356,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $1
@@ -366,9 +366,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $1
@@ -376,9 +376,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $1
@@ -386,9 +386,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $1
@@ -396,9 +396,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $209
     ENOP $2D
     IMMED $1
@@ -406,9 +406,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $20A
     ENOP $2D
     IMMED $0
@@ -418,147 +418,147 @@
     IMMED $0
     ENOP $2D
     IMMED $8
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $20C
     ENOP $2D
     IMMED $0
     ENOP $2D
     IMMED $FF
     NPREF UO $6E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $40
     IMMED $8
-    SUB 
+    SUB
     ENOP $2D
     IMMED $40
     IMMED $10
-    SUB 
+    SUB
     NPREF UO $6F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $5
     ENOP $2D
     IMMED $9
-    NPREF SCRCURS 
-    POPALL 
+    NPREF SCRCURS
+    POPALL
     INDIR W_LCDC_SetAttrVal
     IMMED $5
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $1
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_381 ;$381
-    ARFREE 
+    ARFREE
     DB STR_CE_36F
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_ce_391 ;$391
 
 .sub_ce_381
-    ARFREE 
+    ARFREE
     DB STR_CE_382
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_ce_391
     INDIR W_LCDC_SetAttrVal
     IMMED $7
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     IMMED $5
     ENOP $2D
     IMMED $F
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_CE_3A6
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     NPREF UO $5D
-    POPALL 
+    POPALL
 
 .sub_ce_3b9
     INDIR $17B
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_ce_3d0 ;$3d0
     INDIR $17B
-    ARFREE 
+    ARFREE
     NPREF UO $51
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_ce_3b9 ;$3b9
 
 .sub_ce_3d0
     INDIR $17A
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_3d9
     INDIR $17A
     IMMED $4B0
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_ce_417 ;$417
     INDIR $17B
-    ARFREE 
+    ARFREE
     NPREF UO $51
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17B
     IMMED $8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_406 ;$406
     JAL .sub_ce_420 ;$420
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $17A
     IMMED $FFF0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_406
     INDIR $17A
     INDIR $17A
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_ce_3d9 ;$3d9
 
 .sub_ce_417
-    ARFREE 
+    ARFREE
     NPREF UO $8E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $5E
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_ce_420
     INDIR W_MainScript_PortraitID
     IMMED $2
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $101
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_603 ;$603
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
+    ARFREE
     IMMED $20A
     ENOP $2D
     IMMED $0
@@ -568,157 +568,157 @@
     IMMED $0
     ENOP $2D
     IMMED $8
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $5
     ENOP $2D
     IMMED $9
-    NPREF SCRCURS 
-    POPALL 
+    NPREF SCRCURS
+    POPALL
     INDIR W_LCDC_SetAttrVal
     IMMED $5
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $1
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_489 ;$489
-    ARFREE 
+    ARFREE
     DB STR_CE_477
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_ce_499 ;$499
 
 .sub_ce_489
-    ARFREE 
+    ARFREE
     DB STR_CE_48A
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_ce_499
     INDIR $DD
     IMMED $7C00
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $D9
     IMMED $7C00
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_LCDC_SetAttrVal
     IMMED $6
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     IMMED $7
     ENOP $2D
     IMMED $E
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_CE_4C0
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     INDIR W_LCDC_SetAttrVal
     IMMED $7
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     IMMED $7
     ENOP $2D
     IMMED $10
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_CE_4E0
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
+    POPALL
     INDIR $17F
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17E
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_ce_51c
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_ce_5f1 ;$5f1
     JAL .sub_ce_60d ;$60d
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $17B
-    ARFREE 
+    ARFREE
     NPREF UO $51
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17B
     IMMED $8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_544 ;$544
     JMP .sub_ce_5ee ;$5ee
 
 .sub_ce_544
     INDIR $17B
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_55d ;$55d
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
-    POPALL 
+    STR
+    POPALL
+    POPALL
     JMP .sub_ce_5ee ;$5ee
 
 .sub_ce_55d
     INDIR $17B
     IMMED $40
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_5a7 ;$5a7
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_57f ;$57f
     INDIR $17E
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_ce_588 ;$588
 
 .sub_ce_57f
     INDIR $17E
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_588
     INDIR $17B
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_ce_5a4 ;$5a4
     INDIR $17B
-    ARFREE 
+    ARFREE
     NPREF UO $51
-    STR 
-    POPALL 
+    STR
+    POPALL
     JAL .sub_ce_60d ;$60d
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_ce_588 ;$588
 
 .sub_ce_5a4
@@ -727,36 +727,36 @@
 .sub_ce_5a7
     INDIR $17B
     IMMED $80
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_5ee ;$5ee
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_5c9 ;$5c9
     INDIR $17E
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_ce_5d2 ;$5d2
 
 .sub_ce_5c9
     INDIR $17E
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_5d2
     INDIR $17B
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_ce_5ee ;$5ee
     INDIR $17B
-    ARFREE 
+    ARFREE
     NPREF UO $51
-    STR 
-    POPALL 
+    STR
+    POPALL
     JAL .sub_ce_60d ;$60d
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_ce_5d2 ;$5d2
 
 .sub_ce_5ee
@@ -766,182 +766,182 @@
     INDIR $17D
     INDIR $17D
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
-    POPALL 
+    SUB
+    STR
+    POPALL
+    POPALL
     JMP .sub_ce_60c ;$60c
 
 .sub_ce_603
     INDIR $17E
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_60c
-    RET 
+    RET
 
 .sub_ce_60d
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_62e ;$62e
     INDIR W_MainScript_PortraitID
     INDIR $D9
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $DD
     IMMED $7C00
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_ce_64c ;$64c
 
 .sub_ce_62e
     INDIR $17E
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_64c ;$64c
     INDIR W_MainScript_PortraitID
     INDIR $DD
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $D9
     IMMED $7C00
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_64c
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $20
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1F
-    OR 
-    STR 
-    POPALL 
+    OR
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $7FFF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_68e ;$68e
     INDIR $D9
     INDIR W_MainScript_PortraitID
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_ce_6a3 ;$6a3
 
 .sub_ce_68e
     INDIR $17E
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_6a3 ;$6a3
     INDIR $DD
     INDIR W_MainScript_PortraitID
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_ce_6a3
-    ARFREE 
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_ce_6a8
     INDIR $8
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_6c1 ;$6c1
     JAL .sub_ce_78 ;$78
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_ce_6c1
-    ARFREE 
+    ARFREE
     IMMED $1
     NPREF UO $4E
-    POPALL 
+    POPALL
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_6d8 ;$6d8
     JAL .sub_ce_73d ;$73d
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_ce_6d8
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_6e8 ;$6e8
     JAL .sub_ce_73d ;$73d
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_ce_6e8
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_6f8 ;$6f8
     JAL .sub_ce_c08 ;$c08
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_ce_6f8
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_708 ;$708
     JAL .sub_ce_c08 ;$c08
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_ce_708
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_71c ;$71c
     JAL .sub_ce_1254 ;$1254
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     NPREF UO $5E
-    POPALL 
+    POPALL
 
 .sub_ce_71c
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_72c ;$72c
     JAL .sub_ce_20de ;$20de
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_ce_72c
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_73c ;$73c
     JAL .sub_ce_21e9 ;$21e9
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_ce_73c
-    RET 
+    RET
 
 .sub_ce_73d
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_847 ;$847
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
+    ARFREE
     IMMED $8CA
     ENOP $2D
     IMMED $0
@@ -951,9 +951,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CB
     ENOP $2D
     IMMED $0
@@ -963,9 +963,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CC
     ENOP $2D
     IMMED $0
@@ -975,9 +975,9 @@
     IMMED $8000
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -985,9 +985,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -995,9 +995,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1005,9 +1005,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1015,9 +1015,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1025,9 +1025,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1035,9 +1035,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1045,9 +1045,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1055,9 +1055,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $906
     ENOP $2D
     IMMED $0
@@ -1067,30 +1067,30 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
+    POPALL
 
 .sub_ce_847
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_85a ;$85a
-    ARFREE 
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
 
 .sub_ce_85a
     INDIR $8
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_ce_87c ;$87c
-    ARFREE 
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1098,19 +1098,19 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
+    POPALL
 
 .sub_ce_87c
-    ARFREE 
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E1
     ENOP $2D
     IMMED $0
@@ -1118,17 +1118,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8DB
     ENOP $2D
     IMMED $0
@@ -1136,17 +1136,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D8
     ENOP $2D
     IMMED $0
@@ -1154,17 +1154,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D5
     ENOP $2D
     IMMED $0
@@ -1172,17 +1172,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -1190,17 +1190,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $907
     ENOP $2D
     IMMED $0
@@ -1211,13 +1211,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $908
     ENOP $2D
     IMMED $0
@@ -1228,13 +1228,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $909
     ENOP $2D
     IMMED $0
@@ -1245,13 +1245,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $90A
     ENOP $2D
     IMMED $0
@@ -1262,13 +1262,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $90B
     ENOP $2D
     IMMED $0
@@ -1279,13 +1279,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $90C
     ENOP $2D
     IMMED $0
@@ -1296,13 +1296,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $90D
     ENOP $2D
     IMMED $0
@@ -1313,13 +1313,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $90E
     ENOP $2D
     IMMED $0
@@ -1330,13 +1330,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $A
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D5
     ENOP $2D
     IMMED $0
@@ -1344,17 +1344,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D6
     ENOP $2D
     IMMED $0
@@ -1362,17 +1362,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D7
     ENOP $2D
     IMMED $0
@@ -1380,17 +1380,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D8
     ENOP $2D
     IMMED $0
@@ -1398,17 +1398,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8D9
     ENOP $2D
     IMMED $0
@@ -1416,17 +1416,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8DA
     ENOP $2D
     IMMED $0
@@ -1434,17 +1434,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8DB
     ENOP $2D
     IMMED $0
@@ -1452,17 +1452,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8DC
     ENOP $2D
     IMMED $0
@@ -1470,17 +1470,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8DD
     ENOP $2D
     IMMED $0
@@ -1488,17 +1488,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8DE
     ENOP $2D
     IMMED $0
@@ -1506,17 +1506,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8DF
     ENOP $2D
     IMMED $0
@@ -1524,17 +1524,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E0
     ENOP $2D
     IMMED $0
@@ -1542,17 +1542,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E1
     ENOP $2D
     IMMED $0
@@ -1560,17 +1560,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E2
     ENOP $2D
     IMMED $0
@@ -1578,17 +1578,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E3
     ENOP $2D
     IMMED $0
@@ -1596,17 +1596,17 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E4
     ENOP $2D
     IMMED $0
@@ -1614,23 +1614,23 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    RET 
+    POPALL
+    POPALL
+    RET
 
 .sub_ce_c08
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
+    ARFREE
     IMMED $8CA
     ENOP $2D
     IMMED $0
@@ -1640,9 +1640,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CB
     ENOP $2D
     IMMED $0
@@ -1652,9 +1652,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CC
     ENOP $2D
     IMMED $0
@@ -1664,9 +1664,9 @@
     IMMED $8000
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1674,9 +1674,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1684,9 +1684,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1694,9 +1694,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1704,9 +1704,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1714,9 +1714,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1724,9 +1724,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1734,9 +1734,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -1744,9 +1744,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $91A
     ENOP $2D
     IMMED $0
@@ -1756,18 +1756,18 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -1775,9 +1775,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -1785,17 +1785,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -1803,9 +1803,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -1813,17 +1813,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -1831,9 +1831,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -1841,17 +1841,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -1859,9 +1859,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -1869,17 +1869,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -1887,9 +1887,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -1897,17 +1897,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E8
     ENOP $2D
     IMMED $0
@@ -1915,9 +1915,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E8
     ENOP $2D
     IMMED $0
@@ -1925,17 +1925,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $91B
     ENOP $2D
     IMMED $0
@@ -1946,13 +1946,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $91C
     ENOP $2D
     IMMED $0
@@ -1963,13 +1963,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $91D
     ENOP $2D
     IMMED $0
@@ -1980,13 +1980,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $91E
     ENOP $2D
     IMMED $0
@@ -1997,13 +1997,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $91F
     ENOP $2D
     IMMED $0
@@ -2014,13 +2014,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $920
     ENOP $2D
     IMMED $0
@@ -2031,13 +2031,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $921
     ENOP $2D
     IMMED $0
@@ -2048,13 +2048,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $922
     ENOP $2D
     IMMED $0
@@ -2065,13 +2065,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $A
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -2079,9 +2079,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -2089,17 +2089,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EA
     ENOP $2D
     IMMED $0
@@ -2107,9 +2107,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EA
     ENOP $2D
     IMMED $0
@@ -2117,17 +2117,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EB
     ENOP $2D
     IMMED $0
@@ -2135,9 +2135,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EB
     ENOP $2D
     IMMED $0
@@ -2145,17 +2145,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -2163,9 +2163,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -2173,17 +2173,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8ED
     ENOP $2D
     IMMED $0
@@ -2191,9 +2191,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8ED
     ENOP $2D
     IMMED $0
@@ -2201,17 +2201,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EE
     ENOP $2D
     IMMED $0
@@ -2219,9 +2219,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EE
     ENOP $2D
     IMMED $0
@@ -2229,17 +2229,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -2247,9 +2247,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -2257,17 +2257,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F0
     ENOP $2D
     IMMED $0
@@ -2275,9 +2275,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F0
     ENOP $2D
     IMMED $0
@@ -2285,17 +2285,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F1
     ENOP $2D
     IMMED $0
@@ -2303,9 +2303,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F1
     ENOP $2D
     IMMED $0
@@ -2313,17 +2313,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F2
     ENOP $2D
     IMMED $0
@@ -2331,9 +2331,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F2
     ENOP $2D
     IMMED $0
@@ -2341,17 +2341,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -2359,9 +2359,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -2369,17 +2369,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F4
     ENOP $2D
     IMMED $0
@@ -2387,9 +2387,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F4
     ENOP $2D
     IMMED $0
@@ -2397,17 +2397,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -2415,9 +2415,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -2425,17 +2425,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F6
     ENOP $2D
     IMMED $0
@@ -2443,9 +2443,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F6
     ENOP $2D
     IMMED $0
@@ -2453,17 +2453,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F7
     ENOP $2D
     IMMED $0
@@ -2471,9 +2471,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F7
     ENOP $2D
     IMMED $0
@@ -2481,17 +2481,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2499,9 +2499,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2509,23 +2509,23 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    RET 
+    POPALL
+    POPALL
+    RET
 
 .sub_ce_1254
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
+    ARFREE
     IMMED $8CA
     ENOP $2D
     IMMED $0
@@ -2535,9 +2535,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CB
     ENOP $2D
     IMMED $0
@@ -2547,9 +2547,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CC
     ENOP $2D
     IMMED $0
@@ -2559,9 +2559,9 @@
     IMMED $8000
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2569,9 +2569,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2579,9 +2579,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2589,9 +2589,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2599,9 +2599,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2609,9 +2609,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2619,9 +2619,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2629,9 +2629,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -2639,9 +2639,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $92E
     ENOP $2D
     IMMED $0
@@ -2651,18 +2651,18 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -2670,9 +2670,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -2680,17 +2680,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -2698,9 +2698,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -2708,17 +2708,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -2726,9 +2726,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -2736,17 +2736,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -2754,9 +2754,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -2764,17 +2764,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -2782,9 +2782,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -2792,17 +2792,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E8
     ENOP $2D
     IMMED $0
@@ -2810,9 +2810,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E8
     ENOP $2D
     IMMED $0
@@ -2820,17 +2820,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $1
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2838,9 +2838,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2848,9 +2848,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2858,9 +2858,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2868,9 +2868,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2878,9 +2878,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2888,9 +2888,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2898,9 +2898,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -2908,37 +2908,37 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $948
     ENOP $2D
     IMMED $0
     ENOP $2D
     IMMED $FF
     NPREF UO $6E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $8
     IMMED $D
-    MUL 
+    MUL
     ENOP $2D
     IMMED $8
     IMMED $E
-    MUL 
+    MUL
     NPREF UO $6F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $1
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $92F
     ENOP $2D
     IMMED $0
@@ -2949,13 +2949,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $930
     ENOP $2D
     IMMED $0
@@ -2966,13 +2966,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $931
     ENOP $2D
     IMMED $0
@@ -2983,13 +2983,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $932
     ENOP $2D
     IMMED $0
@@ -3000,13 +3000,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $933
     ENOP $2D
     IMMED $0
@@ -3017,13 +3017,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $934
     ENOP $2D
     IMMED $0
@@ -3034,13 +3034,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $935
     ENOP $2D
     IMMED $0
@@ -3051,13 +3051,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $936
     ENOP $2D
     IMMED $0
@@ -3068,13 +3068,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -3082,9 +3082,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -3092,17 +3092,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EA
     ENOP $2D
     IMMED $0
@@ -3110,9 +3110,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EA
     ENOP $2D
     IMMED $0
@@ -3120,17 +3120,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EB
     ENOP $2D
     IMMED $0
@@ -3138,9 +3138,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EB
     ENOP $2D
     IMMED $0
@@ -3148,17 +3148,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -3166,9 +3166,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -3176,17 +3176,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8ED
     ENOP $2D
     IMMED $0
@@ -3194,9 +3194,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8ED
     ENOP $2D
     IMMED $0
@@ -3204,17 +3204,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EE
     ENOP $2D
     IMMED $0
@@ -3222,9 +3222,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EE
     ENOP $2D
     IMMED $0
@@ -3232,17 +3232,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -3250,9 +3250,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -3260,17 +3260,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F0
     ENOP $2D
     IMMED $0
@@ -3278,9 +3278,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F0
     ENOP $2D
     IMMED $0
@@ -3288,17 +3288,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F1
     ENOP $2D
     IMMED $0
@@ -3306,9 +3306,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F1
     ENOP $2D
     IMMED $0
@@ -3316,17 +3316,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F2
     ENOP $2D
     IMMED $0
@@ -3334,9 +3334,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F2
     ENOP $2D
     IMMED $0
@@ -3344,17 +3344,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -3362,9 +3362,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -3372,17 +3372,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F4
     ENOP $2D
     IMMED $0
@@ -3390,9 +3390,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F4
     ENOP $2D
     IMMED $0
@@ -3400,17 +3400,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -3418,9 +3418,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -3428,17 +3428,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F6
     ENOP $2D
     IMMED $0
@@ -3446,9 +3446,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F6
     ENOP $2D
     IMMED $0
@@ -3456,17 +3456,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F7
     ENOP $2D
     IMMED $0
@@ -3474,9 +3474,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F7
     ENOP $2D
     IMMED $0
@@ -3484,17 +3484,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3502,9 +3502,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3512,17 +3512,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3530,9 +3530,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3540,9 +3540,9 @@
     IMMED $0
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3550,9 +3550,9 @@
     IMMED $0
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3560,9 +3560,9 @@
     IMMED $0
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3570,9 +3570,9 @@
     IMMED $0
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3580,9 +3580,9 @@
     IMMED $0
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3590,9 +3590,9 @@
     IMMED $0
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -3600,20 +3600,20 @@
     IMMED $0
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3621,9 +3621,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3631,9 +3631,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3641,9 +3641,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3651,9 +3651,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3661,9 +3661,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3671,9 +3671,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3681,9 +3681,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -3691,9 +3691,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $938
     ENOP $2D
     IMMED $0
@@ -3703,18 +3703,18 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -3722,9 +3722,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -3732,17 +3732,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -3750,9 +3750,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -3760,17 +3760,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -3778,9 +3778,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -3788,17 +3788,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -3806,9 +3806,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -3816,17 +3816,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -3834,9 +3834,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -3844,17 +3844,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E8
     ENOP $2D
     IMMED $0
@@ -3862,9 +3862,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E8
     ENOP $2D
     IMMED $0
@@ -3872,17 +3872,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $1
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3890,9 +3890,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3900,9 +3900,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3910,9 +3910,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3920,9 +3920,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3930,9 +3930,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3940,9 +3940,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3950,9 +3950,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FC
     ENOP $2D
     IMMED $1
@@ -3960,37 +3960,37 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $949
     ENOP $2D
     IMMED $0
     ENOP $2D
     IMMED $FF
     NPREF UO $6E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $8
     IMMED $D
-    MUL 
+    MUL
     ENOP $2D
     IMMED $8
     IMMED $E
-    MUL 
+    MUL
     NPREF UO $6F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $1
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $939
     ENOP $2D
     IMMED $0
@@ -4001,13 +4001,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $93A
     ENOP $2D
     IMMED $0
@@ -4018,13 +4018,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $93B
     ENOP $2D
     IMMED $0
@@ -4035,13 +4035,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $93C
     ENOP $2D
     IMMED $0
@@ -4052,13 +4052,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $93D
     ENOP $2D
     IMMED $0
@@ -4069,13 +4069,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $93E
     ENOP $2D
     IMMED $0
@@ -4086,13 +4086,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $93F
     ENOP $2D
     IMMED $0
@@ -4103,13 +4103,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $940
     ENOP $2D
     IMMED $0
@@ -4120,13 +4120,13 @@
     ENOP $2D
     IMMED $0
     NPREF UO $F8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -4134,9 +4134,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8E9
     ENOP $2D
     IMMED $0
@@ -4144,17 +4144,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EA
     ENOP $2D
     IMMED $0
@@ -4162,9 +4162,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EA
     ENOP $2D
     IMMED $0
@@ -4172,17 +4172,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EB
     ENOP $2D
     IMMED $0
@@ -4190,9 +4190,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EB
     ENOP $2D
     IMMED $0
@@ -4200,17 +4200,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -4218,9 +4218,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EC
     ENOP $2D
     IMMED $0
@@ -4228,17 +4228,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8ED
     ENOP $2D
     IMMED $0
@@ -4246,9 +4246,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8ED
     ENOP $2D
     IMMED $0
@@ -4256,17 +4256,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EE
     ENOP $2D
     IMMED $0
@@ -4274,9 +4274,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EE
     ENOP $2D
     IMMED $0
@@ -4284,17 +4284,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -4302,9 +4302,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8EF
     ENOP $2D
     IMMED $0
@@ -4312,17 +4312,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F0
     ENOP $2D
     IMMED $0
@@ -4330,9 +4330,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F0
     ENOP $2D
     IMMED $0
@@ -4340,17 +4340,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F1
     ENOP $2D
     IMMED $0
@@ -4358,9 +4358,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F1
     ENOP $2D
     IMMED $0
@@ -4368,17 +4368,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F2
     ENOP $2D
     IMMED $0
@@ -4386,9 +4386,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F2
     ENOP $2D
     IMMED $0
@@ -4396,17 +4396,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -4414,9 +4414,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F3
     ENOP $2D
     IMMED $0
@@ -4424,17 +4424,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F4
     ENOP $2D
     IMMED $0
@@ -4442,9 +4442,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F4
     ENOP $2D
     IMMED $0
@@ -4452,17 +4452,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -4470,9 +4470,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F5
     ENOP $2D
     IMMED $0
@@ -4480,17 +4480,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F6
     ENOP $2D
     IMMED $0
@@ -4498,9 +4498,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F6
     ENOP $2D
     IMMED $0
@@ -4508,17 +4508,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F7
     ENOP $2D
     IMMED $0
@@ -4526,9 +4526,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F7
     ENOP $2D
     IMMED $0
@@ -4536,17 +4536,17 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -4554,9 +4554,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8F8
     ENOP $2D
     IMMED $0
@@ -4564,23 +4564,23 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     NPREF UO $5C
-    POPALL 
-    POPALL 
-    RET 
+    POPALL
+    POPALL
+    RET
 
 .sub_ce_20de
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
-    ARFREE 
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
+    ARFREE
     IMMED $8CD
     ENOP $2D
     IMMED $0
@@ -4590,9 +4590,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CE
     ENOP $2D
     IMMED $0
@@ -4602,9 +4602,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CF
     ENOP $2D
     IMMED $0
@@ -4614,9 +4614,9 @@
     IMMED $8000
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4624,9 +4624,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4634,9 +4634,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4644,9 +4644,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4654,9 +4654,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4664,9 +4664,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4674,9 +4674,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4684,9 +4684,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4694,9 +4694,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $942
     ENOP $2D
     IMMED $0
@@ -4706,23 +4706,23 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $5A
     NPREF UO $5C
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $5E
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_ce_21e9
-    ARFREE 
+    ARFREE
     IMMED $8CD
     ENOP $2D
     IMMED $0
@@ -4732,9 +4732,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CE
     ENOP $2D
     IMMED $0
@@ -4744,9 +4744,9 @@
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8CF
     ENOP $2D
     IMMED $0
@@ -4756,9 +4756,9 @@
     IMMED $8000
     ENOP $2D
     IMMED $0
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4766,9 +4766,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4776,9 +4776,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4786,9 +4786,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4796,9 +4796,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4806,9 +4806,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4816,9 +4816,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4826,9 +4826,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8D4
     ENOP $2D
     IMMED $0
@@ -4836,9 +4836,9 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $943
     ENOP $2D
     IMMED $0
@@ -4848,9 +4848,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4858,9 +4858,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4868,9 +4868,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4878,9 +4878,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4888,9 +4888,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4898,9 +4898,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4908,9 +4908,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4918,9 +4918,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $8FD
     ENOP $2D
     IMMED $1
@@ -4928,39 +4928,39 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $94A
     ENOP $2D
     IMMED $0
     ENOP $2D
     IMMED $FF
     NPREF UO $6E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $8
     IMMED $D
-    MUL 
+    MUL
     ENOP $2D
     IMMED $8
     IMMED $E
-    MUL 
+    MUL
     NPREF UO $6F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $5D
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $5A
     NPREF UO $5C
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -4968,9 +4968,9 @@
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -4978,9 +4978,9 @@
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -4988,9 +4988,9 @@
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -4998,9 +4998,9 @@
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -5008,9 +5008,9 @@
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -5018,9 +5018,9 @@
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -5028,9 +5028,9 @@
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $1F4
     ENOP $2D
     IMMED $0
@@ -5038,37 +5038,37 @@
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $94B
     ENOP $2D
     IMMED $0
     ENOP $2D
     IMMED $FF
     NPREF UO $6E
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $8
     IMMED $D
-    MUL 
+    MUL
     ENOP $2D
     IMMED $8
     IMMED $E
-    MUL 
+    MUL
     NPREF UO $6F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $5D
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $78
     NPREF UO $5C
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $5E
-    POPALL 
-    RET 
-    FGAME 
+    POPALL
+    RET
+    FGAME
