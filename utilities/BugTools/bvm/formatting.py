@@ -189,23 +189,24 @@ def unparse_bvm(parselist, strdec = None):
                 source.append(" ")
             
             source.append(instr.opcode)
-            source.append(" ")
             
             operand_str = []
             for operand in instr.operands:
                 if type(operand) is int:
-                    source.append("$%X" % operand)
+                    operand_str.append("$%X" % operand)
                 elif type(operand) is str:
-                    source.append('"%s"' % operand)
+                    operand_str.append('"%s"' % operand)
                 elif type(operand) is bytes:
-                    source.append('"%s"' % strdec(operand))
+                    operand_str.append('"%s"' % strdec(operand))
                 elif type(operand) is SymbolicRef:
-                    source.append(operand.name)
+                    operand_str.append(operand.name)
                 else:
                     raise SyntaxError()
             
-            source.append(", ".join(operand_str))
-
+            if len(operand_str) > 0:
+                source.append(" ")
+                source.append(", ".join(operand_str))
+            
             if instr.comment is not None:
                 source.append(" ;")
                 source.append(instr.comment.comment_text)
