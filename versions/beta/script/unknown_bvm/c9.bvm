@@ -2923,6 +2923,11 @@
     RET
 
 .sub_c9_13db
+    ;Dialogue ring config
+    IMMED $6
+    IMMED $7D
+    VWFENABLE
+    
     INDIR W_MainScript_ActiveScene
     IMMED $64
     STR 
@@ -2942,6 +2947,9 @@
     IMMED $172
     INDIR
     NPREF FARCALL
+    
+    VWFDISABLE
+    
     POPALL
     POPALL
     RET
