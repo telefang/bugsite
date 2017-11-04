@@ -3,6 +3,37 @@ from BugTools.exceptions import InvalidOperandError
 
 import copy
 
+def identify_unidentified(parselist, instruction_encoding):
+    """Given a parsed BVM, replace UO instructions if we can identify them.
+
+    instruction_encoding is a mapping from instruction names to encoded ints."""
+
+    reverse_instruction_encoding = {}
+    for insname in instruction_encoding:
+        reverse_instruction_encoding[instruction_encoding[insname]] = insname
+
+    new_parselist = []
+
+    for instr in parselist:
+        if type(instr) is not Instruction:
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+
+        if instr.opcode not in ["UO"] or len(instr.operands) <= 0:
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+
+        encoded_opcode = instr.operands[0]
+
+        if encoded_opcode not in reverse_instruction_encoding.keys():
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+
+        decoded_opcode = reverse_instruction_encoding[encoded_opcode]
+        new_parselist.append(Instruction(decoded_opcode, copy.deepcopy(instr.operands[1:]), instr.prefix, instr.comment))
+
+    return new_parselist
+
 def symbolize_indirs(parselist, symbol_table):
     """Given a parsed BVM, replace INDIR numerical references with symbols.
     

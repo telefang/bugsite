@@ -1,7 +1,7 @@
 from BugTools.bvm.instructions import opcodes
 from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
 from BugTools.bvm.passes import resolve_equates, fix_labels, autobalance_strings, optimize_stream, encode_instruction_stream, inflate_psuedoinstructions
-from BugTools.bvm.formatting import symbolize_indirs, coalesce_psuedoinstructions, unparse_bvm
+from BugTools.bvm.formatting import symbolize_indirs, coalesce_psuedoinstructions, unparse_bvm, identify_unidentified
 from BugTools.bvm.strings import parse_stringtbl, parse_charmap
 from BugTools.bvm.symbols import parse_rgbds_symbols
 
@@ -78,18 +78,25 @@ def bvmfmt():
     parser.add_argument('infile', metavar='file.bvm', type=str, help='The file to reformat.')
     parser.add_argument('--charmap', metavar='charmap.bin', type=str, help='Character mapping.')
     parser.add_argument('--symfile', dest='symfile', metavar='bugsite_gamma.sym', type=str, action='append', help='List of symbols from the assembler to use on INDIR instructions.')
+    parser.add_argument('--opcode_tbl', dest='opcode_tbl', metavar='opcodes.json', type=str, help='Mapping of instruction opcodes to their binary representations.')
     
     args = parser.parse_args()
     
     with open(args.charmap, encoding="utf-8") as mapfile:
         strenc, strdec = parse_charmap(mapfile)
     
+    opcode_tbl = opcodes
+    if args.opcode_tbl is not None:
+        with open(args.opcode_tbl, encoding="utf-8") as opfile:
+            opcode_tbl = json.load(opfile)
+
     with open(args.infile, encoding="utf-8") as srcfile:
         src = srcfile.read()
         tree = bvm_grammar.parse(src + "\n") #Add a newline. Our grammar doesn't like files without ending newlines.
         
         mp = InstrListVisitor().visit(tree)
     
+    mp = identify_unidentified(mp, opcode_tbl)
     mp = coalesce_psuedoinstructions(mp)
     
     symbols = []
