@@ -1,119 +1,119 @@
     JAL .sub_29_4 ;$4
-    RET 
+    RET
 
 .sub_29_4
     INDIR W_MainScript_ActiveScene
     IMMED $1004
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_29_17 ;$17
     JAL .sub_29_4e ;$4e
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_29_4d ;$4d
 
 .sub_29_17
     INDIR W_MainScript_ActiveScene
     IMMED $100E
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_29_2a ;$2a
     JAL .sub_29_4f ;$4f
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_29_4d ;$4d
 
 .sub_29_2a
     INDIR W_MainScript_ActiveScene
     IMMED $1018
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_29_3d ;$3d
     JAL .sub_29_61 ;$61
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_29_4d ;$4d
 
 .sub_29_3d
     INDIR W_MainScript_ActiveScene
     IMMED $1022
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_29_4d ;$4d
     JAL .sub_29_ae ;$ae
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_29_4d
-    RET 
+    RET
 
 .sub_29_4e
-    RET 
+    RET
 
 .sub_29_4f
     INDIR W_MainScript_ActiveScene
     IMMED $3994
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $95
-    POPALL 
-    POPALL 
-    RET 
+    POPALL
+    POPALL
+    RET
 
 .sub_29_61
     INDIR W_MainScript_PortraitID
     IMMED $FFFF
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D5
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     DB STR_29_73
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_29_80
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_29_95
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_29_ae
     INDIR W_MainScript_PortraitID
     IMMED $FFFF
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D5
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     DB STR_29_C0
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     DB STR_29_CD
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINBRK 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINBRK
+    POPALL
+    ARFREE
     DB STR_29_E1
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
-    RET 
-    FGAME 
+    POPALL
+    RET
+    FGAME

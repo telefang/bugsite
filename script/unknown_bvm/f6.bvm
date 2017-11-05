@@ -1,75 +1,75 @@
     JAL .sub_f6_4 ;$4
-    RET 
+    RET
 
 .sub_f6_4
     INDIR W_MainScript_PortraitID
     INDIR $416
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $A9
-    CMP_GT 
+    CMP_GT
     JMPT .sub_f6_93 ;$93
-    ARFREE 
+    ARFREE
     NPREF FARCALL $E6
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $17E
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f6_4a ;$4a
-    ARFREE 
+    ARFREE
     NPREF FARCALL $E7
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $17E
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f6_4a
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f6_8a ;$8a
-    ARFREE 
+    ARFREE
     NPREF FARCALL $E8
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR $416
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     IMMED $3CF0
     INDIR W_MainScript_PortraitID
-    ADD 
-    PRED 
+    ADD
+    PRED
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     IMMED $3C28
     INDIR W_MainScript_PortraitID
-    ADD 
-    PRED 
+    ADD
+    PRED
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f6_93 ;$93
 
 .sub_f6_8a
     INDIR $17E
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f6_93
-    RET 
-    FGAME 
+    RET
+    FGAME

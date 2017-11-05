@@ -1,85 +1,85 @@
     JAL .sub_18_4 ;$4
-    RET 
+    RET
 
 .sub_18_4
     INDIR W_MainScript_ActiveScene
     IMMED $960
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18_17 ;$17
     JAL .sub_18_74 ;$74
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_18_73 ;$73
 
 .sub_18_17
     INDIR W_MainScript_ActiveScene
     IMMED $96A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18_2a ;$2a
     JAL .sub_18_75 ;$75
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_18_73 ;$73
 
 .sub_18_2a
     INDIR W_MainScript_ActiveScene
     IMMED $974
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18_3d ;$3d
     JAL .sub_18_76 ;$76
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_18_73 ;$73
 
 .sub_18_3d
     INDIR W_MainScript_ActiveScene
     IMMED $97E
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18_50 ;$50
     JAL .sub_18_77 ;$77
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_18_73 ;$73
 
 .sub_18_50
     INDIR W_MainScript_ActiveScene
     IMMED $988
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18_63 ;$63
     JAL .sub_18_78 ;$78
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_18_73 ;$73
 
 .sub_18_63
     INDIR W_MainScript_ActiveScene
     IMMED $992
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_18_73 ;$73
     JAL .sub_18_8a ;$8a
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_18_73
-    RET 
+    RET
 
 .sub_18_74
-    RET 
+    RET
 
 .sub_18_75
-    RET 
+    RET
 
 .sub_18_76
-    RET 
+    RET
 
 .sub_18_77
-    RET 
+    RET
 
 .sub_18_78
     INDIR W_MainScript_ActiveScene
     IMMED $398A
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $95
-    POPALL 
-    POPALL 
-    RET 
+    POPALL
+    POPALL
+    RET
 
 .sub_18_8a
-    RET 
-    FGAME 
+    RET
+    FGAME

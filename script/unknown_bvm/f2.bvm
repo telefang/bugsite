@@ -1,254 +1,254 @@
     JAL .sub_f2_4 ;$4
-    RET 
+    RET
 
 .sub_f2_4
     INDIR $448
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_21 ;$21
     JAL .sub_f2_ab5 ;$ab5
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR $57F
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_21
     INDIR $448
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_3e ;$3e
     JAL .sub_f2_c51 ;$c51
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR $57D
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_3e
     INDIR $448
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_5b ;$5b
     JAL .sub_f2_cbf ;$cbf
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR $57E
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_5b
     INDIR $448
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_78 ;$78
     JAL .sub_f2_d31 ;$d31
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR $49E
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_78
     INDIR $448
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_98 ;$98
-    ARFREE 
+    ARFREE
     NPREF FARCALL $BF
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $450
     INDIR $49D
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_98
     INDIR $448
     IMMED $5
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_b5 ;$b5
     JAL .sub_f2_dbc ;$dbc
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR $49F
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_b5
     INDIR $448
     IMMED $6
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_d2 ;$d2
     JAL .sub_f2_e35 ;$e35
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR $472
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_d2
     INDIR $448
     IMMED $7
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_ef ;$ef
     JAL .sub_f2_b23 ;$b23
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR W_MainScript_WindowXPos
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_109 ;$109
 
 .sub_f2_ef
     INDIR $448
     IMMED $8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_109 ;$109
     JAL .sub_f2_bba ;$bba
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $450
     INDIR W_MainScript_WindowXPos
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_109
-    ARFREE 
+    ARFREE
     INDIR $44E
     ENOP $2D
     INDIR $44F
     ENOP $2D
     INDIR $44E
     INDIR $44C
-    ADD 
+    ADD
     IMMED $1
-    SUB 
+    SUB
     ENOP $2D
     INDIR $44F
     INDIR $44D
-    ADD 
+    ADD
     IMMED $1
-    SUB 
-    NPREF WINCOORD 
-    POPALL 
+    SUB
+    NPREF WINCOORD
+    POPALL
     INDIR $450
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_691 ;$691
     INDIR $450
     INDIR $44D
     IMMED $2
-    SUB 
-    CMP_GEQ 
+    SUB
+    CMP_GEQ
     JMPT .sub_f2_15a ;$15a
     INDIR $178
     INDIR $450
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_168 ;$168
 
 .sub_f2_15a
     INDIR $178
     INDIR $44D
     IMMED $2
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
 
 .sub_f2_168
     INDIR $451
     INDIR $178
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $7A
     INDIR $17E
     INDIR $178
-    DIV 
+    DIV
     INDIR $178
-    MUL 
-    STR 
-    POPALL 
+    MUL
+    STR
+    POPALL
     INDIR $15D
     INDIR $17E
     INDIR $178
-    MOD 
-    STR 
-    POPALL 
+    MOD
+    STR
+    POPALL
     INDIR W_WindowManager_MenuItemCount
     INDIR $450
     IMMED $1
-    SUB 
+    SUB
     INDIR $178
-    DIV 
+    DIV
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $17F
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17E
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_1d6
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_680 ;$680
     INDIR $17F
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_25a ;$25a
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
-    OR 
+    OR
     IMMED $8
-    OR 
+    OR
     IMMED $10
-    OR 
-    STR 
-    POPALL 
-    ARFREE 
-    NPREF WINCLR 
-    POPALL 
+    OR
+    STR
+    POPALL
+    ARFREE
+    NPREF WINCLR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $176
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     JAL .sub_f2_763 ;$763
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF WINCURS 
-    POPALL 
-    ARFREE 
+    NPREF WINCURS
+    POPALL
+    ARFREE
     INDIR $15D
     ENOP $2D
     IMMED $1
@@ -259,43 +259,43 @@
     ENOP $2D
     IMMED $1
     NPREF UO $6D
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
+    POPALL
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17F
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_25a
     INDIR $462
     IMMED $2
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_368 ;$368
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
-    OR 
+    OR
     IMMED $10
-    OR 
-    STR 
-    POPALL 
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
+    OR
+    STR
+    POPALL
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
     INDIR $448
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_2bb ;$2bb
-    ARFREE 
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $9
@@ -303,29 +303,29 @@
     IMMED $13
     ENOP $2D
     IMMED $E
-    NPREF WINCOORD 
-    POPALL 
+    NPREF WINCOORD
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $600
     INDIR $15D
-    ADD 
+    ADD
     INDIR $7A
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $DD
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     JMP .sub_f2_332 ;$332
 
 .sub_f2_2bb
     INDIR $448
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_2f8 ;$2f8
-    ARFREE 
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $9
@@ -333,29 +333,29 @@
     IMMED $13
     ENOP $2D
     IMMED $E
-    NPREF WINCOORD 
-    POPALL 
+    NPREF WINCOORD
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $600
     INDIR $15D
-    ADD 
+    ADD
     INDIR $7A
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $DC
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     JMP .sub_f2_332 ;$332
 
 .sub_f2_2f8
     INDIR $448
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_332 ;$332
-    ARFREE 
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $9
@@ -363,179 +363,179 @@
     IMMED $13
     ENOP $2D
     IMMED $E
-    NPREF WINCOORD 
-    POPALL 
+    NPREF WINCOORD
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $600
     INDIR $15D
-    ADD 
+    ADD
     INDIR $7A
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $DD
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
 
 .sub_f2_332
-    ARFREE 
+    ARFREE
     NPREF UO $85
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     INDIR $44E
     ENOP $2D
     INDIR $44F
     ENOP $2D
     INDIR $44E
     INDIR $44C
-    ADD 
+    ADD
     IMMED $1
-    SUB 
+    SUB
     ENOP $2D
     INDIR $44F
     INDIR $44D
-    ADD 
+    ADD
     IMMED $1
-    SUB 
-    NPREF WINCOORD 
-    POPALL 
+    SUB
+    NPREF WINCOORD
+    POPALL
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_368
     INDIR $448
     IMMED $6
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_3ba ;$3ba
     INDIR W_MainScript_PortraitID
     IMMED $600
     INDIR $15D
-    ADD 
+    ADD
     INDIR $7A
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR $173
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $176
     IMMED $6
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $104
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
+    POPALL
     JMP .sub_f2_580 ;$580
 
 .sub_f2_3ba
     INDIR $448
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_47e ;$47e
     INDIR $462
     IMMED $4
-    AND 
+    AND
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_47b ;$47b
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
-    OR 
+    OR
     IMMED $8
-    OR 
+    OR
     IMMED $10
-    OR 
-    STR 
-    POPALL 
+    OR
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $3A98
     INDIR $15D
-    ADD 
+    ADD
     INDIR $7A
-    ADD 
+    ADD
     IMMED $8
-    ADD 
-    PRED 
-    STR 
-    POPALL 
+    ADD
+    PRED
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_472 ;$472
-    ARFREE 
+    ARFREE
     INDIR $15D
     INDIR $7A
-    ADD 
+    ADD
     IMMED $8
-    ADD 
+    ADD
     NPREF UO $E8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $3
     ENOP $2D
     IMMED $4
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     INDIR $3E2
     IMMED $FF
-    AND 
+    AND
     NPREF UO $4D
-    POPALL 
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR $3F6
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $7
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $176
     IMMED $2
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $104
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
+    POPALL
 
 .sub_f2_472
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_47b
     JMP .sub_f2_580 ;$580
@@ -543,144 +543,145 @@
 .sub_f2_47e
     INDIR $448
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_580 ;$580
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
-    OR 
+    OR
     IMMED $8
-    OR 
+    OR
     IMMED $10
-    OR 
-    STR 
-    POPALL 
+    OR
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $600
     INDIR $15D
-    ADD 
+    ADD
     INDIR $7A
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_PortraitID
-    NPREF BLKMON 
-    POPALL 
+    NPREF BLKMON
+    POPALL
     INDIR $173
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $4
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $176
     IMMED $2
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $104
-    POPALL 
-    POPALL 
-    ARFREE 
+    POPALL
+    POPALL
+    ARFREE
     NPREF UO $7B
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $6
     ENOP $2D
     IMMED $C
-    NPREF SCRCURS 
-    POPALL 
+    NPREF SCRCURS
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR $581
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_51d ;$51d
-    ARFREE 
+    ARFREE
     DB STR_F2_50F
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_f2_577 ;$577
 
 .sub_f2_51d
     INDIR W_MainScript_PortraitID
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_537 ;$537
-    ARFREE 
+    ARFREE
     DB STR_F2_529
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_f2_577 ;$577
 
 .sub_f2_537
     INDIR W_MainScript_PortraitID
     IMMED $8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_551 ;$551
-    ARFREE 
+    ARFREE
     DB STR_F2_543
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_f2_577 ;$577
 
 .sub_f2_551
     INDIR W_MainScript_PortraitID
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_56b ;$56b
+    ARFREE
     DB STR_F2_55D
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_f2_577 ;$577
 
 .sub_f2_56b
-    ARFREE 
+    ARFREE
     DB STR_F2_56C
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_f2_577
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_580
     INDIR $17B
-    ARFREE 
-    NPREF UO $61
-    STR 
-    POPALL 
+    ARFREE
+    NPREF SPRINPUT
+    STR
+    POPALL
     INDIR $17B
     IMMED $10
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_5b9 ;$5b9
     INDIR $462
     IMMED $1
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_5b6 ;$5b6
     INDIR $17E
     IMMED $FFFD
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_5b6
     JMP .sub_f2_67d ;$67d
@@ -688,22 +689,22 @@
 .sub_f2_5b9
     INDIR $17B
     IMMED $20
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_5e9 ;$5e9
     INDIR $462
     IMMED $1
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_5e6 ;$5e6
     INDIR $17E
     IMMED $FFFE
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_5e6
     JMP .sub_f2_67d ;$67d
@@ -711,69 +712,69 @@
 .sub_f2_5e9
     INDIR $17B
     IMMED $40
-    CMP_NEQ 
+    CMP_NEQ
     INDIR $15D
     IMMED $0
-    CMP_NEQ 
-    ANDL 
+    CMP_NEQ
+    ANDL
     JMPT .sub_f2_605 ;$605
     JAL .sub_f2_f0e ;$f0e
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_67d ;$67d
 
 .sub_f2_605
     INDIR $17B
     IMMED $80
-    CMP_NEQ 
+    CMP_NEQ
     INDIR $15D
     INDIR $178
     IMMED $1
-    SUB 
-    CMP_NEQ 
-    ANDL 
+    SUB
+    CMP_NEQ
+    ANDL
     JMPT .sub_f2_626 ;$626
     JAL .sub_f2_eb6 ;$eb6
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_67d ;$67d
 
 .sub_f2_626
     INDIR $17E
-    ARFREE 
+    ARFREE
     INDIR $17B
     NPREF UO $71
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17E
     IMMED $FFFF
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_64b ;$64b
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_f2_67d ;$67d
 
 .sub_f2_64b
     INDIR $17E
     IMMED $0
-    CMP_LEQ 
+    CMP_LEQ
     JMPT .sub_f2_67d ;$67d
     INDIR $17F
     INDIR $17E
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17E
     INDIR $7A
     INDIR $17E
-    ADD 
+    ADD
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_67d
     JMP .sub_f2_1d6 ;$1d6
@@ -782,61 +783,62 @@
     INDIR $17D
     INDIR $17D
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     JMP .sub_f2_762 ;$762
 
 .sub_f2_691
     ARFREE
     NPREF WINCLR
     POPALL
+    ARFREE
     DB STR_F2_696
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $0
     NPREF UO $F9
-    POPALL 
+    POPALL
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_6c5
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_750 ;$750
     INDIR $17B
-    ARFREE 
-    NPREF UO $61
-    STR 
-    POPALL 
+    ARFREE
+    NPREF SPRINPUT
+    STR
+    POPALL
     INDIR $17B
     IMMED $10
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_70a ;$70a
     INDIR $462
     IMMED $1
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_707 ;$707
     INDIR $17E
     IMMED $FFFD
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_707
     JMP .sub_f2_74d ;$74d
@@ -844,22 +846,22 @@
 .sub_f2_70a
     INDIR $17B
     IMMED $20
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_73a ;$73a
     INDIR $462
     IMMED $1
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_737 ;$737
     INDIR $17E
     IMMED $FFFE
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_737
     JMP .sub_f2_74d ;$74d
@@ -867,12 +869,12 @@
 .sub_f2_73a
     INDIR $17E
     IMMED $FFFF
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_74d
     JMP .sub_f2_6c5 ;$6c5
@@ -881,1027 +883,1027 @@
     INDIR $17D
     INDIR $17D
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
-    ARFREE 
-    NPREF WINCLR 
-    POPALL 
+    SUB
+    STR
+    POPALL
+    ARFREE
+    NPREF WINCLR
+    POPALL
 
 .sub_f2_762
-    RET 
+    RET
 
 .sub_f2_763
     INDIR $451
     INDIR $450
     INDIR $7A
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR $451
     INDIR $44D
     IMMED $2
-    SUB 
-    CMP_LEQ 
+    SUB
+    CMP_LEQ
     JMPT .sub_f2_790 ;$790
     INDIR $451
     INDIR $44D
     IMMED $2
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
 
 .sub_f2_790
     INDIR $450
     INDIR $44D
     IMMED $2
-    SUB 
-    CMP_GT 
+    SUB
+    CMP_GT
     JMPT .sub_f2_7a3 ;$7a3
     JMP .sub_f2_7df ;$7df
 
 .sub_f2_7a3
     INDIR $7A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_7b8 ;$7b8
-    ARFREE 
+    ARFREE
     IMMED $0
     NPREF UO $F4
-    POPALL 
+    POPALL
     JMP .sub_f2_7df ;$7df
 
 .sub_f2_7b8
     INDIR $450
     INDIR $7A
-    SUB 
+    SUB
     INDIR $44D
     IMMED $2
-    SUB 
-    CMP_GT 
+    SUB
+    CMP_GT
     JMPT .sub_f2_7d8 ;$7d8
-    ARFREE 
+    ARFREE
     INDIR W_WindowManager_MenuItemCount
     NPREF UO $F4
-    POPALL 
+    POPALL
     JMP .sub_f2_7df ;$7df
 
 .sub_f2_7d8
-    ARFREE 
+    ARFREE
     IMMED $1
     NPREF UO $F4
-    POPALL 
+    POPALL
 
 .sub_f2_7df
     INDIR W_MainScript_PortraitID
     INDIR $7A
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_7f2
     INDIR $173
     INDIR $451
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_8d3 ;$8d3
     INDIR $448
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_811 ;$811
     JAL .sub_f2_8d4 ;$8d4
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_811
     INDIR $448
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_824 ;$824
     JAL .sub_f2_93e ;$93e
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_824
     INDIR $448
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_837 ;$837
     JAL .sub_f2_9a8 ;$9a8
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_837
     INDIR $448
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_84a ;$84a
     JAL .sub_f2_9d1 ;$9d1
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_84a
     INDIR $448
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_85d ;$85d
     JAL .sub_f2_9f0 ;$9f0
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_85d
     INDIR $448
     IMMED $5
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_870 ;$870
     JAL .sub_f2_a0e ;$a0e
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_870
     INDIR $448
     IMMED $6
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_883 ;$883
     JAL .sub_f2_a37 ;$a37
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_883
     INDIR $448
     IMMED $7
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_896 ;$896
     JAL .sub_f2_8d4 ;$8d4
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_f2_8a6 ;$8a6
 
 .sub_f2_896
     INDIR $448
     IMMED $8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_f2_8a6 ;$8a6
     JAL .sub_f2_8d4 ;$8d4
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_f2_8a6
     INDIR $176
     INDIR $176
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $173
     INDIR $173
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_7f2 ;$7f2
 
 .sub_f2_8d3
-    RET 
+    RET
 
 .sub_f2_8d4
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     IMMED $FF
-    AND 
-    NPREF PRKEY 
-    POPALL 
+    AND
+    NPREF PRKEY
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $530
     INDIR W_MainScript_WindowXPos
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowYPos
     IMMED $D
-    ADD 
+    ADD
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR $73
     IMMED $2
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     NPREF UO $4D
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     DB STR_F2_92E
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     INDIR $73
     IMMED $3
-    STR 
-    POPALL 
-    RET 
+    STR
+    POPALL
+    RET
 
 .sub_f2_93e
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     IMMED $FF
-    AND 
-    NPREF PRCHIP 
-    POPALL 
+    AND
+    NPREF PRCHIP
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $500
     INDIR W_MainScript_WindowXPos
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowYPos
     IMMED $D
-    ADD 
+    ADD
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR $73
     IMMED $2
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     NPREF UO $4D
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     DB STR_F2_998
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     INDIR $73
     IMMED $3
-    STR 
-    POPALL 
-    RET 
+    STR
+    POPALL
+    RET
 
 .sub_f2_9a8
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     IMMED $FF
-    AND 
-    NPREF PRKEY 
-    POPALL 
-    RET 
+    AND
+    NPREF PRKEY
+    POPALL
+    RET
 
 .sub_f2_9d1
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
-    ARFREE 
+    NPREF WINCURS
+    POPALL
+    ARFREE
     IMMED $600
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    NPREF BLKMON 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    NPREF BLKMON
+    POPALL
+    ARFREE
     NPREF UO $A5
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_f2_9f0
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
-    ARFREE 
+    NPREF WINCURS
+    POPALL
+    ARFREE
     INDIR W_MainScript_PortraitID
     IMMED $8
-    ADD 
+    ADD
     NPREF UO $E8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $E4
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_f2_a0e
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     NPREF UO $E8
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $E4
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 .sub_f2_a37
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
-    ARFREE 
+    ADD
+    INDIR
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
-    NPREF BLKMON 
-    POPALL 
-    ARFREE 
+    NPREF BLKMON
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowXPos
     NPREF UO $4D
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowYPos
     IMMED $3
-    ADD 
+    ADD
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
-    ARFREE 
+    NPREF WINCURS
+    POPALL
+    ARFREE
     NPREF UO $A5
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     INDIR W_MainScript_WindowYPos
     IMMED $E
-    ADD 
+    ADD
     ENOP $2D
     INDIR $176
-    NPREF WINCURS 
-    POPALL 
+    NPREF WINCURS
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $3CF0
     INDIR W_MainScript_WindowXPos
-    ADD 
-    PRED 
-    STR 
-    POPALL 
+    ADD
+    PRED
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_aad ;$aad
-    ARFREE 
+    ARFREE
     DB STR_F2_AA4
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     JMP .sub_f2_ab4 ;$ab4
 
 .sub_f2_aad
-    ARFREE 
+    ARFREE
     DB STR_F2_AAE
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
 
 .sub_f2_ab4
-    RET 
+    RET
 
 .sub_f2_ab5
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $57F
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_ac7
     INDIR W_MainScript_PortraitID
     IMMED $31
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_b22 ;$b22
     INDIR $173
     IMMED $530
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_b11 ;$b11
     IMMED $600
     INDIR $57F
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $57F
     INDIR $57F
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_b11
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_ac7 ;$ac7
 
 .sub_f2_b22
-    RET 
+    RET
 
 .sub_f2_b23
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_b35
     INDIR W_MainScript_PortraitID
     IMMED $31
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_bb9 ;$bb9
     INDIR $173
     IMMED $530
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_ba8 ;$ba8
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    NPREF BLKKEY 
-    POPALL 
+    ADD
+    NPREF BLKKEY
+    POPALL
     INDIR W_MainScript_WindowYPos
     INDIR $58A
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $1
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_ba8 ;$ba8
     IMMED $600
     INDIR W_MainScript_WindowXPos
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_ba8
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_b35 ;$b35
 
 .sub_f2_bb9
-    RET 
+    RET
 
 .sub_f2_bba
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_bcc
     INDIR W_MainScript_PortraitID
     IMMED $31
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_c50 ;$c50
     INDIR $173
     IMMED $530
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_c3f ;$c3f
-    ARFREE 
+    ARFREE
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    NPREF BLKKEY 
-    POPALL 
+    ADD
+    NPREF BLKKEY
+    POPALL
     INDIR W_MainScript_WindowYPos
     INDIR $58A
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $2
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_c3f ;$c3f
     IMMED $600
     INDIR W_MainScript_WindowXPos
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_c3f
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_bcc ;$bcc
 
 .sub_f2_c50
-    RET 
+    RET
 
 .sub_f2_c51
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $57D
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_c63
     INDIR W_MainScript_PortraitID
     IMMED $28
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_cbe ;$cbe
     INDIR $173
     IMMED $500
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_cad ;$cad
     IMMED $600
     INDIR $57D
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $57D
     INDIR $57D
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_cad
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_c63 ;$c63
 
 .sub_f2_cbe
-    RET 
+    RET
 
 .sub_f2_cbf
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $57E
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_cd1
     INDIR W_MainScript_PortraitID
     IMMED $11
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_d30 ;$d30
     INDIR $173
     IMMED $562
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_d1f ;$d1f
     IMMED $600
     INDIR $57E
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     IMMED $32
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $57E
     INDIR $57E
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_d1f
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_cd1 ;$cd1
 
 .sub_f2_d30
-    RET 
+    RET
 
 .sub_f2_d31
     INDIR $173
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_d4c
     INDIR W_MainScript_PortraitID
     IMMED $A9
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_db1 ;$db1
     INDIR W_MainScript_WindowYPos
     IMMED $3B60
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    PRED 
-    STR 
-    POPALL 
+    ADD
+    PRED
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_da0 ;$da0
     INDIR W_MainScript_WindowXPos
-    INDIR 
+    INDIR
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $173
     INDIR $173
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_da0
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_d4c ;$d4c
 
 .sub_f2_db1
     INDIR $49E
     INDIR $173
-    STR 
-    POPALL 
-    RET 
+    STR
+    POPALL
+    RET
 
 .sub_f2_dbc
     INDIR $49F
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_dd7
     INDIR W_MainScript_PortraitID
     IMMED $6
-    CMP_GT 
+    CMP_GT
     JMPT .sub_f2_e34 ;$e34
     INDIR W_MainScript_WindowYPos
     IMMED $3A98
     INDIR W_MainScript_PortraitID
-    ADD 
-    PRED 
-    STR 
-    POPALL 
+    ADD
+    PRED
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_e23 ;$e23
     INDIR W_MainScript_WindowXPos
-    INDIR 
+    INDIR
     INDIR W_MainScript_PortraitID
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $49F
     INDIR $49F
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_e23
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_dd7 ;$dd7
 
 .sub_f2_e34
-    RET 
+    RET
 
 .sub_f2_e35
     INDIR $472
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $600
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_e50
     INDIR W_MainScript_PortraitID
     IMMED $A9
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_eb5 ;$eb5
     INDIR W_MainScript_WindowYPos
     IMMED $3C28
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    PRED 
-    STR 
-    POPALL 
+    ADD
+    PRED
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_f2_ea4 ;$ea4
     INDIR W_MainScript_WindowXPos
-    INDIR 
+    INDIR
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $472
     INDIR $472
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_f2_ea4
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .sub_f2_e50 ;$e50
 
 .sub_f2_eb5
-    RET 
+    RET
 
 .sub_f2_eb6
     INDIR $7A
     INDIR $178
-    ADD 
+    ADD
     INDIR $450
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .sub_f2_f0d ;$f0d
     INDIR $7A
     INDIR $7A
     INDIR $178
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR $451
     INDIR $450
     INDIR $7A
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR $451
     INDIR $178
-    CMP_LEQ 
+    CMP_LEQ
     JMPT .sub_f2_efb ;$efb
     INDIR $451
     INDIR $178
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_efb
     INDIR $15D
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17F
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_f0d
-    RET 
+    RET
 
 .sub_f2_f0e
     INDIR $7A
     INDIR $178
-    CMP_LT 
+    CMP_LT
     JMPT .sub_f2_f4a ;$f4a
     INDIR $7A
     INDIR $7A
     INDIR $178
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR $451
     INDIR $178
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $15D
     INDIR $178
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR $17F
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_f2_f4a
-    RET 
-    FGAME 
+    RET
+    FGAME

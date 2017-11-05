@@ -1,18 +1,19 @@
     JAL .sub_107_4 ;$4
-    RET 
+    RET
 
 .sub_107_4
     ARFREE
     NPREF TMAPSAV
     POPALL
+    ARFREE
     DB STR_107_9
     ENOP $2D
     DB STR_107_E
 
     NOP
     NPREF UO $70
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $1
@@ -23,60 +24,60 @@
     ENOP $2D
     IMMED $1
     NPREF UO $6D
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $85
-    POPALL 
+    POPALL
     INDIR $17F
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_107_52
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_107_a4 ;$a4
     INDIR $17B
-    ARFREE 
-    NPREF UO $61
-    STR 
-    POPALL 
+    ARFREE
+    NPREF SPRINPUT
+    STR
+    POPALL
     INDIR $17E
-    ARFREE 
+    ARFREE
     INDIR $17B
     NPREF UO $71
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17E
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_107_8c ;$8c
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_107_a1 ;$a1
 
 .sub_107_8c
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_107_a1 ;$a1
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_107_a1
     JMP .sub_107_52 ;$52
@@ -85,8 +86,8 @@
     INDIR $17D
     INDIR $17D
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
-    RET 
-    FGAME 
+    SUB
+    STR
+    POPALL
+    RET
+    FGAME

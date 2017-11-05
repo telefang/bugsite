@@ -1,28 +1,28 @@
     JAL MainScript_ExecuteScene ;$4
-    RET 
+    RET
 
 MainScript_ExecuteScene::
     INDIR W_MainScript_ActiveScene
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .eventBoundsCheck ;$31
     PRED $A
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .eventsAreDisabled ;$2e
-    ARFREE 
+    ARFREE
     NPREF UO $5A
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     DB STR_95_1F
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
+    POPALL
 
 .eventsAreDisabled
     JMP .finishEvent ;$9a
@@ -30,32 +30,32 @@ MainScript_ExecuteScene::
 .eventBoundsCheck
     INDIR W_MainScript_ActiveScene
     IMMED $3A34
-    CMP_LT 
+    CMP_LT
     JMPT .storyEventCheck ;$65
-    ARFREE 
+    ARFREE
     NPREF UO $5A
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     DB STR_95_41
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    NPREF WINWAIT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
+    NPREF WINWAIT
+    POPALL
+    ARFREE
     NPREF UO $B4
-    POPALL 
+    POPALL
     JMP .finishEvent ;$9a
 
 .storyEventCheck
     INDIR W_MainScript_ActiveScene
     IMMED $28A0
-    CMP_GT 
+    CMP_GT
     JMPT .callEventScript ;$7a
     INDIR $43B
     INDIR W_MainScript_ActiveScene
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .callEventScript
     ;Dialogue ring config
@@ -64,17 +64,17 @@ MainScript_ExecuteScene::
     VWFENABLE
 
     INDIR W_MainScript_ActiveScene
-    PRED 
+    PRED
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_ActiveScene
     IMMED $64
-    DIV 
-    STR 
-    POPALL 
-    ARFREE 
+    DIV
+    STR
+    POPALL
+    ARFREE
     INDIR W_MainScript_PortraitID
     NPREF FARCALL 
     POPALL 
@@ -82,5 +82,5 @@ MainScript_ExecuteScene::
     VWFDISABLE
 
 .finishEvent
-    RET 
-    FGAME 
+    RET
+    FGAME

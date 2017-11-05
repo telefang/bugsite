@@ -3,6 +3,37 @@ from BugTools.exceptions import InvalidOperandError
 
 import copy
 
+def identify_unidentified(parselist, instruction_encoding):
+    """Given a parsed BVM, replace UO instructions if we can identify them.
+
+    instruction_encoding is a mapping from instruction names to encoded ints."""
+
+    reverse_instruction_encoding = {}
+    for insname in instruction_encoding:
+        reverse_instruction_encoding[instruction_encoding[insname]] = insname
+
+    new_parselist = []
+
+    for instr in parselist:
+        if type(instr) is not Instruction:
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+
+        if instr.opcode not in ["UO"] or len(instr.operands) <= 0:
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+
+        encoded_opcode = instr.operands[0]
+
+        if encoded_opcode not in reverse_instruction_encoding.keys():
+            new_parselist.append(copy.deepcopy(instr))
+            continue
+
+        decoded_opcode = reverse_instruction_encoding[encoded_opcode]
+        new_parselist.append(Instruction(decoded_opcode, copy.deepcopy(instr.operands[1:]), instr.prefix, instr.comment))
+
+    return new_parselist
+
 def symbolize_indirs(parselist, symbol_table):
     """Given a parsed BVM, replace INDIR numerical references with symbols.
     
@@ -158,23 +189,24 @@ def unparse_bvm(parselist, strdec = None):
                 source.append(" ")
             
             source.append(instr.opcode)
-            source.append(" ")
             
             operand_str = []
             for operand in instr.operands:
                 if type(operand) is int:
-                    source.append("$%X" % operand)
+                    operand_str.append("$%X" % operand)
                 elif type(operand) is str:
-                    source.append('"%s"' % operand)
+                    operand_str.append('"%s"' % operand)
                 elif type(operand) is bytes:
-                    source.append('"%s"' % strdec(operand))
+                    operand_str.append('"%s"' % strdec(operand))
                 elif type(operand) is SymbolicRef:
-                    source.append(operand.name)
+                    operand_str.append(operand.name)
                 else:
                     raise SyntaxError()
             
-            source.append(", ".join(operand_str))
-
+            if len(operand_str) > 0:
+                source.append(" ")
+                source.append(", ".join(operand_str))
+            
             if instr.comment is not None:
                 source.append(" ;")
                 source.append(instr.comment.comment_text)

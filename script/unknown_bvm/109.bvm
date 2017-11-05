@@ -1,353 +1,353 @@
     JAL .sub_109_4 ;$4
-    RET 
+    RET
 
 .sub_109_4
-    ARFREE 
+    ARFREE
     NPREF FARCALL $C5
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $492
     INDIR $492
     IMMED $A
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $8
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $122
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $295
     INDIR $384
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $2B5
     INDIR $385
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $2D5
     INDIR $386
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $2F5
     INDIR $387
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $315
     INDIR $380
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $335
     INDIR $381
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $355
     INDIR $382
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $375
     INDIR $383
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $38F
     IMMED $1
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_109_a1 ;$a1
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $2
-    OR 
-    STR 
-    POPALL 
+    OR
+    STR
+    POPALL
 
 .sub_109_a1
     INDIR $38F
     IMMED $2
-    AND 
+    AND
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_109_be ;$be
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    OR 
-    STR 
-    POPALL 
+    OR
+    STR
+    POPALL
 
 .sub_109_be
     INDIR $38F
     INDIR W_MainScript_PortraitID
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $388
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_df ;$df
     INDIR $388
     IMMED $4
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_17d ;$17d
 
 .sub_109_df
     INDIR $388
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_f6 ;$f6
     INDIR $388
     IMMED $5
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_17d ;$17d
 
 .sub_109_f6
     INDIR $388
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_10d ;$10d
     INDIR $388
     IMMED $6
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_17d ;$17d
 
 .sub_109_10d
     INDIR $388
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_124 ;$124
     INDIR $388
     IMMED $7
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_17d ;$17d
 
 .sub_109_124
     INDIR $388
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_13b ;$13b
     INDIR $388
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_17d ;$17d
 
 .sub_109_13b
     INDIR $388
     IMMED $5
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_152 ;$152
     INDIR $388
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_17d ;$17d
 
 .sub_109_152
     INDIR $388
     IMMED $6
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_169 ;$169
     INDIR $388
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_17d ;$17d
 
 .sub_109_169
     INDIR $388
     IMMED $7
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_17d ;$17d
     INDIR $388
     IMMED $3
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_109_17d
     INDIR $389
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_194 ;$194
     INDIR $389
     IMMED $4
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_232 ;$232
 
 .sub_109_194
     INDIR $389
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_1ab ;$1ab
     INDIR $389
     IMMED $5
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_232 ;$232
 
 .sub_109_1ab
     INDIR $389
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_1c2 ;$1c2
     INDIR $389
     IMMED $6
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_232 ;$232
 
 .sub_109_1c2
     INDIR $389
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_1d9 ;$1d9
     INDIR $389
     IMMED $7
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_232 ;$232
 
 .sub_109_1d9
     INDIR $389
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_1f0 ;$1f0
     INDIR $389
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_232 ;$232
 
 .sub_109_1f0
     INDIR $389
     IMMED $5
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_207 ;$207
     INDIR $389
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_232 ;$232
 
 .sub_109_207
     INDIR $389
     IMMED $6
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_21e ;$21e
     INDIR $389
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_232 ;$232
 
 .sub_109_21e
     INDIR $389
     IMMED $7
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_232 ;$232
     INDIR $389
     IMMED $3
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_109_232
     INDIR $396
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_249 ;$249
     INDIR $396
     IMMED $4
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_2e7 ;$2e7
 
 .sub_109_249
     INDIR $396
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_260 ;$260
     INDIR $396
     IMMED $5
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_2e7 ;$2e7
 
 .sub_109_260
     INDIR $396
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_277 ;$277
     INDIR $396
     IMMED $6
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_2e7 ;$2e7
 
 .sub_109_277
     INDIR $396
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_28e ;$28e
     INDIR $396
     IMMED $7
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_2e7 ;$2e7
 
 .sub_109_28e
     INDIR $396
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_2a5 ;$2a5
     INDIR $396
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_2e7 ;$2e7
 
 .sub_109_2a5
     INDIR $396
     IMMED $5
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_2bc ;$2bc
     INDIR $396
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_2e7 ;$2e7
 
 .sub_109_2bc
     INDIR $396
     IMMED $6
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_2d3 ;$2d3
     INDIR $396
     IMMED $2
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_109_2e7 ;$2e7
 
 .sub_109_2d3
     INDIR $396
     IMMED $7
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_109_2e7 ;$2e7
     INDIR $396
     IMMED $3
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_109_2e7
-    RET 
-    FGAME 
+    RET
+    FGAME

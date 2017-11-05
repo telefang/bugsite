@@ -1,94 +1,94 @@
     JAL NameInput_SelectName ;$4
-    RET 
+    RET
 
 NameInput_SelectName::
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
-    OR 
+    OR
     IMMED $8
-    OR 
+    OR
     IMMED $10
-    OR 
-    STR 
-    POPALL 
-    ARFREE 
+    OR
+    STR
+    POPALL
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $2
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $3
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $4
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $5
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $6
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     IMMED $7
     ENOP $2D
     IMMED $0
     NPREF UO $8F
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     NPREF UO $8E
-    POPALL 
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $CD
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     JAL NameInput_DrawScreen ;$a6
-    NPREF POPALL 
+    NPREF POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $CD
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
-    STR 
-    POPALL 
-    RET 
+    STR
+    POPALL
+    RET
 
 NameInput_DrawScreen::
-    ARFREE 
+    ARFREE
     IMMED $21C
     ENOP $2D
     IMMED $0
@@ -98,9 +98,9 @@ NameInput_DrawScreen::
     IMMED $8800
     ENOP $2D
     IMMED $1
-    NPREF RESLD 
-    POPALL 
-    ARFREE 
+    NPREF RESLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -108,9 +108,9 @@ NameInput_DrawScreen::
     IMMED $0
     ENOP $2D
     IMMED $0
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -118,9 +118,9 @@ NameInput_DrawScreen::
     IMMED $1
     ENOP $2D
     IMMED $1
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -128,9 +128,9 @@ NameInput_DrawScreen::
     IMMED $2
     ENOP $2D
     IMMED $2
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -138,9 +138,9 @@ NameInput_DrawScreen::
     IMMED $3
     ENOP $2D
     IMMED $3
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -148,9 +148,9 @@ NameInput_DrawScreen::
     IMMED $4
     ENOP $2D
     IMMED $4
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -158,9 +158,9 @@ NameInput_DrawScreen::
     IMMED $5
     ENOP $2D
     IMMED $5
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -168,9 +168,9 @@ NameInput_DrawScreen::
     IMMED $6
     ENOP $2D
     IMMED $6
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21D
     ENOP $2D
     IMMED $0
@@ -178,9 +178,9 @@ NameInput_DrawScreen::
     IMMED $7
     ENOP $2D
     IMMED $7
-    NPREF PALLD 
-    POPALL 
-    ARFREE 
+    NPREF PALLD
+    POPALL
+    ARFREE
     IMMED $21E
     ENOP $2D
     IMMED $0
@@ -190,9 +190,9 @@ NameInput_DrawScreen::
     IMMED $0
     ENOP $2D
     IMMED $8
-    NPREF TILELD 
-    POPALL 
-    ARFREE 
+    NPREF TILELD
+    POPALL
+    ARFREE
     IMMED $6
     ENOP $2D
     IMMED $1
@@ -205,9 +205,9 @@ NameInput_DrawScreen::
     VWFENABLE
     
     DB STR_103_178
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $6
     ENOP $2D
     IMMED $3
@@ -233,119 +233,119 @@ NameInput_DrawScreen::
     IMMED $13
     ENOP $2D
     IMMED $11
-    NPREF WINCOORD 
-    POPALL 
+    NPREF WINCOORD
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR $474
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_WindowYPos
     IMMED $1
-    STR 
-    POPALL 
-    ARFREE 
+    STR
+    POPALL
+    ARFREE
     NPREF FARCALL $D6
-    POPALL 
-    POPALL 
+    POPALL
+    POPALL
     INDIR $17A
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $178
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     JAL NameInput_DrawKeyboard ;$f82
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_PrintCurrentName ;$11f1
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     NPREF UO $5D
-    POPALL 
+    POPALL
     INDIR $15D
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17B
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17F
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_103_238
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_103_2a6 ;$2a6
     INDIR $178
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_29e ;$29e
     JAL sub_103_3f1 ;$3f1
-    NPREF POPALL 
+    NPREF POPALL
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_29b ;$29b
     INDIR W_MainScript_PortraitID
     INDIR W_NameInput_NicknameDataInputName
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_291 ;$291
     INDIR $474
     IMMED $23
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_287 ;$287
     JAL NameInput_DefaultStarterName ;$336
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_103_28c ;$28c
 
 .sub_103_287
     JAL NameInput_DefaultProtagonistName ;$2b9
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_103_28c
     JAL NameInput_PrintCurrentName ;$11f1
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_103_291
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_103_29b
     JMP .sub_103_2a3 ;$2a3
 
 .sub_103_29e
     JAL sub_103_4ca ;$4ca
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_103_2a3
     JMP .sub_103_238 ;$238
@@ -354,167 +354,168 @@ NameInput_DrawScreen::
     INDIR $17D
     INDIR $17D
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
-    ARFREE 
+    SUB
+    STR
+    POPALL
+    ARFREE
     NPREF UO $5E
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 NameInput_DefaultProtagonistName::
-    ARFREE 
+    ARFREE
     DB STR_103_2BA
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     DB STR_103_2D9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     DB STR_103_2F8
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
+    NPREF POPALL
+    ARFREE
     DB STR_103_317
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    RET 
+    NPREF POPALL
+    RET
 
 NameInput_DefaultStarterName::
-    ARFREE 
+    ARFREE
     DB STR_103_337
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     DB STR_103_356
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     DB STR_103_375
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     DB STR_103_394
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     DB STR_103_3B3
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     DB STR_103_3D2
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    RET 
+    NPREF POPALL
+    RET
 
 sub_103_3f1::
-    ARFREE 
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $10
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     INDIR $15D
     ENOP $2D
     IMMED $2
@@ -525,78 +526,78 @@ sub_103_3f1::
     ENOP $2D
     IMMED $1
     NPREF UO $6D
-    POPALL 
+    POPALL
     INDIR $17F
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_103_435
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_103_4b6 ;$4b6
     INDIR $17B
-    ARFREE 
-    NPREF UO $61
-    STR 
-    POPALL 
+    ARFREE
+    NPREF SPRINPUT
+    STR
+    POPALL
     INDIR $17B
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_46b ;$46b
     INDIR $178
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_103_4b3 ;$4b3
 
 .sub_103_46b
     INDIR $17E
-    ARFREE 
+    ARFREE
     INDIR $17B
     NPREF UO $71
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17E
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_49e ;$49e
     INDIR $17A
     IMMED $1
     INDIR $17A
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_103_4b3 ;$4b3
 
 .sub_103_49e
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_4b3 ;$4b3
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .sub_103_4b3
     JMP .sub_103_435 ;$435
@@ -605,20 +606,20 @@ sub_103_3f1::
     INDIR $17D
     INDIR $17D
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     JAL NameInput_DrawKeyboard ;$f82
-    NPREF POPALL 
-    RET 
+    NPREF POPALL
+    RET
 
 sub_103_4ca::
-    ARFREE 
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $7
-    NPREF SCRCURS 
-    ARFREE 
+    NPREF SCRCURS
+    ARFREE
     IMMED $0
     ENOP $2D
     IMMED $9
@@ -629,113 +630,113 @@ sub_103_4ca::
     ENOP $2D
     IMMED $1
     NPREF UO $6D
-    POPALL 
+    POPALL
     INDIR $17F
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17D
     INDIR $17C
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17C
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
 
 .sub_103_50c
     INDIR $17C
     INDIR $17D
-    CMP_EQ 
+    CMP_EQ
     JMPT .sub_103_f6e ;$f6e
     INDIR $17B
-    ARFREE 
-    NPREF UO $61
-    STR 
-    POPALL 
+    ARFREE
+    NPREF SPRINPUT
+    STR
+    POPALL
     INDIR $17B
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_54b ;$54b
     INDIR $15D
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $178
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_103_f6b ;$f6b
 
 .sub_103_54b
     INDIR $17B
     IMMED $8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_575 ;$575
     INDIR $15D
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17C
     INDIR $17D
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $178
     IMMED $1
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .sub_103_f6b ;$f6b
 
 .sub_103_575
     INDIR $17E
-    ARFREE 
+    ARFREE
     INDIR $17B
     NPREF UO $71
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $17E
     IMMED $FFFF
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_59a ;$59a
     JAL NameInput_ClearCurrentChara ;$139f
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_PrintCurrentName ;$11f1
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_103_f6b ;$f6b
 
 .sub_103_59a
     INDIR $17E
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_5a8 ;$5a8
     JMP .sub_103_f6b ;$f6b
 
 .sub_103_5a8
     INDIR $17E
     IMMED $1
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_5d2 ;$5d2
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_5c8 ;$5c8
-    ARFREE 
+    ARFREE
     DB STR_103_5BF
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_5cf ;$5cf
 
 .sub_103_5c8
-    ARFREE 
+    ARFREE
     DB STR_103_5C9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_5cf
     JMP .sub_103_f53 ;$f53
@@ -743,23 +744,23 @@ sub_103_4ca::
 .sub_103_5d2
     INDIR $17E
     IMMED $2
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_5fc ;$5fc
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_5f2 ;$5f2
-    ARFREE 
+    ARFREE
     DB STR_103_5E9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_5f9 ;$5f9
 
 .sub_103_5f2
-    ARFREE 
+    ARFREE
     DB STR_103_5F3
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_5f9
     JMP .sub_103_f53 ;$f53
@@ -767,23 +768,23 @@ sub_103_4ca::
 .sub_103_5fc
     INDIR $17E
     IMMED $3
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_626 ;$626
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_61c ;$61c
-    ARFREE 
+    ARFREE
     DB STR_103_613
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_623 ;$623
 
 .sub_103_61c
-    ARFREE 
+    ARFREE
     DB STR_103_61D
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_623
     JMP .sub_103_f53 ;$f53
@@ -791,23 +792,23 @@ sub_103_4ca::
 .sub_103_626
     INDIR $17E
     IMMED $4
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_650 ;$650
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_646 ;$646
-    ARFREE 
+    ARFREE
     DB STR_103_63D
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_64d ;$64d
 
 .sub_103_646
-    ARFREE 
+    ARFREE
     DB STR_103_647
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_64d
     JMP .sub_103_f53 ;$f53
@@ -815,23 +816,23 @@ sub_103_4ca::
 .sub_103_650
     INDIR $17E
     IMMED $5
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_67a ;$67a
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_670 ;$670
-    ARFREE 
+    ARFREE
     DB STR_103_667
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_677 ;$677
 
 .sub_103_670
-    ARFREE 
+    ARFREE
     DB STR_103_671
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_677
     JMP .sub_103_f53 ;$f53
@@ -839,23 +840,23 @@ sub_103_4ca::
 .sub_103_67a
     INDIR $17E
     IMMED $6
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_6a4 ;$6a4
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_69a ;$69a
-    ARFREE 
+    ARFREE
     DB STR_103_691
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_6a1 ;$6a1
 
 .sub_103_69a
-    ARFREE 
+    ARFREE
     DB STR_103_69B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_6a1
     JMP .sub_103_f53 ;$f53
@@ -863,23 +864,23 @@ sub_103_4ca::
 .sub_103_6a4
     INDIR $17E
     IMMED $7
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_6ce ;$6ce
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_6c4 ;$6c4
-    ARFREE 
+    ARFREE
     DB STR_103_6BB
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_6cb ;$6cb
 
 .sub_103_6c4
-    ARFREE 
+    ARFREE
     DB STR_103_6C5
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_6cb
     JMP .sub_103_f53 ;$f53
@@ -887,23 +888,23 @@ sub_103_4ca::
 .sub_103_6ce
     INDIR $17E
     IMMED $8
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_6f8 ;$6f8
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_6ee ;$6ee
-    ARFREE 
+    ARFREE
     DB STR_103_6E5
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_6f5 ;$6f5
 
 .sub_103_6ee
-    ARFREE 
+    ARFREE
     DB STR_103_6EF
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_6f5
     JMP .sub_103_f53 ;$f53
@@ -911,23 +912,23 @@ sub_103_4ca::
 .sub_103_6f8
     INDIR $17E
     IMMED $9
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_722 ;$722
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_718 ;$718
-    ARFREE 
+    ARFREE
     DB STR_103_70F
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_71f ;$71f
 
 .sub_103_718
-    ARFREE 
+    ARFREE
     DB STR_103_719
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_71f
     JMP .sub_103_f53 ;$f53
@@ -935,23 +936,23 @@ sub_103_4ca::
 .sub_103_722
     INDIR $17E
     IMMED $A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_74c ;$74c
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_742 ;$742
-    ARFREE 
+    ARFREE
     DB STR_103_739
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_749 ;$749
 
 .sub_103_742
-    ARFREE 
+    ARFREE
     DB STR_103_743
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_749
     JMP .sub_103_f53 ;$f53
@@ -959,23 +960,23 @@ sub_103_4ca::
 .sub_103_74c
     INDIR $17E
     IMMED $B
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_776 ;$776
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_76c ;$76c
-    ARFREE 
+    ARFREE
     DB STR_103_763
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_773 ;$773
 
 .sub_103_76c
-    ARFREE 
+    ARFREE
     DB STR_103_76D
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_773
     JMP .sub_103_f53 ;$f53
@@ -983,23 +984,23 @@ sub_103_4ca::
 .sub_103_776
     INDIR $17E
     IMMED $C
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_7a0 ;$7a0
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_796 ;$796
-    ARFREE 
+    ARFREE
     DB STR_103_78D
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_79d ;$79d
 
 .sub_103_796
-    ARFREE 
+    ARFREE
     DB STR_103_797
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_79d
     JMP .sub_103_f53 ;$f53
@@ -1007,23 +1008,23 @@ sub_103_4ca::
 .sub_103_7a0
     INDIR $17E
     IMMED $D
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_7ca ;$7ca
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_7c0 ;$7c0
-    ARFREE 
+    ARFREE
     DB STR_103_7B7
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_7c7 ;$7c7
 
 .sub_103_7c0
-    ARFREE 
+    ARFREE
     DB STR_103_7C1
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_7c7
     JMP .sub_103_f53 ;$f53
@@ -1031,23 +1032,23 @@ sub_103_4ca::
 .sub_103_7ca
     INDIR $17E
     IMMED $E
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_7f4 ;$7f4
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_7ea ;$7ea
-    ARFREE 
+    ARFREE
     DB STR_103_7E1
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_7f1 ;$7f1
 
 .sub_103_7ea
-    ARFREE 
+    ARFREE
     DB STR_103_7EB
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_7f1
     JMP .sub_103_f53 ;$f53
@@ -1055,23 +1056,23 @@ sub_103_4ca::
 .sub_103_7f4
     INDIR $17E
     IMMED $F
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_81e ;$81e
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_814 ;$814
-    ARFREE 
+    ARFREE
     DB STR_103_80B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_81b ;$81b
 
 .sub_103_814
-    ARFREE 
+    ARFREE
     DB STR_103_815
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_81b
     JMP .sub_103_f53 ;$f53
@@ -1079,23 +1080,23 @@ sub_103_4ca::
 .sub_103_81e
     INDIR $17E
     IMMED $10
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_848 ;$848
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_83e ;$83e
-    ARFREE 
+    ARFREE
     DB STR_103_835
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_845 ;$845
 
 .sub_103_83e
-    ARFREE 
+    ARFREE
     DB STR_103_83F
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_845
     JMP .sub_103_f53 ;$f53
@@ -1103,23 +1104,23 @@ sub_103_4ca::
 .sub_103_848
     INDIR $17E
     IMMED $11
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_872 ;$872
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_868 ;$868
-    ARFREE 
+    ARFREE
     DB STR_103_85F
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_86f ;$86f
 
 .sub_103_868
-    ARFREE 
+    ARFREE
     DB STR_103_869
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_86f
     JMP .sub_103_f53 ;$f53
@@ -1127,23 +1128,23 @@ sub_103_4ca::
 .sub_103_872
     INDIR $17E
     IMMED $12
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_89c ;$89c
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_892 ;$892
-    ARFREE 
+    ARFREE
     DB STR_103_889
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_899 ;$899
 
 .sub_103_892
-    ARFREE 
+    ARFREE
     DB STR_103_893
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_899
     JMP .sub_103_f53 ;$f53
@@ -1151,23 +1152,23 @@ sub_103_4ca::
 .sub_103_89c
     INDIR $17E
     IMMED $13
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_8c6 ;$8c6
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_8bc ;$8bc
-    ARFREE 
+    ARFREE
     DB STR_103_8B3
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_8c3 ;$8c3
 
 .sub_103_8bc
-    ARFREE 
+    ARFREE
     DB STR_103_8BD
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_8c3
     JMP .sub_103_f53 ;$f53
@@ -1175,23 +1176,23 @@ sub_103_4ca::
 .sub_103_8c6
     INDIR $17E
     IMMED $14
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_8f0 ;$8f0
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_8e6 ;$8e6
-    ARFREE 
+    ARFREE
     DB STR_103_8DD
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_8ed ;$8ed
 
 .sub_103_8e6
-    ARFREE 
+    ARFREE
     DB STR_103_8E7
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_8ed
     JMP .sub_103_f53 ;$f53
@@ -1199,23 +1200,23 @@ sub_103_4ca::
 .sub_103_8f0
     INDIR $17E
     IMMED $15
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_91a ;$91a
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_910 ;$910
-    ARFREE 
+    ARFREE
     DB STR_103_907
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_917 ;$917
 
 .sub_103_910
-    ARFREE 
+    ARFREE
     DB STR_103_911
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_917
     JMP .sub_103_f53 ;$f53
@@ -1223,23 +1224,23 @@ sub_103_4ca::
 .sub_103_91a
     INDIR $17E
     IMMED $16
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_944 ;$944
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_93a ;$93a
-    ARFREE 
+    ARFREE
     DB STR_103_931
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_941 ;$941
 
 .sub_103_93a
-    ARFREE 
+    ARFREE
     DB STR_103_93B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_941
     JMP .sub_103_f53 ;$f53
@@ -1247,23 +1248,23 @@ sub_103_4ca::
 .sub_103_944
     INDIR $17E
     IMMED $17
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_96e ;$96e
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_964 ;$964
-    ARFREE 
+    ARFREE
     DB STR_103_95B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_96b ;$96b
 
 .sub_103_964
-    ARFREE 
+    ARFREE
     DB STR_103_965
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_96b
     JMP .sub_103_f53 ;$f53
@@ -1271,23 +1272,23 @@ sub_103_4ca::
 .sub_103_96e
     INDIR $17E
     IMMED $18
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_998 ;$998
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_98e ;$98e
-    ARFREE 
+    ARFREE
     DB STR_103_985
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_995 ;$995
 
 .sub_103_98e
-    ARFREE 
+    ARFREE
     DB STR_103_98F
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_995
     JMP .sub_103_f53 ;$f53
@@ -1295,23 +1296,23 @@ sub_103_4ca::
 .sub_103_998
     INDIR $17E
     IMMED $19
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_9c2 ;$9c2
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_9b8 ;$9b8
-    ARFREE 
+    ARFREE
     DB STR_103_9AF
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_9bf ;$9bf
 
 .sub_103_9b8
-    ARFREE 
+    ARFREE
     DB STR_103_9B9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_9bf
     JMP .sub_103_f53 ;$f53
@@ -1319,23 +1320,23 @@ sub_103_4ca::
 .sub_103_9c2
     INDIR $17E
     IMMED $1A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_9ec ;$9ec
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_9e2 ;$9e2
-    ARFREE 
+    ARFREE
     DB STR_103_9D9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_9e9 ;$9e9
 
 .sub_103_9e2
-    ARFREE 
+    ARFREE
     DB STR_103_9E3
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_9e9
     JMP .sub_103_f53 ;$f53
@@ -1343,23 +1344,23 @@ sub_103_4ca::
 .sub_103_9ec
     INDIR $17E
     IMMED $1B
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a16 ;$a16
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a0c ;$a0c
-    ARFREE 
+    ARFREE
     DB STR_103_A03
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_a13 ;$a13
 
 .sub_103_a0c
-    ARFREE 
+    ARFREE
     DB STR_103_A0D
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_a13
     JMP .sub_103_f53 ;$f53
@@ -1367,23 +1368,23 @@ sub_103_4ca::
 .sub_103_a16
     INDIR $17E
     IMMED $1C
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a40 ;$a40
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a36 ;$a36
-    ARFREE 
+    ARFREE
     DB STR_103_A2D
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_a3d ;$a3d
 
 .sub_103_a36
-    ARFREE 
+    ARFREE
     DB STR_103_A37
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_a3d
     JMP .sub_103_f53 ;$f53
@@ -1391,23 +1392,23 @@ sub_103_4ca::
 .sub_103_a40
     INDIR $17E
     IMMED $1D
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a6a ;$a6a
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a60 ;$a60
-    ARFREE 
+    ARFREE
     DB STR_103_A57
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_a67 ;$a67
 
 .sub_103_a60
-    ARFREE 
+    ARFREE
     DB STR_103_A61
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_a67
     JMP .sub_103_f53 ;$f53
@@ -1415,23 +1416,23 @@ sub_103_4ca::
 .sub_103_a6a
     INDIR $17E
     IMMED $1E
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a94 ;$a94
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_a8a ;$a8a
-    ARFREE 
+    ARFREE
     DB STR_103_A81
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_a91 ;$a91
 
 .sub_103_a8a
-    ARFREE 
+    ARFREE
     DB STR_103_A8B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_a91
     JMP .sub_103_f53 ;$f53
@@ -1439,23 +1440,23 @@ sub_103_4ca::
 .sub_103_a94
     INDIR $17E
     IMMED $1F
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_abe ;$abe
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ab4 ;$ab4
-    ARFREE 
+    ARFREE
     DB STR_103_AAB
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_abb ;$abb
 
 .sub_103_ab4
-    ARFREE 
+    ARFREE
     DB STR_103_AB5
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_abb
     JMP .sub_103_f53 ;$f53
@@ -1463,23 +1464,23 @@ sub_103_4ca::
 .sub_103_abe
     INDIR $17E
     IMMED $20
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ae8 ;$ae8
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ade ;$ade
-    ARFREE 
+    ARFREE
     DB STR_103_AD5
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_ae5 ;$ae5
 
 .sub_103_ade
-    ARFREE 
+    ARFREE
     DB STR_103_ADF
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_ae5
     JMP .sub_103_f53 ;$f53
@@ -1487,23 +1488,23 @@ sub_103_4ca::
 .sub_103_ae8
     INDIR $17E
     IMMED $21
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b12 ;$b12
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b08 ;$b08
-    ARFREE 
+    ARFREE
     DB STR_103_AFF
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_b0f ;$b0f
 
 .sub_103_b08
-    ARFREE 
+    ARFREE
     DB STR_103_B09
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_b0f
     JMP .sub_103_f53 ;$f53
@@ -1511,23 +1512,23 @@ sub_103_4ca::
 .sub_103_b12
     INDIR $17E
     IMMED $22
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b3c ;$b3c
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b32 ;$b32
-    ARFREE 
+    ARFREE
     DB STR_103_B29
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_b39 ;$b39
 
 .sub_103_b32
-    ARFREE 
+    ARFREE
     DB STR_103_B33
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_b39
     JMP .sub_103_f53 ;$f53
@@ -1535,34 +1536,34 @@ sub_103_4ca::
 .sub_103_b3c
     INDIR $17E
     IMMED $23
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b51 ;$b51
-    ARFREE 
+    ARFREE
     DB STR_103_B48
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_f53 ;$f53
 
 .sub_103_b51
     INDIR $17E
     IMMED $24
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b7b ;$b7b
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b71 ;$b71
-    ARFREE 
+    ARFREE
     DB STR_103_B68
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_b78 ;$b78
 
 .sub_103_b71
-    ARFREE 
+    ARFREE
     DB STR_103_B72
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_b78
     JMP .sub_103_f53 ;$f53
@@ -1570,23 +1571,23 @@ sub_103_4ca::
 .sub_103_b7b
     INDIR $17E
     IMMED $25
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ba5 ;$ba5
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_b9b ;$b9b
-    ARFREE 
+    ARFREE
     DB STR_103_B92
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_ba2 ;$ba2
 
 .sub_103_b9b
-    ARFREE 
+    ARFREE
     DB STR_103_B9C
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_ba2
     JMP .sub_103_f53 ;$f53
@@ -1594,23 +1595,23 @@ sub_103_4ca::
 .sub_103_ba5
     INDIR $17E
     IMMED $26
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_bcf ;$bcf
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_bc5 ;$bc5
-    ARFREE 
+    ARFREE
     DB STR_103_BBC
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_bcc ;$bcc
 
 .sub_103_bc5
-    ARFREE 
+    ARFREE
     DB STR_103_BC6
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_bcc
     JMP .sub_103_f53 ;$f53
@@ -1618,23 +1619,23 @@ sub_103_4ca::
 .sub_103_bcf
     INDIR $17E
     IMMED $27
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_bf9 ;$bf9
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_bef ;$bef
-    ARFREE 
+    ARFREE
     DB STR_103_BE6
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_bf6 ;$bf6
 
 .sub_103_bef
-    ARFREE 
+    ARFREE
     DB STR_103_BF0
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_bf6
     JMP .sub_103_f53 ;$f53
@@ -1642,23 +1643,23 @@ sub_103_4ca::
 .sub_103_bf9
     INDIR $17E
     IMMED $28
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_c23 ;$c23
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_c19 ;$c19
-    ARFREE 
+    ARFREE
     DB STR_103_C10
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_c20 ;$c20
 
 .sub_103_c19
-    ARFREE 
+    ARFREE
     DB STR_103_C1A
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_c20
     JMP .sub_103_f53 ;$f53
@@ -1666,23 +1667,23 @@ sub_103_4ca::
 .sub_103_c23
     INDIR $17E
     IMMED $29
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_c4d ;$c4d
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_c43 ;$c43
-    ARFREE 
+    ARFREE
     DB STR_103_C3A
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_c4a ;$c4a
 
 .sub_103_c43
-    ARFREE 
+    ARFREE
     DB STR_103_C44
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_c4a
     JMP .sub_103_f53 ;$f53
@@ -1690,23 +1691,23 @@ sub_103_4ca::
 .sub_103_c4d
     INDIR $17E
     IMMED $2A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_c77 ;$c77
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_c6d ;$c6d
-    ARFREE 
+    ARFREE
     DB STR_103_C64
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_c74 ;$c74
 
 .sub_103_c6d
-    ARFREE 
+    ARFREE
     DB STR_103_C6E
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_c74
     JMP .sub_103_f53 ;$f53
@@ -1714,23 +1715,23 @@ sub_103_4ca::
 .sub_103_c77
     INDIR $17E
     IMMED $2B
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ca1 ;$ca1
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_c97 ;$c97
-    ARFREE 
+    ARFREE
     DB STR_103_C8E
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_c9e ;$c9e
 
 .sub_103_c97
-    ARFREE 
+    ARFREE
     DB STR_103_C98
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_c9e
     JMP .sub_103_f53 ;$f53
@@ -1738,34 +1739,34 @@ sub_103_4ca::
 .sub_103_ca1
     INDIR $17E
     IMMED $2C
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_cb6 ;$cb6
-    ARFREE 
+    ARFREE
     DB STR_103_CAD
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_f53 ;$f53
 
 .sub_103_cb6
     INDIR $17E
     IMMED $2D
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ce0 ;$ce0
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_cd6 ;$cd6
-    ARFREE 
+    ARFREE
     DB STR_103_CCD
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_cdd ;$cdd
 
 .sub_103_cd6
-    ARFREE 
+    ARFREE
     DB STR_103_CD7
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_cdd
     JMP .sub_103_f53 ;$f53
@@ -1773,23 +1774,23 @@ sub_103_4ca::
 .sub_103_ce0
     INDIR $17E
     IMMED $2E
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d0a ;$d0a
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d00 ;$d00
-    ARFREE 
+    ARFREE
     DB STR_103_CF7
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_d07 ;$d07
 
 .sub_103_d00
-    ARFREE 
+    ARFREE
     DB STR_103_D01
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_d07
     JMP .sub_103_f53 ;$f53
@@ -1797,23 +1798,23 @@ sub_103_4ca::
 .sub_103_d0a
     INDIR $17E
     IMMED $2F
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d34 ;$d34
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d2a ;$d2a
-    ARFREE 
+    ARFREE
     DB STR_103_D21
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_d31 ;$d31
 
 .sub_103_d2a
-    ARFREE 
+    ARFREE
     DB STR_103_D2B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_d31
     JMP .sub_103_f53 ;$f53
@@ -1821,23 +1822,23 @@ sub_103_4ca::
 .sub_103_d34
     INDIR $17E
     IMMED $30
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d5e ;$d5e
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d54 ;$d54
-    ARFREE 
+    ARFREE
     DB STR_103_D4B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_d5b ;$d5b
 
 .sub_103_d54
-    ARFREE 
+    ARFREE
     DB STR_103_D55
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_d5b
     JMP .sub_103_f53 ;$f53
@@ -1845,23 +1846,23 @@ sub_103_4ca::
 .sub_103_d5e
     INDIR $17E
     IMMED $31
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d88 ;$d88
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_d7e ;$d7e
-    ARFREE 
+    ARFREE
     DB STR_103_D75
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_d85 ;$d85
 
 .sub_103_d7e
-    ARFREE 
+    ARFREE
     DB STR_103_D7F
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_d85
     JMP .sub_103_f53 ;$f53
@@ -1869,23 +1870,23 @@ sub_103_4ca::
 .sub_103_d88
     INDIR $17E
     IMMED $32
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_db2 ;$db2
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_da8 ;$da8
-    ARFREE 
+    ARFREE
     DB STR_103_D9F
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_daf ;$daf
 
 .sub_103_da8
-    ARFREE 
+    ARFREE
     DB STR_103_DA9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_daf
     JMP .sub_103_f53 ;$f53
@@ -1893,23 +1894,23 @@ sub_103_4ca::
 .sub_103_db2
     INDIR $17E
     IMMED $33
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ddc ;$ddc
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_dd2 ;$dd2
-    ARFREE 
+    ARFREE
     DB STR_103_DC9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_dd9 ;$dd9
 
 .sub_103_dd2
-    ARFREE 
+    ARFREE
     DB STR_103_DD3
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_dd9
     JMP .sub_103_f53 ;$f53
@@ -1917,23 +1918,23 @@ sub_103_4ca::
 .sub_103_ddc
     INDIR $17E
     IMMED $34
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_e06 ;$e06
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_dfc ;$dfc
-    ARFREE 
+    ARFREE
     DB STR_103_DF3
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_e03 ;$e03
 
 .sub_103_dfc
-    ARFREE 
+    ARFREE
     DB STR_103_DFD
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_e03
     JMP .sub_103_f53 ;$f53
@@ -1941,45 +1942,45 @@ sub_103_4ca::
 .sub_103_e06
     INDIR $17E
     IMMED $35
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_e1b ;$e1b
-    ARFREE 
+    ARFREE
     DB STR_103_E12
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_f53 ;$f53
 
 .sub_103_e1b
     INDIR $17E
     IMMED $36
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_e30 ;$e30
-    ARFREE 
+    ARFREE
     DB STR_103_E27
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_f53 ;$f53
 
 .sub_103_e30
     INDIR $17E
     IMMED $37
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_e5a ;$e5a
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_e50 ;$e50
-    ARFREE 
+    ARFREE
     DB STR_103_E47
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_e57 ;$e57
 
 .sub_103_e50
-    ARFREE 
+    ARFREE
     DB STR_103_E51
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_e57
     JMP .sub_103_f53 ;$f53
@@ -1987,23 +1988,23 @@ sub_103_4ca::
 .sub_103_e5a
     INDIR $17E
     IMMED $38
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_e84 ;$e84
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_e7a ;$e7a
-    ARFREE 
+    ARFREE
     DB STR_103_E71
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_e81 ;$e81
 
 .sub_103_e7a
-    ARFREE 
+    ARFREE
     DB STR_103_E7B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_e81
     JMP .sub_103_f53 ;$f53
@@ -2011,23 +2012,23 @@ sub_103_4ca::
 .sub_103_e84
     INDIR $17E
     IMMED $39
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_eae ;$eae
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ea4 ;$ea4
-    ARFREE 
+    ARFREE
     DB STR_103_E9B
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_eab ;$eab
 
 .sub_103_ea4
-    ARFREE 
+    ARFREE
     DB STR_103_EA5
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_eab
     JMP .sub_103_f53 ;$f53
@@ -2035,23 +2036,23 @@ sub_103_4ca::
 .sub_103_eae
     INDIR $17E
     IMMED $3A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ed8 ;$ed8
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ece ;$ece
-    ARFREE 
+    ARFREE
     DB STR_103_EC5
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_ed5 ;$ed5
 
 .sub_103_ece
-    ARFREE 
+    ARFREE
     DB STR_103_ECF
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_ed5
     JMP .sub_103_f53 ;$f53
@@ -2059,23 +2060,23 @@ sub_103_4ca::
 .sub_103_ed8
     INDIR $17E
     IMMED $3B
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_f02 ;$f02
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_ef8 ;$ef8
-    ARFREE 
+    ARFREE
     DB STR_103_EEF
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_eff ;$eff
 
 .sub_103_ef8
-    ARFREE 
+    ARFREE
     DB STR_103_EF9
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_eff
     JMP .sub_103_f53 ;$f53
@@ -2083,57 +2084,57 @@ sub_103_4ca::
 .sub_103_f02
     INDIR $17E
     IMMED $3C
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_f17 ;$f17
-    ARFREE 
+    ARFREE
     DB STR_103_F0E
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_f53 ;$f53
 
 .sub_103_f17
     INDIR $17E
     IMMED $3D
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_f2c ;$f2c
-    ARFREE 
+    ARFREE
     DB STR_103_F23
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_f53 ;$f53
 
 .sub_103_f2c
     INDIR $17E
     IMMED $3E
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_f41 ;$f41
-    ARFREE 
+    ARFREE
     DB STR_103_F38
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
     JMP .sub_103_f53 ;$f53
 
 .sub_103_f41
     INDIR $17E
     IMMED $3F
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_103_f53 ;$f53
-    ARFREE 
+    ARFREE
     DB STR_103_F4D
-    NPREF NTSTR 
-    POPALL 
+    NPREF NTSTR
+    POPALL
 
 .sub_103_f53
     INDIR $17E
     INDIR W_NameInput_NameTemporaryHolding
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JAL NameInput_AppendChara ;$12fb
-    NPREF POPALL 
+    NPREF POPALL
     JAL NameInput_PrintCurrentName ;$11f1
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_103_f6b
     JMP .sub_103_50c ;$50c
@@ -2142,113 +2143,115 @@ sub_103_4ca::
     INDIR $17D
     INDIR $17D
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     JAL NameInput_DrawKeyboard ;$f82
-    NPREF POPALL 
-    RET 
+    NPREF POPALL
+    RET
 
 NameInput_DrawKeyboard::
-    ARFREE 
-    NPREF TMAPSAV 
-    POPALL 
+    ARFREE
+    NPREF TMAPSAV
+    POPALL
     INDIR $17A
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .drawKatakanaKeyboard ;$10c0
 
 .drawHiraganaKeyboard
-    ARFREE 
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $7
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_F9D
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $8
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_FC0
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $9
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_FE3
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $A
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_1006
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $B
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_1029
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $C
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_104C
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $D
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_106F
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2d
     IMMED $f
     NPREF SCRCURS
     POPALL
+    ARFREE
     
     IMMED $138
     IMMED $148
     VWFENABLE
     
     DB STR_103_1092
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $10
     NPREF SCRCURS
     POPALL
+    ARFREE
     
     VWFDISABLE
     
@@ -2281,99 +2284,102 @@ NameInput_DrawKeyboard::
     NPREF PRINT 
     POPALL 
     VWFDISABLE
+    
     JMP .finalizeKeyboard ;$11ec
 
 .drawKatakanaKeyboard
-    ARFREE 
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $7
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_10CC
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $8
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_10EF
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $9
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_1112
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $A
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_1135
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $B
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_1158
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $C
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_117B
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $D
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     DB STR_103_119E
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2d
     IMMED $f
     NPREF SCRCURS
     POPALL
+    ARFREE
     
     IMMED $138
     IMMED $148
     VWFENABLE
     
     DB STR_103_11C1
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
+    NPREF PRINT
+    POPALL
+    ARFREE
     IMMED $1
     ENOP $2D
     IMMED $10
     NPREF SCRCURS
     POPALL
+    ARFREE
     
     VWFDISABLE
     
@@ -2408,126 +2414,126 @@ NameInput_DrawKeyboard::
     VWFDISABLE
     
 .finalizeKeyboard
-    ARFREE 
+    ARFREE
     NPREF UO $85
-    POPALL 
-    RET 
+    POPALL
+    RET
 
 NameInput_PrintCurrentName::
     JAL NameInput_CountNameLength ;$125c
-    NPREF POPALL 
-    ARFREE 
+    NPREF POPALL
+    ARFREE
     IMMED $8
     ENOP $2D
     IMMED $4
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     NPREF PRNICK
-    POPALL 
+    POPALL
     INDIR $179
     IMMED $8
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .return ;$125b
-    ARFREE 
+    ARFREE
     DB STR_103_1211
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     INDIR $179
     IMMED $8
     IMMED $1
-    SUB 
-    CMP_GEQ 
+    SUB
+    CMP_GEQ
     JMPT .return ;$125b
     INDIR W_MainScript_PortraitID
     IMMED $8
     INDIR $179
-    SUB 
+    SUB
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
 
 .emptySpaceLoop
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_LEQ 
+    CMP_LEQ
     JMPT .return ;$125b
-    ARFREE 
+    ARFREE
     DB STR_103_1244
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     JMP .emptySpaceLoop ;$1238
 
 .return
-    RET 
+    RET
 
 NameInput_CountNameLength::
     INDIR W_MainScript_WindowXPos
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     INDIR $179
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .countLoop
     INDIR W_MainScript_WindowXPos
     IMMED $8
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .return ;$12fa
     INDIR W_MainScript_PortraitID
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_WindowXPos
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .lowTerminatorFound ;$12e0
     INDIR $179
     INDIR $179
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_WindowXPos
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     IMMED $FF00
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
-    CMP_EQ 
+    CMP_EQ
     JMPT .hiTerminatorFound ;$12d4
     INDIR $179
     INDIR $179
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .noTerminatorFound ;$12dd
 
 .hiTerminatorFound
     INDIR W_MainScript_WindowXPos
     IMMED $8
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .noTerminatorFound
     JMP .loopIncrement ;$12e9
@@ -2535,157 +2541,157 @@ NameInput_CountNameLength::
 .lowTerminatorFound
     INDIR W_MainScript_WindowXPos
     IMMED $8
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .loopIncrement
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $1
-    ADD 
-    STR 
-    POPALL 
+    ADD
+    STR
+    POPALL
     JMP .countLoop ;$126e
 
 .return
-    RET 
+    RET
 
 NameInput_AppendChara::
     INDIR $179
     IMMED $8
-    CMP_GEQ 
+    CMP_GEQ
     JMPT .return ;$139e
     INDIR W_MainScript_PortraitID
     INDIR $179
     IMMED $2
-    DIV 
-    STR 
-    POPALL 
+    DIV
+    STR
+    POPALL
     INDIR $173
     INDIR $179
     IMMED $2
-    MOD 
-    STR 
-    POPALL 
+    MOD
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .appendCharacterHigh ;$1343
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR $17E
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     JMP .return ;$139e
 
 .appendCharacterHigh
     INDIR W_MainScript_WindowXPos
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     INDIR $17E
     INDIR $17E
     IMMED $100
-    MUL 
-    STR 
-    POPALL 
+    MUL
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR $17E
     INDIR W_MainScript_WindowXPos
-    OR 
-    STR 
-    POPALL 
+    OR
+    STR
+    POPALL
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR W_MainScript_WindowXPos
-    STR 
-    POPALL 
+    STR
+    POPALL
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
-    ADD 
+    ADD
     IMMED $1
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .return
-    RET 
+    RET
 
 NameInput_ClearCurrentChara::
     INDIR $179
     IMMED $0
-    CMP_LEQ 
+    CMP_LEQ
     JMPT .return ;$141c
     INDIR $179
     INDIR $179
     IMMED $1
-    SUB 
-    STR 
-    POPALL 
+    SUB
+    STR
+    POPALL
     INDIR W_MainScript_PortraitID
     INDIR $179
     IMMED $2
-    DIV 
-    STR 
-    POPALL 
+    DIV
+    STR
+    POPALL
     INDIR $173
     INDIR $179
     IMMED $2
-    MOD 
-    STR 
-    POPALL 
+    MOD
+    STR
+    POPALL
     INDIR $173
     IMMED $0
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .clearCharaHigh ;$13f0
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     IMMED $0
-    STR 
-    POPALL 
+    STR
+    POPALL
     JMP .return ;$141c
 
 .clearCharaHigh
     INDIR W_MainScript_WindowXPos
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
-    STR 
-    POPALL 
+    ADD
+    INDIR
+    STR
+    POPALL
     INDIR W_MainScript_WindowXPos
     INDIR W_MainScript_WindowXPos
     IMMED $FF
-    AND 
-    STR 
-    POPALL 
+    AND
+    STR
+    POPALL
     IMMED W_NameInput_NicknameDataInputName
     INDIR W_MainScript_PortraitID
-    ADD 
-    INDIR 
+    ADD
+    INDIR
     INDIR W_MainScript_WindowXPos
-    STR 
-    POPALL 
+    STR
+    POPALL
 
 .return
-    RET 
-    FGAME 
+    RET
+    FGAME

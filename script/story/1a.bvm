@@ -1,29 +1,29 @@
     JAL .sub_1a_4 ;$4
-    RET 
+    RET
 
 .sub_1a_4
     INDIR W_MainScript_ActiveScene
     IMMED $A28
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_1a_17 ;$17
     JAL .sub_1a_28 ;$28
-    NPREF POPALL 
+    NPREF POPALL
     JMP .sub_1a_27 ;$27
 
 .sub_1a_17
     INDIR W_MainScript_ActiveScene
     IMMED $A5A
-    CMP_NEQ 
+    CMP_NEQ
     JMPT .sub_1a_27 ;$27
     JAL .sub_1a_29 ;$29
-    NPREF POPALL 
+    NPREF POPALL
 
 .sub_1a_27
-    RET 
+    RET
 
 .sub_1a_28
-    RET 
+    RET
 
 .sub_1a_29
-    RET 
-    FGAME 
+    RET
+    FGAME
