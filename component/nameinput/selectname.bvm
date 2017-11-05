@@ -196,14 +196,12 @@ NameInput_DrawScreen::
     IMMED $6
     ENOP $2D
     IMMED $1
-    NPREF SCRCURS 
-    POPALL 
-    ARFREE 
-    
+    NPREF SCRCURS
+    POPALL
+    ARFREE
     IMMED $120
     IMMED $130
     VWFENABLE
-    
     DB STR_103_178
     NPREF PRINT
     POPALL
@@ -211,21 +209,17 @@ NameInput_DrawScreen::
     IMMED $6
     ENOP $2D
     IMMED $3
-    NPREF SCRCURS 
-    
+    NPREF SCRCURS
     IMMED $130
     IMMED $138
     VWFENABLE
-    
-    POPALL 
-    ARFREE 
+    POPALL
+    ARFREE
     DB STR_103_196
-    NPREF PRINT 
-    POPALL 
-    ARFREE 
-    
+    NPREF PRINT
+    POPALL
+    ARFREE
     VWFDISABLE
-    
     IMMED $0
     ENOP $2D
     IMMED $6
@@ -2232,16 +2226,14 @@ NameInput_DrawKeyboard::
     POPALL
     ARFREE
     IMMED $1
-    ENOP $2d
-    IMMED $f
+    ENOP $2D
+    IMMED $F
     NPREF SCRCURS
     POPALL
     ARFREE
-    
     IMMED $138
     IMMED $148
     VWFENABLE
-    
     DB STR_103_1092
     NPREF PRINT
     POPALL
@@ -2252,39 +2244,30 @@ NameInput_DrawKeyboard::
     NPREF SCRCURS
     POPALL
     ARFREE
-    
     VWFDISABLE
-    
     DB $20
     PRINT
-    
     IMMED $148
     IMMED $150
     VWFENABLE
-    
     DB STR_103_10AC
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     IMMED $8
     ENOP $2D
     IMMED $10
     NPREF SCRCURS
     POPALL
-    
     VWFDISABLE
-    
     DB $20
     PRINT
-    
     IMMED $150
     IMMED $158
     VWFENABLE
-    
     DB STR_103_10AC_2
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     VWFDISABLE
-    
     JMP .finalizeKeyboard ;$11ec
 
 .drawKatakanaKeyboard
@@ -2360,16 +2343,14 @@ NameInput_DrawKeyboard::
     POPALL
     ARFREE
     IMMED $1
-    ENOP $2d
-    IMMED $f
+    ENOP $2D
+    IMMED $F
     NPREF SCRCURS
     POPALL
     ARFREE
-    
     IMMED $138
     IMMED $148
     VWFENABLE
-    
     DB STR_103_11C1
     NPREF PRINT
     POPALL
@@ -2380,39 +2361,31 @@ NameInput_DrawKeyboard::
     NPREF SCRCURS
     POPALL
     ARFREE
-    
     VWFDISABLE
-    
     DB $20
     PRINT
-    
     IMMED $148
     IMMED $150
     VWFENABLE
-    
     DB STR_103_11DB ;To UPPER
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     IMMED $8
     ENOP $2D
     IMMED $10
     NPREF SCRCURS
     POPALL
-    
     VWFDISABLE
-    
     DB $20
     PRINT
-    
     IMMED $150
     IMMED $158
     VWFENABLE
-    
     DB STR_103_11DB_2 ;Confirm
-    NPREF PRINT 
-    POPALL 
+    NPREF PRINT
+    POPALL
     VWFDISABLE
-    
+
 .finalizeKeyboard
     ARFREE
     NPREF UO $85

@@ -50,21 +50,16 @@ MainScript_LoadWindowTheme:
     IMMED $7
     NPREF PALLD
     POPALL
-    
     ;Configure VWF for this theme.
     IMMED $FFC
     INDIR W_MainScript_PortraitID
     ADD
-    
     IMMED $FFC
     INDIR W_MainScript_PortraitID
     ADD
-    IMMED 1
+    IMMED $1
     ADD
-    
     IMMED $FFFF ;TODO: What is the Battle background?
-    
     VWFCONFIG
-    
     RET
     FGAME
