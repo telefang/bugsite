@@ -50,7 +50,7 @@ opcodes = {
     "BLKMOVE": 0xA2,
     "PRNAME": 0xA5,
     "SPRCTRL": 0xA6,
-    "SPRPLAY": 0xA7,
+    "SPRFINISH": 0xA7,
     "PRMON": 0xAF,
     "NTSTR": 0xB0,
     "NTPRINT": 0xB1,
