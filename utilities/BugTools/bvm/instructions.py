@@ -43,6 +43,7 @@ opcodes = {
     "WINCURS": 0x7E,
     "WINBRK": 0x82,
     "TMAPSAV": 0x86, #heeeeeeh
+    "SPRWIPE": 0x8E,
     "PRKEY": 0x9F,
     "BLKKEY": 0xA0,
     "PRMOVE": 0xA1,
