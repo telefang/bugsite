@@ -58,6 +58,7 @@ opcodes = {
     "WINFRAME": 0xB3,
     "BLKMON": 0xBB,
     "RESET": 0xBD,
+    "SPRHIDE": 0xCF,
     "SPRHOLD": 0xD2,
     "WININPUT": 0xD9,
     "BLKCHIP": 0xE2,
