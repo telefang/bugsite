@@ -65,6 +65,8 @@ opcodes = {
     "BLKMON": 0xBB,
     "RESET": 0xBD,
     "SPRWAIT": 0xC6,
+    "SPRFREEZE": 0xCB,
+    "SPRTHAW": 0xCC,
     "SPRHIDE": 0xCF,
     "SPRHOLD": 0xD2,
     "WININPUT": 0xD9,
