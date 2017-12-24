@@ -41,6 +41,7 @@ opcodes = {
     "SPRPOSPLAY": 0x6F,
     "TILELD": 0x72,
     "PALLD": 0x75,
+    "SPRCHOREO": 0x78,
     "SPRWAITALL": 0x79,
     "WINCOORD": 0x7D,
     "WINCURS": 0x7E,
