@@ -37,6 +37,7 @@ opcodes = {
     "SPRINPUT": 0x61,
     "FARCALL": 0x6A,
     "FARJMP": 0x6B,
+    "SPRANIM": 0x6E,
     "SPRPOSPLAY": 0x6F,
     "TILELD": 0x72,
     "PALLD": 0x75,
