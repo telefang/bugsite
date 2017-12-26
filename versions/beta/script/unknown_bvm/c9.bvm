@@ -243,7 +243,7 @@
     IMMED $0
     ENOP $2D
     IMMED $3
-    NPREF UO $8C
+    NPREF SPRDIR
     POPALL
     ARFREE
     NPREF FARJMP $18B
@@ -377,7 +377,7 @@
     JMPT .sub_c9_38b ;$38b
     ARFREE
     IMMED $7
-    NPREF UO $CF
+    NPREF SPRHIDE
     POPALL
     JAL .sub_c9_949 ;$949
     NPREF POPALL
@@ -412,7 +412,7 @@
     JMPT .sub_c9_3c7 ;$3c7
     ARFREE
     IMMED $7
-    NPREF UO $CF
+    NPREF SPRHIDE
     POPALL
     JAL .sub_c9_b08 ;$b08
     NPREF POPALL
@@ -904,7 +904,7 @@
     NPREF PRINT
     POPALL
     ARFREE
-    NPREF UO $A5
+    NPREF PRNAME
     POPALL
     ARFREE
     DB STR_C9_79C
