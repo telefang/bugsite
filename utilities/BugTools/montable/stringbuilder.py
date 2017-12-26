@@ -1,4 +1,4 @@
-from CodeModule.asm.rgbds import Rgb4, Rgb4Section
+from CodeModule.asm.rgbds import Rgb5, Rgb5Section
 
 def build_string_object(strlist, encoder):
     """Given a list of string defines, produce an RGBDS object file.
@@ -12,7 +12,7 @@ def build_string_object(strlist, encoder):
     Attribute Tables within Bugsite. For strings embedded in BugVM instruction
     streams, see the BugTools.bvm module."""
 
-    obj = Rgb4()
+    obj = Rgb5()
 
     for strsym in strlist:
         splitname = strsym[0].split("_")
@@ -25,9 +25,9 @@ def build_string_object(strlist, encoder):
 
         encoded_string = encoder(strsym[1])
 
-        sec = Rgb4Section()
+        sec = Rgb5Section()
         sec.name = "Attr Table Name %X_%X" % (bank, offset)
-        sec.sectype = Rgb4Section.ROMX
+        sec.sectype = Rgb5Section.ROMX
         sec.org = 0x4000 + offset
         sec.bank = bank
         sec.datsec.data = encoded_string + (b"\x00" * (0x10 - len(encoded_string)))
