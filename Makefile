@@ -122,7 +122,7 @@ $(BUILD_DIR)/%.bof: %.bvm
 	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings.csv --language Japanese script/charmap.txt $@
 
 $(BUILD_DIR)/%.spranim.bof: %.banim
-	@echo "Assembling " $<
+	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/banimasm.py $< $@
 
