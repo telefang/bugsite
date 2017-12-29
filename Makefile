@@ -121,6 +121,16 @@ $(BUILD_DIR)/%.bof: %.bvm
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bvmasm.py $< --deffile script/bugvm_strings.csv --language Japanese script/charmap.txt $@
 
+$(BUILD_DIR)/%.spranim.bof: %.banim
+	@echo "Assembling " $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/banimasm.py $< $@
+
+$(BUILD_DIR)/%.metrics: %.bfont
+	@echo "Compiling font metrics from " $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/bfontmetrics.py $< script/charmap.txt $@
+
 $(BUILD_DIR)/%.palette.bin: %.bpal
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)

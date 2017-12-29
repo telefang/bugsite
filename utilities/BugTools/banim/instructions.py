@@ -1,0 +1,18 @@
+opcodes = {
+    "SCRNDOWN": 0x32,
+    "SCRNLEFT": 0x34,
+    "SCRNRIGHT": 0x36,
+    "SCRNUP": 0x38,
+    "RESRVDOWN": 0x44,
+    "RESRVLEFT": 0x4C,
+    "FRAME": 0x4F,
+    "RESRVRIGHT": 0x52,
+    "CLRESET": 0x53,
+    "RESRVUP": 0x55,
+    "WAIT": 0x57,
+    "MOVDOWN": 0x64,
+    "MOVLEFT": 0x6C,
+    "MOVRIGHT": 0x72,
+    "RESET": 0x73,
+    "MOVUP": 0x75,
+}
