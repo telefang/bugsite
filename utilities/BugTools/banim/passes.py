@@ -3,6 +3,9 @@ from BugTools.banim.instructions import opcodes
 from BugTools.bvm.parser import Equate, SymbolicRef, Label, Instruction
 from BugTools.bvm.object import Bof1, Bof1Patch, Bof1Symbol, Bof1PatchExpr
 from BugTools.bvm.analysis import resolve_instruction_operands
+from BugTools.exceptions import InvalidOpcodeError
+
+import copy
 
 default_keq = {
     "behindbg": 0x80,
@@ -57,7 +60,7 @@ def fix_labels(parselist, known_equates = None):
             elif command.opcode in ["ENDSPRITEGROUP"]:
                 instr_len = 0 #this isn't an actual instruction, just a marker
             elif command.opcode in ["DB"]:
-                instr_len -= 1 #DB in .banim isn't an opcode, just a language construct
+                instr_len = 0 #DB in .banim isn't an opcode, just a language construct
                 for operand in command.operands:
                     if type(operand) is SymbolicRef:
                         try:
@@ -74,9 +77,6 @@ def fix_labels(parselist, known_equates = None):
                         instr_len += len(operand)
                     else:
                         raise InvalidOperandError(command)
-
-                #finally, account for the null terminator
-                instr_len += 1
 
             pc_offset += instr_len
 
@@ -125,7 +125,7 @@ def encode_sprite_animation(parselist, known_equates = None):
                     else:
                         raise InvalidOperandError(command)
             else:
-                if command.opcode not in ["START", "SPRITEGROUP", "SPRITE", "ENDSPRITEGROUP"]:
+                if command.opcode not in ["START", "SPRITEGROUP", "SPRITE", "ENDSPRITEGROUP", "DB"]:
                     try:
                         encoded_stream.append(bytes([opcodes[command.opcode]]))
                         encoded_offset += 1
@@ -176,7 +176,7 @@ def encode_sprite_animation(parselist, known_equates = None):
                     last_spritegroup_len = 0
                     last_spritegroup_pos = len(encoded_stream)
 
-                    encoded_stream.append(bytes[0x00])
+                    encoded_stream.append(bytes([0x00]))
                     encoded_offset += 1
                 elif command.opcode in ["ENDSPRITEGROUP"]:
                     #This command just exists to fixup the start of the spritegroup.
@@ -224,7 +224,7 @@ def encode_sprite_animation(parselist, known_equates = None):
 
                     for operand in resolved_operands:
                         if type(operand) is int:
-                            encoded_stream.append(bytes([operand & 0xFF]))
+                            encoded_stream.append(bytes([(operand + 0x30) & 0xFF]))
                             encoded_offset += 1
                         else:
                             raise InvalidOperandError(command)
@@ -239,9 +239,6 @@ def encode_sprite_animation(parselist, known_equates = None):
                             encoded_offset += len(operand)
                         else:
                             raise InvalidOperandError(command)
-
-                    encoded_stream.append(bytes([0]))
-                    encoded_offset += 1
                 else:
                     #No other commands accept operands.
                     if len(resolved_operands) != 0:

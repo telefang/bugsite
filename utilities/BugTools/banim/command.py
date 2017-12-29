@@ -5,7 +5,7 @@ from BugTools.bvm.parser import bvm_grammar, InstrListVisitor
 from BugTools.bvm.passes import resolve_equates
 from BugTools.bvm.formatting import unparse_bvm
 
-import argparse, sys, json
+import argparse, sys, json, copy
 
 def banimasm():
     parser = argparse.ArgumentParser(description='An assembler and source format for SpriteManager animation data, commonly seen in KAZe developed Game Boy games.')
@@ -24,7 +24,7 @@ def banimasm():
         mp = InstrListVisitor().visit(tree)
 
         mp, ke = resolve_equates(mp, ke)
-        mp, ke = fix_labels(mp, ke, strenc)
+        mp, ke = fix_labels(mp, ke)
         mp, ke, banimdata = encode_sprite_animation(mp, ke)
 
         with open(args.output, 'wb') as outfile:

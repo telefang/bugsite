@@ -49,7 +49,7 @@ def disassemble_spranim_file(banim_file):
                 operand = [SymbolicRef("frame_%X" % frame_loc, False)]
                 frames.append(frame_loc)
             elif mnemonic == "WAIT":
-                operand = [BYTE.unpack(banim_file.read(1))[0]]
+                operand = [BYTE.unpack(banim_file.read(1))[0] - 0x30 & 0xFF]
             else:
                 operand = []
             
@@ -71,7 +71,7 @@ def disassemble_spranim_file(banim_file):
         frame_parselist = [Label(SymbolicRef("frame_%X" % frame_loc, False), False), Instruction("SPRITEGROUP", [], "")]
         
         try:
-            length = BYTE.unpack(banim_file.read(1))[0] + 1
+            length = BYTE.unpack(banim_file.read(1))[0]
             
             for i in range(0, length):
                 operand = []
