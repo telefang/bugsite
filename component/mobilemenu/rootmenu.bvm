@@ -1,7 +1,7 @@
-    JAL .sub_127_4 ;$4
+    JAL MobileMenu_RootMenu ;$4
     RET
 
-.sub_127_4
+MobileMenu_RootMenu:
     INDIR $420
     IMMED $63
     CMP_EQ
@@ -251,7 +251,7 @@
     NPREF POPALL
 
 .sub_127_202
-    JMP .sub_127_4 ;$4
+    JMP MobileMenu_RootMenu ;$4
 
 .sub_127_205
     RET
