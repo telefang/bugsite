@@ -459,6 +459,11 @@ MobileMenu_PrimaryScreenLogic: ;$206
     ARFREE
     NPREF WINCLR
     POPALL
+    
+    IMMED $1B0
+    IMMED $1D0
+    VWFENABLE
+    
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_NEQ
@@ -582,6 +587,8 @@ MobileMenu_PrimaryScreenLogic: ;$206
     POPALL
 
 .printing_done
+    VWFDISABLE
+    
     ARFREE
     NPREF UO $85
     POPALL

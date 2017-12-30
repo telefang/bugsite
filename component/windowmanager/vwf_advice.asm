@@ -581,6 +581,10 @@ WindowManager_ADVICE_PrintChara::
     pop bc
     
 .noNewVwfTile
+    ld a, [W_LCDC_SetAttrVal]
+    and $F7
+    ld [W_LCDC_SetAttrVal], a
+    
     ret
     
 ;ADVICE code for PrintText, called when printing a newline.
