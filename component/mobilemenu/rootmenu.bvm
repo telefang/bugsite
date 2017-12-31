@@ -309,6 +309,14 @@ MobileMenu_PrimaryScreenLogic: ;$206
     POPALL
     POPALL
     
+    INDIR W_LCDC_SetAttrVal
+    INDIR W_LCDC_SetAttrVal
+    IMMED $F8
+    AND
+    IMMED $03
+    OR
+    STR
+    
     IMMED $1
     IMMED $10
     SCRCURS
@@ -332,6 +340,14 @@ MobileMenu_PrimaryScreenLogic: ;$206
     ARFREE
     POPALL
     VWFDISABLE
+    
+    INDIR W_LCDC_SetAttrVal
+    INDIR W_LCDC_SetAttrVal
+    IMMED $F8
+    AND
+    IMMED $07
+    OR
+    STR
     
     INDIR $73
     IMMED $5
