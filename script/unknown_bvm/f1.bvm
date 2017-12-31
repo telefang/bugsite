@@ -2,7 +2,7 @@
     RET
 
 .sub_f1_4
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $26
     CMP_NEQ
     JMPT .sub_f1_1b ;$1b
@@ -13,7 +13,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_1b
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $27
     CMP_NEQ
     JMPT .sub_f1_32 ;$32
@@ -24,7 +24,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_32
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $37
     CMP_NEQ
     JMPT .sub_f1_49 ;$49
@@ -35,7 +35,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_49
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $38
     CMP_NEQ
     JMPT .sub_f1_60 ;$60
@@ -46,7 +46,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_60
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $39
     CMP_NEQ
     JMPT .sub_f1_77 ;$77
@@ -57,7 +57,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_77
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $3A
     CMP_NEQ
     JMPT .sub_f1_8e ;$8e
@@ -68,7 +68,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_8e
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $3B
     CMP_NEQ
     JMPT .sub_f1_a5 ;$a5
@@ -79,7 +79,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_a5
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $3C
     CMP_NEQ
     JMPT .sub_f1_bc ;$bc
@@ -91,7 +91,7 @@
 
 .sub_f1_bc
     INDIR W_MainScript_WindowYPos
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     STR
     POPALL
 

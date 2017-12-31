@@ -10,7 +10,7 @@ MobileMenu_RootMenu:
     IMMED $0
     CMP_NEQ
     JMPT .select_subscreen_logic ;$9c
-    
+
 .primary_screen_logic
     ARFREE
     IMMED $0
@@ -511,7 +511,7 @@ MobileMenu_PrimaryScreenLogic: ;$206
     IMMED $1
     CMP_NEQ
     JMPT .user_profile_unavailable ;$47f
-    
+
 .user_profile_available
     ARFREE
     DB STR_127_45F
@@ -537,7 +537,7 @@ MobileMenu_PrimaryScreenLogic: ;$206
     IMMED $1
     CMP_NEQ
     JMPT .bug_sensor_off ;$4c5
-    
+
 .bug_sensor_off
     ARFREE
     DB STR_127_4A9
