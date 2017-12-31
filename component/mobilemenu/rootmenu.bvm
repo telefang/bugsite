@@ -308,6 +308,31 @@ MobileMenu_PrimaryScreenLogic: ;$206
     NPREF FARCALL $F1
     POPALL
     POPALL
+    
+    IMMED $1
+    IMMED $10
+    SCRCURS
+    IMMED $1D0
+    IMMED $1D7
+    VWFENABLE
+    DB STR_127_Mobile
+    PRINT
+    ARFREE
+    POPALL
+    VWFDISABLE
+    
+    IMMED $9
+    IMMED $10
+    SCRCURS
+    IMMED $1D8
+    IMMED $1DF
+    VWFENABLE
+    DB STR_127_Money
+    PRINT
+    ARFREE
+    POPALL
+    VWFDISABLE
+    
     INDIR $73
     IMMED $5
     STR
