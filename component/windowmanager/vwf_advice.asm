@@ -531,6 +531,7 @@ WindowManager_ADVICE_PrintChara::
     rla
     rla
     rla
+    and $08
     ld b, a
     ld a, [W_LCDC_SetAttrVal]
     or b
@@ -572,6 +573,7 @@ WindowManager_ADVICE_PrintChara::
     rla
     rla
     rla
+    and $08
     ld b, a
     ld a, [W_LCDC_SetAttrVal]
     or b
