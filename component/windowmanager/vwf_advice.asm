@@ -1,12 +1,13 @@
 INCLUDE "bugsite.inc"
 
-SECTION "WindowManager VWF Advice Memory", WRAMX[$DFC2], BANK[$2]
+SECTION "WindowManager VWF Advice Memory", WRAMX[$DFC1], BANK[$2]
 ;VRAM for variable-width font tiles is stored into a ring buffer.
 ;Each print operation draws tiles into the buffer, overwriting previous tiles
 ;if ring space is exhausted. This is a good strategy for dialogue windows, but
 ;text heavy windows may instead want to switch between multiple rings for
 ;different purposes. All rings are specified as background tile indicies in
 ;VRAM bank zero.
+W_WindowManager_SourceWRAMBank: ds 1
 W_WindowManager_VWFRingStart: ds 2 ;tiles from $8800
 W_WindowManager_VWFRingEnd: ds 2
 W_WindowManager_VWFRingWriteHead: ds 2
@@ -500,9 +501,16 @@ WindowManager_ADVICE_GetMetricsWidth::
     
 ;ADVICE code for PrintText, called when printing a normal character.
 WindowManager_ADVICE_PrintChara::
+    ld a, [REG_SVBK]
+    push af
+    
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
     ld [REG_SVBK], a
+    
+    pop af
+    ld [W_WindowManager_SourceWRAMBank], a
+    push af
     
     ld a, [W_WindowManager_CompositionState]
     and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
@@ -517,6 +525,9 @@ WindowManager_ADVICE_PrintChara::
     ld a, [W_LCDC_PokeTileX]
     inc a
     ld [W_LCDC_PokeTileX], a
+    
+    pop af
+    ld [REG_SVBK], a
     
     ret
     
@@ -541,11 +552,24 @@ WindowManager_ADVICE_PrintChara::
     pop bc
     
     dec bc
-    ld a, [bc] ;this better not be banked...
+    
+    ;ONE function hands us banked pointers, so we have to do this silly juggling
+    ;act for all pointers...
+    ld a, [W_WindowManager_SourceWRAMBank]
+    ld [REG_SVBK], a
+    
+    ld a, [bc]
+    push af
+    
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    pop af
+    push af
     call WindowManager_ADVICE_ComposeCharacter
     call WindowManager_ADVICE_FlushCompositionArea
     
-    ld a, [bc]
+    pop af
     call WindowManager_ADVICE_GetMetricsWidth
     inc bc
     
@@ -587,10 +611,16 @@ WindowManager_ADVICE_PrintChara::
     and $F7
     ld [W_LCDC_SetAttrVal], a
     
+    pop af
+    ld [REG_SVBK], a
+    
     ret
     
 ;ADVICE code for PrintText, called when printing a newline.
 WindowManager_ADVICE_PrintNewline::
+    ld a, [REG_SVBK]
+    push af
+    
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
     ld [REG_SVBK], a
@@ -603,10 +633,16 @@ WindowManager_ADVICE_PrintNewline::
     call WindowManager_ADVICE_NewlineSegment
     
 .useTiletext
+    pop af
+    ld [REG_SVBK], a
+    
     ret
     
 ;ADVICE code for WindowManager_AutoNewline, called when the text box overflows.
 WindowManager_ADVICE_AutoNewline::
+    ld a, [REG_SVBK]
+    push af
+    
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
     ld [REG_SVBK], a
@@ -645,10 +681,17 @@ WindowManager_ADVICE_AutoNewline::
     ld [W_LCDC_PokeTileY], a
     
 .ret
+    pop af
+    ld [REG_SVBK], a
+    
     ret
     
 ;ADVICE code for PrintText, called when printing a newline.
 WindowManager_ADVICE_ClearRegion::
+    ;TODO: Does real hardware let you do this?
+    ld a, [REG_SVBK]
+    push af
+    
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
     ld [REG_SVBK], a
@@ -665,6 +708,9 @@ WindowManager_ADVICE_ClearRegion::
     ld b, a
     ld a, [W_LCDC_PokeTileY]
     ld c, a
+    
+    pop af
+    ld [REG_SVBK], a
     
     ret
     
