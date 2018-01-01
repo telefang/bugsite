@@ -77,8 +77,8 @@ AccessPoint_RootMenu:
     ARFREE
     NPREF UO $F7
     POPALL
-    JAL AccessPoint_PrimaryScreenLogic ;$301
-    NPREF POPALL
+    
+    ;Reload FWF fonts BEFORE displaying the menu!!!
     INDIR W_MainScript_PortraitID
     IMMED $0
     STR
@@ -87,6 +87,9 @@ AccessPoint_RootMenu:
     NPREF FARCALL $CD
     POPALL
     POPALL
+    
+    JAL AccessPoint_PrimaryScreenLogic ;$301
+    NPREF POPALL
     JMP .loopback ;$2fd
 
 .secondary_screen_logic
