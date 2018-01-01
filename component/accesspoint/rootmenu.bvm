@@ -2053,19 +2053,35 @@ AccessPoint_SaveScreenLogic:
     NPREF WINCURS
     POPALL
     ARFREE
+    
+    IMMED $1D0
+    IMMED $1D7
+    VWFENABLE
+    
     DB STR_F0_1031
     NPREF PRINT
     POPALL
     ARFREE
+    
+    VWFDISABLE
+    
     IMMED $1
     ENOP $2D
     IMMED $1
     NPREF WINCURS
     POPALL
     ARFREE
+    
+    IMMED $1D8
+    IMMED $1DF
+    VWFENABLE
+    
     DB STR_F0_104E
     NPREF PRINT
     POPALL
+    
+    VWFDISABLE
+    
     INDIR W_MainScript_PortraitID
     IMMED $3
     STR
@@ -2095,10 +2111,18 @@ AccessPoint_SaveScreenLogic:
     IMMED $A
     NPREF SCRCURS
     POPALL
+    
+    IMMED $1E0
+    IMMED $1E7
+    VWFENABLE
+    
     DB STR_F0_1096
     PRINT
     POPALL
     ARFREE
+    
+    VWFDISABLE
+    
     IMMED $6
     ENOP $2D
     IMMED $9
