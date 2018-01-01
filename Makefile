@@ -145,6 +145,11 @@ $(BUILD_DIR)/%.spranim.bof: %.banim
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/banimasm.py $< $@
 
+$(BUILD_DIR)/%.tmap.bin: %.btmap.csv
+	@echo "Assembling" $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/btmapasm.py $< $@
+
 $(BUILD_DIR)/%.metrics: %.bfont
 	@echo "Compiling font metrics from " $<
 	@mkdir -p $(dir $@)

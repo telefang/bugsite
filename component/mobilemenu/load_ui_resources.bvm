@@ -1,8 +1,8 @@
-    JAL .sub_f1_4 ;$4
+    JAL MobileMenu_LoadUIResources ;$4
     RET
 
-.sub_f1_4
-    INDIR $420
+MobileMenu_LoadUIResources:
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $26
     CMP_NEQ
     JMPT .sub_f1_1b ;$1b
@@ -13,7 +13,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_1b
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $27
     CMP_NEQ
     JMPT .sub_f1_32 ;$32
@@ -24,7 +24,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_32
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $37
     CMP_NEQ
     JMPT .sub_f1_49 ;$49
@@ -35,7 +35,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_49
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $38
     CMP_NEQ
     JMPT .sub_f1_60 ;$60
@@ -46,7 +46,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_60
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $39
     CMP_NEQ
     JMPT .sub_f1_77 ;$77
@@ -57,7 +57,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_77
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $3A
     CMP_NEQ
     JMPT .sub_f1_8e ;$8e
@@ -68,7 +68,7 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_8e
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $3B
     CMP_NEQ
     JMPT .sub_f1_a5 ;$a5
@@ -79,19 +79,19 @@
     JMP .sub_f1_c6 ;$c6
 
 .sub_f1_a5
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $3C
     CMP_NEQ
-    JMPT .sub_f1_bc ;$bc
+    JMPT .not_a_special_screen ;$bc
     INDIR W_MainScript_WindowYPos
     IMMED $25
     STR
     POPALL
     JMP .sub_f1_c6 ;$c6
 
-.sub_f1_bc
+.not_a_special_screen
     INDIR W_MainScript_WindowYPos
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     STR
     POPALL
 
@@ -107,28 +107,30 @@
     INDIR $1
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f1_111 ;$111
+    JMPT .secondary_screen_resources ;$111
+    
+.primary_screen_resources
     INDIR W_MainScript_PortraitID
     IMMED $BC2
     IMMED $0
     ADD
     STR
     POPALL
-    INDIR $173
+    INDIR $173 ;loaded bpal
     IMMED $C3A
     INDIR W_MainScript_WindowYPos
     ADD
     STR
     POPALL
-    INDIR W_MainScript_WindowXPos
-    IMMED $BFE
+    INDIR W_MainScript_WindowXPos ;loaded btmap
+    IMMED $BFE ;file BFE onward is tmap resources
     INDIR W_MainScript_WindowYPos
     ADD
     STR
     POPALL
-    JMP .sub_f1_13a ;$13a
+    JMP .load_primary_screen ;$13a
 
-.sub_f1_111
+.secondary_screen_resources
     INDIR W_MainScript_PortraitID
     IMMED $C76
     IMMED $0
@@ -148,8 +150,8 @@
     STR
     POPALL
 
-.sub_f1_13a
-    JMP .sub_f1_ee0 ;$ee0
+.load_primary_screen
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_13d
     INDIR W_MainScript_WindowYPos
@@ -201,7 +203,7 @@
     POPALL
 
 .sub_f1_1a8
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_1ab
     INDIR W_MainScript_WindowYPos
@@ -253,7 +255,7 @@
     POPALL
 
 .sub_f1_216
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_219
     INDIR W_MainScript_WindowYPos
@@ -305,7 +307,7 @@
     POPALL
 
 .sub_f1_284
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_287
     INDIR W_MainScript_WindowYPos
@@ -357,7 +359,7 @@
     POPALL
 
 .sub_f1_2f2
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_2f5
     INDIR W_MainScript_WindowYPos
@@ -409,7 +411,7 @@
     POPALL
 
 .sub_f1_360
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_363
     INDIR W_MainScript_WindowYPos
@@ -461,7 +463,7 @@
     POPALL
 
 .sub_f1_3ce
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_3d1
     INDIR W_MainScript_WindowYPos
@@ -513,7 +515,7 @@
     POPALL
 
 .sub_f1_43c
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_43f
     INDIR W_MainScript_WindowYPos
@@ -565,7 +567,7 @@
     POPALL
 
 .sub_f1_4aa
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_4ad
     INDIR W_MainScript_WindowYPos
@@ -617,7 +619,7 @@
     POPALL
 
 .sub_f1_518
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_51b
     INDIR W_MainScript_WindowYPos
@@ -669,7 +671,7 @@
     POPALL
 
 .sub_f1_586
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_589
     INDIR W_MainScript_WindowYPos
@@ -721,7 +723,7 @@
     POPALL
 
 .sub_f1_5f4
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_5f7
     INDIR W_MainScript_WindowYPos
@@ -773,7 +775,7 @@
     POPALL
 
 .sub_f1_662
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_665
     INDIR W_MainScript_WindowYPos
@@ -825,7 +827,7 @@
     POPALL
 
 .sub_f1_6d0
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_6d3
     INDIR W_MainScript_WindowYPos
@@ -877,7 +879,7 @@
     POPALL
 
 .sub_f1_73e
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_741
     INDIR W_MainScript_WindowYPos
@@ -929,7 +931,7 @@
     POPALL
 
 .sub_f1_7ac
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_7af
     INDIR W_MainScript_WindowYPos
@@ -981,7 +983,7 @@
     POPALL
 
 .sub_f1_81a
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_81d
     INDIR W_MainScript_WindowYPos
@@ -1033,21 +1035,21 @@
     POPALL
 
 .sub_f1_888
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_88b
     INDIR W_MainScript_WindowYPos
     IMMED $14
     CMP_NEQ
     JMPT .sub_f1_899 ;$899
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_899
     INDIR W_MainScript_WindowYPos
     IMMED $15
     CMP_NEQ
     JMPT .sub_f1_8a7 ;$8a7
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_8a7
     INDIR W_MainScript_WindowYPos
@@ -1072,7 +1074,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_8df
     INDIR W_MainScript_WindowYPos
@@ -1097,7 +1099,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_916
     INDIR W_MainScript_WindowYPos
@@ -1122,7 +1124,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_94d
     INDIR W_MainScript_WindowYPos
@@ -1147,7 +1149,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_984
     INDIR W_MainScript_WindowYPos
@@ -1172,7 +1174,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_9bb
     INDIR W_MainScript_WindowYPos
@@ -1197,7 +1199,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_9f2
     INDIR W_MainScript_WindowYPos
@@ -1222,7 +1224,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_a29
     INDIR W_MainScript_WindowYPos
@@ -1247,7 +1249,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_a60
     INDIR W_MainScript_WindowYPos
@@ -1272,7 +1274,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_a97
     INDIR W_MainScript_WindowYPos
@@ -1297,7 +1299,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_ace
     INDIR W_MainScript_WindowYPos
@@ -1322,7 +1324,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_b03
     INDIR W_MainScript_WindowYPos
@@ -1347,7 +1349,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_b38
     INDIR W_MainScript_WindowYPos
@@ -1372,7 +1374,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_b6d
     INDIR W_MainScript_WindowYPos
@@ -1397,7 +1399,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_ba5
     INDIR W_MainScript_WindowYPos
@@ -1422,7 +1424,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_bdd
     INDIR W_MainScript_WindowYPos
@@ -1447,7 +1449,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_c15
     INDIR W_MainScript_WindowYPos
@@ -1472,7 +1474,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_c4b
     INDIR W_MainScript_WindowYPos
@@ -1497,7 +1499,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_c83
     INDIR W_MainScript_WindowYPos
@@ -1522,7 +1524,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_cbb
     INDIR W_MainScript_WindowYPos
@@ -1547,7 +1549,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_cf1
     INDIR W_MainScript_WindowYPos
@@ -1572,7 +1574,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_d29
     INDIR W_MainScript_WindowYPos
@@ -1597,7 +1599,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_d61
     INDIR W_MainScript_WindowYPos
@@ -1622,7 +1624,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_d97
     INDIR W_MainScript_WindowYPos
@@ -1647,7 +1649,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_dcf
     INDIR W_MainScript_WindowYPos
@@ -1672,7 +1674,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_e07
     INDIR W_MainScript_WindowYPos
@@ -1697,7 +1699,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_e3d
     INDIR W_MainScript_WindowYPos
@@ -1722,7 +1724,7 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_e75
     INDIR W_MainScript_WindowYPos
@@ -1747,13 +1749,13 @@
     ADD
     STR
     POPALL
-    JMP .sub_f1_ee0 ;$ee0
+    JMP .load_selected_resources ;$ee0
 
 .sub_f1_ead
     INDIR W_MainScript_WindowYPos
     IMMED $36
     CMP_NEQ
-    JMPT .sub_f1_ee0 ;$ee0
+    JMPT .load_selected_resources ;$ee0
     INDIR W_MainScript_PortraitID
     IMMED $BC2
     IMMED $35
@@ -1773,7 +1775,7 @@
     STR
     POPALL
 
-.sub_f1_ee0
+.load_selected_resources
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_EQ

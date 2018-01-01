@@ -2,11 +2,11 @@
     RET
 
 .sub_f0_4
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     CMP_EQ
     JMPT .sub_f0_300 ;$300
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $18
     CMP_NEQ
     JMPT .sub_f0_a8 ;$a8
@@ -88,7 +88,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_a8
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $19
     CMP_NEQ
     JMPT .sub_f0_bb ;$bb
@@ -97,7 +97,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_bb
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1A
     CMP_NEQ
     JMPT .sub_f0_ce ;$ce
@@ -106,7 +106,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_ce
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1B
     CMP_NEQ
     JMPT .sub_f0_e1 ;$e1
@@ -115,7 +115,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_e1
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1C
     CMP_NEQ
     JMPT .sub_f0_11f ;$11f
@@ -136,14 +136,14 @@
     POPALL
     JAL .sub_f0_fed ;$fed
     NPREF POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_11f
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1D
     CMP_NEQ
     JMPT .sub_f0_132 ;$132
@@ -152,7 +152,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_132
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     CMP_NEQ
     JMPT .sub_f0_145 ;$145
@@ -161,7 +161,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_145
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1F
     CMP_NEQ
     JMPT .sub_f0_158 ;$158
@@ -170,7 +170,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_158
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $20
     CMP_NEQ
     JMPT .sub_f0_16b ;$16b
@@ -179,7 +179,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_16b
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $3E
     CMP_NEQ
     JMPT .sub_f0_17e ;$17e
@@ -188,7 +188,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_17e
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $28
     CMP_NEQ
     JMPT .sub_f0_191 ;$191
@@ -197,7 +197,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_191
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2B
     CMP_NEQ
     JMPT .sub_f0_1a4 ;$1a4
@@ -206,7 +206,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_1a4
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2E
     CMP_NEQ
     JMPT .sub_f0_1b7 ;$1b7
@@ -215,7 +215,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_1b7
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $31
     CMP_NEQ
     JMPT .sub_f0_1ca ;$1ca
@@ -224,7 +224,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_1ca
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $34
     CMP_NEQ
     JMPT .sub_f0_1dd ;$1dd
@@ -233,7 +233,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_1dd
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     CMP_NEQ
     JMPT .sub_f0_1f0 ;$1f0
@@ -242,7 +242,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_1f0
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $26
     CMP_NEQ
     JMPT .sub_f0_278 ;$278
@@ -316,7 +316,7 @@
     JMP .sub_f0_2fd ;$2fd
 
 .sub_f0_278
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $27
     CMP_NEQ
     JMPT .sub_f0_2fd ;$2fd
@@ -656,7 +656,7 @@
     ARFREE
     NPREF SPRWIPE
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $19
     STR
     POPALL
@@ -664,7 +664,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $18
     STR
     POPALL
@@ -693,7 +693,7 @@
     ARFREE
     NPREF SPRWIPE
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1C
     STR
     POPALL
@@ -701,7 +701,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $18
     STR
     POPALL
@@ -730,7 +730,7 @@
     ARFREE
     NPREF SPRWIPE
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1D
     STR
     POPALL
@@ -738,7 +738,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $18
     STR
     POPALL
@@ -778,7 +778,7 @@
     NPREF FARCALL $FD
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -801,7 +801,7 @@
     ARFREE
     NPREF SPRWIPE
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     STR
     POPALL
@@ -809,7 +809,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $18
     STR
     POPALL
@@ -832,7 +832,7 @@
     IMMED $6
     CMP_NEQ
     JMPT .sub_f0_6af ;$6af
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -847,7 +847,7 @@
     IMMED $FFFF
     CMP_NEQ
     JMPT .sub_f0_6cd ;$6cd
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -1074,7 +1074,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -1099,7 +1099,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1A
     STR
     POPALL
@@ -1107,7 +1107,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $19
     STR
     POPALL
@@ -1152,7 +1152,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1B
     STR
     POPALL
@@ -1160,7 +1160,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $19
     STR
     POPALL
@@ -1184,7 +1184,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -1667,7 +1667,7 @@
     IMMED $FFFF
     CMP_NEQ
     JMPT .sub_f0_d70 ;$d70
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -1812,7 +1812,7 @@
     INDIR $17D
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -1963,7 +1963,7 @@
     ARFREE
     NPREF WINWAIT
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -2379,7 +2379,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     STR
     POPALL
@@ -2387,7 +2387,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1D
     STR
     POPALL
@@ -2409,7 +2409,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $20
     STR
     POPALL
@@ -2417,7 +2417,7 @@
     NPREF FARCALL $F0
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1D
     STR
     POPALL
@@ -2439,7 +2439,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -2457,7 +2457,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -2748,7 +2748,7 @@
     IMMED $10
     CMP_NEQ
     JMPT .sub_f0_1632 ;$1632
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1F
     STR
     POPALL
@@ -2763,7 +2763,7 @@
     IMMED $20
     CMP_NEQ
     JMPT .sub_f0_1653 ;$1653
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1F
     STR
     POPALL
@@ -2946,7 +2946,7 @@
     INDIR $17D
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -3077,7 +3077,7 @@
     IMMED $FFFF
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -3092,7 +3092,7 @@
     IMMED $FFFD
     CMP_NEQ
     JMPT .sub_f0_18fe ;$18fe
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     STR
     POPALL
@@ -3107,7 +3107,7 @@
     IMMED $FFFE
     CMP_NEQ
     JMPT .sub_f0_191f ;$191f
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     STR
     POPALL
@@ -3270,7 +3270,7 @@
     IMMED $10
     CMP_NEQ
     JMPT .sub_f0_1a73 ;$1a73
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     STR
     POPALL
@@ -3285,7 +3285,7 @@
     IMMED $20
     CMP_NEQ
     JMPT .sub_f0_1a94 ;$1a94
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     STR
     POPALL
@@ -3300,7 +3300,7 @@
     IMMED $2
     CMP_NEQ
     JMPT .sub_f0_1ab2 ;$1ab2
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -3450,7 +3450,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -3526,7 +3526,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -3606,7 +3606,7 @@
     IMMED $0
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -3828,7 +3828,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $28
     STR
     POPALL
@@ -3932,7 +3932,7 @@
     NPREF POPALL
 
 .sub_f0_1faf
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     STR
     POPALL
@@ -3973,7 +3973,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2B
     STR
     POPALL
@@ -4077,7 +4077,7 @@
     NPREF POPALL
 
 .sub_f0_20d8
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     STR
     POPALL
@@ -4118,7 +4118,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2E
     STR
     POPALL
@@ -4222,7 +4222,7 @@
     NPREF POPALL
 
 .sub_f0_2201
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     STR
     POPALL
@@ -4263,7 +4263,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $31
     STR
     POPALL
@@ -4367,7 +4367,7 @@
     NPREF POPALL
 
 .sub_f0_232a
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     STR
     POPALL
@@ -4418,7 +4418,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $34
     STR
     POPALL
@@ -4800,7 +4800,7 @@
     NPREF POPALL
 
 .sub_f0_26a7
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     STR
     POPALL
@@ -4838,7 +4838,7 @@
     ADD
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $25
     STR
     POPALL
@@ -4846,7 +4846,7 @@
     NPREF FARCALL $F3
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     STR
     POPALL
@@ -4863,7 +4863,7 @@
     IMMED $FFFF
     CMP_NEQ
     JMPT .sub_f0_273d ;$273d
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -5593,8 +5593,8 @@
     IMMED $1
     CMP_NEQ
     JMPT .sub_f0_2d4b ;$2d4b
-    INDIR $420
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1
     ADD
     STR
@@ -5604,8 +5604,8 @@
     POPALL
     JAL .sub_f0_2d7f ;$2d7f
     NPREF POPALL
-    INDIR $420
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1
     SUB
     STR
@@ -5624,7 +5624,7 @@
     ARFREE
     NPREF UO $5E
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -5691,7 +5691,7 @@
     NPREF FARCALL $F1
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $29
     CMP_NEQ
     JMPT .sub_f0_2dfd ;$2dfd
@@ -5704,7 +5704,7 @@
     JMP .sub_f0_2e6a ;$2e6a
 
 .sub_f0_2dfd
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2C
     CMP_NEQ
     JMPT .sub_f0_2e19 ;$2e19
@@ -5717,7 +5717,7 @@
     JMP .sub_f0_2e6a ;$2e6a
 
 .sub_f0_2e19
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2F
     CMP_NEQ
     JMPT .sub_f0_2e35 ;$2e35
@@ -5730,7 +5730,7 @@
     JMP .sub_f0_2e6a ;$2e6a
 
 .sub_f0_2e35
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $32
     CMP_NEQ
     JMPT .sub_f0_2e51 ;$2e51
@@ -5743,7 +5743,7 @@
     JMP .sub_f0_2e6a ;$2e6a
 
 .sub_f0_2e51
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $35
     CMP_NEQ
     JMPT .sub_f0_2e6a ;$2e6a
@@ -5851,8 +5851,8 @@
     INDIR $17E
     STR
     POPALL
-    INDIR $420
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1
     ADD
     STR
@@ -5862,8 +5862,8 @@
     POPALL
     JAL .sub_f0_3288 ;$3288
     NPREF POPALL
-    INDIR $420
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $1
     SUB
     STR
@@ -6319,7 +6319,7 @@
     NPREF FARCALL $F1
     POPALL
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2A
     CMP_NEQ
     JMPT .sub_f0_3319 ;$3319
@@ -6328,7 +6328,7 @@
     JMP .sub_f0_3362 ;$3362
 
 .sub_f0_3319
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2D
     CMP_NEQ
     JMPT .sub_f0_332c ;$332c
@@ -6337,7 +6337,7 @@
     JMP .sub_f0_3362 ;$3362
 
 .sub_f0_332c
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $30
     CMP_NEQ
     JMPT .sub_f0_333f ;$333f
@@ -6346,7 +6346,7 @@
     JMP .sub_f0_3362 ;$3362
 
 .sub_f0_333f
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $33
     CMP_NEQ
     JMPT .sub_f0_3352 ;$3352
@@ -6355,7 +6355,7 @@
     JMP .sub_f0_3362 ;$3362
 
 .sub_f0_3352
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $36
     CMP_NEQ
     JMPT .sub_f0_3362 ;$3362
@@ -6520,7 +6520,7 @@
     IMMED $20
     CMP_NEQ
     JMPT .sub_f0_3532 ;$3532
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2A
     CMP_NEQ
     JMPT .sub_f0_34b3 ;$34b3
@@ -6529,7 +6529,7 @@
     JMP .sub_f0_34fc ;$34fc
 
 .sub_f0_34b3
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2D
     CMP_NEQ
     JMPT .sub_f0_34c6 ;$34c6
@@ -6538,7 +6538,7 @@
     JMP .sub_f0_34fc ;$34fc
 
 .sub_f0_34c6
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $30
     CMP_NEQ
     JMPT .sub_f0_34d9 ;$34d9
@@ -6547,7 +6547,7 @@
     JMP .sub_f0_34fc ;$34fc
 
 .sub_f0_34d9
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $33
     CMP_NEQ
     JMPT .sub_f0_34ec ;$34ec
@@ -6556,7 +6556,7 @@
     JMP .sub_f0_34fc ;$34fc
 
 .sub_f0_34ec
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $36
     CMP_NEQ
     JMPT .sub_f0_34fc ;$34fc
@@ -6596,7 +6596,7 @@
     IMMED $10
     CMP_NEQ
     JMPT .sub_f0_35c5 ;$35c5
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2A
     CMP_NEQ
     JMPT .sub_f0_3550 ;$3550
@@ -6605,7 +6605,7 @@
     JMP .sub_f0_3599 ;$3599
 
 .sub_f0_3550
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $2D
     CMP_NEQ
     JMPT .sub_f0_3563 ;$3563
@@ -6614,7 +6614,7 @@
     JMP .sub_f0_3599 ;$3599
 
 .sub_f0_3563
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $30
     CMP_NEQ
     JMPT .sub_f0_3576 ;$3576
@@ -6623,7 +6623,7 @@
     JMP .sub_f0_3599 ;$3599
 
 .sub_f0_3576
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $33
     CMP_NEQ
     JMPT .sub_f0_3589 ;$3589
@@ -6632,7 +6632,7 @@
     JMP .sub_f0_3599 ;$3599
 
 .sub_f0_3589
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $36
     CMP_NEQ
     JMPT .sub_f0_3599 ;$3599
@@ -9770,7 +9770,7 @@
     IMMED $FFFF
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -9819,7 +9819,7 @@
     INDIR $4F0
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -9863,7 +9863,7 @@
     INDIR $4F1
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -9907,7 +9907,7 @@
     INDIR $4F2
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -9951,7 +9951,7 @@
     INDIR $4F3
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -9995,7 +9995,7 @@
     INDIR $4F4
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -10126,7 +10126,7 @@
     IMMED $FFFF
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
@@ -10155,7 +10155,7 @@
     INDIR $17E
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $26
     STR
     POPALL
@@ -10179,7 +10179,7 @@
     INDIR $17E
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $26
     STR
     POPALL
@@ -10203,7 +10203,7 @@
     INDIR $17E
     STR
     POPALL
-    INDIR $420
+    INDIR W_MobileMenu_ActiveScreen
     IMMED $26
     STR
     POPALL
