@@ -103,13 +103,13 @@ MobileMenu_LoadUIResources:
     INDIR W_MainScript_WindowYPos
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f1_13d ;$13d
+    JMPT .check_bug_lineup_screen ;$13d
     INDIR W_System_GameVersion
     IMMED $0
     CMP_NEQ
-    JMPT .secondary_screen_resources ;$111
+    JMPT .primary_screen_beta_version ;$111
 
-.primary_screen_resources
+.primary_screen_alpha_version
     INDIR W_MainScript_PortraitID
     IMMED $BC2
     IMMED $0
@@ -130,7 +130,7 @@ MobileMenu_LoadUIResources:
     POPALL
     JMP .load_primary_screen ;$13a
 
-.secondary_screen_resources
+.primary_screen_beta_version
     INDIR W_MainScript_PortraitID
     IMMED $C76
     IMMED $0
@@ -153,15 +153,17 @@ MobileMenu_LoadUIResources:
 .load_primary_screen
     JMP .load_selected_resources ;$ee0
 
-.sub_f1_13d
+.check_bug_lineup_screen
     INDIR W_MainScript_WindowYPos
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f1_1ab ;$1ab
+    JMPT .check_bug_party_screen ;$1ab
     INDIR W_System_GameVersion
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f1_17f ;$17f
+    JMPT .bug_lineup_beta_version ;$17f
+    
+.bug_lineup_alpha_version
     INDIR W_MainScript_PortraitID
     IMMED $BC2
     IMMED $0
@@ -180,9 +182,9 @@ MobileMenu_LoadUIResources:
     ADD
     STR
     POPALL
-    JMP .sub_f1_1a8 ;$1a8
+    JMP .load_bug_lineup_resources ;$1a8
 
-.sub_f1_17f
+.bug_lineup_beta_version
     INDIR W_MainScript_PortraitID
     IMMED $C76
     IMMED $0
@@ -202,10 +204,10 @@ MobileMenu_LoadUIResources:
     STR
     POPALL
 
-.sub_f1_1a8
+.load_bug_lineup_resources
     JMP .load_selected_resources ;$ee0
 
-.sub_f1_1ab
+.check_bug_party_screen
     INDIR W_MainScript_WindowYPos
     IMMED $2
     CMP_NEQ
@@ -213,7 +215,9 @@ MobileMenu_LoadUIResources:
     INDIR W_System_GameVersion
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f1_1ed ;$1ed
+    JMPT .bug_party_beta_version ;$1ed
+    
+.bug_party_alpha_version
     INDIR W_MainScript_PortraitID
     IMMED $BC2
     IMMED $0
@@ -232,9 +236,9 @@ MobileMenu_LoadUIResources:
     ADD
     STR
     POPALL
-    JMP .sub_f1_216 ;$216
+    JMP .load_bug_party_resources ;$216
 
-.sub_f1_1ed
+.bug_party_beta_version
     INDIR W_MainScript_PortraitID
     IMMED $C76
     IMMED $0
@@ -254,7 +258,7 @@ MobileMenu_LoadUIResources:
     STR
     POPALL
 
-.sub_f1_216
+.load_bug_party_resources
     JMP .load_selected_resources ;$ee0
 
 .sub_f1_219
