@@ -450,7 +450,7 @@ Attract_BattleAndTitle:
     IMMED $5
     STR
     POPALL
-    INDIR $1
+    INDIR W_System_GameVersion
     IMMED $0
     CMP_NEQ
     JMPT .sub_ce_381 ;$381
@@ -580,7 +580,7 @@ Attract_BattleAndTitle:
     IMMED $5
     STR
     POPALL
-    INDIR $1
+    INDIR W_System_GameVersion
     IMMED $0
     CMP_NEQ
     JMPT .sub_ce_489 ;$489
