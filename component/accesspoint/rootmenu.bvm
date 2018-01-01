@@ -449,6 +449,22 @@ AccessPoint_PrimaryScreenLogic:
     NPREF FARCALL $F1
     POPALL
     POPALL
+    
+    IMMED $1
+    IMMED $1
+    SCRCURS
+    
+    IMMED $1D0
+    IMMED $1DF
+    VWFENABLE
+    
+    DB STR_F0_AccessPointMenu
+    PRINT
+    POPALL
+    ARFREE
+    
+    VWFDISABLE
+    
     INDIR $15
     IMMED $215
     STR
@@ -565,6 +581,11 @@ AccessPoint_PrimaryScreenLogic:
     ARFREE
     NPREF WINCLR
     POPALL
+    
+    IMMED $1E0
+    IMMED $1FF
+    VWFENABLE
+    
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_NEQ
@@ -636,6 +657,8 @@ AccessPoint_PrimaryScreenLogic:
     POPALL
 
 .sub_f0_503
+    VWFDISABLE
+    
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
     STR
