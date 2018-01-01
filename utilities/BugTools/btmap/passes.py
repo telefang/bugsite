@@ -14,6 +14,9 @@ def read_btmap(btmap_file):
             else:
                 output_row.append(int(cell, 10))
 
+        if len(output_row) == 0:
+            continue
+
         output.append(output_row)
 
     return output
