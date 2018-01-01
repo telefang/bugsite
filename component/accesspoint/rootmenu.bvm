@@ -1,15 +1,17 @@
-    JAL .sub_f0_4 ;$4
+    JAL AccessPoint_RootMenu ;$4
     RET
 
-.sub_f0_4
+AccessPoint_RootMenu:
     INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     CMP_EQ
-    JMPT .sub_f0_300 ;$300
+    JMPT .exit ;$300
     INDIR W_MobileMenu_ActiveScreen
     IMMED $18
     CMP_NEQ
-    JMPT .sub_f0_a8 ;$a8
+    JMPT .secondary_screen_logic ;$a8
+    
+.primary_screen_logic
     ARFREE
     IMMED $0
     ENOP $2D
@@ -75,7 +77,7 @@
     ARFREE
     NPREF UO $F7
     POPALL
-    JAL .sub_f0_301 ;$301
+    JAL AccessPoint_PrimaryScreenLogic ;$301
     NPREF POPALL
     INDIR W_MainScript_PortraitID
     IMMED $0
@@ -85,34 +87,34 @@
     NPREF FARCALL $CD
     POPALL
     POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
-.sub_f0_a8
+.secondary_screen_logic
     INDIR W_MobileMenu_ActiveScreen
     IMMED $19
     CMP_NEQ
     JMPT .sub_f0_bb ;$bb
-    JAL .sub_f0_6e7 ;$6e7
+    JAL AccessPoint_BugServerScreenLogic ;$6e7
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_bb
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1A
     CMP_NEQ
     JMPT .sub_f0_ce ;$ce
-    JAL .sub_f0_9a7 ;$9a7
+    JAL AccessPoint_DepositScreenLogic ;$9a7
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_ce
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1B
     CMP_NEQ
     JMPT .sub_f0_e1 ;$e1
-    JAL .sub_f0_da1 ;$da1
+    JAL AccessPoint_WithdrawScreenLogic ;$da1
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_e1
     INDIR W_MobileMenu_ActiveScreen
@@ -134,112 +136,112 @@
     INDIR $3
     STR
     POPALL
-    JAL .sub_f0_fed ;$fed
+    JAL AccessPoint_SaveScreenLogic ;$fed
     NPREF POPALL
     INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
     POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_11f
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1D
     CMP_NEQ
     JMPT .sub_f0_132 ;$132
-    JAL .sub_f0_119a ;$119a
+    JAL AccessPoint_TrashScreenLogic ;$119a
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_132
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     CMP_NEQ
     JMPT .sub_f0_145 ;$145
-    JAL .sub_f0_13eb ;$13eb
+    JAL AccessPoint_DiscardCollectionScreenLogic ;$13eb
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_145
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1F
     CMP_NEQ
     JMPT .sub_f0_158 ;$158
-    JAL .sub_f0_17f2 ;$17f2
+    JAL AccessPoint_DiscardServerScreenLogic ;$17f2
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_158
     INDIR W_MobileMenu_ActiveScreen
     IMMED $20
     CMP_NEQ
     JMPT .sub_f0_16b ;$16b
-    JAL .sub_f0_1ae3 ;$1ae3
+    JAL AccessPoint_SalvageScreenLogic ;$1ae3
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_16b
     INDIR W_MobileMenu_ActiveScreen
     IMMED $3E
     CMP_NEQ
     JMPT .sub_f0_17e ;$17e
-    JAL .sub_f0_2c82 ;$2c82
+    JAL AccessPoint_WebsiteIntroScreenLogic ;$2c82
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_17e
     INDIR W_MobileMenu_ActiveScreen
     IMMED $28
     CMP_NEQ
     JMPT .sub_f0_191 ;$191
-    JAL .sub_f0_2c82 ;$2c82
+    JAL AccessPoint_WebsiteIntroScreenLogic ;$2c82
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_191
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2B
     CMP_NEQ
     JMPT .sub_f0_1a4 ;$1a4
-    JAL .sub_f0_2c82 ;$2c82
+    JAL AccessPoint_WebsiteIntroScreenLogic ;$2c82
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_1a4
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2E
     CMP_NEQ
     JMPT .sub_f0_1b7 ;$1b7
-    JAL .sub_f0_2c82 ;$2c82
+    JAL AccessPoint_WebsiteIntroScreenLogic ;$2c82
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_1b7
     INDIR W_MobileMenu_ActiveScreen
     IMMED $31
     CMP_NEQ
     JMPT .sub_f0_1ca ;$1ca
-    JAL .sub_f0_2c82 ;$2c82
+    JAL AccessPoint_WebsiteIntroScreenLogic ;$2c82
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_1ca
     INDIR W_MobileMenu_ActiveScreen
     IMMED $34
     CMP_NEQ
     JMPT .sub_f0_1dd ;$1dd
-    JAL .sub_f0_2c82 ;$2c82
+    JAL AccessPoint_WebsiteIntroScreenLogic ;$2c82
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_1dd
     INDIR W_MobileMenu_ActiveScreen
     IMMED $17
     CMP_NEQ
     JMPT .sub_f0_1f0 ;$1f0
-    JAL .sub_f0_1d6d ;$1d6d
+    JAL AccessPoint_GuardianBrowserScreenLogic ;$1d6d
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_1f0
     INDIR W_MobileMenu_ActiveScreen
@@ -311,15 +313,15 @@
     NPREF FARCALL $CD
     POPALL
     POPALL
-    JAL .sub_f0_4fcf ;$4fcf
+    JAL sub_f0_4fcf ;$4fcf
     NPREF POPALL
-    JMP .sub_f0_2fd ;$2fd
+    JMP .loopback ;$2fd
 
 .sub_f0_278
     INDIR W_MobileMenu_ActiveScreen
     IMMED $27
     CMP_NEQ
-    JMPT .sub_f0_2fd ;$2fd
+    JMPT .loopback ;$2fd
     ARFREE
     IMMED $0
     ENOP $2D
@@ -385,16 +387,16 @@
     NPREF FARCALL $CD
     POPALL
     POPALL
-    JAL .sub_f0_52c8 ;$52c8
+    JAL sub_f0_52c8 ;$52c8
     NPREF POPALL
 
-.sub_f0_2fd
-    JMP .sub_f0_4 ;$4
+.loopback
+    JMP AccessPoint_RootMenu ;$4
 
-.sub_f0_300
+.exit
     RET
 
-.sub_f0_301
+AccessPoint_PrimaryScreenLogic:
     INDIR $15D
     IMMED $0
     STR
@@ -460,7 +462,7 @@
     IMMED $1
     NPREF RESLD
     POPALL
-    INDIR $1
+    INDIR W_System_GameVersion
     IMMED $0
     CMP_NEQ
     JMPT .sub_f0_3ad ;$3ad
@@ -874,7 +876,7 @@
     POPALL
     RET
 
-.sub_f0_6e7
+AccessPoint_BugServerScreenLogic:
     INDIR $15D
     IMMED $0
     STR
@@ -1206,7 +1208,7 @@
     POPALL
     RET
 
-.sub_f0_9a7
+AccessPoint_DepositScreenLogic:
     INDIR $15D
     IMMED $0
     STR
@@ -1704,7 +1706,7 @@
     POPALL
     RET
 
-.sub_f0_da1
+AccessPoint_WithdrawScreenLogic:
     INDIR $17E
     IMMED $0
     STR
@@ -1987,7 +1989,7 @@
     POPALL
     RET
 
-.sub_f0_fed
+AccessPoint_SaveScreenLogic:
     ARFREE
     NPREF TMAPSAV
     POPALL
@@ -2192,7 +2194,7 @@
 .sub_f0_1199
     RET
 
-.sub_f0_119a
+AccessPoint_TrashScreenLogic:
     INDIR $15D
     IMMED $0
     STR
@@ -2478,7 +2480,7 @@
     POPALL
     RET
 
-.sub_f0_13eb
+AccessPoint_DiscardCollectionScreenLogic:
     INDIR $15D
     IMMED $0
     STR
@@ -2979,7 +2981,7 @@
     POPALL
     RET
 
-.sub_f0_17f2
+AccessPoint_DiscardServerScreenLogic:
     ARFREE
     NPREF FARCALL $BF
     POPALL
@@ -3339,7 +3341,7 @@
     POPALL
     RET
 
-.sub_f0_1ae3
+AccessPoint_SalvageScreenLogic:
     JAL .sub_f0_1d1c ;$1d1c
     NPREF POPALL
     INDIR $49E
@@ -3660,7 +3662,7 @@
 .sub_f0_1d6c
     RET
 
-.sub_f0_1d6d
+AccessPoint_GuardianBrowserScreenLogic:
     INDIR $15D
     IMMED $0
     STR
@@ -5520,7 +5522,7 @@
     POPALL
     RET
 
-.sub_f0_2c82
+AccessPoint_WebsiteIntroScreenLogic:
     INDIR $15D
     IMMED $0
     STR
@@ -6450,7 +6452,7 @@
     IMMED $4
     NPREF SCRCURS
     POPALL
-    JAL .sub_f0_5483 ;$5483
+    JAL sub_f0_5483 ;$5483
     NPREF POPALL
     INDIR W_MainScript_PortraitID
     INDIR $17A
@@ -9663,7 +9665,7 @@
 .sub_f0_4fce
     RET
 
-.sub_f0_4fcf
+sub_f0_4fcf:
     INDIR $17F
     IMMED $1
     STR
@@ -10022,7 +10024,7 @@
     POPALL
     RET
 
-.sub_f0_52c8
+sub_f0_52c8:
     INDIR $17F
     IMMED $1
     STR
@@ -10231,7 +10233,7 @@
     POPALL
     RET
 
-.sub_f0_5483
+sub_f0_5483:
     INDIR W_MainScript_PortraitID
     IMMED $1
     CMP_NEQ

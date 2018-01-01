@@ -21,7 +21,7 @@ OBJS := component/bugvm/decode.o component/bugvm/optable.o component/bugvm/vm_st
         component/windowmanager/cursor.o component/windowmanager/winclr.o \
         component/mainscript/window.o component/mainscript/scene.o \
 		  component/lcdc/poke.o component/lcdc/vmemcopy.o \
-        component/system/banking.o \
+        component/system/banking.o component/system/version.o \
         component/bugfs/indexlinkage.o \
         component/mainscript/player_name.o \
         component/nameinput/string_temporary.o component/nameinput/nickname_datablock.o \

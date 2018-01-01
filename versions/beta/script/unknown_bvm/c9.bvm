@@ -2,7 +2,7 @@
     RET
 
 .sub_c9_4
-    INDIR $1
+    INDIR W_System_GameVersion
     IMMED $1
     STR
     POPALL
@@ -1477,7 +1477,7 @@
     DB STR_C9_C46
     NPREF PRINT
     POPALL
-    INDIR $1
+    INDIR W_System_GameVersion
     IMMED $1
     CMP_NEQ
     JMPT .sub_c9_c69 ;$c69
@@ -1655,9 +1655,9 @@
     IMMED $4
     CMP_NEQ
     JMPT .sub_c9_dd6 ;$dd6
-    INDIR $1
+    INDIR W_System_GameVersion
     IMMED $1
-    INDIR $1
+    INDIR W_System_GameVersion
     SUB
     STR
     POPALL
