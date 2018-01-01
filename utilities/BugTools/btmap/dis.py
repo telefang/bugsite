@@ -14,8 +14,15 @@ def unserialize_tilemap(tmapbin_file):
         output_row = []
 
         for j in range(0,width):
-            output_row.append(BYTE.unpack(tmapbin_file.read(1))[0])
-            output_row.append(BYTE.unpack(tmapbin_file.read(1))[0])
+            tile = BYTE.unpack(tmapbin_file.read(1))[0]
+            attrs = BYTE.unpack(tmapbin_file.read(1))[0]
+
+            if attrs & 0x08 != 0:
+                tile ^= 0x100
+                attrs ^= 0x08
+
+            output_row.append(tile)
+            output_row.append(attrs)
 
         output.append(output_row)
 
@@ -27,7 +34,8 @@ def write_btmap(tmap_data, btmap_file):
     for row in tmap_data:
         output_row = []
 
-        for cell in row:
-            output_row.append("$%02X" % cell)
+        for j in range(0, len(row), 2):
+            output_row.append("$%03X" % row[j])
+            output_row.append("$%02X" % row[j+1])
 
         writer.writerow(output_row)

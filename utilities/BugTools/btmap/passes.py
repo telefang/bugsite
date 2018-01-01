@@ -33,7 +33,15 @@ def serialize_tilemap(tmap_data):
     byteout = [math.floor(width / 2), height]
 
     for row in tmap_data:
-        for cell in row:
-            byteout.append(cell)
+        for j in range(0, len(row), 2):
+            tile = row[j]
+            attrs = row[j+1]
+
+            if tile & 0x100 != 0:
+                attrs ^= 0x08
+                tile ^= 0x100
+
+            byteout.append(tile)
+            byteout.append(attrs)
 
     return bytes(byteout)
