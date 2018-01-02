@@ -2101,8 +2101,16 @@ AccessPoint_SaveScreenLogic:
     NPREF SCRCURS
     POPALL
     ARFREE
+    
+    IMMED $1E0
+    IMMED $1E7
+    VWFENABLE
+    
     NPREF PRNICK
     POPALL
+    
+    VWFDISABLE
+    
     JAL .sub_f0_1119 ;$1119
     NPREF POPALL
     ARFREE
@@ -2112,11 +2120,41 @@ AccessPoint_SaveScreenLogic:
     NPREF SCRCURS
     POPALL
     
-    IMMED $1E0
-    IMMED $1E7
+    IMMED $1E8
+    IMMED $1EF
     VWFENABLE
     
     DB STR_F0_1096
+    PRINT
+    POPALL
+    ARFREE
+    
+    VWFDISABLE
+    
+    IMMED $1F0
+    IMMED $1F7
+    VWFENABLE
+    
+    IMMED $1
+    IMMED $1
+    SCRCURS
+    
+    DB STR_F0_Save
+    PRINT
+    POPALL
+    ARFREE
+    
+    VWFDISABLE
+    
+    IMMED $1F8
+    IMMED $1FF
+    VWFENABLE
+    
+    IMMED $4
+    IMMED $6
+    SCRCURS
+    
+    DB STR_F0_Save
     PRINT
     POPALL
     ARFREE
@@ -2147,7 +2185,15 @@ AccessPoint_SaveScreenLogic:
     NPREF SCRCURS
     POPALL
     ARFREE
+    
+    IMMED $8
+    IMMED $17
+    VWFENABLE
+    
     NPREF FARCALL $107
+    
+    VWFDISABLE
+    
     POPALL
     POPALL
     INDIR $17E
