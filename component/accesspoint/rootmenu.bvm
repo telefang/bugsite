@@ -2224,6 +2224,16 @@ AccessPoint_SaveScreenLogic:
     ARFREE
     NPREF UO $5E
     POPALL
+    
+    INDIR W_MainScript_PortraitID
+    IMMED $0
+    STR
+    POPALL
+    ARFREE
+    NPREF FARCALL $CD
+    POPALL
+    POPALL
+    
     RET
 
 .sub_f0_1119
