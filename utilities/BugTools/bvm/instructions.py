@@ -39,6 +39,7 @@ opcodes = {
     "FARJMP": 0x6B,
     "SPRANIM": 0x6E,
     "SPRPOSPLAY": 0x6F,
+    "WINCHOICE": 0x70,
     "TILELD": 0x72,
     "PALLD": 0x75,
     "SPRCHOREO": 0x78,

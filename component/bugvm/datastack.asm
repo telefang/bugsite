@@ -3,6 +3,9 @@ INCLUDE "bugsite.inc"
 SECTION "BugVM Data Stack", WRAM0[$C200]
 W_BugVM_DataStack:: ds $100
 
+SECTION "BugVM Data Stack Counters", WRAM0[$C420]
+W_BugVM_StackCounter:: ds 2
+
 SECTION "BugVM Data Stack Utils", ROM0[$0611]
 ;Push a byte to the data stack.
 ;Will halt BugVM if the data stack overflows.
@@ -54,11 +57,11 @@ BugVM_PopFromDataStack::
 ;Will always return an immediate value, even if the given data was originally
 ;an indirect or predicate pointer.
 BugVM_PopTypedData::
-    ld a, [$C420]
+    ld a, [W_BugVM_StackCounter]
     or a
     jr z, .readTag
     dec a
-    ld [$C420], a
+    ld [W_BugVM_StackCounter], a
     
 .readTag
     call BugVM_PopFromDataStack

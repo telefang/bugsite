@@ -10,7 +10,7 @@ AccessPoint_RootMenu:
     IMMED $18
     CMP_NEQ
     JMPT .secondary_screen_logic ;$a8
-    
+
 .primary_screen_logic
     ARFREE
     IMMED $0
@@ -5490,11 +5490,7 @@ AccessPoint_GuardianBrowserScreenLogic:
     WINCLR
     DB STR_F0_2BDB
     DB STR_F0_2BE3
-    NOP
-    NOP
-    NOP
-    NOP
-    NPREF UO $70
+    NPREF WINCHOICE
     POPALL
     ARFREE
     IMMED $0
