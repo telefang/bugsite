@@ -836,8 +836,15 @@ WindowManager_ADVICE_PrintChoices::
     
     ld a, BANK(W_WindowManager_CompositionState)
     ld [REG_SVBK], a
+    
+    ld a, [W_WindowManager_CompositionState]
+    cp M_WindowManager_CompositionStateUninitialized
+    jr z, .usingFWF
+    
+.usingVWF
     call WindowManager_ADVICE_NewlineSegment
     
+.usingFWF
     ld a, BANK(W_WindowManager_ChoiceStringStorage)
     ld [REG_SVBK], a
     
