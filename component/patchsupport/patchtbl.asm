@@ -37,4 +37,8 @@ Banked_WindowManager_ADVICE_ClearRegion::
     jp WindowManager_ADVICE_ClearRegion
     nop
     
-    ds $C0
+Banked_WindowManager_ADVICE_PrintChoices::
+    jp WindowManager_ADVICE_PrintChoices
+    nop
+    
+    ds $BC

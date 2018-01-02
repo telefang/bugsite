@@ -827,4 +827,20 @@ WindowManager_ADVICE_OpVWFDISABLE::
     
     ret
 
+WindowManager_ADVICE_PrintChoices::
+    ld a, [W_WindowManager_ChoiceYCoord]
+    inc a
+    ld [W_WindowManager_ChoiceYCoord], a
+    
+    call WindowManager_PrintText
+    
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    call WindowManager_ADVICE_NewlineSegment
+    
+    ld a, BANK(W_WindowManager_ChoiceStringStorage)
+    ld [REG_SVBK], a
+    
+    ret
+
 WindowManager_ADVICE_END::

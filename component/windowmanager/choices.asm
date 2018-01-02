@@ -33,7 +33,7 @@ WindowManager_PrintChoices::
     
     ld a, [W_WindowManager_BaseChoiceIndex]
     swap a
-    add a, 0
+    add a, 1
     ld c, a
     ld a, (W_WindowManager_ChoiceStringStorage >> 8)
     ld b, a
@@ -56,14 +56,17 @@ WindowManager_PrintChoices::
     push de
     
     ld a, [W_WindowManager_ChoiceXCoord]
+    inc a
     ld [W_LCDC_PokeTileX], a
     
     ld a, [W_WindowManager_ChoiceYCoord]
     ld [W_LCDC_PokeTileY], a
     
-    inc a
-    ld [W_WindowManager_ChoiceYCoord], a
-    call WindowManager_PrintText
+    nop
+    nop
+    
+    ld a, (Banked_WindowManager_ADVICE_PrintChoices & $FF)
+    call PatchSupport_PointCutByID
     
     pop de
     pop bc
@@ -71,7 +74,7 @@ WindowManager_PrintChoices::
     ld a, c
     add a, M_WindowManager_ChoiceStringSize
     ld c, a
-    ld a, 0
+    xor a
     adc a, b
     ld b, a
     jr .choicePrintLoop
