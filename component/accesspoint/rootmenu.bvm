@@ -2213,8 +2213,16 @@ AccessPoint_SaveScreenLogic:
     ENOP $2D
     IMMED $0
     NPREF WINCURS
+    
+    IMMED $20
+    IMMED $2F
+    VWFENABLE
+    
     DB STR_F0_1102
     NPREF PRINT
+    
+    VWFDISABLE
+    
     POPALL
     ARFREE
     NPREF WINWAIT
