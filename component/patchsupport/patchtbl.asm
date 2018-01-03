@@ -41,4 +41,12 @@ Banked_WindowManager_ADVICE_PrintChoices::
     jp WindowManager_ADVICE_PrintChoices
     nop
     
-    ds $BC
+Banked_WindowManager_ADVICE_OpSCRCURS::
+    jp WindowManager_ADVICE_OpSCRCURS
+    nop
+    
+Banked_WindowManager_ADVICE_OpWINCURS::
+    jp WindowManager_ADVICE_OpWINCURS
+    nop
+    
+    ds $B4

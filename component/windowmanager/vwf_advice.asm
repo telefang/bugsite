@@ -826,6 +826,55 @@ WindowManager_ADVICE_OpVWFDISABLE::
     ld [W_WindowManager_CompositionShift], a
     
     ret
+    
+;Segment VWF output when we move the screen cursor, as if we had printed a new
+;line.
+WindowManager_ADVICE_OpSCRCURS::
+    call BugVM_PopTypedData
+    ld a, c
+    ld [W_LCDC_PokeTileY], a
+    
+    call BugVM_PopTypedData
+    ld a, c
+    ld [W_LCDC_PokeTileX], a
+    
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ld a, [W_WindowManager_CompositionState]
+    cp M_WindowManager_CompositionStateUninitialized
+    jr z, .usingFWF
+    
+.usingVWF
+    jp WindowManager_ADVICE_NewlineSegment
+    
+.usingFWF
+    ret
+    
+;Same for window cursor
+WindowManager_ADVICE_OpWINCURS::
+    call BugVM_PopTypedData
+    ld a, [W_WindowManager_ContentsYMin]
+    add a, c
+    ld [W_LCDC_PokeTileY], a
+    
+    call BugVM_PopTypedData
+    ld a, [W_WindowManager_ContentsXMin]
+    add a, c
+    ld [W_LCDC_PokeTileX], a
+    
+    ld a, BANK(W_WindowManager_CompositionState)
+    ld [REG_SVBK], a
+    
+    ld a, [W_WindowManager_CompositionState]
+    cp M_WindowManager_CompositionStateUninitialized
+    jr z, .usingFWF
+    
+.usingVWF
+    jp WindowManager_ADVICE_NewlineSegment
+    
+.usingFWF
+    ret
 
 WindowManager_ADVICE_PrintChoices::
     ld a, [W_WindowManager_ChoiceYCoord]

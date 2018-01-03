@@ -32,25 +32,36 @@ WindowManager_OpWINCOORD::
     ret
     
 WindowManager_OpSCRCURS::
-    call BugVM_PopTypedData
-    ld a, c
-    ld [W_LCDC_PokeTileY], a
-    
-    call BugVM_PopTypedData
-    ld a, c
-    ld [W_LCDC_PokeTileX], a
-    
+    ld a, (Banked_WindowManager_ADVICE_OpSCRCURS & $FF)
+    call PatchSupport_PointCutByID
     ret
+    
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 WindowManager_OpWINCURS::
-    call BugVM_PopTypedData
-    ld a, [W_WindowManager_ContentsYMin]
-    add a, c
-    ld [W_LCDC_PokeTileY], a
-    
-    call BugVM_PopTypedData
-    ld a, [W_WindowManager_ContentsXMin]
-    add a, c
-    ld [W_LCDC_PokeTileX], a
-    
+    ld a, (Banked_WindowManager_ADVICE_OpWINCURS & $FF)
+    call PatchSupport_PointCutByID
     ret
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
