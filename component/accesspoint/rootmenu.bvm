@@ -2055,7 +2055,7 @@ AccessPoint_SaveScreenLogic:
     ARFREE
     
     IMMED $1D0
-    IMMED $1D7
+    IMMED $1DF
     VWFENABLE
     
     DB STR_F0_1031
@@ -2063,18 +2063,12 @@ AccessPoint_SaveScreenLogic:
     POPALL
     ARFREE
     
-    VWFDISABLE
-    
     IMMED $1
     ENOP $2D
     IMMED $1
     NPREF WINCURS
     POPALL
     ARFREE
-    
-    IMMED $1D8
-    IMMED $1DF
-    VWFENABLE
     
     DB STR_F0_104E
     NPREF PRINT
@@ -2233,6 +2227,8 @@ AccessPoint_SaveScreenLogic:
     NPREF UO $5E
     POPALL
     
+    ;Restore FWF font after overwriting it.
+    ;TODO: Once Access Point is completely VWF'd, remove these calls
     INDIR W_MainScript_PortraitID
     IMMED $0
     STR
@@ -3813,6 +3809,7 @@ AccessPoint_GuardianBrowserScreenLogic:
     NPREF TMAPSAV
     POPALL
     JAL .sub_f0_2753 ;$2753
+    
     NPREF POPALL
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
@@ -3831,19 +3828,29 @@ AccessPoint_GuardianBrowserScreenLogic:
     NPREF SCRCURS
     POPALL
     ARFREE
+    
+    IMMED $1D0
+    IMMED $1E7
+    VWFENABLE
+    
     DB STR_F0_1DE1
     NPREF PRINT
     POPALL
     ARFREE
+    
     IMMED $2
     ENOP $2D
     IMMED $8
     NPREF SCRCURS
     POPALL
     ARFREE
+    
     DB STR_F0_1E01
     NPREF PRINT
     POPALL
+    
+    VWFDISABLE
+    
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
     STR
@@ -3890,7 +3897,15 @@ AccessPoint_GuardianBrowserScreenLogic:
     ARFREE
     NPREF WINCLR
     POPALL
+    
+    IMMED $20
+    IMMED $2F
+    VWFENABLE
+    
     JAL .sub_f0_2a26 ;$2a26
+    
+    VWFDISABLE
+    
     NPREF POPALL
     ARFREE
     NPREF UO $85
@@ -5001,6 +5016,18 @@ AccessPoint_GuardianBrowserScreenLogic:
     ARFREE
     NPREF UO $5E
     POPALL
+    
+    ;Restore FWF font after overwriting it.
+    ;TODO: Once Access Point is completely VWF'd, remove these calls
+    INDIR W_MainScript_PortraitID
+    IMMED $0
+    STR
+    POPALL
+    ARFREE
+    NPREF FARCALL $CD
+    POPALL
+    POPALL
+    
     RET
 
 .sub_f0_2753
@@ -5023,6 +5050,11 @@ AccessPoint_GuardianBrowserScreenLogic:
     ENOP $2D
     IMMED $B
     NPREF SCRCURS
+    
+    IMMED $7
+    IMMED $1F
+    VWFENABLE
+    
     POPALL
     ARFREE
     DB STR_F0_277C
@@ -5075,6 +5107,9 @@ AccessPoint_GuardianBrowserScreenLogic:
     NPREF PRINT
     POPALL
     ARFREE
+    
+    VWFDISABLE
+    
     IMMED $1
     ENOP $2D
     IMMED $B
@@ -5356,21 +5391,9 @@ AccessPoint_GuardianBrowserScreenLogic:
     JMPT .sub_f0_2a55 ;$2a55
     ARFREE
     DB STR_F0_2A32
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
     NPREF PRINT
     POPALL
+    ARFREE
     JMP .sub_f0_2b77 ;$2b77
 
 .sub_f0_2a55
@@ -5380,23 +5403,9 @@ AccessPoint_GuardianBrowserScreenLogic:
     JMPT .sub_f0_2a87 ;$2a87
     ARFREE
     DB STR_F0_2A61
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
     NPREF PRINT
     POPALL
+    ARFREE
     JMP .sub_f0_2b77 ;$2b77
 
 .sub_f0_2a87
@@ -5406,22 +5415,9 @@ AccessPoint_GuardianBrowserScreenLogic:
     JMPT .sub_f0_2ab8 ;$2ab8
     ARFREE
     DB STR_F0_2A93
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
     NPREF PRINT
     POPALL
+    ARFREE
     JMP .sub_f0_2b77 ;$2b77
 
 .sub_f0_2ab8
@@ -5431,20 +5427,9 @@ AccessPoint_GuardianBrowserScreenLogic:
     JMPT .sub_f0_2ae8 ;$2ae8
     ARFREE
     DB STR_F0_2AC4
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
     NPREF PRINT
     POPALL
+    ARFREE
     JMP .sub_f0_2b77 ;$2b77
 
 .sub_f0_2ae8
@@ -5477,16 +5462,6 @@ AccessPoint_GuardianBrowserScreenLogic:
     JMPT .sub_f0_2b55 ;$2b55
     ARFREE
     DB STR_F0_2B31
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
-    NOP
     NPREF PRINT
     POPALL
     JMP .sub_f0_2b77 ;$2b77
@@ -5497,13 +5472,6 @@ AccessPoint_GuardianBrowserScreenLogic:
     NPREF PRINT
     POPALL
     ARFREE
-    DB STR_F0_2B63
-    NOP
-    NOP
-    NOP
-    NOP
-    NPREF PRINT
-    POPALL
 
 .sub_f0_2b77
     RET
