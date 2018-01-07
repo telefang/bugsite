@@ -589,76 +589,84 @@ AccessPoint_PrimaryScreenLogic:
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f0_46b ;$46b
+    JMPT .check_browser_selected ;$46b
+    ARFREE
     DB STR_F0_45A
     PRINT
     POPALL
-    JMP .sub_f0_503 ;$503
+    JMP .done_printing_selected_desc ;$503
 
-.sub_f0_46b
+.check_browser_selected
     INDIR W_MainScript_PortraitID
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_485 ;$485
+    JMPT .check_save_selected ;$485
+    ARFREE
     DB STR_F0_477
     NPREF PRINT
     POPALL
-    JMP .sub_f0_503 ;$503
+    JMP .done_printing_selected_desc ;$503
 
-.sub_f0_485
+.check_save_selected
     INDIR W_MainScript_PortraitID
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_49d ;$49d
+    JMPT .check_dive_selected ;$49d
+    ARFREE
     DB STR_F0_491
     PRINT
     POPALL
-    JMP .sub_f0_503 ;$503
+    JMP .done_printing_selected_desc ;$503
 
-.sub_f0_49d
+.check_dive_selected
     INDIR W_MainScript_PortraitID
     IMMED $3
     CMP_NEQ
-    JMPT .sub_f0_4d0 ;$4d0
+    JMPT .check_trash_selected ;$4d0
     PRED $23
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_4c1 ;$4c1
+    JMPT .not_diveable_access_point ;$4c1
+
+.diveable_access_point
+    ARFREE
     DB STR_F0_4B4
     PRINT
     POPALL
-    JMP .sub_f0_4cd ;$4cd
+    JMP .done_printing_dive_string ;$4cd
 
-.sub_f0_4c1
+.not_diveable_access_point
+    ARFREE
     DB STR_F0_4C2
     PRINT
     POPALL
 
-.sub_f0_4cd
-    JMP .sub_f0_503 ;$503
+.done_printing_dive_string
+    JMP .done_printing_selected_desc ;$503
 
-.sub_f0_4d0
+.check_trash_selected
     INDIR W_MainScript_PortraitID
     IMMED $4
     CMP_NEQ
-    JMPT .sub_f0_4ea ;$4ea
+    JMPT .check_disconnect_selected ;$4ea
+    ARFREE
     DB STR_F0_4DC
     PRINT
     POPALL
-    JMP .sub_f0_503 ;$503
+    JMP .done_printing_selected_desc ;$503
 
-.sub_f0_4ea
+.check_disconnect_selected
     INDIR W_MainScript_PortraitID
     IMMED $5
     CMP_NEQ
-    JMPT .sub_f0_503 ;$503
+    JMPT .done_printing_selected_desc ;$503
+    ARFREE
     DB STR_F0_4F6
     PRINT
     POPALL
-
-.sub_f0_503
-    VWFDISABLE
     
+.done_printing_selected_desc
+    VWFDISABLE
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
     STR
@@ -926,11 +934,11 @@ AccessPoint_BugServerScreenLogic:
     STR
     POPALL
 
-.sub_f0_71a
+.input_loop
     INDIR $17C
     INDIR $17D
     CMP_EQ
-    JMPT .sub_f0_998 ;$998
+    JMPT .exit_screen ;$998
     INDIR $17F
     IMMED $0
     CMP_LEQ
@@ -1011,7 +1019,7 @@ AccessPoint_BugServerScreenLogic:
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f0_807 ;$807
+    JMPT .check_withdraw_option ;$807
     ARFREE
     NPREF WINCLR
     POPALL
@@ -1034,13 +1042,13 @@ AccessPoint_BugServerScreenLogic:
     DB STR_F0_7F5
     NPREF PRINT
     POPALL
-    JMP .sub_f0_87d ;$87d
+    JMP .done_drawing_option ;$87d
 
-.sub_f0_807
+.check_withdraw_option
     INDIR W_MainScript_PortraitID
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_850 ;$850
+    JMPT .check_exit_option ;$850
     ARFREE
     NPREF WINCLR
     POPALL
@@ -1062,13 +1070,13 @@ AccessPoint_BugServerScreenLogic:
     DB STR_F0_83E
     NPREF PRINT
     POPALL
-    JMP .sub_f0_87d ;$87d
+    JMP .done_drawing_option ;$87d
 
-.sub_f0_850
+.check_exit_option
     INDIR W_MainScript_PortraitID
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_87d ;$87d
+    JMPT .done_drawing_option ;$87d
     ARFREE
     NPREF WINCLR
     POPALL
@@ -1085,7 +1093,7 @@ AccessPoint_BugServerScreenLogic:
     NPREF PRINT
     POPALL
 
-.sub_f0_87d
+.done_drawing_option
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
     STR
@@ -1098,7 +1106,7 @@ AccessPoint_BugServerScreenLogic:
     INDIR $17B
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_8b5 ;$8b5
+    JMPT .check_deposit_enter ;$8b5
     ARFREE
     NPREF UO $5E
     POPALL
@@ -1111,9 +1119,9 @@ AccessPoint_BugServerScreenLogic:
     STR
     POPALL
     POPALL
-    JMP .sub_f0_995 ;$995
+    JMP .loopback ;$995
 
-.sub_f0_8b5
+.check_deposit_enter
     INDIR $17E
     ARFREE
     INDIR $17B
@@ -1123,7 +1131,7 @@ AccessPoint_BugServerScreenLogic:
     INDIR $17E
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_900 ;$900
+    JMPT .check_withdraw_enter ;$900
     ARFREE
     NPREF UO $5E
     POPALL
@@ -1147,13 +1155,13 @@ AccessPoint_BugServerScreenLogic:
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_995 ;$995
+    JMP .loopback ;$995
 
-.sub_f0_900
+.check_withdraw_enter
     INDIR $17E
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_972 ;$972
+    JMPT .check_exit_option_enter ;$972
     ARFREE
     NPREF FARCALL $BE
     POPALL
@@ -1161,7 +1169,7 @@ AccessPoint_BugServerScreenLogic:
     INDIR $49F
     IMMED $6
     CMP_LT
-    JMPT .sub_f0_93f ;$93f
+    JMPT .switch_to_withdraw_screen ;$93f
     ARFREE
     NPREF WINCLR
     POPALL
@@ -1174,9 +1182,9 @@ AccessPoint_BugServerScreenLogic:
     ARFREE
     NPREF WINBRK
     POPALL
-    JMP .sub_f0_96f ;$96f
+    JMP .done_switching ;$96f
 
-.sub_f0_93f
+.switch_to_withdraw_screen
     ARFREE
     NPREF UO $5E
     POPALL
@@ -1201,14 +1209,14 @@ AccessPoint_BugServerScreenLogic:
     STR
     POPALL
 
-.sub_f0_96f
-    JMP .sub_f0_995 ;$995
+.done_switching
+    JMP .loopback ;$995
 
-.sub_f0_972
+.check_exit_option_enter
     INDIR $17E
     IMMED $3
     CMP_NEQ
-    JMPT .sub_f0_995 ;$995
+    JMPT .loopback ;$995
     ARFREE
     NPREF UO $5E
     POPALL
@@ -1222,10 +1230,10 @@ AccessPoint_BugServerScreenLogic:
     POPALL
     POPALL
 
-.sub_f0_995
-    JMP .sub_f0_71a ;$71a
+.loopback
+    JMP .input_loop ;$71a
 
-.sub_f0_998
+.exit_screen
     INDIR $17D
     INDIR $17D
     IMMED $1
@@ -5624,15 +5632,15 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_2cb5
+.intro_loop
     INDIR $17C
     INDIR $17D
     CMP_EQ
-    JMPT .sub_f0_2d70 ;$2d70
+    JMPT .intro_exit_website ;$2d70
     INDIR $17F
     IMMED $0
     CMP_LEQ
-    JMPT .sub_f0_2d06 ;$2d06
+    JMPT .intro_check_next_input ;$2d06
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -5663,7 +5671,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_2d06
+.intro_check_next_input
     INDIR $17B
     ARFREE
     NPREF SPRINPUT
@@ -5672,7 +5680,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR $17B
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_2d4b ;$2d4b
+    JMPT .intro_check_b_button ;$2d4b
     INDIR W_MobileMenu_ActiveScreen
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1
@@ -5682,7 +5690,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     ARFREE
     NPREF UO $5E
     POPALL
-    JAL .sub_f0_2d7f ;$2d7f
+    JAL AccessPoint_WebsiteZukanOverviewScreen ;$2d7f
     NPREF POPALL
     INDIR W_MobileMenu_ActiveScreen
     INDIR W_MobileMenu_ActiveScreen
@@ -5694,13 +5702,13 @@ AccessPoint_WebsiteIntroScreenLogic:
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_2d6d ;$2d6d
+    JMP .intro_loopback ;$2d6d
 
-.sub_f0_2d4b
+.intro_check_b_button
     INDIR $17B
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_2d6d ;$2d6d
+    JMPT .intro_loopback ;$2d6d
     ARFREE
     NPREF UO $5E
     POPALL
@@ -5713,10 +5721,10 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_2d6d
-    JMP .sub_f0_2cb5 ;$2cb5
+.intro_loopback
+    JMP .intro_loop ;$2cb5
 
-.sub_f0_2d70
+.intro_exit_website
     INDIR $17D
     INDIR $17D
     IMMED $1
@@ -5725,7 +5733,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_2d7f
+AccessPoint_WebsiteZukanOverviewScreen:
     INDIR $17E
     IMMED $0
     STR
@@ -5745,15 +5753,15 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_2da9
+.zukan_inputloop
     INDIR $17C
     INDIR $17D
     CMP_EQ
-    JMPT .sub_f0_2f70 ;$2f70
+    JMPT .exit_zukan_screen ;$2f70
     INDIR $17F
     IMMED $0
     CMP_LEQ
-    JMPT .sub_f0_2ee7 ;$2ee7
+    JMPT .run_table_logic ;$2ee7
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -5774,67 +5782,67 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR W_MobileMenu_ActiveScreen
     IMMED $29
     CMP_NEQ
-    JMPT .sub_f0_2dfd ;$2dfd
-    JAL .sub_f0_35d7 ;$35d7
+    JMPT .check_sting_zukan ;$2dfd
+    JAL AccessPoint_DrawFEUIDecorum ;$35d7
     NPREF POPALL
     INDIR $44C
     IMMED $10
     STR
     POPALL
-    JMP .sub_f0_2e6a ;$2e6a
+    JMP .draw_zukan_title_instr ;$2e6a
 
-.sub_f0_2dfd
+.check_sting_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2C
     CMP_NEQ
-    JMPT .sub_f0_2e19 ;$2e19
-    JAL .sub_f0_3af6 ;$3af6
+    JMPT .check_ruger_zukan ;$2e19
+    JAL AccessPoint_DrawStingUIDecorum ;$3af6
     NPREF POPALL
     INDIR $44C
     IMMED $10
     STR
     POPALL
-    JMP .sub_f0_2e6a ;$2e6a
+    JMP .draw_zukan_title_instr ;$2e6a
 
-.sub_f0_2e19
+.check_ruger_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2F
     CMP_NEQ
-    JMPT .sub_f0_2e35 ;$2e35
-    JAL .sub_f0_4015 ;$4015
+    JMPT .check_tahiro_zukan ;$2e35
+    JAL AccessPoint_DrawRugerUIDecorum ;$4015
     NPREF POPALL
     INDIR $44C
     IMMED $11
     STR
     POPALL
-    JMP .sub_f0_2e6a ;$2e6a
+    JMP .draw_zukan_title_instr ;$2e6a
 
-.sub_f0_2e35
+.check_tahiro_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $32
     CMP_NEQ
-    JMPT .sub_f0_2e51 ;$2e51
-    JAL .sub_f0_4534 ;$4534
+    JMPT .check_jank_zukan ;$2e51
+    JAL AccessPoint_DrawTahiroUIDecorum ;$4534
     NPREF POPALL
     INDIR $44C
     IMMED $10
     STR
     POPALL
-    JMP .sub_f0_2e6a ;$2e6a
+    JMP .draw_zukan_title_instr ;$2e6a
 
-.sub_f0_2e51
+.check_jank_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $35
     CMP_NEQ
-    JMPT .sub_f0_2e6a ;$2e6a
-    JAL .sub_f0_4a53 ;$4a53
+    JMPT .draw_zukan_title_instr ;$2e6a
+    JAL AccessPoint_DrawJankUIDecorum ;$4a53
     NPREF POPALL
     INDIR $44C
     IMMED $10
     STR
     POPALL
 
-.sub_f0_2e6a
+.draw_zukan_title_instr
     ARFREE
     IMMED $8
     ENOP $2D
@@ -5890,7 +5898,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_2ee7
+.run_table_logic
     INDIR $44D
     IMMED $7
     STR
@@ -5911,12 +5919,12 @@ AccessPoint_WebsiteIntroScreenLogic:
     IMMED $5
     STR
     POPALL
-    JAL .sub_f0_2f7f ;$2f7f
+    JAL AccessPoint_ZukanTableLogic ;$2f7f
     NPREF POPALL
     INDIR $17E
     IMMED $FFFF
     CMP_NEQ
-    JMPT .sub_f0_2f35 ;$2f35
+    JMPT .enter_zukan_inner_page ;$2f35
     ARFREE
     NPREF UO $5E
     POPALL
@@ -5924,9 +5932,9 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_2f6d ;$2f6d
+    JMP .zukan_loopback ;$2f6d
 
-.sub_f0_2f35
+.enter_zukan_inner_page
     INDIR $421
     INDIR $17E
     STR
@@ -5940,7 +5948,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     ARFREE
     NPREF UO $5E
     POPALL
-    JAL .sub_f0_3288 ;$3288
+    JAL AccessPoint_WebsiteZukanInnerScreen ;$3288
     NPREF POPALL
     INDIR W_MobileMenu_ActiveScreen
     INDIR W_MobileMenu_ActiveScreen
@@ -5953,10 +5961,10 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_2f6d
-    JMP .sub_f0_2da9 ;$2da9
+.zukan_loopback
+    JMP .zukan_inputloop ;$2da9
 
-.sub_f0_2f70
+.exit_zukan_screen
     INDIR $17D
     INDIR $17D
     IMMED $1
@@ -5965,7 +5973,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_2f7f
+AccessPoint_ZukanTableLogic:
     INDIR $450
     INDIR $178
     CMP_GEQ
@@ -6041,15 +6049,15 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_302c
+.table_input_loop
     INDIR $17C
     INDIR $17D
     CMP_EQ
-    JMPT .sub_f0_317f ;$317f
+    JMPT .exit_table_loop ;$317f
     INDIR $17F
     IMMED $0
     CMP_EQ
-    JMPT .sub_f0_30b1 ;$30b1
+    JMPT .sample_player_input ;$30b1
     ARFREE
     NPREF TMAPSAV
     POPALL
@@ -6074,7 +6082,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     IMMED $0
     STR
     POPALL
-    JAL .sub_f0_318e ;$318e
+    JAL AccessPoint_DrawZukanTableContents ;$318e
     NPREF POPALL
     ARFREE
     IMMED $0
@@ -6106,7 +6114,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_30b1
+.sample_player_input
     INDIR $17B
     ARFREE
     NPREF SPRINPUT
@@ -6115,17 +6123,17 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR $17B
     IMMED $10
     CMP_NEQ
-    JMPT .sub_f0_30c8 ;$30c8
-    JMP .sub_f0_317c ;$317c
+    JMPT .check_left_pressed ;$30c8
+    JMP .table_loopback ;$317c
 
-.sub_f0_30c8
+.check_left_pressed
     INDIR $17B
     IMMED $20
     CMP_NEQ
-    JMPT .sub_f0_30d6 ;$30d6
-    JMP .sub_f0_317c ;$317c
+    JMPT .check_page_table_up ;$30d6
+    JMP .table_loopback ;$317c
 
-.sub_f0_30d6
+.check_page_table_up
     INDIR $17B
     IMMED $40
     CMP_NEQ
@@ -6133,16 +6141,16 @@ AccessPoint_WebsiteIntroScreenLogic:
     IMMED $0
     CMP_NEQ
     ANDL
-    JMPT .sub_f0_30fb ;$30fb
-    JAL .sub_f0_4f9b ;$4f9b
+    JMPT .check_page_table_down ;$30fb
+    JAL AccessPoint_PageZukanTableUp ;$4f9b
     NPREF POPALL
     INDIR $17F
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_317c ;$317c
+    JMP .table_loopback ;$317c
 
-.sub_f0_30fb
+.check_page_table_down
     INDIR $17B
     IMMED $80
     CMP_NEQ
@@ -6152,16 +6160,16 @@ AccessPoint_WebsiteIntroScreenLogic:
     SUB
     CMP_NEQ
     ANDL
-    JMPT .sub_f0_3125 ;$3125
-    JAL .sub_f0_4f4c ;$4f4c
+    JMPT .check_menu_input ;$3125
+    JAL AccessPoint_PageZukanTableDown ;$4f4c
     NPREF POPALL
     INDIR $17F
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_317c ;$317c
+    JMP .table_loopback ;$317c
 
-.sub_f0_3125
+.check_menu_input
     INDIR $17E
     ARFREE
     INDIR $17B
@@ -6171,18 +6179,18 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR $17E
     IMMED $FFFF
     CMP_NEQ
-    JMPT .sub_f0_314a ;$314a
+    JMPT .table_not_dismissed ;$314a
     INDIR $17C
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_317c ;$317c
+    JMP .table_loopback ;$317c
 
-.sub_f0_314a
+.table_not_dismissed
     INDIR $17E
     IMMED $0
     CMP_LEQ
-    JMPT .sub_f0_317c ;$317c
+    JMPT .table_loopback ;$317c
     INDIR $17F
     INDIR $17E
     STR
@@ -6200,10 +6208,10 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_317c
-    JMP .sub_f0_302c ;$302c
+.table_loopback
+    JMP .table_input_loop ;$302c
 
-.sub_f0_317f
+.exit_table_loop
     INDIR $17D
     INDIR $17D
     IMMED $1
@@ -6212,7 +6220,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_318e
+AccessPoint_DrawZukanTableContents:
     INDIR $451
     INDIR $450
     INDIR $7A
@@ -6224,7 +6232,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     IMMED $2
     SUB
     CMP_LEQ
-    JMPT .sub_f0_31bb ;$31bb
+    JMPT .check_overflow_exists ;$31bb
     INDIR $451
     INDIR $44D
     IMMED $2
@@ -6232,27 +6240,27 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_31bb
+.check_overflow_exists
     INDIR $450
     INDIR $44D
     IMMED $2
     SUB
     CMP_GT
-    JMPT .sub_f0_31ce ;$31ce
-    JMP .sub_f0_320a ;$320a
+    JMPT .draw_overflow_arrows ;$31ce
+    JMP .setup_draw_loop ;$320a
 
-.sub_f0_31ce
+.draw_overflow_arrows
     INDIR $7A
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f0_31e3 ;$31e3
+    JMPT .check_arrow_position_middle ;$31e3
     ARFREE
     IMMED $0
-    NPREF UO $F4
+    NPREF WINARROW
     POPALL
-    JMP .sub_f0_320a ;$320a
+    JMP .setup_draw_loop ;$320a
 
-.sub_f0_31e3
+.check_arrow_position_middle
     INDIR $450
     INDIR $7A
     SUB
@@ -6260,20 +6268,20 @@ AccessPoint_WebsiteIntroScreenLogic:
     IMMED $2
     SUB
     CMP_GT
-    JMPT .sub_f0_3203 ;$3203
+    JMPT .position_arrow_top ;$3203
     ARFREE
     INDIR W_WindowManager_MenuItemCount
-    NPREF UO $F4
+    NPREF WINARROW
     POPALL
-    JMP .sub_f0_320a ;$320a
+    JMP .setup_draw_loop ;$320a
 
-.sub_f0_3203
+.position_arrow_top
     ARFREE
     IMMED $1
-    NPREF UO $F4
+    NPREF WINARROW
     POPALL
 
-.sub_f0_320a
+.setup_draw_loop
     INDIR W_MainScript_PortraitID
     INDIR $7A
     STR
@@ -6283,12 +6291,12 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_321d
+.table_draw_loop
     INDIR $173
     INDIR $451
     CMP_GEQ
-    JMPT .sub_f0_325b ;$325b
-    JAL .sub_f0_325c ;$325c
+    JMPT .table_full ;$325b
+    JAL AccessPoint_DrawZukanTableEntry ;$325c
     NPREF POPALL
     INDIR $176
     INDIR $176
@@ -6308,12 +6316,12 @@ AccessPoint_WebsiteIntroScreenLogic:
     ADD
     STR
     POPALL
-    JMP .sub_f0_321d ;$321d
+    JMP .table_draw_loop ;$321d
 
-.sub_f0_325b
+.table_full
     RET
 
-.sub_f0_325c
+AccessPoint_DrawZukanTableEntry:
     ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
@@ -6339,7 +6347,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_3288
+AccessPoint_WebsiteZukanInnerScreen:
     INDIR $15D
     IMMED $0
     STR
@@ -6363,15 +6371,15 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_32bb
+.zukan_inner_input_loop
     INDIR $17C
     INDIR $17D
     CMP_EQ
-    JMPT .sub_f0_35c8 ;$35c8
+    JMPT .zukan_page_dismissed ;$35c8
     INDIR $17F
     IMMED $0
     CMP_LEQ
-    JMPT .sub_f0_3462 ;$3462
+    JMPT .await_user_input ;$3462
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -6402,47 +6410,47 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2A
     CMP_NEQ
-    JMPT .sub_f0_3319 ;$3319
-    JAL .sub_f0_35d7 ;$35d7
+    JMPT .check_sting_zukan ;$3319
+    JAL AccessPoint_DrawFEUIDecorum ;$35d7
     NPREF POPALL
-    JMP .sub_f0_3362 ;$3362
+    JMP .print_zukan_entry ;$3362
 
-.sub_f0_3319
+.check_sting_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2D
     CMP_NEQ
-    JMPT .sub_f0_332c ;$332c
-    JAL .sub_f0_3af6 ;$3af6
+    JMPT .check_ruger_zukan ;$332c
+    JAL AccessPoint_DrawStingUIDecorum ;$3af6
     NPREF POPALL
-    JMP .sub_f0_3362 ;$3362
+    JMP .print_zukan_entry ;$3362
 
-.sub_f0_332c
+.check_ruger_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $30
     CMP_NEQ
-    JMPT .sub_f0_333f ;$333f
-    JAL .sub_f0_4015 ;$4015
+    JMPT .check_tahiro_zukan ;$333f
+    JAL AccessPoint_DrawRugerUIDecorum ;$4015
     NPREF POPALL
-    JMP .sub_f0_3362 ;$3362
+    JMP .print_zukan_entry ;$3362
 
-.sub_f0_333f
+.check_tahiro_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $33
     CMP_NEQ
-    JMPT .sub_f0_3352 ;$3352
-    JAL .sub_f0_4534 ;$4534
+    JMPT .check_jank_zukan ;$3352
+    JAL AccessPoint_DrawTahiroUIDecorum ;$4534
     NPREF POPALL
-    JMP .sub_f0_3362 ;$3362
+    JMP .print_zukan_entry ;$3362
 
-.sub_f0_3352
+.check_jank_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $36
     CMP_NEQ
-    JMPT .sub_f0_3362 ;$3362
-    JAL .sub_f0_4a53 ;$4a53
+    JMPT .print_zukan_entry ;$3362
+    JAL AccessPoint_DrawJankUIDecorum ;$4a53
     NPREF POPALL
 
-.sub_f0_3362
+.print_zukan_entry
     INDIR W_MainScript_PortraitID
     IMMED $600
     INDIR $421
@@ -6569,7 +6577,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_3462
+.await_user_input
     INDIR $17B
     ARFREE
     NPREF SPRINPUT
@@ -6578,14 +6586,14 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR $17B
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_3479 ;$3479
-    JMP .sub_f0_35c5 ;$35c5
+    JMPT .check_b_pressed ;$3479
+    JMP .zukan_inner_loopback ;$35c5
 
-.sub_f0_3479
+.check_b_pressed
     INDIR $17B
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_3495 ;$3495
+    JMPT .check_left_pressed ;$3495
     ARFREE
     NPREF UO $5E
     POPALL
@@ -6593,70 +6601,72 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_35c5 ;$35c5
+    JMP .zukan_inner_loopback ;$35c5
 
-.sub_f0_3495
+.check_left_pressed
     INDIR $17B
     IMMED $20
     CMP_NEQ
-    JMPT .sub_f0_3532 ;$3532
+    JMPT .check_right_pressed ;$3532
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2A
     CMP_NEQ
-    JMPT .sub_f0_34b3 ;$34b3
-    JAL .sub_f0_35d7 ;$35d7
+    JMPT .previous_check_sting_zukan ;$34b3
+    JAL AccessPoint_DrawFEUIDecorum ;$35d7
     NPREF POPALL
-    JMP .sub_f0_34fc ;$34fc
+    JMP .previous_check_wraparound ;$34fc
 
-.sub_f0_34b3
+.previous_check_sting_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2D
     CMP_NEQ
-    JMPT .sub_f0_34c6 ;$34c6
-    JAL .sub_f0_3af6 ;$3af6
+    JMPT .previous_check_ruger_zukan ;$34c6
+    JAL AccessPoint_DrawStingUIDecorum ;$3af6
     NPREF POPALL
-    JMP .sub_f0_34fc ;$34fc
+    JMP .previous_check_wraparound ;$34fc
 
-.sub_f0_34c6
+.previous_check_ruger_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $30
     CMP_NEQ
-    JMPT .sub_f0_34d9 ;$34d9
-    JAL .sub_f0_4015 ;$4015
+    JMPT .previous_check_tahiro_zukan ;$34d9
+    JAL AccessPoint_DrawRugerUIDecorum ;$4015
     NPREF POPALL
-    JMP .sub_f0_34fc ;$34fc
+    JMP .previous_check_wraparound ;$34fc
 
-.sub_f0_34d9
+.previous_check_tahiro_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $33
     CMP_NEQ
-    JMPT .sub_f0_34ec ;$34ec
-    JAL .sub_f0_4534 ;$4534
+    JMPT .previous_check_jank_zukan ;$34ec
+    JAL AccessPoint_DrawTahiroUIDecorum ;$4534
     NPREF POPALL
-    JMP .sub_f0_34fc ;$34fc
+    JMP .previous_check_wraparound ;$34fc
 
-.sub_f0_34ec
+.previous_check_jank_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $36
     CMP_NEQ
-    JMPT .sub_f0_34fc ;$34fc
-    JAL .sub_f0_4a53 ;$4a53
+    JMPT .previous_check_wraparound ;$34fc
+    JAL AccessPoint_DrawJankUIDecorum ;$4a53
     NPREF POPALL
 
-.sub_f0_34fc
+.previous_check_wraparound
     INDIR $421
     IMMED $0
     CMP_LEQ
-    JMPT .sub_f0_3518 ;$3518
+    JMPT .previous_wraparound ;$3518
+
+.previous_no_wraparound
     INDIR $421
     INDIR $421
     IMMED $1
     SUB
     STR
     POPALL
-    JMP .sub_f0_3526 ;$3526
+    JMP .previous_done ;$3526
 
-.sub_f0_3518
+.previous_wraparound
     INDIR $421
     INDIR $173
     IMMED $1
@@ -6664,62 +6674,62 @@ AccessPoint_WebsiteIntroScreenLogic:
     STR
     POPALL
 
-.sub_f0_3526
+.previous_done
     INDIR $17F
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_35c5 ;$35c5
+    JMP .zukan_inner_loopback ;$35c5
 
-.sub_f0_3532
+.check_right_pressed
     INDIR $17B
     IMMED $10
     CMP_NEQ
-    JMPT .sub_f0_35c5 ;$35c5
+    JMPT .zukan_inner_loopback ;$35c5
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2A
     CMP_NEQ
-    JMPT .sub_f0_3550 ;$3550
-    JAL .sub_f0_35d7 ;$35d7
+    JMPT .next_check_sting_zukan ;$3550
+    JAL AccessPoint_DrawFEUIDecorum ;$35d7
     NPREF POPALL
-    JMP .sub_f0_3599 ;$3599
+    JMP .next_check_wraparound ;$3599
 
-.sub_f0_3550
+.next_check_sting_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $2D
     CMP_NEQ
-    JMPT .sub_f0_3563 ;$3563
-    JAL .sub_f0_3af6 ;$3af6
+    JMPT .next_check_ruger_zukan ;$3563
+    JAL AccessPoint_DrawStingUIDecorum ;$3af6
     NPREF POPALL
-    JMP .sub_f0_3599 ;$3599
+    JMP .next_check_wraparound ;$3599
 
-.sub_f0_3563
+.next_check_ruger_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $30
     CMP_NEQ
-    JMPT .sub_f0_3576 ;$3576
-    JAL .sub_f0_4015 ;$4015
+    JMPT .next_check_tahiro_zukan ;$3576
+    JAL AccessPoint_DrawRugerUIDecorum ;$4015
     NPREF POPALL
-    JMP .sub_f0_3599 ;$3599
+    JMP .next_check_wraparound ;$3599
 
-.sub_f0_3576
+.next_check_tahiro_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $33
     CMP_NEQ
-    JMPT .sub_f0_3589 ;$3589
-    JAL .sub_f0_4534 ;$4534
+    JMPT .next_check_jank_zukan ;$3589
+    JAL AccessPoint_DrawTahiroUIDecorum ;$4534
     NPREF POPALL
-    JMP .sub_f0_3599 ;$3599
+    JMP .next_check_wraparound ;$3599
 
-.sub_f0_3589
+.next_check_jank_zukan
     INDIR W_MobileMenu_ActiveScreen
     IMMED $36
     CMP_NEQ
-    JMPT .sub_f0_3599 ;$3599
-    JAL .sub_f0_4a53 ;$4a53
+    JMPT .next_check_wraparound ;$3599
+    JAL AccessPoint_DrawJankUIDecorum ;$4a53
     NPREF POPALL
 
-.sub_f0_3599
+.next_check_wraparound
     INDIR $421
     INDIR $421
     IMMED $1
@@ -6729,22 +6739,24 @@ AccessPoint_WebsiteIntroScreenLogic:
     INDIR $421
     INDIR $173
     CMP_LT
-    JMPT .sub_f0_35bc ;$35bc
+    JMPT .next_no_wraparound ;$35bc
+
+.next_wraparound
     INDIR $421
     IMMED $0
     STR
     POPALL
 
-.sub_f0_35bc
+.next_no_wraparound
     INDIR $17F
     IMMED $1
     STR
     POPALL
 
-.sub_f0_35c5
-    JMP .sub_f0_32bb ;$32bb
+.zukan_inner_loopback
+    JMP .zukan_inner_input_loop ;$32bb
 
-.sub_f0_35c8
+.zukan_page_dismissed
     INDIR $17D
     INDIR $17D
     IMMED $1
@@ -6753,7 +6765,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_35d7
+AccessPoint_DrawFEUIDecorum:
     INDIR W_MainScript_PortraitID
     IMMED $600
     STR
@@ -7342,7 +7354,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_3af6
+AccessPoint_DrawStingUIDecorum:
     INDIR W_MainScript_PortraitID
     IMMED $600
     STR
@@ -7931,7 +7943,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_4015
+AccessPoint_DrawRugerUIDecorum:
     INDIR W_MainScript_PortraitID
     IMMED $600
     STR
@@ -8520,7 +8532,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_4534
+AccessPoint_DrawTahiroUIDecorum:
     INDIR W_MainScript_PortraitID
     IMMED $600
     STR
@@ -9109,7 +9121,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_4a53
+AccessPoint_DrawJankUIDecorum:
     INDIR W_MainScript_PortraitID
     IMMED $600
     STR
@@ -9681,7 +9693,7 @@ AccessPoint_WebsiteIntroScreenLogic:
     POPALL
     RET
 
-.sub_f0_4f4c
+AccessPoint_PageZukanTableDown:
     INDIR $7A
     INDIR $178
     ADD
@@ -9718,7 +9730,7 @@ AccessPoint_WebsiteIntroScreenLogic:
 .sub_f0_4f9a
     RET
 
-.sub_f0_4f9b
+AccessPoint_PageZukanTableUp:
     INDIR $7A
     INDIR $178
     CMP_LT

@@ -11,7 +11,7 @@ MainScript_ExecuteScene::
     CMP_NEQ
     JMPT .eventsAreDisabled ;$2e
     ARFREE
-    NPREF UO $5A
+    NPREF WINDIALOG
     POPALL
     ARFREE
     DB STR_95_1F
@@ -33,7 +33,7 @@ MainScript_ExecuteScene::
     CMP_LT
     JMPT .storyEventCheck ;$65
     ARFREE
-    NPREF UO $5A
+    NPREF WINDIALOG
     POPALL
     ARFREE
     DB STR_95_41
