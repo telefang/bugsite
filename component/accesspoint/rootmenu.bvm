@@ -603,7 +603,7 @@ AccessPoint_PrimaryScreenLogic:
     IMMED $1
     CMP_NEQ
     JMPT .not_diveable_access_point ;$4c1
-    
+
 .diveable_access_point
     ARFREE
     DB STR_F0_4B4
@@ -6176,7 +6176,7 @@ AccessPoint_DrawZukanTableContents:
     JMPT .check_arrow_position_middle ;$31e3
     ARFREE
     IMMED $0
-    NPREF UO $F4
+    NPREF WINARROW
     POPALL
     JMP .setup_draw_loop ;$320a
 
@@ -6191,14 +6191,14 @@ AccessPoint_DrawZukanTableContents:
     JMPT .position_arrow_top ;$3203
     ARFREE
     INDIR W_WindowManager_MenuItemCount
-    NPREF UO $F4
+    NPREF WINARROW
     POPALL
     JMP .setup_draw_loop ;$320a
 
 .position_arrow_top
     ARFREE
     IMMED $1
-    NPREF UO $F4
+    NPREF WINARROW
     POPALL
 
 .setup_draw_loop
@@ -6576,7 +6576,7 @@ AccessPoint_WebsiteZukanInnerScreen:
     IMMED $0
     CMP_LEQ
     JMPT .previous_wraparound ;$3518
-    
+
 .previous_no_wraparound
     INDIR $421
     INDIR $421
@@ -6660,7 +6660,7 @@ AccessPoint_WebsiteZukanInnerScreen:
     INDIR $173
     CMP_LT
     JMPT .next_no_wraparound ;$35bc
-    
+
 .next_wraparound
     INDIR $421
     IMMED $0

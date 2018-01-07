@@ -31,6 +31,7 @@ opcodes = {
     "JAL": 0x3F, #TODO: Shouldn't this be CALL?
     "PRINT": 0x4C,
     "SCRCURS": 0x50,
+    "WINDIALOG": 0x5A,
     "WINCLR": 0x5B,
     "RESLD": 0x5F,
     "WINWAIT": 0x60,
@@ -58,6 +59,7 @@ opcodes = {
     "PRNAME": 0xA5,
     "SPRCTRL": 0xA6,
     "SPRFINISH": 0xA7,
+    "WINFRARROW": 0xAD,
     "PRMON": 0xAF,
     "NTSTR": 0xB0,
     "NTPRINT": 0xB1,
@@ -75,5 +77,6 @@ opcodes = {
     "PRCHIP": 0xE3,
     "PRNICK": 0xE5,
     "BLKENC": 0xF1,
+    "WINARROW": 0xF4,
     "FGAME": 0xFF #will crash everything horribly all the time
 }
