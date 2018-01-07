@@ -5861,6 +5861,11 @@ AccessPoint_WebsiteZukanOverviewScreen:
     ENOP $2D
     IMMED $2
     NPREF SCRCURS
+    
+    IMMED $180
+    IMMED $19F
+    VWFENABLE
+    
     POPALL
     ARFREE
     DB STR_F0_2E8D
@@ -5886,6 +5891,45 @@ AccessPoint_WebsiteZukanOverviewScreen:
     NPREF PRINT
     POPALL
     ARFREE
+    
+    INDIR W_LCDC_SetAttrVal
+    INDIR W_LCDC_SetAttrVal
+    IMMED $F8
+    AND
+    IMMED $06
+    OR
+    STR
+    
+    IMMED $1A0
+    IMMED $1AF
+    VWFENABLE
+    
+    IMMED $2
+    IMMED $8
+    SCRCURS
+    
+    DB STR_F0_No
+    PRINT
+    POPALL
+    ARFREE
+    
+    IMMED $5
+    IMMED $8
+    SCRCURS
+    
+    DB STR_F0_Name
+    PRINT
+    POPALL
+    ARFREE
+    
+    INDIR W_LCDC_SetAttrVal
+    INDIR W_LCDC_SetAttrVal
+    IMMED $F8
+    AND
+    IMMED $07
+    OR
+    STR
+    
     IMMED $0
     NPREF UO $F9
     POPALL
@@ -5919,7 +5963,15 @@ AccessPoint_WebsiteZukanOverviewScreen:
     IMMED $5
     STR
     POPALL
+    
+    IMMED $7
+    IMMED $7D
+    VWFENABLE
+    
     JAL AccessPoint_ZukanTableLogic ;$2f7f
+    
+    VWFDISABLE
+    
     NPREF POPALL
     INDIR $17E
     IMMED $FFFF
@@ -6343,6 +6395,15 @@ AccessPoint_DrawZukanTableEntry:
     NPREF UO $4D
     POPALL
     ARFREE
+    
+    INDIR W_MainScript_WindowYPos
+    IMMED $3
+    ADD
+    INDIR $176
+    NPREF WINCURS
+    POPALL
+    ARFREE
+    
     NPREF PRNAME
     POPALL
     RET
