@@ -6002,7 +6002,7 @@ AccessPoint_ZukanTableLogic:
     IMMED $0
     STR
     POPALL
-    JAL sub_f0_318e ;$318e
+    JAL AccessPoint_DrawZukanTableContents ;$318e
     NPREF POPALL
     ARFREE
     IMMED $0
@@ -6140,7 +6140,7 @@ AccessPoint_ZukanTableLogic:
     POPALL
     RET
 
-sub_f0_318e:
+AccessPoint_DrawZukanTableContents:
     INDIR $451
     INDIR $450
     INDIR $7A
@@ -6152,7 +6152,7 @@ sub_f0_318e:
     IMMED $2
     SUB
     CMP_LEQ
-    JMPT .sub_f0_31bb ;$31bb
+    JMPT .check_overflow_exists ;$31bb
     INDIR $451
     INDIR $44D
     IMMED $2
@@ -6160,27 +6160,27 @@ sub_f0_318e:
     STR
     POPALL
 
-.sub_f0_31bb
+.check_overflow_exists
     INDIR $450
     INDIR $44D
     IMMED $2
     SUB
     CMP_GT
-    JMPT .sub_f0_31ce ;$31ce
-    JMP .sub_f0_320a ;$320a
+    JMPT .draw_overflow_arrows ;$31ce
+    JMP .setup_draw_loop ;$320a
 
-.sub_f0_31ce
+.draw_overflow_arrows
     INDIR $7A
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f0_31e3 ;$31e3
+    JMPT .check_arrow_position_middle ;$31e3
     ARFREE
     IMMED $0
     NPREF UO $F4
     POPALL
-    JMP .sub_f0_320a ;$320a
+    JMP .setup_draw_loop ;$320a
 
-.sub_f0_31e3
+.check_arrow_position_middle
     INDIR $450
     INDIR $7A
     SUB
@@ -6188,20 +6188,20 @@ sub_f0_318e:
     IMMED $2
     SUB
     CMP_GT
-    JMPT .sub_f0_3203 ;$3203
+    JMPT .position_arrow_top ;$3203
     ARFREE
     INDIR W_WindowManager_MenuItemCount
     NPREF UO $F4
     POPALL
-    JMP .sub_f0_320a ;$320a
+    JMP .setup_draw_loop ;$320a
 
-.sub_f0_3203
+.position_arrow_top
     ARFREE
     IMMED $1
     NPREF UO $F4
     POPALL
 
-.sub_f0_320a
+.setup_draw_loop
     INDIR W_MainScript_PortraitID
     INDIR $7A
     STR
@@ -6211,12 +6211,12 @@ sub_f0_318e:
     STR
     POPALL
 
-.sub_f0_321d
+.table_draw_loop
     INDIR $173
     INDIR $451
     CMP_GEQ
-    JMPT .sub_f0_325b ;$325b
-    JAL .sub_f0_325c ;$325c
+    JMPT .table_full ;$325b
+    JAL AccessPoint_DrawZukanTableEntry ;$325c
     NPREF POPALL
     INDIR $176
     INDIR $176
@@ -6236,12 +6236,12 @@ sub_f0_318e:
     ADD
     STR
     POPALL
-    JMP .sub_f0_321d ;$321d
+    JMP .table_draw_loop ;$321d
 
-.sub_f0_325b
+.table_full
     RET
 
-.sub_f0_325c
+AccessPoint_DrawZukanTableEntry:
     ARFREE
     INDIR W_MainScript_WindowYPos
     ENOP $2D
