@@ -5892,6 +5892,44 @@ AccessPoint_WebsiteZukanOverviewScreen:
     POPALL
     ARFREE
     
+    INDIR W_MobileMenu_ActiveScreen
+    IMMED $2C ;Sting
+    CMP_NEQ
+    JMPT .check_ruger_zukan_palette
+    
+    ;Sting and Ruger use heading palette 00
+    INDIR W_LCDC_SetAttrVal
+    INDIR W_LCDC_SetAttrVal
+    IMMED $F8
+    AND
+    IMMED $00
+    OR
+    STR
+    JMP .draw_headings
+    
+.check_ruger_zukan_palette
+    INDIR W_MobileMenu_ActiveScreen
+    IMMED $2F ;Ruger
+    CMP_NEQ
+    JMPT .check_fe_zukan_palette
+    
+    ;Sting and Ruger use heading palette 00
+    INDIR W_LCDC_SetAttrVal
+    INDIR W_LCDC_SetAttrVal
+    IMMED $F8
+    AND
+    IMMED $00
+    OR
+    STR
+    JMP .draw_headings
+    
+.check_fe_zukan_palette
+    INDIR W_MobileMenu_ActiveScreen
+    IMMED $29 ;FE
+    CMP_NEQ
+    JMPT .draw_headings
+    
+    ;FE uses heading palette 06
     INDIR W_LCDC_SetAttrVal
     INDIR W_LCDC_SetAttrVal
     IMMED $F8
@@ -5900,6 +5938,7 @@ AccessPoint_WebsiteZukanOverviewScreen:
     OR
     STR
     
+.draw_headings
     IMMED $1A0
     IMMED $1AF
     VWFENABLE
