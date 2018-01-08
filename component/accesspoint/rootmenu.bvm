@@ -6551,6 +6551,21 @@ AccessPoint_WebsiteZukanInnerScreen:
     NPREF POPALL
 
 .print_zukan_entry
+    IMMED $E0
+    IMMED $E7
+    VWFENABLE
+    
+    IMMED $B
+    IMMED $10
+    SCRCURS
+    
+    DB STR_F0_Page
+    PRINT
+    POPALL
+    ARFREE
+    
+    VWFDISABLE
+    
     INDIR W_MainScript_PortraitID
     IMMED $600
     INDIR $421
@@ -6573,18 +6588,34 @@ AccessPoint_WebsiteZukanInnerScreen:
     NPREF SCRCURS
     POPALL
     ARFREE
+    
+    IMMED $E8
+    IMMED $EF
+    VWFENABLE
+    
     INDIR W_MainScript_PortraitID
     NPREF UO $4D
     POPALL
     ARFREE
+    
+    VWFDISABLE
+    
     IMMED $7
     ENOP $2D
     IMMED $2
     NPREF SCRCURS
     POPALL
     ARFREE
+    
+    IMMED $F0
+    IMMED $F7
+    VWFENABLE
+    
     NPREF PRNAME
     POPALL
+    
+    VWFDISABLE
+    
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -6613,9 +6644,17 @@ AccessPoint_WebsiteZukanInnerScreen:
     NPREF WINCURS
     POPALL
     ARFREE
+    
+    IMMED $7
+    IMMED $7E
+    VWFENABLE
+    
     NPREF FARCALL $DF
     POPALL
     POPALL
+    
+    VWFDISABLE
+    
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -6638,8 +6677,16 @@ AccessPoint_WebsiteZukanInnerScreen:
     IMMED $4
     NPREF SCRCURS
     POPALL
+    
+    IMMED $F8
+    IMMED $FF
+    VWFENABLE
+    
     JAL sub_f0_5483 ;$5483
     NPREF POPALL
+    
+    VWFDISABLE
+    
     INDIR W_MainScript_PortraitID
     INDIR $17A
     STR
