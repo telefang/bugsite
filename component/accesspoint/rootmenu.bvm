@@ -2232,15 +2232,15 @@ AccessPoint_TrashScreenLogic:
     STR
     POPALL
 
-.sub_f0_11cd
+.input_loop
     INDIR $17C
     INDIR $17D
     CMP_EQ
-    JMPT .sub_f0_13dc ;$13dc
+    JMPT .exit_screen ;$13dc
     INDIR $17F
     IMMED $0
     CMP_LEQ
-    JMPT .sub_f0_1241 ;$1241
+    JMPT .draw_current_option_desc ;$1241
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -2289,7 +2289,7 @@ AccessPoint_TrashScreenLogic:
     STR
     POPALL
 
-.sub_f0_1241
+.draw_current_option_desc
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -2317,7 +2317,7 @@ AccessPoint_TrashScreenLogic:
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f0_129e ;$129e
+    JMPT .check_salvage_option_desc ;$129e
     ARFREE
     NPREF WINCLR
     POPALL
@@ -2331,13 +2331,13 @@ AccessPoint_TrashScreenLogic:
     DB STR_F0_128E
     NPREF PRINT
     POPALL
-    JMP .sub_f0_12f7 ;$12f7
+    JMP .wait_for_input ;$12f7
 
-.sub_f0_129e
+.check_salvage_option_desc
     INDIR W_MainScript_PortraitID
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_12cd ;$12cd
+    JMPT .check_return_option_desc ;$12cd
     ARFREE
     NPREF WINCLR
     POPALL
@@ -2351,13 +2351,13 @@ AccessPoint_TrashScreenLogic:
     DB STR_F0_12B9
     NPREF PRINT
     POPALL
-    JMP .sub_f0_12f7 ;$12f7
+    JMP .wait_for_input ;$12f7
 
-.sub_f0_12cd
+.check_return_option_desc
     INDIR W_MainScript_PortraitID
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_12f7 ;$12f7
+    JMPT .wait_for_input ;$12f7
     ARFREE
     NPREF WINCLR
     POPALL
@@ -2372,7 +2372,7 @@ AccessPoint_TrashScreenLogic:
     NPREF PRINT
     POPALL
 
-.sub_f0_12f7
+.wait_for_input
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
     STR
@@ -2391,7 +2391,7 @@ AccessPoint_TrashScreenLogic:
     INDIR $17E
     IMMED $1
     CMP_NEQ
-    JMPT .sub_f0_1354 ;$1354
+    JMPT .check_navigate_to_salvage ;$1354
     ARFREE
     NPREF UO $5E
     POPALL
@@ -2415,13 +2415,13 @@ AccessPoint_TrashScreenLogic:
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_13d9 ;$13d9
+    JMP .input_loopback ;$13d9
 
-.sub_f0_1354
+.check_navigate_to_salvage
     INDIR $17E
     IMMED $2
     CMP_NEQ
-    JMPT .sub_f0_1392 ;$1392
+    JMPT .check_navigate_return ;$1392
     ARFREE
     NPREF UO $5E
     POPALL
@@ -2445,13 +2445,13 @@ AccessPoint_TrashScreenLogic:
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_13d9 ;$13d9
+    JMP .input_loopback ;$13d9
 
-.sub_f0_1392
+.check_navigate_return
     INDIR $17E
     IMMED $3
     CMP_NEQ
-    JMPT .sub_f0_13b7 ;$13b7
+    JMPT .check_b_pressed ;$13b7
     ARFREE
     NPREF UO $5E
     POPALL
@@ -2463,13 +2463,13 @@ AccessPoint_TrashScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_13d9 ;$13d9
+    JMP .input_loopback ;$13d9
 
-.sub_f0_13b7
+.check_b_pressed
     INDIR $17E
     IMMED $FFFF
     CMP_NEQ
-    JMPT .sub_f0_13d9 ;$13d9
+    JMPT .input_loopback ;$13d9
     ARFREE
     NPREF UO $5E
     POPALL
@@ -2482,10 +2482,10 @@ AccessPoint_TrashScreenLogic:
     STR
     POPALL
 
-.sub_f0_13d9
-    JMP .sub_f0_11cd ;$11cd
+.input_loopback
+    JMP .input_loop ;$11cd
 
-.sub_f0_13dc
+.exit_screen
     INDIR $17D
     INDIR $17D
     IMMED $1
