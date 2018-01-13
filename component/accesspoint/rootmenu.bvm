@@ -2518,15 +2518,15 @@ AccessPoint_DiscardCollectionScreenLogic:
     STR
     POPALL
 
-.sub_f0_141e
+.input_loop
     INDIR $17C
     INDIR $17D
     CMP_EQ
-    JMPT .sub_f0_17c2 ;$17c2
+    JMPT .exit_screen ;$17c2
     INDIR $17F
     IMMED $0
     CMP_LEQ
-    JMPT .sub_f0_153d ;$153d
+    JMPT .draw_version_badge ;$153d
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -2579,11 +2579,11 @@ AccessPoint_DiscardCollectionScreenLogic:
     STR
     POPALL
 
-.sub_f0_14a6
+.draw_bug_list
     INDIR W_MainScript_PortraitID
     IMMED $6
     CMP_GT
-    JMPT .sub_f0_1501 ;$1501
+    JMPT .draw_menu_arrow ;$1501
     ARFREE
     IMMED $8
     ENOP $2D
@@ -2598,7 +2598,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     PRED
     IMMED $0
     CMP_EQ
-    JMPT .sub_f0_14e0 ;$14e0
+    JMPT .draw_empty_slot ;$14e0
     ARFREE
     INDIR W_MainScript_PortraitID
     NPREF UO $E8
@@ -2606,24 +2606,24 @@ AccessPoint_DiscardCollectionScreenLogic:
     ARFREE
     NPREF UO $E4
     POPALL
-    JMP .sub_f0_14f0 ;$14f0
+    JMP .next_bug ;$14f0
 
-.sub_f0_14e0
+.draw_empty_slot
     ARFREE
     DB STR_F0_14E1
     NPREF PRINT
     POPALL
 
-.sub_f0_14f0
+.next_bug
     INDIR W_MainScript_PortraitID
     INDIR W_MainScript_PortraitID
     IMMED $1
     ADD
     STR
     POPALL
-    JMP .sub_f0_14a6 ;$14a6
+    JMP .draw_bug_list ;$14a6
 
-.sub_f0_1501
+.draw_menu_arrow
     ARFREE
     IMMED $7
     ENOP $2D
@@ -2655,7 +2655,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     STR
     POPALL
 
-.sub_f0_153d
+.draw_version_badge
     INDIR W_WindowManager_ContentsAttributes
     IMMED $2
     IMMED $4
@@ -2678,7 +2678,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_EQ
-    JMPT .sub_f0_15d4 ;$15d4
+    JMPT .draw_empty_version_badge ;$15d4
     ARFREE
     INDIR $15D
     IMMED $1
@@ -2726,9 +2726,9 @@ AccessPoint_DiscardCollectionScreenLogic:
     ARFREE
     NPREF UO $7B
     POPALL
-    JMP .sub_f0_15ff ;$15ff
+    JMP .check_user_input ;$15ff
 
-.sub_f0_15d4
+.draw_empty_version_badge
     ARFREE
     IMMED $3
     ENOP $2D
@@ -2753,7 +2753,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     NPREF UO $7B
     POPALL
 
-.sub_f0_15ff
+.check_user_input
     INDIR W_WindowManager_ContentsAttributes
     IMMED $0
     STR
@@ -2766,7 +2766,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     INDIR $17B
     IMMED $10
     CMP_NEQ
-    JMPT .sub_f0_1632 ;$1632
+    JMPT .check_left_pressed ;$1632
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1F
     STR
@@ -2775,13 +2775,13 @@ AccessPoint_DiscardCollectionScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_17bf ;$17bf
+    JMP .input_loopback ;$17bf
 
-.sub_f0_1632
+.check_left_pressed
     INDIR $17B
     IMMED $20
     CMP_NEQ
-    JMPT .sub_f0_1653 ;$1653
+    JMPT .check_selection ;$1653
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1F
     STR
@@ -2790,9 +2790,9 @@ AccessPoint_DiscardCollectionScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_17bf ;$17bf
+    JMP .input_loopback ;$17bf
 
-.sub_f0_1653
+.check_selection
     INDIR $17E
     ARFREE
     INDIR $17B
@@ -2803,20 +2803,20 @@ AccessPoint_DiscardCollectionScreenLogic:
     IMMED $0
     CMP_NEQ
     JMPT .sub_f0_166e ;$166e
-    JMP .sub_f0_17bf ;$17bf
+    JMP .input_loopback ;$17bf
 
 .sub_f0_166e
     INDIR $17E
     IMMED $6
     CMP_GT
-    JMPT .sub_f0_17a1 ;$17a1
+    JMPT .selection_bounds_exceeded ;$17a1
     IMMED $3A98
     INDIR $17E
     ADD
     PRED
     IMMED $0
     CMP_EQ
-    JMPT .sub_f0_179e ;$179e
+    JMPT .done_running_discard_logic ;$179e
     INDIR W_MainScript_PortraitID
     IMMED $0
     STR
@@ -2865,7 +2865,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_NEQ
-    JMPT .sub_f0_1799 ;$1799
+    JMPT .bug_not_discardable ;$1799
     ARFREE
     NPREF FARCALL $BE
     POPALL
@@ -2873,7 +2873,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     INDIR $49F
     IMMED $1
     CMP_LEQ
-    JMPT .sub_f0_1791 ;$1791
+    JMPT .bug_id_invalid ;$1791
     ARFREE
     INDIR $17E
     NPREF UO $E8
@@ -2915,7 +2915,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     INDIR W_MainScript_PortraitID
     IMMED $0
     CMP_EQ
-    JMPT .sub_f0_176d ;$176d
+    JMPT .discard_bug ;$176d
     INDIR $449
     IMMED $1
     STR
@@ -2925,7 +2925,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     POPALL
     POPALL
 
-.sub_f0_176d
+.discard_bug
     ARFREE
     NPREF WINCLR
     POPALL
@@ -2943,27 +2943,27 @@ AccessPoint_DiscardCollectionScreenLogic:
     IMMED $1
     STR
     POPALL
-    JMP .sub_f0_1796 ;$1796
+    JMP .done_discarding_bug ;$1796
 
-.sub_f0_1791
-    JAL .sub_f0_17d5 ;$17d5
+.bug_id_invalid
+    JAL AccessPoint_NonDiscardableBugError ;$17d5
     NPREF POPALL
 
-.sub_f0_1796
-    JMP .sub_f0_179e ;$179e
+.done_discarding_bug
+    JMP .done_running_discard_logic ;$179e
 
-.sub_f0_1799
-    JAL .sub_f0_17d5 ;$17d5
+.bug_not_discardable
+    JAL AccessPoint_NonDiscardableBugError ;$17d5
     NPREF POPALL
 
-.sub_f0_179e
-    JMP .sub_f0_17bf ;$17bf
+.done_running_discard_logic
+    JMP .input_loopback ;$17bf
 
-.sub_f0_17a1
+.selection_bounds_exceeded
     INDIR $17E
     IMMED $FFFF
     CMP_NEQ
-    JMPT .sub_f0_17bf ;$17bf
+    JMPT .input_loopback ;$17bf
     INDIR $17C
     INDIR $17D
     STR
@@ -2973,10 +2973,10 @@ AccessPoint_DiscardCollectionScreenLogic:
     STR
     POPALL
 
-.sub_f0_17bf
-    JMP .sub_f0_141e ;$141e
+.input_loopback
+    JMP .input_loop ;$141e
 
-.sub_f0_17c2
+.exit_screen
     INDIR $17D
     INDIR $17D
     IMMED $1
@@ -2988,7 +2988,7 @@ AccessPoint_DiscardCollectionScreenLogic:
     POPALL
     RET
 
-.sub_f0_17d5
+AccessPoint_NonDiscardableBugError:
     ARFREE
     NPREF WINCLR
     POPALL
@@ -3025,7 +3025,7 @@ AccessPoint_DiscardServerScreenLogic:
     STR
     POPALL
 
-.sub_f0_1824
+.input_loop
     INDIR $17C
     INDIR $17D
     CMP_EQ
@@ -3094,7 +3094,7 @@ AccessPoint_DiscardServerScreenLogic:
     INDIR $17E
     IMMED $FFFF
     CMP_NEQ
-    JMPT .sub_f0_18dd ;$18dd
+    JMPT .check_nondiscardable_1 ;$18dd
     INDIR $17E
     IMMED $FFFF
     STR
@@ -3107,13 +3107,13 @@ AccessPoint_DiscardServerScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_19b5 ;$19b5
+    JMP .dont_discard_bug ;$19b5
 
-.sub_f0_18dd
+.check_nondiscardable_1
     INDIR $17E
-    IMMED $FFFD
+    IMMED $FFFD ;TODO: wtf does this mean?
     CMP_NEQ
-    JMPT .sub_f0_18fe ;$18fe
+    JMPT .check_nondiscardable_2 ;$18fe
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     STR
@@ -3122,13 +3122,13 @@ AccessPoint_DiscardServerScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_19b5 ;$19b5
+    JMP .dont_discard_bug ;$19b5
 
-.sub_f0_18fe
+.check_nondiscardable_2
     INDIR $17E
     IMMED $FFFE
     CMP_NEQ
-    JMPT .sub_f0_191f ;$191f
+    JMPT .discard_bug ;$191f
     INDIR W_MobileMenu_ActiveScreen
     IMMED $1E
     STR
@@ -3137,9 +3137,9 @@ AccessPoint_DiscardServerScreenLogic:
     INDIR $17D
     STR
     POPALL
-    JMP .sub_f0_19b5 ;$19b5
+    JMP .dont_discard_bug ;$19b5
 
-.sub_f0_191f
+.discard_bug
     ARFREE
     INDIR $17E
     IMMED $8
@@ -3219,8 +3219,8 @@ AccessPoint_DiscardServerScreenLogic:
     NPREF UO $5E
     POPALL
 
-.sub_f0_19b5
-    JMP .sub_f0_1acd ;$1acd
+.dont_discard_bug
+    JMP .input_loopback ;$1acd
 
 .sub_f0_19b8
     ARFREE
@@ -3349,8 +3349,8 @@ AccessPoint_DiscardServerScreenLogic:
     STR
     POPALL
 
-.sub_f0_1acd
-    JMP .sub_f0_1824 ;$1824
+.input_loopback
+    JMP .input_loop ;$1824
 
 .sub_f0_1ad0
     INDIR $17D
