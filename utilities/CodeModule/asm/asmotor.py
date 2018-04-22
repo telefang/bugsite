@@ -11,7 +11,7 @@ from math import atan2, pi, sin, cos, tan, asin, acos, atan
 class SectionGroup(cmodel.Struct):
     name = cmodel.String("ascii")
     typeid = cmodel.Enum(cmodel.LeU32, "GROUP_TEXT", "GROUP_BSS")
-
+    
     __order__ = ["name", "typeid"]
 
 class FixupOpcode(cmodel.Union):
@@ -24,7 +24,7 @@ class FixupOpcode(cmodel.Union):
     "OBJ_FUNC_SIN", "OBJ_FUNC_COS", "OBJ_FUNC_TAN", "OBJ_FUNC_ASIN",
     "OBJ_FUNC_ACOS", "OBJ_FUNC_ATAN", "OBJ_CONSTANT", "OBJ_SYMBOL", "OBJ_PCREL",
     "OBJ_FUNC_BANK")
-
+    
     OBJ_CONSTANT = cmodel.LeU32
     OBJ_SYMBOL = cmodel.LeU32
     OBJ_FUNC_BANK = cmodel.LeU32
@@ -35,7 +35,7 @@ class FixupEntry(cmodel.Struct):
     patchtype = cmodel.Enum(cmodel.LeU32, "BYTE", "LE16", "BE16", "LE32", "BE32")
     exprsize = cmodel.LeU32
     expression = cmodel.Array(FixupOpcode, "exprsize", countType = cmodel.BytesCount)
-
+    
     __order__ = ["offset", "patchtype", "exprsize", "expression"]
 
 class SectionData(cmodel.Struct):
@@ -49,7 +49,7 @@ class Symbol(cmodel.Struct):
     name = cmodel.String("ascii")
     symtype = cmodel.Enum(cmodel.LeS32, "EXPORT", "IMPORT", "LOCAL", "LOCALEXPORT", "LOCALIMPORT", ("FLAT_WHAT", -1))
     value = cmodel.If("symtype", lambda x: x in [-1, 0, 2, 3], cmodel.LeS32)
-
+    
     __order__ = ["name", "symtype", "value"]
 
 class Section(cmodel.Struct):
@@ -61,7 +61,7 @@ class Section(cmodel.Struct):
     symbols = cmodel.Array(Symbol, "numsymbols")
     datasize = cmodel.LeU32
     data = cmodel.If(lambda self: self.groupid > 0 and self._CField__container._CField__container.groups[self.groupid].typeid == SectionGroup.GROUP_TEXT, SectionData)
-
+    
     __order__ = ["groupid", "name", "bank", "org", "numsymbols", "symbols", "datasize", "data"]
 
 class XObj(cmodel.Struct):
@@ -70,7 +70,7 @@ class XObj(cmodel.Struct):
     groups = cmodel.Array(SectionGroup, "numgroups")
     numsections = cmodel.LeU32
     sections = cmodel.Array(Section, "numsections")
-
+    
     __order__ = ["magic", "numgroups", "groups", "numsections", "sections"]
 
 def asm2rad(asmDegs):
@@ -80,16 +80,16 @@ def _argfunc(numargs):
     """Helper function that returns a decorator that wraps evaluation functions which take a certain number of arguments"""
     def decorator(op):
         """Decorator which wraps function op to look like a normal eval func.
-
+        
         A normal eval func has the following signature:
-
+        
             def evalOp(self, instr) --> None
-
+            
         All operations cause side effects on the stack. On the contrary, the
         following signature is much more natural:
-
+        
             def add(x, y) --> sum
-
+            
         This decorator takes a number of arguments off of the stack, calls
         the wrapped function with them, and then places the result on the
         stack. If the result is not an integer than we will assume it is an
@@ -99,7 +99,7 @@ def _argfunc(numargs):
                 args.push(self.__stack.pop())
             ret = op(*args)
             self.__stack.push(ret)
-
+        
         return decorated
     return decorator
 
@@ -111,21 +111,21 @@ class ASMotorLinker(linker.Linker):
         with open(filename, "rb") as fileobj:
             objobj = XObj()
             objobj.load(fileobj)
-
+            
             logger.debug("Loading translation unit %(txl)r" % {"txl":objobj.core})
-
+            
             sectionsbin = {}
             secmap = []
-
+            
             for group in objobj.groups:
                 logger.debug("Adding section group %(groupname)s" % {"groupname":group.name})
-
+                
                 gid = len(secmap)
                 secmap.append(group.name)
                 areatoken = self.platform.GROUPMAP[group.name]
                 groupname = None
                 bankfix = None
-
+                
                 if type(areatoken) is not str:
                     groupname = areatoken[0]
                     bankfix = areatoken[1]
@@ -133,13 +133,13 @@ class ASMotorLinker(linker.Linker):
                     #then all sections in that group start at 0.
                 else:
                     groupname = areatoken
-
+                
                 groupdescript = {"memarea": groupname}
                 if bankfix is not None:
                     groupdescript["bankfix"] = bankfix
-
+                
                 sectionsbin[gid] = groupdescript
-
+            
             for section in objobj.sections:
                 groupdescript = None
                 if section.groupid == -1 and section.datasize == 0:
@@ -149,36 +149,36 @@ class ASMotorLinker(linker.Linker):
                     #the debug output from this function. It will tell you exactly
                     #how the translation unit was parsed.
                     groupdescript = sectionsbin[section.groupid]
-
+                
                 bankfix = section.bank
                 orgfix = section.org
-
+                
                 if bankfix == -1:
                     bankfix = None
-
+                
                 if orgfix == -1:
                     orgfix = None
-
+                
                 if groupdescript != None and "bankfix" in groupdescript.keys():
                     bankfix = groupdescript["bankfix"]
-
+                
                 secDat = None
                 if section.data is not None:
                     secDat = section.data.data
-
+                
                 marea = None
                 if groupdescript != None:
                     marea = groupdescript["memarea"]
                     logger.debug("Adding section %(section)s fixed at (%(bank)r, %(org)r)" % {"section":section.name, "org":orgfix, "bank":bankfix})
-
+                
                 secdescript = linker.SectionDescriptor(filename, section.name, bankfix, orgfix, marea, section.data.data, section)
                 self.addsection(secdescript)
-
+    
     def extractSymbols(self, secdesc):
         """Takes a fixed section and returns all symbols within.
-
+        
         Returns a list of Symbol Descriptors.
-
+        
         Do not run this method until all symbols have been fixed."""
         objSection = secdesc.sourceobj
         symList = []
@@ -191,16 +191,16 @@ class ASMotorLinker(linker.Linker):
                 ourLimit = None
                 if symbol.symtype is Symbol.LOCALEXPORT or symbol.symtype is Symbol.LOCAL:
                     ourLimit = secdesc.srcname
-
+                
                 symList.append(linker.SymbolDescriptor(symbol.name, linker.Export, ourLimit, secdesc.bankfix, secdesc.orgfix + symbol.value, secdesc))
-
+        
         return symList
-
+    
     class FixInterpreter(object):
         def __init__(self, symLookup):
             self.__symLookup = symLookup
             self.__stack = []
-
+        
         @property
         def value(self):
             return self.__stack[-1]
@@ -221,28 +221,28 @@ class ASMotorLinker(linker.Linker):
         OBJ_OP_MOD = _argfunc(2)(lambda x,y: x%y)
         OBJ_OP_LOGICOR  = _argfunc(2)(lambda x,y: min(x|y, 1))
         OBJ_OP_LOGICAND = _argfunc(2)(lambda x,y: min(x&y, 1))
-
+        
         @_argfunc(2)
         def OBJ_OP_LOGICNOT(x, y):
             if x == 0:
                 return 1
             else:
                 return 0
-
+        
         OBJ_OP_LOGICGE  = _argfunc(2)(lambda x,y: int(x >= y))
         OBJ_OP_LOGICGT  = _argfunc(2)(lambda x,y: int(x > y))
         OBJ_OP_LOGICLE  = _argfunc(2)(lambda x,y: int(x <= y))
         OBJ_OP_LOGICLT  = _argfunc(2)(lambda x,y: int(x < y))
         OBJ_OP_LOGICEQU = _argfunc(2)(lambda x,y: int(x == y))
         OBJ_OP_LOGICNE  = _argfunc(2)(lambda x,y: int(x != y))
-
+        
         @_argfunc(2)
         def OBJ_FUNC_LOWLIMIT(x, y):
             if (x >= y):
                 raise InvalidPatch
             else:
                 return x
-
+        
         @_argfunc(2)
         def OBJ_FUNC_HIGHLIMIT(x, y):
             if (x >= y):
@@ -265,21 +265,21 @@ class ASMotorLinker(linker.Linker):
 
         def OBJ_SYMBOL(self, instr):
             self.__stack.append(self.symLookup(ASMotorLinker.SymValue, instr.__contents__))
-
+            
         def OBJ_FUNC_BANK(self, instr):
             self.__stack.append(self.symLookup(ASMotorLinker.SymBank, instr.__contents__))
 
         def OBJ_FUNC_PCREL(self, instr):
             self.__stack.append(self.symLookup(ASMotorLinker.SymPCRel, instr.__contents__))
-
+    
     #Special values used for the interpreter
     SymValue = 0
     SymBank = 1
     SymPCRel = 2
-
+    
     def evalPatches(self, secDesc):
         """Given a section, evaluate all of it's patches and apply them.
-
+        
         The method operates primarily by side effects on section, thus it returns
         the same."""
         section = secDesc.sourceobj
@@ -293,13 +293,13 @@ class ASMotorLinker(linker.Linker):
                 return self.resolver.lookup(section.name, symbol.name).section.bankfix
             elif mode is ASMotorLinker.SymPCRel:
                 return curpatch.offset + section.org
-
+        
         for patch in section.data.fixup:
             curpatch = patch
             interpreter = ASMotorLinker.FixInterpreter(symLookupCbk)
             for opcode in patch.expression:
                 getattr(interpret, opcode.__tag__)(opcode)
-
+            
             if not interpreter.complete:
                 raise InvalidPatch
 
@@ -321,5 +321,5 @@ class ASMotorLinker(linker.Linker):
                 secDesc.data[offset + 2] = (interpreter.value >> 8) & 255
                 secDesc.data[offset + 1] = (interpreter.value >> 16) & 255
                 secDesc.data[offset] = (interpreter.value >> 24) & 255
-
+            
         return secDesc
