@@ -1,7 +1,7 @@
 from BugTools.fs.parser import Label, Filename
 from BugTools.bvm.object import Bof1, Bof1Patch, Bof1PatchExpr, Bof1Symbol
 from CodeModule import cmodel
-from CodeModule.asm.rgbds import Rgb5, Rgb5Patch, Rgb5Section, Rgb5Symbol, Rgb5PatchExpr, Rgb5LimitExpr
+from CodeModule.asm.rgbds import Rgb6, Rgb6Patch, Rgb6Section, Rgb6Symbol, Rgb6PatchExpr, Rgb6LimitExpr
 
 import os.path
 
@@ -47,43 +47,43 @@ def depstring(parselist, basedir):
 PATCH_LENGTHS = {Bof1Patch.BYTE: 1, Bof1Patch.LE16: 2, Bof1Patch.LE32: 4, Bof1Patch.BE16: 2, Bof1Patch.BE32: 4}
 PATCH_LITTLE_ENDIAN = {Bof1Patch.BYTE: True, Bof1Patch.LE16: True, Bof1Patch.LE32: True, Bof1Patch.BE16: False, Bof1Patch.BE32: False}
 
-def translate_bof1_patchexprs_to_rgb5(bofpatchexprs, symbol_dict):
+def translate_bof1_patchexprs_to_rgb6(bofpatchexprs, symbol_dict):
     rgbpatchexprs = []
     
     for bofpatchexpr in bofpatchexprs:
-        rgbpatchexpr = Rgb5PatchExpr()
+        rgbpatchexpr = Rgb6PatchExpr()
 
         if bofpatchexpr.__tag__ == Bof1PatchExpr.INDIR:
             #INDIR values become (SYM - 0xC400) / 2
-            rgbpatchexpr.__tag__ = Rgb5PatchExpr.SYM
+            rgbpatchexpr.__tag__ = Rgb6PatchExpr.SYM
             rgbpatchexpr.SYM = symbol_dict[bofpatchexpr.INDIR]
             
             rgbpatchexprs.append(rgbpatchexpr)
             
-            rgbpatchexpr = Rgb5PatchExpr()
-            rgbpatchexpr.__tag__ = Rgb5PatchExpr.CONST
+            rgbpatchexpr = Rgb6PatchExpr()
+            rgbpatchexpr.__tag__ = Rgb6PatchExpr.CONST
             rgbpatchexpr.CONST = 0xC400
             
             rgbpatchexprs.append(rgbpatchexpr)
             
-            rgbpatchexpr = Rgb5PatchExpr()
-            rgbpatchexpr.__tag__ = Rgb5PatchExpr.SUB
+            rgbpatchexpr = Rgb6PatchExpr()
+            rgbpatchexpr.__tag__ = Rgb6PatchExpr.SUB
             
             rgbpatchexprs.append(rgbpatchexpr)
             
-            rgbpatchexpr = Rgb5PatchExpr()
-            rgbpatchexpr.__tag__ = Rgb5PatchExpr.CONST
+            rgbpatchexpr = Rgb6PatchExpr()
+            rgbpatchexpr.__tag__ = Rgb6PatchExpr.CONST
             rgbpatchexpr.CONST = 0x2
             
             rgbpatchexprs.append(rgbpatchexpr)
             
-            rgbpatchexpr = Rgb5PatchExpr()
-            rgbpatchexpr.__tag__ = Rgb5PatchExpr.DIV
+            rgbpatchexpr = Rgb6PatchExpr()
+            rgbpatchexpr.__tag__ = Rgb6PatchExpr.DIV
             
             rgbpatchexprs.append(rgbpatchexpr)
         elif bospatchexpr.__tag__ == Bof1PatchExpr.RANGECHECK:
             rgbpatchexpr.__tag__ = bofpatchexpr.__tag__
-            rgbpatchexpr.RANGECHECK = Rgb5LimitExpr()
+            rgbpatchexpr.RANGECHECK = Rgb6LimitExpr()
             rgbpatchexpr.RANGECHECK.lolimit = bofpatchexpr.RANGECHECK.lolimit
             rgbpatchexpr.RANGECHECK.hilimit = bofpatchexpr.RANGECHECK.hilimit
         elif bofpatchexpr.__tag__ == Bof1PatchExpr.CONST:
@@ -101,8 +101,8 @@ def translate_bof1_patchexprs_to_rgb5(bofpatchexprs, symbol_dict):
     
     return rgbpatchexprs
 
-def translate_bof1_fixups_to_rgb5(bofpatches, symbol_dict, startoff, endoff, patchoffset):
-    """Given a list of bof1 fixups, translate patches to rgb5 format.
+def translate_bof1_fixups_to_rgb6(bofpatches, symbol_dict, startoff, endoff, patchoffset):
+    """Given a list of bof1 fixups, translate patches to rgb6 format.
     
     The given startoff and endoff values determine which patches will be
     translated. Patches which straddle this boundary will be truncated as
@@ -110,7 +110,7 @@ def translate_bof1_fixups_to_rgb5(bofpatches, symbol_dict, startoff, endoff, pat
     resulting section.
     
     symbol_dict is the mapping between the symbol IDs of the Bof1 file you are
-    reading and the Rgb5 file you are making. It must encompass all of the
+    reading and the Rgb6 file you are making. It must encompass all of the
     symbols mentioned in these patches."""
     
     rgbpatches = []
@@ -141,47 +141,47 @@ def translate_bof1_fixups_to_rgb5(bofpatches, symbol_dict, startoff, endoff, pat
                     shift_i = patchlen - 1 - shift_i
                 
                 #Create a new patch for this byte only.
-                rgbpatch = Rgb5Patch()
+                rgbpatch = Rgb6Patch()
                 rgbpatch.srcfile = bofpatch.srcfile
                 rgbpatch.srcline = bofpatch.srcline
                 rgbpatch.patchoffset = bofpatch.patchoffset - startoff + byte_i + patchoffset
-                rgbpatch.patchtype = Rgb5Patch.BYTE
-                rgbpatch.patchexprs = translate_bof1_patchexprs_to_rgb5(bofpatch.patchexprs, symbol_dict)
+                rgbpatch.patchtype = Rgb6Patch.BYTE
+                rgbpatch.patchexprs = translate_bof1_patchexprs_to_rgb6(bofpatch.patchexprs, symbol_dict)
                 
                 #Equivalent to (patchexpr) >> (shift_i * 8) & 0xFF
                 #Due to the way RPN works this should also work if the translate
                 #function also applied it's INDIR change
-                rgbpatchexpr = Rgb5PatchExpr()
-                rgbpatchexpr.__tag__ = Rgb5PatchExpr.CONST
+                rgbpatchexpr = Rgb6PatchExpr()
+                rgbpatchexpr.__tag__ = Rgb6PatchExpr.CONST
                 rgbpatchexpr.CONST = shift_i * 8
                 
                 rgbpatch.patchexprs.append(rgbpatchexpr)
                 
-                rgbpatchexpr = Rgb5PatchExpr()
-                rgbpatchexpr.__tag__ = Rgb5PatchExpr.SHR
+                rgbpatchexpr = Rgb6PatchExpr()
+                rgbpatchexpr.__tag__ = Rgb6PatchExpr.SHR
                 
                 rgbpatch.patchexprs.append(rgbpatchexpr)
                 
-                rgbpatchexpr = Rgb5PatchExpr()
-                rgbpatchexpr.__tag__ = Rgb5PatchExpr.CONST
+                rgbpatchexpr = Rgb6PatchExpr()
+                rgbpatchexpr.__tag__ = Rgb6PatchExpr.CONST
                 rgbpatchexpr.CONST = 0xFF
                 
                 rgbpatch.patchexprs.append(rgbpatchexpr)
                 
-                rgbpatchexpr = Rgb5PatchExpr()
-                rgbpatchexpr.__tag__ = Rgb5PatchExpr.AND
+                rgbpatchexpr = Rgb6PatchExpr()
+                rgbpatchexpr.__tag__ = Rgb6PatchExpr.AND
                 
                 rgbpatch.patchexprs.append(rgbpatchexpr)
                 
                 rgbpatches.append(rgbpatch)
         else:
             #EASY PATH: Just copy everything over.
-            rgbpatch = Rgb5Patch()
+            rgbpatch = Rgb6Patch()
             rgbpatch.srcfile = bofpatch.srcfile
             rgbpatch.srcline = bofpatch.srcline
             rgbpatch.patchoffset = bofpatch.patchoffset - startoff + patchoffset
             rgbpatch.patchtype = bofpatch.patchtype
-            rgbpatch.patchexprs = translate_bof1_patchexprs_to_rgb5(bofpatch.patchexprs, symbol_dict)
+            rgbpatch.patchexprs = translate_bof1_patchexprs_to_rgb6(bofpatch.patchexprs, symbol_dict)
             
             rgbpatches.append(rgbpatch)
     
@@ -203,7 +203,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     if needed. The databank index must be greater than the last directory bank
     in use.
 
-    The returned Rgb5 object file will contain sections with the filesystem
+    The returned Rgb6 object file will contain sections with the filesystem
     data. One symbol will be exposed for the directory.
     
     If any Bof1 object files are present in the filesystem directory, their
@@ -225,16 +225,16 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     start_bank = databank
     start_offset = 0x0000
     
-    datum_section = Rgb5Section()
+    datum_section = Rgb6Section()
     datum_section.name = "BugFS Data %s" % start_bank
-    datum_section.sectype = Rgb5Section.ROMX
+    datum_section.sectype = Rgb6Section.ROMX
     datum_section.org = 0x4000
     datum_section.bank = start_bank
     datum_data = []
     
-    #Also we're going to be building the Rgb5 object at the same time...
-    rgb5obj = Rgb5()
-    rgb5_syms = {}
+    #Also we're going to be building the Rgb6 object at the same time...
+    rgb6obj = Rgb6()
+    rgb6_syms = {}
 
     #If only one basedir is provided, list it up anyway
     if type(basedir) is not list:
@@ -269,12 +269,12 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
         
         directory.append(new_dir.bytes)
         
-        #Map bvmdata symbols into rgb5obj
-        bvm_to_rgb5 = {}
+        #Map bvmdata symbols into rgb6obj
+        bvm_to_rgb6 = {}
         for bofsymid, bofsym in enumerate(bvmdata.symbols):
-            if bofsym.name not in rgb5_syms.keys():
-                symid = len(rgb5obj.symbols)
-                rgbsym = Rgb5Symbol()
+            if bofsym.name not in rgb6_syms.keys():
+                symid = len(rgb6obj.symbols)
+                rgbsym = Rgb6Symbol()
                 
                 #TODO: Should we translate symbol values to native?
                 rgbsym.name = bofsym.name
@@ -282,10 +282,10 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
                 if bofsym.symtype in [Bof1Symbol.LOCAL, Bof1Symbol.EXPORT]:
                     rgbsym.value = bofsym.value
                 
-                rgb5obj.symbols.append(rgbsym)
-                rgb5_syms[rgbsym.name] = symid
+                rgb6obj.symbols.append(rgbsym)
+                rgb6_syms[rgbsym.name] = symid
             
-            bvm_to_rgb5[bofsymid] = rgb5_syms[bofsym.name]
+            bvm_to_rgb6[bofsymid] = rgb6_syms[bofsym.name]
         
         #At this point we need to separate the BOF data into bank-sized chunks
         #so that RGBDS can deal with it.
@@ -306,7 +306,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
                 raise Exception("Assertion failed: Chunk size is invalid")
             
             datum_data.append(cur_chunk)
-            datum_section.datsec.patches.extend(translate_bof1_fixups_to_rgb5(bvmdata.patches, bvm_to_rgb5, written_chunk_size, written_chunk_size + cur_chunk_size, start_offset))
+            datum_section.datsec.patches.extend(translate_bof1_fixups_to_rgb6(bvmdata.patches, bvm_to_rgb6, written_chunk_size, written_chunk_size + cur_chunk_size, start_offset))
             
             written_chunk_size += cur_chunk_size
             start_offset += cur_chunk_size
@@ -315,11 +315,11 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
                 start_bank += 1
                 
                 datum_section.datsec.data = b"".join(datum_data)
-                rgb5obj.sections.append(datum_section)
+                rgb6obj.sections.append(datum_section)
                 
-                datum_section = Rgb5Section()
+                datum_section = Rgb6Section()
                 datum_section.name = "BugFS Data %s" % start_bank
-                datum_section.sectype = Rgb5Section.ROMX
+                datum_section.sectype = Rgb6Section.ROMX
                 datum_section.org = 0x4000
                 datum_section.bank = start_bank
                 datum_data = []
@@ -327,7 +327,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
     #Flush the final data section's contents...
     if len(datum_data) > 0:
         datum_section.datsec.data = b"".join(datum_data)
-        rgb5obj.sections.append(datum_section)
+        rgb6obj.sections.append(datum_section)
 
     #Build the BFS directory structure
     directory = b"".join(directory)
@@ -335,24 +335,24 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
 
     while len(directory) > 0:
         if start_bank == dirbank:
-            directory_symbol = Rgb5Symbol()
+            directory_symbol = Rgb6Symbol()
             directory_symbol.name = "BugFS_Directory"
-            directory_symbol.symtype = Rgb5Symbol.EXPORT
-            directory_symbol.value.sectionid = len(rgb5obj.sections)
+            directory_symbol.symtype = Rgb6Symbol.EXPORT
+            directory_symbol.value.sectionid = len(rgb6obj.sections)
             directory_symbol.value.value = 0
 
-            rgb5obj.symbols.append(directory_symbol)
+            rgb6obj.symbols.append(directory_symbol)
 
-        directory_section = Rgb5Section()
+        directory_section = Rgb6Section()
         directory_section.name = "BugFS Directory %s" % start_bank
-        directory_section.sectype = Rgb5Section.ROMX
+        directory_section.sectype = Rgb6Section.ROMX
         directory_section.org = 0x4000
         directory_section.bank = start_bank
         directory_section.datsec.data = directory[:0x4000]
 
-        rgb5obj.sections.append(directory_section)
+        rgb6obj.sections.append(directory_section)
 
         directory = directory[0x4000:]
         start_bank += 1
 
-    return rgb5obj
+    return rgb6obj
