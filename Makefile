@@ -67,11 +67,10 @@ alpha: $(ROMS_ALPHA) compare_alpha
 beta: $(ROMS_BETA) compare_beta
 
 # Assemble source files into objects.
-# Use rgbasm -h to use halts without nops.
 $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	@rgbasm -h -o $@ $<
+	@rgbasm -o $@ $<
 
 # Assemble the BugFS directory...
 $(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)

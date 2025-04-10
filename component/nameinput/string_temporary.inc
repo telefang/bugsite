@@ -1,1 +1,1 @@
-M_NameInput_NameTemporaryHoldingSize EQU $F
+DEF M_NameInput_NameTemporaryHoldingSize EQU $F

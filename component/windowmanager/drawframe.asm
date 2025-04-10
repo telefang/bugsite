@@ -290,12 +290,12 @@ WindowManager_ScrollUpContents::
     di
     
 .tileWfb1
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr z, .tileWfb1
     
 .tileWfb2
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .tileWfb2
     
@@ -312,12 +312,12 @@ WindowManager_ScrollUpContents::
     di
     
 .attrWfb1
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr z, .attrWfb1
     
 .attrWfb2
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .attrWfb2
     

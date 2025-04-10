@@ -16,7 +16,7 @@ WindowManager_PrintText::
     inc bc
     call WindowManager_AutoNewline
     
-    ld a, [H_LCDC_SetTileVal]
+    ldh a, [H_LCDC_SetTileVal]
     cp $5C
     jr z, .newline
     cp $7F
@@ -33,7 +33,7 @@ WindowManager_PrintText::
     bit 2, a
     jr nz, WindowManager_PrintText
     
-    ld a, [H_Input_JoypadState]
+    ldh a, [H_Input_JoypadState]
     and 1
     ld a, 1
     jr nz, .noButtonPressed
@@ -170,7 +170,7 @@ WindowManager_WaitForInput::
     ld b, a
     
 .spinLoop
-    ld a, [H_Input_JoypadChanged]
+    ldh a, [H_Input_JoypadChanged]
     ld [W_WindowManager_LastSampledInput], a
     
     and 3

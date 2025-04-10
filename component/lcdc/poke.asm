@@ -74,16 +74,16 @@ LCDC_PokeTilemap::
     di
 
 .wait1
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr z, .wait1
 
 .wait2
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wait2
 
-    ld a, [H_LCDC_SetTileVal]
+    ldh a, [H_LCDC_SetTileVal]
     ld [hl], a
 
     ld a, 1
