@@ -1,7 +1,8 @@
-from CodeModule.asm.rgbds import Rgb6, Rgb6Section
+import io
+import itertools
 
 def build_string_object(strlist, encoder):
-    """Given a list of string defines, produce an RGBDS object file.
+    """Given a list of string defines, produce assembly source.
 
     Only string defines whose symbol starts with NAME_ will be added to the file
     and other symbols classes will be ignored. Additionally, symbols must have a
@@ -12,26 +13,33 @@ def build_string_object(strlist, encoder):
     Attribute Tables within Bugsite. For strings embedded in BugVM instruction
     streams, see the BugTools.bvm module."""
 
-    obj = Rgb6()
+    with io.StringIO() as src:
+        for strsym in strlist:
+            splitname = strsym[0].split("_")
 
-    for strsym in strlist:
-        splitname = strsym[0].split("_")
+            if splitname[0] != "NAME":
+                continue
 
-        if splitname[0] != "NAME":
-            continue
+            bank = int(splitname[1], 16)
+            offset = int(splitname[2], 16)
 
-        bank = int(splitname[1], 16)
-        offset = int(splitname[2], 16)
+            encoded_string = encoder(strsym[1])
+            
+            name = "Attr Table Name %X_%X" % (bank, offset)
+            org = 0x4000 + offset
 
-        encoded_string = encoder(strsym[1])
+            print(f"SECTION \"{name}\", ROMX[${org:04x}], BANK[${bank}]", file=src)
 
-        sec = Rgb6Section()
-        sec.name = "Attr Table Name %X_%X" % (bank, offset)
-        sec.sectype = Rgb6Section.ROMX
-        sec.org = 0x4000 + offset
-        sec.bank = bank
-        sec.datsec.data = encoded_string + (b"\x00" * (0x10 - len(encoded_string)))
+            for line in itertools.batched(encoded_string, 0x10):
+                bytes_written = []
+                
+                for byte in line:
+                    bytes_written.append(f"${byte:02x}")
+                
+                while len(bytes_written) < 0x10:
+                    bytes_written.append("0")
+                
+                bytes_list = ", ".join(bytes_written)
+                print(f"    db {bytes_list}", file=src)
 
-        obj.sections.append(sec)
-
-    return obj
+        return src.getvalue()

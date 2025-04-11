@@ -1,7 +1,7 @@
 .PHONY: all compare_alpha compare_beta clean alpha beta
 
 .SUFFIXES:
-.SUFFIXES: .asm .o .gbc .png .wav .wikitext
+.SUFFIXES: .asm .o .gbc .png .wav .wikitext .atbl
 .SECONDEXPANSION:
 
 BASE_DIR := baseroms
@@ -68,6 +68,11 @@ beta: $(ROMS_BETA) compare_beta
 
 # Assemble source files into objects.
 $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
+	@echo "Assembling" $<
+	@mkdir -p $(dir $@)
+	@rgbasm -o $@ $<
+
+$(OBJS_EXTRA:%.atbl.o=${BUILD_DIR}/%.atbl.o): $(BUILD_DIR)/%.atbl.o : $(BUILD_DIR)/%.atbl $$($$*_dep)
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
 	@rgbasm -o $@ $<
@@ -142,7 +147,7 @@ $(BUILD_DIR)/%.palette.bin: %.bpal
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bpalasm.py $< $@
 
-$(BUILD_DIR)/%.atbl.o: %.csv
+$(BUILD_DIR)/%.atbl: %.csv
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/montable_compile.py $< script/charmap.txt $@
