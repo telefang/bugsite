@@ -78,10 +78,10 @@ $(OBJS_EXTRA:%.atbl.o=${BUILD_DIR}/%.atbl.o): $(BUILD_DIR)/%.atbl.o : $(BUILD_DI
 	@rgbasm -o $@ $<
 
 # Assemble the BugFS directory...
-$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
-	@echo "Building BugFS filesystem" $<
+$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : $(BUILD_DIR)/%.bfsasm
+	@echo "Assembling built BugFS filesystem" $<
 	@mkdir -p $(dir $@)
-	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR) --basedir=.
+	@rgbasm -o $@ $<
 
 $(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_EXTRA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_ALPHA:.gbc=.sym) -m $(ROMS_ALPHA:.gbc=.map) -O $(BASEROM_ALPHA) -o $@ $^
@@ -151,3 +151,8 @@ $(BUILD_DIR)/%.atbl: %.csv
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/montable_compile.py $< script/charmap.txt $@
+
+$(BUILD_DIR)/%.bfsasm: %.bfs $$($$*_dep)
+	@echo "Building BugFS filesystem" $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR) --basedir=.
