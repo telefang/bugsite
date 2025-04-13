@@ -22,7 +22,7 @@ WindowManager_PrintChoices::
     push af
     
     ld a, BANK(W_WindowManager_ChoiceStringStorage)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     pop af
     ld a, [W_WindowManager_ContentsAttributes]
@@ -117,7 +117,7 @@ WindowManager_OpWINCHOICE::
     push af
     
     ld a, BANK(W_WindowManager_ChoiceStringStorage)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     pop af
     ld a, [W_LCDC_PokeTileX]

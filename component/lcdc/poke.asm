@@ -13,7 +13,7 @@ SECTION "LCDC Poke", ROM0[$C7F]
 ;the particular coordinate to SetTileVal, and it's attributes to SetAttrVal.
 LCDC_PokeTilemap::
     ld a, 1
-    ld [H_LCDC_OAMNeedsStaging], a
+    ldh [H_LCDC_OAMNeedsStaging], a
 
     push bc
 
@@ -69,7 +69,7 @@ LCDC_PokeTilemap::
     pop bc
 
     ld a, 0
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
 
     di
 
@@ -87,7 +87,7 @@ LCDC_PokeTilemap::
     ld [hl], a
 
     ld a, 1
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
 
     ld a, [W_LCDC_SetAttrVal]
     ld [hl], a
@@ -95,5 +95,5 @@ LCDC_PokeTilemap::
     ei
 
     ld a, 0
-    ld [H_LCDC_OAMNeedsStaging], a
+    ldh [H_LCDC_OAMNeedsStaging], a
     ret

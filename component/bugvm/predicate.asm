@@ -12,7 +12,7 @@ BugVM_WritePredicateArray::
     push af
     
     ld a, BANK(W_BugVM_PredicateFlags)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     pop af ;why do we preserve A if we're just going to overwrite it?
     
@@ -63,7 +63,7 @@ BugVM_ReadPredicateArray::
     push af
     
     ld a, BANK(W_BugVM_PredicateFlags)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     pop af
     

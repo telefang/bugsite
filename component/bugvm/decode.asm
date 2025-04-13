@@ -39,9 +39,9 @@ BugVM_LoadNextOpcode::
     inc de
     
     ld a, e
-    ld [H_BugVM_PCOffset], a
+    ldh [H_BugVM_PCOffset], a
     ld a, d
-    ld [H_BugVM_PCOffset + 1], a
+    ldh [H_BugVM_PCOffset + 1], a
     
     ld a, h
     ld e, a

@@ -12,7 +12,7 @@ WindowManager_PrintText::
     or a
     ret z
     
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     inc bc
     call WindowManager_AutoNewline
     
@@ -192,7 +192,7 @@ WindowManager_WaitForInput::
     ld a, $20
     
 .selectTileAndDraw
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     call LCDC_PokeTilemap
     
     push bc
@@ -210,7 +210,7 @@ WindowManager_WaitForInput::
     ld a, [W_WindowManager_ContentsYMax]
     ld [W_LCDC_PokeTileY], a
     ld a, $20
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     call LCDC_PokeTilemap
     
     pop bc

@@ -44,7 +44,7 @@ BugVM_PopFromDataStack::
     sub 1
     jr c, BugVM_PushToDataStack.die
     
-    ld [H_BugVM_DataFrame], a
+    ldh [H_BugVM_DataFrame], a
     
     ld l, a
     ld h, W_BugVM_DataStack >> 8
@@ -86,7 +86,7 @@ BugVM_PopTypedData::
     ld l, a
     
     ld a, 3
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     sla l
     rl b
