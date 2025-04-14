@@ -215,7 +215,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
         while len(directory) > 0:
             print(f"SECTION \"BugFS Directory {start_bank}\", ROMX[$4000], BANK[{start_bank}]", file=datum_section)
             if start_bank == dirbank:
-                print(f"BugFS_Directory:")
+                print(f"BugFS_Directory::", file=datum_section)
             
             print_binary_data_as_source(directory[:0x4000], file=datum_section)
             directory = directory[0x4000:]

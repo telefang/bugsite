@@ -21,8 +21,8 @@ def bfsbuild():
 
         datum = fsimage(mp, args.basedir)
 
-        with open(args.outfile, 'wb') as dstfile:
-            dstfile.write(datum.encode("utf-8"))
+        with open(args.outfile, 'w') as dstfile:
+            dstfile.write(datum)
 
 def bfsdeps():
     parser = argparse.ArgumentParser(description='Tool for extracting a list of dependencies from a .bfs file (for Make).')
