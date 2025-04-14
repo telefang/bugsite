@@ -211,6 +211,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
         
         #Build the BFS directory structure
         start_bank = dirbank
+        directory = b"".join(directory)
 
         while len(directory) > 0:
             print(f"SECTION \"BugFS Directory {start_bank}\", ROMX[$4000], BANK[{start_bank}]", file=datum_section)
