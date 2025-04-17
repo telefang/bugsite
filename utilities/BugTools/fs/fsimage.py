@@ -183,7 +183,7 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
                         still_need_to_print_high_byte = True
                         cur_chunk_size = 1
 
-                        print(f"    db {fixups[0][1]} & $FF", file=datum_section)
+                        print(f"    db (({fixups[0][1]} - $C400) >> 1) & $FF", file=datum_section)
                     elif still_need_to_print_high_byte:
                         # We have to run through the loop twice for the other
                         # half of the symbol so that the bank accounting logic
@@ -191,12 +191,12 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
                         still_need_to_print_high_byte = False
                         cur_chunk_size = 1
 
-                        print(f"    db {fixups[0][1]} >> 8", file=datum_section)
+                        print(f"    db (({fixups[0][1]} - $C400) >> 1) >> 8", file=datum_section)
                         fixups.pop(0)
                     else: #COMMON CASE: we can just use dw
                         cur_chunk_size = 2
 
-                        print(f"    dw {fixups[0][1]}", file=datum_section)
+                        print(f"    dw ({fixups[0][1]} - $C400) >> 1", file=datum_section)
                         fixups.pop(0)
                 
                 written_chunk_size += cur_chunk_size
