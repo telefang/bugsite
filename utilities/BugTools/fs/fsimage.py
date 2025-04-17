@@ -84,6 +84,9 @@ def fsimage(parselist, basedir, dirbank = 0xA, databank = 0xC):
         # and everything can spill into multiple banks. So ALMOST EVERYTHING
         # is emitted as `db`s from already-serialized structs.
         for path in filepaths:
+            friendly_path = path.replace("/", "_").replace(".", "_")
+            print(f"F_{friendly_path}::", file=datum_section)
+
             new_dir = Directory()
             new_dir.basebank = start_bank
             new_dir.baseoffset = start_offset
