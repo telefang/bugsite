@@ -78,7 +78,7 @@ $(OBJS_EXTRA:%.atbl.o=${BUILD_DIR}/%.atbl.o): $(BUILD_DIR)/%.atbl.o : $(BUILD_DI
 	@rgbasm -o $@ $<
 
 # Assemble the BugFS directory...
-$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : $(BUILD_DIR)/%.bfsasm
+$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : $(BUILD_DIR)/%.bfsasm $$($$*_dep)
 	@echo "Assembling built BugFS filesystem" $<
 	@mkdir -p $(dir $@)
 	@rgbasm -o $@ $<
