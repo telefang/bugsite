@@ -115,7 +115,7 @@ $(BUILD_DIR)/%.inc: %.inc
 $(BUILD_DIR)/%.2bpp: %.png
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
-	@rgbgfx -d 2 -o $@ $<
+	@rgbgfx -d 2 -c hex:graphics/grayscale.pal -o $@ $<
 
 $(BUILD_DIR)/%.1bpp: %.png
 	@echo "Building" $<
