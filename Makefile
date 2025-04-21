@@ -1,7 +1,7 @@
 .PHONY: all compare_alpha compare_beta clean alpha beta
 
 .SUFFIXES:
-.SUFFIXES: .asm .o .gbc .png .wav .wikitext
+.SUFFIXES: .asm .o .gbc .png .wav .wikitext .atbl
 .SECONDEXPANSION:
 
 BASE_DIR := baseroms
@@ -67,17 +67,21 @@ alpha: $(ROMS_ALPHA) compare_alpha
 beta: $(ROMS_BETA) compare_beta
 
 # Assemble source files into objects.
-# Use rgbasm -h to use halts without nops.
 $(OBJS_ALL:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm $$($$*_dep)
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	@rgbasm -h -o $@ $<
+	@rgbasm -o $@ $<
+
+$(OBJS_EXTRA:%.atbl.o=${BUILD_DIR}/%.atbl.o): $(BUILD_DIR)/%.atbl.o : $(BUILD_DIR)/%.atbl $$($$*_dep)
+	@echo "Assembling" $<
+	@mkdir -p $(dir $@)
+	@rgbasm -o $@ $<
 
 # Assemble the BugFS directory...
-$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : %.bfs $$($$*_dep)
-	@echo "Building BugFS filesystem" $<
+$(OBJS_DIR_ALL:%.bugfs.o=${BUILD_DIR}/%.bugfs.o): $(BUILD_DIR)/%.bugfs.o : $(BUILD_DIR)/%.bfsasm $$($$*_dep)
+	@echo "Assembling built BugFS filesystem" $<
 	@mkdir -p $(dir $@)
-	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR) --basedir=.
+	@rgbasm -o $@ $<
 
 $(ROMS_ALPHA): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_DIR_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_ALPHA:%.o=${BUILD_DIR}/%.o) $(OBJS_EXTRA:%.o=${BUILD_DIR}/%.o)
 	rgblink -n $(ROMS_ALPHA:.gbc=.sym) -m $(ROMS_ALPHA:.gbc=.map) -O $(BASEROM_ALPHA) -o $@ $^
@@ -111,7 +115,7 @@ $(BUILD_DIR)/%.inc: %.inc
 $(BUILD_DIR)/%.2bpp: %.png
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
-	@rgbgfx -d 2 -o $@ $<
+	@rgbgfx -d 2 -c hex:graphics/grayscale.pal -o $@ $<
 
 $(BUILD_DIR)/%.1bpp: %.png
 	@echo "Building" $<
@@ -143,7 +147,12 @@ $(BUILD_DIR)/%.palette.bin: %.bpal
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/bpalasm.py $< $@
 
-$(BUILD_DIR)/%.atbl.o: %.csv
+$(BUILD_DIR)/%.atbl: %.csv
 	@echo "Building" $<
 	@mkdir -p $(dir $@)
 	@$(PYTHON) utilities/montable_compile.py $< script/charmap.txt $@
+
+$(BUILD_DIR)/%.bfsasm: %.bfs $$($$*_dep)
+	@echo "Building BugFS filesystem" $<
+	@mkdir -p $(dir $@)
+	@$(PYTHON) utilities/bfsbuild.py $< $@ --basedir=$(BUILD_DIR) --basedir=.

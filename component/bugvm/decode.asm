@@ -19,29 +19,29 @@ BugVM_ExecOpcode::
     inc bc
     ld a, [bc]
     ld h, a
-    jp [hl]
+    jp hl
     
 BugVM_NOP::
     ret
     
 BugVM_LoadNextOpcode::
-    ld a, [H_BugVM_PCBase]
+    ldh a, [H_BugVM_PCBase]
     ld l, a
-    ld a, [H_BugVM_PCBase + 1]
+    ldh a, [H_BugVM_PCBase + 1]
     ld h, a
     
-    ld a, [H_BugVM_PCOffset]
+    ldh a, [H_BugVM_PCOffset]
     ld e, a
-    ld a, [H_BugVM_PCOffset + 1]
+    ldh a, [H_BugVM_PCOffset + 1]
     ld d, a
     
     add hl, de
     inc de
     
     ld a, e
-    ld [H_BugVM_PCOffset], a
+    ldh [H_BugVM_PCOffset], a
     ld a, d
-    ld [H_BugVM_PCOffset + 1], a
+    ldh [H_BugVM_PCOffset + 1], a
     
     ld a, h
     ld e, a
@@ -55,7 +55,7 @@ BugVM_LoadNextOpcode::
     rlca
     ld e, a
     
-    ld a, [H_BugVM_PCBank]
+    ldh a, [H_BugVM_PCBank]
     add a, e
     rst 0
     ld a, [hl]
