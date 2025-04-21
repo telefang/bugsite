@@ -1,1 +1,1 @@
-H_System_CurrentROMBank EQU $FF90
+DEF H_System_CurrentROMBank EQU $FF90

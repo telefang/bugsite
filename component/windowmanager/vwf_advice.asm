@@ -80,7 +80,7 @@ WindowManager_ADVICE_FlushCompositionArea::
     ld [W_WindowManager_CompositionState], a
     
     ld a, [W_WindowManager_VWFRingWriteHead + 1]
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     
     ld bc, $10
     call LCDC_vmemcopy
@@ -501,12 +501,12 @@ WindowManager_ADVICE_GetMetricsWidth::
     
 ;ADVICE code for PrintText, called when printing a normal character.
 WindowManager_ADVICE_PrintChara::
-    ld a, [REG_SVBK]
+    ldh a, [REG_SVBK]
     push af
     
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     pop af
     ld [W_WindowManager_SourceWRAMBank], a
@@ -527,14 +527,14 @@ WindowManager_ADVICE_PrintChara::
     ld [W_LCDC_PokeTileX], a
     
     pop af
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ret
     
 .useVwf
     ld a, [W_WindowManager_VWFRingWriteHead]
     add $80
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     
     push bc
     
@@ -556,13 +556,13 @@ WindowManager_ADVICE_PrintChara::
     ;ONE function hands us banked pointers, so we have to do this silly juggling
     ;act for all pointers...
     ld a, [W_WindowManager_SourceWRAMBank]
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ld a, [bc]
     push af
     
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     pop af
     push af
@@ -589,7 +589,7 @@ WindowManager_ADVICE_PrintChara::
     
     ld a, [W_WindowManager_VWFRingWriteHead]
     add $80
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     
     push bc
     
@@ -612,18 +612,18 @@ WindowManager_ADVICE_PrintChara::
     ld [W_LCDC_SetAttrVal], a
     
     pop af
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ret
     
 ;ADVICE code for PrintText, called when printing a newline.
 WindowManager_ADVICE_PrintNewline::
-    ld a, [REG_SVBK]
+    ldh a, [REG_SVBK]
     push af
     
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ld a, [W_WindowManager_CompositionState]
     and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
@@ -634,18 +634,18 @@ WindowManager_ADVICE_PrintNewline::
     
 .useTiletext
     pop af
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ret
     
 ;ADVICE code for WindowManager_AutoNewline, called when the text box overflows.
 WindowManager_ADVICE_AutoNewline::
-    ld a, [REG_SVBK]
+    ldh a, [REG_SVBK]
     push af
     
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ld a, [W_WindowManager_CompositionState]
     and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
@@ -682,19 +682,19 @@ WindowManager_ADVICE_AutoNewline::
     
 .ret
     pop af
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ret
     
 ;ADVICE code for PrintText, called when printing a newline.
 WindowManager_ADVICE_ClearRegion::
     ;TODO: Does real hardware let you do this?
-    ld a, [REG_SVBK]
+    ldh a, [REG_SVBK]
     push af
     
     ;Determine if VWF is active
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ld a, [W_WindowManager_CompositionState]
     and a ;equiv to cp M_WindowManager_CompositionStateUninitialized
@@ -710,7 +710,7 @@ WindowManager_ADVICE_ClearRegion::
     ld c, a
     
     pop af
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ret
     
@@ -725,7 +725,7 @@ WindowManager_ADVICE_ClearRegion::
 ; --- TOP OF STACK ---
 WindowManager_ADVICE_OpVWFCONFIG::
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ;Configure the background. These 16 bits are repeated to clear tiles.
     call BugVM_PopTypedData
@@ -781,7 +781,7 @@ WindowManager_ADVICE_OpVWFCONFIG::
 ; VWF Ring End     (Tile index from $8800)
 WindowManager_ADVICE_OpVWFENABLE::
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ;Configure the ring buffer from arguments.
     call BugVM_PopTypedData
@@ -816,7 +816,7 @@ WindowManager_ADVICE_OpVWFENABLE::
 ;drawn.)
 WindowManager_ADVICE_OpVWFDISABLE::
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ;Mark the VWF as initialized and ready to use.
     ld a, M_WindowManager_CompositionStateUninitialized
@@ -839,7 +839,7 @@ WindowManager_ADVICE_OpSCRCURS::
     ld [W_LCDC_PokeTileX], a
     
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ld a, [W_WindowManager_CompositionState]
     cp M_WindowManager_CompositionStateUninitialized
@@ -864,7 +864,7 @@ WindowManager_ADVICE_OpWINCURS::
     ld [W_LCDC_PokeTileX], a
     
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ld a, [W_WindowManager_CompositionState]
     cp M_WindowManager_CompositionStateUninitialized
@@ -884,7 +884,7 @@ WindowManager_ADVICE_PrintChoices::
     call WindowManager_PrintText
     
     ld a, BANK(W_WindowManager_CompositionState)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ld a, [W_WindowManager_CompositionState]
     cp M_WindowManager_CompositionStateUninitialized
@@ -895,7 +895,7 @@ WindowManager_ADVICE_PrintChoices::
     
 .usingFWF
     ld a, BANK(W_WindowManager_ChoiceStringStorage)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ret
 

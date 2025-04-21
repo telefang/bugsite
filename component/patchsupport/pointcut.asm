@@ -14,7 +14,7 @@ PatchSupport_PointCutByID::
     push hl
     ld l, a
     
-    ld a, [H_System_CurrentROMBank]
+    ldh a, [H_System_CurrentROMBank]
     push af
     
     ld a, BANK(PatchSupport_PatchTable)
@@ -30,7 +30,7 @@ PatchSupport_PointCutByID::
     pop hl
     ret
     
-.advice ;Z80 doesn't offer a call [hl] so let's improvise
-    jp [hl]
+.advice ;Z80 doesn't offer a call hl so let's improvise
+    jp hl
 
 PatchSupport_PointCutByID_END::

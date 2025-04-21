@@ -5,12 +5,12 @@ LCDC_vmemcopy::
     di
     
 .memWait1
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr z, .memWait1
     
 .memWait2
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .memWait2
     

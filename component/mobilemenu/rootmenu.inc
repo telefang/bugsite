@@ -1,9 +1,9 @@
-M_MobileMenu_PrimaryScreen EQU $00
-M_MobileMenu_BugLineupScreen EQU $01
-M_MobileMenu_BugPartyScreen EQU $02
-M_MobileMenu_PersonalZukanScreen EQU $09
-M_MobileMenu_VaccineItemsScreen EQU $0B
-M_MobileMenu_ChipItemsScreen EQU $0C
-M_MobileMenu_PasswordItemsScreen EQU $0D
-M_MobileMenu_OptionsScreen EQU $12
-M_MobileMenu_Inactive EQU $63
+DEF M_MobileMenu_PrimaryScreen EQU $00
+DEF M_MobileMenu_BugLineupScreen EQU $01
+DEF M_MobileMenu_BugPartyScreen EQU $02
+DEF M_MobileMenu_PersonalZukanScreen EQU $09
+DEF M_MobileMenu_VaccineItemsScreen EQU $0B
+DEF M_MobileMenu_ChipItemsScreen EQU $0C
+DEF M_MobileMenu_PasswordItemsScreen EQU $0D
+DEF M_MobileMenu_OptionsScreen EQU $12
+DEF M_MobileMenu_Inactive EQU $63

@@ -1,4 +1,4 @@
-M_WindowManager_ChoiceStringSize EQU $10
-M_WindowManager_ChoiceStringCount EQU 2 ;Maybe larger? You decide!
+DEF M_WindowManager_ChoiceStringSize EQU $10
+DEF M_WindowManager_ChoiceStringCount EQU 2 ;Maybe larger? You decide!
 
-M_WindowManager_ChoiceStringStorageSize EQU M_WindowManager_ChoiceStringSize * M_WindowManager_ChoiceStringCount
+DEF M_WindowManager_ChoiceStringStorageSize EQU M_WindowManager_ChoiceStringSize * M_WindowManager_ChoiceStringCount

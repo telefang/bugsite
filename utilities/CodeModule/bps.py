@@ -17,7 +17,7 @@ class VarInt(cmodel.Int(-1)):
             continueParse = newbyte >> 7
 
         self.core = data
-
+    
     @property
     def bytes(self):
         data = self.core
@@ -41,22 +41,22 @@ class VarInt(cmodel.Int(-1)):
             obytes = obytes[1:]
             data = data << 7 + (newbyte & 0x7F)
             continueParse = newbyte >> 7
-
+        
         return (obytes, data)
-
+    
     def bytesetter(self, obytes):
         #TODO: Rethink Int.bytesetter hack, should varints be enumable?
         #For right now, varints replicate the bytesetter hack.
         (obytes, data) = self.__decode(obytes)
-
+        
         if len(obytes) > 0:
             raise CorruptedData
-
+        
         self.core = data
 
     def parsebytes(self, obytes):
         (obytes, data) = self.__decode(obytes)
-
+        
         self.core = data
         return obytes
 
@@ -110,8 +110,8 @@ def applyPatch(src, patch, tgt):
     bps.load(patch)
 
     tgtBytesCnt = 0
-#UNFINISHED CODE
-#    for command in
+#UNFINISHED CODE   
+#    for command in 
 
 class Writeout(linker.Writeout):
     def __init__(self, srcrom):

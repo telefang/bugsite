@@ -1,7 +1,7 @@
 class BasePlatform(object):
     def banked2flat(self, bank, addr):
         return (0, None)
-
+    
     def flat2banked(self, addr, src):
         return (0, 0)
 
@@ -21,29 +21,29 @@ VARIANTLIST.update(GBVariantList)
 @logged("pfrm")
 def lookup_system_bases(logger, exbn):
     """Given a list of platform attributes, return tuple of bases to construct a class with."""
-
+    
     #shallow copy the basename list
     basenames = []
     for bn in exbn:
         basenames.append(bn)
-
+    
     bases = []
     next_vlist = VARIANTLIST
-
+    
     while next_vlist != None:
         cur_bn = None
-
+        
         for basename in basenames:
             if basename in next_vlist.keys():
                 bases.append(next_vlist[basename][0])
                 next_vlist = next_vlist[basename][1]
                 cur_bn = basename
-
+        
         if cur_bn is None:
             logger.error("No matching platform base in %(basenames)s" % {"basenames":basenames})
             raise PEBKAC
-
+        
         basenames.remove(cur_bn)
-
+    
     logger.debug(repr(bases))
     return tuple(bases)

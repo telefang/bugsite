@@ -33,7 +33,7 @@ def montable_compile():
 
     parser.add_argument('infile', metavar='file.csv', type=str, help='The file to pull strings from.')
     parser.add_argument('charmap', metavar='charmap.bin', type=str, help='Character mapping to decode with.')
-    parser.add_argument('output', metavar='file.atbl.o', type=str, help='Where to save the resulting object file.')
+    parser.add_argument('output', metavar='file.atbl', type=str, help='Where to save the resulting compiled source.')
     parser.add_argument('--language', type=str, default=u"Japanese")
 
     args = parser.parse_args()
@@ -43,7 +43,7 @@ def montable_compile():
 
     with open(args.infile, encoding="utf-8") as infile:
         strlist = parse_names_list(infile, args.language)
-        stringobj = build_string_object(strlist, strenc)
+        asmsrc = build_string_object(strlist, strenc)
 
-    with open(args.output, "wb") as rgbfile:
-        rgbfile.write(stringobj.bytes)
+    with open(args.output, "w") as rgbfile:
+        rgbfile.write(asmsrc)

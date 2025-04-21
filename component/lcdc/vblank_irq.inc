@@ -1,1 +1,1 @@
-H_LCDC_OAMNeedsStaging EQU $FF9F
+DEF H_LCDC_OAMNeedsStaging EQU $FF9F

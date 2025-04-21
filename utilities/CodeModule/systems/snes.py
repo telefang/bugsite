@@ -6,9 +6,9 @@ from CodeModule.assembly import linker
 
 class LoROM(object):
     """SHVC LoROM cartridge mapper.
-
+    
     Maps ROM into the high half of every memory bank.
-
+    
     (Seriously, why is it called Low if it's in the high half of memory?"""
     ROM = {"segsize": 0x8000,
            "views": [(0x8000, None)],

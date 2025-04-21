@@ -1,25 +1,25 @@
-M_AccessPoint_GuardianBrowserScreen EQU $17
-M_AccessPoint_PrimaryScreen EQU $18
-M_AccessPoint_BugServerScreen EQU $19
-M_AccessPoint_DepositScreen EQU $1A
-M_AccessPoint_WithdrawScreen EQU $1B
-M_AccessPoint_SaveScreen EQU $1C
-M_AccessPoint_TrashScreen EQU $1D
-M_AccessPoint_DiscardCollectionScreen EQU $1E
-M_AccessPoint_DiscardServerScreen EQU $1F
-M_AccessPoint_SalvageScreen EQU $20
-M_AccessPoint_FEIntroScreen EQU $28
-M_AccessPoint_FEZukanScreen EQU $29
-M_AccessPoint_FEZukanSubScreen EQU $2A
-M_AccessPoint_StingIntroScreen EQU $2B
-M_AccessPoint_StingZukanScreen EQU $2C
-M_AccessPoint_StingZukanSubScreen EQU $2D
-M_AccessPoint_RugerIntroScreen EQU $2E
-M_AccessPoint_RugerZukanScreen EQU $2F
-M_AccessPoint_RugerZukanSubScreen EQU $30
-M_AccessPoint_TahiroIntroScreen EQU $31
-M_AccessPoint_TahiroZukanScreen EQU $32
-M_AccessPoint_TahiroZukanSubScreen EQU $33
-M_AccessPoint_JankIntroScreen EQU $34
-M_AccessPoint_JankZukanScreen EQU $35
-M_AccessPoint_JankZukanSubScreen EQU $36
+DEF M_AccessPoint_GuardianBrowserScreen EQU $17
+DEF M_AccessPoint_PrimaryScreen EQU $18
+DEF M_AccessPoint_BugServerScreen EQU $19
+DEF M_AccessPoint_DepositScreen EQU $1A
+DEF M_AccessPoint_WithdrawScreen EQU $1B
+DEF M_AccessPoint_SaveScreen EQU $1C
+DEF M_AccessPoint_TrashScreen EQU $1D
+DEF M_AccessPoint_DiscardCollectionScreen EQU $1E
+DEF M_AccessPoint_DiscardServerScreen EQU $1F
+DEF M_AccessPoint_SalvageScreen EQU $20
+DEF M_AccessPoint_FEIntroScreen EQU $28
+DEF M_AccessPoint_FEZukanScreen EQU $29
+DEF M_AccessPoint_FEZukanSubScreen EQU $2A
+DEF M_AccessPoint_StingIntroScreen EQU $2B
+DEF M_AccessPoint_StingZukanScreen EQU $2C
+DEF M_AccessPoint_StingZukanSubScreen EQU $2D
+DEF M_AccessPoint_RugerIntroScreen EQU $2E
+DEF M_AccessPoint_RugerZukanScreen EQU $2F
+DEF M_AccessPoint_RugerZukanSubScreen EQU $30
+DEF M_AccessPoint_TahiroIntroScreen EQU $31
+DEF M_AccessPoint_TahiroZukanScreen EQU $32
+DEF M_AccessPoint_TahiroZukanSubScreen EQU $33
+DEF M_AccessPoint_JankIntroScreen EQU $34
+DEF M_AccessPoint_JankZukanScreen EQU $35
+DEF M_AccessPoint_JankZukanSubScreen EQU $36
