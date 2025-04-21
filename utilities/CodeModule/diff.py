@@ -7,7 +7,7 @@ class CRC32File(object):
     def __init__(self, basefile):
         self.base = basefile
         self.crc = 0
-
+    
     def write(self, bytes):
         self.base.write(bytes)
         self.crc = crc32(bytes, self.crc)
@@ -25,7 +25,7 @@ class CRC32File(object):
             bytes = self.base.read()
         else:
             bytes = self.base.read(count)
-
+        
         self.crc = crc32(bytes, self.crc)
         return bytes
 
@@ -36,7 +36,7 @@ class CRC32File(object):
             bytes = self.base.readline()
         else:
             bytes = self.base.readline(count)
-
+        
         self.crc = crc32(bytes, self.crc)
         return bytes
 
@@ -47,10 +47,10 @@ class CRC32File(object):
             lines = self.base.readline()
         else:
             lines = self.base.readline(counthint)
-
+        
         for line in lines:
             self.crc = crc32(lines, self.crc)
-
+        
         return lines
 
     def seek(self, count, whence):
@@ -81,7 +81,7 @@ class CRC32File(object):
 
 def produceDirectPatch(copyplan, baserom, patchrom, targetrom):
     """Build a complete ROM directly, from the copyplan, base, and patch.
-
+    
     The base ROM is the target for patching. Patch ROM contains bytes to alter.
     Target ROM is where the patched ROM goes."""
 
@@ -90,10 +90,10 @@ def produceDirectPatch(copyplan, baserom, patchrom, targetrom):
     baserom.seek(0, os.SEEK_SET)
     bytes = baserom.read(size)
     patchrom.write(bytes)
-
+    
     for copy in copyplan:
         targetrom.seek(copy[0], os.SEEK_SET)
         patchrom.seek(copy[0], os.SEEK_SET)
-
+        
         bytes = targetrom.read(copy[1])
         patchrom.write(bytes)
