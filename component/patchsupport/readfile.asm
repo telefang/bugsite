@@ -19,7 +19,7 @@ PatchSupport_ReadBugFSFile::
     push af
     push hl
     
-    ld a, [H_System_CurrentROMBank]
+    ldh a, [H_System_CurrentROMBank]
     push af
     
     ;Read the file location.
@@ -40,7 +40,7 @@ PatchSupport_ReadBugFSFile::
     rst 0
     
     ld a, BANK(W_PatchUtils_FileBuffer)
-    ld [REG_SVBK], a
+    ldh [REG_SVBK], a
     
     ;Copy data.
     ld c, M_PatchUtils_FileBufferSize
@@ -62,7 +62,7 @@ PatchSupport_ReadBugFSFile::
 .overflowHandler
     res 7, h
     set 6, h
-    ld a, [H_System_CurrentROMBank]
+    ldh a, [H_System_CurrentROMBank]
     inc a
     rst 0
     jr .copyLoop
