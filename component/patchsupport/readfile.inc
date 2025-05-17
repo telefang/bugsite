@@ -1,1 +1,1 @@
-M_PatchUtils_FileBufferSize EQU $10
+DEF M_PatchUtils_FileBufferSize EQU $10

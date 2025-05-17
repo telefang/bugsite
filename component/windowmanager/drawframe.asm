@@ -13,7 +13,7 @@ WindowManager_DrawFrame::
 	 ld [W_LCDC_PokeTileY], a
 	 
 	 ld a, $19
-	 ld [H_LCDC_SetTileVal], a
+	 ldh [H_LCDC_SetTileVal], a
 	 call LCDC_PokeTilemap
 	 
     ld a, [W_WindowManager_ContentsXMin]    ;Bottom-Left
@@ -25,7 +25,7 @@ WindowManager_DrawFrame::
 	 ld [W_LCDC_PokeTileY], a
 	 
 	 ld a, $1A
-	 ld [H_LCDC_SetTileVal], a
+	 ldh [H_LCDC_SetTileVal], a
 	 call LCDC_PokeTilemap
 	 
     ld a, [W_WindowManager_ContentsXMax]    ;Bottom-Right
@@ -37,7 +37,7 @@ WindowManager_DrawFrame::
 	 ld [W_LCDC_PokeTileY], a
 	 
 	 ld a, $1B
-	 ld [H_LCDC_SetTileVal], a
+	 ldh [H_LCDC_SetTileVal], a
 	 call LCDC_PokeTilemap
 	 
     ld a, [W_WindowManager_ContentsXMin]    ;Top-Left
@@ -49,7 +49,7 @@ WindowManager_DrawFrame::
 	 ld [W_LCDC_PokeTileY], a
 	 
 	 ld a, $18
-	 ld [H_LCDC_SetTileVal], a
+	 ldh [H_LCDC_SetTileVal], a
 	 call LCDC_PokeTilemap
     
     ld a, [W_WindowManager_ContentsXMin]    ;Left/right borders
@@ -64,7 +64,7 @@ WindowManager_DrawFrame::
     jr z, .prepHorizLoop
     
     ld a, $1C
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     
     ld a, [W_WindowManager_ContentsYMin]    ;Left border
     dec a
@@ -72,7 +72,7 @@ WindowManager_DrawFrame::
     call LCDC_PokeTilemap
     
     ld a, $1D
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     
     ld a, [W_WindowManager_ContentsYMax]    ;Right border
     inc a
@@ -99,7 +99,7 @@ WindowManager_DrawFrame::
     jr z, .fillFrameCenter
     
     ld a, $1E
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     
     ld a, [W_WindowManager_ContentsXMin]    ;Top border
     dec a
@@ -107,7 +107,7 @@ WindowManager_DrawFrame::
     call LCDC_PokeTilemap
     
     ld a, $1F
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     
     ld a, [W_WindowManager_ContentsXMax]    ;Bottom border
     inc a
@@ -158,7 +158,7 @@ WindowManager_DrawOverflowArrows::
     ld a, $20
     
 .drawUpTile
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     call LCDC_PokeTilemap
     
     ld a, [W_WindowManager_ContentsXMax]
@@ -180,7 +180,7 @@ WindowManager_DrawOverflowArrows::
     ld a, $20
     
 .drawDownTile
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     call LCDC_PokeTilemap
     
     ret
@@ -202,7 +202,7 @@ WindowManager_ClearRegion::
     ld c, a
     
     ld a, $20
-    ld [H_LCDC_SetTileVal], a
+    ldh [H_LCDC_SetTileVal], a
     
 .rowClearLoop
     ld a, c
@@ -287,17 +287,17 @@ WindowManager_ScrollUpContents::
     push bc
     
     ld a, 0
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     
     di
     
 .tileWfb1
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr z, .tileWfb1
     
 .tileWfb2
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .tileWfb2
     
@@ -309,17 +309,17 @@ WindowManager_ScrollUpContents::
     ei
     
     ld a, 1
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     
     di
     
 .attrWfb1
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr z, .attrWfb1
     
 .attrWfb2
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .attrWfb2
     
