@@ -2,6 +2,9 @@
     RET
 
 MainScript_OpenConvWindow:
+    IMMED $6
+    IMMED $7D
+    VWFENABLE
     INDIR $173
     INDIR $180
     IMMED $FF00
