@@ -814,6 +814,14 @@ AccessPoint_PrimaryScreenLogic:
     NPREF FARCALL $FD
     POPALL
     POPALL
+    INDIR W_MainScript_PortraitID
+    IMMED $0
+    STR
+    POPALL
+    ARFREE
+    NPREF FARCALL $CD
+    POPALL
+    POPALL
     INDIR W_MobileMenu_ActiveScreen
     IMMED $63
     STR
