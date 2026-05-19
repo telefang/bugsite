@@ -29,12 +29,12 @@ The ROMs need to be named exactly as shown above above (**baserom_alpha.gbc** an
 2) Clone the repository to your preferred directory using the following command: 
 `git clone https://github.com/telefang/bugsite`
 
-3)Navigate into the directory you cloned this repository to using the following command:
+3) Navigate into the directory you cloned this repository to using the following command:
 `cd bugsite`.
 * The **translation project** is on a specific branch. If you're interested in building it specifically, switch into the branch using the following command:
 `git checkout patch`
 
-4)Set up a Python 3 environment, then install the require software using the following commands:
+4) Set up a Python 3 environment, then install the require software using the following commands:
 
 ```
 python3 -m venv env
@@ -42,4 +42,4 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-5)Run `make`
+5) Run `make`
