@@ -13,9 +13,11 @@ This project currently uses [RGBDS v0.9.1](https://github.com/gbdev/rgbds/releas
 If you're on Windows, please use the WSL Terminal. It can be installed following the instructions described [**here**](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 The following ROMs are needed to build this project:
-```$ md5sum baseroms/baserom_alpha.gbc baseroms/baserom_beta.gbc
+```
+$ md5sum baseroms/baserom_alpha.gbc baseroms/baserom_beta.gbc
 7f9dbafd6d16957e9687f89e33765f0b *baseroms/baserom_alpha.gbc
-3c6b37b6162d599e3554689500b23af1 *baseroms/baserom_beta.gbc```
+3c6b37b6162d599e3554689500b23af1 *baseroms/baserom_beta.gbc
+```
 
 The ROMs need to be named exactly as shown above above (**baserom_alpha.gbc** and **baserom_beta.gbc**) and placed into a directory named baseroms in the project's root directory. If the directory does not exist, create it.
 
@@ -34,8 +36,10 @@ The ROMs need to be named exactly as shown above above (**baserom_alpha.gbc** an
 
 4)Set up a Python 3 environment, then install the require software using the following commands:
 
-```python3 -m venv env
+```
+python3 -m venv env
 source env/bin/activate
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
 5)Run `make`
