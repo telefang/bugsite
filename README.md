@@ -1,4 +1,4 @@
-A partial disassembly of Bugsite Alpha and Beta versions.
+A partial disassembly of Bugsite Alpha and Beta versions
 
 To build, the following ROMs of Network Adventure Bugsite Alpha and Beta
 versions are required:
