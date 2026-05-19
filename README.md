@@ -1,4 +1,4 @@
-# Network Adventure Bugsite | ネットワーク冒険記バグサイト
+# Network Adventure Bugsite
 
 This is a partial disassembly of Network Adventure Bugsite Alpha and Beta versions.
 
